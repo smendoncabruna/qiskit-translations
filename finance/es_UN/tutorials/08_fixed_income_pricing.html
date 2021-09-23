@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing Fixed-Income Assets &mdash; documentación de Qiskit Finance - 0.2.1</title>
+  <title>Fijación de Precios de Activos de Renta Fija &mdash; documentación de Qiskit Finance - 0.2.1</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Credit Risk Analysis" href="09_credit_risk_analysis.html" />
-    <link rel="prev" title="Pricing Asian Barrier Spreads" href="07_asian_barrier_spread_pricing.html" /> 
+    <link rel="next" title="Análisis de Riesgo Crediticio" href="09_credit_risk_analysis.html" />
+    <link rel="prev" title="Fijación de Precios de los Márgenes de Barrera Asiáticos" href="07_asian_barrier_spread_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -205,7 +205,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Pricing Fixed-Income Assets</li>
+      <li>Fijación de Precios de Activos de Renta Fija</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -487,15 +487,14 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/08_fixed_income_pricing.ipynb">docs/tutorials/08_fixed_income_pricing.ipynb</a>.</p>
 </div>
-<section id="Pricing-Fixed-Income-Assets">
-<h1>Pricing Fixed-Income Assets<a class="headerlink" href="#Pricing-Fixed-Income-Assets" title="Enlazar permanentemente con este título">¶</a></h1>
+<section id="Fijación-de-Precios-de-Activos-de-Renta-Fija">
+<h1>Fijación de Precios de Activos de Renta Fija<a class="headerlink" href="#Fijación-de-Precios-de-Activos-de-Renta-Fija" title="Enlazar permanentemente con este título">¶</a></h1>
 <section id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Buscamos valorar un activo de renta fija conociendo las distribuciones que describen las tasas de interés relevantes. Se conocen los flujos de caja <span class="math notranslate nohighlight">\(c_t\)</span> del activo y las fechas en las que ocurren. El valor total <span class="math notranslate nohighlight">\(V\)</span> del activo es, por lo tanto, el valor esperado de:</p>
 <div class="math notranslate nohighlight">
 \[V = \sum_{t=1}^T \frac{c_t}{(1+r_t)^t}\]</div>
-<p>Each cash flow is treated as a zero coupon bond with a corresponding interest rate <span class="math notranslate nohighlight">\(r_t\)</span> that depends on its maturity. The user must specify the distribution modeling the uncertainty in each <span class="math notranslate nohighlight">\(r_t\)</span> (possibly correlated) as well as the number of qubits he wishes to use to sample each distribution. In this example we expand the value of the asset to first order in the interest rates <span class="math notranslate nohighlight">\(r_t\)</span>. This corresponds to studying the asset in terms of its duration. The approximation of the
-objective function follows the following paper: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>Cada flujo de caja se trata como un bono de cupón cero con una tasa de interés correspondiente <span class="math notranslate nohighlight">\(r_t\)</span> que depende de su vencimiento. El usuario debe especificar la distribución modelando la incertidumbre en cada <span class="math notranslate nohighlight">\(r_t\)</span> (posiblemente correlacionado) así como el número de qubits que desea usar para muestrear cada distribución. En este ejemplo, expandimos el valor del activo al primer orden en las tasas de interés <span class="math notranslate nohighlight">\(r_t\)</span>. Corresponde a estudiar el activo en términos de su duración. La aproximación de la función objetivo sigue el siguiente artículo: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -811,10 +810,10 @@ Confidence interval:    [2.3015, 2.3823]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="09_credit_risk_analysis.html" class="btn btn-neutral float-right" title="Credit Risk Analysis" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="09_credit_risk_analysis.html" class="btn btn-neutral float-right" title="Análisis de Riesgo Crediticio" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral" title="Pricing Asian Barrier Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral" title="Fijación de Precios de los Márgenes de Barrera Asiáticos" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -846,7 +845,7 @@ Confidence interval:    [2.3015, 2.3823]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing Fixed-Income Assets</a><ul>
+<li><a class="reference internal" href="#">Fijación de Precios de Activos de Renta Fija</a><ul>
 <li><a class="reference internal" href="#Introducción">Introducción</a><ul>
 <li><a class="reference internal" href="#Modelo-de-Incertidumbre">Modelo de Incertidumbre</a></li>
 <li><a class="reference internal" href="#Flujo-de-caja,-función-de-rendimiento,-y-valor-esperado-exacto">Flujo de caja, función de rendimiento, y valor esperado exacto</a></li>
