@@ -94,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -171,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -223,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul class="current">
@@ -240,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -699,13 +707,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>Kusakinisha Terra Kutoka Chanzo<a class="headerlink" href="#installing-terra-from-source" title="Permalink to this headline">¶</a></h3>
 <p>Kusakinisha kutoka chanzo kunahitaji uwe na compiler ya C++ inayounga mkono C++11 kwenye tarakilishi yako.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="9e95943e-9c24-45d0-80be-19b367ae4e3e" name="45fe3a22-82d8-4fdf-9fc7-5685e5bf6d39" type="radio">
-</input><label class="tabbed-label" for="9e95943e-9c24-45d0-80be-19b367ae4e3e">
+<input checked="checked" id="b5a65001-6ca1-4379-808c-e2eceed9c30b" name="d063c782-1f84-4670-b369-725c84d9e177" type="radio">
+</input><label class="tabbed-label" for="b5a65001-6ca1-4379-808c-e2eceed9c30b">
 Compiler kwa Linux</label><div class="tabbed-content docutils">
 <p>Kwenye majukwaa mengi ya Linux, compiler inayohitajika ya GCC tayari imewekwa.</p>
 </div>
-<input id="6cf9e29e-78c2-4c97-9a38-6e7da652a79f" name="45fe3a22-82d8-4fdf-9fc7-5685e5bf6d39" type="radio">
-</input><label class="tabbed-label" for="6cf9e29e-78c2-4c97-9a38-6e7da652a79f">
+<input id="06b20530-c9a6-4802-9c8f-f1bf6ac79714" name="d063c782-1f84-4670-b369-725c84d9e177" type="radio">
+</input><label class="tabbed-label" for="06b20530-c9a6-4802-9c8f-f1bf6ac79714">
 Compiler kwa macOS</label><div class="tabbed-content docutils">
 <p>Ikiwa unatumia macOS, unaweza kusakinisha compiler ya Clang kwa kusakinisha XCode. Angalia iwapo umesakinisha XCode na Clang kwa kufungua taminali na kutia yafuatayo.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -716,8 +724,8 @@ Compiler kwa macOS</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="7e61eff9-885b-4937-b067-46ac8eaf8599" name="45fe3a22-82d8-4fdf-9fc7-5685e5bf6d39" type="radio">
-</input><label class="tabbed-label" for="7e61eff9-885b-4937-b067-46ac8eaf8599">
+<input id="8998f45e-d554-4ef5-88e6-53442306f058" name="d063c782-1f84-4670-b369-725c84d9e177" type="radio">
+</input><label class="tabbed-label" for="8998f45e-d554-4ef5-88e6-53442306f058">
 Compiler kwa Windows</label><div class="tabbed-content docutils">
 <p>Katika Windows, ni rahisi kusakinisha compiler ya Visual C++ kutoka <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>. Badala yake unaweza kusakinisha Visual Studio toleo la 2015 au 2017, ukihakikisha kuchagua chaguo la kusakinisha compiler ya C++.</p>
 </div>
@@ -785,8 +793,8 @@ Compiler kwa Windows</label><div class="tabbed-content docutils">
 </ol>
 <p>Baada ya haya, hatua za kusakinisha Aer hutegemea mfumo endeshi wa tarakilishi unayotumia. Kwa kuwa Aer ni programu iliyokusanywa ya C++ yenye kiolesura cha Python, kuna utegemezi usio wa Python wa kujenga jozi ya Aer ambayo haiwezi kusakinishwa ulimwenguni kulingana na mfumo endeshi wa tarakilishi.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="84ce1551-3309-4d77-a837-bd5bc98d7ac8" name="5d6f442e-bb2d-46dc-a044-f975334b19e1" type="radio">
-</input><label class="tabbed-label" for="84ce1551-3309-4d77-a837-bd5bc98d7ac8">
+<input checked="checked" id="fcd4a5a6-ae13-494d-854f-e2a5d74b8ff7" name="09f62517-4856-43ae-b2d9-1fcfd68cad65" type="radio">
+</input><label class="tabbed-label" for="fcd4a5a6-ae13-494d-854f-e2a5d74b8ff7">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Sakinisha mahitaji ya compiler.</p>
@@ -812,8 +820,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="ec2501a9-06b4-4ccd-9560-de1a65c0a242" name="5d6f442e-bb2d-46dc-a044-f975334b19e1" type="radio">
-</input><label class="tabbed-label" for="ec2501a9-06b4-4ccd-9560-de1a65c0a242">
+<input id="3e3de389-b7fa-42ed-bc3f-4c2032493a73" name="09f62517-4856-43ae-b2d9-1fcfd68cad65" type="radio">
+</input><label class="tabbed-label" for="3e3de389-b7fa-42ed-bc3f-4c2032493a73">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Sakinisha vitegemezi.</p>
@@ -833,8 +841,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="c0f9d0d0-f39d-4bc1-a596-d7ef887d4c6e" name="5d6f442e-bb2d-46dc-a044-f975334b19e1" type="radio">
-</input><label class="tabbed-label" for="c0f9d0d0-f39d-4bc1-a596-d7ef887d4c6e">
+<input id="5ac16d48-1352-43c4-b4a0-6daadf200f65" name="09f62517-4856-43ae-b2d9-1fcfd68cad65" type="radio">
+</input><label class="tabbed-label" for="5ac16d48-1352-43c4-b4a0-6daadf200f65">
 Windows</label><div class="tabbed-content docutils">
 <p>Katika Windows utahitaji kutumia <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> au <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> ili kusakinisha vitegemezi vyote.</p>
 <ol class="arabic" start="3">
@@ -1160,7 +1168,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/09/21.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -1323,9 +1331,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

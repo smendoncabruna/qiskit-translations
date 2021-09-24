@@ -94,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -171,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -223,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul class="current">
@@ -240,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -699,13 +707,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>Installation de Terra depuis la Source<a class="headerlink" href="#installing-terra-from-source" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette installation nécessite un compilateur C++ supportant C++-11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="40d42f92-ba3e-469f-a395-ba37cb34b48e" name="060c2868-1280-483a-9c9d-b3f2a6405b4d" type="radio">
-</input><label class="tabbed-label" for="40d42f92-ba3e-469f-a395-ba37cb34b48e">
+<input checked="checked" id="f231dfe4-a0fd-424e-817c-c04eb04fdd7c" name="8c592300-1fd0-4fbd-82af-7157809f4eb4" type="radio">
+</input><label class="tabbed-label" for="f231dfe4-a0fd-424e-817c-c04eb04fdd7c">
 Compilateur pour Linux</label><div class="tabbed-content docutils">
 <p>Sur la plupart des plateformes Linux, le compilateur GCC nécessaire est déjà installé.</p>
 </div>
-<input id="e7a5a440-1cff-47d9-904e-c3f5cf0a613f" name="060c2868-1280-483a-9c9d-b3f2a6405b4d" type="radio">
-</input><label class="tabbed-label" for="e7a5a440-1cff-47d9-904e-c3f5cf0a613f">
+<input id="604d24f6-3398-4013-9922-69410d7b6e3f" name="8c592300-1fd0-4fbd-82af-7157809f4eb4" type="radio">
+</input><label class="tabbed-label" for="604d24f6-3398-4013-9922-69410d7b6e3f">
 Compilateur pour macOS</label><div class="tabbed-content docutils">
 <p>Si vous utilisez macOS, installez XCode et Clang. Depuis une fenêtre Terminal, vérifiez si XCode et Clang sont bien installés de cette façon.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -716,8 +724,8 @@ Compilateur pour macOS</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e223feb9-b5d1-4c8f-bb0e-e2659deb45b3" name="060c2868-1280-483a-9c9d-b3f2a6405b4d" type="radio">
-</input><label class="tabbed-label" for="e223feb9-b5d1-4c8f-bb0e-e2659deb45b3">
+<input id="1139f09d-d61d-4ce4-975a-13296182416a" name="8c592300-1fd0-4fbd-82af-7157809f4eb4" type="radio">
+</input><label class="tabbed-label" for="1139f09d-d61d-4ce4-975a-13296182416a">
 Compilateur pour Windows</label><div class="tabbed-content docutils">
 <p>Sur Windows, le plus simple est d’installer le compilateur Visual C++ depuis <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>. Vous pouvez choisir Visual Studio version 2015 ou 2017, en prenant soin de valider les options pour installer le compilateur C++.</p>
 </div>
@@ -785,8 +793,8 @@ Compilateur pour Windows</label><div class="tabbed-content docutils">
 </ol>
 <p>Ensuite, les étapes d’installation de Aer dépendent du système d’exploitation que vous utilisez. Comme Aer est un programme C++ compilé avec une interface Python, il ya des dépendances non-Python pour construire le binaire Aer qui ne peut pas être installé universellement en fonction du système d’exploitation.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="2fa6d720-9548-4ca6-96fd-4cf23b34402b" name="a982130c-1b14-4b49-b7eb-39e45c9062a4" type="radio">
-</input><label class="tabbed-label" for="2fa6d720-9548-4ca6-96fd-4cf23b34402b">
+<input checked="checked" id="cec3bc62-4866-4f58-a55d-038aef65f260" name="33c053d1-d680-46d5-a5f7-846992d467ca" type="radio">
+</input><label class="tabbed-label" for="cec3bc62-4866-4f58-a55d-038aef65f260">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Installez les pré-requis du compilateur.</p>
@@ -812,8 +820,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="ff47fa98-37d0-412d-b611-75458768a119" name="a982130c-1b14-4b49-b7eb-39e45c9062a4" type="radio">
-</input><label class="tabbed-label" for="ff47fa98-37d0-412d-b611-75458768a119">
+<input id="392e03e1-aa77-40fe-ba8b-4df9e10d6d58" name="33c053d1-d680-46d5-a5f7-846992d467ca" type="radio">
+</input><label class="tabbed-label" for="392e03e1-aa77-40fe-ba8b-4df9e10d6d58">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Installez les dépendances.</p>
@@ -833,8 +841,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="01273f74-57cf-47c1-8dcb-19dc07a74e48" name="a982130c-1b14-4b49-b7eb-39e45c9062a4" type="radio">
-</input><label class="tabbed-label" for="01273f74-57cf-47c1-8dcb-19dc07a74e48">
+<input id="f0a08ed1-e249-4054-927f-35dbf3205f4a" name="33c053d1-d680-46d5-a5f7-846992d467ca" type="radio">
+</input><label class="tabbed-label" for="f0a08ed1-e249-4054-927f-35dbf3205f4a">
 Windows</label><div class="tabbed-content docutils">
 <p>Sous Windows, vous devez utiliser <cite>Anaconda3 &lt;https://www.anaconda.com/distribution/#windows&gt;</cite> __ ou ` Miniconda3 &lt;<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a>&gt;` __ pour installer toutes les dépendances.</p>
 <ol class="arabic" start="3">
@@ -1102,7 +1110,7 @@ versions pour l’ensemble des éléments.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/09/21.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -1265,9 +1273,11 @@ versions pour l’ensemble des éléments.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

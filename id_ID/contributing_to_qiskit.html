@@ -94,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -171,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -223,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul class="current">
@@ -240,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -943,13 +951,13 @@ conda activate QiskitDevenv
 <p>Installing from source requires that you have a C++ compiler on your system that supports
 C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5bebbfaa-1f19-4993-8c44-4fd7565d0c46" name="c8db655d-481c-437d-8e3f-af854bd905ba" type="radio">
-</input><label class="tabbed-label" for="5bebbfaa-1f19-4993-8c44-4fd7565d0c46">
+<input checked="checked" id="df0cd89d-695c-4006-9ace-cd8903eb055e" name="3c449953-ac40-415e-a34f-ad5cffe9c789" type="radio">
+</input><label class="tabbed-label" for="df0cd89d-695c-4006-9ace-cd8903eb055e">
 Compiler for Linux</label><div class="tabbed-content docutils">
 <p>On most Linux platforms, the necessary GCC compiler is already installed.</p>
 </div>
-<input id="bde10df4-e3b8-4473-9d94-bae224746e91" name="c8db655d-481c-437d-8e3f-af854bd905ba" type="radio">
-</input><label class="tabbed-label" for="bde10df4-e3b8-4473-9d94-bae224746e91">
+<input id="d65915b5-2e36-4379-944f-6e2267c347e4" name="3c449953-ac40-415e-a34f-ad5cffe9c789" type="radio">
+</input><label class="tabbed-label" for="d65915b5-2e36-4379-944f-6e2267c347e4">
 Compiler for macOS</label><div class="tabbed-content docutils">
 <p>If you use macOS, you can install the Clang compiler by installing XCode.
 Check if you have XCode and Clang installed by opening a terminal window and entering the
@@ -962,8 +970,8 @@ following.</p>
 </pre></div>
 </div>
 </div>
-<input id="fcef8951-ccfd-498e-bb4c-989a4c47ce5e" name="c8db655d-481c-437d-8e3f-af854bd905ba" type="radio">
-</input><label class="tabbed-label" for="fcef8951-ccfd-498e-bb4c-989a4c47ce5e">
+<input id="272eeb50-c754-43bb-8210-ce31362dd3c2" name="3c449953-ac40-415e-a34f-ad5cffe9c789" type="radio">
+</input><label class="tabbed-label" for="272eeb50-c754-43bb-8210-ce31362dd3c2">
 Compiler for Windows</label><div class="tabbed-content docutils">
 <p>On Windows, it is easiest to install the Visual C++ compiler from the
 <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>.
@@ -1047,8 +1055,8 @@ using. Since Aer is a compiled C++ program with a Python interface, there are
 non-Python dependencies for building the Aer binary which can't be installed
 universally depending on operating system.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="66b8189f-2887-4419-a0f7-3b9bb7f29b19" name="0d35fc34-0a38-472a-97e1-b6053414444f" type="radio">
-</input><label class="tabbed-label" for="66b8189f-2887-4419-a0f7-3b9bb7f29b19">
+<input checked="checked" id="93713290-fca3-408f-a7bc-4b79e45dcbc1" name="7ddbc64e-847a-4d23-9b7c-3faf6aa55759" type="radio">
+</input><label class="tabbed-label" for="93713290-fca3-408f-a7bc-4b79e45dcbc1">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Install compiler requirements.</p>
@@ -1076,8 +1084,8 @@ install using:</p>
 </li>
 </ol>
 </div>
-<input id="35fb7ed7-964f-4746-9354-eb4f1525cc61" name="0d35fc34-0a38-472a-97e1-b6053414444f" type="radio">
-</input><label class="tabbed-label" for="35fb7ed7-964f-4746-9354-eb4f1525cc61">
+<input id="dac3a182-ac12-469e-9add-5e3ad056baec" name="7ddbc64e-847a-4d23-9b7c-3faf6aa55759" type="radio">
+</input><label class="tabbed-label" for="dac3a182-ac12-469e-9add-5e3ad056baec">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Install dependencies.</p>
@@ -1100,8 +1108,8 @@ is the default choice.</p>
 </li>
 </ol>
 </div>
-<input id="b3694fd8-3b15-43e7-8e48-d7e18e99259e" name="0d35fc34-0a38-472a-97e1-b6053414444f" type="radio">
-</input><label class="tabbed-label" for="b3694fd8-3b15-43e7-8e48-d7e18e99259e">
+<input id="57386dc4-ee40-4f23-ba96-9ecbac4ba4d2" name="7ddbc64e-847a-4d23-9b7c-3faf6aa55759" type="radio">
+</input><label class="tabbed-label" for="57386dc4-ee40-4f23-ba96-9ecbac4ba4d2">
 Windows</label><div class="tabbed-content docutils">
 <p>On Windows you need to use <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a>
 or <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> to install all the
@@ -1467,7 +1475,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Terakhir diperbarui pada 2021/09/21.
+      Terakhir diperbarui pada 2021/09/23.
 
     </p>
   </div>
@@ -1630,9 +1638,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

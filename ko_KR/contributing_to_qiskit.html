@@ -94,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -171,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -223,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul class="current">
@@ -240,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -697,13 +705,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>소스 코드로부터 Terra 설치하기<a class="headerlink" href="#installing-terra-from-source" title="제목 주소">¶</a></h3>
 <p>소스 코드에서 설치하려면 C++11을 지원하는 시스템에서 C++ 컴파일러가 있어야 한다.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b70fdd45-924f-4193-88a3-43461a601042" name="8f6c412a-1d02-4454-8c3d-6d8c6567141f" type="radio">
-</input><label class="tabbed-label" for="b70fdd45-924f-4193-88a3-43461a601042">
+<input checked="checked" id="dd4ac6b2-33d9-48ea-abc9-28e1e0be9203" name="37ad10a4-2c3b-405d-b833-6f1bb0966a00" type="radio">
+</input><label class="tabbed-label" for="dd4ac6b2-33d9-48ea-abc9-28e1e0be9203">
 Linux용 컴파일러</label><div class="tabbed-content docutils">
 <p>대부분의 Linux 플랫폼에서는 필요한 GCC 컴파일러가 이미 설치되어 있다.</p>
 </div>
-<input id="a89a7793-8be5-434d-9089-f29a909d75e1" name="8f6c412a-1d02-4454-8c3d-6d8c6567141f" type="radio">
-</input><label class="tabbed-label" for="a89a7793-8be5-434d-9089-f29a909d75e1">
+<input id="792d0092-f959-4805-916d-40390c45e383" name="37ad10a4-2c3b-405d-b833-6f1bb0966a00" type="radio">
+</input><label class="tabbed-label" for="792d0092-f959-4805-916d-40390c45e383">
 macOS용 컴파일러</label><div class="tabbed-content docutils">
 <p>만약 macOS를 사용하고 있다면, XCode를 설치하면 Clang 컴파일러를 설치할 수 있다. XCode와 Clang이 설치되어 있는지 확인하기 위해서는 터미널를 열고 다음 명령어를 입력하라.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -714,8 +722,8 @@ macOS용 컴파일러</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="131db430-8f36-4c54-8afe-2f3fc3c267c9" name="8f6c412a-1d02-4454-8c3d-6d8c6567141f" type="radio">
-</input><label class="tabbed-label" for="131db430-8f36-4c54-8afe-2f3fc3c267c9">
+<input id="272958a0-99ec-4528-8005-324234963b0b" name="37ad10a4-2c3b-405d-b833-6f1bb0966a00" type="radio">
+</input><label class="tabbed-label" for="272958a0-99ec-4528-8005-324234963b0b">
 윈도우용 컴파일러</label><div class="tabbed-content docutils">
 <p>Windows에서는 <cite>Build Tools for Visual Studio 2017 &lt;https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017&gt;</cite> 에서 Visual C++ 컴파일러를 설치하는 것이 가장 쉬운 방법이다. Visual Studio 2015 나 2017 버전을 설치할 수 있고 C++ 컴파일러를 설치하는 옵션을 꼭 선택해 주어야 한다.</p>
 </div>
@@ -783,8 +791,8 @@ macOS용 컴파일러</label><div class="tabbed-content docutils">
 </ol>
 <p>이 후 Aer 설치 단계는 사용중인 운영 체제에 따라 다르다. Aer는 Python 인터페이스를 가진 컴파일 된 C ++ 프로그램이므로 운영 체제에 따라 바이너리 파일을 빌드하기 위해 Python과 관련없으나 필요한 필수 종속 프로그램/라이브러리가 있다.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="1796472a-deb4-4c9e-b418-163b5228e98e" name="bd932e1b-2fd0-4da1-98e3-f599e421fe9a" type="radio">
-</input><label class="tabbed-label" for="1796472a-deb4-4c9e-b418-163b5228e98e">
+<input checked="checked" id="625d3d1a-dd1a-47da-a85a-8d3de8dc26e9" name="c2a278ce-ecf2-4e42-9751-edc4f18ea6cc" type="radio">
+</input><label class="tabbed-label" for="625d3d1a-dd1a-47da-a85a-8d3de8dc26e9">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>컴파일러 요구사항을 설치한다.</p>
@@ -810,8 +818,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="e44b3324-279d-42d6-91a0-281e88f99bdc" name="bd932e1b-2fd0-4da1-98e3-f599e421fe9a" type="radio">
-</input><label class="tabbed-label" for="e44b3324-279d-42d6-91a0-281e88f99bdc">
+<input id="134176bb-03e4-417d-b0aa-b067aaf2c81d" name="c2a278ce-ecf2-4e42-9751-edc4f18ea6cc" type="radio">
+</input><label class="tabbed-label" for="134176bb-03e4-417d-b0aa-b067aaf2c81d">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>종속 라이브러리 설치</p>
@@ -831,8 +839,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="c8b4c589-483b-4ac2-b759-ba1c5a4907fd" name="bd932e1b-2fd0-4da1-98e3-f599e421fe9a" type="radio">
-</input><label class="tabbed-label" for="c8b4c589-483b-4ac2-b759-ba1c5a4907fd">
+<input id="596ebed1-4ee9-495f-a066-e0c4319f359b" name="c2a278ce-ecf2-4e42-9751-edc4f18ea6cc" type="radio">
+</input><label class="tabbed-label" for="596ebed1-4ee9-495f-a066-e0c4319f359b">
 Windows</label><div class="tabbed-content docutils">
 <p>윈도우에서는 모든 종속 라이브러리를 설치하기 위해 <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> 나 <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> 를 사용해야 한다.</p>
 <ol class="arabic" start="3">
@@ -1098,7 +1106,7 @@ pip install qiskit_aer-*.whl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/09/21
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -1261,9 +1269,11 @@ pip install qiskit_aer-*.whl
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

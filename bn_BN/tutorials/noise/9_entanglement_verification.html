@@ -92,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">বিবরণীর (ডকুমেন্টেশন) কেন্দ্রস্থল</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">ফ্রন্টম্যাটার</span></p>
 <ul>
@@ -238,15 +246,15 @@
 </ul>
 <p><span class="caption-text">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (টেরা)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit সিমুলেটর (এয়ার)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit পরীক্ষণ (এক্সপেরিমেন্ট) (ইগ্নিস)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit অ্যাপ্লিকেশন মডিউলসমূহ (অ্যাকোয়া)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM কোয়ান্টাম পরিষেবা সরবরাহকারী</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit অ্যাপ্লিকেশন (অ্যাকোয়া) স্থানান্তর (মাইগ্রেশন) নির্দেশিকা</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit অ্যাপ্লিকেশন (অ্যাকোয়া) স্থানান্তর (মাইগ্রেশন) নির্দেশিকা</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">সমস্যার সমাধান</span></p>
 <ul>
@@ -744,13 +752,11 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_11_1.png" src="../../_images/tutorials_noise_9_entanglement_verification_11_1.png" />
 </div>
 </div>
-<p>After running experiments on this MQC circuit, we can pick a state to observe oscillations as we sweep <span class="math notranslate nohighlight">\(\phi\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(2 \pi\)</span>. Our signal in theory should follow <span class="math notranslate nohighlight">\(S(\phi) = \frac{1}{2}(1+\cos(n \phi))\)</span>. We then perform a Discrete Fourier Transform (DFT: <span class="math notranslate nohighlight">\(I_{v}=(1/N)|\sum_{\phi}e^{iv\phi}S(\phi)\)</span>) to extract the Fidelity of the state, defined by the bounds <span class="math notranslate nohighlight">\(2\sqrt{I_{n}} \leq F \leq \sqrt{I_{0}/2}+ \sqrt{I_{n}}\)</span>; if desired, an actual value for the fidelity
-can be obtained: <span class="math notranslate nohighlight">\(F = \frac{1}{2}(P_{00...0}+P_{11...1})+\sqrt{I_{n}})\)</span> (arXiv:1905.05720).</p>
+<p>এই এমকিউসি সার্কিটের উপর পরীক্ষা-নিরীক্ষার পরে, আমরা <span class="math notranslate nohighlight">\(\phi\)</span> কে <span class="math notranslate nohighlight">\(0\)</span> থেকে <span class="math notranslate nohighlight">\(2 \pi\)</span> পর্যন্ত ঠেলে দেয়ার সাথে সাথে দোলনগুলি পর্যবেক্ষণ করার জন্য একটি স্টেট বাছাই করতে পারি। তাত্বিকভাবে আমাদের সিগন্যালটির <span class="math notranslate nohighlight">\(S(\phi) = \frac{1}{2}(1+cos(n \phi))\)</span> কে অনুসরণ করা উচিত। আমরা তারপরে ফিডেলিটি বের করতে একটি ডিস্ক্রিট ফোরিয়ার ট্রান্সফর্ম (ডিএফটি: <span class="math notranslate nohighlight">\(I_{v}=(1/N)|\Sigma_{\phi}e^{iv\phi}S(\phi)\)</span>) হিসেব করি , যা <span class="math notranslate nohighlight">\(2\sqrt{I_{n}} \leq F \leq \sqrt{I_{0}/2}+ \sqrt{I_{n}}\)</span>; সীমানা দ্বারা সংজ্ঞায়িত; তবে ফিডেলিটির জন্য একটি আসল মান পাওয়া যেতে পারে : <span class="math notranslate nohighlight">\(F = \frac{1}{2}(P_{00...0}+P_{11...1})+\sqrt{I_{n}})\)</span> (arXiv:1905.05720).</p>
 </section>
 <section id="প্যারিটি-দোলন-(অসিলেশন)">
 <h3>প্যারিটি দোলন (অসিলেশন)<a class="headerlink" href="#প্যারিটি-দোলন-(অসিলেশন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>The next method we use to characterize the GHZ state is parity oscillations. After preparing a GHZ state, we apply a combination of rotations about the x and y axes to create various superposition states as a function of <span class="math notranslate nohighlight">\(\phi\)</span>: <span class="math notranslate nohighlight">\(U(\phi) = \otimes_{j}^{N} e^{i\frac{\pi}{4}(\cos(\phi)\sigma_{x}^{j}+\sin(\phi)\sigma_{y}^{j})}\)</span>. We then measure the expectation value <span class="math notranslate nohighlight">\(\langle \otimes_{j}^{N} \sigma_{z}^{j} \rangle_{\phi}\)</span> as a function of <span class="math notranslate nohighlight">\(\phi\)</span>, which in theory should lead
-to parity oscillations between 1 and -1.</p>
+<p>GHZ স্টেট চিহ্নিত করার জন্য আমরা পরবর্তী যে পদ্ধতিটি ব্যবহার করি তা হল প্যারিটি দোলন। একটি GHZ স্টেট প্রস্তুত করার পর আমরা x এবং y অক্ষের উপর ঘূর্ণনের সংমিশ্রণ প্রয়োগ করি যাতে একটি ফাংশন হিসাবে  <span class="math notranslate nohighlight">\(\phi\)</span>: <span class="math notranslate nohighlight">\(U(\phi) = \otimes_{j}^{N} e^{i\frac{\pi}{4}(\cos(\phi)\sigma_{x}^{j}+\sin(\phi)\sigma_{y}^{j})}\)</span> এর বিভিন্ন সুপারপজিশন অবস্থা তৈরি হয়। আমরা তারপর প্রত্যাশা মান  <span class="math notranslate nohighlight">\(\langle \otimes_{j}^{N} \sigma_{z}^{j} \rangle_{\phi}\)</span> <span class="math notranslate nohighlight">\(\phi\)</span> এর ফাংশন হিসেবে পরিমাপ করি যা তত্ত্বগতভাবে 1 এবং -1 এর মধ্যে সমতা দোলনের দিকে পরিচালিত করা উচিত।</p>
 <p>নীচের ফাংশনটি একটি সার্কিট তৈরি করে যা উপরের এমকিউসি সার্কিটের প্যারিটি অসিলেশনের সমতুল্য</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -822,7 +828,7 @@ to parity oscillations between 1 and -1.</p>
 </div>
 </div>
 <p>তো হয়েই গেলো । এখন থেকে, টিউটোরিয়ালে কোনও সিমুলেশন নয়, আসল ডিভাইসটি ব্যবহার করার সময়, <code class="docutils literal notranslate"><span class="pre">noise_model</span></code> আর <code class="docutils literal notranslate"><span class="pre">coupling_map</span></code> এর প্রতিটি উল্লেখ এবং কাজ বাদ দিয়ে দিন এবং আসল ডিভাইসটিকে <code class="docutils literal notranslate"><span class="pre">backend</span></code> এ নিয়োগ করুন। এখন থেকে যে সিমুলেটর ব্যবহার হবে তা আসল ডিভাইসের কোন বিকল্প হতে পারেনা।</p>
-<p><code class="docutils literal notranslate"><span class="pre">BConfig</span></code> lays the blueprint for creating parallelized circuits. Let us initialize an object taking in the real device we just defined, and name it <code class="docutils literal notranslate"><span class="pre">protocirc</span></code>. All of our experiments will use it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">BConfig</span></code> সমান্তরাল সার্কিট তৈরি করার নীলনকশাটি প্রদান করে। আসুন আমাদের সুনির্দিষ্টভাবে সংজ্ঞায়িত বাস্তব ডিভাইসের সাথে একটি অবজেক্টকে সংজ্ঞায়িত করি এবং এর নাম রাখি <code class="docutils literal notranslate"><span class="pre">protocirc</span></code>। আমাদের সমস্ত পরীক্ষাগুলি এটি ব্যবহার করবে:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -835,14 +841,14 @@ to parity oscillations between 1 and -1.</p>
 </section>
 <section id="ত্রুটি-দূরীকরণ">
 <h1>ত্রুটি দূরীকরণ<a class="headerlink" href="#ত্রুটি-দূরীকরণ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<p>Qiskit Ignis provides very accurate tools to take raw data and return calibrated data. This is done by getting the raw data, in the form of a vector <span class="math notranslate nohighlight">\(v_{raw}\)</span> and getting a calibration matrix <span class="math notranslate nohighlight">\(A\)</span>. The output is then the solution to the optimization problem: <span class="math notranslate nohighlight">\(argmin_{v_{cal}} ||Av_{cal}-v_{raw}||^{2}\)</span></p>
+<p>কিস্কিট ইগনিস প্রাথমিক ডেটা নিতে এবং ক্যালিব্রেটেড ডেটা ফেরত দেওয়ার জন্য খুব সঠিক সরঞ্জাম সরবরাহ করে। এটি একটি ভেক্টর <span class="math notranslate nohighlight">\(v_{raw}\)</span> আকারে প্রাথমিক তথ্য দিয়ে সম্পন্ন করা হয় এবং এবং একটি ক্রমাঙ্কন ম্যাট্রিক্স <span class="math notranslate nohighlight">\(A\)</span> পায়। আউটপুট এবং তারপর অপ্টিমাইজেশান সমস্যার সমাধান: <span class="math notranslate nohighlight">\(argmin_{v_{cal}} ||Av_{cal}-v_{raw}||^{2}\)</span></p>
 </section>
 <section id="পরীক্ষণের-সময়">
 <h1>পরীক্ষণের সময়<a class="headerlink" href="#পরীক্ষণের-সময়" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <section id="প্রাথমিক-ধাপসমূহ">
 <h2>প্রাথমিক ধাপসমূহ<a class="headerlink" href="#প্রাথমিক-ধাপসমূহ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>বিশ্বস্ততার গণনা করার জন্য জিএইচজেড মান বা অবস্থাগুলির মধ্যে <span class="math notranslate nohighlight">\(|0\rangle ^{\otimes n}\)</span> এবং <span class="math notranslate nohighlight">\(|1\rangle^{\otimes n}\)</span> পরিমাপের সম্ভাবনাগুলি গুরুত্বপূর্ণ। এই জন্য, আমাদের নিম্নলিখিত পরীক্ষা চালানো প্রয়োজন</p>
-<p>We begin by defining standard execution parameters:</p>
+<p>মানসম্মত কার্যসম্পাদনের পরামিতিগুলো সংজ্ঞায়িত করার মাধ্যমে আমরা শুরু করি :</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -994,7 +1000,7 @@ P(|00...0&gt;) =  0.4140625
 P(|11...1&gt;) =  0.341796875
 </pre></div></div>
 </div>
-<p>Now with error mitigation:</p>
+<p>ত্রুটি দূরীকরণের ব্যাপারে:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -1075,7 +1081,7 @@ P(|00...0&gt;) error mitigated =  0.44859593996533753
 P(|11...1&gt;) error mitigated =  0.4868663698086132
 </pre></div></div>
 </div>
-<p>We will load these values in a dictionary for assessing fidelity later on:</p>
+<p>ফিডেলিটি মূল্যায়নের জন্য আমরা এই মানসমূহকে একটি ডিকশনারিতে লোড করে নেবো :</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -1086,9 +1092,9 @@ P(|11...1&gt;) error mitigated =  0.4868663698086132
 </div>
 </div>
 </section>
-<section id="Part-1-:-MQC">
-<h2>Part 1 : MQC<a class="headerlink" href="#Part-1-:-MQC" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We now retrieve a parallelized MQC circuit for the n qubit device</p>
+<section id="প্রথম-অধ্যায়-:-এম.-কিউ.-সি(MQC)">
+<h2>প্রথম অধ্যায় : এম. কিউ. সি(MQC)<a class="headerlink" href="#প্রথম-অধ্যায়-:-এম.-কিউ.-সি(MQC)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>এবার আমরা n সংখক কিউবিটের জন্যে একটি সমান্তরাল এম. কিউ. সি সার্কিট পুনরুদ্ধার করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
@@ -1122,7 +1128,7 @@ CPU times: user 1.87 s, sys: 16.3 ms, total: 1.89 s
 Wall time: 1.89 s
 </pre></div></div>
 </div>
-<p>We now execute the MQC experiment:</p>
+<p>আমরা এখন এমকিউসি পরীক্ষাটি চালাবো:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
@@ -1143,7 +1149,7 @@ Wall time: 1.89 s
 Job Status: job has successfully run
 </pre></div></div>
 </div>
-<p>Now we will plot the amount of counts measured for <span class="math notranslate nohighlight">\(|0 \rangle ^{\otimes n}\)</span> as a function of phase. It is important to note that when using a parametrized circuit like the one here, the method <code class="docutils literal notranslate"><span class="pre">get_counts()</span></code> accepts an <strong>index</strong> and not a <strong>circuit</strong>. In any other type of experiment, <code class="docutils literal notranslate"><span class="pre">get_counts()</span></code> accepts a <strong>circuit</strong>.</p>
+<p>এখন আমরা <span class="math notranslate nohighlight">\(|0 \rangle ^{\otimes n}\)</span> পরিমাপ করা ফেজ ফাংশনে গণনার পরিমাণ হিসাব করব। এটা মনে রাখা গুরুত্বপূর্ণ যে যখন এখানে একটি parametrized সার্কিট ব্যবহার করব যা <code class="docutils literal notranslate"><span class="pre">get_counts()</span></code> মেথড ব্যাবহার করে এবং <strong>circuit</strong> না নিয়ে তার <strong>index</strong> কে নেয়। অন্য কোন ধরনের পরীক্ষায় <code class="docutils literal notranslate"><span class="pre">get_counts()</span></code> একটি  <strong>circuit</strong> কে নেবে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
@@ -1162,7 +1168,7 @@ Job Status: job has successfully run
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_47_0.png" src="../../_images/tutorials_noise_9_entanglement_verification_47_0.png" />
 </div>
 </div>
-<p>Now we get started on error mitigation. We create an identical quantum register and use complete_meas_cal from Ignis, to create circuits for calibrated measurements to be executed, and a calibration matrix.</p>
+<p>এখন আমরা ত্রুটি প্রশমনের কাজ শুরু করব। আমরা একটি অভিন্ন কোয়ান্টাম রেজিস্ট্রার তৈরি করি এবং ক্রমাঙ্কিত পরিমাপকে নির্বাহের জন্য সার্কিট তৈরি করতে ও একটি ক্রমাঙ্কন ম্যাট্রিক্স তৈরি করতে ইগনিস থেকে কমপ্লিট_মেস_ক্যাল ব্যবহার করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
@@ -1204,7 +1210,7 @@ Job Status: job has successfully run
 </pre></div>
 </div>
 </div>
-<p>Finally, we have our error mitigated results:</p>
+<p>অবশেষে, আমাদের ত্রুটি প্রশমিত ফলাফল পেলাম:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
@@ -1214,7 +1220,7 @@ Job Status: job has successfully run
 </pre></div>
 </div>
 </div>
-<p>We can see how the error mitigated results yield a far greater fidelity than the raw data</p>
+<p>আমরা দেখতে পাচ্ছি যে ত্রুটি প্রশমিত ফলাফলগুলি মৌলিক ডেটার চেয়ে অনেক বেশি ফিডেলিটি অর্জন করে</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
@@ -1279,12 +1285,12 @@ Mitigated fidelity =  0.894  +/-  0.009
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_56_2.png" src="../../_images/tutorials_noise_9_entanglement_verification_56_2.png" />
 </div>
 </div>
-<p>We now plot the DFT and compare the heights of the peaks to give bounds for the fidelity</p>
-<p>Statistical bootstrapping has found that the error on these measurements is at most 1.5% (arXiv 1905.05720), so these result fall within error bounds, despite the fidelity being slightly higher than the upper bound, and show how error mitigation dramatically increases fidelity</p>
+<p>ফিডেলিটির সীমানা দেওয়ার জন্য আমরা এখন ডিএফটি লেখচিত্র প্লট করি এবং শিখরের উচ্চতাগুলি তুলনা করি</p>
+<p>পরিসংখ্যানগত বুটস্ট্র্যাপিং থেকে জানা যায় যে এই পরিমাপের ত্রুটি সর্বাধিক ১. ৫% (arXiv 1905.05720) হয়, সুতরাং ফলাফল উপরের গণ্ডির চেয়ে সামান্য বেশি হওয়া সত্ত্বেও ত্রুটি সীমার মধ্যে পড়ে এবং আরও জানা যায় ত্রুটি প্রশমনের ফলে কীভাবে নাটকীয়ভাবে ফিডেলিটি বাড়ে</p>
 </section>
-<section id="Part-2:-Parity-Oscillation">
-<h2>Part 2: Parity Oscillation<a class="headerlink" href="#Part-2:-Parity-Oscillation" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We now retrieve a parallelized Parity Oscillation circuit for the n qubit device, and run experiments in the same fashion as we did in MQC.</p>
+<section id="দ্বিতীয়-অধ্যায়:-সমতা-দোলনা">
+<h2>দ্বিতীয় অধ্যায়: সমতা দোলনা<a class="headerlink" href="#দ্বিতীয়-অধ্যায়:-সমতা-দোলনা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা এখন এন কিউবিট ডিভাইসটির জন্য একটি সমান্তরাল প্যারিটি অসিলেশন বর্তনী (সার্কিট) পুনরুদ্ধার করি এবং এমকিউসিতে আমরা যেমন করেছিলাম তেমনভাবেই পরীক্ষা চালাই।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
@@ -1339,7 +1345,7 @@ Wall time: 2.07 s
 Job Status: job has successfully run
 </pre></div></div>
 </div>
-<p>Now we construct the <span class="math notranslate nohighlight">\(\otimes _{j}^{N} \sigma_z^{j}\)</span> matrix for instruction, although this is already taken into account in the following method, <code class="docutils literal notranslate"><span class="pre">entanglement.analysis.composite_pauli_z_expvalue()</span></code>:</p>
+<p>এখন আমরা নির্দেশের জন্য <span class="math notranslate nohighlight">\(\otimes _{j}^{N} \sigma_z^{j}\)</span> ম্যাট্রিক্সটি নির্মাণ করি, যদিও এটি ইতিমধ্যে নিম্নলিখিত পদ্ধতিতে বিবেচনা করা হয়েছে,  <code class="docutils literal notranslate"><span class="pre">entanglement.analysis.composite_pauli_z_expvalue()</span></code>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
@@ -1351,8 +1357,7 @@ Job Status: job has successfully run
 </pre></div>
 </div>
 </div>
-<p>Now we want to make sure that our list of counts is correctly ordered so that it coincides with the states of the <span class="math notranslate nohighlight">\(\otimes _{j}^{N} \sigma_z^{j}\)</span>, so that calculating <span class="math notranslate nohighlight">\(\langle \otimes _{j}^{N} \sigma_z^{j} \rangle\)</span> will be as simple as taking the dot product of this ordered list with the diagonal of <span class="math notranslate nohighlight">\(\otimes _{j}^{N} \sigma_z^{j}\)</span>. The <code class="docutils literal notranslate"><span class="pre">composite_pauli_z_expvalue</span></code> function does just that; it takes a circuit and appropriately orders the state vector counts. We can plot this
-dot product as a function of <span class="math notranslate nohighlight">\(\phi\)</span> to observe parity oscillations.</p>
+<p>এখন আমরা নিশ্চিত করতে চাই যে আমাদের গণনার তালিকা সঠিকভাবে অর্ডার করা হয়েছে যাতে এটি স্টেটের সাথে মিলে যায় - <span class="math notranslate nohighlight">\(\otimes _{j}^{N} \sigma_z^{j}\)</span>, so that calculating <span class="math notranslate nohighlight">\(\langle \otimes _{j}^{N} \sigma_z^{j} \rangle\)</span> এই অর্ডারকৃত তালিকার ডট প্রোডাক্টের কর্ণ <span class="math notranslate nohighlight">\(\otimes _{j}^{N} \sigma_z^{j}\)</span> দিয়ে গ্রহণ করার মতই সহজ হবে। <code class="docutils literal notranslate"><span class="pre">composite_pauli_z_expvalue</span></code> ফাংশন ঠিক তাই করে; এটি একটি সার্কিট নেয় এবং যথাযথভাবে স্টেটের ভেক্টর গণনার আদেশ দেয়। আমরা এই বিন্দুটিকে একটি ফাংশন <span class="math notranslate nohighlight">\(\phi\)</span> হিসাবে বিবেচনা করতে পারি যা প্যারিটি অসিলেশন পর্যবেক্ষণ করতে সাহায্য করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
@@ -1388,7 +1393,7 @@ dot product as a function of <span class="math notranslate nohighlight">\(\phi\)
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_68_0.png" src="../../_images/tutorials_noise_9_entanglement_verification_68_0.png" />
 </div>
 </div>
-<p>Now for standard error mitigation:</p>
+<p>এখন মানসম্মত ত্রুটি প্রশমনের জন্য:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
@@ -1456,7 +1461,7 @@ Job Status: job has successfully run
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_74_0.png" src="../../_images/tutorials_noise_9_entanglement_verification_74_0.png" />
 </div>
 </div>
-<p>We can see how error mitigation dramatically improves our measurement (much more so in PO than in MQC). Let us quantify this using the same DFT method we used in MQC, and calculating the actual fidelities:</p>
+<p>আমরা দেখতে পাচ্ছি যে ত্রুটি প্রশমন কীভাবে নাটকীয়ভাবে আমাদের পরিমাপকে উন্নত করে (এমকিউসির চেয়ে পিওতে আরও বেশি)। আসুন আমরা এমকিউসি-তে ব্যবহৃত একই ডিএফটি পদ্ধতিটি ব্যবহার করে একে পরিমাপ করি এবং প্রকৃত ফিডেলিটিকে গণনা করি:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
@@ -1494,11 +1499,11 @@ Mitigated fidelity =  0.878  +/-  0.009
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_76_2.png" src="../../_images/tutorials_noise_9_entanglement_verification_76_2.png" />
 </div>
 </div>
-<p>As we see, the raw fidelity is much lower than what is achieved with MQC, but the error mitigated result is about the same.</p>
+<p>আমরা দেখতে পাই যে, এমকিউসি-র মাধ্যমে প্রাপ্ত ফিডেলিটির তুলনায় প্রাথমিক ফিডেলিটি অনেকটাই কম, তবে ত্রুটি প্রশমিত ফলাফলটি প্রায় একই রকম।</p>
 </section>
-<section id="Part-3:-Tomography">
-<h2>Part 3: Tomography<a class="headerlink" href="#Part-3:-Tomography" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The first step in this experiment to just pass a simple GHZ state with <em>no</em> measurements. Also, the circuit cannot be transpiled; the <code class="docutils literal notranslate"><span class="pre">transpiled</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">getGHZChecker()</span></code> method can be turned on and off as is shown</p>
+<section id="তৃতীয়-অধ্যায়:-টমোগ্রাফি">
+<h2>তৃতীয় অধ্যায়: টমোগ্রাফি<a class="headerlink" href="#তৃতীয়-অধ্যায়:-টমোগ্রাফি" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>এই পরীক্ষার প্রথম পদক্ষেপটি হল, * কোনও * পরিমাপ ছাড়াই কেবল একটি সাধারণ জিএইচজেড অবস্থা সরবরাহ করা। এছাড়াও, সার্কিটটি স্থানান্তরিত করা যায় না; এবং <code class="docutils literal notranslate"><span class="pre">getGHZChecker()</span></code> মেথডের <code class="docutils literal notranslate"><span class="pre">transpiled</span></code> আর্গুমেন্টটি দেখানো উপায়ে অন এবং অফ করা যায়।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
@@ -1521,7 +1526,7 @@ Mitigated fidelity =  0.878  +/-  0.009
 </pre></div>
 </div>
 </div>
-<p>We now pass a simulated backend from <code class="docutils literal notranslate"><span class="pre">Aer</span></code> to get theoretical statevector counts</p>
+<p>তাত্ত্বিক স্টেটভেক্টর গণনা পেতে আমরা এখন <code class="docutils literal notranslate"><span class="pre">এয়ার</span></code> এ একটি সিমুলেটেড ব্যাকএন্ড পাস করি</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
@@ -1542,7 +1547,7 @@ Mitigated fidelity =  0.878  +/-  0.009
 Job Status: job has successfully run
 </pre></div></div>
 </div>
-<p>This following code runs tomography experiments on the circuit we defined first, which is then compared to the theoretical statevector to generate a density matrix</p>
+<p>নিম্নোক্ত কোডটি আমাদের শুরুতে সংজ্ঞায়িত সার্কিটটিতে টোমোগ্রাফি পরীক্ষা চালায় যাকে পরে ঘনত্বের ম্যাট্রিক্স উৎপন্ন করার জন্য তাত্ত্বিক অবস্থা ভেক্টর বা দিকরাশির সাথে তুলনা করা হয়</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
@@ -1571,7 +1576,7 @@ Job Status: job has successfully run
 </pre></div>
 </div>
 </div>
-<p>From here we can get the fidelity, although this method is not as fool proof as the one we will get to eventually:</p>
+<p>এখান থেকে আমরা বিশ্বস্ততা পেতে পারি, যদিও এই পদ্ধতিটি শেষ পর্যন্ত আমরা যে পদ্ধতিতে যাবো তার মতো বুদ্ধিমান নয়:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
@@ -1581,7 +1586,7 @@ Job Status: job has successfully run
 </pre></div>
 </div>
 </div>
-<p>…And now for error mitigation…</p>
+<p>…এবং এখন ত্রুটি প্রশমনের জন্য…</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
@@ -1634,7 +1639,7 @@ Job Status: job has successfully run
 </pre></div>
 </div>
 </div>
-<p>Now, using <code class="docutils literal notranslate"><span class="pre">qiskit.visualization</span></code>, we can plot the raw density matrix, real, and imaginary parts being on separate plots,…</p>
+<p>এখন, <code class="docutils literal notranslate"><span class="pre">qiskit.visualization</span></code> ব্যবহার করে আমরা প্রাথমিক ঘনত্বের ম্যাট্রিক্স প্লট করতে পারি, যেখানে বাস্তব এবং অনাদায়ী অংশগুলি পৃথক প্লটে থাকবে…</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
 </pre></div>
@@ -1659,7 +1664,7 @@ Job Status: job has successfully run
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_94_1.png" src="../../_images/tutorials_noise_9_entanglement_verification_94_1.png" />
 </div>
 </div>
-<p>And also the error mitigated density matrix,…</p>
+<p>এবং ত্রুটি প্রশমিত ঘনত্ব ম্যাট্রিক্স,…</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
 </pre></div>
@@ -1684,7 +1689,7 @@ Job Status: job has successfully run
 <img alt="../../_images/tutorials_noise_9_entanglement_verification_96_1.png" src="../../_images/tutorials_noise_9_entanglement_verification_96_1.png" />
 </div>
 </div>
-<p>The actual density matrices can be obtained using the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> method. Once we have the density matrix, we can compute the fidelity, which is nothing but half the sum of the four corners of the density matrix; the following method helps us:</p>
+<p>প্রকৃত ঘনত্ব ম্যাট্রিকগুলি `` fit()`` পদ্ধতি ব্যবহার করে পাওয়া যায়। ঘনত্ব ম্যাট্রিক্স পাবার পর, আমরা  ফিডেলিটি গণনা করতে পারি, যা ঘনত্ব ম্যাট্রিক্সের চারটি কোণার অর্ধেকের যোগফল ব্যতীত কিছুই নয়; নিম্নলিখিত পদ্ধতিটি আমাদের সহায়তা করে:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
 </pre></div>
@@ -1732,17 +1737,16 @@ Raw fidelity:  0.6368794947513089
 Error mitigated fidelity:  0.8897132713838496
 </pre></div></div>
 </div>
-<p>As we see, the raw fidelity is much lower than what is achieved with either MQC or Parity Oscillations, but the error mitigated result is about the same.</p>
-<p><strong>A note on tomography</strong></p>
-<p>Do not perform quantum tomography with &gt;5 qubits</p>
+<p>সুতরাং অপ্রস্তুত ফিডেলিটির মান এম.কিউ. সি বা সমতা দোলন পধ্যতি দ্বারা পাওয়া ফিডেলিটির মানের চেয়ে অনেকগুণ কম (যদিও ত্রুটি প্রশমিত ফলাফল প্রায় একই)।</p>
+<p><strong>টমোগ্রাফির ওপরে বিশেষ বার্তা</strong></p>
+<p>৫টা কিউবিট এর বেশি তে কোয়ান্টাম টমোগ্রাফি করে দেখা উচিত নয়।</p>
 </section>
-<section id="Conclusion">
-<h2>Conclusion<a class="headerlink" href="#Conclusion" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>In conclusion, we see that without error mitigation, MQC is the superior method for characterizing the GHZ state. However, with error mitigation, all methods can, at least for a small number of qubits, achieve a much greater fidelity, and all near the same value. To get more accurate results, aside from using a real device, it is worth increasing the number of shots four to eight-fold. It may be worth comparing how the parallelized circuits used in this notebook perform fidelity-wise versus
-linearized circuits.</p>
+<section id="উপসংহার">
+<h2>উপসংহার<a class="headerlink" href="#উপসংহার" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>সর্বোপরি আমরা লক্ষ্য করি যে ত্রুটি দূরীকরণ না ব্যবহার করলে এম. কিউ. সি হলো GHZ স্থিতি চরিত্রয়নের জন্যে সেরা পদ্ধতি। কিন্তু কম সংখক কিউবিট এর জন্যে ত্রুটি দূরীকরণ ব্যবহার করলে প্রায় সব পদ্ধতির একই মানের কাছে অনেক বেশি ফিডেলিটি যোগ্য। আসল যন্ত্র এবং শটসমূহ এর সংখ্যা বাড়িয়ে আরো সঠিক ফলাফল পাওয়া সম্ভব। রৈখিক সার্কিট এর তুলনায় সমান্তরাল সার্কিট গুলি কতটা ফিডেলিটিময় তা এইভাবে দেখা যেতে পারে।</p>
 </section>
-<section id="External-collaborators">
-<h2>External collaborators<a class="headerlink" href="#External-collaborators" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<section id="বাহ্যিক-সহযোগী">
+<h2>বাহ্যিক সহযোগী<a class="headerlink" href="#বাহ্যিক-সহযোগী" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>Rohith Karur</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
@@ -1787,7 +1791,7 @@ linearized circuits.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      2021/09/21 সর্বশেষ পরিবর্তন করা হয়েছে।
+      2021/09/23 সর্বশেষ পরিবর্তন করা হয়েছে।
 
     </p>
   </div>
@@ -1822,11 +1826,11 @@ linearized circuits.</p>
 <li><a class="reference internal" href="#ত্রুটি-দূরীকরণ">ত্রুটি দূরীকরণ</a></li>
 <li><a class="reference internal" href="#পরীক্ষণের-সময়">পরীক্ষণের সময়</a><ul>
 <li><a class="reference internal" href="#প্রাথমিক-ধাপসমূহ">প্রাথমিক ধাপসমূহ</a></li>
-<li><a class="reference internal" href="#Part-1-:-MQC">Part 1 : MQC</a></li>
-<li><a class="reference internal" href="#Part-2:-Parity-Oscillation">Part 2: Parity Oscillation</a></li>
-<li><a class="reference internal" href="#Part-3:-Tomography">Part 3: Tomography</a></li>
-<li><a class="reference internal" href="#Conclusion">Conclusion</a></li>
-<li><a class="reference internal" href="#External-collaborators">External collaborators</a></li>
+<li><a class="reference internal" href="#প্রথম-অধ্যায়-:-এম.-কিউ.-সি(MQC)">প্রথম অধ্যায় : এম. কিউ. সি(MQC)</a></li>
+<li><a class="reference internal" href="#দ্বিতীয়-অধ্যায়:-সমতা-দোলনা">দ্বিতীয় অধ্যায়: সমতা দোলনা</a></li>
+<li><a class="reference internal" href="#তৃতীয়-অধ্যায়:-টমোগ্রাফি">তৃতীয় অধ্যায়: টমোগ্রাফি</a></li>
+<li><a class="reference internal" href="#উপসংহার">উপসংহার</a></li>
+<li><a class="reference internal" href="#বাহ্যিক-সহযোগী">বাহ্যিক সহযোগী</a></li>
 </ul>
 </li>
 </ul>
@@ -1915,9 +1919,11 @@ linearized circuits.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

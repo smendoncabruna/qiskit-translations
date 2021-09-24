@@ -92,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">文件首頁</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit （Terra）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 模擬（Aer）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 實驗（Ignis）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 應用程式模組（Aqua）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 應用（Aqua）搬遷指南</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 應用（Aqua）搬遷指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">疑難排解</span></p>
 <ul>
@@ -583,7 +591,7 @@ div.rendered_html tbody tr:hover {
 <h2>Matrix product state 的模擬方法<a class="headerlink" href="#id2" title="本標題的永久連結">¶</a></h2>
 <p>此模擬方法以 」 ` matrix product states`` <a href="#id1"><span class="problematic" id="id2">`</span></a>為基礎。 這種概念最初在 Vidal的*Efficient classical simulation of slightly entangled quantum computations* 這篇論文中被提出(連結:<a class="reference external" href="https://arxiv.org/abs/quant-ph/0301063">https://arxiv.org/abs/quant-ph/0301063</a>)。 還有其他論文對此概念有更深入的描述，如 Scholwoeck 的*The density-matrix renormalization group in the age of matrix product states*(連結:<a class="reference external" href="https://arxiv.org/abs/1008.3477">https://arxiv.org/abs/1008.3477</a>)。</p>
 <p>通常我們會以狀態向量描述量子態，其表示式為 <span class="math notranslate nohighlight">\(|\psi\r角度 = \sum_{i_1=0}^1 {\lds} \sum_{i_n=0}^1 cc_{i_i\r角度 {\owtimes } { \otimes } |i_n\r角\)</span>。</p>
-<p>不論電路的結構是什麼樣子，狀態向量的大小是以指數形式增長。 而作用在其上的量子閘執行所需的時間和記憶體也是以指數形式增加。</p>
+<p>The state vector representation implies an exponential size representation, regardless of the actual circuit. Every quantum gate operating on this representation requires exponential time and memory.</p>
 <p>Matrix product state (MPS) 表示法提供了一種局部表示方式 <span class="math notranslate nohighlight">\(\Gamma^{[1]} \lambda^{[1]} \Gamma^{[2]} \lambda^{[2]}\ldots \Gamma^{[1]} \lambda^{[n-1]} \Gamma^{[n]}\)</span>，因此包含在 <span class="math notranslate nohighlight">\(c_{i_1 \ldots i_n}\)</span> 中的所有資訊都可以從 MPS 表示法中得出。</p>
 <p>每個 <span class="math notranslate nohighlight">\(\Gamma^{[i]}\)</span> 是表示量子位元 <span class="math notranslate nohighlight">\(i\)</span> 的複數張量，每個 <span class="math notranslate nohighlight">\(\lambda^{[i]}\)</span> 是一個實數矩陣，用於對量子位元閘 <span class="math notranslate nohighlight">\(i\)</span> 和 <span class="math notranslate nohighlight">\(i+1\)</span> 的幅度進行歸一化，其中單量子位元閘僅在相關張量上作用。</p>
 <p>雙量子位元閘對連續的量子位:math:<cite>i</cite> 和 <span class="math notranslate nohighlight">\(i+1\)</span> 進行操作時，包括:math:<cite>lambda^{[i-1]}</cite>, <span class="math notranslate nohighlight">\(\Gamma^{[i-1]}\)</span>, <span class="math notranslate nohighlight">\(\lambda^{[i]}\)</span>, <span class="math notranslate nohighlight">\(\Gamma^{[i+1]}\)</span> and <span class="math notranslate nohighlight">\(\lambda^{[i+1]}\)</span>,以創建單個張量，我們將閘作用於這個張量後，然後分解回原始結構，這個操作可能會增加每個張量的大小，包含兩個非連續量子位的門需要一系列交換門來使兩個量子位元彼此相鄰，然後反向交換。</p>
@@ -765,7 +773,7 @@ Time taken: 0.31022214889526367 sec
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/09/21。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -877,9 +885,11 @@ Time taken: 0.31022214889526367 sec
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Grover’s algorithm examples &mdash; документация Qiskit 0.30.0</title>
+  <title>Примеры применения алгоритма Гровера &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -92,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -238,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -291,7 +299,7 @@
       </li>
 
         
-      <li>Grover’s algorithm examples</li>
+      <li>Примеры применения алгоритма Гровера</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -571,11 +579,11 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/07_grover_examples.ipynb">tutorials/algorithms/07_grover_examples.ipynb</a>.</p>
+<p>Эта страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/07_grover_examples.ipynb">tutorials/algorithms/07_grover_examples.ipynb</a>.</p>
 </div>
-<section id="Grover’s-algorithm-examples">
-<h1>Grover’s algorithm examples<a class="headerlink" href="#Grover’s-algorithm-examples" title="Ссылка на этот заголовок">¶</a></h1>
-<p>This notebook has examples demonstrating how to use the Qiskit <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.Grover.html">Grover</a> search algorithm, with different oracles.</p>
+<section id="Примеры-применения-алгоритма-Гровера">
+<h1>Примеры применения алгоритма Гровера<a class="headerlink" href="#Примеры-применения-алгоритма-Гровера" title="Ссылка на этот заголовок">¶</a></h1>
+<p>В этом блокноте приведены примеры, демонстрирующие использование поискового алгоритма Qiskit <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.Grover.html">Grover</a> с различными оракулами.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -591,8 +599,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Finding-solutions-to-3-SAT-problems">
-<h2>Finding solutions to 3-SAT problems<a class="headerlink" href="#Finding-solutions-to-3-SAT-problems" title="Ссылка на этот заголовок">¶</a></h2>
+<section id="Поиск-решений-проблемы-логической-выполнимости-3-SAT">
+<h2>Поиск решений проблемы логической выполнимости 3-SAT<a class="headerlink" href="#Поиск-решений-проблемы-логической-выполнимости-3-SAT" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Let’s look at an example 3-Satisfiability (3-SAT) problem and walk-through how we can use Quantum Search to find its satisfying solutions. 3-SAT problems are usually expressed in <a class="reference external" href="https://en.wikipedia.org/wiki/Conjunctive_normal_form">Conjunctive Normal Forms (CNF)</a> and written in the <a class="reference external" href="http://www.satcompetition.org/2009/format-benchmarks2009.html">DIMACS-CNF</a> format. For example:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -611,13 +619,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The CNF of this 3-SAT instance contains 3 variables and 5 clauses:</p>
+<p>КНФ данного экземпляра 3-SAT содержит 3 переменные и 5 дизъюнктивных одночленов:</p>
 <p><span class="math notranslate nohighlight">\((\neg v_1 \vee \neg v_2 \vee \neg v_3) \wedge (v_1 \vee \neg v_2 \vee v_3) \wedge (v_1 \vee v_2 \vee \neg v_3) \wedge (v_1 \vee \neg v_2 \vee \neg v_3) \wedge (\neg v_1 \vee v_2 \vee v_3)\)</span></p>
-<p>It can be verified that this 3-SAT problem instance has three satisfying solutions:</p>
+<p>Можно показать, что данный пример задачи 3-SAT имеет три решения, удовлетворяющих выражению выше:</p>
 <p><span class="math notranslate nohighlight">\((v_1, v_2, v_3) = (T, F, T)\)</span> or <span class="math notranslate nohighlight">\((F, F, F)\)</span> or <span class="math notranslate nohighlight">\((T, T, F)\)</span></p>
-<p>Or, expressed using the DIMACS notation:</p>
-<p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-2</span> <span class="pre">3</span></code>, or <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">-2</span> <span class="pre">-3</span></code>, or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">-3</span></code>.</p>
-<p>With this example problem input, we then create the corresponding <code class="docutils literal notranslate"><span class="pre">oracle</span></code> for our <code class="docutils literal notranslate"><span class="pre">Grover</span></code> search. In particular, we use the <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code> component, which supports parsing DIMACS-CNF format strings and constructing the corresponding oracle circuit.</p>
+<p>Или, используя обозначения DIMACS:</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-2</span> <span class="pre">3</span></code>, или <code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">-2</span> <span class="pre">-3</span></code>, или <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">-3</span></code>.</p>
+<p>Используя исходные данные из этого примера, мы создаем соответствующий <code class="docutils literal notranslate"><span class="pre">оракул</span></code> для осуществления нашего поиска <code class="docutils literal notranslate"><span class="pre">Гровера</span></code>. В частности, мы используем компонент <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code>, который осуществляет обработку строк формата DIMACS-CNF и создает соответствующую цепь оракула.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -641,7 +649,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">oracle</span></code> can now be used to create an Grover instance:</p>
+<p>Теперь <code class="docutils literal notranslate"><span class="pre">oracle</span></code> (оракул) можно использовать для создания экземпляра класса Grover:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -653,7 +661,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>We can then configure the backend and run the Grover instance to get the result:</p>
+<p>Затем мы можем настроить backend и запустить экземпляр класса Grover, чтобы получить результат:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -677,8 +685,8 @@ div.rendered_html tbody tr:hover {
 101
 </pre></div></div>
 </div>
-<p>As seen above, a satisfying solution to the specified 3-SAT problem is obtained. And it is indeed one of the three satisfying solutions.</p>
-<p>Since we used the <code class="docutils literal notranslate"><span class="pre">'aer_simulator'</span></code>, the complete measurement result is also returned, as shown in the plot below, where it can be seen that the binary strings <code class="docutils literal notranslate"><span class="pre">000</span></code>, <code class="docutils literal notranslate"><span class="pre">011</span></code>, and <code class="docutils literal notranslate"><span class="pre">101</span></code> (note the bit order in each string), corresponding to the three satisfying solutions all have high probabilities associated with them.</p>
+<p>Как видно из вышеприведенной ячейки, решение удовлетворяющее указанной задачи 3-SAT получено. И это действительно одно из трех возможных решений.</p>
+<p>При использовании <code class="docutils literal notranslate"><span class="pre">'aer_simulator'</span></code> возвращается также и полный результат измерения, который приведен на графике ниже, из которого видно, что двоичные строки <code class="docutils literal notranslate"><span class="pre">000</span></code>, <code class="docutils literal notranslate"><span class="pre">011</span></code> и <code class="docutils literal notranslate"><span class="pre">101</span></code> (обратите внимание на порядок битов в каждой строке), соответствующие трем удовлетворяющим решениям, имеют самые высокие вероятности.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -697,9 +705,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </section>
-<section id="Boolean-Logical-Expressions">
-<h2>Boolean Logical Expressions<a class="headerlink" href="#Boolean-Logical-Expressions" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Qiskit’s <code class="docutils literal notranslate"><span class="pre">Grover</span></code> can also be used to perform Quantum Search on an <code class="docutils literal notranslate"><span class="pre">Oracle</span></code> constructed from other means, in addition to DIMACS. For example, the <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code> can actually be configured using arbitrary Boolean logical expressions, as demonstrated below.</p>
+<section id="Логические-выражения">
+<h2>Логические выражения<a class="headerlink" href="#Логические-выражения" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В Qiskit <code class="docutils literal notranslate"><span class="pre">Grover</span></code> также может быть использован для выполнения квантового поиска на <code class="docutils literal notranslate"><span class="pre">Oracle</span></code>, построенном другими способами, помимо DIMACS. Например, <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code>, как показано ниже, может быть задан с помощью произвольных логических выражений.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -778,7 +786,7 @@ together, we get the satisfying solution <code class="docutils literal notransla
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/09/21.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -797,9 +805,9 @@ together, we get the satisfying solution <code class="docutils literal notransla
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Grover’s algorithm examples</a><ul>
-<li><a class="reference internal" href="#Finding-solutions-to-3-SAT-problems">Finding solutions to 3-SAT problems</a></li>
-<li><a class="reference internal" href="#Boolean-Logical-Expressions">Boolean Logical Expressions</a></li>
+<li><a class="reference internal" href="#">Примеры применения алгоритма Гровера</a><ul>
+<li><a class="reference internal" href="#Поиск-решений-проблемы-логической-выполнимости-3-SAT">Поиск решений проблемы логической выполнимости 3-SAT</a></li>
+<li><a class="reference internal" href="#Логические-выражения">Логические выражения</a></li>
 </ul>
 </li>
 </ul>
@@ -888,9 +896,11 @@ together, we get the satisfying solution <code class="docutils literal notransla
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

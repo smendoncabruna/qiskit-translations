@@ -94,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -171,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -223,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul class="current">
@@ -240,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -697,13 +705,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>Установка пакета Terra из исходного кода<a class="headerlink" href="#installing-terra-from-source" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Установка из исходного кода требует наличия компилятора C++ в системе, поддерживающей C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ca078653-b045-43e3-ab39-ab05b6a5dc3c" name="4ddda1f7-f86c-4076-91b3-ddc0af400e2d" type="radio">
-</input><label class="tabbed-label" for="ca078653-b045-43e3-ab39-ab05b6a5dc3c">
+<input checked="checked" id="7281c8d3-b71a-4293-94ac-053e79d80fdb" name="170b47b8-fd2a-4a72-ac06-8ce426c6991e" type="radio">
+</input><label class="tabbed-label" for="7281c8d3-b71a-4293-94ac-053e79d80fdb">
 Компилятор для Linux</label><div class="tabbed-content docutils">
 <p>На большинстве Linux-платформ уже установлен необходимый компилятор GCC.</p>
 </div>
-<input id="e9954942-3a3f-4e16-9c46-a2597c1a0424" name="4ddda1f7-f86c-4076-91b3-ddc0af400e2d" type="radio">
-</input><label class="tabbed-label" for="e9954942-3a3f-4e16-9c46-a2597c1a0424">
+<input id="72651b62-8f69-48f3-ace8-00dd32accb7c" name="170b47b8-fd2a-4a72-ac06-8ce426c6991e" type="radio">
+</input><label class="tabbed-label" for="72651b62-8f69-48f3-ace8-00dd32accb7c">
 Компилятор для macOS</label><div class="tabbed-content docutils">
 <p>Если Вы используете macOS, то можно установить компилятор Clang, предварительно установив XCode. Проверьте, установлены ли XCode и Clang на Вашей системе, открыв окно терминала и введя следующее.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -714,8 +722,8 @@ conda activate QiskitDevenv
 </pre></div>
 </div>
 </div>
-<input id="841131da-8499-42d2-ae34-3d9d538ea8a4" name="4ddda1f7-f86c-4076-91b3-ddc0af400e2d" type="radio">
-</input><label class="tabbed-label" for="841131da-8499-42d2-ae34-3d9d538ea8a4">
+<input id="7b91aa33-c4af-4b79-8395-1017e649254d" name="170b47b8-fd2a-4a72-ac06-8ce426c6991e" type="radio">
+</input><label class="tabbed-label" for="7b91aa33-c4af-4b79-8395-1017e649254d">
 Компилятор для Windows</label><div class="tabbed-content docutils">
 <p>В Windows проще всего установить компилятор Visual C++ из <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>. Также Вы можете установить Visual Studio версий 2015 или 2017, выбрав в параметрах установки компилятор С++.</p>
 </div>
@@ -783,8 +791,8 @@ conda activate QiskitDevenv
 </ol>
 <p>После этого шаги по установке Aer зависят от используемой Вами операционной системы. Поскольку Aer является скомпилированной программой C++ с интерфейсом на Python, существуют другие зависимости помимо Python для построения бинарного файла Aer, который не может быть установлен без зависимости от операционной системы.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b4555f8f-537f-433e-bf0f-4dad32e50abb" name="eb19ca61-c1a5-42c5-9efd-63f0f1a5cb77" type="radio">
-</input><label class="tabbed-label" for="b4555f8f-537f-433e-bf0f-4dad32e50abb">
+<input checked="checked" id="ec606e93-c32a-42fe-b433-730ef6d7ad61" name="025069fb-5d98-4c4c-b175-f781c73c2abd" type="radio">
+</input><label class="tabbed-label" for="ec606e93-c32a-42fe-b433-730ef6d7ad61">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Установите требуемые компилятору компоненты.</p>
@@ -810,8 +818,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="b475237f-1ccb-483f-898c-8228c83e44b0" name="eb19ca61-c1a5-42c5-9efd-63f0f1a5cb77" type="radio">
-</input><label class="tabbed-label" for="b475237f-1ccb-483f-898c-8228c83e44b0">
+<input id="91df65fe-7499-43c4-998d-6f09111d5519" name="025069fb-5d98-4c4c-b175-f781c73c2abd" type="radio">
+</input><label class="tabbed-label" for="91df65fe-7499-43c4-998d-6f09111d5519">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Установите зависимости.</p>
@@ -831,8 +839,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="3e922edc-2bfa-4f7b-bc0b-08251d90c0ca" name="eb19ca61-c1a5-42c5-9efd-63f0f1a5cb77" type="radio">
-</input><label class="tabbed-label" for="3e922edc-2bfa-4f7b-bc0b-08251d90c0ca">
+<input id="a4ae91af-47c8-462f-a68b-8636195da123" name="025069fb-5d98-4c4c-b175-f781c73c2abd" type="radio">
+</input><label class="tabbed-label" for="a4ae91af-47c8-462f-a68b-8636195da123">
 Windows</label><div class="tabbed-content docutils">
 <p>В Windows необходимо использовать <cite>Anaconda3 &lt;https://www.anaconda.com/distribution/#windows&gt;</cite> __ или <cite>Miniconda3 &lt;https://docs.conda.io/en/latest/miniconda.html&gt;</cite> __ для установки всех зависимостей.</p>
 <ol class="arabic" start="3">
@@ -1158,7 +1166,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/09/21.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -1321,9 +1329,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

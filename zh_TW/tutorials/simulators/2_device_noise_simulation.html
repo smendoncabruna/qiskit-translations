@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Device backend noise model simulations &mdash; Qiskit 0.30.0 說明文件</title>
+  <title>後端設備噪音模型模擬 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -92,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">文件首頁</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit （Terra）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 模擬（Aer）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 實驗（Ignis）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 應用程式模組（Aqua）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 應用（Aqua）搬遷指南</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 應用（Aqua）搬遷指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">疑難排解</span></p>
 <ul>
@@ -291,7 +299,7 @@
       </li>
 
         
-      <li>Device backend noise model simulations</li>
+      <li>後端設備噪音模型模擬</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -571,12 +579,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/simulators/2_device_noise_simulation.ipynb">tutorials/simulators/2_device_noise_simulation.ipynb</a>.</p>
+<p>此教程是從 <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/simulators/2_device_noise_simulation.ipynb">tutorials/simulators/2_device_noise_simulation.ipynb</a> 產生的。</p>
 </div>
-<section id="Device-backend-noise-model-simulations">
-<h1>Device backend noise model simulations<a class="headerlink" href="#Device-backend-noise-model-simulations" title="本標題的永久連結">¶</a></h1>
-<section id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="本標題的永久連結">¶</a></h2>
+<section id="後端設備噪音模型模擬">
+<h1>後端設備噪音模型模擬<a class="headerlink" href="#後端設備噪音模型模擬" title="本標題的永久連結">¶</a></h1>
+<section id="簡介">
+<h2>簡介<a class="headerlink" href="#簡介" title="本標題的永久連結">¶</a></h2>
 <p>此筆記本說明如何使用 Qiskit Aer``noise`` 模組自動生成 IBMQ 硬體裝置的基本噪聲模型，並使用此模型對  <a href="#id1"><span class="problematic" id="id2">``</span></a>QuantumCircuits``進行噪音模擬，以研究在真實裝置上發生的錯誤的影響。</p>
 <p>請注意，這些自動模型僅是在實際裝置上發生的實際錯誤的 <a href="#id1"><span class="problematic" id="id2">*</span></a>近似值 * ，因為它們必須從與閘上 <a href="#id3"><span class="problematic" id="id4">*</span></a>平均錯誤率相關的有限輸入參數建置。 關於真實裝置上的量子錯誤的研究是一個活躍的研究領域，我們討論了 Qiskit Aer 工具，用於在另一個筆記本中配置更詳細的雜訊模型。</p>
 <div class="nbinput nblast docutils container">
@@ -594,7 +602,7 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="裝置後端雜訊模型">
 <h2>裝置後端雜訊模型<a class="headerlink" href="#裝置後端雜訊模型" title="本標題的永久連結">¶</a></h2>
-<p>The <em>Qiskit Aer</em> device noise model automatically generates a simplified noise model for a real device. This model is generated using the calibration information reported in the <code class="docutils literal notranslate"><span class="pre">BackendProperties</span></code> of a device and takes into account</p>
+<p><em>Qiskit Aer</em> 元件雜訊模型會自動為真實元件生成簡化的雜訊模型。 此模型是使用在元件的 <code class="docutils literal notranslate"><span class="pre">BackendProperties</span></code> 中報告的校正資訊所產生的，且此模型考慮到</p>
 <ul class="simple">
 <li><p>每一個量子位元上的每個基底閘的*gatew_error* 機率。</p></li>
 <li><p>每一個量子位元上每一個基底閘的 <em>gate_length</em> 。</p></li>
@@ -751,7 +759,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/09/21。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -770,8 +778,8 @@ div.rendered_html tbody tr:hover {
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Device backend noise model simulations</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#">後端設備噪音模型模擬</a><ul>
+<li><a class="reference internal" href="#簡介">簡介</a></li>
 <li><a class="reference internal" href="#裝置後端雜訊模型">裝置後端雜訊模型</a><ul>
 <li><a class="reference internal" href="#Terra-模擬後台">Terra 模擬後台</a></li>
 <li><a class="reference internal" href="#用於元件和模擬比較的測試電路">用於元件和模擬比較的測試電路</a></li>
@@ -870,9 +878,11 @@ div.rendered_html tbody tr:hover {
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

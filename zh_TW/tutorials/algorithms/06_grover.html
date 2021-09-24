@@ -92,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">文件首頁</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit （Terra）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 模擬（Aer）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 實驗（Ignis）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 應用程式模組（Aqua）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 應用（Aqua）搬遷指南</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 應用（Aqua）搬遷指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">疑難排解</span></p>
 <ul>
@@ -575,15 +583,15 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="Grover-演算法與振幅放大">
 <h1>Grover 演算法與振幅放大<a class="headerlink" href="#Grover-演算法與振幅放大" title="本標題的永久連結">¶</a></h1>
-<p>Grover 演算法是 Lov Grover 在 1996 年推出的最著名的量子演算法之一[1]。 它最初是針對未結構化的搜尋問題提出的，即在非結構化資料庫中尋找標示的元素。 不過， Grover的演算法現在已成為數個其他演算法的子常式，例如 Grover Adaptive Search [2]。 如需格羅弗演算法的詳細資料，請參閱 Qiskit 教科書中的Grover演算法 &lt;<a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/grover.html">https://qiskit.org/textbook/ch-algorithms/grover.html</a>&gt;`__ 。</p>
-<p>Qiskit 會在 <a href="#id1"><span class="problematic" id="id2">``</span></a>Grover` 類別中實作 Grover 的演算法。此類別還包括一般性版本，Amplitude Amplification [3]，並容許將個別疊代和其他 meta 設定設定為 Grover 的演算法。</p>
+<p>Grover’s algorithm is one of the most famous quantum algorithms introduced by Lov Grover in 1996 [1]. It has initially been proposed for unstructured search problems, i.e. for finding a marked element in a unstructured database. However, Grover’s algorithm is now a subroutine to several other algorithms, such as Grover Adaptive Search [2]. For the details of Grover’s algorithm, please see <a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/grover.html">Grover’s Algorithm</a> in the Qiskit textbook.</p>
+<p>Qiskit implements Grover’s algorithm in the <code class="docutils literal notranslate"><span class="pre">Grover</span></code> class. This class also includes the generalized version, Amplitude Amplification [3], and allows setting individual iterations and other meta-settings to Grover’s algorithm.</p>
 <p><strong>References:</strong></p>
 <p>[1]: L. K. Grover, A fast quantum mechanical algorithm for database search. Proceedings 28th Annual Symposium on the Theory of Computing (STOC) 1996, pp. 212-219. <a class="reference external" href="https://arxiv.org/abs/quant-ph/9605043">https://arxiv.org/abs/quant-ph/9605043</a></p>
 <p>[2]: A. Gilliam, S. Woerner, C. Gonciulea, Grover Adaptive Search for Constrained Polynomial Binary Optimization. <a class="reference external" href="https://arxiv.org/abs/1912.04088">https://arxiv.org/abs/1912.04088</a></p>
 <p>[3]: Brassard, G., Hoyer, P., Mosca, M., &amp; Tapp, A. (2000). Quantum Amplitude Amplification and Estimation. <a class="reference external" href="http://arxiv.org/abs/quant-ph/0005055">http://arxiv.org/abs/quant-ph/0005055</a></p>
 <section id="Grover’s-algorithm">
 <h2>Grover’s algorithm<a class="headerlink" href="#Grover’s-algorithm" title="本標題的永久連結">¶</a></h2>
-<p>Grover 的演算法使用 Grover 算子 <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> 來放大良好狀態的振幅:</p>
+<p>Grover’s algorithm uses the Grover operator <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> to amplify the amplitudes of the good states:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{Q} = \mathcal{A}\mathcal{S_0}\mathcal{A}^\dagger \mathcal{S_f}\]</div>
 <p>Here, * <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> is the initial search state for the algorithm, which is just Hadamards, <span class="math notranslate nohighlight">\(H^{\otimes n}\)</span> for the textbook Grover search, but can be more elaborate for Amplitude Amplification * <span class="math notranslate nohighlight">\(\mathcal{S_0}\)</span> is the reflection about the all 0 state</p>
@@ -1135,7 +1143,7 @@ True
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/09/21。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1260,9 +1268,11 @@ True
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>
