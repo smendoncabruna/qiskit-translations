@@ -515,16 +515,16 @@ div.rendered_html tbody tr:hover {
 <h1>Neural Network Classifier &amp; Regressor<a class="headerlink" href="#Neural-Network-Classifier-&-Regressor" title="Permalink to this headline">¶</a></h1>
 <p>In this tutorial we show how the <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> and <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> are used. Both take as an input a (Quantum) <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> and leverage it in a specific context. In both cases we also provide a pre-configured variant for convenience, the Variational Quantum Classifier (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>) and Variational Quantum Regressor (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>). The tutorial is structured as follows:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="#Classification">Classification</a></p>
+<li><p><a class="reference external" href="#Classification">Phân loại</a></p>
 <ul class="simple">
-<li><p>Classification with an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></p></li>
-<li><p>Classification with a <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code></p></li>
+<li><p>Phân loại với <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></p></li>
+<li><p>Phân loại với <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code></p></li>
 <li><p>Biến thể Phân loại Lượng tử (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#Regression">Regression</a></p>
+<li><p><a class="reference external" href="#Regression">Hồi quy</a></p>
 <ul class="simple">
-<li><p>Regression with an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></p></li>
+<li><p>Hồi quy với một <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></p></li>
 <li><p>Biến thể Hồi quy Lượng tử (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)</p></li>
 </ul>
 </li>
@@ -565,8 +565,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classification">
-<h2>Classification<a class="headerlink" href="#Classification" title="Permalink to this headline">¶</a></h2>
+<section id="Phân-loại">
+<h2>Phân loại<a class="headerlink" href="#Phân-loại" title="Permalink to this headline">¶</a></h2>
 <p>We prepare a simple classification dataset to illustrate the following algorithms.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -726,8 +726,8 @@ parameters mentioned passed.</p>
 </div>
 </div>
 </section>
-<section id="Classification-with-a-CircuitQNN">
-<h3>Classification with a <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#Classification-with-a-CircuitQNN" title="Permalink to this headline">¶</a></h3>
+<section id="Phân-loại-với-CircuitQNN">
+<h3>Phân loại với <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#Phân-loại-với-CircuitQNN" title="Permalink to this headline">¶</a></h3>
 <p>Next we show how a <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> can be used for classification within a <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>. In this context, the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> is expected to return <span class="math notranslate nohighlight">\(d\)</span>-dimensional probability vector as output, where <span class="math notranslate nohighlight">\(d\)</span> denotes the number of classes. Sampling from a <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> automatically results in a probability distribution and we just need to define a mapping from the measured bitstrings to the different classes. For binary classification we use the parity mapping.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -950,8 +950,8 @@ parameters mentioned passed.</p>
 </div>
 </section>
 </section>
-<section id="Regression">
-<h2>Regression<a class="headerlink" href="#Regression" title="Permalink to this headline">¶</a></h2>
+<section id="Hồi-quy">
+<h2>Hồi quy<a class="headerlink" href="#Hồi-quy" title="Permalink to this headline">¶</a></h2>
 <p>We prepare a simple regression dataset to illustrate the following algorithms.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
@@ -980,8 +980,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="Regression-with-an-OpflowQNN">
-<h3>Regression with an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#Regression-with-an-OpflowQNN" title="Permalink to this headline">¶</a></h3>
+<section id="Hồi-quy-với-một-OpflowQNN">
+<h3>Hồi quy với một <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#Hồi-quy-với-một-OpflowQNN" title="Permalink to this headline">¶</a></h3>
 <p>Here we restrict to regression with an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> that returns values in <span class="math notranslate nohighlight">\([-1, +1]\)</span>. More complex and also multi-dimensional models could be constructed, also based on <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> but that exceeds the scope of this tutorial.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1226,14 +1226,14 @@ parameters mentioned passed.</p>
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Neural Network Classifier &amp; Regressor</a><ul>
-<li><a class="reference internal" href="#Classification">Classification</a><ul>
+<li><a class="reference internal" href="#Phân-loại">Phân loại</a><ul>
 <li><a class="reference internal" href="#Classification-with-the-an-OpflowQNN">Classification with the an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></a></li>
-<li><a class="reference internal" href="#Classification-with-a-CircuitQNN">Classification with a <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code></a></li>
+<li><a class="reference internal" href="#Phân-loại-với-CircuitQNN">Phân loại với <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code></a></li>
 <li><a class="reference internal" href="#Biến-thể-Phân-loại-Lượng-tử-(VQC)">Biến thể Phân loại Lượng tử (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Regression">Regression</a><ul>
-<li><a class="reference internal" href="#Regression-with-an-OpflowQNN">Regression with an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></a></li>
+<li><a class="reference internal" href="#Hồi-quy">Hồi quy</a><ul>
+<li><a class="reference internal" href="#Hồi-quy-với-một-OpflowQNN">Hồi quy với một <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code></a></li>
 <li><a class="reference internal" href="#Regression-with-the-Variational-Quantum-Regressor-(VQR)">Regression with the Variational Quantum Regressor (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)</a></li>
 </ul>
 </li>
