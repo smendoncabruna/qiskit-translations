@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using Classical Optimization Solvers and Models with Qiskit Optimization &mdash; Qiskit Optimization 0.2.2 documentation</title>
+  <title>Qiskit অপ্টিমাইজেশনের সাথে ক্লাসিক্যাল অপ্টিমাইজেশন সলভার এবং মডেল ব্যবহার করা &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
     <link rel="next" title="Release Notes" href="../release_notes.html" />
-    <link rel="prev" title="Warm-starting quantum optimization" href="10_warm_start_qaoa.html" /> 
+    <link rel="prev" title="কোয়ান্টাম অনুকূলকরণের (অপটিমাইজেশন) প্রস্তুতিপর্ব" href="10_warm_start_qaoa.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
         
-      <li>Using Classical Optimization Solvers and Models with Qiskit Optimization</li>
+      <li>Qiskit অপ্টিমাইজেশনের সাথে ক্লাসিক্যাল অপ্টিমাইজেশন সলভার এবং মডেল ব্যবহার করা</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,21 +482,21 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/11_using_classical_optimization_solvers_and_models.ipynb">docs/tutorials/11_using_classical_optimization_solvers_and_models.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি তৈরি হয়েছে <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/11_using_classical_optimization_solvers_and_models.ipynb">docs/tutorials/11_using_classical_optimization_solvers_and_models.ipynb</a> থেকে।</p>
 </div>
-<div class="section" id="Using-Classical-Optimization-Solvers-and-Models-with-Qiskit-Optimization">
-<h1>Using Classical Optimization Solvers and Models with Qiskit Optimization<a class="headerlink" href="#Using-Classical-Optimization-Solvers-and-Models-with-Qiskit-Optimization" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<p>We can use classical optimization solvers (CPLEX and Gurobi) with Qiskit Optimization. Docplex and Gurobipy are the Python APIs for CPLEX and Gurobi, respectively. We can load and save an optimization model by Docplex and Gurobipy and can apply CPLEX and Gurobi to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>.</p>
-<p>If you want to use the CPLEX solver, you need to install <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[cplex]'</span></code>. Docplex is automatically installed, as a dependent, when you install Qiskit Optimization.</p>
-<p>If you want to use Gurobi and Gurobipy, you need to install <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[gurobi]'</span></code>.</p>
-<p>Note that these solvers installed via pip are free versions, which have some limitations such as number of variables. Also note that the latest version 20.1 of CPLEX is available only for Python 3.7 and 3.8 as of July 2021. See the following pages for details.</p>
+<div class="section" id="Qiskit-অপ্টিমাইজেশনের-সাথে-ক্লাসিক্যাল-অপ্টিমাইজেশন-সলভার-এবং-মডেল-ব্যবহার-করা">
+<h1>Qiskit অপ্টিমাইজেশনের সাথে ক্লাসিক্যাল অপ্টিমাইজেশন সলভার এবং মডেল ব্যবহার করা<a class="headerlink" href="#Qiskit-অপ্টিমাইজেশনের-সাথে-ক্লাসিক্যাল-অপ্টিমাইজেশন-সলভার-এবং-মডেল-ব্যবহার-করা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<p>আমরা Qiskit অপ্টিমাইজেশনের সাথে ক্লাসিক্যাল অপটিমাইজেশন সলভার (CPLEX এবং Gurobi) ব্যবহার করতে পারি। ডকপ্লেক্স এবং গুরোবিপি যথাক্রমে সিপিএলইএক্স এবং গুরোবির জন্য পাইথন এপিআই। আমরা ডকপ্লেক্স এবং গুরোবিপি দ্বারা একটি অপটিমাইজেশন মডেল লোড এবং সংরক্ষণ করতে পারি এবং CPLEX এবং Gurobi কে <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এ প্রয়োগ করতে পারি।</p>
+<p>যদি আপনি CPLEX solver ব্যবহার করতে চান, তাহলে আপনাকে <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization</span> <span class="pre">[cplex]</span></code> ইনস্টল করতে হবে। যখন আপনি Qiskit অপ্টিমাইজেশন ইনস্টল করেন তখন ডকপ্লেক্স স্বয়ংক্রিয়ভাবে একটি নির্ভরশীল হিসাবে ইনস্টল করা হয়।</p>
+<p>আপনি যদি Gurobi এবং Gurobipy ব্যবহার করতে চান, তাহলে আপনাকে <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization</span> <span class="pre">[gurobi]</span></code> ইনস্টল করতে হবে।</p>
+<p>লক্ষ্য করুন যে pip এর মাধ্যমে ইনস্টল করা এই সমাধানগুলি বিনামূল্যে সংস্করণ, যার কিছু সীমাবদ্ধতা রয়েছে যেমন ভেরিয়েবলের সংখ্যা। এছাড়াও মনে রাখবেন যে CPLEX এর সর্বশেষ সংস্করণ 20.1 জুলাই 2021 অনুযায়ী পাইথন 3.7 এবং 3.8 এর জন্য উপলব্ধ। বিস্তারিত জানার জন্য নিম্নলিখিত পৃষ্ঠাগুলি দেখুন।</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pypi.org/project/cplex/">https://pypi.org/project/cplex/</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/gurobipy/">https://pypi.org/project/gurobipy/</a></p></li>
 </ul>
-<div class="section" id="CplexSolver-and-GurobiSolver">
-<h2>CplexSolver and GurobiSolver<a class="headerlink" href="#CplexSolver-and-GurobiSolver" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Qiskit Optimization supports the classical solvers of CPLEX and Gurobi as <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> and <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code>, respectively. We can solve <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> with <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> and <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code> as follows.</p>
+<div class="section" id="CplexSolver-এবং-GurobiSolver">
+<h2>CplexSolver এবং GurobiSolver<a class="headerlink" href="#CplexSolver-এবং-GurobiSolver" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>Qiskit অপ্টিমাইজেশান যথাক্রমে <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> এবং <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code> হিসাবে CPLEX এবং Gurobi এর ক্লাসিক্যাল সমাধানকারীগুলিকে সমর্থন করে। আমরা নিম্নরূপ <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> এবং <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code> দিয়ে <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> সমাধান করতে পারি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -572,7 +572,7 @@ optimal value: [1. 4.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>We can set the solver parameter of CPLEX as follows. We can display the solver message of CPLEX by setting <code class="docutils literal notranslate"><span class="pre">disp=True</span></code>. See <a class="reference external" href="https://www.ibm.com/docs/en/icos/20.1.0?topic=cplex-parameters">Parameters of CPLEX</a> for details of CPLEX parameters.</p>
+<p>আমরা নিম্নরূপ CPLEX এর সমাধানকারী প্যারামিটার সেট করতে পারি। আমরা CPLEX এর সমাধানকারী বার্তাটি <code class="docutils literal notranslate"><span class="pre">disp</span> <span class="pre">=</span> <span class="pre">True</span></code> সেট করে প্রদর্শন করতে পারি। CPLEX প্যারামিটারের বিস্তারিত জানার জন্য <a class="reference external" href="https://www.ibm.com/docs/en/icos/20.1.0?topic=cplex-parameters">Parameters of CPLEX</a> দেখুন।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -613,7 +613,7 @@ optimal value: [1. 4.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>We get the same optimal solution by QAOA as follows.</p>
+<p>আমরা QAOA দ্বারা একই নিম্নরূপ অনুকূল সমাধান পাই।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -654,10 +654,10 @@ SolutionSample(x=array([0., 0.]), fval=0.0, probability=0.07999999999999999, sta
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Translators-between-QuadraticProgram-and-Docplex/Gurobipy">
-<h2>Translators between <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> and Docplex/Gurobipy<a class="headerlink" href="#Translators-between-QuadraticProgram-and-Docplex/Gurobipy" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Qiskit Optimization can load <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> from a Docplex model and a Gurobipy model.</p>
-<p>First, we define an optimization problem by Docplex and Gurobipy.</p>
+<div class="section" id="QuadraticProgram-এবং-Docplex/Gurobipy-এর-মধ্যে-অনুবাদক">
+<h2><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এবং Docplex/Gurobipy এর মধ্যে অনুবাদক<a class="headerlink" href="#QuadraticProgram-এবং-Docplex/Gurobipy-এর-মধ্যে-অনুবাদক" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>কিস্কিট অপ্টিমাইজেশন একটি ডকপ্লেক্স মডেল এবং একটি গুরোবিপি মডেল থেকে <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> লোড করতে পারে।</p>
+<p>প্রথমত, আমরা ডকপ্লেক্স এবং গুরোবিপি দ্বারা একটি অপ্টিমাইজেশান সমস্যা সংজ্ঞায়িত করি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -728,7 +728,7 @@ General Integers
    [&#39;y&#39;]
 </pre></div></div>
 </div>
-<p>We can generate <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> object from both Docplex and Gurobipy models. We see that the two <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> objects generated from Docplex and Gurobipy are identical.</p>
+<p>আমরা ডকপ্লেক্স এবং গুরোবিপি মডেল দুটো থেকে <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> অবজেক্ট তৈরি করতে পারি। আমরা দেখি যে ডকপ্লেক্স এবং গুরোবিপি থেকে উৎপন্ন দুটি <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> বস্তু অভিন্ন।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -795,7 +795,7 @@ End
 
 </pre></div></div>
 </div>
-<p>We can generate a Docplex model and a Gurobipy model from <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> too.</p>
+<p>আমরা <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> থেকে একটি ডকপ্লেক্স মডেল এবং একটি গুরোবিপি মডেল তৈরি করতে পারি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -846,9 +846,9 @@ subject to {
 }
 </pre></div></div>
 </div>
-<div class="section" id="Indicator-constraints-of-Docplex">
-<h3>Indicator constraints of Docplex<a class="headerlink" href="#Indicator-constraints-of-Docplex" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code> supports indicator constraints, e.g., <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">=&gt;</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">&lt;=</span> <span class="pre">z</span></code> (u: binary variable) when we convert a Docplex model into <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. It converts indicator constraints into linear constraints using the big-M formulation.</p>
+<div class="section" id="ডকপ্লেক্সের-নির্দেশক-সীমাবদ্ধতা">
+<h3>ডকপ্লেক্সের নির্দেশক সীমাবদ্ধতা<a class="headerlink" href="#ডকপ্লেক্সের-নির্দেশক-সীমাবদ্ধতা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code> সূচক সীমাবদ্ধতাগুলিকে সমর্থন করে, যেমন, <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">=&gt;</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">&lt;=</span> <span class="pre">z</span></code> (u: বাইনারি ভেরিয়েবল) যখন আমরা একটি ডকপ্লেক্স মডেলকে <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এ রূপান্তর করি। এটি বড়-এম সূত্র ব্যবহার করে সূচক সীমাবদ্ধতাগুলিকে রৈখিক সীমাবদ্ধতায় রূপান্তরিত করে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -892,12 +892,12 @@ End
 
 </pre></div></div>
 </div>
-<p>Let’s compare the solutions of the model with an indicator constraint by</p>
+<p>আসুন মডেলের সমাধানগুলি একটি সূচক সীমাবদ্ধতার সাথে তুলনা করি</p>
 <ol class="arabic simple">
-<li><p>applying CPLEX directly to the Docplex model (without translating it to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. CPLEX solver natively supports the indicator constraints),</p></li>
-<li><p>applying QAOA to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> obtained by <code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code>.</p></li>
+<li><p>CPLEX সরাসরি ডকপ্লেক্স মডেলে প্রয়োগ করা (এটি <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এ অনুবাদ না করে। CPLEX solver স্থানীয়ভাবে নির্দেশক সীমাবদ্ধতা সমর্থন করে),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code> দ্বারা প্রাপ্ত <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এ QAOA প্রয়োগ করা।</p></li>
 </ol>
-<p>We see the solutions are same.</p>
+<p>আমরা দেখি সমাধান একই।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -970,7 +970,7 @@ z=-1
         <a href="../release_notes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="10_warm_start_qaoa.html" class="btn btn-neutral" title="Warm-starting quantum optimization" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="10_warm_start_qaoa.html" class="btn btn-neutral" title="কোয়ান্টাম অনুকূলকরণের (অপটিমাইজেশন) প্রস্তুতিপর্ব" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1002,10 +1002,10 @@ z=-1
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Using Classical Optimization Solvers and Models with Qiskit Optimization</a><ul>
-<li><a class="reference internal" href="#CplexSolver-and-GurobiSolver">CplexSolver and GurobiSolver</a></li>
-<li><a class="reference internal" href="#Translators-between-QuadraticProgram-and-Docplex/Gurobipy">Translators between <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> and Docplex/Gurobipy</a><ul>
-<li><a class="reference internal" href="#Indicator-constraints-of-Docplex">Indicator constraints of Docplex</a></li>
+<li><a class="reference internal" href="#">Qiskit অপ্টিমাইজেশনের সাথে ক্লাসিক্যাল অপ্টিমাইজেশন সলভার এবং মডেল ব্যবহার করা</a><ul>
+<li><a class="reference internal" href="#CplexSolver-এবং-GurobiSolver">CplexSolver এবং GurobiSolver</a></li>
+<li><a class="reference internal" href="#QuadraticProgram-এবং-Docplex/Gurobipy-এর-মধ্যে-অনুবাদক"><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এবং Docplex/Gurobipy এর মধ্যে অনুবাদক</a><ul>
+<li><a class="reference internal" href="#ডকপ্লেক্সের-নির্দেশক-সীমাবদ্ধতা">ডকপ্লেক্সের নির্দেশক সীমাবদ্ধতা</a></li>
 </ul>
 </li>
 </ul>

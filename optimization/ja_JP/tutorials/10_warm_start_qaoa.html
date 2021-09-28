@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Warm-starting quantum optimization &mdash; Qiskit Optimization 0.2.2 ドキュメント</title>
+  <title>ウォーム・スタート・量子最適化 &mdash; Qiskit Optimization 0.2.3 ドキュメント</title>
   
 
   
@@ -29,15 +29,15 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="index" title="インデックス" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Using Classical Optimization Solvers and Models with Qiskit Optimization" href="11_using_classical_optimization_solvers_and_models.html" />
+    <link rel="next" title="Qiskit Optimization での古典的最適化ソルバーとモデルの使用" href="11_using_classical_optimization_solvers_and_models.html" />
     <link rel="prev" title="最適化問題のアプリケーション・クラス" href="09_application_classes.html" /> 
 
   
@@ -95,7 +95,7 @@
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>言語</dt>
       
         <dd><a class="version" href="/documentation/optimization/tutorials/10_warm_start_qaoa.html">English</a></dd>
       
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -156,10 +156,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API リファレンス</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">リリースノート</a></li>
 </ul>
 
             
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
         
-      <li>Warm-starting quantum optimization</li>
+      <li>ウォーム・スタート・量子最適化</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,24 +482,24 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/10_warm_start_qaoa.ipynb">docs/tutorials/10_warm_start_qaoa.ipynb</a>.</p>
+<p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/10_warm_start_qaoa.ipynb">docs/tutorials/10_warm_start_qaoa.ipynb</a> から生成されました。</p>
 </div>
-<div class="section" id="Warm-starting-quantum-optimization">
-<h1>Warm-starting quantum optimization<a class="headerlink" href="#Warm-starting-quantum-optimization" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Optimization problems with integer variables or constraints are often hard to solve. For example, the Quadratic Unconstrained Binary Optimization (QUBO) problem, i.e.</p>
+<div class="section" id="ウォーム・スタート・量子最適化">
+<h1>ウォーム・スタート・量子最適化<a class="headerlink" href="#ウォーム・スタート・量子最適化" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="はじめに">
+<h2>はじめに<a class="headerlink" href="#はじめに" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>整数変数や制約による最適化問題は、しばしば解くのが困難です。例えば、制約なし二次形式二値変数最適化(QUBO)問題 、すなわち</p>
 <p><span class="math">\begin{align}
 \min_{x\in\{0,1\}^n}x^T\Sigma x + \mu^Tx,
 \end{align}</span></p>
-<p>is NP-Hard. Here, <span class="math notranslate nohighlight">\(\Sigma\)</span> is an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix and <span class="math notranslate nohighlight">\(x\)</span> is a vector of <span class="math notranslate nohighlight">\(n\)</span> binary variables. Note that we could have added the linear term <span class="math notranslate nohighlight">\(\mu\)</span> to the diagonal as <span class="math notranslate nohighlight">\(x_i^2=x_i\)</span> for <span class="math notranslate nohighlight">\(x_i\in\{0, 1\}\)</span>. While QUBOs are hard to solve there exists many ways to relax them to problems that are easier to solve. For example, if <span class="math notranslate nohighlight">\(\Sigma\)</span> is semi-definite positive the QUBO can be relaxed and results in a convex Quadratic Program</p>
+<p>は NP-Hard です。ここで、<span class="math notranslate nohighlight">\(\Sigma\)</span> は <span class="math notranslate nohighlight">\(n\times n\)</span> 行列で <span class="math notranslate nohighlight">\(x\)</span> は <span class="math notranslate nohighlight">\(n\)</span> 次のバイナリ値のベクトルです。ここで <span class="math notranslate nohighlight">\(x_i^2=x_i\)</span> for <span class="math notranslate nohighlight">\(x_i\in\{0, 1\}\)</span> なので対角成分に線形項 <span class="math notranslate nohighlight">\(\mu\)</span> を加えても良いことに注意してください。QUBO は解くのが難しいですが、解きやすい問題に緩和するたくさんの方法があります。例えば、もし <span class="math notranslate nohighlight">\(\Sigma\)</span> が半正定値ならば QUBO は凸二次最適化問題に帰着します。</p>
 <p><span class="math">\begin{align}
 \min_{x\in[0,1]^n}x^T\Sigma x,
 \end{align}</span></p>
-<p>which becomes easy to solve as <span class="math notranslate nohighlight">\(x\)</span> now represents <span class="math notranslate nohighlight">\(n\)</span> continuous variables bound to the range <span class="math notranslate nohighlight">\([0, 1]\)</span>. Such relaxations can be leveraged to warm-start quantum optimization algorithms as shown in [1].</p>
+<p>これは <span class="math notranslate nohighlight">\(x\)</span> で簡単に解けるようになりました。ここで <span class="math notranslate nohighlight">\(n\)</span> は <span class="math notranslate nohighlight">\([0, 1]\)</span> の範囲の連続変数です。このような緩和は [1] にあるように、ウォーム・スタート量子最適化問題に活用できます。</p>
 </div>
-<div class="section" id="References">
-<h2>References<a class="headerlink" href="#References" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="参考文献">
+<h2>参考文献<a class="headerlink" href="#参考文献" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>[1] <a class="reference external" href="http://arxiv.org/abs/2009.10095">D. J. Egger, J Marecek, S. Woerner, Warm-starting quantum optimization, arXiv:2009.10095</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -526,9 +526,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Preliminaries:-relaxing-QUBOs">
-<h2>Preliminaries: relaxing QUBOs<a class="headerlink" href="#Preliminaries:-relaxing-QUBOs" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>First, we show how to relax a QUBO built with a semi-definite positive matrix to obtain an easy-to-solve QP.</p>
+<div class="section" id="準備：QUBO-の緩和">
+<h2>準備：QUBO の緩和<a class="headerlink" href="#準備：QUBO-の緩和" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、半確定正の行列で構築された QUBO をリラックスして、解決しやすい QP を実現する方法を説明します。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -559,7 +559,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>For this example, we use a positive semi-definite matrix <span class="math notranslate nohighlight">\(\Sigma\)</span> and a linear term <span class="math notranslate nohighlight">\(\mu\)</span> as defined below.</p>
+<p>この例では、以下に定義する半正定値行列 <span class="math notranslate nohighlight">\(\Sigma\)</span> と線形項 <span class="math notranslate nohighlight">\(\mu\)</span> を使用します。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -575,7 +575,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Using DOCPLEX we build a model with binary variables.</p>
+<p>DOCPLEXを使用して、バイナリ変数のモデルを構築します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -622,7 +622,7 @@ Binaries
 End
 </pre></div></div>
 </div>
-<p>Such binary problems are hard to deal with but can be solved if the problem instance is small enough. Our example above has as solution</p>
+<p>このようなバイナリ問題は扱いにくいですが、問題のインスタンスが十分に小さい場合は解くことができます。上記の例では次の解を持ちます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -643,7 +643,7 @@ optimal value: [0. 0. 1. 1. 1. 0.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>We can create a relaxation of this problem in which the variables are no longer binary. Note that we use the <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToQubo</span></code> converter to convert the constraint into a quadratic penalty term. We do this to remain consistent with the steps that the Qiskit optimization module applies internally.</p>
+<p>この問題は変数がもはやバイナリではない問題に緩和することができます。制約を2次ペナルティ項に変換するために、<code class="docutils literal notranslate"><span class="pre">QuadraticProgramToQubo</span></code> コンバータを使用することに注意してください。Qiskit 最適化モジュールが内部的に適用するステップと整合性を保つためにこれを行います。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -687,7 +687,7 @@ Bounds
 End
 </pre></div></div>
 </div>
-<p>The solution of this continuous relaxation is different from the solution to the binary problem but can be used to warm-start a solver when dealing with the binary problem.</p>
+<p>この連続的な緩和の解はバイナリ問題の解と異なりますが、バイナリ問題を扱う限りソルバーをウォーム・スタートするために使用することができます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -737,10 +737,10 @@ status: SUCCESS
 </div>
 <div class="section" id="QAOA">
 <h2>QAOA<a class="headerlink" href="#QAOA" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Here, we illustrate how to warm-start the quantum approximate optimization algorithm (QAOA) by leveraging the relaxed problem shown above.</p>
-<div class="section" id="Standard-QAOA">
-<h3>Standard QAOA<a class="headerlink" href="#Standard-QAOA" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>First, we use standard QAOA to solve the QUBO. To do this, we convert the QUBO to Qiskit’s QuadraticProgram class (note that the resulting problem is still a binary problem).</p>
+<p>ここでは、上記の緩和された問題を活用することにより、量子近似最適化アルゴリズム ( QAOA) をウォーム・スタートする方法を説明します。</p>
+<div class="section" id="標準的な-QAOA">
+<h3>標準的な QAOA<a class="headerlink" href="#標準的な-QAOA" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>まず標準の QAOA を使用して、QUBOを解きます。これを行うために、QUBO を Qiskit の QuadraticProgram クラスに変換します (結果として生じる問題は依然としてバイナリー問題であることに注意してください) 。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -785,13 +785,13 @@ status: SUCCESS
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Warm-start-QAOA">
-<h3>Warm-start QAOA<a class="headerlink" href="#Warm-start-QAOA" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Next, we compare this result to a warm-start QAOA in which we use the solution to the continuous relaxation of the problem. First, we create the initial state</p>
+<div class="section" id="ウォーム・スタート-QAOA">
+<h3>ウォーム・スタート QAOA<a class="headerlink" href="#ウォーム・スタート-QAOA" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次に、この結果をウォーム・スタート QAOA と比較します。この QAOA には連続的な緩和を行った問題の解を使います。最初に、初期状態を作成します。</p>
 <p><span class="math">\begin{align}
 |\phi^*\rangle=\bigotimes_{i=0}^{n-1}R_y(\theta_i)|0\rangle_n .
 \end{align}</span></p>
-<p>which is given by applying <span class="math notranslate nohighlight">\(R_y\)</span> rotations with an angle <span class="math notranslate nohighlight">\(\theta=2\arcsin(\sqrt{c^*_i})\)</span> that depends on the solution to the relaxed problem. Here, <span class="math notranslate nohighlight">\(c^*_i\)</span> the value of variable <span class="math notranslate nohighlight">\(i\)</span> of the relaxed problem.</p>
+<p>これは <span class="math notranslate nohighlight">\(R_y\)</span> 回転を角 <span class="math notranslate nohighlight">\(\theta=2\arcsin(\sqrt{c^*_i})\)</span> で適用することで与えられます。この角は緩和した問題の解に依存します。ここで <span class="math notranslate nohighlight">\(c^*_i\)</span> は緩和した問題の変数 <span class="math notranslate nohighlight">\(i\)</span> の値です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -817,7 +817,7 @@ status: SUCCESS
 <img alt="../_images/tutorials_10_warm_start_qaoa_20_0.png" src="../_images/tutorials_10_warm_start_qaoa_20_0.png" />
 </div>
 </div>
-<p>Next, we create the mixer operator for QAOA. When warm-starting QAOA we must ensure that the mixer operator has the initial state as ground state. We therefore chose the Hamiltonian</p>
+<p>次に QAOA のミキサー演算子を作成します。ウォーム・スタート QAOA では、ミキサー演算子の初期状態が基底状態になっていることを確認する必要があります。そのため次のハミルトニアンを選びます</p>
 <p><span class="math">\begin{align}
 H_{M,i}^{(ws)}=
 \begin{pmatrix}
@@ -825,7 +825,7 @@ H_{M,i}^{(ws)}=
 -2\sqrt{c_i^*(1-c_i^*)} & 1-2c_i^*
 \end{pmatrix}
 \end{align}</span></p>
-<p>as mixer operator for qubit <span class="math notranslate nohighlight">\(i\)</span>. Once multiplied by <span class="math notranslate nohighlight">\(-i\beta\)</span> and exponentiated this mixer produces the following mixer circuit.</p>
+<p>これは量子ビット <span class="math notranslate nohighlight">\(i\)</span> のミキサー演算子のハミルトニアンです。 <span class="math notranslate nohighlight">\(-i\beta\)</span> を乗じ指数をとると、このミキサーは次のミキサー回路を生成します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -853,7 +853,7 @@ H_{M,i}^{(ws)}=
 <img alt="../_images/tutorials_10_warm_start_qaoa_22_0.png" src="../_images/tutorials_10_warm_start_qaoa_22_0.png" />
 </div>
 </div>
-<p>The initial state and mixer operator can then be passed to QAOA.</p>
+<p>こうして初期状態とミキサー演算子は QAOA に渡すことができます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -896,9 +896,9 @@ status: SUCCESS
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Analysis">
-<h3>Analysis<a class="headerlink" href="#Analysis" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Both results appear to give the same result. However, when we look at the underlying probability distribution we observe that the warm-start QAOA has a much higher probability of sampling the optimal solution.</p>
+<div class="section" id="分析">
+<h3>分析<a class="headerlink" href="#分析" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>どちらの結果も同じ結果を与えます。しかし、基礎となる確率分布を観察すると、ウォーム・スタート QAOA は最適なソリューションをサンプリングする確率が高くなることが観察されます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -962,8 +962,8 @@ status: SUCCESS
 </div>
 </div>
 <div class="section" id="id2">
-<h2>Warm-start QAOA<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The warm-start features above are available in the Qiskit optimization module as a single optimizer named <code class="docutils literal notranslate"><span class="pre">WarmStartQAOAOptimizer</span></code> which is illustrated below. This solver will solve a QUBO with a warm-start QAOA. It computes <span class="math notranslate nohighlight">\(c^*\)</span> by relaxing the problem. This behavior is controlled by setting <code class="docutils literal notranslate"><span class="pre">relax_for_pre_solver</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<h2>ウォーム・スタート QAOA<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>上記の warm-start 機能は、下にある <code class="docutils literal notranslate"><span class="pre">WarmStartQAOAOptimizer</span></code> という名前の単一のオプティマイザーとして、Qiskit 最適化モジュールで利用可能です。このソルバーはウォーム・スタート QAOA で QUBO を解きます。それは問題を緩和することによって <span class="math notranslate nohighlight">\(c^*\)</span> を計算します。この動作は <code class="docutils literal notranslate"><span class="pre">relax_for_pre_solver</span></code> を <code class="docutils literal notranslate"><span class="pre">True</span></code> に設定することで制御できます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -1072,7 +1072,7 @@ status: SUCCESS
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="11_using_classical_optimization_solvers_and_models.html" class="btn btn-neutral float-right" title="Using Classical Optimization Solvers and Models with Qiskit Optimization" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="11_using_classical_optimization_solvers_and_models.html" class="btn btn-neutral float-right" title="Qiskit Optimization での古典的最適化ソルバーとモデルの使用" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="09_application_classes.html" class="btn btn-neutral" title="最適化問題のアプリケーション・クラス" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1107,17 +1107,17 @@ status: SUCCESS
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Warm-starting quantum optimization</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#References">References</a></li>
-<li><a class="reference internal" href="#Preliminaries:-relaxing-QUBOs">Preliminaries: relaxing QUBOs</a></li>
+<li><a class="reference internal" href="#">ウォーム・スタート・量子最適化</a><ul>
+<li><a class="reference internal" href="#はじめに">はじめに</a></li>
+<li><a class="reference internal" href="#参考文献">参考文献</a></li>
+<li><a class="reference internal" href="#準備：QUBO-の緩和">準備：QUBO の緩和</a></li>
 <li><a class="reference internal" href="#QAOA">QAOA</a><ul>
-<li><a class="reference internal" href="#Standard-QAOA">Standard QAOA</a></li>
-<li><a class="reference internal" href="#Warm-start-QAOA">Warm-start QAOA</a></li>
-<li><a class="reference internal" href="#Analysis">Analysis</a></li>
+<li><a class="reference internal" href="#標準的な-QAOA">標準的な QAOA</a></li>
+<li><a class="reference internal" href="#ウォーム・スタート-QAOA">ウォーム・スタート QAOA</a></li>
+<li><a class="reference internal" href="#分析">分析</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id2">Warm-start QAOA</a></li>
+<li><a class="reference internal" href="#id2">ウォーム・スタート QAOA</a></li>
 </ul>
 </li>
 </ul>

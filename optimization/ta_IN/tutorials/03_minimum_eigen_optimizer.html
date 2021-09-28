@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Minimum Eigen Optimizer &mdash; Qiskit Optimization 0.2.2 documentation</title>
+  <title>குறைந்தபட்ச ஈகன் ஆப்டிமைசர் &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -29,16 +29,16 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Grover Optimizer" href="04_grover_optimizer.html" />
-    <link rel="prev" title="Converters for Quadratic Programs" href="02_converters_for_quadratic_programs.html" /> 
+    <link rel="index" title="அட்டவணை" href="../genindex.html" />
+    <link rel="search" title="தேடு" href="../search.html" />
+    <link rel="next" title="க்ரோவர் ஆப்டிமைசர்" href="04_grover_optimizer.html" />
+    <link rel="prev" title="Quadratic நிரல்களுக்கான மாற்றிகள்" href="02_converters_for_quadratic_programs.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,7 +95,7 @@
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>மொழிகள்</dt>
       
         <dd><a class="version" href="/documentation/optimization/tutorials/03_minimum_eigen_optimizer.html">English</a></dd>
       
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -156,10 +156,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">தொடங்குதல்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API குறிப்பு</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">பயிற்சிகள்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">வெளியீட்டு குறிப்புகள்</a></li>
 </ul>
 
             
@@ -200,9 +200,9 @@
       </li>
 
         
-          <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
+          <li><a href="index.html">மேம்படுத்தல் பயிற்சிகள்</a> &gt;</li>
         
-      <li>Minimum Eigen Optimizer</li>
+      <li>குறைந்தபட்ச ஈகன் ஆப்டிமைசர்</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,12 +482,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/03_minimum_eigen_optimizer.ipynb">docs/tutorials/03_minimum_eigen_optimizer.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/03_minimum_eigen_optimizer.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<div class="section" id="Minimum-Eigen-Optimizer">
-<h1>Minimum Eigen Optimizer<a class="headerlink" href="#Minimum-Eigen-Optimizer" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="குறைந்தபட்ச-ஈகன்-ஆப்டிமைசர்">
+<h1>குறைந்தபட்ச ஈகன் ஆப்டிமைசர்<a class="headerlink" href="#குறைந்தபட்ச-ஈகன்-ஆப்டிமைசர்" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="முன்னுரை">
+<h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>An interesting class of optimization problems to be addressed by quantum computing are Quadratic Unconstrained Binary Optimization (QUBO) problems. Finding the solution to a QUBO is equivalent to finding the ground state of a corresponding Ising Hamiltonian, which is an important problem not only in optimization, but also in quantum chemistry and physics. For this translation, the binary variables taking values in <span class="math notranslate nohighlight">\(\{0, 1\}\)</span> are replaced by spin variables taking values in
 <span class="math notranslate nohighlight">\(\{-1, +1\}\)</span>, which allows to replace the resulting spin variables by Pauli Z matrices, and thus, an Ising Hamiltonian. For more details on this mapping we refer to [1].</p>
 <p>Qiskit provides automatic conversion from a suitable <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> to an Ising Hamiltonian, which then allows to leverage all the <code class="docutils literal notranslate"><span class="pre">MinimumEigenSolver</span></code> such as - <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, - <code class="docutils literal notranslate"><span class="pre">QAOA</span></code>, or - <code class="docutils literal notranslate"><span class="pre">NumpyMinimumEigensolver</span></code> (classical exact method).</p>
@@ -992,10 +992,10 @@ status: SUCCESS
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="04_grover_optimizer.html" class="btn btn-neutral float-right" title="Grover Optimizer" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="04_grover_optimizer.html" class="btn btn-neutral float-right" title="க்ரோவர் ஆப்டிமைசர்" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="02_converters_for_quadratic_programs.html" class="btn btn-neutral" title="Converters for Quadratic Programs" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="02_converters_for_quadratic_programs.html" class="btn btn-neutral" title="Quadratic நிரல்களுக்கான மாற்றிகள்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1027,8 +1027,8 @@ status: SUCCESS
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Minimum Eigen Optimizer</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#">குறைந்தபட்ச ஈகன் ஆப்டிமைசர்</a><ul>
+<li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a><ul>
 <li><a class="reference internal" href="#References">References</a></li>
 </ul>
 </li>

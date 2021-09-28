@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Max-Cut and Traveling Salesman Problem &mdash; Documentação Qiskit Optimization 0.2.2</title>
+  <title>Max-Cut e Problema do Caixeiro Viajante &mdash; Documentação Qiskit Optimization 0.2.3</title>
   
 
   
@@ -29,15 +29,15 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Vehicle Routing" href="07_examples_vehicle_routing.html" />
+    <link rel="next" title="Roteamento de Veículos" href="07_examples_vehicle_routing.html" />
     <link rel="prev" title="Otimizador ADMM" href="05_admm_optimizer.html" /> 
 
   
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Tutoriais de Otimização</a> &gt;</li>
         
-      <li>Max-Cut and Traveling Salesman Problem</li>
+      <li>Max-Cut e Problema do Caixeiro Viajante</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,10 +482,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/06_examples_max_cut_and_tsp.ipynb">docs/tutorials/06_examples_max_cut_and_tsp.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/06_examples_max_cut_and_tsp.ipynb">docs/tutorials/06_examples_max_cut_and_tsp.ipynb</a>.</p>
 </div>
-<div class="section" id="Max-Cut-and-Traveling-Salesman-Problem">
-<h1>Max-Cut and Traveling Salesman Problem<a class="headerlink" href="#Max-Cut-and-Traveling-Salesman-Problem" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="Max-Cut-e-Problema-do-Caixeiro-Viajante">
+<h1>Max-Cut e Problema do Caixeiro Viajante<a class="headerlink" href="#Max-Cut-e-Problema-do-Caixeiro-Viajante" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Muitos problemas em domínios quantitativos como o financiamento e a engenharia são problemas de otimização. Os problemas de optimização estão no cerne da complexa tomada de decisões e da definição de estratégias.</p>
@@ -536,9 +536,9 @@ div.rendered_html tbody tr:hover {
 <p>Uma vantagem de utilizar este método de amostragem em comparação com abordagens adiabáticas é que o alvo Ising Hamiltonian não tem de ser implementado diretamente em hardware, permitindo que este algoritmo não seja limitado à conectividade do dispositivo. Além disso, termos de ordem superior na função de custo, como <span class="math notranslate nohighlight">\(Z_iZ_jZ_k\)</span>, também pode ser amostrado eficientemente, enquanto em abordagens adiabáticas ou de anelamento são geralmente impraticáveis para se tratar.</p>
 <p>Referências: - A. Lucas, Frontiers in Physics 2, 5 (2014) - E. Farhi, J. Goldstone, S. Gutmann e-print arXiv 1411.4028 (2014) - D. Wecker, M. B. Hastings, M. Troyer Phys. Rev. A 94, 022309 (2016) - E. Farhi, J. Goldstone, S. Gutmann, H. Neven e-print arXiv 1703.06199 (2017)</p>
 </div>
-<div class="section" id="Application-classes">
-<h3>Application classes<a class="headerlink" href="#Application-classes" title="Link permanente para este título">¶</a></h3>
-<p>We use the application classes for the max-cut problem and the traveling salesman problem in this page. There are application classes for other optimization problems available as well. See <a class="reference internal" href="09_application_classes.html"><span class="doc">Application Classes for Optimization Problems</span></a> for details.</p>
+<div class="section" id="Classes-de-aplicação">
+<h3>Classes de aplicação<a class="headerlink" href="#Classes-de-aplicação" title="Link permanente para este título">¶</a></h3>
+<p>Utilizamos as classes de aplicação para o problema de max-cut e o problema do caixeiro viajante nesta página. Também existem classes de aplicação disponíveis para outros problemas de otimização. Consulte <a class="reference internal" href="09_application_classes.html"><span class="doc">Classes de Aplicação para Problemas de Otimização</span></a> para obter detalhes.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -686,7 +686,7 @@ Best solution = [1, 0, 1, 0] cost = 4.0
 </div>
 <div class="section" id="Mapeamento-para-o-problema-Ising">
 <h3>Mapeamento para o problema Ising<a class="headerlink" href="#Mapeamento-para-o-problema-Ising" title="Link permanente para este título">¶</a></h3>
-<p>Qiskit provides functionality to generate <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> from the problem specification as well as create the corresponding Ising Hamiltonian.</p>
+<p>O Qiskit fornece funcionalidade para gerar o <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> a partir da especificação do problema, bem como criar o Hamiltoniano de Ising correspondente.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -1361,7 +1361,7 @@ solution objective: 202.0
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="07_examples_vehicle_routing.html" class="btn btn-neutral float-right" title="Vehicle Routing" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="07_examples_vehicle_routing.html" class="btn btn-neutral float-right" title="Roteamento de Veículos" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="05_admm_optimizer.html" class="btn btn-neutral" title="Otimizador ADMM" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1396,11 +1396,11 @@ solution objective: 202.0
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Max-Cut and Traveling Salesman Problem</a><ul>
+<li><a class="reference internal" href="#">Max-Cut e Problema do Caixeiro Viajante</a><ul>
 <li><a class="reference internal" href="#Introdução">Introdução</a><ul>
 <li><a class="reference internal" href="#Max-Cut-ponderado">Max-Cut ponderado</a></li>
 <li><a class="reference internal" href="#Computação-Quântica-Universal-Aproximada-para-Problemas-de-Otimização">Computação Quântica Universal Aproximada para Problemas de Otimização</a></li>
-<li><a class="reference internal" href="#Application-classes">Application classes</a></li>
+<li><a class="reference internal" href="#Classes-de-aplicação">Classes de aplicação</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#Problema-de-Max-Cut">Problema de Max-Cut</a><ul>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>はじめに &mdash; Qiskit Optimization 0.2.2 ドキュメント</title>
+  <title>はじめに &mdash; Qiskit Optimization 0.2.3 ドキュメント</title>
   
 
   
@@ -29,16 +29,16 @@
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="index" title="インデックス" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="Qiskit Optimization API Reference" href="apidocs/qiskit_optimization.html" />
-    <link rel="prev" title="Qiskit Optimization documentation" href="index.html" /> 
+    <link rel="prev" title="Qiskit 最適化ドキュメント" href="index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -95,7 +95,7 @@
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>言語</dt>
       
         <dd><a class="version" href="/documentation/optimization/getting_started.html">English</a></dd>
       
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -156,10 +156,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/qiskit_optimization.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/qiskit_optimization.html">API リファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">リリースノート</a></li>
 </ul>
 
             
@@ -234,50 +234,35 @@
 <h1>はじめに<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="installation">
 <h2>インストール<a class="headerlink" href="#installation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Qiskit Optimization depends on the main Qiskit package which has its own
-<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> detailing the
-installation options for Qiskit and its supported environments/platforms. You should refer to
-that first. Then the information here can be followed which focuses on the additional installation
-specific to Qiskit Optimization.</p>
-<p>Qiskit Optimization has some functions that have been made optional where the dependent code and/or
-support program(s) are not (or cannot be) installed by default. Those are IBM CPLEX, CVXPY and Matplotlib.
-See <a class="reference internal" href="#optional-installs"><span class="std std-ref">オプションのインストール</span></a> for more information.</p>
+<p>Qiskit Optimizationは、 Qiskit のインストール・オプションとそのサポート環境/プラットフォームを詳述した「<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit はじめに</a> 」にて説明された主要 Qiskit パッケージに依存しています。 まずそれを参照してください。次に、ここで説明する情報に従って、Qiskit Optimizationに固有の追加インストールをしましょう。</p>
+<p>Qiskit Optimizationには、デフォルトで依存コードまたはサポート・プログラム ( あるいはその両方 ) がインストールされていない (または、それらを使用できない ) ような、オプション機能がいくつかあります。IBM CPLEXやCVXPY、Matplotlibが該当します。詳細については、 <a class="reference internal" href="#optional-installs"><span class="std std-ref">オプションのインストール</span></a> を参照してください。</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="de0c0d48-2d9b-4450-8078-8bc622342841" name="625c400d-ab00-4bb9-89c5-c4eed025ffd4" type="radio">
-</input><label class="tabbed-label" for="de0c0d48-2d9b-4450-8078-8bc622342841">
+<input checked="checked" id="1d1fac95-2b46-4577-92af-b62839446617" name="f29fe20d-eb5f-44e6-9b7a-2b7809053cb8" type="radio">
+</input><label class="tabbed-label" for="1d1fac95-2b46-4577-92af-b62839446617">
 ローカルからの開始</label><div class="tabbed-content docutils">
 <p>最も簡単な方法は「 <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit はじめに</a> 」の「ローカルで始める」を参照して開始することです。</p>
-<p>In your virtual environment where you installed Qiskit simply add <code class="docutils literal notranslate"><span class="pre">optimization</span></code> to the
-extra list in a similar manner to how the extra <code class="docutils literal notranslate"><span class="pre">visualization</span></code> support is installed for
-Qiskit, i.e:</p>
+<p>Qiskit をインストールした仮想環境で、 Qiskit に追加の <code class="docutils literal notranslate"><span class="pre">visualization</span></code> サポートをインストールした方法と同様の方法で、以下のようにして追加リストに <code class="docutils literal notranslate"><span class="pre">optimization</span></code> を追加してください:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install qiskit<span class="o">[</span>optimization<span class="o">]</span>
 </pre></div>
 </div>
-<p>It is worth pointing out that if you’re a zsh user (which is the default shell on newer
-versions of macOS), you’ll need to put <code class="docutils literal notranslate"><span class="pre">qiskit[optimization]</span></code> in quotes:</p>
+<p>Zshユーザー（新しいバージョンのmacOSのデフォルトシェル）の場合は、 <code class="docutils literal notranslate"><span class="pre">qiskit[optimization]</span></code> を引用符で囲む必要があります。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install <span class="s1">&#39;qiskit[optimization]&#39;</span>
 </pre></div>
 </div>
 </div>
-<input id="9367dc68-82ea-44f5-bbf2-2b2aece92fed" name="625c400d-ab00-4bb9-89c5-c4eed025ffd4" type="radio">
-</input><label class="tabbed-label" for="9367dc68-82ea-44f5-bbf2-2b2aece92fed">
+<input id="91c46768-af0a-48be-ae88-83b3e543c296" name="f29fe20d-eb5f-44e6-9b7a-2b7809053cb8" type="radio">
+</input><label class="tabbed-label" for="91c46768-af0a-48be-ae88-83b3e543c296">
 ソースからのインストール</label><div class="tabbed-content docutils">
-<p>Installing Qiskit Optimization from source allows you to access the most recently
-updated version under development instead of using the version in the Python Package
-Index (PyPI) repository. This will give you the ability to inspect and extend
-the latest version of the Qiskit Optimization code more efficiently.</p>
-<p>Since Qiskit Optimization depends on Qiskit, and its latest changes may require new or changed
-features of Qiskit, you should first follow Qiskit’s <cite>「Install from source」</cite> instructions
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<h2>Installing Qiskit Optimization from Source</h2><p>Using the same development environment that you installed Qiskit in you are ready to install
-Qiskit Optimization.</p>
+<p>ソースから Qiskit Optimizationをインストールすることにより、Python Package Index (PyPI) リポジトリのバージョンを使う代わりに、最新の Qiskit バージョンにアクセスすることができます。これにより、Qiskit Optimizationコードの最新版を調査したり、拡張することがより効果的にできるようになります。</p>
+<p>Qiskit Optimizationは Qiskit に依存しており、最新の変更が Qiskit の新規機能または変更された機能を必要とする場合があるので、まず「 <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit はじめに</a> 」の <cite>「ソースからのインストール」</cite> の指示に従ってください。</p>
+<h2>Installing Qiskit Optimization from Source</h2><p>Qiskit をインストールしたものと同じ開発環境を使用して、 Qiskit Optimizationをインストールすることができます。</p>
 <ol class="arabic">
-<li><p>Clone the Qiskit Optimization repository.</p>
+<li><p>Qiskit Optimizationリポジトリをクローンします。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Qiskit/qiskit-optimization.git
 </pre></div>
 </div>
 </li>
-<li><p>Cloning the repository creates a local folder called <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
+<li><p>レポジトリをクローンすると、<a href="#id1"><span class="problematic" id="id2">``</span></a>qiskit-optimization``という名前のローカル・フォルダが作成されます。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> qiskit-optimization
 </pre></div>
 </div>
@@ -287,7 +272,7 @@ Qiskit Optimization.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code> をインストールします。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install .
 </pre></div>
 </div>
@@ -303,20 +288,15 @@ Qiskit Optimization.</p>
 <div class="section" id="optional-installs">
 <span id="id1"></span><h2>オプションのインストール<a class="headerlink" href="#optional-installs" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><p><strong>IBM CPLEX</strong> may be installed using <cite>pip install 『qiskit-optimization[cplex]』</cite> to enable the reading of <cite>LP</cite> files and the usage of
-the <cite>CplexOptimizer</cite>, wrapper for <code class="docutils literal notranslate"><span class="pre">cplex.Cplex</span></code>. Currently there is no python 3.9 version of CPLEX. In this case, the CPLEX install
-command will have no effect.</p></li>
-<li><p><strong>CVXPY</strong>, may be installed using command <cite>pip install 『qiskit-optimization[cvx]』</cite> to install the
-package. CVXPY being installed will enable the usage of the Goemans-Williamson algorithm as an optimizer <cite>GoemansWilliamsonOptimizer</cite>.</p></li>
-<li><p><strong>Matplotlib</strong>, may be installed using command <cite>pip install 『qiskit-optimization[matplotlib]』</cite> to install the
-package. Matplotlib being installed will enable the usage of the <cite>draw</cite> method in the graph optimization application classes.</p></li>
-<li><p><strong>Gurobipy</strong> may be installed using command <cite>pip install 『qiskit-optimization[gurobi]』</cite> to install the
-package. Gurobipy being installed will enable the usage of the GurobiOptimizer.</p></li>
+<li><p><strong>IBM CPLEX</strong> は <cite>pip install 『qiskit-optimization[cplex]』</cite> でインストールできます。<cite>LP</cite> ファイルの読み取りと、<code class="docutils literal notranslate"><span class="pre">cplex.Cplex</span></code> のラッパーの <cite>CplexOptimizer</cite> の使用を有効にすることができます。現在 Python 3.9 バージョンの CPLEX はありません。この場合、CPLEX インストールコマンドは効果がありません。</p></li>
+<li><p><strong>CVXPY</strong> は、<cite>pip install 『qiskit-optimization[cvx]』</cite> コマンドを使用してインストールできます。インストールされる CVXPY は、 <cite>GoemansWilliamsonOptimizer</cite> オプティマイザーとして、Goemans-Williamsonアルゴリズムを使用可能にします。</p></li>
+<li><p><strong>Matplotlib</strong> は、<cite>pip install 『qiskit-optimization[matplotlib]』</cite> コマンドを使用してインストールできます。インストールされる Matplotlib は、グラフ最適化アプリケーション・クラスの <cite>draw</cite> メソッドを使用可能にします。</p></li>
+<li><p><strong>Gurobipy</strong> は、コマンド <cite>pip install 『qiskit-optimization[gurobi]』</cite> を使用してインストールできます。 インストールされた Gurobipyは、GurobiOptimizerを使用可能とします。</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="ready-to-get-going">
-<h2>Ready to get going?…<a class="headerlink" href="#ready-to-get-going" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>準備はいいですか？…<a class="headerlink" href="#ready-to-get-going" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
     <div class="text-container">
@@ -340,7 +320,7 @@ package. Gurobipy being installed will enable the usage of the GurobiOptimizer.<
         <a href="apidocs/qiskit_optimization.html" class="btn btn-neutral float-right" title="Qiskit Optimization API Reference" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Qiskit Optimization documentation" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Qiskit 最適化ドキュメント" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -375,7 +355,7 @@ package. Gurobipy being installed will enable the usage of the GurobiOptimizer.<
 <li><a class="reference internal" href="#">はじめに</a><ul>
 <li><a class="reference internal" href="#installation">インストール</a></li>
 <li><a class="reference internal" href="#optional-installs">オプションのインストール</a></li>
-<li><a class="reference internal" href="#ready-to-get-going">Ready to get going?…</a></li>
+<li><a class="reference internal" href="#ready-to-get-going">準備はいいですか？…</a></li>
 </ul>
 </li>
 </ul>

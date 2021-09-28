@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bài toán lập trình bậc hai &mdash; Tài liệu Qiskit Optimization 0.2.2</title>
+  <title>Bài toán lập trình bậc hai &mdash; Tài liệu Qiskit Optimization 0.2.3</title>
   
 
   
@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -482,12 +482,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Ghi chú</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/01_quadratic_program.ipynb">docs/tutorials/01_quadratic_program.ipynb</a>.</p>
+<p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/01_quadratic_program.ipynb">docs/tutorials/01_quadratic_program.ipynb</a>.</p>
 </div>
 <div class="section" id="Bài-toán-lập-trình-bậc-hai">
 <h1>Bài toán lập trình bậc hai<a class="headerlink" href="#Bài-toán-lập-trình-bậc-hai" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Giới-thiệu">
+<h2>Giới thiệu<a class="headerlink" href="#Giới-thiệu" title="Permalink to this headline">¶</a></h2>
 <p>Trong hướng dẫn này, chúng tôi giới thiệu ngắn gọn cách xây dựng các vấn đề tối ưu hóa sử dụng module tối ưu hóa của Qiskit. Qiskit giới thiệu lớp <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> để làm một mô hình của một vấn đề tối ưu hóa. Chính xác hơn, nó giải quyết các bài toán lập trình bậc hai bị ràng buộc bậc hai như dưới đây:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
@@ -511,12 +511,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>You start with an empty model. How to add variables and constraints to a model is explained in the section “Directly constructing a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>”.</p>
-<p>Qiskit’s optimization module supports the conversion from Docplex model. You can easily make a model of an optimization problem with Docplex. You can find the documentation of Docplex at <a class="reference external" href="https://ibmdecisionoptimization.github.io/docplex-doc/mp/index.html">https://ibmdecisionoptimization.github.io/docplex-doc/mp/index.html</a></p>
-<p>You can load a Docplex model to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> by using <code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code> function.</p>
+<p>Bạn sẽ bắt đầu với một mô hình rỗng. Cách thêm các biến và ràng buộc vào mô hình được giải thích tại phần “Xây dựng một bài toán <code class="docutils literal notranslate"><span class="pre">Lập</span> <span class="pre">trình</span> <span class="pre">bậc</span> <span class="pre">hai</span></code> trực tiếp”.</p>
+<p>Mô-đun tối ưu hóa của Qiskit hỗ trợ việc chuyển đổi từ mô hình của Docplex. Bạn có thể dễ dàng tạo ra một mô hình tối ưu hóa vấn đề với Docplex. Bạn có thể tìm tài liệu về Docplex tại <a class="reference external" href="https://ibmdecisionoptimization.github.io/docplex-doc/mp/index.html">https://ibmdecisionoptimization.github.io/docplex-doc/mp/index.html</a></p>
+<p>Bạn có thể tải một mô hình Docplex vào <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> bằng cách dùng hàm <code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code>.</p>
 </div>
-<div class="section" id="Loading-a-QuadraticProgram-from-a-docplex-model">
-<h2>Loading a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> from a docplex model<a class="headerlink" href="#Loading-a-QuadraticProgram-from-a-docplex-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Tải-một-Lập-trình-bậc-hai-từ-một-mô-hình-docplex">
+<h2>Tải một <code class="docutils literal notranslate"><span class="pre">Lập</span> <span class="pre">trình</span> <span class="pre">bậc</span> <span class="pre">hai</span></code> từ một mô hình docplex<a class="headerlink" href="#Tải-một-Lập-trình-bậc-hai-từ-một-mô-hình-docplex" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -1133,9 +1133,9 @@ Error: &#39;Cannot substitute by variable that gets substituted itself: y &lt;- 
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Bài toán lập trình bậc hai</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#Giới-thiệu">Giới thiệu</a></li>
 <li><a class="reference internal" href="#Tải-một-QuadraticProgram-từ-một-tệp-LP">Tải một <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> từ một tệp LP</a></li>
-<li><a class="reference internal" href="#Loading-a-QuadraticProgram-from-a-docplex-model">Loading a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> from a docplex model</a></li>
+<li><a class="reference internal" href="#Tải-một-Lập-trình-bậc-hai-từ-một-mô-hình-docplex">Tải một <code class="docutils literal notranslate"><span class="pre">Lập</span> <span class="pre">trình</span> <span class="pre">bậc</span> <span class="pre">hai</span></code> từ một mô hình docplex</a></li>
 <li><a class="reference internal" href="#Xây-dựng-trực-tiếp-một-QuadraticProgram">Xây dựng trực tiếp một <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code></a></li>
 <li><a class="reference internal" href="#Thêm/xóa-các-ràng-buộc-bậc-một-và-bậc-hai">Thêm/xóa các ràng buộc bậc một và bậc hai</a></li>
 <li><a class="reference internal" href="#Thay-thế-các-biến">Thay thế các biến</a></li>
