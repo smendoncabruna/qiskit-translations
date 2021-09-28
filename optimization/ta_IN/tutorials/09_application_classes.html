@@ -38,7 +38,7 @@
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
     <link rel="next" title="குவாண்டம் மேம்படுத்தலுக்கான இதமான துவக்கம்" href="10_warm_start_qaoa.html" />
-    <link rel="prev" title="Improving Variational Quantum Optimization using CVaR" href="08_cvar_optimization.html" /> 
+    <link rel="prev" title="CVaR ஐப் பயன்படுத்தி மாறுபட்ட குவாண்டம் உகப்பாக்கலை மேம்படுத்துதல்" href="08_cvar_optimization.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -556,10 +556,10 @@ div.rendered_html tbody tr:hover {
 <ul class="simple">
 <li><p>திசைதிருப்பப்படாத வரைபடத்தைக் கொண்டு, ஒவ்வொரு விளிம்பும் துணைக்குழுக்களில் குறைந்தபட்சம் ஒரு முனையைக் கொண்டிருக்கும் வகையில் குறைந்தபட்ச அளவு கொண்ட முனைகளின் துணைக்குழுவைத் கண்டறியவும்.</p></li>
 </ul>
-<p>The application classes for graph problems (<code class="docutils literal notranslate"><span class="pre">GraphOptimizationApplication</span></code>) provide a functionality to draw graphs of an instance and a result. Note that you need to install <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> beforehand to utilize the functionality.</p>
-<p>We introduce examples of the vertex cover problem and the knapsack problem in this page.</p>
-<p>Examples of the max-cut problem and the traveling salesman problem are available in <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a>.</p>
-<p>We first import packages necessary for application classes.</p>
+<p>வரைபடப் பிரச்சனைகளுக்கான விண்ணப்ப வகுப்புகள் (<code class="docutils literal notranslate"><span class="pre">GraphOptimizationApplication</span></code>) ஒரு நிகழ்வு மற்றும் முடிவின் வரைபடங்களை வரைய ஒரு செயல்பாட்டை வழங்குகிறது. செயல்பாட்டைப் பயன்படுத்த நீங்கள் <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> ஐ முன்பே நிறுவ வேண்டும் என்பதை நினைவில் கொள்க.</p>
+<p>இந்த பக்கத்தில் வெர்டெக்ஸ் கவர் பிரச்சனை மற்றும் நாப்சாக் பிரச்சனைக்கான உதாரணங்களை அறிமுகப்படுத்துகிறோம்.</p>
+<p>அதிகபட்ச வெட்டு பிரச்சனை மற்றும் பயண விற்பனையாளர் பிரச்சனையின் எடுத்துக்காட்டுகள் <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a>. இல் கிடைக்கின்றன.</p>
+<p>பயன்பாட்டு வகுப்புகளுக்குத் தேவையான தொகுப்புகளை நாங்கள் முதலில் இறக்குமதி செய்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -575,8 +575,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="வெர்டெக்ஸ்-கவர்-பிரச்சனை">
 <h2>வெர்டெக்ஸ் கவர் பிரச்சனை<a class="headerlink" href="#வெர்டெக்ஸ்-கவர்-பிரச்சனை" title="Permalink to this headline">¶</a></h2>
-<p>We introduce the application class for the vertex cover problem as an example of graph problems. Given an undirected graph, the vertex cover problem asks us to find a subset of nodes with the minimum size such that all edges are covered by any node selected.</p>
-<p>We import the application class <code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> for the vertex cover problem and <code class="docutils literal notranslate"><span class="pre">networkx</span></code> to generate a random graph.</p>
+<p>வரைபடச் சிக்கல்களுக்கு உதாரணமாக, உச்சநிலைப் பிரச்சனைக்கான விண்ணப்ப வகுப்பை அறிமுகப்படுத்துகிறோம். திசைதிருப்பப்படாத வரைபடத்தைக் கொடுத்தால், வெர்டெக்ஸ் கவர் சிக்கல், தேர்ந்தெடுக்கப்பட்ட எந்த முனையிலும் அனைத்து விளிம்புகளும் மூடப்பட்டிருக்கும் வகையில் குறைந்தபட்ச அளவு கொண்ட முனைகளின் துணைக்குழுவை கண்டுபிடிக்கும்படி கேட்கிறது.</p>
+<p>வெர்டெக்ஸ் கவர் பிரச்சனைக்காக <code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> மற்றும் சீரற்ற வரைபடத்தை உருவாக்க <code class="docutils literal notranslate"><span class="pre">networkx</span></code> என்ற விண்ணப்ப வகுப்பை நாங்கள் இறக்குமதி செய்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -617,7 +617,7 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_application_classes_8_0.svg" src="../_images/tutorials_09_application_classes_8_0.svg" /></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> takes a graph as an instance and <code class="docutils literal notranslate"><span class="pre">to_quadratic_program</span></code> generates a corresponding <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> of the instance of the vertex cover problem.</p>
+<p><code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> ஒரு வரைபடத்தை ஒரு உதாரணமாக எடுத்துக்கொள்கிறது மற்றும் <code class="docutils literal notranslate"><span class="pre">to_quadratic_program</span></code> வெர்டெக்ஸ் கவர் பிரச்சனையின் தொடர்புடைய <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> ஐ உருவாக்குகிறது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -664,7 +664,7 @@ Binaries
 End
 </pre></div></div>
 </div>
-<p>You can solve the problem as follows. <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code> finds the minimum eigen vector. You can also apply QAOA. Note that the solution by QAOA is not always optimal.</p>
+<p>நீங்கள் பின்வருமாறு சிக்கலை தீர்க்க முடியும். <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code> குறைந்தபட்ச ஈஜென் திசையனை கண்டுபிடிக்கும். நீங்கள் QAOA ஐ விண்ணப்பிக்கலாம். QAOA இன் தீர்வு எப்போதும் உகந்ததல்ல என்பதை நினைவில் கொள்க.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -739,7 +739,7 @@ time: 2.0216140747070312
 </div>
 <div class="section" id="நாப்சாக்-சிக்கல்">
 <h2>நாப்சாக் சிக்கல்<a class="headerlink" href="#நாப்சாக்-சிக்கல்" title="Permalink to this headline">¶</a></h2>
-<p>The knapsack problem asks us to find a combination of items such that the total weight is within the capacity of the knapsack and maximize the total value of the items. The following examples solve an instance of the knapsack problem with 5 items by Numpy eigensolver and QAOA.</p>
+<p>நாப்சாக் பிரச்சனை, மொத்த எடை நாப்சாக்கின் திறனுக்குள் இருக்கும் பொருட்களின் கலவையை கண்டுபிடித்து, பொருட்களின் மொத்த மதிப்பை அதிகரிக்கும்படி கேட்கிறது. பின்வரும் எடுத்துக்காட்டுகள் Numpy eigensolver மற்றும் QAOA மூலம் 5 உருப்படிகளுடன் நாப்சாக் பிரச்சனையின் ஒரு உதாரணத்தை தீர்க்கின்றன.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -845,9 +845,9 @@ time: 0.7132740020751953
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="How-to-check-the-Hamiltonian">
-<h2>How to check the Hamiltonian<a class="headerlink" href="#How-to-check-the-Hamiltonian" title="Permalink to this headline">¶</a></h2>
-<p>If you want to check the actual Hamiltonian generated from your problem instance, you need to apply a converter as follows.</p>
+<div class="section" id="ஹாமில்டோனியனை-எவ்வாறு-சரிபார்க்கலாம்">
+<h2>ஹாமில்டோனியனை எவ்வாறு சரிபார்க்கலாம்<a class="headerlink" href="#ஹாமில்டோனியனை-எவ்வாறு-சரிபார்க்கலாம்" title="Permalink to this headline">¶</a></h2>
+<p>உங்கள் பிரச்சனை நிகழ்விலிருந்து உருவாக்கப்பட்ட உண்மையான ஹாமில்டோனியனை நீங்கள் சரிபார்க்க விரும்பினால், நீங்கள் பின்வருமாறு ஒரு மாற்றி பயன்படுத்த வேண்டும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1069,7 +1069,7 @@ num qubits: 9, offset: 1417.5
         <a href="10_warm_start_qaoa.html" class="btn btn-neutral float-right" title="குவாண்டம் மேம்படுத்தலுக்கான இதமான துவக்கம்" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="08_cvar_optimization.html" class="btn btn-neutral" title="Improving Variational Quantum Optimization using CVaR" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="08_cvar_optimization.html" class="btn btn-neutral" title="CVaR ஐப் பயன்படுத்தி மாறுபட்ட குவாண்டம் உகப்பாக்கலை மேம்படுத்துதல்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1105,7 +1105,7 @@ num qubits: 9, offset: 1417.5
 <li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
 <li><a class="reference internal" href="#வெர்டெக்ஸ்-கவர்-பிரச்சனை">வெர்டெக்ஸ் கவர் பிரச்சனை</a></li>
 <li><a class="reference internal" href="#நாப்சாக்-சிக்கல்">நாப்சாக் சிக்கல்</a></li>
-<li><a class="reference internal" href="#How-to-check-the-Hamiltonian">How to check the Hamiltonian</a></li>
+<li><a class="reference internal" href="#ஹாமில்டோனியனை-எவ்வாறு-சரிபார்க்கலாம்">ஹாமில்டோனியனை எவ்வாறு சரிபார்க்கலாம்</a></li>
 </ul>
 </li>
 </ul>
