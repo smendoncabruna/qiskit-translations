@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="id-ID" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pemecah keadaan dasar &mdash; Dokumentasi Qiskit Nature 0.2.1</title>
@@ -487,11 +486,11 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Catatan</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/03_ground_state_solvers.ipynb">docs/tutorials/03_ground_state_solvers.ipynb</a>.</p>
 </div>
-<section id="Pemecah-keadaan-dasar">
+<div class="section" id="Pemecah-keadaan-dasar">
 <h1>Pemecah keadaan dasar<a class="headerlink" href="#Pemecah-keadaan-dasar" title="Link permanen untuk headline ini">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Link permanen untuk headline ini">¶</a></h2>
-<p><img alt="86439a40b3944b1288d99e28d8d31860" class="no-scaled-link" src="../_images/H2_gs.png" style="width: 200px;" /></p>
+<p><img alt="c9c2c8d80c6b4d5eab72d657622aa510" class="no-scaled-link" src="../_images/H2_gs.png" style="width: 200px;" /></p>
 <p>In this tutorial we are going to discuss the ground state calculation interface of Qiskit Nature. The goal is to compute the ground state of a molecular Hamiltonian. This Hamiltonian can be electronic or vibrational. To know more about the preparation of the Hamiltonian, check out the Electronic structure and Vibrational structure tutorials.</p>
 <p>The first step is to define the molecular system. In the following we ask for the electronic part of a hydrogen molecule.</p>
 <div class="nbinput docutils container">
@@ -533,8 +532,8 @@ Couldn&#39;t find cython becke routine
   h5py.get_config().default_file_mode = &#39;a&#39;
 </pre></div></div>
 </div>
-</section>
-<section id="The-Solver">
+</div>
+<div class="section" id="The-Solver">
 <h2>The Solver<a class="headerlink" href="#The-Solver" title="Link permanen untuk headline ini">¶</a></h2>
 <p>Then we need to define a solver. The solver is the algorithm through which the ground state is computed.</p>
 <p>Mari kita mulai dengan contoh yang murni klasik: pemecah eigen minimum NumPy. Algoritme ini mendiagonalisasi Hamiltonian secara eksak. Meskipun penskalaannya buruk, algoritme ini dapat digunakan untuk sistem kecil untuk mengecek hasil dari algoritme kuantum.</p>
@@ -550,7 +549,7 @@ Couldn&#39;t find cython becke routine
 </div>
 </div>
 <p>Untuk menemukan keadaan dasar kita dapat menggunakan algoritme Pemecah Eigen Kuantum Variasional (Variational Quantum Eigensolver, VQE). Algoritme VQE bekerja dengan menukar informasi antara komputer klasik dan kuantum seperti digambarkan dalam gambar berikut.</p>
-<p><img alt="28d210e15cc2469887cb2e03c98e2149" class="no-scaled-link" src="../_images/vqe.png" style="width: 600px;" /></p>
+<p><img alt="a7c93bf0438c4fd582d2d744e93d3054" class="no-scaled-link" src="../_images/vqe.png" style="width: 600px;" /></p>
 <p>Mari kita menginisialisasi pemecah VQE.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -590,8 +589,8 @@ Couldn&#39;t find cython becke routine
 </pre></div>
 </div>
 </div>
-</section>
-<section id="The-calculation-and-results">
+</div>
+<div class="section" id="The-calculation-and-results">
 <h2>The calculation and results<a class="headerlink" href="#The-calculation-and-results" title="Link permanen untuk headline ini">¶</a></h2>
 <p>Kita sekarang siap untuk menjalankan kalkulasi.</p>
 <div class="nbinput docutils container">
@@ -676,8 +675,8 @@ Couldn&#39;t find cython becke routine
 
 </pre></div></div>
 </div>
-</section>
-<section id="Menggunakan-fungsi-filter">
+</div>
+<div class="section" id="Menggunakan-fungsi-filter">
 <h2>Menggunakan fungsi filter<a class="headerlink" href="#Menggunakan-fungsi-filter" title="Link permanen untuk headline ini">¶</a></h2>
 <p>Terkadang keadaan dasar sebenarnya dari Hamiltonian tidak menarik karena terletak pada sektor simetri yang berbeda dari ruang Hilbert. Dalam hal ini NumPy eigensolver dapat mengambil fungsi filter untuk mengembalikan hanya keadaan eigen-nya saja, misalnya jumlah partikel yang tepat. Hal ini sangat penting dalam kasus perhitungan struktur vibrasoinal di mana keadaan dasar sesungguhnya dari Hamiltonian adalah keadaan vakum. Fungsi filter bawaan untuk memeriksa jumlah partikel diimplementasikan dalam transformasi yang berbeda dan dapat digunakan sebagai</p>
 <div class="nbinput docutils container">
@@ -755,8 +754,8 @@ The number of occupied modals is
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ポートフォリオの最適化 &mdash; Qiskit Finance 0.2.1 ドキュメント</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a> から生成されました。</p>
 </div>
-<section id="ポートフォリオの最適化">
+<div class="section" id="ポートフォリオの最適化">
 <h1>ポートフォリオの最適化<a class="headerlink" href="#ポートフォリオの最適化" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<section id="はじめに">
+<div class="section" id="はじめに">
 <h2>はじめに<a class="headerlink" href="#はじめに" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このチュートリアルでは、 <span class="math notranslate nohighlight">\(n\)</span> アセットの次の平均分散ポートフォリオ最適化問題を解決する方法を示します。</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-実際のデバイスで実験を実行するためのトークンをセットアップする">
+<div class="section" id="[Optional]-実際のデバイスで実験を実行するためのトークンをセットアップする">
 <h3>[Optional] 実際のデバイスで実験を実行するためのトークンをセットアップする<a class="headerlink" href="#[Optional]-実際のデバイスで実験を実行するためのトークンをセットアップする" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>実際のデバイスで実験を実行したい場合は、まずアカウントを設定する必要があります。</p>
 <p>注意: トークンをまだ保存していない場合は、最初に <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> を使用して保存してください。</p>
-</section>
-</section>
-<section id="問題のインスタンスを定義">
+</div>
+</div>
+<div class="section" id="問題のインスタンスを定義">
 <h2>問題のインスタンスを定義<a class="headerlink" href="#問題のインスタンスを定義" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ここで、Operatorインスタンスがこのハミルトニアン用に作成されます。 ここでのパウリ項は、ポートフォリオ問題から導かれたイジング・ハミルトニアンからのものです。このノートブックではランダムなポートフォリオ問題を使用します。<a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a> で示されるように、実際の財務データに容易に適用することができます。</p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyMinimumEigensolver-(古典の参照として)">
+</div>
+<div class="section" id="NumPyMinimumEigensolver-(古典の参照として)">
 <h2>NumPyMinimumEigensolver (古典の参照として)<a class="headerlink" href="#NumPyMinimumEigensolver-(古典の参照として)" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>まず最初に古典的な手法で問題を解いてみます。</p>
 <p>上記で構築したOperatorを、どのように作成されたかの詳細に関係なく使用できるようになりました。 NumPyMinimumEigensolver のアルゴリズムを設定することで、古典的な参照を行うことができます。 問題は 『ising』 に設定されています。バックエンドは必要ありません。これは古典的な計算で、量子計算を使用していないためです。 結果は辞書として返されます。</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="VQE-を使用したソリューション">
+</div>
+<div class="section" id="VQE-を使用したソリューション">
 <h2>VQE を使用したソリューション<a class="headerlink" href="#VQE-を使用したソリューション" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これで、 Variational Quantum Eigensolver (VQE) を使用して問題を解決できるようになりました。 使用する最適化プログラムおよび変分フォームを指定します。</p>
 <p>注: バックエンドの名前を指定することで、異なるバックエンドに切り替えることができます。</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="QAOA-を使用したソリューション">
+<div class="section" id="QAOA-を使用したソリューション">
 <h3>QAOA を使用したソリューション<a class="headerlink" href="#QAOA-を使用したソリューション" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>また、Quantum Approximate Optimization Algorithm (QAOA) を使用した結果をも示します。 これは別の変分アルゴリズムであり、問題に応じて作成される内部の変分フォームを使用します。</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

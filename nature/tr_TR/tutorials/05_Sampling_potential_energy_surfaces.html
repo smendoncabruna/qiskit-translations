@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Potansiyel enerji yüzeyinin örneklenmesi &mdash; Qiskit Nature 0.2.1 belgelendirmesi</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa, <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/05_Sampling_potential_energy_surfaces.ipynb">docs/tutorials/05_Sampling_potential_energy_surfaces.ipynb</a> sayfasından oluşturulmuştur.</p>
 </div>
-<section id="Potansiyel-enerji-yüzeyinin-örneklenmesi">
+<div class="section" id="Potansiyel-enerji-yüzeyinin-örneklenmesi">
 <h1>Potansiyel enerji yüzeyinin örneklenmesi<a class="headerlink" href="#Potansiyel-enerji-yüzeyinin-örneklenmesi" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
-<section id="Giriş">
+<div class="section" id="Giriş">
 <h2>Giriş<a class="headerlink" href="#Giriş" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>This interactive notebook demonstrates how to utilize the Potential Energy Surface (PES) samplers algorithm of Qiskit Nature to generate the dissociation profile of a molecule. We use the Born-Oppenheimer Potential Energy Surface (BOPES) and demonstrate how to exploit bootstrapping and extrapolation to reduce the total number of function evaluations in computing the PES using the Variational Quantum Eigensolver (VQE).</p>
 <div class="nbinput nblast docutils container">
@@ -563,7 +562,7 @@ div.rendered_html tbody tr:hover {
 [(&#39;H&#39;, [0.0, 0.0, 0.0]), (&#39;H&#39;, [0.0, 0.0, 0.3])]
 </pre></div></div>
 </div>
-<section id="Absolute_streching-dof-boyunca-molekülü-pertübe-edin">
+<div class="section" id="Absolute_streching-dof-boyunca-molekülü-pertübe-edin">
 <h3>Absolute_streching dof boyunca molekülü pertübe edin<a class="headerlink" href="#Absolute_streching-dof-boyunca-molekülü-pertübe-edin" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -587,12 +586,12 @@ div.rendered_html tbody tr:hover {
 [(&#39;H&#39;, [0.0, 0.0, 0.0]), (&#39;H&#39;, [0.0, 0.0, 0.8999999999999999])]
 </pre></div></div>
 </div>
-</section>
-</section>
-<section id="BOPES-örneklemesini-kullanarak-bağ-ayrışma-profilini-hesaplayın">
+</div>
+</div>
+<div class="section" id="BOPES-örneklemesini-kullanarak-bağ-ayrışma-profilini-hesaplayın">
 <h2>BOPES örneklemesini kullanarak bağ ayrışma profilini hesaplayın<a class="headerlink" href="#BOPES-örneklemesini-kullanarak-bağ-ayrışma-profilini-hesaplayın" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Burada moleküler bilgiyi ve VQE’yi BOPES Sampler adı verilen yerleşik bir türe aktarıyoruz. BOPES Sampler, belirli bir serbestlik derecesi/ilgi noktaları kümesi için potansiyel enerji yüzeyinin hesaplanmasına izin verir.</p>
-<section id="İlk-önyükleme-olmayan-ile-önyükleme-olanı-kıyaslıyoruz">
+<div class="section" id="İlk-önyükleme-olmayan-ile-önyükleme-olanı-kıyaslıyoruz">
 <h3>İlk önyükleme olmayan ile önyükleme olanı kıyaslıyoruz<a class="headerlink" href="#İlk-önyükleme-olmayan-ile-önyükleme-olanı-kıyaslıyoruz" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>BOPES örnekleyicisinin önyüklenmesi, belirli bir serbestlik derecesi için optimal varyasyon parametrelerinin kullanılmasını içerir, örneğin r (ör. atomlar arası mesafe), daha sonraki bir serbestlik derecesinde VQE için başlangıç ​​noktası olarak, diyelim ki r + <span class="math notranslate nohighlight">\(\epsilon\)</span>. Varsayılan olarak, yükseltme “doğru” olarak ayarlanırsa, önceki tüm optimal parametreler sonraki çalıştırmalar için başlangıç ​​noktaları olarak kullanılır.</p>
 <div class="nbinput nblast docutils container">
@@ -649,9 +648,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="Klasik-eigensolver-ile-karşılaştırın">
+</div>
+</div>
+<div class="section" id="Klasik-eigensolver-ile-karşılaştırın">
 <h2>Klasik eigensolver ile karşılaştırın<a class="headerlink" href="#Klasik-eigensolver-ile-karşılaştırın" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -674,7 +673,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Taslak-sonuçları">
+<div class="section" id="Taslak-sonuçları">
 <h3>Taslak sonuçları<a class="headerlink" href="#Taslak-sonuçları" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -708,9 +707,9 @@ Text(0,0.5,&#39;Energy&#39;)
 <img alt="../_images/tutorials_05_Sampling_potential_energy_surfaces_15_1.png" src="../_images/tutorials_05_Sampling_potential_energy_surfaces_15_1.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="Değerlendirme-sayısını-karşılaştırın">
+</div>
+</div>
+<div class="section" id="Değerlendirme-sayısını-karşılaştırın">
 <h2>Değerlendirme sayısını karşılaştırın<a class="headerlink" href="#Değerlendirme-sayısını-karşılaştırın" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -746,8 +745,8 @@ Total evaluations for np:
 0
 </pre></div></div>
 </div>
-</section>
-<section id="Sonuçların-genişletilmesi">
+</div>
+<div class="section" id="Sonuçların-genişletilmesi">
 <h2>Sonuçların genişletilmesi<a class="headerlink" href="#Sonuçların-genişletilmesi" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Burada, her (param,point) setini belirli bir fonksiyona sığdırmaya çalışacak ve bir sonraki nokta (serbestlik derecesi) için bir başlangıç ​​parametre seti önerecek bir ekstrapolatör eklendi.</p>
 <ul class="simple">
@@ -762,7 +761,7 @@ Total evaluations for np:
 <li><p>Polinom Ekstrapolatörü: Her parametrenin kullanıcı tarafından belirlenen derecede bir polinom fonksiyonuna uydurulmasına dayanan bir ekstrapolatördür.</p></li>
 <li><p>Diferansiyel Ekstrapolatörü: Her parametreyi bir alanda nokta olarak kabul etmeye ve sonraki noktanınki parametre setini tahmin etmek için gerileme yapmaya dayalı olan bir ektrapolatördür. Belirli bir kullanıcının derecesi nokta vektörlerinin değerlerine doğrusal regresyon için deneme verilerinde özellikler olarak çalışan türevlerini ekler.</p></li>
 </ol>
-<section id="Burada-iki-farklı-ekstrapolasyon-tekniğini-test-ediyoruz">
+<div class="section" id="Burada-iki-farklı-ekstrapolasyon-tekniğini-test-ediyoruz">
 <h3>Burada iki farklı ekstrapolasyon tekniğini test ediyoruz<a class="headerlink" href="#Burada-iki-farklı-ekstrapolasyon-tekniğini-test-ediyoruz" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -795,8 +794,8 @@ Total evaluations for np:
 </pre></div>
 </div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>Taslak sonuçları<a class="headerlink" href="#id2" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -842,9 +841,9 @@ Text(0,0.5,&#39;Energy&#39;)
 <img alt="../_images/tutorials_05_Sampling_potential_energy_surfaces_23_2.png" src="../_images/tutorials_05_Sampling_potential_energy_surfaces_23_2.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="id3">
+</div>
+</div>
+<div class="section" id="id3">
 <h2>Değerlendirme sayısını karşılaştırın<a class="headerlink" href="#id3" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -919,8 +918,8 @@ Total evaluations for diff_model:
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

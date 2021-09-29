@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Amostrando a superfície de energia potencial &mdash; Documentação Qiskit Nature 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/05_Sampling_potential_energy_surfaces.ipynb">docs/tutorials/05_Sampling_potential_energy_surfaces.ipynb</a>.</p>
 </div>
-<section id="Amostrando-a-superfície-de-energia-potencial">
+<div class="section" id="Amostrando-a-superfície-de-energia-potencial">
 <h1>Amostrando a superfície de energia potencial<a class="headerlink" href="#Amostrando-a-superfície-de-energia-potencial" title="Link permanente para este título">¶</a></h1>
-<section id="Introdução">
+<div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Este notebook interativo demonstra como utilizar o algoritmo de amostragem de Superfície de Energia Potencial (PES) do Qiskit Nature para gerar o perfil de dissociação de uma molécula. Utilizamos a Superfície de Energia Potencial de Born-Oppenheimer (BOPES) e demonstramos como explorar bootstrapping e extrapolação para reduzir o número total de avaliações de função na computação do PES usando o Variational Quantum Eigensolver (VQE).</p>
 <div class="nbinput nblast docutils container">
@@ -563,7 +562,7 @@ div.rendered_html tbody tr:hover {
 [(&#39;H&#39;, [0.0, 0.0, 0.0]), (&#39;H&#39;, [0.0, 0.0, 0.3])]
 </pre></div></div>
 </div>
-<section id="Perturbe-a-molécula-ao-longo-do-grau-de-liberdade-absolute_stretching">
+<div class="section" id="Perturbe-a-molécula-ao-longo-do-grau-de-liberdade-absolute_stretching">
 <h3>Perturbe a molécula ao longo do grau de liberdade absolute_stretching<a class="headerlink" href="#Perturbe-a-molécula-ao-longo-do-grau-de-liberdade-absolute_stretching" title="Link permanente para este título">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -587,12 +586,12 @@ div.rendered_html tbody tr:hover {
 [(&#39;H&#39;, [0.0, 0.0, 0.0]), (&#39;H&#39;, [0.0, 0.0, 0.8999999999999999])]
 </pre></div></div>
 </div>
-</section>
-</section>
-<section id="Calcular-o-perfil-de-dissociação-de-ligações-usando-o-amostrador-BOPES">
+</div>
+</div>
+<div class="section" id="Calcular-o-perfil-de-dissociação-de-ligações-usando-o-amostrador-BOPES">
 <h2>Calcular o perfil de dissociação de ligações usando o amostrador BOPES<a class="headerlink" href="#Calcular-o-perfil-de-dissociação-de-ligações-usando-o-amostrador-BOPES" title="Link permanente para este título">¶</a></h2>
 <p>Aqui, passamos as informações moleculares e o VQE para um tipo interno chamado de BOPES Sampler. O BOPES Sampler permite a computação da superfície de energia potencial para um conjunto especificado de graus de liberdade/pontos de interesse.</p>
-<section id="Primeiro-comparamos-nenhum-bootstrapping-vs-bootstrapping">
+<div class="section" id="Primeiro-comparamos-nenhum-bootstrapping-vs-bootstrapping">
 <h3>Primeiro comparamos nenhum bootstrapping vs bootstrapping<a class="headerlink" href="#Primeiro-comparamos-nenhum-bootstrapping-vs-bootstrapping" title="Link permanente para este título">¶</a></h3>
 <p>O Bootstrap do amostrador do BOPES envolve a utilização dos parâmetros variacionais ideais para um determinado grau de liberdade, digamos r (ex. distância interatômica) como o ponto inicial para o VQE em um grau de liberdade posterior, digamos r + <span class="math notranslate nohighlight">\(\epsilon\)</span>. Por padrão, se boostrapping for configurado como True, todos os parâmetros ótimos anteriores são usados como pontos iniciais para as próximas execuções.</p>
 <div class="nbinput nblast docutils container">
@@ -649,9 +648,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="Comparando-com-o-eigensolver-clássico">
+</div>
+</div>
+<div class="section" id="Comparando-com-o-eigensolver-clássico">
 <h2>Comparando com o eigensolver clássico<a class="headerlink" href="#Comparando-com-o-eigensolver-clássico" title="Link permanente para este título">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -674,7 +673,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Visualizando-os-resultados">
+<div class="section" id="Visualizando-os-resultados">
 <h3>Visualizando os resultados<a class="headerlink" href="#Visualizando-os-resultados" title="Link permanente para este título">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -708,9 +707,9 @@ Text(0,0.5,&#39;Energy&#39;)
 <img alt="../_images/tutorials_05_Sampling_potential_energy_surfaces_15_1.png" src="../_images/tutorials_05_Sampling_potential_energy_surfaces_15_1.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="Comparando-o-número-de-avaliações">
+</div>
+</div>
+<div class="section" id="Comparando-o-número-de-avaliações">
 <h2>Comparando o número de avaliações<a class="headerlink" href="#Comparando-o-número-de-avaliações" title="Link permanente para este título">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -746,8 +745,8 @@ Total evaluations for np:
 0
 </pre></div></div>
 </div>
-</section>
-<section id="Extrapolação">
+</div>
+<div class="section" id="Extrapolação">
 <h2>Extrapolação<a class="headerlink" href="#Extrapolação" title="Link permanente para este título">¶</a></h2>
 <p>Aqui, um extrapolador adicionado que tentará ajustar cada conjunto (param, ponto) para alguma função especificada e sugerir um conjunto parâmetros inicial para o próximo ponto (grau de liberdade).</p>
 <ul class="simple">
@@ -762,7 +761,7 @@ Total evaluations for np:
 <li><p>Extrapolador Polinomial: Um extrapolador baseado em ajustar cada parâmetro a uma função polinomial de um grau especificado pelo usuário.</p></li>
 <li><p>Extrapolador Diferencial: Um extrapolador baseado no tratamento de cada conjunto de parâmetros como um ponto no espaço, e na realização da regressão para prever o conjunto de parâmetros para o próximo ponto. Um grau especificado pelo usuário também adiciona derivadas aos valores nos vetores dos pontos que servem como features nos dados de treinamento para a regressão linear.</p></li>
 </ol>
-<section id="Aqui-testamos-duas-técnicas-de-extrapolação-diferentes">
+<div class="section" id="Aqui-testamos-duas-técnicas-de-extrapolação-diferentes">
 <h3>Aqui testamos duas técnicas de extrapolação diferentes<a class="headerlink" href="#Aqui-testamos-duas-técnicas-de-extrapolação-diferentes" title="Link permanente para este título">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -795,8 +794,8 @@ Total evaluations for np:
 </pre></div>
 </div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>Visualizando os resultados<a class="headerlink" href="#id2" title="Link permanente para este título">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -842,9 +841,9 @@ Text(0,0.5,&#39;Energy&#39;)
 <img alt="../_images/tutorials_05_Sampling_potential_energy_surfaces_23_2.png" src="../_images/tutorials_05_Sampling_potential_energy_surfaces_23_2.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="id3">
+</div>
+</div>
+<div class="section" id="id3">
 <h2>Comparando o número de avaliações<a class="headerlink" href="#id3" title="Link permanente para este título">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -919,8 +918,8 @@ Total evaluations for diff_model:
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Análisis de Riesgo Crediticio &mdash; documentación de Qiskit Finance - 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a>.</p>
 </div>
-<section id="Análisis-de-Riesgo-Crediticio">
+<div class="section" id="Análisis-de-Riesgo-Crediticio">
 <h1>Análisis de Riesgo Crediticio<a class="headerlink" href="#Análisis-de-Riesgo-Crediticio" title="Enlazar permanentemente con este título">¶</a></h1>
-<section id="Introducción">
+<div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Este tutorial muestra cómo se pueden utilizar los algoritmos cuánticos para el análisis de riesgo crediticio. Más precisamente, cómo se puede utilizar la Estimación de Amplitud Cuántica (Quantum Amplitude Estimation, QAE) para estimar medidas de riesgo con una aceleración cuadrática sobre la simulación clásica de Monte Carlo. El tutorial se basa en los siguientes artículos:</p>
 <ul class="simple">
@@ -524,8 +523,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Definición-del-Problema">
+</div>
+<div class="section" id="Definición-del-Problema">
 <h2>Definición del Problema<a class="headerlink" href="#Definición-del-Problema" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En este tutorial queremos analizar el riesgo crediticio de una cartera de <span class="math notranslate nohighlight">\(K\)</span> activos. La probabilidad predeterminada de cada activo <span class="math notranslate nohighlight">\(k\)</span> sigue un modelo de <em>Independencia Condicional Gaussiana</em>, es decir, dado un valor <span class="math notranslate nohighlight">\(z\)</span> muestreado a partir de una variable aleatoria latente <span class="math notranslate nohighlight">\(Z\)</span> siguiendo una distribución normal estándar, la probabilidad predeterminada del activo <span class="math notranslate nohighlight">\(k\)</span> está dada por</p>
 <div class="math notranslate nohighlight">
@@ -559,8 +558,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Modelo-de-Incertidumbre">
+</div>
+<div class="section" id="Modelo-de-Incertidumbre">
 <h2>Modelo de Incertidumbre<a class="headerlink" href="#Modelo-de-Incertidumbre" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Ahora construimos un circuito que carga el modelo de incertidumbre. Esto se puede lograr creando un estado cuántico en un registro de <span class="math notranslate nohighlight">\(n_z\)</span> qubits que represente a <span class="math notranslate nohighlight">\(Z\)</span> siguiendo una distribución normal estándar. Este estado luego se usa para controlar rotaciones Y de un solo qubit sobre un segundo registro de qubit de <span class="math notranslate nohighlight">\(K\)</span> qubits, donde el estado <span class="math notranslate nohighlight">\(|1\rangle\)</span> del qubit <span class="math notranslate nohighlight">\(k\)</span> representa el evento predeterminado del activo <span class="math notranslate nohighlight">\(k\)</span>. El estado cuántico resultante se puede escribir como</p>
 <div class="math notranslate nohighlight">
@@ -754,8 +753,8 @@ Conditional Value at Risk CVaR[L]: 3.0000
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_credit_risk_analysis_14_0.svg" src="../_images/tutorials_09_credit_risk_analysis_14_0.svg" /></div>
 </div>
-</section>
-<section id="Pérdida-Esperada">
+</div>
+<div class="section" id="Pérdida-Esperada">
 <h2>Pérdida Esperada<a class="headerlink" href="#Pérdida-Esperada" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para estimar la pérdida esperada, primero aplicamos un operador de suma ponderada para sumar las pérdidas individuales a la pérdida total:</p>
 <div class="math notranslate nohighlight">
@@ -937,8 +936,8 @@ Estimated value:        0.6733
 Confidence interval:    [0.6587, 0.6878]
 </pre></div></div>
 </div>
-</section>
-<section id="Función-de-Distribución-Acumulativa">
+</div>
+<div class="section" id="Función-de-Distribución-Acumulativa">
 <h2>Función de Distribución Acumulativa<a class="headerlink" href="#Función-de-Distribución-Acumulativa" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En lugar de la pérdida esperada (que también podría estimarse de manera eficiente utilizando técnicas clásicas), ahora estimamos la función de distribución acumulada (CDF) de la pérdida. Clásicamente, esto implica evaluar todas las posibles combinaciones de activos en incumplimiento o muchas muestras clásicas en una simulación Monte Carlo. Los algoritmos basados en QAE tienen el potencial de acelerar significativamente este análisis en el futuro.</p>
 <p>Para estimar el CDF, es decir, la probabilidad <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq x]\)</span>, aplicamos nuevamente <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> para calcular la pérdida total, y luego aplicamos un comparador que para un valor dado <span class="math notranslate nohighlight">\(x\)</span> actúa como</p>
@@ -1120,8 +1119,8 @@ Estimated value:        0.9593
 Confidence interval:    [0.9582, 0.9604]
 </pre></div></div>
 </div>
-</section>
-<section id="Valor-en-Riesgo">
+</div>
+<div class="section" id="Valor-en-Riesgo">
 <h2>Valor en Riesgo<a class="headerlink" href="#Valor-en-Riesgo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>A continuación utilizamos una búsqueda de bisección y QAE para evaluar eficientemente la CDF para estimar el valor en riesgo.</p>
 <div class="nbinput nblast docutils container">
@@ -1263,8 +1262,8 @@ Estimated Probability:    0.960
 Exact Probability:        0.959
 </pre></div></div>
 </div>
-</section>
-<section id="Valor-en-Riesgo-Condicional">
+</div>
+<div class="section" id="Valor-en-Riesgo-Condicional">
 <h2>Valor en Riesgo Condicional<a class="headerlink" href="#Valor-en-Riesgo-Condicional" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Por último, calculamos el CVaR, es decir, el valor esperado de la pérdida condicional a ser mayor o igual al VaR. Para hacer eso, evaluamos una función objetivo lineal por partes <span class="math notranslate nohighlight">\(f(L)\)</span>, dependiente de la pérdida total <span class="math notranslate nohighlight">\(L\)</span>, que está dada por</p>
 <div class="math notranslate nohighlight">
@@ -1472,8 +1471,8 @@ Estimated CVaR: 3.3836
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

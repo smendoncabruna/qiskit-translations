@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Qiskit Runtimeの活用 &mdash; Qiskit Nature 0.2.1 ドキュメント</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/07_leveraging_qiskit_runtime.ipynb">docs/tutorials/07_leveraging_qiskit_runtime.ipynb</a> から生成されました。</p>
 </div>
-<section id="Qiskit-Runtimeの活用">
+<div class="section" id="Qiskit-Runtimeの活用">
 <h1>Qiskit Runtimeの活用<a class="headerlink" href="#Qiskit-Runtimeの活用" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>変分量子固有値ソルバー（VQE）のような反復アルゴリズムでは，従来，反復ごとに1つの回路バッチ（1つの「ジョブ」）を送信して量子デバイス上で実行していました。ジョブの送信には、以下のようなオーバーヘッドがあります。</p>
 <ul class="simple">
@@ -497,7 +496,7 @@ div.rendered_html tbody tr:hover {
 <p>何百ものジョブを繰り返し送信すると、このオーバーヘッドがすぐにアルゴリズムの実行時間を支配してしまいます。Qiskit Runtimeにより、これらの問題に取り組み、（特に）反復アルゴリズムを大幅に高速化することができます。Qiskit Runtimeでは、1つのジョブは回路のバッチだけではなく、アルゴリズム <em>全体</em> を含みます。つまり、APIのオーバーヘッドとキューの待ち時間は、反復ごとではなく、 <em>一度</em> だけ発生するということです。アルゴリズムのパラメーターをアップロードして、プログラムが実行されるクラウドにすべての複雑さを委ねることも、個人のアルゴリズムを直接アップロードすることもできるでしょう。</p>
 <p>VQEの場合、既存のコードにQiskit Runtimeを統合することは簡単です。  <code class="docutils literal notranslate"><span class="pre">VQE</span></code> クラスには <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> と呼ばれる（ほぼ）ドロップインの代替品があります。</p>
 <p>簡単な化学の例でruntimeをどのように活用できるか見てみましょう。：与えられた結合距離におけるリチウムハイドレート（LiH）分子の基底状態エネルギーを求めます。</p>
-<section id="問題の指定：LiH分子">
+<div class="section" id="問題の指定：LiH分子">
 <h2>問題の指定：LiH分子<a class="headerlink" href="#問題の指定：LiH分子" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>まず、基底状態エネルギーを求める分子を指定します。ここでは、結合距離が2.5ÅのLiHを見てみましょう。</p>
 <div class="nbinput nblast docutils container">
@@ -547,8 +546,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="古典的な参考解">
+</div>
+<div class="section" id="古典的な参考解">
 <h2>古典的な参考解<a class="headerlink" href="#古典的な参考解" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>参考解として、この問題を <code class="docutils literal notranslate"><span class="pre">NumPyEigensolver</span></code> で古典的に解くことができます。</p>
 <div class="nbinput nblast docutils container">
@@ -585,8 +584,8 @@ div.rendered_html tbody tr:hover {
 Energy: -7.773617988868097
 </pre></div></div>
 </div>
-</section>
-<section id="VQE">
+</div>
+<div class="section" id="VQE">
 <h2>VQE<a class="headerlink" href="#VQE" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>VQEを実行するには、パラメータ化された量子回路をansatzとして使用し、古典的なオプティマイザーを選択する必要があります。ここでは，ヒューリスティックでハードウェア効率のよいansatzとSPSAオプティマイザーを選択します。</p>
 <div class="nbinput docutils container">
@@ -668,8 +667,8 @@ Measured Observable is not composed of only Paulis, converting to Pauli represen
 Energy: -7.561492258661798
 </pre></div></div>
 </div>
-</section>
-<section id="Runtime-VQE">
+</div>
+<div class="section" id="Runtime-VQE">
 <h2>Runtime VQE<a class="headerlink" href="#Runtime-VQE" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ローカルVQEアルゴリズムからQiskit Runtimeを使用して実行されるVQEに固有値ソルバーを交換しましょう - 単純に <code class="docutils literal notranslate"><span class="pre">VQE</span></code> クラスを <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> で交換するだけです。</p>
 <p>まず、Qiskit Runtimeにアクセスするためのプロバイダーをロードする必要があります。 <strong>注</strong> ：次のセルをあなたのプロバイダーに置き換える必要があります。</p>
@@ -790,8 +789,8 @@ Energy: -7.575601255595115
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

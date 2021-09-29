@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>மின்னணு கட்டமைப்பு &mdash; Qiskit Nature 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/01_electronic_structure.ipynb">docs/tutorials/01_electronic_structure.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="மின்னணு-கட்டமைப்பு">
+<div class="section" id="மின்னணு-கட்டமைப்பு">
 <h1>மின்னணு கட்டமைப்பு<a class="headerlink" href="#மின்னணு-கட்டமைப்பு" title="Permalink to this headline">¶</a></h1>
-<section id="முன்னுரை">
+<div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>மூலக்கூறு ஹாமில்டோனியன்</p>
 <div class="math notranslate nohighlight">
@@ -507,8 +506,8 @@ div.rendered_html tbody tr:hover {
 <p>எங்கே <span class="math notranslate nohighlight">\(\Psi_0\)</span> என்பது அமைப்பின் தரை நிலை.</p>
 <p>இருப்பினும், இந்த சிக்கலின் பரிமாணமானது சுதந்திரத்தின் அளவுகளின் எண்ணிக்கையுடன் அதிவேகமாக வளர்கிறது. இந்த சிக்கலைச் சமாளிக்க <span class="math notranslate nohighlight">\(\Psi_0\)</span> ஒரு குவாண்டம் கணினியில் மற்றும் ஹாமில்டோனிய எதிர்பார்ப்பு மதிப்பை (அல்லது <span class="math notranslate nohighlight">\(E_0\)</span>) நேரடியாக அளவிட விரும்புகிறோம்.</p>
 <p>எனவே அதை நாம் எவ்வாறு உறுதியாகச் செய்வது?</p>
-</section>
-<section id="ஹார்ட்ரீ-ஃபாக்-ஆரம்ப-நிலை">
+</div>
+<div class="section" id="ஹார்ட்ரீ-ஃபாக்-ஆரம்ப-நிலை">
 <h2>ஹார்ட்ரீ-ஃபாக் ஆரம்ப நிலை<a class="headerlink" href="#ஹார்ட்ரீ-ஃபாக்-ஆரம்ப-நிலை" title="Permalink to this headline">¶</a></h2>
 <p>இந்த சிக்கலை தீர்க்க ஒரு நல்ல தொடக்க புள்ளி ஹார்ட்ரீ-ஃபாக் (எச். எஃப்) முறை. இந்த முறை ஒரு N- உடல் சிக்கலை N ஒரு-உடல் சிக்கல்களாக தோராயமாக மதிப்பிடுகிறது, அங்கு ஒவ்வொரு எலக்ட்ரானும் மற்றவர்களின் சராசரி புலத்தில் உருவாகிறது. எச். எஃப் சமன்பாடுகளை கிளாசிக்கல் முறையில் தீர்ப்பது திறமையானது மற்றும் சரியான பரிமாற்ற ஆற்றலுக்கு வழிவகுக்கிறது, ஆனால் எந்த எலக்ட்ரான் தொடர்பும் இல்லை. எனவே, பொதுவாக தொடர்புகளைச் சேர்ப்பது ஒரு நல்ல தொடக்க புள்ளியாகும்.</p>
 <p>HF முறையின் தீர்வுகளின் அடிப்படையில் ஹாமில்டோனியனை மீண்டும் வெளிப்படுத்தலாம், இது மூலக்கூறு சுற்றுப்பாதைகள் (MO கள்) என்றும் அழைக்கப்படுகிறது:</p>
@@ -557,10 +556,10 @@ Couldn&#39;t find cython becke routine
 </pre></div></div>
 </div>
 <p>For further information about the drivers see <a class="reference external" href="https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html">https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html</a></p>
-</section>
-<section id="The-mapping-from-fermions-to-qubits">
+</div>
+<div class="section" id="The-mapping-from-fermions-to-qubits">
 <h2>The mapping from fermions to qubits<a class="headerlink" href="#The-mapping-from-fermions-to-qubits" title="Permalink to this headline">¶</a></h2>
-<p><img alt="f5e3225d9e894f48be9beead859dd64e" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
+<p><img alt="af9950c6b0c74c00bfba8b1d94bd63f9" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
 <p>The Hamiltonian given in the previous section is expressed in terms of fermionic operators. To encode the problem into the state of a quantum computer, these operators must be mapped to spin operators (indeed the qubits follow spin statistics).</p>
 <p>There exist different mapping types with different properties. Qiskit already supports the following mappings: * The Jordan-Wigner ‘jordan_wigner’ mapping (über das paulische äquivalenzverbot. In The Collected Works of Eugene Paul Wigner (pp. 109-129). Springer, Berlin, Heidelberg (1993)). * The Parity ‘parity’ (The Journal of chemical physics, 137(22), 224109 (2012)) * The Bravyi-Kitaev ‘bravyi_kitaev’ (Annals of Physics, 298(1), 210-226 (2002))</p>
 <p>The Jordan-Wigner mapping is particularly interesting as it maps each Spin Orbital to a qubit (as shown on the Figure above).</p>
@@ -692,8 +691,8 @@ Couldn&#39;t find cython becke routine
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Fijación de Precios de las Opciones de Venta Europeas &mdash; documentación de Qiskit Finance - 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/04_european_put_option_pricing.ipynb">docs/tutorials/04_european_put_option_pricing.ipynb</a>.</p>
 </div>
-<section id="Fijación-de-Precios-de-las-Opciones-de-Venta-Europeas">
+<div class="section" id="Fijación-de-Precios-de-las-Opciones-de-Venta-Europeas">
 <h1>Fijación de Precios de las Opciones de Venta Europeas<a class="headerlink" href="#Fijación-de-Precios-de-las-Opciones-de-Venta-Europeas" title="Enlazar permanentemente con este título">¶</a></h1>
-<section id="Introducción">
+<div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Supón una opción de venta europea con precio de ejercicio <span class="math notranslate nohighlight">\(K\)</span> y un activo subyacente cuyo precio de contado al vencimiento <span class="math notranslate nohighlight">\(S_T\)</span> sigue una distribución aleatoria dada. La función de pago correspondiente se define como:</p>
 <div class="math notranslate nohighlight">
@@ -532,8 +531,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Modelo-de-Incertidumbre">
+</div>
+<div class="section" id="Modelo-de-Incertidumbre">
 <h2>Modelo de Incertidumbre<a class="headerlink" href="#Modelo-de-Incertidumbre" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Construimos una fábrica de circuitos para cargar una distribución aleatoria logarítmica normal en un estado cuántico. La distribución se trunca a un intervalo dado <span class="math notranslate nohighlight">\([\text{low}, \text{high}]\)</span> y se discretiza usando una cuadrícula con <span class="math notranslate nohighlight">\(2^n\)</span> puntos, donde <span class="math notranslate nohighlight">\(n\)</span> denota el número de qubits utilizados. El operador unitario correspondiente a la fábrica de circuitos implementa lo siguiente:</p>
 <div class="math notranslate nohighlight">
@@ -596,8 +595,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_04_european_put_option_pricing_6_0.svg" src="../_images/tutorials_04_european_put_option_pricing_6_0.svg" /></div>
 </div>
-</section>
-<section id="Función-de-Rendimiento">
+</div>
+<div class="section" id="Función-de-Rendimiento">
 <h2>Función de Rendimiento<a class="headerlink" href="#Función-de-Rendimiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La función de rendimiento disminuye linealmente con un precio de contado creciente al vencimiento <span class="math notranslate nohighlight">\(S_T\)</span> hasta que llega a cero para un precio de contado igual al precio de ejercicio <span class="math notranslate nohighlight">\(K\)</span>, permanece constante a cero para precios de contado más altos. La implementación usa un comparador, que cambia un qubit ancilla de <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> a <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> si <span class="math notranslate nohighlight">\(S_T \leq K\)</span>, y esta ancilla es se utiliza para controlar la parte lineal de la función de pago.</p>
 <p>La parte lineal en sí se aproxima entonces de la siguiente manera. Aprovechamos el hecho de que <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> para pequeños valores de <span class="math notranslate nohighlight">\(|y|\)</span>. Por lo tanto, para un factor de escalamiento de aproximación dado <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> y <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span> consideramos</p>
@@ -690,8 +689,8 @@ exact expected value:   0.1709
 exact delta value:      -0.8193
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluar-el-Rendimiento-Esperado">
+</div>
+<div class="section" id="Evaluar-el-Rendimiento-Esperado">
 <h2>Evaluar el Rendimiento Esperado<a class="headerlink" href="#Evaluar-el-Rendimiento-Esperado" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -742,8 +741,8 @@ Estimated value:        0.1752
 Confidence interval:    [0.1662, 0.1843]
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluar-Delta">
+</div>
+<div class="section" id="Evaluar-Delta">
 <h2>Evaluar Delta<a class="headerlink" href="#Evaluar-Delta" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La Delta es un poco más simple de evaluar que el rendimiento esperado. De manera similar al rendimiento esperado, usamos un circuito comparador y un qubit ancilla para identificar los casos donde <span class="math notranslate nohighlight">\(S_T \leq K\)</span>. Sin embargo, dado que solo nos interesa la probabilidad (negativa) de que esta condición sea cierta, podemos usar directamente este qubit ancilla como el qubit objetivo en la estimación de amplitud sin ninguna aproximación adicional.</p>
 <div class="nbinput nblast docutils container">
@@ -853,8 +852,8 @@ Confidence interval:    [-0.8216, -0.8186]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

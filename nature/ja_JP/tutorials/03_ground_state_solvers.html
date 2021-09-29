@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>基底状態ソルバー &mdash; Qiskit Nature 0.2.1 ドキュメント</title>
@@ -487,11 +486,11 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/03_ground_state_solvers.ipynb">docs/tutorials/03_ground_state_solvers.ipynb</a> から生成されました。</p>
 </div>
-<section id="基底状態ソルバー">
+<div class="section" id="基底状態ソルバー">
 <h1>基底状態ソルバー<a class="headerlink" href="#基底状態ソルバー" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<section id="はじめに">
+<div class="section" id="はじめに">
 <h2>はじめに<a class="headerlink" href="#はじめに" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><img alt="3451e3113c944e0d93baf739b0f89f30" class="no-scaled-link" src="../_images/H2_gs.png" style="width: 200px;" /></p>
+<p><img alt="1863ad61c482418eb90b28291f27eaf9" class="no-scaled-link" src="../_images/H2_gs.png" style="width: 200px;" /></p>
 <p>このチュートリアルでは、 Qiskit Nature の基底状態計算インターフェースについて説明します。目標は、分子ハミルトニアンの基底状態を計算することです。このハミルトニアンは、電子的あるいは振動的なものである可能性があります。ハミルトニアンの準備についての詳細は、電子構造と振動構造のチュートリアルをチェックしてください。</p>
 <p>まず分子系の定義から始めます。以下では、水素分子の電子部分を求めています。</p>
 <div class="nbinput docutils container">
@@ -533,8 +532,8 @@ Couldn&#39;t find cython becke routine
   h5py.get_config().default_file_mode = &#39;a&#39;
 </pre></div></div>
 </div>
-</section>
-<section id="ソルバー">
+</div>
+<div class="section" id="ソルバー">
 <h2>ソルバー<a class="headerlink" href="#ソルバー" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>次に、ソルバーを定義する必要があります。ソルバーとは、基底状態を求めるアルゴリズムのことです。</p>
 <p>まず、純粋に古典的な NumPy の最小固有値ソルバーの例から始めましょう。このアルゴリズムは、ハミルトニアンを正確に対角化します。これは規模の大きな問題には適用できませんが、小さな系で量子アルゴリズムの結果を確認するために用いることができます。</p>
@@ -550,7 +549,7 @@ Couldn&#39;t find cython becke routine
 </div>
 </div>
 <p>基底状態を見つけるために、変分量子固有ソルバー (VQE) アルゴリズムを用いることもできます。 VQE アルゴリズムは次の図に示すように、古典コンピューターと量子コンピューターの間で情報を交換することによって動作します。</p>
-<p><img alt="f40e2868549247e9a726b379a85c37e5" class="no-scaled-link" src="../_images/vqe.png" style="width: 600px;" /></p>
+<p><img alt="f75551ec4cbb44db8e9c7d401f8ea169" class="no-scaled-link" src="../_images/vqe.png" style="width: 600px;" /></p>
 <p>VQE ソルバーを初期化しましょう。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -590,8 +589,8 @@ Couldn&#39;t find cython becke routine
 </pre></div>
 </div>
 </div>
-</section>
-<section id="計算と結果">
+</div>
+<div class="section" id="計算と結果">
 <h2>計算と結果<a class="headerlink" href="#計算と結果" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これで計算を実行する準備が整いました。</p>
 <div class="nbinput docutils container">
@@ -676,8 +675,8 @@ Couldn&#39;t find cython becke routine
 
 </pre></div></div>
 </div>
-</section>
-<section id="フィルター関数の使用">
+</div>
+<div class="section" id="フィルター関数の使用">
 <h2>フィルター関数の使用<a class="headerlink" href="#フィルター関数の使用" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ハミルトニアンの真の基底状態がヒルベルト空間の異なる対称性領域にあるため、そうした解に興味がないという場合もあります。こうした場合に NumPy 固有値ソルバーは、フィルター関数を取って、正しい粒子数をもつ固有状態だけを返すようにすることが可能です。これは特に、ハミルトニアンの真の基底状態が真空状態となる、振動構造計算の場合に重要です。粒子数をチェックするためのデフォルトのフィルター関数は、様々な変換に実装されており、以下のように用いることができます。</p>
 <div class="nbinput docutils container">
@@ -755,8 +754,8 @@ The number of occupied modals is
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

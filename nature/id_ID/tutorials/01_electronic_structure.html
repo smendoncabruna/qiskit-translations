@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="id-ID" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Struktur elektronik &mdash; Dokumentasi Qiskit Nature 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Catatan</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/01_electronic_structure.ipynb">docs/tutorials/01_electronic_structure.ipynb</a>.</p>
 </div>
-<section id="Struktur-elektronik">
+<div class="section" id="Struktur-elektronik">
 <h1>Struktur elektronik<a class="headerlink" href="#Struktur-elektronik" title="Link permanen untuk headline ini">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Link permanen untuk headline ini">¶</a></h2>
 <p>The molecular Hamiltonian is</p>
 <div class="math notranslate nohighlight">
@@ -507,8 +506,8 @@ div.rendered_html tbody tr:hover {
 <p>di mana <span class="math notranslate nohighlight">\(\Psi_0\)</span> adalah keadaan dasar dari sistem.</p>
 <p>Namun, dimensionalitas masalah ini meningkat secara eksponensial dengan banyaknya derajat kebebasan. Untuk mengatasi masalah ini, kita akan menyiapkan <span class="math notranslate nohighlight">\(\Psi_0\)</span> pada komputer kuantum dan mengukur nilai ekspektasi Hamiltonian (atau <span class="math notranslate nohighlight">\(E_0\)</span>) secara langsung.</p>
 <p>Jadi, bagaimana kita bisa melakukannya?</p>
-</section>
-<section id="Keadaan-awal-Hartree-Fock">
+</div>
+<div class="section" id="Keadaan-awal-Hartree-Fock">
 <h2>Keadaan awal Hartree-Fock<a class="headerlink" href="#Keadaan-awal-Hartree-Fock" title="Link permanen untuk headline ini">¶</a></h2>
 <p>Kita dapat memulai menyelesaikan masalah ini dengan metode Hartree-Fock (HF). Metode ini mengaproksimasi masalah N-benda (N-body problem) menjadi masalah satu-benda (one-body problem) sebanyak N, dengan setiap elektronnya berubah dalam medan rata-rata (mean-field) elektron lainnya. Menyelesaikan persamaan HF secara klasik efisien dan mengarah pada energi pertukaran dengan tepat, tetapi tidak memasukkan pengaruh korelasi elektron. Oleh karena itu, kita dapat menambahkan korelasi untuk memulai.</p>
 <p>Hamiltonian dapat diekspresikan kembali sebagai basis solusi dari metode HF, atau yang disebut Orbital Molekul (Molecular Orbital, MO):</p>
@@ -557,10 +556,10 @@ Couldn&#39;t find cython becke routine
 </pre></div></div>
 </div>
 <p>For further information about the drivers see <a class="reference external" href="https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html">https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html</a></p>
-</section>
-<section id="Pemetaan-dari-fermion-ke-qubit">
+</div>
+<div class="section" id="Pemetaan-dari-fermion-ke-qubit">
 <h2>Pemetaan dari fermion ke qubit<a class="headerlink" href="#Pemetaan-dari-fermion-ke-qubit" title="Link permanen untuk headline ini">¶</a></h2>
-<p><img alt="b63d065bcbc44ab18cda581b0f4bccee" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
+<p><img alt="1011c532b13045e49d64ec547120d74f" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
 <p>Hamiltonian yang diberikan pada bagian sebelumnya diekspresikan dalam operator fermionik. Untuk enkode masalahnya ke keadaan dari komputer kuantum, operator ini perlu dipetakan ke operator spin (karena memang qubit mengikuti statistik spin).</p>
 <p>Terdapat beberapa jenis pemetaan dengan properti yang berbeda-beda. Qiskit mendukung pemetaan berikut: * The Jordan-Wigner ‘jordan_wigner’ mapping (über das paulische äquivalenzverbot. In The Collected Works of Eugene Paul Wigner (pp. 109-129). Springer, Berlin, Heidelberg (1993)). * The Parity ‘parity’ (The Journal of chemical physics, 137(22), 224109 (2012)) * The Bravyi-Kitaev ‘bravyi_kitaev’ (Annals of Physics, 298(1), 210-226 (2002))</p>
 <p>Pemetaan Jordan-Wigner secara khusus menarik karena memetakan setiap orbital spin ke qubit (seperti ditunjukkan pada Gambar di atas).</p>
@@ -692,8 +691,8 @@ Couldn&#39;t find cython becke routine
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

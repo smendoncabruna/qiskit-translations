@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>சாத்தியமான ஆற்றல் மேற்பரப்பை மாதிரி செய்தல் &mdash; Qiskit Nature 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/05_Sampling_potential_energy_surfaces.ipynb">docs/tutorials/05_Sampling_potential_energy_surfaces.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="சாத்தியமான-ஆற்றல்-மேற்பரப்பை-மாதிரி-செய்தல்">
+<div class="section" id="சாத்தியமான-ஆற்றல்-மேற்பரப்பை-மாதிரி-செய்தல்">
 <h1>சாத்தியமான ஆற்றல் மேற்பரப்பை மாதிரி செய்தல்<a class="headerlink" href="#சாத்தியமான-ஆற்றல்-மேற்பரப்பை-மாதிரி-செய்தல்" title="Permalink to this headline">¶</a></h1>
-<section id="முன்னுரை">
+<div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>இந்த ஊடாடும் நோட்புக் ஒரு மூலக்கூறின் விலகல் சுயவிவரத்தை உருவாக்க Qiskit இயற்கையின் Potential Energy Surface (PES) மாதிரி வழிமுறையை எவ்வாறு பயன்படுத்துவது என்பதை நிரூபிக்கிறது. Born-Oppenheimer Potential Energy Surface (BOPES) ஐப் பயன்படுத்துகிறோம் மற்றும் Variational Quantum Eigensolver (VQE) ஐப் பயன்படுத்தி PES ஐ கணக்கிடுவதில் மொத்த செயல்பாட்டு மதிப்பீடுகளைக் குறைக்க இயக்கு நிலை மற்றும் புறச்செருகல் எவ்வாறு பயன்படுத்துவது என்பதை நிரூபிக்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
@@ -563,7 +562,7 @@ div.rendered_html tbody tr:hover {
 [(&#39;H&#39;, [0.0, 0.0, 0.0]), (&#39;H&#39;, [0.0, 0.0, 0.3])]
 </pre></div></div>
 </div>
-<section id="மூலக்கூறுக்கு-அப்சலூட்_ஸ்ட்ரெட்சிங்-டிஓஎப்-உடன்-ஒரு-சுற்றுப்பாதை-ஏற்படுத்துதல்">
+<div class="section" id="மூலக்கூறுக்கு-அப்சலூட்_ஸ்ட்ரெட்சிங்-டிஓஎப்-உடன்-ஒரு-சுற்றுப்பாதை-ஏற்படுத்துதல்">
 <h3>மூலக்கூறுக்கு அப்சலூட்_ஸ்ட்ரெட்சிங் டிஓஎப் உடன் ஒரு சுற்றுப்பாதை ஏற்படுத்துதல்<a class="headerlink" href="#மூலக்கூறுக்கு-அப்சலூட்_ஸ்ட்ரெட்சிங்-டிஓஎப்-உடன்-ஒரு-சுற்றுப்பாதை-ஏற்படுத்துதல்" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -587,12 +586,12 @@ div.rendered_html tbody tr:hover {
 [(&#39;H&#39;, [0.0, 0.0, 0.0]), (&#39;H&#39;, [0.0, 0.0, 0.8999999999999999])]
 </pre></div></div>
 </div>
-</section>
-</section>
-<section id="BOPES-மாதிரியைப்-பயன்படுத்தி-பிணைப்பு-விலகல்-சுயவிவரத்தைக்-கணக்கிடுங்கள்">
+</div>
+</div>
+<div class="section" id="BOPES-மாதிரியைப்-பயன்படுத்தி-பிணைப்பு-விலகல்-சுயவிவரத்தைக்-கணக்கிடுங்கள்">
 <h2>BOPES மாதிரியைப் பயன்படுத்தி பிணைப்பு விலகல் சுயவிவரத்தைக் கணக்கிடுங்கள்<a class="headerlink" href="#BOPES-மாதிரியைப்-பயன்படுத்தி-பிணைப்பு-விலகல்-சுயவிவரத்தைக்-கணக்கிடுங்கள்" title="Permalink to this headline">¶</a></h2>
 <p>இங்கே, மூலக்கூறு தகவல்களையும் VQE யையும் BOPES Sampler எனப்படும் உள்ளமைக்கப்பட்ட வகைக்கு அனுப்புகிறோம். BOPES Sampler ஒரு குறிப்பிட்ட அளவு சுதந்திரத்திற்கு ஆற்றல் மேற்பரப்பைக் கணக்கிட அனுமதிக்கிறது.</p>
-<section id="முதலில்-பூட்ஸ்ட்ராப்பிங்-அல்லாததையும்-பூட்ஸ்ட்ராப்பிங்கையும்-ஒப்பிடுகிறோம்">
+<div class="section" id="முதலில்-பூட்ஸ்ட்ராப்பிங்-அல்லாததையும்-பூட்ஸ்ட்ராப்பிங்கையும்-ஒப்பிடுகிறோம்">
 <h3>முதலில் பூட்ஸ்ட்ராப்பிங் அல்லாததையும் பூட்ஸ்ட்ராப்பிங்கையும் ஒப்பிடுகிறோம்<a class="headerlink" href="#முதலில்-பூட்ஸ்ட்ராப்பிங்-அல்லாததையும்-பூட்ஸ்ட்ராப்பிங்கையும்-ஒப்பிடுகிறோம்" title="Permalink to this headline">¶</a></h3>
 <p>Bootstrapping the BOPES sampler involves utilizing the optimal variational parameters for a given degree of freedom, say r (ex. interatomic distance) as the initial point for VQE at a later degree of freedom, say r + <span class="math notranslate nohighlight">\(\epsilon\)</span>. By default, if boostrapping is set to True, all previous optimal parameters are used as initial points for the next runs.</p>
 <div class="nbinput nblast docutils container">
@@ -649,9 +648,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-<section id="கிளாசிக்கல்-ஐகென்வேக்டர்-உடன்-ஒப்பிடுக">
+</div>
+</div>
+<div class="section" id="கிளாசிக்கல்-ஐகென்வேக்டர்-உடன்-ஒப்பிடுக">
 <h2>கிளாசிக்கல் ஐகென்வேக்டர் உடன் ஒப்பிடுக<a class="headerlink" href="#கிளாசிக்கல்-ஐகென்வேக்டர்-உடன்-ஒப்பிடுக" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -674,7 +673,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="முடிவுகளை-வரைக">
+<div class="section" id="முடிவுகளை-வரைக">
 <h3>முடிவுகளை வரைக<a class="headerlink" href="#முடிவுகளை-வரைக" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -708,9 +707,9 @@ Text(0,0.5,&#39;Energy&#39;)
 <img alt="../_images/tutorials_05_Sampling_potential_energy_surfaces_15_1.png" src="../_images/tutorials_05_Sampling_potential_energy_surfaces_15_1.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="மதிப்பீடுகளின்-எண்ணிக்கையை-ஒப்பிடுக">
+</div>
+</div>
+<div class="section" id="மதிப்பீடுகளின்-எண்ணிக்கையை-ஒப்பிடுக">
 <h2>மதிப்பீடுகளின் எண்ணிக்கையை ஒப்பிடுக<a class="headerlink" href="#மதிப்பீடுகளின்-எண்ணிக்கையை-ஒப்பிடுக" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -746,8 +745,8 @@ Total evaluations for np:
 0
 </pre></div></div>
 </div>
-</section>
-<section id="நீட்சிமுறை">
+</div>
+<div class="section" id="நீட்சிமுறை">
 <h2>நீட்சிமுறை<a class="headerlink" href="#நீட்சிமுறை" title="Permalink to this headline">¶</a></h2>
 <p>Here, an extrapolator added that will try to fit each (param,point) set to some specified function and suggest an initial parameter set for the next point (degree of freedom).</p>
 <ul class="simple">
@@ -762,7 +761,7 @@ Total evaluations for np:
 <li><p>Polynomial Extrapolator: An extrapolator based on fitting each parameter to a polynomial function of a user-specified degree.</p></li>
 <li><p>Differential Extrapolator: An extrapolator based on treating each param set as a point in space, and performing regression to predict the param set for the next point. A user-specified degree also adds derivatives to the values in the point vectors which serve as features in the training data for the linear regression.</p></li>
 </ol>
-<section id="இங்கே-நாம்-இரண்டு-வெவ்வேறு-எக்ஸ்ட்ராபோலேஷன்-நுட்பங்களை-சோதிக்கிறோம்">
+<div class="section" id="இங்கே-நாம்-இரண்டு-வெவ்வேறு-எக்ஸ்ட்ராபோலேஷன்-நுட்பங்களை-சோதிக்கிறோம்">
 <h3>இங்கே நாம் இரண்டு வெவ்வேறு எக்ஸ்ட்ராபோலேஷன் நுட்பங்களை சோதிக்கிறோம்<a class="headerlink" href="#இங்கே-நாம்-இரண்டு-வெவ்வேறு-எக்ஸ்ட்ராபோலேஷன்-நுட்பங்களை-சோதிக்கிறோம்" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -795,8 +794,8 @@ Total evaluations for np:
 </pre></div>
 </div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>முடிவுகளை வரைக<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -842,9 +841,9 @@ Text(0,0.5,&#39;Energy&#39;)
 <img alt="../_images/tutorials_05_Sampling_potential_energy_surfaces_23_2.png" src="../_images/tutorials_05_Sampling_potential_energy_surfaces_23_2.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="id3">
+</div>
+</div>
+<div class="section" id="id3">
 <h2>மதிப்பீடுகளின் எண்ணிக்கையை ஒப்பிடுக<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -919,8 +918,8 @@ Total evaluations for diff_model:
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

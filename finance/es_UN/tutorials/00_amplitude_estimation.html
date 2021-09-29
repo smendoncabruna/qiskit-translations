@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Estimación de Amplitud Cuántica &mdash; documentación de Qiskit Finance - 0.2.1</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/00_amplitude_estimation.ipynb">docs/tutorials/00_amplitude_estimation.ipynb</a>.</p>
 </div>
-<section id="Estimación-de-Amplitud-Cuántica">
+<div class="section" id="Estimación-de-Amplitud-Cuántica">
 <h1>Estimación de Amplitud Cuántica<a class="headerlink" href="#Estimación-de-Amplitud-Cuántica" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Dado un operador <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> que actúa como</p>
 <div class="math notranslate nohighlight">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Flujo-de-Trabajo-de-Estimación-de-Amplitud-de-Qiskit">
+<div class="section" id="Flujo-de-Trabajo-de-Estimación-de-Amplitud-de-Qiskit">
 <h2>Flujo de Trabajo de Estimación de Amplitud de Qiskit<a class="headerlink" href="#Flujo-de-Trabajo-de-Estimación-de-Amplitud-de-Qiskit" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Qiskit implementa varios algoritmos QAE que se derivan de la interfaz <code class="docutils literal notranslate"><span class="pre">AmplitudeEstimator</span></code>. En el inicializador especificamos la configuración específica del algoritmo y el método de <code class="docutils literal notranslate"><span class="pre">estimate</span></code> que hace todo el trabajo, toma un <code class="docutils literal notranslate"><span class="pre">EstimationProblem</span></code> como entrada y devuelve un objeto <code class="docutils literal notranslate"><span class="pre">AmplitudeEstimationResult</span></code>. Dado que todas las variantes de QAE siguen la misma interfaz, podemos usarlas todas para resolver la misma instancia de problema.</p>
 <p>A continuación, ejecutaremos todos los diferentes algoritmos de QAE. Para hacerlo, primero definimos el problema de estimación que contendrá los operadores <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> y <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> así como también cómo identificar el estado <span class="math notranslate nohighlight">\(|\Psi_1\rangle\)</span>, que en este ejemplo simple es <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p>
@@ -598,8 +597,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="AE-Canónica">
+</div>
+<div class="section" id="AE-Canónica">
 <h2>AE Canónica<a class="headerlink" href="#AE-Canónica" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Ahora solucionemos esto con la implementación QAE original de Brassard et al. [1].</p>
 <div class="nbinput nblast docutils container">
@@ -734,8 +733,8 @@ Interpolated MLE estimator: 0.19999999390907777
 <img alt="../_images/tutorials_00_amplitude_estimation_23_0.png" src="../_images/tutorials_00_amplitude_estimation_23_0.png" />
 </div>
 </div>
-</section>
-<section id="Estimación-de-Amplitud-Iterativa">
+</div>
+<div class="section" id="Estimación-de-Amplitud-Iterativa">
 <h2>Estimación de Amplitud Iterativa<a class="headerlink" href="#Estimación-de-Amplitud-Iterativa" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Véase [2].</p>
 <div class="nbinput docutils container">
@@ -783,8 +782,8 @@ Estimate: 0.19999999999999998
 <img alt="../_images/tutorials_00_amplitude_estimation_27_0.png" src="../_images/tutorials_00_amplitude_estimation_27_0.png" />
 </div>
 </div>
-</section>
-<section id="Estimación-de-Amplitud-de-Máxima-Verosimilitud">
+</div>
+<div class="section" id="Estimación-de-Amplitud-de-Máxima-Verosimilitud">
 <h2>Estimación de Amplitud de Máxima Verosimilitud<a class="headerlink" href="#Estimación-de-Amplitud-de-Máxima-Verosimilitud" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Véase [3].</p>
 <div class="nbinput docutils container">
@@ -812,8 +811,8 @@ Estimate: 0.19999999999999998
 Estimate: 0.20002237175368104
 </pre></div></div>
 </div>
-</section>
-<section id="Estimación-de-Amplitud-Más-Rápida">
+</div>
+<div class="section" id="Estimación-de-Amplitud-Más-Rápida">
 <h2>Estimación de Amplitud Más Rápida<a class="headerlink" href="#Estimación-de-Amplitud-Más-Rápida" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Véase [4].</p>
 <div class="nbinput docutils container">
@@ -851,8 +850,8 @@ Estimate: 0.20000000000000018
   warnings.warn(&#34;Rescaling discards the Grover operator.&#34;)
 </pre></div></div>
 </div>
-</section>
-<section id="Referencias">
+</div>
+<div class="section" id="Referencias">
 <h2>Referencias<a class="headerlink" href="#Referencias" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>[1] Quantum Amplitude Amplification and Estimation. Brassard et al (2000). <a class="reference external" href="https://arxiv.org/abs/quant-ph/0005055">https://arxiv.org/abs/quant-ph/0005055</a></p>
 <p>[2] Iterative Quantum Amplitude Estimation. Grinko, D., Gacon, J., Zoufal, C., &amp; Woerner, S. (2019). <a class="reference external" href="https://arxiv.org/abs/1912.05559">https://arxiv.org/abs/1912.05559</a></p>
@@ -891,8 +890,8 @@ Estimate: 0.20000000000000018
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

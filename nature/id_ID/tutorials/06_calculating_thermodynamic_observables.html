@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="id-ID" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Kalkulasi Pengamatan (Observable) Termodinamika dengan komputer kuantum &mdash; Dokumentasi Qiskit Nature 0.2.1</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Catatan</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/06_calculating_thermodynamic_observables.ipynb">docs/tutorials/06_calculating_thermodynamic_observables.ipynb</a>.</p>
 </div>
-<section id="Kalkulasi-Pengamatan-(Observable)-Termodinamika-dengan-komputer-kuantum">
+<div class="section" id="Kalkulasi-Pengamatan-(Observable)-Termodinamika-dengan-komputer-kuantum">
 <h1>Kalkulasi Pengamatan (Observable) Termodinamika dengan komputer kuantum<a class="headerlink" href="#Kalkulasi-Pengamatan-(Observable)-Termodinamika-dengan-komputer-kuantum" title="Link permanen untuk headline ini">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -523,7 +522,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>Draf pendahuluan dengan lebih banyak informasi terkait dengan tutorial ini dapat ditemukan dalam pracetak: Stober et al, arXiv 2003.02303 (2020)</p>
-<section id="Perhitungan-dari-Energi-Potensial-Permukaan-Born-Oppenheimer-(Born-Oppenheimer-Potential-Energy-Surface,-BOPES)">
+<div class="section" id="Perhitungan-dari-Energi-Potensial-Permukaan-Born-Oppenheimer-(Born-Oppenheimer-Potential-Energy-Surface,-BOPES)">
 <h2>Perhitungan dari Energi Potensial Permukaan Born Oppenheimer (Born Oppenheimer Potential Energy Surface, BOPES)<a class="headerlink" href="#Perhitungan-dari-Energi-Potensial-Permukaan-Born-Oppenheimer-(Born-Oppenheimer-Potential-Energy-Surface,-BOPES)" title="Link permanen untuk headline ini">¶</a></h2>
 <p>Untuk menghitung pengamatan termodinamika, kami mulai dengan kalkulasi energi titik tunggal yang menghitung fungsi gelombang, kerapatan muatan dan energi dari susunan inti tertentu. Di sini kami menghitung energi potensial permukaan Born-Oppenheimer dari molekul hidrogen, sebagai contoh, yang secara sederhana merupakan energi elektronik sebagai fungsi dari panjang ikatan.</p>
 <div class="nbinput nblast docutils container">
@@ -658,8 +657,8 @@ Text(0, 0.5, &#39;Energy&#39;)
 <img alt="../_images/tutorials_06_calculating_thermodynamic_observables_11_1.png" src="../_images/tutorials_06_calculating_thermodynamic_observables_11_1.png" />
 </div>
 </div>
-</section>
-<section id="Kalkulasi-dari-tingkat-Energi-Vibrasional-molekular">
+</div>
+<div class="section" id="Kalkulasi-dari-tingkat-Energi-Vibrasional-molekular">
 <h2>Kalkulasi dari tingkat Energi Vibrasional molekular<a class="headerlink" href="#Kalkulasi-dari-tingkat-Energi-Vibrasional-molekular" title="Link permanen untuk headline ini">¶</a></h2>
 <div class="line-block">
 <div class="line">Pendekatan Born-Oppeheimer menghilangkan vibrasi antar inti dari Hamiltonian molekul dan energi yang dihitung dari perhitungan energi keadaan dasar mekanika kuantum dengan pendekatan yang hanya mengandung energi elektronik. Karena pada nol mutlak vibrasi antar inti masih terjadi, koreksi diperlukan untuk mendapatkan energi temperatur nol yang sebenarnya dari sebuah molekul. Koreksi ini disebut energi vibrasi titik-nol (zero-point vibrational energy, ZPE), yang dihitung dengan menjumlahkan kontribusi dari mode vibrasi antar inti. Oleh karena itu, langkah berikutnya dalam komputasi termodinamika observabel adalah menentukan tingkat energi vibrasi. Hal ini dapat dilakukan dengan membuat matriks Hessian berdasarkan perhitungan energi titik tunggal yang dekat dengan panjang ikatan kesetimbangan. Nilai eigen matriks Hessian kemudian dapat digunakan untuk menentukan tingkat energi vibrasi dan energi vibrasi titik nol</div>
@@ -699,8 +698,8 @@ Text(0, 0.5, &#39;Energy&#39;)
 <img alt="../_images/tutorials_06_calculating_thermodynamic_observables_15_0.png" src="../_images/tutorials_06_calculating_thermodynamic_observables_15_0.png" />
 </div>
 </div>
-</section>
-<section id="Membuat-fungsi-partisi-untuk-kalkulasi-kapasitas-kalor">
+</div>
+<div class="section" id="Membuat-fungsi-partisi-untuk-kalkulasi-kapasitas-kalor">
 <h2>Membuat fungsi partisi untuk kalkulasi kapasitas kalor<a class="headerlink" href="#Membuat-fungsi-partisi-untuk-kalkulasi-kapasitas-kalor" title="Link permanen untuk headline ini">¶</a></h2>
 <p>Fungsi partisi untuk sebuah molekul adalah produk kontribusi dari translasional, rotasional, vibrasional, elektronik, dan derajat kebebasan nuklir. Dengan frekuensi vibrasional, sekarang kita bisa mendapatkan fungsi partisi vibrasional <span class="math notranslate nohighlight">\(q_{\rm vibration}\)</span> untuk menghitung keseluruhan fungsi partisi vibrasional <span class="math">\begin{equation} q_{\rm vibration} = \prod_{i=1} ^M \frac{\exp\,(-\Theta_{\nu_i}/2T)}{1-\exp\,(-\Theta_{\nu_i}/2T} \, . \end{equation}</span> Di sini <span class="math notranslate nohighlight">\(\Theta_{\nu_i}= h\nu_i/k_B\)</span>, <span class="math notranslate nohighlight">\(T adalah temperatur dan :math:\)</span> adalah konstanta Boltzmann.</p>
 <p>Kalkulasi energi titik tunggal dan fungsi partisi yang dihasilkan dapat digunakan untuk menghitung kapasitas kalor (volume konstan atau tekanan konstan) molekul. Kapasitas kalor volume konstan, misalnya, diberikan oleh</p>
@@ -849,8 +848,8 @@ U=k_B T^2 \left.\frac{\partial {\rm ln} Q}{\partial T}\right|_{N,V} .
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

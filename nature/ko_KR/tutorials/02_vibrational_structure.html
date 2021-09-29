@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>진동 구조 &mdash; Qiskit Nature 0.2.1 문서</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/02_vibrational_structure.ipynb">docs/tutorials/02_vibrational_structure.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="진동-구조">
+<div class="section" id="진동-구조">
 <h1>진동 구조<a class="headerlink" href="#진동-구조" title="이 표제에 대한 퍼머링크">¶</a></h1>
-<section id="소개">
+<div class="section" id="소개">
 <h2>소개<a class="headerlink" href="#소개" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>분자 해밀톤은</p>
 <div class="math notranslate nohighlight">
@@ -555,7 +554,7 @@ div.rendered_html tbody tr:hover {
 <p>여기에서 정의한 연산자와 전자 구조 1과의 차이를 여기에서 강조한다. 첫째, 이미 언급한 바와 같이, 전위는 (원칙적으로) 6개 (또는 그 이상) 의 제2양자화 연산자를 갖는 스트링들을 유도하는 3-및 보다 높은 바디 커플링 조건들을 포함한다. 더욱이, 해밀턴은 주어진 모드에 대한 생성 및 소멸 연산자의 수가 각각의 용어에서 동일하다는 사실로부터 알 수 있는 바와 같이, 각각의 모드에 대한 입자의 수를 보존한다. 그럼에도 불구하고, 상이한 모드들은 상이한 모드들 <span class="math notranslate nohighlight">\(l\)</span> 및 <span class="math notranslate nohighlight">\(m\)</span> 에 속하는 SQ 연산자들을 포함하는 2개 - (더 높은) 바디 용어들에 의해 연결된다.</p>
 <p>참조: 문헌 [Ollitrault, Pauline J., et al., arXiv:2003.12578 (2020)] 을 참조한다.</p>
 <p>전자 잠재력 계산</p>
-<p>상이한 핵 구성을 위해 상기 ESE를 솔빙하여 PES기 능 :math:’V (Q_1, ldot, Q_L)’ 를 얻는다.</p>
+<p>상이한 핵 구성을 위해 상기 ESE를 솔빙하여 PES기 능 :math:〉V (Q_1, ldot, Q_L)〉 를 얻는다.</p>
 <div class="math notranslate nohighlight">
 \[V(Q_1, \ldots, Q_L) = \frac{1}{2}  \sum_{ij} k_{ij} Q_i Q_j
                   + \frac{1}{6}  \sum_{ijk} k_{ijk} Q_i Q_j Q_k
@@ -594,8 +593,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="큐비트-Hamiltonian으로-mapping하기">
+</div>
+<div class="section" id="큐비트-Hamiltonian으로-mapping하기">
 <h2>큐비트 Hamiltonian으로 mapping하기<a class="headerlink" href="#큐비트-Hamiltonian으로-mapping하기" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>이제 잠재력에 대한 근사값이 있으므로, 해밀턴을 2차 양자화로 작성해야 한다. 이를 위해, 모달 기준을 선택하여 1-체 인테그라스 <span class="math notranslate nohighlight">\(\langle\phi_{k_i}| V(Q_i) | \phi_{h_i} \rangle\)</span>, 2-체 인테그린 <span class="math notranslate nohighlight">\(\langle\phi_{k_i} \phi_{k_j}| V(Q_i,Q_j) | \phi_{h_i} \phi_{h_j} \rangle\)</span>… 를 계산할 필요가 있다.</p>
 <p>가장 간단한 경우에, :math:` phi 함수는 각 모드에 대한 고조파-오실레이터 고유기능이다. 이러한 선택의 주요 이점은, 테일러 확장으로서 표현되는 PES의 적분이 이러한 기초로 계산하기 용이하다는 것이다. 이러한 통합을 계산하기 위한 루틴은 Qiskit 에서 구현된다.</p>
@@ -689,7 +688,7 @@ div.rendered_html tbody tr:hover {
 + IIIIININ * (-4.959196875000003+0j)
 </pre></div></div>
 </div>
-<p>이전의 셀에서, 본 발명자들은 고조파 모달 기준으로 해밀턴을 표현하기 위해 보온톤 변환을 정의하였으며, 2개의 모달기가 차수 2에서 절단될 수 있고, ‘다이렉트’ 보아들이 맵핑을 절단하였다. 계산은 다음과 같이 실행됩니다.</p>
+<p>이전의 셀에서, 본 발명자들은 고조파 모달 기준으로 해밀턴을 표현하기 위해 보온톤 변환을 정의하였으며, 2개의 모달기가 차수 2에서 절단될 수 있고, 〈다이렉트〉 보아들이 맵핑을 절단하였다. 계산은 다음과 같이 실행됩니다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -1100,8 +1099,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

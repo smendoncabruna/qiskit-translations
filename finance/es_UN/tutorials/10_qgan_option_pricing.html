@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Fijación de Precios de Opciones con qGANs &mdash; documentación de Qiskit Finance - 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/10_qgan_option_pricing.ipynb">docs/tutorials/10_qgan_option_pricing.ipynb</a>.</p>
 </div>
-<section id="Fijación-de-Precios-de-Opciones-con-qGANs">
+<div class="section" id="Fijación-de-Precios-de-Opciones-con-qGANs">
 <h1>Fijación de Precios de Opciones con qGANs<a class="headerlink" href="#Fijación-de-Precios-de-Opciones-con-qGANs" title="Enlazar permanentemente con este título">¶</a></h1>
-<section id="Introducción">
+<div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En este cuaderno, discutimos cómo un Algoritmo Cuántico de Machine Learning, es decir, una Red Generativa Antagónica cuántica (quantum Generative Adversarial Network, qGAN), puede facilitar la fijación de precios de una opción de compra europea. Más específicamente, una qGAN se puede entrenar de manera que un circuito cuántico modele el precio al contado de un activo subyacente a una opción de compra europea. El modelo resultante se puede integrar en un algoritmo basado en Estimación de Amplitud Cuántica para evaluar la rentabilidad esperada; consulta <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">Fijación de Precios de Opciones de Compra Europeas</span></a>. Para obtener más detalles sobre el aprendizaje y la carga de distribuciones aleatorias mediante el entrenamiento de una qGAN, consulta <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
 <div class="nbinput nblast docutils container">
@@ -512,7 +511,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Modelo-de-Incertidumbre">
+<div class="section" id="Modelo-de-Incertidumbre">
 <h3>Modelo de Incertidumbre<a class="headerlink" href="#Modelo-de-Incertidumbre" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>El modelo Black-Scholes asume que el precio al contado al vencimiento <span class="math notranslate nohighlight">\(S_T\)</span> para una opción de compra europea tiene una distribución logarítmica normal. Por lo tanto, podemos entrenar una qGAN con muestras de una distribución logarítmica normal y usar el resultado como un modelo de incertidumbre subyacente a la opción. A continuación, construimos un circuito cuántico que carga el modelo de incertidumbre. La salida del circuito dice que</p>
 <div class="math notranslate nohighlight">
@@ -546,8 +545,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Evaluar-el-Rendimiento-Esperado">
+</div>
+<div class="section" id="Evaluar-el-Rendimiento-Esperado">
 <h3>Evaluar el Rendimiento Esperado<a class="headerlink" href="#Evaluar-el-Rendimiento-Esperado" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ahora, el modelo de incertidumbre entrenado se puede utilizar para evaluar el valor esperado de la función de rendimiento de la opción con Estimación de Amplitud Cuántica.</p>
 <div class="nbinput nblast docutils container">
@@ -563,8 +562,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Graficar-la-distribución-de-probabilidad">
+</div>
+<div class="section" id="Graficar-la-distribución-de-probabilidad">
 <h3>Graficar la distribución de probabilidad<a class="headerlink" href="#Graficar-la-distribución-de-probabilidad" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>A continuación, graficamos la distribución de probabilidad entrenada y, para poder comparar, también la distribución de probabilidad objetivo.</p>
 <div class="nbinput docutils container">
@@ -609,8 +608,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_10_qgan_option_pricing_7_0.svg" src="../_images/tutorials_10_qgan_option_pricing_7_0.svg" /></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>Evaluar el Rendimiento Esperado<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Ahora, el modelo de incertidumbre entrenado se puede utilizar para evaluar el valor esperado de la función de rendimiento de la opción de forma analítica y con la Estimación de Amplitud Cuántica.</p>
 <div class="nbinput docutils container">
@@ -736,9 +735,9 @@ Confidence interval:    [0.9965, 1.0455]
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

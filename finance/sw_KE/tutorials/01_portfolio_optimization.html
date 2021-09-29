@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="sw-KE" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Portfolio Optimization &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a>.</p>
 </div>
-<section id="Portfolio-Optimization">
+<div class="section" id="Portfolio-Optimization">
 <h1>Portfolio Optimization<a class="headerlink" href="#Portfolio-Optimization" title="Permalink to this headline">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial shows how to solve the following mean-variance portfolio optimization problem for <span class="math notranslate nohighlight">\(n\)</span> assets:</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-Setup-token-to-run-the-experiment-on-a-real-device">
+<div class="section" id="[Optional]-Setup-token-to-run-the-experiment-on-a-real-device">
 <h3>[Optional] Setup token to run the experiment on a real device<a class="headerlink" href="#[Optional]-Setup-token-to-run-the-experiment-on-a-real-device" title="Permalink to this headline">¶</a></h3>
 <p>If you would like to run the experiment on a real device, you need to setup your account first.</p>
 <p>Note: If you do not store your token yet, use <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> to store it first.</p>
-</section>
-</section>
-<section id="Define-problem-instance">
+</div>
+</div>
+<div class="section" id="Define-problem-instance">
 <h2>Define problem instance<a class="headerlink" href="#Define-problem-instance" title="Permalink to this headline">¶</a></h2>
 <p>Here an Operator instance is created for our Hamiltonian. In this case the paulis are from an Ising Hamiltonian translated from the portfolio problem. We use a random portfolio problem for this notebook. It is straight-forward to extend this to using real financial data as illustrated here: <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a></p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyMinimumEigensolver-(as-a-classical-reference)">
+</div>
+<div class="section" id="NumPyMinimumEigensolver-(as-a-classical-reference)">
 <h2>NumPyMinimumEigensolver (as a classical reference)<a class="headerlink" href="#NumPyMinimumEigensolver-(as-a-classical-reference)" title="Permalink to this headline">¶</a></h2>
 <p>Lets solve the problem. First classically…</p>
 <p>We can now use the Operator we built above without regard to the specifics of how it was created. We set the algorithm for the NumPyMinimumEigensolver so we can have a classical reference. The problem is set for ‘ising’. Backend is not required since this is computed classically not using quantum computation. The result is returned as a dictionary.</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="Solution-using-VQE">
+</div>
+<div class="section" id="Solution-using-VQE">
 <h2>Solution using VQE<a class="headerlink" href="#Solution-using-VQE" title="Permalink to this headline">¶</a></h2>
 <p>We can now use the Variational Quantum Eigensolver (VQE) to solve the problem. We will specify the optimizer and variational form to be used.</p>
 <p>Note: You can switch to different backends by providing the name of backend.</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="Solution-using-QAOA">
+<div class="section" id="Solution-using-QAOA">
 <h3>Solution using QAOA<a class="headerlink" href="#Solution-using-QAOA" title="Permalink to this headline">¶</a></h3>
 <p>We also show here a result using the Quantum Approximate Optimization Algorithm (QAOA). This is another variational algorithm and it uses an internal variational form that is created based on the problem.</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

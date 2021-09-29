@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr-FR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Structure électronique &mdash; Documentation Qiskit Nature 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/01_electronic_structure.ipynb">docs/tutorials/01_electronic_structure.ipynb</a>.</p>
 </div>
-<section id="Structure-électronique">
+<div class="section" id="Structure-électronique">
 <h1>Structure électronique<a class="headerlink" href="#Structure-électronique" title="Lien permanent vers ce titre">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>The molecular Hamiltonian is</p>
 <div class="math notranslate nohighlight">
@@ -507,8 +506,8 @@ div.rendered_html tbody tr:hover {
 <p>où <span class="math notranslate nohighlight">\(\Psi_0\)</span> est l’état fondamental du système.</p>
 <p>Cependant, la dimension de ce problème croît de manière exponentielle avec le nombre de degrés de liberté. Pour résoudre ce problème, nous aimerions préparer <span class="math notranslate nohighlight">\(\Psi_0\)</span> sur un ordinateur quantique et mesurer la valeur d’espérance Hamiltonienne (ou <span class="math notranslate nohighlight">\(E_0\)</span>) directement.</p>
 <p>Alors, comment le faire concrètement?</p>
-</section>
-<section id="L'état-initial-de-Hartree-Fock">
+</div>
+<div class="section" id="L'état-initial-de-Hartree-Fock">
 <h2>L’état initial de Hartree-Fock<a class="headerlink" href="#L'état-initial-de-Hartree-Fock" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un bon point de départ pour résoudre ce problème est la méthode Hartree-Fock (HF). Cette méthode transforme un problème à N-corps par approximation en N problèmes à un corps où chaque électron évolue dans le champ moyen des autres. La résolution classique des équations HF est efficace et conduit à l’énergie d’échange exacte, mais n’inclut pas de corrélation électronique. Par conséquent, il s’agit généralement d’un bon point de départ pour commencer à ajouter une corrélation.</p>
 <p>Le Hamtiltonien peut alors être reformulé dans la base des solutions de la méthode HF, aussi appelées Orbitales Moléculaires (MO - Molecular Orbitals) :</p>
@@ -557,10 +556,10 @@ Couldn&#39;t find cython becke routine
 </pre></div></div>
 </div>
 <p>For further information about the drivers see <a class="reference external" href="https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html">https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html</a></p>
-</section>
-<section id="The-mapping-from-fermions-to-qubits">
+</div>
+<div class="section" id="The-mapping-from-fermions-to-qubits">
 <h2>The mapping from fermions to qubits<a class="headerlink" href="#The-mapping-from-fermions-to-qubits" title="Lien permanent vers ce titre">¶</a></h2>
-<p><img alt="145a0089605c4a3f92cb7e511fcb5601" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
+<p><img alt="448e62c9039b4fe0ac64972acba113ec" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
 <p>The Hamiltonian given in the previous section is expressed in terms of fermionic operators. To encode the problem into the state of a quantum computer, these operators must be mapped to spin operators (indeed the qubits follow spin statistics).</p>
 <p>There exist different mapping types with different properties. Qiskit already supports the following mappings: * The Jordan-Wigner ‘jordan_wigner’ mapping (über das paulische äquivalenzverbot. In The Collected Works of Eugene Paul Wigner (pp. 109-129). Springer, Berlin, Heidelberg (1993)). * The Parity ‘parity’ (The Journal of chemical physics, 137(22), 224109 (2012)) * The Bravyi-Kitaev ‘bravyi_kitaev’ (Annals of Physics, 298(1), 210-226 (2002))</p>
 <p>The Jordan-Wigner mapping is particularly interesting as it maps each Spin Orbital to a qubit (as shown on the Figure above).</p>
@@ -692,8 +691,8 @@ Couldn&#39;t find cython becke routine
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>포트폴리오 최적화 &mdash; Qiskit Finance 0.2.1 문서</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="포트폴리오-최적화">
+<div class="section" id="포트폴리오-최적화">
 <h1>포트폴리오 최적화<a class="headerlink" href="#포트폴리오-최적화" title="이 표제에 대한 퍼머링크">¶</a></h1>
-<section id="소개">
+<div class="section" id="소개">
 <h2>소개<a class="headerlink" href="#소개" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>이 학습서는 <span class="math notranslate nohighlight">\(n\)</span> 개의 자산들에 대한 평균-분산 포트폴리오 최적화 문제를 해결하는 방법을 보여준다.</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-실제-장치에서-실험을-실행하기-위한-토큰-설정">
+<div class="section" id="[Optional]-실제-장치에서-실험을-실행하기-위한-토큰-설정">
 <h3>[Optional] 실제 장치에서 실험을 실행하기 위한 토큰 설정<a class="headerlink" href="#[Optional]-실제-장치에서-실험을-실행하기-위한-토큰-설정" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <p>실제 장치에서 실험을 실행하려면 먼저 계정을 설정해야 한다.</p>
 <p>참고: 아직 토큰을 저장하지 않은 경우 <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> 을 사용하여 저장한다.</p>
-</section>
-</section>
-<section id="문제-인스턴스-정의">
+</div>
+</div>
+<div class="section" id="문제-인스턴스-정의">
 <h2>문제 인스턴스 정의<a class="headerlink" href="#문제-인스턴스-정의" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>여기에 해밀토니안에 대한 Operator 인스턴스가 생성되었다. 이 경우, Pauli들은 포트폴리오 문제에 해당하는 이징 해밀토니안(Ising Hamiltonian)에서부터 나왔다. 이 노트북에선 무작위 포트폴리오를 사용한다. 실제 재무 데이터를 사용하여 이를 확장하는 것은 <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a> 에서 볼수 있다.</p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyMinimumEigensolver-(고전적-참고치로서)">
+</div>
+<div class="section" id="NumPyMinimumEigensolver-(고전적-참고치로서)">
 <h2>NumPyMinimumEigensolver (고전적 참고치로서)<a class="headerlink" href="#NumPyMinimumEigensolver-(고전적-참고치로서)" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>문제를 풀어보자. 먼저 고전적으로…</p>
 <p>어떻게 만들어졌는지와는 상관 없이 위에서 구축한 Operator를 사용할 수 있다. NumPyMinimumEigensolver에 대한 알고리즘을 설정하여 고전적 참고치를 얻을 수 있다. 문제는 ‘ising’으로 정해져 있다. 이것은 양자 연산을 사용하지 않고 고전적으로 계산되기 때문에 백엔드가 필요하지 않다. 결과는 사전 타입으로 반환된다.</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="VQE를-사용한-해">
+</div>
+<div class="section" id="VQE를-사용한-해">
 <h2>VQE를 사용한 해<a class="headerlink" href="#VQE를-사용한-해" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>이제 VQE를 사용하여 문제를 푼다. 사용할 최적자 및 변분 형태를 지정한다.</p>
 <p>참고: 백엔드의 이름을 설정하여 다른 백엔드로 전환할 수 있다.</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="QAOA를-사용한-해">
+<div class="section" id="QAOA를-사용한-해">
 <h3>QAOA를 사용한 해<a class="headerlink" href="#QAOA를-사용한-해" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <p>QAOA를 사용한 결과 또한 보여 준다. 이는 다른 변분 알고리즘이며 문제를 기반으로 만들어지는 내부 변분 형태를 사용한다.</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

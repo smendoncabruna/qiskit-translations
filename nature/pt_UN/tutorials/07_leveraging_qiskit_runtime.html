@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Aproveitando o Qiskit Runtime &mdash; Documentação Qiskit Nature 0.2.1</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/07_leveraging_qiskit_runtime.ipynb">docs/tutorials/07_leveraging_qiskit_runtime.ipynb</a>.</p>
 </div>
-<section id="Aproveitando-o-Qiskit-Runtime">
+<div class="section" id="Aproveitando-o-Qiskit-Runtime">
 <h1>Aproveitando o Qiskit Runtime<a class="headerlink" href="#Aproveitando-o-Qiskit-Runtime" title="Link permanente para este título">¶</a></h1>
 <p>Algoritmos iterativos, como o Variational Quantum Eigensolver (VQE), tradicionalmente enviam um lote de circuitos (uma «tarefa») para ser executado no dispositivo quântico em cada iteração. O envio de uma tarefa envolve certa sobrecarga, principalmente</p>
 <ul class="simple">
@@ -497,7 +496,7 @@ div.rendered_html tbody tr:hover {
 <p>Se enviarmos centenas de tarefas iterativamente, essa sobrecarga rapidamente dominará o tempo de execução do nosso algoritmo. O Qiskit Runtime nos permite lidar com esses problemas e acelerar significativamente (em especial) os algoritmos iterativos. Com o Qiskit Runtime, uma tarefa não contém apenas um lote de circuitos mas o algoritmo <em>por completo</em>. Isso significa que apenas experimentamos a sobrecarga da API e a espera da fila <em>uma vez</em> em vez de a cada iteração! Você será capaz de até mesmo fazer upload dos parâmetros do algoritmo e delegar toda a complexidade para a nuvem, onde o seu programa é executado, ou fazer upload do seu algoritmo pessoal diretamente.</p>
 <p>Para o VQE, a integração do Qiskit Runtime no seu código existente é moleza. Existe uma (quase) substituição de drop-in, chamada <cite>VQEProgram`</cite> para a classe <code class="docutils literal notranslate"><span class="pre">VQE</span></code>.</p>
 <p>Vejamos como aproveitar o ambiente de execução em um exemplo de química simples: Encontrar a energia de estado fundamental da molécula de hidreto de lítio (LiH) a uma determinada distância de ligação.</p>
-<section id="Especificação-do-problema:-molécula-de-LiH">
+<div class="section" id="Especificação-do-problema:-molécula-de-LiH">
 <h2>Especificação do problema: molécula de LiH<a class="headerlink" href="#Especificação-do-problema:-molécula-de-LiH" title="Link permanente para este título">¶</a></h2>
 <p>Primeiro, especificamos a molécula cuja energia de estado fundamental buscamos. Aqui, olhamos para a LiH com uma distância de ligação de 2,5 Å.</p>
 <div class="nbinput nblast docutils container">
@@ -547,8 +546,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Solução-de-referência-clássica">
+</div>
+<div class="section" id="Solução-de-referência-clássica">
 <h2>Solução de referência clássica<a class="headerlink" href="#Solução-de-referência-clássica" title="Link permanente para este título">¶</a></h2>
 <p>Como uma solução de referência, podemos resolver este sistema classicamente com o <code class="docutils literal notranslate"><span class="pre">NumPyEigensolver</span></code>.</p>
 <div class="nbinput nblast docutils container">
@@ -585,8 +584,8 @@ div.rendered_html tbody tr:hover {
 Energy: -7.773617988868097
 </pre></div></div>
 </div>
-</section>
-<section id="VQE">
+</div>
+<div class="section" id="VQE">
 <h2>VQE<a class="headerlink" href="#VQE" title="Link permanente para este título">¶</a></h2>
 <p>Para executar o VQE, precisamos selecionar um circuito quântico parametrizado que atue como ansatz e um otimizador clássico. Aqui escolheremos um ansatz heurístico, eficiente em hardware e o otimizador SPSA.</p>
 <div class="nbinput docutils container">
@@ -668,8 +667,8 @@ Measured Observable is not composed of only Paulis, converting to Pauli represen
 Energy: -7.561492258661798
 </pre></div></div>
 </div>
-</section>
-<section id="Runtime-VQE">
+</div>
+<div class="section" id="Runtime-VQE">
 <h2>Runtime VQE<a class="headerlink" href="#Runtime-VQE" title="Link permanente para este título">¶</a></h2>
 <p>Vamos trocar o eigensolver de um algoritmo VQE local para um VQE executado usando o Qiskit Runtime – simplesmente ao trocar a classe <code class="docutils literal notranslate"><span class="pre">VQE</span></code> pelo <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code>.</p>
 <p>Primeiro, teremos que carregar um provedor para acessar o Qiskit Runtime.**Nota:** Você deve substituir a próxima célula pelo seu provedor.</p>
@@ -790,8 +789,8 @@ Energy: -7.575601255595115
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

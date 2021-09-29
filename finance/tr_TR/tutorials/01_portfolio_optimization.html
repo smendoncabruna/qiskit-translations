@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Portföy Optimizasyonu &mdash; Qiskit Finance 0.2.1 belgelendirmesi</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a> sayfasından oluşturulmuştur.</p>
 </div>
-<section id="Portföy-Optimizasyonu">
+<div class="section" id="Portföy-Optimizasyonu">
 <h1>Portföy Optimizasyonu<a class="headerlink" href="#Portföy-Optimizasyonu" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Bu eğitici belge, <span class="math notranslate nohighlight">\(n\)</span> varlıkları için aşağıdaki ortalama varyans portföy optimizasyon probleminin nasıl çözüleceğini gösterir:</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-Denemeyi-gerçek-bir-cihazda-çalıştırmak-için-kurulum-erişim-anahtarı">
+<div class="section" id="[Optional]-Denemeyi-gerçek-bir-cihazda-çalıştırmak-için-kurulum-erişim-anahtarı">
 <h3>[Optional] Denemeyi gerçek bir cihazda çalıştırmak için kurulum erişim-anahtarı<a class="headerlink" href="#[Optional]-Denemeyi-gerçek-bir-cihazda-çalıştırmak-için-kurulum-erişim-anahtarı" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>Denemeyi gerçek bir cihazda çalıştırmak istiyorsanız, önce hesabınızı ayarlamanız gerekir.</p>
 <p>Not: Erişim anahtarını henüz kaydetmediyseniz, önce kaydetmek için <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> kullanın.</p>
-</section>
-</section>
-<section id="Sorun-örneğini-tanımlayın">
+</div>
+</div>
+<div class="section" id="Sorun-örneğini-tanımlayın">
 <h2>Sorun örneğini tanımlayın<a class="headerlink" href="#Sorun-örneğini-tanımlayın" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Burada Hamiltonian’ımız için bir Operator örneği oluşturulmuştur. Bu durumda, pauliler portföy probleminden çevrilen Ising Hamiltonian’ından gelir. Bu not defteri için rastgele bir portföy problemi kullanıyoruz. <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a>‘da gösterildiği gibi gerçek finansal veriyle genişletilebilir</p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyMinimumEigensolver-(klasik-bir-referans-olarak)">
+</div>
+<div class="section" id="NumPyMinimumEigensolver-(klasik-bir-referans-olarak)">
 <h2>NumPyMinimumEigensolver (klasik bir referans olarak)<a class="headerlink" href="#NumPyMinimumEigensolver-(klasik-bir-referans-olarak)" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Sorunu çözelim. Önce klasik olarak…</p>
 <p>Artık yukarıda oluşturduğumuz Operatörü nasıl oluşturulduğuna bakmadan kullanabiliriz. NumPyMinimumEigensolver algoritmasını klasik bir referansa sahip olabilmemiz için ayarladık. Sorun ‘ising için ayarlandı. Bu, klasik olarak kuantum hesaplama kullanılmadan hesaplandığından arka uç gerekli değildir. Sonuç bir sözlük olarak döndürülür.</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="VQE-kullanarak-çözüm">
+</div>
+<div class="section" id="VQE-kullanarak-çözüm">
 <h2>VQE kullanarak çözüm<a class="headerlink" href="#VQE-kullanarak-çözüm" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Problemi çözmek için şimdi Variational Quantum Eigensolver (VQE)’ı kullanabiliriz. Kullanılacak optimize ediciyi ve değişimsel yapıyı belirleyeceğiz.</p>
 <p>Not: Arkayüz adını vererek farklı arkayüzlere geçiş yapabilirsiniz.</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="QAOA-kullanarak-çözüm">
+<div class="section" id="QAOA-kullanarak-çözüm">
 <h3>QAOA kullanarak çözüm<a class="headerlink" href="#QAOA-kullanarak-çözüm" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>Burada ayrıca, Kuantum Yaklaşık Optimizasyon Algoritması (QAOA) kullanılarak elde edilmiş bir sonuç da gösterilmektedir. Bu, başka bir değişimsel algoritmadır ve probleme dayanarak geliştirilmiş dahili bir değişimsel yapı kullanır.</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

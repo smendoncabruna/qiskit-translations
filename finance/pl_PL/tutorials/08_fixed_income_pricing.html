@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pl-PL" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pricing Fixed-Income Assets &mdash; Qiskit Finance 0.2.1 - dokumentacja</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Informacja</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/08_fixed_income_pricing.ipynb">docs/tutorials/08_fixed_income_pricing.ipynb</a>.</p>
 </div>
-<section id="Pricing-Fixed-Income-Assets">
+<div class="section" id="Pricing-Fixed-Income-Assets">
 <h1>Pricing Fixed-Income Assets<a class="headerlink" href="#Pricing-Fixed-Income-Assets" title="Stały odnośnik do tego nagłówka">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>We seek to price a fixed-income asset knowing the distributions describing the relevant interest rates. The cash flows <span class="math notranslate nohighlight">\(c_t\)</span> of the asset and the dates at which they occur are known. The total value <span class="math notranslate nohighlight">\(V\)</span> of the asset is thus the expectation value of:</p>
 <div class="math notranslate nohighlight">
@@ -520,7 +519,7 @@ objective function follows the following paper: <a class="reference external" hr
 </pre></div>
 </div>
 </div>
-<section id="Uncertainty-Model">
+<div class="section" id="Uncertainty-Model">
 <h3>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="Stały odnośnik do tego nagłówka">¶</a></h3>
 <p>We construct a circuit factory to load a multivariate normal random distribution in <span class="math notranslate nohighlight">\(d\)</span> dimensions into a quantum state. The distribution is truncated to a given box <span class="math notranslate nohighlight">\(\otimes_{i=1}^d [low_i, high_i]\)</span> and discretized using <span class="math notranslate nohighlight">\(2^{n_i}\)</span> grid points, where <span class="math notranslate nohighlight">\(n_i\)</span> denotes the number of qubits used for dimension <span class="math notranslate nohighlight">\(i = 1,\ldots, d\)</span>. The unitary operator corresponding to the circuit factory implements the following:</p>
 <div class="math notranslate nohighlight">
@@ -582,8 +581,8 @@ objective function follows the following paper: <a class="reference external" hr
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_08_fixed_income_pricing_6_0.svg" src="../_images/tutorials_08_fixed_income_pricing_6_0.svg" /></div>
 </div>
-</section>
-<section id="Cash-flow,-payoff-function,-and-exact-expected-value">
+</div>
+<div class="section" id="Cash-flow,-payoff-function,-and-exact-expected-value">
 <h3>Cash flow, payoff function, and exact expected value<a class="headerlink" href="#Cash-flow,-payoff-function,-and-exact-expected-value" title="Stały odnośnik do tego nagłówka">¶</a></h3>
 <p>In the following we define the cash flow per period, the resulting payoff function and evaluate the exact expected value.</p>
 <p>For the payoff function we first use a first order approximation and then apply the same approximation technique as for the linear part of the payoff function of the <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option</span></a>.</p>
@@ -799,9 +798,9 @@ Confidence interval:    [2.3015, 2.3823]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

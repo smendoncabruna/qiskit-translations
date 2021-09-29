@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>주식시장 시계열 데이터 로드 및 처리 &mdash; Qiskit Finance 0.2.1 문서</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/11_time_series.ipynb">docs/tutorials/11_time_series.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="주식시장-시계열-데이터-로드-및-처리">
+<div class="section" id="주식시장-시계열-데이터-로드-및-처리">
 <h1>주식시장 시계열 데이터 로드 및 처리<a class="headerlink" href="#주식시장-시계열-데이터-로드-및-처리" title="이 표제에 대한 퍼머링크">¶</a></h1>
-<section id="소개">
+<div class="section" id="소개">
 <h2>소개<a class="headerlink" href="#소개" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>금융의 많은 문제들에 있어서, 하나는 시계열로 시작한다. 여기서는 유사-랜덤 시계열을 생성하고, 다수의 공통 제공자로부터 실제 주식 시장 시간 시리즈를 다운로드하는 방법 및 시계열 유사성 측정을 계산하는 방법을 소개한다.</p>
 <div class="nbinput nblast docutils container">
@@ -651,8 +650,8 @@ TICKER2
 <img alt="../_images/tutorials_11_time_series_9_0.png" src="../_images/tutorials_11_time_series_9_0.png" />
 </div>
 </div>
-</section>
-<section id="Access-to-closing-price-time-series">
+</div>
+<div class="section" id="Access-to-closing-price-time-series">
 <h2>Access to closing-price time-series<a class="headerlink" href="#Access-to-closing-price-time-series" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>While the access to real-time data usually requires a payment, it is possible to access historical (adjusted) closing prices via Wikipedia and Quandl free of charge, following registration at: <a class="reference external" href="https://www.quandl.com/?modal=register">https://www.quandl.com/?modal=register</a> In the code below, one needs to specify actual tickers of actual NASDAQ issues and the access token you obtain from Quandl; by running the code below, you agree to the Quandl terms and conditions, including a liability waiver. Notice that at least two tickers are
 required for the computation of covariance and time-series matrices, but hundreds of tickers may go beyond the fair usage limits of Quandl.</p>
@@ -728,12 +727,12 @@ required for the computation of covariance and time-series matrices, but hundred
 </pre></div>
 </div>
 </div>
-</section>
-<section id="[Optional]-설정-토큰을-설정하여-최신의-세분화된-시간-시리즈">
+</div>
+<div class="section" id="[Optional]-설정-토큰을-설정하여-최신의-세분화된-시간-시리즈">
 <h2>[Optional] 설정 토큰을 설정하여 최신의 세분화된 시간-시리즈<a class="headerlink" href="#[Optional]-설정-토큰을-설정하여-최신의-세분화된-시간-시리즈" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>전문 데이터를 다운로드하려면 주요 제공자 중 하나를 사용하여 토큰을 설정해야 한다. 이제 나스닥 및 NYSE 문제에 대한 데이터를 조정하고, 가격을 조정하고 매일 조정하는 가격, 나스닥 및 NYSE 문제에 대한 조정과 같은 집계를 제공할 수 있는 나스닥 데이터의 데이터를 설명한다.</p>
 <p>나스닥 데이터 온디맨드 라이센스가 없는 경우, 나스닥에 문의해 시험판 또는 유료 라이센스를 얻을 수 있다 (참조. <a class="reference external" href="https://business.nasdaq.com/intel/GIS/Nasdaq-Data-on-Demand.html">https://business.nasdaq.com/intel/GIS/Nasdaq-Data-on-Demand.html</a>).</p>
-<p>자신의 토큰을 사용하여 나스닥 데이터에 액세스할 수 있는 경우, 아래의 ‘REPLACE-ME’ 를 토큰으로 대체해야 한다. 연결 보안을 보장하기 위해 나스닥 인증서의 유효성을 확인하는 고유한 방법도 가지고 있어야 한다. DataOnDemandProvider 생성자는 <code class="docutils literal notranslate"><span class="pre">None</span></code> 또는 문자열 또는 부울이 될 수 있는 선택적인 인수 검증 <code class="docutils literal notranslate"><span class="pre">verify</span></code> 를 갖고 있다. <code class="docutils literal notranslate"><span class="pre">None</span></code> 이면 인증서가 사용된다 (기본값). 검증이 문자열인 경우 CA_BUNDLE 파일 형식 또는 찾아볼 디렉토리 (dataondemand.nasdaq.com) 의 HTTPS 연결을 위한 인증서를 가리키고 있어야 한다.</p>
+<p>자신의 토큰을 사용하여 나스닥 데이터에 액세스할 수 있는 경우, 아래의 〈REPLACE-ME〉 를 토큰으로 대체해야 한다. 연결 보안을 보장하기 위해 나스닥 인증서의 유효성을 확인하는 고유한 방법도 가지고 있어야 한다. DataOnDemandProvider 생성자는 <code class="docutils literal notranslate"><span class="pre">None</span></code> 또는 문자열 또는 부울이 될 수 있는 선택적인 인수 검증 <code class="docutils literal notranslate"><span class="pre">verify</span></code> 를 갖고 있다. <code class="docutils literal notranslate"><span class="pre">None</span></code> 이면 인증서가 사용된다 (기본값). 검증이 문자열인 경우 CA_BUNDLE 파일 형식 또는 찾아볼 디렉토리 (dataondemand.nasdaq.com) 의 HTTPS 연결을 위한 인증서를 가리키고 있어야 한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -850,8 +849,8 @@ required for the computation of covariance and time-series matrices, but hundred
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

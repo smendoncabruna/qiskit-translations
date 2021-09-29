@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>qGANs 을 이용한 옵션 가격 책정 (Option Pricing) &mdash; Qiskit Finance 0.2.1 문서</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/10_qgan_option_pricing.ipynb">docs/tutorials/10_qgan_option_pricing.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="qGANs-을-이용한-옵션-가격-책정-(Option-Pricing)">
+<div class="section" id="qGANs-을-이용한-옵션-가격-책정-(Option-Pricing)">
 <h1>qGANs 을 이용한 옵션 가격 책정 (Option Pricing)<a class="headerlink" href="#qGANs-을-이용한-옵션-가격-책정-(Option-Pricing)" title="이 표제에 대한 퍼머링크">¶</a></h1>
-<section id="소개">
+<div class="section" id="소개">
 <h2>소개<a class="headerlink" href="#소개" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>In this notebook, we discuss how a Quantum Machine Learning Algorithm, namely a quantum Generative Adversarial Network (qGAN), can facilitate the pricing of a European call option. More specifically, a qGAN can be trained such that a quantum circuit models the spot price of an asset underlying a European call option. The resulting model can then be integrated into a Quantum Amplitude Estimation based algorithm to evaluate the expected payoff - see <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option
 Pricing</span></a>. For further details on learning and loading random distributions by training a qGAN please refer to <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
@@ -513,7 +512,7 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-<section id="불확실성-모델">
+<div class="section" id="불확실성-모델">
 <h3>불확실성 모델<a class="headerlink" href="#불확실성-모델" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <p>블랙 스콜스 모델은 유럽 호출 옵션에 대한 성숙도 <span class="math notranslate nohighlight">\(S_T\)</span> 의 현물 가격이 정상적으로 분산되어 있다고 가정합니다. 따라서, 로그 정규 분포의 샘플에 대해 qGAN을 훈련하고 결과를 옵션에 기반한 불확실성 모델로 사용할 수 있다. 다음에, 불확실성 모델을 로딩하는 양자 회로를 구성한다. 회로 출력 판독</p>
 <div class="math notranslate nohighlight">
@@ -547,8 +546,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-</section>
-<section id="기대수익-(Expected-Payoff)-평가">
+</div>
+<div class="section" id="기대수익-(Expected-Payoff)-평가">
 <h3>기대수익 (Expected Payoff) 평가<a class="headerlink" href="#기대수익-(Expected-Payoff)-평가" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <p>Now, the trained uncertainty model can be used to evaluate the expectation value of the option’s payoff function with Quantum Amplitude Estimation.</p>
 <div class="nbinput nblast docutils container">
@@ -564,8 +563,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Plot-the-probability-distribution">
+</div>
+<div class="section" id="Plot-the-probability-distribution">
 <h3>Plot the probability distribution<a class="headerlink" href="#Plot-the-probability-distribution" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <p>다음으로, 우리는 훈련된 확률 분포를 구성하고, 비교의 이유로, 또한 타겟 확률 분포를 구성한다.</p>
 <div class="nbinput docutils container">
@@ -610,8 +609,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_10_qgan_option_pricing_7_0.svg" src="../_images/tutorials_10_qgan_option_pricing_7_0.svg" /></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>기대수익 (Expected Payoff) 평가<a class="headerlink" href="#id2" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <p>Now, the trained uncertainty model can be used to evaluate the expectation value of the option’s payoff function analytically and with Quantum Amplitude Estimation.</p>
 <div class="nbinput docutils container">
@@ -737,9 +736,9 @@ Confidence interval:    [0.9965, 1.0455]
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

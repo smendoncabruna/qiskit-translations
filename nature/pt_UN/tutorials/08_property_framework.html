@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>O Framework Property &mdash; Documentação Qiskit Nature 0.2.1</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/08_property_framework.ipynb">docs/tutorials/08_property_framework.ipynb</a>.</p>
 </div>
-<section id="O-Framework-Property">
+<div class="section" id="O-Framework-Property">
 <h1>O Framework Property<a class="headerlink" href="#O-Framework-Property" title="Link permanente para este título">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -500,7 +499,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>O Qiskit Nature 0.2.0 apresenta o framework <em>Property</em>. Esse framework substitui os tipos de retorno de driver legados como o <code class="docutils literal notranslate"><span class="pre">QMolecule</span></code> e <code class="docutils literal notranslate"><span class="pre">WatsonHamiltonian</span></code> com uma abordagem mais modular e extensível.</p>
 <p>Neste tutorial, vamos percorrer o framework, explicaremos seus componentes mais importantes e mostraremos como você poderá amplia-lo com uma <em>property</em> personalizada.</p>
-<section id="O-que-é-uma-Property?">
+<div class="section" id="O-que-é-uma-Property?">
 <h2>O que é uma <code class="docutils literal notranslate"><span class="pre">Property</span></code>?<a class="headerlink" href="#O-que-é-uma-Property?" title="Link permanente para este título">¶</a></h2>
 <p>Na sua essência, uma <code class="docutils literal notranslate"><span class="pre">Property</span></code> é um objeto que complementa alguns dados brutos com funções que lhe permitirão transformar/manipular/interpretar estes dados brutos. Esta «definição» se mantém bastante abstrata a propósito, mas o que isso significa é essencialmente o seguinte. Uma <code class="docutils literal notranslate"><span class="pre">Property</span></code>:</p>
 <ul class="simple">
@@ -524,8 +523,8 @@ div.rendered_html tbody tr:hover {
 <li><p><code class="docutils literal notranslate"><span class="pre">GroupedProperty</span></code>: esta classe é uma implementação de <a href="#id1"><span class="problematic" id="id2">``</span></a>Composite pattern &lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Composite_pattern">https://en.wikipedia.org/wiki/Composite_pattern</a>&gt;`__ que lhe permite <em>agrupar</em> múltiplas propriedades em uma.</p></li>
 </ol>
 <p><strong>Nota:</strong> Propriedades agrupadas devem possuir atributos <code class="docutils literal notranslate"><span class="pre">name</span></code> únicos!</p>
-</section>
-<section id="Propriedades-de-Segunda-Quantização">
+</div>
+<div class="section" id="Propriedades-de-Segunda-Quantização">
 <h2>Propriedades de Segunda Quantização<a class="headerlink" href="#Propriedades-de-Segunda-Quantização" title="Link permanente para este título">¶</a></h2>
 <p>No momento da escrita, Qiskit Nature envia com uma única variante de propriedades: os objetos <code class="docutils literal notranslate"><span class="pre">SecondQuantizedProperty</span></code>.</p>
 <p>Este subtipo agrega um requisito adicional por qualquer <code class="docutils literal notranslate"><span class="pre">SecondQuantizedProperty</span></code></p>
@@ -533,7 +532,7 @@ div.rendered_html tbody tr:hover {
 <li><p><strong>deve</strong> implementar um método <code class="docutils literal notranslate"><span class="pre">second_q_ops``que</span> <span class="pre">constrói</span> <span class="pre">uma</span> <span class="pre">(lista</span> <span class="pre">de)</span> <span class="pre">``SecondQuantizedOp</span></code>s.</p></li>
 </ul>
 <p>O módulo <code class="docutils literal notranslate"><span class="pre">qiskit_nature.properties.second_quantization</span></code> é dividido entre os módulos <code class="docutils literal notranslate"><span class="pre">electronic</span></code> e <code class="docutils literal notranslate"><span class="pre">vibrational</span></code> (similares aos outros módulos de Qiskit Nature). Vamos mergulhar no sub-módulo <code class="docutils literal notranslate"><span class="pre">electronic</span></code> primeiro.</p>
-<section id="Propriedades-de-Segunda-Quantização-Eletrônica">
+<div class="section" id="Propriedades-de-Segunda-Quantização-Eletrônica">
 <h3>Propriedades de Segunda Quantização Eletrônica<a class="headerlink" href="#Propriedades-de-Segunda-Quantização-Eletrônica" title="Link permanente para este título">¶</a></h3>
 <p>Qiskit Nature Pronto para uso envia as seguintes propriedades eletrônicas:</p>
 <div class="nbinput docutils container">
@@ -561,7 +560,7 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> é sem dúvida a propriedade mais importante porque contém <em>Hamiltoniano</em> que representa o problema de estrutura eletrônica cujos autovalores nos interessam ao resolver um <code class="docutils literal notranslate"><span class="pre">ElectronicStructureProblem</span></code>. A maneira como ela armazena o Hamiltoniano é, assim como o restante do framework, altamente modular. O inicializador da <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> tem um único argumento obrigatório, <code class="docutils literal notranslate"><span class="pre">electronic_integrals</span></code>, que é uma `` <code class="docutils literal notranslate"><span class="pre">List[ElectronicIntegrals]</span></code>.</p>
-<section id="ElectronicIntegrals">
+<div class="section" id="ElectronicIntegrals">
 <h4>ElectronicIntegrals<a class="headerlink" href="#ElectronicIntegrals" title="Link permanente para este título">¶</a></h4>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -718,8 +717,8 @@ div.rendered_html tbody tr:hover {
 <li><p>em qualquer outro caso, matrizes que são <code class="docutils literal notranslate"><span class="pre">None``serão</span> <span class="pre">preenchidas</span> <span class="pre">com</span> <span class="pre">a</span> <span class="pre">matriz</span> <span class="pre">`alpha-alpha</span></code></p></li>
 <li><p>no caso da base <code class="docutils literal notranslate"><span class="pre">SO</span></code>, deve ser especificada uma única matriz numpy. Consulte <code class="docutils literal notranslate"><span class="pre">TwoBodyElectronicIntegrals.to_spin()</span></code> para sua formatação exata.</p></li>
 </ul>
-</section>
-<section id="ElectronicEnergy">
+</div>
+<div class="section" id="ElectronicEnergy">
 <h4>ElectronicEnergy<a class="headerlink" href="#ElectronicEnergy" title="Link permanente para este título">¶</a></h4>
 <p>Agora nós estamos prontos para construir uma instancia de <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code>:</p>
 <div class="nbinput docutils container">
@@ -811,8 +810,8 @@ register length=4, number terms=20
 +  ...
 </pre></div></div>
 </div>
-</section>
-<section id="Interpretação-do-resultado">
+</div>
+<div class="section" id="Interpretação-do-resultado">
 <h4>Interpretação do resultado<a class="headerlink" href="#Interpretação-do-resultado" title="Link permanente para este título">¶</a></h4>
 <p>Um benefício adicional que obtemos da estrutura <code class="docutils literal notranslate"><span class="pre">Property</span></code>, é que a interpretação do resultado de um autovalor calculado pode ser manipulado por cada propriedade em si. Isto resulta em classes agradáveis e logicamente consistentes pois estes resultados são interpretados no mesmo contexto em que os dados brutos são utilizados.</p>
 <div class="nbinput docutils container">
@@ -846,8 +845,8 @@ register length=4, number terms=20
 </pre></div></div>
 </div>
 <p>Embora este exemplo em particular ainda não seja muito impressionante, aguarde até utilizarmos mais propriedades de uma vez.</p>
-</section>
-<section id="ParticleNumber">
+</div>
+<div class="section" id="ParticleNumber">
 <h4>ParticleNumber<a class="headerlink" href="#ParticleNumber" title="Link permanente para este título">¶</a></h4>
 <p>A propriedade <code class="docutils literal notranslate"><span class="pre">ParticleNumber</span></code> também ocupa um lugar especial entre as propriedades integradas porque serve a um duplo propósito:</p>
 <ul class="simple">
@@ -881,8 +880,8 @@ ParticleNumber:
                 orbital occupation: [1. 0.]
 </pre></div></div>
 </div>
-</section>
-<section id="GroupedProperty">
+</div>
+<div class="section" id="GroupedProperty">
 <h4>GroupedProperty<a class="headerlink" href="#GroupedProperty" title="Link permanente para este título">¶</a></h4>
 <p>Ao invés de iterar todas as outras propriedades uma a uma, vamos simplesmente considerar um grupo de propriedades como fornecido por qualquer <code class="docutils literal notranslate"><span class="pre">ElectronicStructureDriver</span></code> do módulo <code class="docutils literal notranslate"><span class="pre">qiskit_nature.drivers.second_quantization</span></code>.</p>
 <div class="nbinput nblast docutils container">
@@ -1106,8 +1105,8 @@ Molecule:
 </pre></div></div>
 </div>
 <p>Há muita coisa acontecendo, mas com as explicações acima, você não deve ter problemas em entender esta saída.</p>
-</section>
-<section id="Construindo-um-Hamiltoniano-a-partir-de-uma-integral-crua">
+</div>
+<div class="section" id="Construindo-um-Hamiltoniano-a-partir-de-uma-integral-crua">
 <h4>Construindo um Hamiltoniano a partir de uma integral crua<a class="headerlink" href="#Construindo-um-Hamiltoniano-a-partir-de-uma-integral-crua" title="Link permanente para este título">¶</a></h4>
 <p>Se você obteve algumas integrais brutas de um e dois corpos por meios diferentes de um driver fornecido pela Qiskit Nature, você ainda pode construir facilmente uma propriedade <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> para servir como seu ponto de acesso na pilha:</p>
 <div class="nbinput docutils container">
@@ -1176,9 +1175,9 @@ ElectronicEnergy
                 ... skipping 11 entries
 </pre></div></div>
 </div>
-</section>
-</section>
-<section id="Propriedades-de-Segunda-Quantização-Vibracional">
+</div>
+</div>
+<div class="section" id="Propriedades-de-Segunda-Quantização-Vibracional">
 <h3>Propriedades de Segunda Quantização Vibracional<a class="headerlink" href="#Propriedades-de-Segunda-Quantização-Vibracional" title="Link permanente para este título">¶</a></h3>
 <p>A pilha <code class="docutils literal notranslate"><span class="pre">vibrational</span></code> para cálculos de estrutura vibracional também se integra com o framework Property. Após a introdução acima, você deve ser capaz de entender o seguinte diretamente:</p>
 <div class="nbinput nblast docutils container">
@@ -1270,9 +1269,9 @@ VibrationalStructureDriverResult:
                         Modals: [2, 2, 2, 2]
 </pre></div></div>
 </div>
-</section>
-</section>
-<section id="Escrevendo-propriedades-personalizadas">
+</div>
+</div>
+<div class="section" id="Escrevendo-propriedades-personalizadas">
 <h2>Escrevendo propriedades personalizadas<a class="headerlink" href="#Escrevendo-propriedades-personalizadas" title="Link permanente para este título">¶</a></h2>
 <p>Você pode estender a estrutura da Property com suas próprias implementações. Aqui, vamos percorrer o exemplo simples de construção de uma propriedade para a * densidade eletrônica <a href="#id1"><span class="problematic" id="id2">*</span></a>. Uma vez que este observável é essencialmente baseado em matrizes, iremos alavancar o contêiner <code class="docutils literal notranslate"><span class="pre">OneBodyElectronicIntegrals</span></code> para armazenar a matriz de densidade real.</p>
 <div class="nbinput nblast docutils container">
@@ -1444,8 +1443,8 @@ register length=4, number terms=2
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

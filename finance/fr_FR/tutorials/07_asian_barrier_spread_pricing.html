@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr-FR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Evaluation des options asiatiques sur spread &mdash; Documentation Qiskit Finance 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>Cette page a été générée et traduite à partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/07_asian_barrier_spread_pricing.ipynb">docs/tutorials/07_asian_barrier_spread_pricing.ipynb</a>.</p>
 </div>
-<section id="Evaluation-des-options-asiatiques-sur-spread">
+<div class="section" id="Evaluation-des-options-asiatiques-sur-spread">
 <h1>Evaluation des options asiatiques sur spread<a class="headerlink" href="#Evaluation-des-options-asiatiques-sur-spread" title="Lien permanent vers ce titre">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une option asiatique sur spread est une combinaison de 3 types d’options différents, et en tant que tel, combine plusieurs fonctionnalités que le framework d’évaluation des prix des options Qiskit Finance supporte :</p>
 <ul class="simple">
@@ -531,8 +530,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Modèle-d'incertitude">
+</div>
+<div class="section" id="Modèle-d'incertitude">
 <h2>Modèle d’incertitude<a class="headerlink" href="#Modèle-d'incertitude" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous construisons un circuit afin de représenter une distribution aléatoire en log-normale multidimensionnelle dans un état quantique sur <span class="math notranslate nohighlight">\(n\)</span> qubits. Pour chaque dimension <span class="math notranslate nohighlight">\(j = 1,\ldots,d\)</span>, la distribution est limitée à l’intervalle <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span> et discrétisée en utilisants <span class="math notranslate nohighlight">\(2^{n_j}\)</span> points, où <span class="math notranslate nohighlight">\(n_j\)</span> correspond au nombre de qubits utilisés pour représenter la dimension <span class="math notranslate nohighlight">\(j\)</span>, c’est à dire : <span class="math notranslate nohighlight">\(n_1+\ldots+n_d = n\)</span>. L’opérateur unitaire correspondant à ce circuit respecte la relation suivante :</p>
 <div class="math notranslate nohighlight">
@@ -611,8 +610,8 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_07_asian_barrier_spread_pricing_5_0.png" src="../_images/tutorials_07_asian_barrier_spread_pricing_5_0.png" />
 </div>
 </div>
-</section>
-<section id="Fonction-de-Paiement">
+</div>
+<div class="section" id="Fonction-de-Paiement">
 <h2>Fonction de Paiement<a class="headerlink" href="#Fonction-de-Paiement" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour simplifier, nous considérons la somme des cours des sous-jacents au lieu de leur moyenne. Le résultat peut être transformé en moyenne en le divisant par 2.</p>
 <p>La fonction de paiement est égale à zéro tant que la somme des cours des sous-jacents :math:` (S_1 + <a href="#id2"><span class="problematic" id="id3">S_</span></a> 2) ` est inférieure au prix d’exercice :math:` K_1 <cite>, puis augmente de façon linéaire jusqu’à ce que cette somme atteigne :math:</cite> K_2 <cite>. Alors, le paiement reste constant à :math:</cite> K_2-K_1 ` à moins que l’un des deux cours dépasse le seuil barrière :math:` B <cite>, et le paiement va immédiatement à zéro. L’implémentation utilise d’abord un opérateur de somme pondérée pour calculer la somme des prix spot dans un registre ancilla, puis utilise un comparateur, qui flip un qubit ancilla de :math:</cite> big | 0rangle ` à :math:` big | 1rangle ` si :math:` (S_1 + <a href="#id4"><span class="problematic" id="id5">S_</span></a> 2) geq K_1 ` et un autre comparateur / ancilla pour capturer le cas ou :math:` (S_1 + <a href="#id6"><span class="problematic" id="id7">S_</span></a> 2) geq K_2 <a href="#id1"><span class="problematic" id="id2">`</span></a>. Ces ancillas sont utilisées pour contrôler la partie linéaire de la fonction de paiement.</p>
@@ -912,8 +911,8 @@ objective qubit index 4
 exact expected value:   0.8023
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluer-le-paiement-attendu">
+</div>
+<div class="section" id="Evaluer-le-paiement-attendu">
 <h2>Evaluer le paiement attendu<a class="headerlink" href="#Evaluer-le-paiement-attendu" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous commençons par vérifier le circuit quantique en le simulant et en analysant la probabilité de mesurer l’état <span class="math notranslate nohighlight">\(|1\rangle\)</span> sur le qubit objectif.</p>
 <div class="nbinput docutils container">
@@ -1074,8 +1073,8 @@ Confidence interval:    [0.8268, 0.8388]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

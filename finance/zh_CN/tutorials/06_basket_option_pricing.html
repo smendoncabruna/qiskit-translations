@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pricing Basket Options &mdash; Qiskit Finance 0.2.1 文档</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注解</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a>.</p>
 </div>
-<section id="Pricing-Basket-Options">
+<div class="section" id="Pricing-Basket-Options">
 <h1>Pricing Basket Options<a class="headerlink" href="#Pricing-Basket-Options" title="永久链接至标题">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="永久链接至标题">¶</a></h2>
 <p>Suppose a basket option with strike price <span class="math notranslate nohighlight">\(K\)</span> and two underlying assets whose spot price at maturity <span class="math notranslate nohighlight">\(S_T^1\)</span>, <span class="math notranslate nohighlight">\(S_T^2\)</span> follow given random distributions. The corresponding payoff function is defined as:</p>
 <div class="math notranslate nohighlight">
@@ -521,8 +520,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Uncertainty-Model">
+</div>
+<div class="section" id="Uncertainty-Model">
 <h2>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="永久链接至标题">¶</a></h2>
 <p>We construct a circuit factory to load a multivariate log-normal random distribution into a quantum state on <span class="math notranslate nohighlight">\(n\)</span> qubits. For every dimension <span class="math notranslate nohighlight">\(j = 1,\ldots,d\)</span>, the distribution is truncated to a given interval <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span> and discretized using <span class="math notranslate nohighlight">\(2^{n_j}\)</span> grid points, where <span class="math notranslate nohighlight">\(n_j\)</span> denotes the number of qubits used to represent dimension <span class="math notranslate nohighlight">\(j\)</span>, i.e., <span class="math notranslate nohighlight">\(n_1+\ldots+n_d = n\)</span>. The unitary operator corresponding to the circuit factory implements
 the following:</p>
@@ -601,8 +600,8 @@ the following:</p>
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_06_basket_option_pricing_5_0.svg" src="../_images/tutorials_06_basket_option_pricing_5_0.svg" /></div>
 </div>
-</section>
-<section id="Payoff-Function">
+</div>
+<div class="section" id="Payoff-Function">
 <h2>Payoff Function<a class="headerlink" href="#Payoff-Function" title="永久链接至标题">¶</a></h2>
 <p>The payoff function equals zero as long as the sum of the spot prices at maturity <span class="math notranslate nohighlight">\((S_T^1 + S_T^2)\)</span> is less than the strike price <span class="math notranslate nohighlight">\(K\)</span> and then increases linearly. The implementation first uses a weighted sum operator to compute the sum of the spot prices into an ancilla register, and then uses a comparator, that flips an ancilla qubit from <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\((S_T^1 + S_T^2) \geq K\)</span>. This ancilla is used to control the linear part of the payoff
 function.</p>
@@ -769,8 +768,8 @@ objective qubit index 4
 exact expected value:   0.4870
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluate-Expected-Payoff">
+</div>
+<div class="section" id="Evaluate-Expected-Payoff">
 <h2>Evaluate Expected Payoff<a class="headerlink" href="#Evaluate-Expected-Payoff" title="永久链接至标题">¶</a></h2>
 <p>We first verify the quantum circuit by simulating it and analyzing the resulting probability to measure the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state in the objective qubit.</p>
 <div class="nbinput docutils container">
@@ -919,8 +918,8 @@ Confidence interval:    [0.4493, 0.5357]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

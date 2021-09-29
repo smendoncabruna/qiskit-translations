@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pricing Basket Options &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="Pricing-Basket-Options">
+<div class="section" id="Pricing-Basket-Options">
 <h1>Pricing Basket Options<a class="headerlink" href="#Pricing-Basket-Options" title="Permalink to this headline">¶</a></h1>
-<section id="முன்னுரை">
+<div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>வேலைநிறுத்த விலையுடன் ஒரு கூடை விருப்பத்தை வைத்துக்கொள்வோம் <span class="math notranslate nohighlight">\(K\)</span>, :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>S_T^2`கொடுக்கப்பட்ட சீரற்ற விநியோகங்களைப் பின்பற்றவும்.தொடர்புடைய செலுத்துதல் செயல்பாடு பின்வருமாறு வரையறுக்கப்படுகிறது:</p>
 <div class="math notranslate nohighlight">
@@ -521,8 +520,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="நிச்சயமற்ற-மாதிரி">
+</div>
+<div class="section" id="நிச்சயமற்ற-மாதிரி">
 <h2>நிச்சயமற்ற மாதிரி<a class="headerlink" href="#நிச்சயமற்ற-மாதிரி" title="Permalink to this headline">¶</a></h2>
 <p>ஒரு பன்முக பதிவு-இயல்பான சீரற்ற விநியோகத்தை ஒரு குவாண்டம் நிலையில் ஏற்றுவதற்கு ஒரு சுற்று தொழிற்சாலையை உருவாக்குகிறோம் <span class="math notranslate nohighlight">\(n' qubits. ஒவ்வொரு பரிமாணத்திற்கும் :math:\)</span>, ஒரு குறிப்பிட்ட இடைவெளியில் விநியோகம் துண்டிக்கப்படுகிறது <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span>
 கட்டம் புள்ளிகள், எங்கே <span class="math notranslate nohighlight">\(n_j\)</span>,அதாவது,:math:<cite>n_1+ldots+n_d = n</cite>.சுற்று தொழிற்சாலைக்கு ஒத்த ஒற்றுமை ஆபரேட்டர் பின்வருவனவற்றை செயல்படுத்துகிறது:</p>
@@ -601,8 +600,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_06_basket_option_pricing_5_0.svg" src="../_images/tutorials_06_basket_option_pricing_5_0.svg" /></div>
 </div>
-</section>
-<section id="கொடுப்பனவு-செயல்பாடு">
+</div>
+<div class="section" id="கொடுப்பனவு-செயல்பாடு">
 <h2>கொடுப்பனவு செயல்பாடு<a class="headerlink" href="#கொடுப்பனவு-செயல்பாடு" title="Permalink to this headline">¶</a></h2>
 <p>The payoff function equals zero as long as the sum of the spot prices at maturity <span class="math notranslate nohighlight">\((S_T^1 + S_T^2)\)</span> is less than the strike price <span class="math notranslate nohighlight">\(K\)</span> and then increases linearly. The implementation first uses a weighted sum operator to compute the sum of the spot prices into an ancilla register, and then uses a comparator, that flips an ancilla qubit from <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\((S_T^1 + S_T^2) \geq K\)</span>. This ancilla is used to control the linear part of the payoff
 function.</p>
@@ -769,8 +768,8 @@ objective qubit index 4
 exact expected value:   0.4870
 </pre></div></div>
 </div>
-</section>
-<section id="எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">
+</div>
+<div class="section" id="எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">
 <h2>எதிர்பார்த்த கொடுப்பனவை மதிப்பிடுங்கள்<a class="headerlink" href="#எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
 <p>குவாண்டம் சுற்றுவட்டத்தை உருவகப்படுத்துவதன் மூலமும், அதன் அளவை அளவிடுவதற்கான நிகழ்தகவை பகுப்பாய்வு செய்வதன் மூலமும் முதலில் சரிபார்க்கிறோம் <span class="math notranslate nohighlight">\(|1\rangle\)</span> புறநிலை குவிட்டில் நிலை.</p>
 <div class="nbinput docutils container">
@@ -919,8 +918,8 @@ Confidence interval:    [0.4493, 0.5357]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

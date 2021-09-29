@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>量子振幅推定 &mdash; Qiskit Finance 0.2.1 ドキュメント</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/00_amplitude_estimation.ipynb">docs/tutorials/00_amplitude_estimation.ipynb</a> から生成されました。</p>
 </div>
-<section id="量子振幅推定">
+<div class="section" id="量子振幅推定">
 <h1>量子振幅推定<a class="headerlink" href="#量子振幅推定" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>演算子 <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> が以下のように与えられたとします。</p>
 <div class="math notranslate nohighlight">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Qiskit-の振幅推定ワークフロー">
+<div class="section" id="Qiskit-の振幅推定ワークフロー">
 <h2>Qiskit の振幅推定ワークフロー<a class="headerlink" href="#Qiskit-の振幅推定ワークフロー" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Qiskit はいくつかの QAE のアルゴリズムを全て <code class="docutils literal notranslate"><span class="pre">AmplitudeEstimator</span></code> インタフェースを派生して実装します。初期化ではアルゴリズム固有の設定と <code class="docutils literal notranslate"><span class="pre">estimate</span></code> メソッドを指定します。このメソッドが全ての処理を行い、 <code class="docutils literal notranslate"><span class="pre">EstimationProblem</span></code> を入力にとり、<code class="docutils literal notranslate"><span class="pre">AmplitudeEstimationResult</span></code> オブジェクトを返します。全ての QAE の実装は同じインタフェースに従うため、同じ問題インスタンスを解くために使えます。</p>
 <p>次に、異なる QAE アルゴリズムをすべて実行します。 これを行うには まず、 <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> と <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> 演算子を含む推定問題と、 <span class="math notranslate nohighlight">\(\Psi_1\rangle\)</span> 状態を識別する方法を定義します。 この簡単な例では、その状態は <span class="math notranslate nohighlight">\(|1\rangle\)</span> です。</p>
@@ -598,8 +597,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="基本の振幅推定">
+</div>
+<div class="section" id="基本の振幅推定">
 <h2>基本の振幅推定<a class="headerlink" href="#基本の振幅推定" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Brassard et al. [1] によるオリジナル QAE によって解いてみましょう。</p>
 <div class="nbinput nblast docutils container">
@@ -734,8 +733,8 @@ Interpolated MLE estimator: 0.19999999390907777
 <img alt="../_images/tutorials_00_amplitude_estimation_23_0.png" src="../_images/tutorials_00_amplitude_estimation_23_0.png" />
 </div>
 </div>
-</section>
-<section id="反復振幅推定">
+</div>
+<div class="section" id="反復振幅推定">
 <h2>反復振幅推定<a class="headerlink" href="#反復振幅推定" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>[2] を参照してください。</p>
 <div class="nbinput docutils container">
@@ -783,8 +782,8 @@ Estimate: 0.19999999999999998
 <img alt="../_images/tutorials_00_amplitude_estimation_27_0.png" src="../_images/tutorials_00_amplitude_estimation_27_0.png" />
 </div>
 </div>
-</section>
-<section id="最尤振幅推定">
+</div>
+<div class="section" id="最尤振幅推定">
 <h2>最尤振幅推定<a class="headerlink" href="#最尤振幅推定" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>[3] を参照してください。</p>
 <div class="nbinput docutils container">
@@ -812,8 +811,8 @@ Estimate: 0.19999999999999998
 Estimate: 0.20002237175368104
 </pre></div></div>
 </div>
-</section>
-<section id="高速振幅推定">
+</div>
+<div class="section" id="高速振幅推定">
 <h2>高速振幅推定<a class="headerlink" href="#高速振幅推定" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>[4] を参照してください。</p>
 <div class="nbinput docutils container">
@@ -851,8 +850,8 @@ Estimate: 0.20000000000000018
   warnings.warn(&#34;Rescaling discards the Grover operator.&#34;)
 </pre></div></div>
 </div>
-</section>
-<section id="参考文献">
+</div>
+<div class="section" id="参考文献">
 <h2>参考文献<a class="headerlink" href="#参考文献" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>[1] Quantum Amplitude Amplification and Estimation. Brassard et al (2000). <a class="reference external" href="https://arxiv.org/abs/quant-ph/0005055">https://arxiv.org/abs/quant-ph/0005055</a></p>
 <p>[2] Iterative Quantum Amplitude Estimation. Grinko, D., Gacon, J., Zoufal, C., &amp; Woerner, S. (2019). <a class="reference external" href="https://arxiv.org/abs/1912.05559">https://arxiv.org/abs/1912.05559</a></p>
@@ -891,8 +890,8 @@ Estimate: 0.20000000000000018
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

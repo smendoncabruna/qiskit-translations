@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ஆசிய தடையின் பரவல் விலை &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -40,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
-    <link rel="next" title="Pricing Fixed-Income Assets" href="08_fixed_income_pricing.html" />
+    <link rel="next" title="நிலையான வருமான சொத்துக்களின் விலை நிர்ணயம்" href="08_fixed_income_pricing.html" />
     <link rel="prev" title="Pricing Basket Options" href="06_basket_option_pricing.html" /> 
 
   
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/07_asian_barrier_spread_pricing.ipynb">docs/tutorials/07_asian_barrier_spread_pricing.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="ஆசிய-தடையின்-பரவல்-விலை">
+<div class="section" id="ஆசிய-தடையின்-பரவல்-விலை">
 <h1>ஆசிய தடையின் பரவல் விலை<a class="headerlink" href="#ஆசிய-தடையின்-பரவல்-விலை" title="Permalink to this headline">¶</a></h1>
-<section id="முன்னுரை">
+<div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>ஒரு ஆசிய தடை பரவல் என்பது 3 வெவ்வேறு விருப்ப வகைகளின் கலவையாகும், மேலும், qiskit நிதி விருப்ப விலை நிர்ணய கட்டமைப்பை ஆதரிக்கும் பல சாத்தியமான அம்சங்களை ஒருங்கிணைக்கிறது:</p>
 <ul class="simple">
@@ -531,8 +530,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="நிச்சயமற்ற-மாதிரி">
+</div>
+<div class="section" id="நிச்சயமற்ற-மாதிரி">
 <h2>நிச்சயமற்ற மாதிரி<a class="headerlink" href="#நிச்சயமற்ற-மாதிரி" title="Permalink to this headline">¶</a></h2>
 <p>ஒரு பன்முக பதிவு-இயல்பான சீரற்ற விநியோகத்தை ஒரு குவாண்டம் நிலையில் ஏற்றுவதற்கு ஒரு சுற்று தொழிற்சாலையை உருவாக்குகிறோம் <span class="math notranslate nohighlight">\(n' qubits. ஒவ்வொரு பரிமாணத்திற்கும் :math:\)</span>, ஒரு குறிப்பிட்ட இடைவெளியில் விநியோகம் துண்டிக்கப்படுகிறது <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span>
 கட்டம் புள்ளிகள், எங்கே <span class="math notranslate nohighlight">\(n_j\)</span>,அதாவது,:math:<cite>n_1+ldots+n_d = n</cite>.சுற்று தொழிற்சாலைக்கு ஒத்த ஒற்றுமை ஆபரேட்டர் பின்வருவனவற்றை செயல்படுத்துகிறது:</p>
@@ -612,24 +611,23 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_07_asian_barrier_spread_pricing_5_0.png" src="../_images/tutorials_07_asian_barrier_spread_pricing_5_0.png" />
 </div>
 </div>
-</section>
-<section id="Payoff-Function">
-<h2>Payoff Function<a class="headerlink" href="#Payoff-Function" title="Permalink to this headline">¶</a></h2>
-<p>For simplicity, we consider the sum of the spot prices instead of their average. The result can be transformed to the average by just dividing it by 2.</p>
-<p>The payoff function equals zero as long as the sum of the spot prices <span class="math notranslate nohighlight">\((S_1 + S_2)\)</span> is less than the strike price <span class="math notranslate nohighlight">\(K_1\)</span> and then increases linearly until the sum of the spot prices reaches <span class="math notranslate nohighlight">\(K_2\)</span>. Then payoff stays constant to <span class="math notranslate nohighlight">\(K_2 - K_1\)</span> unless any of the two spot prices exceeds the barrier threshold <span class="math notranslate nohighlight">\(B\)</span>, then the payoff goes immediately down to zero. The implementation first uses a weighted sum operator to compute the sum of the spot prices into an ancilla
-register, and then uses a comparator, that flips an ancilla qubit from <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\((S_1 + S_2) \geq K_1\)</span> and another comparator/ancilla to capture the case that <span class="math notranslate nohighlight">\((S_1 + S_2) \geq K_2\)</span>. These ancillas are used to control the linear part of the payoff function.</p>
-<p>In addition, we add another ancilla variable for each time step and use additional comparators to check whether <span class="math notranslate nohighlight">\(S_1\)</span>, respectively <span class="math notranslate nohighlight">\(S_2\)</span>, exceed the barrier threshold <span class="math notranslate nohighlight">\(B\)</span>. The payoff function is only applied if <span class="math notranslate nohighlight">\(S_1, S_2 \leq B\)</span>.</p>
-<p>The linear part itself is approximated as follows. We exploit the fact that <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> for small <span class="math notranslate nohighlight">\(|y|\)</span>. Thus, for a given approximation scaling factor <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> and <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span> we consider</p>
+</div>
+<div class="section" id="கொடுப்பனவு-செயல்பாடு">
+<h2>கொடுப்பனவு செயல்பாடு<a class="headerlink" href="#கொடுப்பனவு-செயல்பாடு" title="Permalink to this headline">¶</a></h2>
+<p>எளிமைக்காக, ஸ்பாட் விலைகளின் தொகையை அவற்றின் சராசரிக்கு பதிலாக நாங்கள் கருதுகிறோம். அதன் முடிவை சராசரியாக 2 ஆல் வகுப்பதன் மூலம் மாற்றலாம்.</p>
+<p>ஸ்பாட் விலைகளின் கூட்டுத்தொகை இருக்கும் வரை செலுத்துதல் செயல்பாடு பூஜ்ஜியத்திற்கு சமம்:math:<cite>(S_1 + S_2)</cite> வேலைநிறுத்தத்தை விட குறைவாக உள்ளது price <span class="math notranslate nohighlight">\(K_1\)</span>,செலுத்துதல் உடனடியாக பூஜ்ஜியத்திற்கு செல்லும். ஸ்பாட் விலைகளின் தொகையை ஒரு துணை பதிவேட்டில் கணக்கிடுவதற்கு செயல்படுத்தல் முதலில் ஒரு எடையுள்ள தொகை ஆபரேட்டரைப் பயன்படுத்துகிறது, பின்னர் ஒரு ஒப்பீட்டாளரைப் பயன்படுத்துகிறது, இது ஒரு துணை குவிட்டை புரட்டுகிறது:math:<cite>big|0rangle</cite> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\((S_1 + S_2) \geq K_1\)</span>. செலுத்துதல் செயல்பாட்டின் நேரியல் பகுதியைக் கட்டுப்படுத்த இந்த துணைக்கள் பயன்படுத்தப்படுகின்றன.</p>
+<p>கூடுதலாக, ஒவ்வொரு கால கட்டத்திற்கும் மற்றொரு துணை மாறியைச் சேர்க்கிறோம் மற்றும் கூடுதல் ஒப்பீட்டாளர்களைப் பயன்படுத்தி முறையே <span class="math notranslate nohighlight">\(S_1\)</span>, முறையே <span class="math notranslate nohighlight">\(S_2\)</span>, தடையை மீறுகிறது <span class="math notranslate nohighlight">\(B\)</span>. பணம் செலுத்தும் செயல்பாடு <span class="math notranslate nohighlight">\(S_1, S_2 \leq B\)</span> என்றால் மட்டுமே பயன்படுத்தப்படும்.</p>
+<p>நேரியல் பகுதியே பின்வருமாறு தோராயமானது. <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> சிறிய <span class="math notranslate nohighlight">\(|y|\)</span>. இவ்வாறு, கொடுக்கப்பட்ட தோராயமான அளவிடுதல் காரணிக்கு <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> மற்றும் <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span></p>
 <div class="math notranslate nohighlight">
 \[\sin^2( \pi/2 * c_\text{approx} * ( x - 1/2 ) + \pi/4) \approx \pi/2 * c_\text{approx} * ( x - 1/2 ) + 1/2\]</div>
 <p>for small <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>.</p>
-<p>We can easily construct an operator that acts as</p>
+<p>செயல்படும் ஒரு ஆபரேட்டரை நாம் எளிதாக உருவாக்க முடியும்</p>
 <div class="math notranslate nohighlight">
 \[\big|x\rangle \big|0\rangle \mapsto \big|x\rangle \left( \cos(a*x+b) \big|0\rangle + \sin(a*x+b) \big|1\rangle \right),\]</div>
-<p>using controlled Y-rotations.</p>
-<p>Eventually, we are interested in the probability of measuring <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> in the last qubit, which corresponds to <span class="math notranslate nohighlight">\(\sin^2(a*x+b)\)</span>. Together with the approximation above, this allows to approximate the values of interest. The smaller we choose <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, the better the approximation. However, since we are then estimating a property scaled by <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, the number of evaluation qubits <span class="math notranslate nohighlight">\(m\)</span> needs to be adjusted accordingly.</p>
-<p>For more details on the approximation, we refer to: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
-<p>Since the weighted sum operator (in its current implementation) can only sum up integers, we need to map from the original ranges to the representable range to estimate the result, and reverse this mapping before interpreting the result. The mapping essentially corresponds to the affine mapping described in the context of the uncertainty model above.</p>
+<p>கட்டுப்படுத்தப்பட்ட Y- சுழற்சிகளைப் பயன்படுத்துதல்.</p>
+<p>இறுதியில், அளவிடும் நிகழ்தகவில் நாங்கள் ஆர்வமாக உள்ளோம் <span class="math notranslate nohighlight">\(\big|1\rangle\)</span>sin^2(a*x+b)`.மேலே உள்ள தோராயத்துடன், இது ஆர்வத்தின் மதிப்புகளை தோராயமாக மதிப்பிட அனுமதிக்கிறது.சிறியது நாம் தேர்வு செய்கிறோம் <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>,சிறந்த தோராயமான.எவ்வாறாயினும், அளவிடப்பட்ட ஒரு சொத்தை நாங்கள் மதிப்பிடுகிறோம் என்பதால் <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, மதிப்பீட்டு வினாடிகளின் எண்ணிக்கை <span class="math notranslate nohighlight">\(m\)</span> அதற்கேற்ப சரிசெய்யப்பட வேண்டும்.</p>
+<p>தோராயமாக மேலும் விவரங்களுக்கு, நாங்கள் பார்க்கிறோம்: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>எடையுள்ள தொகை ஆபரேட்டர் (அதன் தற்போதைய செயல்பாட்டில்) முழு எண்களை மட்டுமே தொகுக்க முடியும் என்பதால், முடிவை மதிப்பிடுவதற்கு அசல் வரம்புகளிலிருந்து பிரதிநிதித்துவப்படுத்தக்கூடிய வரம்பிற்கு வரைபடமாக்க வேண்டும், மேலும் முடிவை விளக்கும் முன் இந்த வரைபடத்தை மாற்றியமைக்க வேண்டும். மேப்பிங் அடிப்படையில் மேலே உள்ள நிச்சயமற்ற மாதிரியின் சூழலில் விவரிக்கப்பட்டுள்ள அஃபைன் மேப்பிங்கிற்கு ஒத்திருக்கிறது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -913,10 +911,10 @@ objective qubit index 4
 exact expected value:   0.8023
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluate-Expected-Payoff">
-<h2>Evaluate Expected Payoff<a class="headerlink" href="#Evaluate-Expected-Payoff" title="Permalink to this headline">¶</a></h2>
-<p>We first verify the quantum circuit by simulating it and analyzing the resulting probability to measure the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state in the objective qubit.</p>
+</div>
+<div class="section" id="எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">
+<h2>எதிர்பார்த்த கொடுப்பனவை மதிப்பிடுங்கள்<a class="headerlink" href="#எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
+<p>குவாண்டம் சுற்றுவட்டத்தை உருவகப்படுத்துவதன் மூலமும், அதன் அளவை அளவிடுவதற்கான நிகழ்தகவை பகுப்பாய்வு செய்வதன் மூலமும் முதலில் சரிபார்க்கிறோம் <span class="math notranslate nohighlight">\(|1\rangle\)</span> புறநிலை குவிட்டில் நிலை.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -983,7 +981,7 @@ Mapped Operator value: 0.8319
 Exact Expected Payoff: 0.8023
 </pre></div></div>
 </div>
-<p>Next we use amplitude estimation to estimate the expected payoff. Note that this can take a while since we are simulating a large number of qubits. The way we designed the operator (asian_barrier_spread) implies that the number of actual state qubits is significantly smaller, thus, helping to reduce the overall simulation time a bit.</p>
+<p>அடுத்து நாம் எதிர்பார்க்கும் பலனை மதிப்பிட வீச்சு மதிப்பீட்டைப் பயன்படுத்துகிறோம். நாங்கள் அதிக எண்ணிக்கையிலான குவிட்களை உருவகப்படுத்துவதால் இதற்கு சிறிது நேரம் ஆகலாம் என்பதை நினைவில் கொள்க. நாங்கள் ஆபரேட்டரை வடிவமைத்த விதம் (asian_barrier_spread) உண்மையான மாநில குவிட்களின் எண்ணிக்கை கணிசமாக சிறியதாக இருப்பதைக் குறிக்கிறது, இதனால் ஒட்டுமொத்த உருவகப்படுத்துதல் நேரத்தை சிறிது குறைக்க உதவுகிறது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -1075,8 +1073,8 @@ Confidence interval:    [0.8268, 0.8388]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>
@@ -1086,7 +1084,7 @@ Confidence interval:    [0.8268, 0.8388]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="08_fixed_income_pricing.html" class="btn btn-neutral float-right" title="Pricing Fixed-Income Assets" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="08_fixed_income_pricing.html" class="btn btn-neutral float-right" title="நிலையான வருமான சொத்துக்களின் விலை நிர்ணயம்" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="06_basket_option_pricing.html" class="btn btn-neutral" title="Pricing Basket Options" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1124,8 +1122,8 @@ Confidence interval:    [0.8268, 0.8388]
 <li><a class="reference internal" href="#">ஆசிய தடையின் பரவல் விலை</a><ul>
 <li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
 <li><a class="reference internal" href="#நிச்சயமற்ற-மாதிரி">நிச்சயமற்ற மாதிரி</a></li>
-<li><a class="reference internal" href="#Payoff-Function">Payoff Function</a></li>
-<li><a class="reference internal" href="#Evaluate-Expected-Payoff">Evaluate Expected Payoff</a></li>
+<li><a class="reference internal" href="#கொடுப்பனவு-செயல்பாடு">கொடுப்பனவு செயல்பாடு</a></li>
+<li><a class="reference internal" href="#எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">எதிர்பார்த்த கொடுப்பனவை மதிப்பிடுங்கள்</a></li>
 </ul>
 </li>
 </ul>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Solucionadores para el estado base &mdash; documentación de Qiskit Nature - 0.2.1</title>
@@ -487,11 +486,11 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/03_ground_state_solvers.ipynb">docs/tutorials/03_ground_state_solvers.ipynb</a>.</p>
 </div>
-<section id="Solucionadores-para-el-estado-base">
+<div class="section" id="Solucionadores-para-el-estado-base">
 <h1>Solucionadores para el estado base<a class="headerlink" href="#Solucionadores-para-el-estado-base" title="Enlazar permanentemente con este título">¶</a></h1>
-<section id="Introducción">
+<div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
-<p><img alt="0e81d3cf104044f8b39f466e7c5ff54a" class="no-scaled-link" src="../_images/H2_gs.png" style="width: 200px;" /></p>
+<p><img alt="60a104a2803846b0bde5c4d25d482dff" class="no-scaled-link" src="../_images/H2_gs.png" style="width: 200px;" /></p>
 <p>En este tutorial vamos a discutir la interfaz de cálculo del estado fundamental de Qiskit Nature. El objetivo es calcular el estado fundamental de un Hamiltoniano molecular. Este Hamiltoniano puede ser electrónico o vibratorio. Para saber más sobre la preparación del Hamiltoniano, consulta los tutoriales de estructura electrónica y estructura vibratoria.</p>
 <p>El primer paso es definir el sistema molecular. A continuación, pedimos la parte electrónica de una molécula de hidrógeno.</p>
 <div class="nbinput docutils container">
@@ -533,8 +532,8 @@ Couldn&#39;t find cython becke routine
   h5py.get_config().default_file_mode = &#39;a&#39;
 </pre></div></div>
 </div>
-</section>
-<section id="El-Solucionador">
+</div>
+<div class="section" id="El-Solucionador">
 <h2>El Solucionador<a class="headerlink" href="#El-Solucionador" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Después necesitamos definir un solucionador. El solucionador es el algoritmo mediante el cual el estado base es calculado.</p>
 <p>Comencemos primero con un ejemplo puramente clásico: el solucionador propio (eigensolver) mínimo de NumPy. Este algoritmo diagonaliza exactamente al hamiltoniano. Aunque escala mal, se puede usar en sistemas pequeños para verificar los resultados de los algoritmos cuánticos.</p>
@@ -550,7 +549,7 @@ Couldn&#39;t find cython becke routine
 </div>
 </div>
 <p>Para encontrar el estado base también podríamos usar el algoritmo Variational Quantum Eigensolver (VQE). El algoritmo VQE funciona intercambiando información entre una computadora clásica y una computadora cuántica, cómo se muestra en la siguiente figura.</p>
-<p><img alt="c948ce97c96246838d278212a1771f27" class="no-scaled-link" src="../_images/vqe.png" style="width: 600px;" /></p>
+<p><img alt="5fa1dd933e024cccb44356b227386d53" class="no-scaled-link" src="../_images/vqe.png" style="width: 600px;" /></p>
 <p>Inicialicemos un solucionador de VQE.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -590,8 +589,8 @@ Couldn&#39;t find cython becke routine
 </pre></div>
 </div>
 </div>
-</section>
-<section id="El-cálculo-y-los-resultados">
+</div>
+<div class="section" id="El-cálculo-y-los-resultados">
 <h2>El cálculo y los resultados<a class="headerlink" href="#El-cálculo-y-los-resultados" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Ahora estamos listos para ejecutar el cálculo.</p>
 <div class="nbinput docutils container">
@@ -676,8 +675,8 @@ Couldn&#39;t find cython becke routine
 
 </pre></div></div>
 </div>
-</section>
-<section id="Usando-una-función-filtro">
+</div>
+<div class="section" id="Usando-una-función-filtro">
 <h2>Usando una función filtro<a class="headerlink" href="#Usando-una-función-filtro" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>A veces el verdadero estado del Hamiltoniano no es de interés ya que yace en un sector de simetría distinto del espacio de Hilbert. En este caso, el NumPy eigensolver puede tomar una función filtro para devolver solo los eigenestados con, por ejemplo, el número correcto de partículas. Esto es de particular importancia en el caso de los cálculos de estructuras vibrónicas donde el estado real del Hamiltoniano es el estado de vacío cuántico. Una función filtro predeterminada para revisar el número de partículas es implementada en las diferentes transformaciones y puede ser usado como</p>
 <div class="nbinput docutils container">
@@ -755,8 +754,8 @@ The number of occupied modals is
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

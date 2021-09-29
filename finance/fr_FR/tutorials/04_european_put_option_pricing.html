@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr-FR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Prix des options d’achat européennes &mdash; Documentation Qiskit Finance 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>Cette page a été générée et traduite à partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/04_european_put_option_pricing.ipynb">docs/tutorials/04_european_put_option_pricing.ipynb</a>.</p>
 </div>
-<section id="Prix-des-options-d'achat-européennes">
+<div class="section" id="Prix-des-options-d'achat-européennes">
 <h1>Prix des options d’achat européennes<a class="headerlink" href="#Prix-des-options-d'achat-européennes" title="Lien permanent vers ce titre">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Supposons une option de vente européenne avec le prix d’exercice (strike) <span class="math notranslate nohighlight">\(K\)</span> et un actif sous-jacent dont le prix spot à l’échéance <span class="math notranslate nohighlight">\(S_T\)</span> suit une distribution aléatoire donnée. La fonction de paiement correspondante est définie comme :</p>
 <div class="math notranslate nohighlight">
@@ -532,8 +531,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Modèle-d'incertitude">
+</div>
+<div class="section" id="Modèle-d'incertitude">
 <h2>Modèle d’incertitude<a class="headerlink" href="#Modèle-d'incertitude" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous construisons un circuit afin de représenter une distribution aléatoire en log-normale dans un état quantique. La distribution est limitée à l’intervalle <span class="math notranslate nohighlight">\([\text{low}, \text{high}]\)</span> et rendue discrète en utilisant <span class="math notranslate nohighlight">\(2^n\)</span> points, où <span class="math notranslate nohighlight">\(n\)</span> correspond au nombre de qubits utilisés. L’opérateur unitaire correspondant à ce circuit respecte la relation suivante :</p>
 <div class="math notranslate nohighlight">
@@ -596,8 +595,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_04_european_put_option_pricing_6_0.svg" src="../_images/tutorials_04_european_put_option_pricing_6_0.svg" /></div>
 </div>
-</section>
-<section id="Fonction-de-Paiement">
+</div>
+<div class="section" id="Fonction-de-Paiement">
 <h2>Fonction de Paiement<a class="headerlink" href="#Fonction-de-Paiement" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La fonction de paiement diminue linéairement avec une augmentation du prix spot à l’échéance de <span class="math notranslate nohighlight">\(S_T\)</span> jusqu’à ce qu’elle atteigne zéro pour un prix spot égal au prix strike <span class="math notranslate nohighlight">\(K\)</span>, Il reste constant à zéro pour des prix spot plus élevés. L’implémentation utilise un comparateur, qui retourne un qubit auxiliaire de <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> à <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> si <span class="math notranslate nohighlight">\(S_T \leq K\)</span>, et cet auxiliaire est utilisé pour contrôler la partie linéaire de la fonction de paiement.</p>
 <p>La partie linéaire proprement dite suit l’approximation ci-dessous. On exploite le fait que <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> lorsque <span class="math notranslate nohighlight">\(|y|\)</span> est petit.
@@ -691,8 +690,8 @@ exact expected value:   0.1709
 exact delta value:      -0.8193
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluer-le-paiement-attendu">
+</div>
+<div class="section" id="Evaluer-le-paiement-attendu">
 <h2>Evaluer le paiement attendu<a class="headerlink" href="#Evaluer-le-paiement-attendu" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -743,8 +742,8 @@ Estimated value:        0.1752
 Confidence interval:    [0.1662, 0.1843]
 </pre></div></div>
 </div>
-</section>
-<section id="Evaluation-du-Delta">
+</div>
+<div class="section" id="Evaluation-du-Delta">
 <h2>Evaluation du Delta<a class="headerlink" href="#Evaluation-du-Delta" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le Delta est un peu plus simple à évaluer que la fonction de payement escomptée. De la même manière que les gains attendus, nous utilisons un circuit de comparateur et un qubit ancillaire pour identifier les cas où <span class="math notranslate nohighlight">\(S_T \leq K\)</span>. Cependant, comme nous ne sommes intéressés que par la probabilité (négative) que cette condition soit vraie, nous pouvons directement utiliser ce qubit auxiliaire comme le qubit objectif dans l’estimation d’amplitude sans approximation supplémentaire.</p>
 <div class="nbinput nblast docutils container">
@@ -854,8 +853,8 @@ Confidence interval:    [-0.8216, -0.8186]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் தீர்வுகள் மற்றும் மாடல்களைப் பயன்படுத்துதல் &mdash; Qiskit Optimization 0.2.3 documentation</title>
+  <title>Using Classical Optimization Solvers and Models with Qiskit Optimization &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">மேம்படுத்தல் பயிற்சிகள்</a> &gt;</li>
         
-      <li>Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் தீர்வுகள் மற்றும் மாடல்களைப் பயன்படுத்துதல்</li>
+      <li>Using Classical Optimization Solvers and Models with Qiskit Optimization</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,11 +484,11 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/11_using_classical_optimization_solvers_and_models.ipynb">docs/tutorials/11_using_classical_optimization_solvers_and_models.ipynb</a> இதிலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<div class="section" id="Qiskit-ஆப்டிமைசேஷனுடன்-கிளாசிக்கல்-ஆப்டிமைசேஷன்-தீர்வுகள்-மற்றும்-மாடல்களைப்-பயன்படுத்துதல்">
-<h1>Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் தீர்வுகள் மற்றும் மாடல்களைப் பயன்படுத்துதல்<a class="headerlink" href="#Qiskit-ஆப்டிமைசேஷனுடன்-கிளாசிக்கல்-ஆப்டிமைசேஷன்-தீர்வுகள்-மற்றும்-மாடல்களைப்-பயன்படுத்துதல்" title="Permalink to this headline">¶</a></h1>
-<p>Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் கரைப்பான்களை (CPLEX மற்றும் குரோபி) நாம் பயன்படுத்தலாம். டாக்பலெக்ஸ் மற்றும் குரோபிபை ஆகியவை முறையே CPLEX மற்றும் குரோபிக்கான பைதான் API கள். டாக்லெக்ஸ் மற்றும் குரோபிபி மூலம் ஒரு தேர்வுமுறை மாதிரியை நாம் ஏற்றலாம் மற்றும் சேமிக்கலாம் மற்றும் CPLEX மற்றும் குரோபி ஆகியவற்றைப் பயன்படுத்தலாம் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>.</p>
-<p>நீங்கள் CPLEX தீர்வைப் பயன்படுத்த விரும்பினால், நீங்கள் <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[cplex]'</span></code> நிறுவ வேண்டும். நீங்கள் Qiskit தேர்வுமுறை நிறுவும் போது, ​​டாக்ப்ளெக்ஸ் தானாகவே, ஒரு சார்பாக நிறுவப்படும்.</p>
-<p>நீங்கள் குரோபி மற்றும் குரோபிபையைப் பயன்படுத்த விரும்பினால், நீங்கள் <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[gurobi]'</span></code> நிறுவ வேண்டும்.</p>
+<div class="section" id="Using-Classical-Optimization-Solvers-and-Models-with-Qiskit-Optimization">
+<h1>Using Classical Optimization Solvers and Models with Qiskit Optimization<a class="headerlink" href="#Using-Classical-Optimization-Solvers-and-Models-with-Qiskit-Optimization" title="Permalink to this headline">¶</a></h1>
+<p>We can use classical optimization solvers (CPLEX and Gurobi) with Qiskit Optimization. Docplex and Gurobipy are the Python APIs for CPLEX and Gurobi, respectively. We can load and save an optimization model by Docplex and Gurobipy and can apply CPLEX and Gurobi to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>.</p>
+<p>If you want to use the CPLEX solver, you need to install <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[cplex]'</span></code>. Docplex is automatically installed, as a dependent, when you install Qiskit Optimization.</p>
+<p>If you want to use Gurobi and Gurobipy, you need to install <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[gurobi]'</span></code>.</p>
 <p>Note that these solvers installed via pip are free versions, which have some limitations such as number of variables. Also note that the latest version 20.1 of CPLEX is available only for Python 3.7 and 3.8 as of July 2021. See the following pages for details.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pypi.org/project/cplex/">https://pypi.org/project/cplex/</a></p></li>
@@ -894,8 +894,8 @@ End
 </div>
 <p>Let’s compare the solutions of the model with an indicator constraint by</p>
 <ol class="arabic simple">
-<li><p>cPLEX ஐ நேரடியாக Docplex மாடலுக்குப் பயன்படுத்துதல் (இதை மொழிபெயர்க்காமல் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. CPLEX கரைப்பான் சொந்தமாக காட்டி கட்டுப்பாடுகளை ஆதரிக்கிறது),</p></li>
-<li><p>qAOA ஐப் பயன்படுத்துதல் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> மூலம் பெறப்பட்டது <code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code>.</p></li>
+<li><p>applying CPLEX directly to the Docplex model (without translating it to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. CPLEX solver natively supports the indicator constraints),</p></li>
+<li><p>applying QAOA to <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> obtained by <code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code>.</p></li>
 </ol>
 <p>நாங்கள் தீர்வுகள் ஒரே மாதிரியாக இருப்பதை காண்கிறோம்.</p>
 <div class="nbinput docutils container">
@@ -1002,7 +1002,7 @@ z=-1
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் தீர்வுகள் மற்றும் மாடல்களைப் பயன்படுத்துதல்</a><ul>
+<li><a class="reference internal" href="#">Using Classical Optimization Solvers and Models with Qiskit Optimization</a><ul>
 <li><a class="reference internal" href="#CplexSolver-and-GurobiSolver">CplexSolver and GurobiSolver</a></li>
 <li><a class="reference internal" href="#Translators-between-QuadraticProgram-and-Docplex/Gurobipy">Translators between <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> and Docplex/Gurobipy</a><ul>
 <li><a class="reference internal" href="#Indicator-constraints-of-Docplex">Indicator constraints of Docplex</a></li>

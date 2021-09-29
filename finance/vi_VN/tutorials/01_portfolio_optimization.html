@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="vi-VN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Tối ưu hóa danh mục &mdash; Tài liệu Qiskit Finance 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Ghi chú</p>
 <p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a>.</p>
 </div>
-<section id="Tối-ưu-hóa-danh-mục">
+<div class="section" id="Tối-ưu-hóa-danh-mục">
 <h1>Tối ưu hóa danh mục<a class="headerlink" href="#Tối-ưu-hóa-danh-mục" title="Permalink to this headline">¶</a></h1>
-<section id="Giới-thiệu">
+<div class="section" id="Giới-thiệu">
 <h2>Giới thiệu<a class="headerlink" href="#Giới-thiệu" title="Permalink to this headline">¶</a></h2>
 <p>Hướng dẫn này cho phép giải quyết vấn đề tối ưu hóa phương sai trung bình danh mục vốn đầu tư cho <span class="math notranslate nohighlight">\(n\)</span> tài sản:</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-Thiết-lập-để-chạy-thử-nghiệm-trên-một-thiết-bị-thật">
+<div class="section" id="[Optional]-Thiết-lập-để-chạy-thử-nghiệm-trên-một-thiết-bị-thật">
 <h3>[Optional] Thiết lập để chạy thử nghiệm trên một thiết bị thật<a class="headerlink" href="#[Optional]-Thiết-lập-để-chạy-thử-nghiệm-trên-một-thiết-bị-thật" title="Permalink to this headline">¶</a></h3>
 <p>Nếu bạn muốn thực hiện thí nghiệm trên một thiết bị thực, bạn cần thiết lập tài khoản trước.</p>
 <p>Lưu ý: Nếu bạn chưa lưu trữ token của bạn, thì sử dụng <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> để lưu nó trước.</p>
-</section>
-</section>
-<section id="Định-nghĩa-yêu-cầu-của-vấn-đề">
+</div>
+</div>
+<div class="section" id="Định-nghĩa-yêu-cầu-của-vấn-đề">
 <h2>Định nghĩa yêu cầu của vấn đề<a class="headerlink" href="#Định-nghĩa-yêu-cầu-của-vấn-đề" title="Permalink to this headline">¶</a></h2>
 <p>Here an Operator instance is created for our Hamiltonian. In this case the paulis are from an Ising Hamiltonian translated from the portfolio problem. We use a random portfolio problem for this notebook. It is straight-forward to extend this to using real financial data as illustrated here: <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a></p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyimimumEigensolver-(như-một-tham-khảo-cổ-điển)">
+</div>
+<div class="section" id="NumPyimimumEigensolver-(như-một-tham-khảo-cổ-điển)">
 <h2>NumPyimimumEigensolver (như một tham khảo cổ điển)<a class="headerlink" href="#NumPyimimumEigensolver-(như-một-tham-khảo-cổ-điển)" title="Permalink to this headline">¶</a></h2>
 <p>Hãy cùng giải bài toán này. Đầu tiên một cách cổ điển…</p>
 <p>We can now use the Operator we built above without regard to the specifics of how it was created. We set the algorithm for the NumPyMinimumEigensolver so we can have a classical reference. The problem is set for ‘ising’. Backend is not required since this is computed classically not using quantum computation. The result is returned as a dictionary.</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="Giải-pháp-sử-dụng-VQE">
+</div>
+<div class="section" id="Giải-pháp-sử-dụng-VQE">
 <h2>Giải pháp sử dụng VQE<a class="headerlink" href="#Giải-pháp-sử-dụng-VQE" title="Permalink to this headline">¶</a></h2>
 <p>Bây giờ chúng ta có thể sử dụng Variational Quantum Eigensolver (VQE) để giải bài toán. Chúng tôi sẽ xác định bộ tối ưu và dạng biến sẽ được sử dụng.</p>
 <p>Lưu ý: Bạn có thể chuyển sang phần sau khác nhau bằng cách cung cấp tên của phần sau.</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="Giải-pháp-sử-dụng-QAOA">
+<div class="section" id="Giải-pháp-sử-dụng-QAOA">
 <h3>Giải pháp sử dụng QAOA<a class="headerlink" href="#Giải-pháp-sử-dụng-QAOA" title="Permalink to this headline">¶</a></h3>
 <p>Chúng tôi cũng cho thấy kết quả là sử dụng thuật toán tối ưu hóa lượng tử (QAOA). Đây là một thuật toán biến khác và nó sử dụng một dạng biến nội bộ được tạo ra dựa trên vấn đề.</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

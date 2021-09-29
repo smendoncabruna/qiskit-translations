@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ஐரோப்பிய புட் விருப்பங்களின் விலை &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/04_european_put_option_pricing.ipynb">docs/tutorials/04_european_put_option_pricing.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="ஐரோப்பிய-புட்-விருப்பங்களின்-விலை">
+<div class="section" id="ஐரோப்பிய-புட்-விருப்பங்களின்-விலை">
 <h1>ஐரோப்பிய புட் விருப்பங்களின் விலை<a class="headerlink" href="#ஐரோப்பிய-புட்-விருப்பங்களின்-விலை" title="Permalink to this headline">¶</a></h1>
-<section id="முன்னுரை">
+<div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>வேலைநிறுத்த விலையுடன் ஒரு ஐரோப்பிய புட் விருப்பத்தை வைத்துக்கொள்வோம் <span class="math notranslate nohighlight">\(K\)</span> மற்றும் முதிர்ச்சியில் இடத்தின் விலை <span class="math notranslate nohighlight">\(S_T\)</span> கொடுக்கப்பட்ட சீரற்ற விநியோகத்தைப் பின்பற்றுகிறது. தொடர்புடைய செலுத்துதல் செயல்பாடு பின்வருமாறு வரையறுக்கப்படுகிறது:</p>
 <div class="math notranslate nohighlight">
@@ -532,8 +531,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="நிச்சயமற்ற-மாதிரி">
+</div>
+<div class="section" id="நிச்சயமற்ற-மாதிரி">
 <h2>நிச்சயமற்ற மாதிரி<a class="headerlink" href="#நிச்சயமற்ற-மாதிரி" title="Permalink to this headline">¶</a></h2>
 <p>ஒரு பதிவு-சாதாரண சீரற்ற விநியோகத்தை ஒரு குவாண்டம் நிலையில் ஏற்றுவதற்கு ஒரு சுற்று தொழிற்சாலையை உருவாக்குகிறோம்.ஒரு குறிப்பிட்ட இடைவெளியில் விநியோகம் துண்டிக்கப்படுகிறது <span class="math notranslate nohighlight">\([\text{low}, \text{high}]\)</span> மற்றும் தனிப்பயனாக்கப்பட்டது <span class="math notranslate nohighlight">\(2^n\)</span> பயன்படுத்தப்படும் குவிட்களின் எண்ணிக்கையைக் குறிக்கிறது.சுற்று தொழிற்சாலைக்கு ஒத்த ஒற்றுமை ஆபரேட்டர் பின்வருவனவற்றை செயல்படுத்துகிறது:</p>
 <div class="math notranslate nohighlight">
@@ -596,8 +595,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_04_european_put_option_pricing_6_0.svg" src="../_images/tutorials_04_european_put_option_pricing_6_0.svg" /></div>
 </div>
-</section>
-<section id="செலுத்துதல்-செயல்பாடு">
+</div>
+<div class="section" id="செலுத்துதல்-செயல்பாடு">
 <h2>செலுத்துதல் செயல்பாடு<a class="headerlink" href="#செலுத்துதல்-செயல்பாடு" title="Permalink to this headline">¶</a></h2>
 <p>முதிர்ச்சியில் அதிகரிக்கும் ஸ்பாட் விலையுடன் செலுத்துதல் செயல்பாடு நேர்கோட்டில் குறைகிறது <span class="math notranslate nohighlight">\(S_T\)</span> இது வேலைநிறுத்த விலைக்கு சமமான ஸ்பாட் விலைக்கு பூஜ்ஜியத்தை அடையும் வரை <span class="math notranslate nohighlight">\(K\)</span>, இது பெரிய ஸ்பாட் விலைகளுக்கு பூஜ்ஜியத்திற்கு மாறாமல் இருக்கும். செயலாக்கம் ஒரு ஒப்பீட்டாளரைப் பயன்படுத்துகிறது, இது ஒரு கணிதத்தை <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> முதல் <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> என்றால் <span class="math notranslate nohighlight">\(S_T \leq K\)</span>, மற்றும் இந்த துணை செலுத்துதல் செயல்பாட்டின் நேரியல் பகுதியைக் கட்டுப்படுத்தப் பயன்படுகிறது.</p>
 <p>நேரியல் பகுதி பின்வருமாறு தோராயமாக மதிப்பிடப்படுகிறது. <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> சிறியது <span class="math notranslate nohighlight">\(|y|\)</span>. எனவே, கொடுக்கப்பட்ட தோராயமான மீட்பு அளவிடுதல் காரணிக்கு <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> மற்றும் <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span></p>
@@ -690,8 +689,8 @@ exact expected value:   0.1709
 exact delta value:      -0.8193
 </pre></div></div>
 </div>
-</section>
-<section id="எதிர்பார்க்கப்படும்-ஊதியத்தை-மதிப்பிடுங்கள்">
+</div>
+<div class="section" id="எதிர்பார்க்கப்படும்-ஊதியத்தை-மதிப்பிடுங்கள்">
 <h2>எதிர்பார்க்கப்படும் ஊதியத்தை மதிப்பிடுங்கள்<a class="headerlink" href="#எதிர்பார்க்கப்படும்-ஊதியத்தை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -742,8 +741,8 @@ Estimated value:        0.1752
 Confidence interval:    [0.1662, 0.1843]
 </pre></div></div>
 </div>
-</section>
-<section id="டெல்டாவை-மதிப்பிடுங்கள்">
+</div>
+<div class="section" id="டெல்டாவை-மதிப்பிடுங்கள்">
 <h2>டெல்டாவை மதிப்பிடுங்கள்<a class="headerlink" href="#டெல்டாவை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
 <p>டெல்டா எதிர்பார்த்த ஊதியத்தை விட மதிப்பீடு செய்வது சற்று எளிது.இதேபோல் எதிர்பார்க்கப்படும் ஊதியம், வழக்குகளை அடையாளம் காண ஒரு ஒப்பீட்டாளர் சுற்று மற்றும் ஒரு துணை குவிட் ஆகியவற்றைப் பயன்படுத்துகிறோம் <span class="math notranslate nohighlight">\(S_T \leq K\)</span>. இருப்பினும், இந்த நிலை உண்மையாக இருப்பதற்கான (எதிர்மறை) நிகழ்தகவில் மட்டுமே நாங்கள் ஆர்வமாக உள்ளதால், மேலதிக தோராயமின்றி வீச்சு மதிப்பீட்டில் புறநிலை குவிட்டாக இந்த துணை குவிட்டை நாம் நேரடியாகப் பயன்படுத்தலாம்.</p>
 <div class="nbinput nblast docutils container">
@@ -853,8 +852,8 @@ Confidence interval:    [-0.8216, -0.8186]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

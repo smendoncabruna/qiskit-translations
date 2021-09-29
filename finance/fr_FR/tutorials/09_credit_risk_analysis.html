@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr-FR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Analyse du Risque de Crédit &mdash; Documentation Qiskit Finance 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>Cette page a été générée à partir de <cite>docs/tutorials/09_credit_risk_analysis.ipynb</cite> __.</p>
 </div>
-<section id="Analyse-du-Risque-de-Crédit">
+<div class="section" id="Analyse-du-Risque-de-Crédit">
 <h1>Analyse du Risque de Crédit<a class="headerlink" href="#Analyse-du-Risque-de-Crédit" title="Lien permanent vers ce titre">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Ce tutoriel montre comment les algorithmes quantiques peuvent être utilisés pour l’analyse des risques de crédit. Plus précisément, comment l’estimation de l’amplitude quantique (QAE) peut être utilisée pour estimer les mesures de risque avec une accélération quadratique par rapport à la simulation classique de Monte Carlo. Le tutoriel est basé sur les documents suivants:</p>
 <ul class="simple">
@@ -524,8 +523,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Définition-du-Problème">
+</div>
+<div class="section" id="Définition-du-Problème">
 <h2>Définition du Problème<a class="headerlink" href="#Définition-du-Problème" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans ce tutoriel, nous voulons analyser le risque de crédit d’un portefeuille de <span class="math notranslate nohighlight">\(K\)</span> actifs. La probabilité par défaut de chaque actif <span class="math notranslate nohighlight">\(k\)</span> suit un modèle <em>Gaussien d’indépendance conditionnelle</em>, c’est-à-dire étant donné une valeur <span class="math notranslate nohighlight">\(z\)</span> échantillonnée à partir d’une variable aléatoire latente <span class="math notranslate nohighlight">\(Z\)</span> suivant une distribution normale standard, la probabilité par défaut de l’actif <span class="math notranslate nohighlight">\(k\)</span> est donnée par</p>
 <div class="math notranslate nohighlight">
@@ -559,8 +558,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Modèle-d'incertitude">
+</div>
+<div class="section" id="Modèle-d'incertitude">
 <h2>Modèle d’incertitude<a class="headerlink" href="#Modèle-d'incertitude" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous construisons maintenant un circuit qui permet de charger le modèle d’incertitude. Ceci peut être réalisé en créant un état quantique dans un registre de <span class="math notranslate nohighlight">\(n_z\)</span> qubits qui représente <span class="math notranslate nohighlight">\(Z\)</span> suivant une distribution normale standard. Cet état est ensuite utilisé pour contrôler des rotations en Y sur un second registre de qubits de <span class="math notranslate nohighlight">\(K\)</span> de qubit <span class="math notranslate nohighlight">\(k\)</span> représente l’événement par défaut de l’asset <span class="math notranslate nohighlight">\(k\)</span>. L’état quantique résultant peut être écrit comme</p>
 <div class="math notranslate nohighlight">
@@ -754,8 +753,8 @@ Conditional Value at Risk CVaR[L]: 3.0000
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_credit_risk_analysis_14_0.svg" src="../_images/tutorials_09_credit_risk_analysis_14_0.svg" /></div>
 </div>
-</section>
-<section id="Perte-Attendue">
+</div>
+<div class="section" id="Perte-Attendue">
 <h2>Perte Attendue<a class="headerlink" href="#Perte-Attendue" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour estimer la perte attendue, nous appliquons d’abord un opérateur de somme pondérée pour obtenir la perte totale à partir des pertes individuelles :</p>
 <div class="math notranslate nohighlight">
@@ -937,8 +936,8 @@ Estimated value:        0.6733
 Confidence interval:    [0.6587, 0.6878]
 </pre></div></div>
 </div>
-</section>
-<section id="Fonction-de-distribution-cumulée">
+</div>
+<div class="section" id="Fonction-de-distribution-cumulée">
 <h2>Fonction de distribution cumulée<a class="headerlink" href="#Fonction-de-distribution-cumulée" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Au lieu de l’espérance de la perte (qui pourrait aussi être estimée efficacement à l’aide de techniques classiques), nous estimons à présent la fonction de distribution cumulative (CDF) de la perte. En termes classiques, il s’agit soit d’évaluer toutes les combinaisons possibles d’actifs défaillants, soit de nombreux échantillons classiques dans une simulation de Monte Carlo. Les algorithmes basés sur la QAE ont le potentiel d’accélérer considérablement cette analyse à l’avenir.</p>
 <p>Pour estimer le CDF, c’est-à-dire la probabilité <span class="math notranslate nohighlight">\(\mathbb{P}[L \leqx]\)</span>, nous appliquons à nouveau <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> pour calculer la perte totale, puis un comparateur qui pour une valeur donnée <span class="math notranslate nohighlight">\(x\)</span> agit comme</p>
@@ -1120,8 +1119,8 @@ Estimated value:        0.9593
 Confidence interval:    [0.9582, 0.9604]
 </pre></div></div>
 </div>
-</section>
-<section id="Valeur-à-Risque">
+</div>
+<div class="section" id="Valeur-à-Risque">
 <h2>Valeur à Risque<a class="headerlink" href="#Valeur-à-Risque" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans ce qui suit, nous utilisons une recherche de bisection et QAE pour évaluer efficacement le CDF pour estimer la valeur à risque.</p>
 <div class="nbinput nblast docutils container">
@@ -1263,8 +1262,8 @@ Estimated Probability:    0.960
 Exact Probability:        0.959
 </pre></div></div>
 </div>
-</section>
-<section id="Valeur-Conditionnelle-à-Risque">
+</div>
+<div class="section" id="Valeur-Conditionnelle-à-Risque">
 <h2>Valeur Conditionnelle à Risque<a class="headerlink" href="#Valeur-Conditionnelle-à-Risque" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Enfin, nous calculons le CVaR, c’est-à-dire que la valeur attendue de la perte est conditionnelle à ce qu’elle soit supérieure ou égale à la VaR. Pour ce faire, nous évaluons une fonction objectif linéaire par morceaux <span class="math notranslate nohighlight">\(f(L)\)</span>, dépendant de la perte totale <span class="math notranslate nohighlight">\(L\)</span>, qui est donnée par</p>
 <div class="math notranslate nohighlight">
@@ -1472,8 +1471,8 @@ Estimated CVaR: 3.3836
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

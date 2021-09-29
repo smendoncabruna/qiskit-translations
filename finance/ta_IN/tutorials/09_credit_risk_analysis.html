@@ -6,11 +6,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Credit Risk Analysis &mdash; Qiskit Finance 0.2.1 documentation</title>
+  <title>கடன் இடர் பகுப்பாய்வு &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -40,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
-    <link rel="next" title="Option Pricing with qGANs" href="10_qgan_option_pricing.html" />
-    <link rel="prev" title="Pricing Fixed-Income Assets" href="08_fixed_income_pricing.html" /> 
+    <link rel="next" title="உடன் விருப்பம் விலை qGANs" href="10_qgan_option_pricing.html" />
+    <link rel="prev" title="நிலையான வருமான சொத்துக்களின் விலை நிர்ணயம்" href="08_fixed_income_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -205,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Credit Risk Analysis</li>
+      <li>கடன் இடர் பகுப்பாய்வு</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -485,12 +484,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a> இதிலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="Credit-Risk-Analysis">
-<h1>Credit Risk Analysis<a class="headerlink" href="#Credit-Risk-Analysis" title="Permalink to this headline">¶</a></h1>
-<section id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="கடன்-இடர்-பகுப்பாய்வு">
+<h1>கடன் இடர் பகுப்பாய்வு<a class="headerlink" href="#கடன்-இடர்-பகுப்பாய்வு" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="முன்னுரை">
+<h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>கடன் ஆபத்து பகுப்பாய்விற்கு குவாண்டம் வழிமுறைகள் எவ்வாறு பயன்படுத்தப்படலாம் என்பதை இந்த பயிற்சிகள் காட்டுகிறது. இன்னும் துல்லியமாக, கிளாசிக்கல் மான்டே கார்லோ உருவகப்படுத்துதலின் மீது இருபடி வேகத்துடன் ஆபத்து நடவடிக்கைகளை மதிப்பிடுவதற்கு குவாண்டம் அலைவீச்சு மதிப்பீடு (QAE) எவ்வாறு பயன்படுத்தப்படலாம். பயிற்சிகள் பின்வரும் ஆவணங்களை அடிப்படையாகக் கொண்டது:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.nature.com/articles/s41534-019-0130-6">குவாண்டம் இடர் பகுப்பாய்வு. ஸ்டீபன் வோர்னர், டேனியல் ஜே. எகர்.</a> [Woerner2019]</p></li>
@@ -524,8 +523,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="சிக்கல்-வரையறை">
+</div>
+<div class="section" id="சிக்கல்-வரையறை">
 <h2>சிக்கல் வரையறை<a class="headerlink" href="#சிக்கல்-வரையறை" title="Permalink to this headline">¶</a></h2>
 <p>இந்த டுடோரியலில்: கணிதத்தின் ஒரு போர்ட்ஃபோலியோவின் கடன் அபாயத்தை பகுப்பாய்வு செய்ய விரும்புகிறோம் <span class="math notranslate nohighlight">\(K\)</span> சொத்துக்கள். ஒவ்வொரு சொத்தின் இயல்புநிலை நிகழ்தகவு <span class="math notranslate nohighlight">\(k\)</span> ஒரு <em>காஸியன் நிபந்தனை சுதந்திரம்</em> மாதிரியைப் பின்பற்றுகிறது, அதாவது, ஒரு மதிப்பு கொடுக்கப்பட்டுள்ளது <span class="math notranslate nohighlight">\(z\)</span> ஒரு மறைந்த சீரற்ற மாறியில் இருந்து மாதிரி <span class="math notranslate nohighlight">\(Z\)</span> ஒரு நிலையான சாதாரண விநியோகத்தைத் தொடர்ந்து, சொத்தின் இயல்புநிலை நிகழ்தகவு <span class="math notranslate nohighlight">\(k\)</span> வழங்கப்படுகிறது</p>
 <div class="math notranslate nohighlight">
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 <p>நம்பிக்கை மட்டத்துடன் <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>, மற்றும்</p>
 <div class="math notranslate nohighlight">
 \[\text{CVaR}_ {\alpha} (L) = \mathbb{E}[L \mid L \geq \text{VaR}_ {\alpha} (L)].\]</div>
-<p>For more details on the considered model, see, e.g., <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
+<p>கருதப்பட்ட மாதிரியைப் பற்றிய கூடுதல் விவரங்களுக்கு, எ.கா. <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
 <p>சிக்கல் பின்வரும் அளவுருக்களால் வரையறுக்கப்படுகிறது: - பிரதிநிதித்துவப்படுத்த பயன்படுத்தப்படும் குவிட்களின் எண்ணிக்கை <span class="math notranslate nohighlight">\(Z\)</span>, இதன் மூலம் குறிக்கப்படுகிறது <span class="math notranslate nohighlight">\(n_z\)</span> - இதற்கான துண்டிப்பு மதிப்பு <span class="math notranslate nohighlight">\(Z\)</span>, குறிக்கப்படுகிறது <span class="math notranslate nohighlight">\(z_{\text{max}}\)</span>, அதாவது Z எடுக்கப்படும் என்று கருதப்படுகிறது <span class="math notranslate nohighlight">\(2^{n_z}\)</span> இதில் சமமான மதிப்புகள் <span class="math notranslate nohighlight">\(\{-z_{max}, ..., +z_{max}\}\)</span>- ஒவ்வொரு சொத்துக்கும் அடிப்படை இயல்புநிலை நிகழ்தகவுகள் <span class="math notranslate nohighlight">\(p_0^k \in (0, 1)\)</span>, <span class="math notranslate nohighlight">\(k=1, ..., K\)</span> - இது தொடர்பான இயல்புநிலை நிகழ்தகவுகளின் உணர்திறன் <span class="math notranslate nohighlight">\(Z\)</span>, குறிக்கப்படுகிறது <span class="math notranslate nohighlight">\(\rho_k \in [0, 1)\)</span>- சொத்துக்கான இயல்புநிலை கொடுக்கப்பட்ட இழப்பு <span class="math notranslate nohighlight">\(k\)</span>, குறிக்கப்படுகிறது <span class="math notranslate nohighlight">\(\lambda_k\)</span> - VaR / CVaR <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -559,9 +558,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Uncertainty-Model">
-<h2>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="நிச்சயமற்ற-மாதிரி">
+<h2>நிச்சயமற்ற மாதிரி<a class="headerlink" href="#நிச்சயமற்ற-மாதிரி" title="Permalink to this headline">¶</a></h2>
 <p>நிச்சயமற்ற மாதிரியை ஏற்றும் ஒரு சுற்று ஒன்றை இப்போது உருவாக்குகிறோம். ஒரு பதிவேட்டில் ஒரு குவாண்டம் நிலையை உருவாக்குவதன் மூலம் இதை அடைய முடியும் <span class="math notranslate nohighlight">\(n_z\)</span> குவிட்ஸ் குறிக்கும் <span class="math notranslate nohighlight">\(Z\)</span> ஒரு நிலையான சாதாரண விநியோகத்தைத் தொடர்ந்து. இந்த நிலை பின்னர் இரண்டாவது குவிட் பதிவேட்டில் ஒற்றை குவிட் ஒய்-சுழற்சிகளைக் கட்டுப்படுத்தப் பயன்படுகிறது <span class="math notranslate nohighlight">\(K\)</span> குவிட்ஸ், அங்கு ஒரு <span class="math notranslate nohighlight">\(|1\rangle\)</span> குவிட் நிலை <span class="math notranslate nohighlight">\(k\)</span> இயல்புநிலை நிகழ்வைக் குறிக்கிறது சொத்து <span class="math notranslate nohighlight">\(k\)</span>. இதன் விளைவாக குவாண்டம் நிலையை இவ்வாறு எழுதலாம்</p>
 <div class="math notranslate nohighlight">
 \[ |\Psi\rangle = \sum_{i=0}^{2^{n_z}-1} \sqrt{p_z^i} |z_i \rangle \bigotimes_{k=1}^K
@@ -754,8 +753,8 @@ Conditional Value at Risk CVaR[L]: 3.0000
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_credit_risk_analysis_14_0.svg" src="../_images/tutorials_09_credit_risk_analysis_14_0.svg" /></div>
 </div>
-</section>
-<section id="எதிர்பார்க்கப்படும்-இழப்பு">
+</div>
+<div class="section" id="எதிர்பார்க்கப்படும்-இழப்பு">
 <h2>எதிர்பார்க்கப்படும் இழப்பு<a class="headerlink" href="#எதிர்பார்க்கப்படும்-இழப்பு" title="Permalink to this headline">¶</a></h2>
 <p>எதிர்பார்க்கப்படும் இழப்பை மதிப்பிடுவதற்கு, தனிப்பட்ட இழப்புகளை மொத்த இழப்புக்குச் சேர்க்க முதலில் எடையுள்ள தொகை ஆபரேட்டரைப் பயன்படுத்துகிறோம்:</p>
 <div class="math notranslate nohighlight">
@@ -937,8 +936,8 @@ Estimated value:        0.6733
 Confidence interval:    [0.6587, 0.6878]
 </pre></div></div>
 </div>
-</section>
-<section id="ஒட்டுமொத்த-விநியோக-செயல்பாடு">
+</div>
+<div class="section" id="ஒட்டுமொத்த-விநியோக-செயல்பாடு">
 <h2>ஒட்டுமொத்த விநியோக செயல்பாடு<a class="headerlink" href="#ஒட்டுமொத்த-விநியோக-செயல்பாடு" title="Permalink to this headline">¶</a></h2>
 <p>எதிர்பார்த்த இழப்புக்கு பதிலாக (இது கிளாசிக்கல் நுட்பங்களைப் பயன்படுத்தி திறமையாக மதிப்பிடப்படலாம்) இழப்பின் ஒட்டுமொத்த விநியோக செயல்பாட்டை (CDF) இப்போது மதிப்பிடுகிறோம். பாரம்பரியமாக, இயல்புநிலை சொத்துக்களின் சாத்தியமான அனைத்து சேர்க்கைகளையும் மதிப்பீடு செய்வது அல்லது மான்டே கார்லோ உருவகப்படுத்துதலில் பல கிளாசிக்கல் மாதிரிகள் ஆகியவற்றை மதிப்பீடு செய்வது இதில் அடங்கும். QAE ஐ அடிப்படையாகக் கொண்ட வழிமுறைகள் எதிர்காலத்தில் இந்த பகுப்பாய்வை கணிசமாக விரைவுபடுத்தும் திறனைக் கொண்டுள்ளன.</p>
 <p>சி.டி.எஃப் ஐ மதிப்பிடுவதற்கு, அதாவது நிகழ்தகவு <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq x]\)</span>, நாங்கள் மீண்டும் விண்ணப்பிக்கிறோம் <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> மொத்த இழப்பைக் கணக்கிட, பின்னர் ஒரு ஒப்பீட்டாளரைப் பயன்படுத்துங்கள் கொடுக்கப்பட்ட மதிப்புக்கு <span class="math notranslate nohighlight">\(x\)</span> ஆக செயல்படுகிறது</p>
@@ -1120,8 +1119,8 @@ Estimated value:        0.9593
 Confidence interval:    [0.9582, 0.9604]
 </pre></div></div>
 </div>
-</section>
-<section id="ஆபத்தில்-மதிப்பு">
+</div>
+<div class="section" id="ஆபத்தில்-மதிப்பு">
 <h2>ஆபத்தில் மதிப்பு<a class="headerlink" href="#ஆபத்தில்-மதிப்பு" title="Permalink to this headline">¶</a></h2>
 <p>பின்வருவனவற்றில், ஆபத்தில் உள்ள மதிப்பை மதிப்பிடுவதற்கு சி. டி. எஃப் ஐ திறம்பட மதிப்பீடு செய்ய ஒரு பைசெக்ஷன் தேடல் மற்றும் QAE ஐப் பயன்படுத்துகிறோம்.</p>
 <div class="nbinput nblast docutils container">
@@ -1263,8 +1262,8 @@ Estimated Probability:    0.960
 Exact Probability:        0.959
 </pre></div></div>
 </div>
-</section>
-<section id="ஆபத்தில்-நிபந்தனை-மதிப்பு">
+</div>
+<div class="section" id="ஆபத்தில்-நிபந்தனை-மதிப்பு">
 <h2>ஆபத்தில் நிபந்தனை மதிப்பு<a class="headerlink" href="#ஆபத்தில்-நிபந்தனை-மதிப்பு" title="Permalink to this headline">¶</a></h2>
 <p>கடைசியாக, நாங்கள் CVaR-ரைக் கணக்கிடுகிறோம், அதாவது இழப்புக்கான நிபந்தனைக்குட்பட்ட மதிப்பு VaR-ரை விட பெரியதாகவோ அல்லது சமமாகவோ இருக்கும். அவ்வாறு செய்ய, ஒரு பிஸ்கேவ் நேரியல் நோக்க செயல்பாட்டை மதிப்பீடு செய்கிறோம் <span class="math notranslate nohighlight">\(f(L)\)</span>, மொத்த இழப்பைப் பொறுத்தது <span class="math notranslate nohighlight">\(L\)</span>, இது வழங்கியது</p>
 <div class="math notranslate nohighlight">
@@ -1472,8 +1471,8 @@ Estimated CVaR: 3.3836
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>
@@ -1483,10 +1482,10 @@ Estimated CVaR: 3.3836
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="Option Pricing with qGANs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="உடன் விருப்பம் விலை qGANs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Pricing Fixed-Income Assets" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="நிலையான வருமான சொத்துக்களின் விலை நிர்ணயம்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1518,10 +1517,10 @@ Estimated CVaR: 3.3836
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Credit Risk Analysis</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#">கடன் இடர் பகுப்பாய்வு</a><ul>
+<li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
 <li><a class="reference internal" href="#சிக்கல்-வரையறை">சிக்கல் வரையறை</a></li>
-<li><a class="reference internal" href="#Uncertainty-Model">Uncertainty Model</a></li>
+<li><a class="reference internal" href="#நிச்சயமற்ற-மாதிரி">நிச்சயமற்ற மாதிரி</a></li>
 <li><a class="reference internal" href="#எதிர்பார்க்கப்படும்-இழப்பு">எதிர்பார்க்கப்படும் இழப்பு</a></li>
 <li><a class="reference internal" href="#ஒட்டுமொத்த-விநியோக-செயல்பாடு">ஒட்டுமொத்த விநியோக செயல்பாடு</a></li>
 <li><a class="reference internal" href="#ஆபத்தில்-மதிப்பு">ஆபத்தில் மதிப்பு</a></li>

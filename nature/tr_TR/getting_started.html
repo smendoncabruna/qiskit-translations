@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Başlarken &mdash; Qiskit Nature 0.2.1 belgelendirmesi</title>
@@ -233,15 +232,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <br><br><br><section id="getting-started">
+  <br><br><br><div class="section" id="getting-started">
 <h1>Başlarken<a class="headerlink" href="#getting-started" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
-<section id="installation">
+<div class="section" id="installation">
 <h2>Kurulum<a class="headerlink" href="#installation" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Qiskit Nature; Qiskit için kurulum seçeneklerini ve onun desteklenen ortam/platformlarını detaylandıran <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Başlarken</a> adındaki kendi ana Qiskit paketine bağlıdır. Öncelikle buna bakmalısınız. Sonrasında, burada yer alan Qiskit Nature’a özgü ek kuruluma ilişkin bilgiler takip edilebilir.</p>
 <p>Qiskit Nature, bağımlı kodun ve/veya destek program(lar)ının varsayılan olarak kurulmadığı (veya kurulamadığı) durumlarda isteğe bağlı hâle getirilmiş bazı işlevlere sahiptir. Bunlar, örneğin moleküler problemler için klasik kütüphaneleri/programları içerir. Daha fazla bilgi için <span class="xref std std-ref">opsiyonel_kurulumlar</span> bölümüne bakınız.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="a461c0e2-9157-4083-be83-2861b03766f6" name="bb67ec16-f53f-48ac-9d3b-e8ece0d4d8ae" type="radio">
-</input><label class="tabbed-label" for="a461c0e2-9157-4083-be83-2861b03766f6">
+<input checked="checked" id="f0cba1f1-90cf-4d66-ab82-bc390af8cf33" name="26cb9d75-8ef9-4a3d-b8ed-d5108e84d753" type="radio">
+</input><label class="tabbed-label" for="f0cba1f1-90cf-4d66-ab82-bc390af8cf33">
 Yerel Olarak Başlatma</label><div class="tabbed-content docutils">
 <p>Başlamanın en kolay yolu, Qiskit için ‘Yerel Olarak Başlatma’ bölümünü buradan takip ederek başlamaktır: <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Başlarken</a></p>
 <p>Qiskit’i kurduğunuz sanal ortamınızda, Qiskit için ekstra “görselleştirme” desteğinin nasıl kurulduğuna benzer şekilde, “nature”ı ekstra listeye eklemeniz yeterlidir, yani:</p>
@@ -253,8 +252,8 @@ Yerel Olarak Başlatma</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="15e0a607-65c2-449e-a8c8-5d470869a25f" name="bb67ec16-f53f-48ac-9d3b-e8ece0d4d8ae" type="radio">
-</input><label class="tabbed-label" for="15e0a607-65c2-449e-a8c8-5d470869a25f">
+<input id="72fdb135-76fc-471c-950c-d0979bbd146f" name="26cb9d75-8ef9-4a3d-b8ed-d5108e84d753" type="radio">
+</input><label class="tabbed-label" for="72fdb135-76fc-471c-950c-d0979bbd146f">
 Kaynaktan Yükleme</label><div class="tabbed-content docutils">
 <p>Qiskit Nature’ı kaynaktan yüklemek, Python Paket Dizini (PyPI) deposundaki sürümü kullanmak yerine, geliştirilmekte olan en son güncellenen sürüme erişmenizi sağlar. Bu size Qiskit Nature kodunun en son sürümünü daha verimli bir şekilde inceleme ve genişletme kabiliyeti verecektir.</p>
 <p>Qiskit Nature, Qiskit’e bağlı olduğundan ve onun son değişiklikleri Qiakit’in yeni ya da değiştirilmiş özelliklerini gerektirebileceğinden, ilk olarak burayı takip etmeniz gerekmektedir: <cite>“Install from source”</cite> instructions here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
@@ -287,15 +286,15 @@ Kaynaktan Yükleme</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-</section>
-<section id="optional-installs">
+</div>
+<div class="section" id="optional-installs">
 <span id="id1"></span><h2>Opsiyonel yüklemeler<a class="headerlink" href="#optional-installs" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Qiskit Nature, bir ve iki gövde integralleri gibi moleküler bilgileri hesaplayan sürücüler aracılığıyla farklı klasik kitaplıkların ve programların kullanımını destekler. Bu, temel durum enerjisi gibi moleküllerin özelliklerini hesaplayan algoritmalar için problem girdisi olarak gereklidir, bu nedenle bu tür en az bir kitaplık/program kurulmalıdır. Hangi sürücüyü kullanacağınızı seçebildiğiniz gibi, platformunuz tarafından desteklenen vb. istediğiniz kadar çok veya az yükleyebilirsiniz.</p>
 <p>See <a class="reference external" href="./apidocs/qiskit_nature.drivers.second_quantization.html#drivers">Driver installation</a> which lists each driver
 and how to install the dependent library/program that it requires.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="ready-to-get-going">
+<div class="section" id="ready-to-get-going">
 <h2>Başlamaya hazır mısınız?…<a class="headerlink" href="#ready-to-get-going" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
@@ -306,8 +305,8 @@ and how to install the dependent library/program that it requires.</p>
     </div>
 </div></p>
    </div>
-</div></section>
-</section>
+</div></div>
+</div>
 
 
              </article>

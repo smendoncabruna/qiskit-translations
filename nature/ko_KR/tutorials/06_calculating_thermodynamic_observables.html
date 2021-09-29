@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Calculating Thermodynamics Observables with a quantum computer &mdash; Qiskit Nature 0.2.1 문서</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/06_calculating_thermodynamic_observables.ipynb">docs/tutorials/06_calculating_thermodynamic_observables.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="Calculating-Thermodynamics-Observables-with-a-quantum-computer">
+<div class="section" id="Calculating-Thermodynamics-Observables-with-a-quantum-computer">
 <h1>Calculating Thermodynamics Observables with a quantum computer<a class="headerlink" href="#Calculating-Thermodynamics-Observables-with-a-quantum-computer" title="이 표제에 대한 퍼머링크">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -523,7 +522,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>A preliminary draft with more information related to this tutorial can be found in preprint: Stober et al, arXiv 2003.02303 (2020)</p>
-<section id="Calculation-of-the-Born-Oppenheimer-Potential-Energy-Surface-(BOPES)">
+<div class="section" id="Calculation-of-the-Born-Oppenheimer-Potential-Energy-Surface-(BOPES)">
 <h2>Calculation of the Born Oppenheimer Potential Energy Surface (BOPES)<a class="headerlink" href="#Calculation-of-the-Born-Oppenheimer-Potential-Energy-Surface-(BOPES)" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>To compute thermodynamic observables we begin with single point energy calculation which calculates the wavefunction and charge density and therefore the energy of a particular arrangement of nuclei. Here we compute the Born-Oppenheimer potential energy surface of a hydrogen molecule, as an example, which is simply the electronic energy as a function of bond length.</p>
 <div class="nbinput nblast docutils container">
@@ -658,8 +657,8 @@ Text(0, 0.5, &#39;Energy&#39;)
 <img alt="../_images/tutorials_06_calculating_thermodynamic_observables_11_1.png" src="../_images/tutorials_06_calculating_thermodynamic_observables_11_1.png" />
 </div>
 </div>
-</section>
-<section id="분자-진동-에너지-준위의-계산">
+</div>
+<div class="section" id="분자-진동-에너지-준위의-계산">
 <h2>분자 진동 에너지 준위의 계산<a class="headerlink" href="#분자-진동-에너지-준위의-계산" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <div class="line-block">
 <div class="line">The Born-Oppeheimer approximation removes internuclear vibrations from the molecular Hamiltonian and the energy computed from quantum mechanical ground-state energy calculations using this approximation contain only the electronic energy. Since even at absolute zero internuclear vibrations still occur, a correction is required to obtain the true zero-temperature energy of a molecule. This correction is called the zero-point vibrational energy (ZPE), which is computed by summing the
@@ -702,8 +701,8 @@ contribution from internuclear vibrational modes. Therefore, the next step in co
 <img alt="../_images/tutorials_06_calculating_thermodynamic_observables_15_0.png" src="../_images/tutorials_06_calculating_thermodynamic_observables_15_0.png" />
 </div>
 </div>
-</section>
-<section id="Create-a-partition-function-for-the-calculation-of-heat-capacity">
+</div>
+<div class="section" id="Create-a-partition-function-for-the-calculation-of-heat-capacity">
 <h2>Create a partition function for the calculation of heat capacity<a class="headerlink" href="#Create-a-partition-function-for-the-calculation-of-heat-capacity" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>The partition function for a molecule is the product of contributions from translational, rotational, vibrational, electronic, and nuclear degrees of freedom. Having the vibrational frequencies, now we can obtain the vibrational partition function <span class="math notranslate nohighlight">\(q_{\rm vibration}\)</span> to compute the whole molecular partition function <span class="math">\begin{equation}
 q_{\rm vibration} = \prod_{i=1} ^M \frac{\exp\,(-\Theta_{\nu_i}/2T)}{1-\exp\,(-\Theta_{\nu_i}/2T} \, .
@@ -854,8 +853,8 @@ U=k_B T^2 \left.\frac{\partial {\rm ln} Q}{\partial T}\right|_{N,V} .
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

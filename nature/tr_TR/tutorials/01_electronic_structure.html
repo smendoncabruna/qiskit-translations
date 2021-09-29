@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Elektronik yapı &mdash; Qiskit Nature 0.2.1 belgelendirmesi</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/01_electronic_structure.ipynb">docs/tutorials/01_electronic_structure.ipynb</a> adresinden oluşturulmuştur.</p>
 </div>
-<section id="Elektronik-yapı">
+<div class="section" id="Elektronik-yapı">
 <h1>Elektronik yapı<a class="headerlink" href="#Elektronik-yapı" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
-<section id="Giriş">
+<div class="section" id="Giriş">
 <h2>Giriş<a class="headerlink" href="#Giriş" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Moleküler Hamiltonyen şudur</p>
 <div class="math notranslate nohighlight">
@@ -507,8 +506,8 @@ div.rendered_html tbody tr:hover {
 <p>burada <span class="math notranslate nohighlight">\(\Psi_0\)</span> sistemin temel durumudur.</p>
 <p>Ancak, bu sorunun boyutu, serbestlik derecesi sayısı ile katlanarak büyür. Bu sorunu çözmek için bir kuantum bilgisayarda <span class="math notranslate nohighlight">\(\Psi_0\)</span> hazırlamak ve Hamiltonyen beklenti değerini (veya <span class="math notranslate nohighlight">\(E_0\)</span>) doğrudan ölçmek istiyoruz.</p>
 <p>Peki bunu somut olarak nasıl yapacağız?</p>
-</section>
-<section id="Hartree-Fock-başlangıç-​​durumu">
+</div>
+<div class="section" id="Hartree-Fock-başlangıç-​​durumu">
 <h2>Hartree-Fock başlangıç ​​durumu<a class="headerlink" href="#Hartree-Fock-başlangıç-​​durumu" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Bu sorunu çözmek için iyi bir başlangıç ​​noktası Hartree-Fock (HF) yöntemidir. Bu yöntem, bir N cisim problemini, her elektronun diğerlerinin ortalama alanında geliştiği N adet tek cisim problemine yaklaştırır. HF denklemlerini klasik olarak çözmek verimlidir ve tam değişim enerjisine yol açar, ancak herhangi bir elektron korelasyonu içermez. Bu nedenle, korelasyon eklemeye başlamak için genellikle iyi bir başlangıç ​​noktasıdır.</p>
 <p>Hamiltonyen daha sonra Moleküler Orbitaller (MO’lar) olarak da adlandırılan HF yönteminin çözümleri temelinde yeniden ifade edilebilir:</p>
@@ -557,10 +556,10 @@ Couldn&#39;t find cython becke routine
 </pre></div></div>
 </div>
 <p>For further information about the drivers see <a class="reference external" href="https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html">https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html</a></p>
-</section>
-<section id="Fermiyonlardan-kübitlere-eşleme">
+</div>
+<div class="section" id="Fermiyonlardan-kübitlere-eşleme">
 <h2>Fermiyonlardan kübitlere eşleme<a class="headerlink" href="#Fermiyonlardan-kübitlere-eşleme" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
-<p><img alt="d552a6889cd242d9b307f36f341229dc" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
+<p><img alt="136519aade84450389e1981e04330f71" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
 <p>Önceki bölümde verilen Hamiltonyen, fermiyonik operatörler cinsinden ifade edilir. Problemi bir kuantum bilgisayar durumuna kodlamak için, bu operatörlerin spin operatörlerine eşlenmesi gerekir (aslında kübitler spin istatistiklerini takip eder).</p>
 <p>Farklı özelliklere sahip farklı eşleme türleri vardır. Qiskit halihazırda aşağıdaki eşlemeleri desteklemektedir: * The Jordan-Wigner ‘jordan_wigner’ mapping (über das paulische äquivalenzverbot. In The Collected Works of Eugene Paul Wigner (pp. 109-129). Springer, Berlin, Heidelberg (1993)). * The Parity ‘parity’ (The Journal of chemical physics, 137(22), 224109 (2012)) * The Bravyi-Kitaev ‘bravyi_kitaev’ (Annals of Physics, 298(1), 210-226 (2002))</p>
 <p>Jordan-Wigner eşlemesi (yukarıdaki şekilde gösterildiği gibi), her spin orbitali bir kübite eşlediği için özellikle ilginçtir.</p>
@@ -692,8 +691,8 @@ Couldn&#39;t find cython becke routine
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

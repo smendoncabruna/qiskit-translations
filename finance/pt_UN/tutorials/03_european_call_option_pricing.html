@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Precificando Call Options Europeias &mdash; Documentação Qiskit Finance 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/03_european_call_option_pricing.ipynb">docs/tutorials/03_european_call_option_pricing.ipynb</a>.</p>
 </div>
-<section id="Precificando-Call-Options-Europeias">
+<div class="section" id="Precificando-Call-Options-Europeias">
 <h1>Precificando Call Options Europeias<a class="headerlink" href="#Precificando-Call-Options-Europeias" title="Link permanente para este título">¶</a></h1>
-<section id="Introdução">
+<div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Suponha uma opção de compra Europeia com preço contratado <span class="math notranslate nohighlight">\(K\)</span> e um ativo subjacente cujo preço à vista na maturidade <span class="math notranslate nohighlight">\(S_T\)</span> segue uma determinada distribuição aleatória. A função de pagamento correspondente é definida como:</p>
 <div class="math notranslate nohighlight">
@@ -522,8 +521,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Modelo-de-incerteza">
+</div>
+<div class="section" id="Modelo-de-incerteza">
 <h2>Modelo de incerteza<a class="headerlink" href="#Modelo-de-incerteza" title="Link permanente para este título">¶</a></h2>
 <p>Construímos uma fábrica de circuitos para carregar uma distribuição aleatória log-normal em um estado quântico. A distribuição é truncada para um determinado intervalo <span class="math notranslate nohighlight">\([\text{low}, \text{high}]\)</span> e discretizada utilizando uma grade de <span class="math notranslate nohighlight">\(2^n\)</span> pontos, onde <span class="math notranslate nohighlight">\(n\)</span> denota o número de qubits usados. O operador unitário correspondente à fábrica de circuitos implementa o seguinte:</p>
 <div class="math notranslate nohighlight">
@@ -586,8 +585,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_03_european_call_option_pricing_5_0.svg" src="../_images/tutorials_03_european_call_option_pricing_5_0.svg" /></div>
 </div>
-</section>
-<section id="Função-Payoff">
+</div>
+<div class="section" id="Função-Payoff">
 <h2>Função Payoff<a class="headerlink" href="#Função-Payoff" title="Link permanente para este título">¶</a></h2>
 <p>A função de Payoff é igual a zero enquanto o preço à vista na maturidade <span class="math notranslate nohighlight">\(S_T\)</span> for menor do que o preço acordado <span class="math notranslate nohighlight">\(K\)</span> e então aumentar o valor de forma linear. A implementação usa um comparador, que vira um qubit de ancila de <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\(S_T \geq K\)</span>, e este ancila é usado para controlar a parte linear da função de payoff.</p>
 <p>A própria parte linear é então aproximada da seguinte maneira. Exploramos o fato de que <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> para <span class="math notranslate nohighlight">\(|y|\)</span> pequeno. Assim, para um dado fator de reescalonamento de aproximação <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> e <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span> consideramos</p>
@@ -707,8 +706,8 @@ exact expected value:   0.1623
 exact delta value:      0.8098
 </pre></div></div>
 </div>
-</section>
-<section id="Avaliando-o-Payoff-Esperado">
+</div>
+<div class="section" id="Avaliando-o-Payoff-Esperado">
 <h2>Avaliando o Payoff Esperado<a class="headerlink" href="#Avaliando-o-Payoff-Esperado" title="Link permanente para este título">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -837,8 +836,8 @@ Estimated value:        0.1673
 Confidence interval:    [0.1623, 0.1722]
 </pre></div></div>
 </div>
-</section>
-<section id="Avaliando-o-Delta">
+</div>
+<div class="section" id="Avaliando-o-Delta">
 <h2>Avaliando o Delta<a class="headerlink" href="#Avaliando-o-Delta" title="Link permanente para este título">¶</a></h2>
 <p>O Delta é um pouco mais simples de avaliar do que o pagamento esperado. Da mesma forma que o pagamento esperado, usamos um circuito de comparador e um qubit ancila para identificar os casos onde <span class="math notranslate nohighlight">\(S_T &gt; K\)</span>. No entanto, uma vez que só estamos interessados em que seja verdade a probabilidade dessa condição ser verdadeira, podemos usar diretamente este ancila qubit como o qubit objetivo em estimativa de amplitude sem qualquer aproximação adicional.</p>
 <div class="nbinput nblast docutils container">
@@ -996,8 +995,8 @@ Confidence interval:    [0.8005, 0.8120]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

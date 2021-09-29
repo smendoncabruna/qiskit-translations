@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Bir kuantum bilgisayarıyla termodinamik gözlemlenebilirlikleri hesaplama &mdash; Qiskit Nature 0.2.1 belgelendirmesi</title>
@@ -487,7 +486,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa, <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/06_calculating_thermodynamic_observables.ipynb">docs/tutorials/06_calculating_thermodynamic_observables.ipynb</a> sayfasından oluşturulmuştur.</p>
 </div>
-<section id="Bir-kuantum-bilgisayarıyla-termodinamik-gözlemlenebilirlikleri-hesaplama">
+<div class="section" id="Bir-kuantum-bilgisayarıyla-termodinamik-gözlemlenebilirlikleri-hesaplama">
 <h1>Bir kuantum bilgisayarıyla termodinamik gözlemlenebilirlikleri hesaplama<a class="headerlink" href="#Bir-kuantum-bilgisayarıyla-termodinamik-gözlemlenebilirlikleri-hesaplama" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -523,7 +522,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>Bu eğitim ile ilgili daha fazla bilgi içeren bir ön taslak şu preprintte bulunabilir: Stober et al, arXiv 2003.02303 (2020)</p>
-<section id="Born-Oppenheimer-Potansiyel-Enerjinin-yüzeyinin-Hesaplanması-(BOPES)">
+<div class="section" id="Born-Oppenheimer-Potansiyel-Enerjinin-yüzeyinin-Hesaplanması-(BOPES)">
 <h2>Born Oppenheimer Potansiyel Enerjinin yüzeyinin Hesaplanması (BOPES)<a class="headerlink" href="#Born-Oppenheimer-Potansiyel-Enerjinin-yüzeyinin-Hesaplanması-(BOPES)" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Termodinamik gözlemlerini hesaplamak için dalga fonksiyonunu ve şarj yoğunluğunu ve bununla birlikte belirli bir çekirdek düzenini hesaplayan tek nokta enerjisi hesaplamasıyla başlıyoruz. Burada, örnek olarak basitçe bağ uzunluğu ile elektronik enerji fonksiyonu olan hidrojen molekülünün Born-Oppenheimer potansiyel enerjinin yüzeyini ölçüyoruz.</p>
 <div class="nbinput nblast docutils container">
@@ -658,8 +657,8 @@ Text(0, 0.5, &#39;Energy&#39;)
 <img alt="../_images/tutorials_06_calculating_thermodynamic_observables_11_1.png" src="../_images/tutorials_06_calculating_thermodynamic_observables_11_1.png" />
 </div>
 </div>
-</section>
-<section id="Moleküler-titreşimli-enerji-sevilerinin-hesaplaması">
+</div>
+<div class="section" id="Moleküler-titreşimli-enerji-sevilerinin-hesaplaması">
 <h2>Moleküler titreşimli enerji sevilerinin hesaplaması<a class="headerlink" href="#Moleküler-titreşimli-enerji-sevilerinin-hesaplaması" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <div class="line-block">
 <div class="line">Born-Oppenheimer yaklaşımı moleküler Hamiltonian’dan gelen nükleer arası titreşimlerini ve kuantum mekaniklik taban enerji seviyesinin hesaplanan enejisini kaldırır, bu yaklaşımı kullanıldığında sadece elektronik enerjisini tutar. Madem ki nğkleer arası titreşimleri mutlak sıfırda bile meydana geliyor, Bir molekülün gerçek sıfır sıcaklığının enerjisini elde etmek için bir düzeltme gerekiyor. Nükleer arası titreşimsel modlarından gelen katkılarının toplanmasıyla hesaplanan bu düzeltme (ZPE) sıfır nokta titreşimsel enerji diye adlandırılıyor. Bu nedenle termodinamik gözlemlerinin hesaplanmasında sonraki adım, titreşimsel enerji seviyelerinin belirtmektir. Bu da bağ uzunluğunun dengesine yakın hesaplanmış tek nokta enerjilerine dayalı olan Hessian matrisini oluşturarak yapılabilir. Hessian matrisinin özvektörleri, bu takdirde, titreşimsel enerji sevilerini ve titreşimsel sıfır nokta enerjisini belirtmek için kullanılabilirler</div>
@@ -699,8 +698,8 @@ Text(0, 0.5, &#39;Energy&#39;)
 <img alt="../_images/tutorials_06_calculating_thermodynamic_observables_15_0.png" src="../_images/tutorials_06_calculating_thermodynamic_observables_15_0.png" />
 </div>
 </div>
-</section>
-<section id="Isı-sığasının-hesaplanması-için-bölüşüm-fonksiyonunu-oluşturuyoruz">
+</div>
+<div class="section" id="Isı-sığasının-hesaplanması-için-bölüşüm-fonksiyonunu-oluşturuyoruz">
 <h2>Isı sığasının hesaplanması için bölüşüm fonksiyonunu oluşturuyoruz<a class="headerlink" href="#Isı-sığasının-hesaplanması-için-bölüşüm-fonksiyonunu-oluşturuyoruz" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Bir molekülün bölüşüm fonksiyonu, ötelemeli, rotasyonel, titreşimsel, elektronik ve nükleer serbestlik derecelerinin katkısının sonucudur. Titreşimsel frekanslarını elde ederek, şimdi biz <span class="math">\begin{equation} q_{\rm vibration} = \prod_{i=1} ^M \frac{\exp\,(-\Theta_{\nu_i}/2T)}{1-\exp\,(-\Theta_{\nu_i}/2T} \, moleküler bölüşüm fonksiyonunun tamamını hesaplamak için :math:`q_{\rm vibration}</span> olan titreşimsel bölüşüm fonksiyonunu elde edebiliriz. end{equation}` burada <span class="math notranslate nohighlight">\(\Theta_{\nu_i}= h\nu_i/k_B\)</span>, <span class="math notranslate nohighlight">\(T\)</span> sıcaklık oluyor ve <span class="math notranslate nohighlight">\(k_B\)</span> Boltzmann sabitidir.</p>
 <p>Tek nokta enerji hesaplamalarını ve bölüşüm fonksiyonunun sonucunu molekülerin ısı sığasını (sabit hacim veya sabit basınç) hesaplamak için kullanılabilir. Isı sığasının sabit hacim, örnek olarak, bu şekilde veriliyor</p>
@@ -849,8 +848,8 @@ end{equation}</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

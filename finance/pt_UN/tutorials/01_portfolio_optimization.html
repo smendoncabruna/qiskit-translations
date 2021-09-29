@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Otimização de Portfólio &mdash; Documentação Qiskit Finance 0.2.1</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a>.</p>
 </div>
-<section id="Otimização-de-Portfólio">
+<div class="section" id="Otimização-de-Portfólio">
 <h1>Otimização de Portfólio<a class="headerlink" href="#Otimização-de-Portfólio" title="Link permanente para este título">¶</a></h1>
-<section id="Introdução">
+<div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Este tutorial mostra como resolver o seguinte problema de otimização de portfólio de média-variância para <span class="math notranslate nohighlight">\(n\)</span> ativos:</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-Configuração-do-token-para-executar-o-experimento-em-um-dispositivo-real">
+<div class="section" id="[Optional]-Configuração-do-token-para-executar-o-experimento-em-um-dispositivo-real">
 <h3>[Optional] Configuração do token para executar o experimento em um dispositivo real<a class="headerlink" href="#[Optional]-Configuração-do-token-para-executar-o-experimento-em-um-dispositivo-real" title="Link permanente para este título">¶</a></h3>
 <p>Se você quer executar o experimento em um dispositivo real, você precisa configurar sua conta primeiro.</p>
 <p>Nota: Se você ainda não armazenou seu token, use <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> para armazená-lo primeiro.</p>
-</section>
-</section>
-<section id="Definindo-uma-instância-do-problema">
+</div>
+</div>
+<div class="section" id="Definindo-uma-instância-do-problema">
 <h2>Definindo uma instância do problema<a class="headerlink" href="#Definindo-uma-instância-do-problema" title="Link permanente para este título">¶</a></h2>
 <p>Aqui, uma instância da Operator é criada para o nosso Hamiltoniano. Neste caso, os paulis são de um Hamiltoniano de Ising traduzido do problema de portfólio. Utilizamos um problema de portfólio aleatório para este notebook. É fácil estender isto para usar dados financeiros reais como ilustrado aqui: <a class="reference internal" href="11_time_series.html"><span class="doc">Carregando e Processando Dados de Séries Temporais do Mercado de Ações</span></a></p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyMinimumEigensolver-(como-referência-clássica)">
+</div>
+<div class="section" id="NumPyMinimumEigensolver-(como-referência-clássica)">
 <h2>NumPyMinimumEigensolver (como referência clássica)<a class="headerlink" href="#NumPyMinimumEigensolver-(como-referência-clássica)" title="Link permanente para este título">¶</a></h2>
 <p>Vamos resolver o problema. Primeiro, classicamente…</p>
 <p>Podemos, agora, utilizar o Operator que criamos acima, sem considerar as particularidades de como foi criado. Definimos o algoritmo como o NumPyMinimumEigensolver, para que possamos ter uma referência clássica. O problema está configurado como ‘ising’. Um backend não é necessário, uma vez que isto é computado classicamente, e não usando computação quântica. O resultado é retornado como um dicionário.</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="Solução-usando-VQE">
+</div>
+<div class="section" id="Solução-usando-VQE">
 <h2>Solução usando VQE<a class="headerlink" href="#Solução-usando-VQE" title="Link permanente para este título">¶</a></h2>
 <p>Agora, podemos usar o Variational Quantum Eigensolver (VQE) para resolver o problema. Vamos especificar o otimizador e a forma variacional a serem usados.</p>
 <p>Observação: Você pode mudar para serviços internos diferentes fornecendo o nome do serviço.</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="Solução-usando-QAOA">
+<div class="section" id="Solução-usando-QAOA">
 <h3>Solução usando QAOA<a class="headerlink" href="#Solução-usando-QAOA" title="Link permanente para este título">¶</a></h3>
 <p>Também mostramos, aqui, um resultado usando o Algoritmo de Otimização Aproximada Quântico (QAOA). Este é outro algoritmo variacional e ele usa uma forma variacional interna, que é criada com base no problema.</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

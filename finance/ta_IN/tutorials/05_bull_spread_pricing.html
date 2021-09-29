@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Pricing Bull Spreads &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/05_bull_spread_pricing.ipynb">docs/tutorials/05_bull_spread_pricing.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="Pricing-Bull-Spreads">
+<div class="section" id="Pricing-Bull-Spreads">
 <h1>Pricing Bull Spreads<a class="headerlink" href="#Pricing-Bull-Spreads" title="Permalink to this headline">¶</a></h1>
-<section id="முன்னுரை">
+<div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>ஒரு <a class="reference external" href="http://www.theoptionsguide.com/bull-call-spread.aspx">bull spread</a> with strike prices <span class="math notranslate nohighlight">\(K_1 &lt; K_2\)</span> கொடுக்கப்பட்ட சீரற்ற விநியோகத்தைப் பின்பற்றுகிறது. தொடர்புடைய கொடுப்பனவு செயல்பாடு இவ்வாறு வரையறுக்கப்படுகிறது:</p>
 <div class="math notranslate nohighlight">
@@ -522,8 +521,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="நிச்சயமற்ற-மாதிரி">
+</div>
+<div class="section" id="நிச்சயமற்ற-மாதிரி">
 <h2>நிச்சயமற்ற மாதிரி<a class="headerlink" href="#நிச்சயமற்ற-மாதிரி" title="Permalink to this headline">¶</a></h2>
 <p>ஒரு பதிவு-சாதாரண சீரற்ற விநியோகத்தை ஒரு குவாண்டம் நிலையில் ஏற்றுவதற்கு ஒரு சுற்று தொழிற்சாலையை உருவாக்குகிறோம்.ஒரு குறிப்பிட்ட இடைவெளியில் விநியோகம் துண்டிக்கப்படுகிறது <span class="math notranslate nohighlight">\([\text{low}, \text{high}]\)</span> மற்றும் தனிப்பயனாக்கப்பட்டது <span class="math notranslate nohighlight">\(2^n\)</span> பயன்படுத்தப்படும் குவிட்களின் எண்ணிக்கையைக் குறிக்கிறது.சுற்று தொழிற்சாலைக்கு ஒத்த ஒற்றுமை ஆபரேட்டர் பின்வருவனவற்றை செயல்படுத்துகிறது:</p>
 <div class="math notranslate nohighlight">
@@ -585,8 +584,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_05_bull_spread_pricing_5_0.svg" src="../_images/tutorials_05_bull_spread_pricing_5_0.svg" /></div>
 </div>
-</section>
-<section id="கொடுப்பனவு-செயல்பாடு">
+</div>
+<div class="section" id="கொடுப்பனவு-செயல்பாடு">
 <h2>கொடுப்பனவு செயல்பாடு<a class="headerlink" href="#கொடுப்பனவு-செயல்பாடு" title="Permalink to this headline">¶</a></h2>
 <p>முதிர்ச்சியில் ஸ்பாட் விலை இருக்கும் வரை செலுத்துதல் செயல்பாடு பூஜ்ஜியத்திற்கு சமம் <span class="math notranslate nohighlight">\(S_T\)</span>,பின்னர் நேர்கோட்டுடன் அதிகரிக்கிறது, மேலும் அவை கட்டுப்படுத்தப்படுகின்றன <span class="math notranslate nohighlight">\(K_2\)</span>.செயல்படுத்தல் இரண்டு ஒப்பீட்டாளர்களைப் பயன்படுத்துகிறது,ஒவ்வொன்றிலிருந்தும் ஒரு துணை குவிட்டைப் புரட்டுகிறது <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\(S_T \geq K_1\)</span> மற்றும் <span class="math notranslate nohighlight">\(S_T \leq K_2\)</span>, செலுத்துதல் செயல்பாட்டின் நேரியல் பகுதியைக் கட்டுப்படுத்த இந்த துணைக்கள் பயன்படுத்தப்படுகின்றன.</p>
 <p>அவர் நேரியல் பகுதி பின்வருமாறு தோராயமாக மதிப்பிடப்படுகிறது. உண்மையை நாங்கள் சுரண்டிக்கொள்கிறோம்:math:<cite>sin^2(y + pi/4) approx y + 1/2</cite> for small <span class="math notranslate nohighlight">\(|y|\)</span>.எனவே, கொடுக்கப்பட்ட தோராயத்தை மீட்டெடுக்கும் அளவிடுதல் காரணிக்கு:math:<cite>c_text{approx} in [0, 1]</cite> and :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>x in [0, 1]`நாங்கள் கருதுகிறோம்</p>
@@ -680,8 +679,8 @@ exact expected value:   0.5695
 exact delta value:      0.9291
 </pre></div></div>
 </div>
-</section>
-<section id="எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">
+</div>
+<div class="section" id="எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">
 <h2>எதிர்பார்த்த கொடுப்பனவை மதிப்பிடுங்கள்<a class="headerlink" href="#எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -732,8 +731,8 @@ Estimated value:        0.5730
 Confidence interval:    [0.5493, 0.5967]
 </pre></div></div>
 </div>
-</section>
-<section id="டெல்டாவை-மதிப்பிடுங்கள்">
+</div>
+<div class="section" id="டெல்டாவை-மதிப்பிடுங்கள்">
 <h2>டெல்டாவை மதிப்பிடுங்கள்<a class="headerlink" href="#டெல்டாவை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
 <p>எதிர்பார்த்த பலனை விட டெல்டா மதிப்பீடு செய்வது சற்று எளிமையானது. எதிர்பார்த்த கொடுப்பனவுக்கு இணையாக, ஒப்பீட்டு சுற்றுகள் மற்றும் அன்சிலா க்விட்களைப் பயன்படுத்தும் வழக்குகளை அடையாளம் காண <span class="math notranslate nohighlight">\(K_1 \leq S_T \leq K_2\)</span>. எவ்வாறாயினும், இந்த நிபந்தனை உண்மையாக இருப்பதில் மட்டுமே நாங்கள் ஆர்வமாக உள்ளதால், எந்த மேலதிக மதிப்பீடும் இல்லாமல் நாம் நேரடியாக ஒரு அன்சிலா க்விட் ஐ வீச்சு மதிப்பீட்டில் குறிக்கோள் குவிட்டாகப் பயன்படுத்தலாம்.</p>
 <div class="nbinput nblast docutils container">
@@ -843,8 +842,8 @@ Confidence interval:    [0.9277, 0.9305]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>
