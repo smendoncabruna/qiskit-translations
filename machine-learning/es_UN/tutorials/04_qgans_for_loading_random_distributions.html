@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>qGANs para Cargar Distribuciones Aleatorias &mdash; documentación de Qiskit Machine Learning - 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a>.</p>
 </div>
-<section id="qGANs-para-Cargar-Distribuciones-Aleatorias">
+<div class="section" id="qGANs-para-Cargar-Distribuciones-Aleatorias">
 <h1>qGANs para Cargar Distribuciones Aleatorias<a class="headerlink" href="#qGANs-para-Cargar-Distribuciones-Aleatorias" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Dadas muestras de datos <span class="math notranslate nohighlight">\(k\)</span>-dimensionales, empleamos una Red Generativa Antagónica cuántica (quantum Generative Adversarial Network, qGAN) para conocer la distribución aleatoria subyacente de los datos y cargarlos directamente en un estado cuántico:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Cargar-los-Datos-de-Entrenamiento">
+<div class="section" id="Cargar-los-Datos-de-Entrenamiento">
 <h2>Cargar los Datos de Entrenamiento<a class="headerlink" href="#Cargar-los-Datos-de-Entrenamiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Primero, necesitamos cargar las muestras de datos de entrenamiento <span class="math notranslate nohighlight">\(k\)</span>-dimensionales (aquí k=1).</p>
 <p>A continuación, se establece la resolución de datos, es decir, los valores de datos mínimo/máximo y el número de qubits utilizados para representar cada dimensión de datos.</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Inicializar-la-qGAN">
+</div>
+<div class="section" id="Inicializar-la-qGAN">
 <h2>Inicializar la qGAN<a class="headerlink" href="#Inicializar-la-qGAN" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La qGAN consta de un generador cuántico <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, es decir, un ansatz, y un discriminador clásico <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, una red neuronal.</p>
 <p>Para implementar el generador cuántico, elegimos un ansatz de profundidad <span class="math notranslate nohighlight">\(1\)</span> que implementa las rotaciones <span class="math notranslate nohighlight">\(R_Y\)</span> y las compuertas <span class="math notranslate nohighlight">\(CZ\)</span> que toma una distribución uniforme como estado de entrada. En particular, para <span class="math notranslate nohighlight">\(k&gt;1\)</span>, los parámetros del generador deben elegirse con cuidado. Por ejemplo, la profundidad del circuito debería ser <span class="math notranslate nohighlight">\(&gt;1\)</span> porque profundidades de circuito más grandes permiten la representación de estructuras más complejas.</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Ejecuta-el-Entrenamiento-qGAN">
+</div>
+<div class="section" id="Ejecuta-el-Entrenamiento-qGAN">
 <h2>Ejecuta el Entrenamiento qGAN<a class="headerlink" href="#Ejecuta-el-Entrenamiento-qGAN" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Durante el entrenamiento, los parámetros del discriminador y del generador se actualizan alternativamente con las siguientes funciones de pérdida:</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="Progreso-y-Resultado-del-Entrenamiento">
+</div>
+<div class="section" id="Progreso-y-Resultado-del-Entrenamiento">
 <h2>Progreso y Resultado del Entrenamiento<a class="headerlink" href="#Progreso-y-Resultado-del-Entrenamiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Ahora, graficamos la evolución de las funciones de pérdida del generador y el discriminador durante el entrenamiento, así como el progreso en la entropía relativa entre la distribución entrenada y la distribución objetivo.</p>
 <p>Finalmente, también comparamos la función de distribución acumulada (CDF) de la distribución entrenada con la CDF de la distribución objetivo.</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

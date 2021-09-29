@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>দৈব বণ্টন (র‍্যান্ডম ডিস্ট্রিবিউশন) লোড করার জন্য qGANS &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পেজটি <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a> থেকে নেয়া হয়েছে।</p>
 </div>
-<section id="দৈব-বণ্টন-(র‍্যান্ডম-ডিস্ট্রিবিউশন)-লোড-করার-জন্য-qGANS">
+<div class="section" id="দৈব-বণ্টন-(র‍্যান্ডম-ডিস্ট্রিবিউশন)-লোড-করার-জন্য-qGANS">
 <h1>দৈব বণ্টন (র‍্যান্ডম ডিস্ট্রিবিউশন) লোড করার জন্য qGANS<a class="headerlink" href="#দৈব-বণ্টন-(র‍্যান্ডম-ডিস্ট্রিবিউশন)-লোড-করার-জন্য-qGANS" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <p><span class="math notranslate nohighlight">\(k\)</span> - মাত্রার ডেটা নমুনা (স্যাম্পল) দেয়া থাকলে আমরা ডেটার আড়ালে থাকা দৈব বিতরণ (র‍্যান্ডম ডিস্ট্রিবিউশন) শিক্ষণের জন্য এবং সেটি সরাসরি কোয়ান্টাম মান বা অবস্থায় (স্টেট) লোড করার জন্য একটি কোয়ান্টাম উৎপাদনক্ষম বৈষম্যমূলক নেটওয়ার্ক (জেনারেটিভ অ্যাডভারসারিয়াল নেটওয়ার্ক) নিযুক্ত করতে পারি।</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="শিক্ষণ-(ট্রেনিং)-ডেটা-লোড-করুন">
+<div class="section" id="শিক্ষণ-(ট্রেনিং)-ডেটা-লোড-করুন">
 <h2>শিক্ষণ (ট্রেনিং) ডেটা লোড করুন<a class="headerlink" href="#শিক্ষণ-(ট্রেনিং)-ডেটা-লোড-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>প্রথমত, আমাদের <span class="math notranslate nohighlight">\(k\)</span>-মাত্রিক (ডাইমেনশনাল) শিক্ষণ (ট্রেনিং) ডেটা নমুনা (স্যাম্পল) লোড করতে হবে (এখানে k=1)।</p>
 <p>তারপর, ডেটা রেজোল্যুশন ঠিক করা হলো। অর্থাৎ, প্রত্যেক ডেটার মাত্রা (ডাইমেনশন) প্রকাশের জন্য min/max ডেটা মান এবং কিউবিট সংখ্যা ব্যবহার করা হয়েছে।</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-প্রারম্ভ-করুন">
+</div>
+<div class="section" id="qGAN-প্রারম্ভ-করুন">
 <h2>qGAN প্রারম্ভ করুন<a class="headerlink" href="#qGAN-প্রারম্ভ-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>qGAN-এ রয়েছে একটি কোয়ান্টাম জেনারেটর <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, অর্থাৎ , একটি অন্সাৎজ(Ansartz) এবং একটি প্রথাগত (ক্লাসিক্যাল) বৈষম্যকারী(discriminator) <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, একটি নিউরাল নেটওয়ার্ক ধারণ করে।</p>
 <p>কোয়ান্টাম জেনারেটর বাস্তবায়নের জন্য আমরা <span class="math notranslate nohighlight">\(1\)</span> গভীরতার ansatz (অন্সাৎজ) বেছে নিয়েছি যা <span class="math notranslate nohighlight">\(R_Y\)</span> ঘূর্ণন এবং <span class="math notranslate nohighlight">\(CZ\)</span> যুক্তিবর্তনী (গেইট) বাস্তবায়ন করে যা একটি একরূপ বিতরণকে (ইউনিফর্ম ডিস্ট্রিবিউশন) ইনপুট অবস্থা (স্টেট) হিসাবে নেয়। লক্ষ্যণীয় যে, <span class="math notranslate nohighlight">\(k&gt;1\)</span> এর জন্য জেনারেটরের পরামিতি (প্যারামিটার) খুব সতর্কতার সাথে নির্ধারণ করতে হবে। উদাহরন সরূপ, বর্তনীর (সার্কিট) গভীরতা <span class="math notranslate nohighlight">\(&gt;1\)</span> হতে হবে কারণ বেশি গভীরতার বর্তনী (সার্কিট) জটিল অবয়বকে সক্ষম করে তোলে।</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="কিউজিএএন-(qGAN)-শিক্ষণ-(ট্রেনিং)-চালান">
+</div>
+<div class="section" id="কিউজিএএন-(qGAN)-শিক্ষণ-(ট্রেনিং)-চালান">
 <h2>কিউজিএএন (qGAN) শিক্ষণ (ট্রেনিং) চালান<a class="headerlink" href="#কিউজিএএন-(qGAN)-শিক্ষণ-(ট্রেনিং)-চালান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>শিক্ষণের (ট্রেনিং) সময় ডিসক্রিমিনেটর এবং জেনারেটরের পরামিতি (প্যারামিটার) লস ফাংশনের সাথে সামঞ্জস্য রেখে হালনাগাদ করা হয়।</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="শিক্ষণ-(ট্রেনিং)-উন্নতি-এবং-ফলাফল">
+</div>
+<div class="section" id="শিক্ষণ-(ট্রেনিং)-উন্নতি-এবং-ফলাফল">
 <h2>শিক্ষণ (ট্রেনিং) উন্নতি এবং ফলাফল<a class="headerlink" href="#শিক্ষণ-(ট্রেনিং)-উন্নতি-এবং-ফলাফল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>এখন আমরা শিক্ষণের সময় (ট্রেনিং) জেনারেটরের বিবর্তন এবং ডিসক্রিমিনেটরের লস ফাংশন লেখচিত্র অঙ্কন করব। একই সাথে ট্রেইনড এবং লক্ষ্য বিতরণের আপেক্ষিক বিশৃঙ্খলাও (এনট্রপি) লেখচিত্র হিসেবে অঙ্কন করব।</p>
 <p>শেষপর্যন্ত, আমরা প্রশিক্ষিত (ট্রেইনড) বিতরণের ক্রমবর্ধমান (কিউম্যুলেটিভ) বিতরণ ফাংশন (সিডিএফ) লক্ষ্য বিতরণের সিডিএফের সাথে তুলনা করব।</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

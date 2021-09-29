@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="it-IT" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Quantum Kernel Machine Learning &mdash; Qiskit Machine Learning 0.2.1 documentazione</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Questa pagina è stata generata da <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<section id="Quantum-Kernel-Machine-Learning">
+<div class="section" id="Quantum-Kernel-Machine-Learning">
 <h1>Quantum Kernel Machine Learning<a class="headerlink" href="#Quantum-Kernel-Machine-Learning" title="Link a questa intestazione">¶</a></h1>
 <p>L’obiettivo generale del machine learning è quello di trovare e studiare pattern nei dati. Per molti dataset, i dati sono meglio interpretati in uno spazio delle feature di dimensione più alta rispetto a quello di partenza, raggiunto attraverso l’uso di una funzione kernel: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span>, dove <span class="math notranslate nohighlight">\(k\)</span> è la funzione kernel, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> sono input a <span class="math notranslate nohighlight">\(n\)</span> dimensioni, <span class="math notranslate nohighlight">\(f\)</span> è una mappa da uno spazio <span class="math notranslate nohighlight">\(n\)</span>-dimensionale ad uno spazio <span class="math notranslate nohighlight">\(m\)</span>-dimensionale, e <span class="math notranslate nohighlight">\(\langle a, \rangle\)</span> indica il prodotto scalare. Quando si considerano dati finiti, una funzione kernel può essere rappresentata come una matrice: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>Nel quantum kernel machine learning, si utilizza una feature map quantistica <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> per mappare un vettore classico <span class="math notranslate nohighlight">\(\vec{x}\)</span> in uno spazio di Hilbert quantistico, <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span>, tale che <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. Per maggiori dettagli, si può fare riferimento a <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> .</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classificazione">
+<div class="section" id="Classificazione">
 <h2>Classificazione<a class="headerlink" href="#Classificazione" title="Link a questa intestazione">¶</a></h2>
 <p>Seguendo <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, nel nostro esempio di classificazione, utilizzeremo un <em>dataset ad hoc</em> e, come algoritmo di classificazione, useremo la <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a> (<code class="docutils literal notranslate"><span class="pre">svc</span></code>) di <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="Clustering">
+</div>
+<div class="section" id="Clustering">
 <h2>Clustering<a class="headerlink" href="#Clustering" title="Link a questa intestazione">¶</a></h2>
 <p>Seguendo <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, nel nostro esempio di clustering, utilizzeremo un <em>dataset ad hoc</em> e, l’algoritmo di clustering <code class="docutils literal notranslate"><span class="pre">spectral</span></code> di <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <p>Creeremo il dataset con una separazione maggiore tra le due classi, e non avremo bisogno di un campione di test, in un quanto il clustering è un algoritmo di machine learning non supervisionato.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="el-GR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Κβαντικά Νευρωνικά Δίκτυα &mdash; Τεκμηρίωση του Qiskit Machine Learning - 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Σημείωση</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
-<section id="Κβαντικά-Νευρωνικά-Δίκτυα">
+<div class="section" id="Κβαντικά-Νευρωνικά-Δίκτυα">
 <h1>Κβαντικά Νευρωνικά Δίκτυα<a class="headerlink" href="#Κβαντικά-Νευρωνικά-Δίκτυα" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <p>Αυτό το σημειωματάριο επιδεικνύει τις διάφορες γενικές υλοποιήσεις κβαντικού νευρικού δικτύου (quantum neural network, QNN) που παρέχονται στο Qiskit Machine Learning. Τα δίκτυα προορίζονται ως εφαρμογές-agnostic υπολογιστικές μονάδες που μπορούν να χρησιμοποιηθούν για πολλές διαφορετικές περιπτώσεις χρήσης. Ανάλογα με την εφαρμογή, ένας συγκεκριμένος τύπος δικτύου μπορεί να είναι περισσότερο ή λιγότερο κατάλληλος και μπορεί να χρειαστεί να δημιουργηθεί με συγκεκριμένο τρόπο. Τα ακόλουθα διαφορετικά διαθέσιμα νευρωνικά δίκτυα θα συζητηθούν με περισσότερες λεπτομέρειες:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-`-`-`-`-NeuralNetwork-`-`">
+<div class="section" id="1.-`-`-`-`-NeuralNetwork-`-`">
 <h2>1. ` ` ` ` NeuralNetwork ` `<a class="headerlink" href="#1.-`-`-`-`-NeuralNetwork-`-`" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <p>Το ` ` NeuralNetwork ` ` αντιπροσωπεύει τη διεπαφή για όλα τα νευρωνικά δίκτυα διαθέσιμα στο Qiskit Machine Learning. Εκθέτει ένα προς τα εμπρός και ένα προς τα πίσω πέρασμα λαμβάνοντας τα δείγματα δεδομένων και τα εφαρμόσιμα βάρη ως είσοδο. Ένα ` ` NeuralNetwork ` ` δεν περιέχει εκπαιδευτικές δυνατότητες, αυτές προωθούνται στους πραγματικούς αλγορίθμους/εφαρμογές. Έτσι, ένα «NeuralNetwork <a href="#id1"><span class="problematic" id="id2">`</span></a>» επίσης δεν αποθηκεύει τις τιμές για εφαρμόσιμα βάρη. Στις ακόλουθες περιπτώσεις, εισάγονται διαφορετικές υλοποιήσεις των διεπαφών.</p>
 <p>Ας υποθέσουμε ότι ένα <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> ονομάζεται <code class="docutils literal notranslate"><span class="pre">nn</span></code>. Στη συνέχεια, το <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> περνά είτε επίπεδες εισόδους για τα δεδομένα και τα βάρη του μεγέθους <code class="docutils literal notranslate"><span class="pre">nn.</span> <span class="pre">um_inputs</span></code> και <code class="docutils literal notranslate"><span class="pre">nn.num_weights`</span></code>, αντίστοιχα. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> υποστηρίζει παρτίδες εισόδου και επιστρέφει παρτίδες εξόδου του αντίστοιχου σχήματος.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <p>Ο <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> παίρνει έναν (παραμετροποιημένο) χειριστή από το Qiskit και αξιοποιεί το πλαίσιο διαβάθμισης του Qiskit για να παρέχει το πίσω πέρασμα. Ένας τέτοιος χειριστής μπορεί για παράδειγμα να είναι μια αναμενόμενη τιμή ενός κβαντικού μηχανικού παρατηρούμενου σε σχέση με μια παραμετροποιημένη κβαντική κατάσταση. Οι παράμετροι μπορούν να χρησιμοποιηθούν για τη φόρτωση κλασικών δεδομένων καθώς και για την αναπαράσταση εκπαιδεύσιμων βαρών. Το <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> επιτρέπει επίσης λίστες χειριστών και πιο σύνθετες δομές για την κατασκευή πιο σύνθετων QNN.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <p>Το ` ` ` TwoLayerQNN ` ` είναι ένα ειδικό ` ` OpflowQNN ` ` σε :math:` n ` qubits που αποτελείται από ένα χάρτη χαρακτηριστικών για την εισαγωγή δεδομένων και τη δεύτερη ansatz που εκπαιδεύεται. Η προεπιλεγμένη τιμή είναι :math:` Z ^ {oφορές n} <a href="#id1"><span class="problematic" id="id2">`</span></a>, δηλαδή, ισοτιμία.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> is based on a (parametrized) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. This can take input as well as weight parameters and produces samples from the measurement. The samples can either be interpreted as probabilities of measuring the integer index corresponding to a bitstring or directly as a batch of binary output. In the case of probabilities, gradients can be estimated efficiently and the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> provides a backward pass as well. In case of samples, differentiation is not possible and
 the backward pass returns <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
@@ -944,7 +943,7 @@ probability vector of length 2.</p>
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-Έξοδος:-αραιές-ακέραιες-πιθανότητες">
+<div class="section" id="4.1-Έξοδος:-αραιές-ακέραιες-πιθανότητες">
 <h3>4.1 Έξοδος: αραιές ακέραιες πιθανότητες<a class="headerlink" href="#4.1-Έξοδος:-αραιές-ακέραιες-πιθανότητες" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1006,8 +1005,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-Έξοδος:-πυκνές-πιθανότητες-ισοτιμίας">
+</div>
+<div class="section" id="4.2-Έξοδος:-πυκνές-πιθανότητες-ισοτιμίας">
 <h3>4.2 Έξοδος: πυκνές πιθανότητες ισοτιμίας<a class="headerlink" href="#4.2-Έξοδος:-πυκνές-πιθανότητες-ισοτιμίας" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1075,8 +1074,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-Έξοδος:-Δείγματα">
+</div>
+<div class="section" id="4.3-Έξοδος:-Δείγματα">
 <h3>4.3 Έξοδος: Δείγματα<a class="headerlink" href="#4.3-Έξοδος:-Δείγματα" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1147,8 +1146,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-Έξοδος:-Δείγματα-ισοτιμίας">
+</div>
+<div class="section" id="4.4-Έξοδος:-Δείγματα-ισοτιμίας">
 <h3>4.4 Έξοδος: Δείγματα ισοτιμίας<a class="headerlink" href="#4.4-Έξοδος:-Δείγματα-ισοτιμίας" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1252,9 +1251,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

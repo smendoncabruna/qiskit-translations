@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="id-ID" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Jaringan Saraf Tiruan Kuantum &mdash; Dokumentasi Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Catatan</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
-<section id="Jaringan-Saraf-Tiruan-Kuantum">
+<div class="section" id="Jaringan-Saraf-Tiruan-Kuantum">
 <h1>Jaringan Saraf Tiruan Kuantum<a class="headerlink" href="#Jaringan-Saraf-Tiruan-Kuantum" title="Link permanen untuk headline ini">¶</a></h1>
 <p>Notebook ini mendemonstrasikan beberapa implementasi umum dari jaringan saraf tiruan kuantum (JSTK) yang ada dalam Qiskit Machine Learning. Jaringan-jaringan tersebut dimaksudkan sebagai unit komputasi agnostik aplikasi yang dapat digunakan untuk banyak kasus penggunaan yang berbeda. Tergantung pada aplikasi, jenis tertentu dari jaringan mungkin lebih atau kurang cocok dan mungkin perlu diatur dengan cara tertentu. Beberapa jaringan saraf yang tersedia berikut ini akan dibahas secara lebih rinci:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="Link permanen untuk headline ini">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> mewakili antarmuka untuk semua jaringan saraf yang tersedia dalam Qiskit Machine Learning. Antarmuka ini membuka umpan maju dan mundur, mengambil sampel data dan bobot yang dapat dilatih sebagai input. Sebuah <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> tidak berisi kemampuan pelatihan apa pun, hal-hal ini terdapat di dalam algoritma/aplikasi dimana <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> ini akan digunakan. Dengan demikian, sebuah <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> juga tidak menyimpan nilai untuk bobot yang dapat dilatih. Berikut ini, beberapa implementasi yang berbeda dari antarmuka ini diperkenalkan.</p>
 <p>Misalkan sebuah <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> disebut <code class="docutils literal notranslate"><span class="pre">nn</span></code>. Kemudian, <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> melewatkan masukan untuk data dan bobot dengan ukuran masing-masing <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> dan <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code>. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> mendukung pengumpulan (batching) dari input dan mengembalikan kumpulan output dengan bentuk yang sesuai.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Link permanen untuk headline ini">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> mengambil sebuah operator (terparametrisasi) dari Qiskit dan memanfaatkan kerangka gradien Qiskit untuk memberikan umpan balik. Operator semacam itu misalnya dapat berupa nilai ekspektasi dari pengamatan (observable) mekanika kuantum dari keadaan kuantum terparametrisasi. Parameter ini dapat digunakan untuk memuat data klasik serta mewakili bobot yang dapat dilatih. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> juga memungkinkan daftar operator dan struktur yang lebih kompleks untuk membangun JSTK yang lebih kompleks.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="Link permanen untuk headline ini">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> adalah <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> khusus untuk <span class="math notranslate nohighlight">\(n\)</span> qubit yang terdiri dari: sebuah peta fitur untuk menyisipkan data dan sebuah ansatz yang dilatih. Pengamatan (observable) standar yang biasa digunakan adalah <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, yaitu, paritas.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Link permanen untuk headline ini">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> is based on a (parametrized) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. This can take input as well as weight parameters and produces samples from the measurement. The samples can either be interpreted as probabilities of measuring the integer index corresponding to a bitstring or directly as a batch of binary output. In the case of probabilities, gradients can be estimated efficiently and the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> provides a backward pass as well. In case of samples, differentiation is not possible and
 the backward pass returns <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
@@ -944,7 +943,7 @@ probability vector of length 2.</p>
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-Output:-probabilitas-integer-yang-jarang-(sparse)">
+<div class="section" id="4.1-Output:-probabilitas-integer-yang-jarang-(sparse)">
 <h3>4.1 Output: probabilitas integer yang jarang (sparse)<a class="headerlink" href="#4.1-Output:-probabilitas-integer-yang-jarang-(sparse)" title="Link permanen untuk headline ini">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1006,8 +1005,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-Output:-probabilitas-paritas-yang-padat">
+</div>
+<div class="section" id="4.2-Output:-probabilitas-paritas-yang-padat">
 <h3>4.2 Output: probabilitas paritas yang padat<a class="headerlink" href="#4.2-Output:-probabilitas-paritas-yang-padat" title="Link permanen untuk headline ini">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1075,8 +1074,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-Output:-Sampel-Sampel">
+</div>
+<div class="section" id="4.3-Output:-Sampel-Sampel">
 <h3>4.3 Output: Sampel-Sampel<a class="headerlink" href="#4.3-Output:-Sampel-Sampel" title="Link permanen untuk headline ini">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1147,8 +1146,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-Output:-Sampel-Sampel-Paritas">
+</div>
+<div class="section" id="4.4-Output:-Sampel-Sampel-Paritas">
 <h3>4.4 Output: Sampel-Sampel Paritas<a class="headerlink" href="#4.4-Output:-Sampel-Sampel-Paritas" title="Link permanen untuk headline ini">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1252,9 +1251,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

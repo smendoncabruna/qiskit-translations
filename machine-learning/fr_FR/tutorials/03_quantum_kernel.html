@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr-FR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Apprentissage automatique du noyau quantique &mdash; Documentation Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>Cette page a été générée à partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<section id="Apprentissage-automatique-du-noyau-quantique">
+<div class="section" id="Apprentissage-automatique-du-noyau-quantique">
 <h1>Apprentissage automatique du noyau quantique<a class="headerlink" href="#Apprentissage-automatique-du-noyau-quantique" title="Lien permanent vers ce titre">¶</a></h1>
 <p>La tâche générale de l’apprentissage automatique est de trouver et d’étudier des modèles dans les données. Pour de nombreux jeux de données, les points de données sont mieux compris dans un espace de plus grande dimension par l’utilisation d’une fonction du noyau : <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> où <span class="math notranslate nohighlight">\(k\)</span> est la fonction du noyau, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> sont <span class="math notranslate nohighlight">\(n\)</span> entrées dimensionnelles, <span class="math notranslate nohighlight">\(f\)</span> est une carte de <span class="math notranslate nohighlight">\(n\)</span>-dimension à <span class="math notranslate nohighlight">\(m\)</span>-dimension espace et <span class="math notranslate nohighlight">\(\langle a, \rangle\)</span> indique le produit à point. Lorsque l’on considère les données finies, une fonction du noyau peut être représentée par une matrice : <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>Dans l’apprentissage de la machine quantique du noyau, une carte de fonction quantique <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> est utilisée pour mapper un vecteur de trait classique <span class="math notranslate nohighlight">\(\vec{x}\)</span> à un espace Hilbert quantique, <span class="math notranslate nohighlight">\(| \\phi(\vec{x})\rangle \langle \\phi(\vec{x})|\)</span>, tel que <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \\phi(\vec{x}_i) \rangle \right|^{2}\)</span>. Voir <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Apprentissage supervisé avec des espaces de fonctionnalités améliorés quantiques</a> pour plus de détails.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classification">
+<div class="section" id="Classification">
 <h2>Classification<a class="headerlink" href="#Classification" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour notre exemple de classification, nous utiliserons * l’ensemble de données ad hoc * tel que décrit dans la section « Apprentissage supervisé avec les espaces de fonctions améliorés quantiques &lt;<a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">https://arxiv.org/pdf/1804.11326.pdf</a>&gt;` __, et l’algorithme de type » science vectorielle  » &lt;<a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">https://scikit-learn.org/stable/modules/svm.html</a>&gt;` __ classification (` ` svc ` <a href="#id1"><span class="problematic" id="id2">`</span></a>).</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="Clustering">
+</div>
+<div class="section" id="Clustering">
 <h2>Clustering<a class="headerlink" href="#Clustering" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour notre exemple de classification, nous utiliserons <em>ad hoc dataset</em> tel que décrit dans la section « Apprentissage supervisé avec les espaces de fonctions améliorés quantiques &lt;<a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">https://arxiv.org/pdf/1804.11326.pdf</a>&gt;` __, et le <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> l’algorithme de regroupement <code class="docutils literal notranslate"><span class="pre">spectral</span></code>.</p>
 <p>Nous allons régénérer le jeu de données avec un écart plus grand entre les deux classes, et comme le regroupement est une tâche d’apprentissage automatique non supervisée, nous n’avons pas besoin d’un échantillon de test.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

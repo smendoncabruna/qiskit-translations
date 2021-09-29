@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>양자 커널 기계 학습 &mdash; Qiskit Machine Learning 0.2.1 문서</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="양자-커널-기계-학습">
+<div class="section" id="양자-커널-기계-학습">
 <h1>양자 커널 기계 학습<a class="headerlink" href="#양자-커널-기계-학습" title="이 표제에 대한 퍼머링크">¶</a></h1>
 <p>일반적으로 기계학습은 데이터에서 패턴을 찾고 학습하는 것이다. 많은 양의 데이터에서 데이터 포인트들은 더 높은 차원의 특징 공간에서 더 잘 이해되어질 수 있는데, 이는 다음과 같은 커널 함수를 사용함으로써 가능해진다:  <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> 에서,  <span class="math notranslate nohighlight">\(k\)</span> 는 커널 함수, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> 은 <span class="math notranslate nohighlight">\(n\)</span> 차원의 입력, <span class="math notranslate nohighlight">\(f\)</span> 는 <span class="math notranslate nohighlight">\(n\)</span> 차원으로부터 <span class="math notranslate nohighlight">\(m\)</span> 차원 공간으로의 맵, 그리고 <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> 는 내적을 의미한다. 유한한 데이터를 고려할 때, 커널 함수는 다음과 같은 행렬로서 표현될 수 있다: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span></p>
 <p>양자 커널 기계학습에서, 양자 특징 맵 <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> 은 고전적인 특징 벡터 <span class="math notranslate nohighlight">\(\vec{x}\)</span> 를 양자 힐베르트 공간 <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span> 으로 매핑하는데 쓰일 수 있는데, 예를 들면 <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span> 와 같다. 더 자세한 사항은 <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> 을 참조하라.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="분류">
+<div class="section" id="분류">
 <h2>분류<a class="headerlink" href="#분류" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>이 분류 예제에서는 <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> 에 설명된 바와 같이 <em>ad hoc dataset</em> 을 다시 사용할 것이고, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a> classification(<code class="docutils literal notranslate"><span class="pre">svc</span></code>) 알고리즘을 사용할 것이다.</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="군집화">
+</div>
+<div class="section" id="군집화">
 <h2>군집화<a class="headerlink" href="#군집화" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>우리의 군집화 예제에서는 <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> 에 설명된 바와 같이 <em>ad hoc dataset</em> 를 다시 사용할 것이고, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code> 군집화 알고리즘을 사용할 것이다.</p>
 <p>두 클래스 간에 큰 간격을 두고 데이터셋을 다시 생성하고, 군집화는 비지도학습 머신러닝 태스크이기 때문에 테스트 샘플은 준비하지 않는다.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

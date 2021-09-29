@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>சீரற்ற விநியோகங்களை ஏற்றுவதற்கான qGAN கள் &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="சீரற்ற-விநியோகங்களை-ஏற்றுவதற்கான-qGAN-கள்">
+<div class="section" id="சீரற்ற-விநியோகங்களை-ஏற்றுவதற்கான-qGAN-கள்">
 <h1>சீரற்ற விநியோகங்களை ஏற்றுவதற்கான qGAN கள்<a class="headerlink" href="#சீரற்ற-விநியோகங்களை-ஏற்றுவதற்கான-qGAN-கள்" title="Permalink to this headline">¶</a></h1>
 <p>கொடுக்கப்பட்டவை <span class="math notranslate nohighlight">\(k\)</span> பரிமாண தரவு மாதிரிகள், தரவின் அடிப்படை சீரற்ற விநியோகத்தைக் கற்றுக்கொள்வதற்கும் அதை நேரடியாக ஒரு குவாண்டம் நிலைக்கு ஏற்றுவதற்கும் ஒரு குவாண்டம் ஜெனரேடிவ் அட்வர்சரியல் நெட்வொர்க்கை (qGAN) பயன்படுத்துகிறோம்:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="பயிற்சி-தரவை-ஏற்றவும்">
+<div class="section" id="பயிற்சி-தரவை-ஏற்றவும்">
 <h2>பயிற்சி தரவை ஏற்றவும்<a class="headerlink" href="#பயிற்சி-தரவை-ஏற்றவும்" title="Permalink to this headline">¶</a></h2>
 <p>முதலில், நாம்: கணிதத்தை ஏற்ற வேண்டும் <span class="math notranslate nohighlight">\(k\)</span> பரிமாண பயிற்சி தரவு மாதிரிகள் (இங்கே k = 1).</p>
 <p>அடுத்து, தரவுத் தீர்மானம் அமைக்கப்பட்டுள்ளது, அதாவது நிமிடம் / அதிகபட்ச தரவு மதிப்புகள் மற்றும் ஒவ்வொரு தரவு பரிமாணத்தையும் குறிக்கப் பயன்படுத்தப்படும் குவிட்களின் எண்ணிக்கை.</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-ஐத்-தொடங்கவும்">
+</div>
+<div class="section" id="qGAN-ஐத்-தொடங்கவும்">
 <h2>qGAN ஐத் தொடங்கவும்<a class="headerlink" href="#qGAN-ஐத்-தொடங்கவும்" title="Permalink to this headline">¶</a></h2>
 <p>qGAN ஒரு குவாண்டம் ஜெனரேட்டரைக் கொண்டுள்ளது <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, அதாவது, ஒரு அன்சாட்ஸ் மற்றும் ஒரு கிளாசிக்கல் பாகுபாடு காண்பிப்பவர் <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, ஒரு நரம்பியல் வலைப்பின்னல்.</p>
 <p>குவாண்டம் ஜெனரேட்டரை செயல்படுத்த, ஒரு ஆழம்- math <span class="math notranslate nohighlight">\(1\)</span> அன்சாட்ஸ் செயல்படுத்துகிறது <span class="math notranslate nohighlight">\(R_Y\)</span> சுழற்சிகள் மற்றும் <span class="math notranslate nohighlight">\(CZ\)</span> வாயில்கள் ஒரு சீரான விநியோகத்தை உள்ளீட்டு நிலையாக எடுத்துக்கொள்கின்றன. குறிப்பாக, இதற்கு <span class="math notranslate nohighlight">\(k&gt;1\)</span> ஜெனரேட்டரின் அளவுருக்கள் கவனமாக தேர்ந்தெடுக்கப்பட வேண்டும். எடுத்துக்காட்டாக, சுற்று ஆழம் இருக்க வேண்டும் <span class="math notranslate nohighlight">\(&gt;1\)</span> ஏனெனில் அதிக சுற்று ஆழங்கள் மிகவும் சிக்கலான கட்டமைப்புகளின் பிரதிநிதித்துவத்தை செயல்படுத்துகின்றன.</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-பயிற்சியை-இயக்கவும்">
+</div>
+<div class="section" id="qGAN-பயிற்சியை-இயக்கவும்">
 <h2>qGAN பயிற்சியை இயக்கவும்<a class="headerlink" href="#qGAN-பயிற்சியை-இயக்கவும்" title="Permalink to this headline">¶</a></h2>
 <p>பயிற்சியின் போது பாகுபாடு காண்பிப்பவர் மற்றும் ஜெனரேட்டரின் அளவுருக்கள் மாறி மாறி புதுப்பிக்கப்படும் w.r.t பின்வரும் இழப்பு செயல்பாடுகள்:</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="பயிற்சி-முன்னேற்றம்-மற்றும்-விளைவு">
+</div>
+<div class="section" id="பயிற்சி-முன்னேற்றம்-மற்றும்-விளைவு">
 <h2>பயிற்சி முன்னேற்றம் மற்றும் விளைவு<a class="headerlink" href="#பயிற்சி-முன்னேற்றம்-மற்றும்-விளைவு" title="Permalink to this headline">¶</a></h2>
 <p>இப்போது, ​​ஜெனரேட்டரின் பரிணாம வளர்ச்சியையும், பயிற்சியின் போது பாகுபாடு காண்பவரின் இழப்பு செயல்பாடுகளையும், பயிற்சி பெற்ற மற்றும் இலக்கு விநியோகத்திற்கும் இடையிலான ஒப்பீட்டு என்ட்ரோபியின் முன்னேற்றத்தையும் நாங்கள் திட்டமிடுகிறோம்.</p>
 <p>இறுதியாக, பயிற்சி பெற்ற விநியோகத்தின் ஒட்டுமொத்த விநியோக செயல்பாட்டை (சி. டி. எஃப்) இலக்கு விநியோகத்தின் சி. டி. எஃப் உடன் ஒப்பிடுகிறோம்.</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

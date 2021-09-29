@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ru-RU" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>qGANs для загрузки случайных распределений &mdash; документация Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Примечание</p>
 <p>Страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a>.</p>
 </div>
-<section id="qGANs-для-загрузки-случайных-распределений">
+<div class="section" id="qGANs-для-загрузки-случайных-распределений">
 <h1>qGANs для загрузки случайных распределений<a class="headerlink" href="#qGANs-для-загрузки-случайных-распределений" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Дана <span class="math notranslate nohighlight">\(k\)</span>-мерная выборки данных. Мы используем квантовую генеративное-состязательную сеть (quantum generative adversarial network), чтобы узнать данные, лежащие в основе случайного распределения и загрузить их непосредственно в квантовое состояние:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Загрузка-данных-для-обучения">
+<div class="section" id="Загрузка-данных-для-обучения">
 <h2>Загрузка данных для обучения<a class="headerlink" href="#Загрузка-данных-для-обучения" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Сначала нам нужно загрузить <span class="math notranslate nohighlight">\(k\)</span>-мерные примеры данных для обучения (здесь k=1).</p>
 <p>Далее задается разрешение данных, то есть минимальные/максимальные значения и количество кубитов, используемых для представления каждого измерения данных.</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Инициализация-qGAN">
+</div>
+<div class="section" id="Инициализация-qGAN">
 <h2>Инициализация qGAN<a class="headerlink" href="#Инициализация-qGAN" title="Ссылка на этот заголовок">¶</a></h2>
 <p>qGAN состоит из квантового генератора <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, т.е. анзаца и классического дискриминатора <span class="math notranslate nohighlight">\(D_{\phi}\)</span> - нейросети.</p>
 <p>Для реализации квантового генератора, мы выбираем анзац глубиной <span class="math notranslate nohighlight">\(1\)</span>, который реализует повороты <span class="math notranslate nohighlight">\(R_Y\)</span> и <span class="math notranslate nohighlight">\(CZ\)</span> вентилей, принимающих однородное распределение в качестве входного состояния. В частности, для <span class="math notranslate nohighlight">\(k&gt;1\)</span> параметры генератора должны быть тщательно отобраны. Например, глубина цепи должна быть <span class="math notranslate nohighlight">\(&gt;1\)</span>, потому что большая глубина цепи позволяет представить более сложные структуры.</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Запуск-обучения-qGAN">
+</div>
+<div class="section" id="Запуск-обучения-qGAN">
 <h2>Запуск обучения qGAN<a class="headerlink" href="#Запуск-обучения-qGAN" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Во время обучения параметры дискриминатора и генератора обновляются поочередно в отношении функции потери:</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="Прогресс-обучения-и-результаты">
+</div>
+<div class="section" id="Прогресс-обучения-и-результаты">
 <h2>Прогресс обучения и результаты<a class="headerlink" href="#Прогресс-обучения-и-результаты" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Теперь мы определили эволюцию генератора и функцию потери дискриминатора во время обучения, а также прогресс в относительной энтропии между подготовленным и целевым распределением.</p>
 <p>Наконец, мы также сравниваем совокупную функцию распределения (CDF) подготовленного распределения с CDF целевого распределения.</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="hi-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>तंत्रिका नेटवर्क वर्गीकरण और प्रतिगामी &mdash; Qiskit Machine Learning 0.2.1 दिग्दर्शिका</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">टिप्पणी </p>
 <p>यह पृष्ठ <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a> से उत्पन्न किया गया है।</p>
 </div>
-<section id="तंत्रिका-नेटवर्क-वर्गीकरण-और-प्रतिगामी">
+<div class="section" id="तंत्रिका-नेटवर्क-वर्गीकरण-और-प्रतिगामी">
 <h1>तंत्रिका नेटवर्क वर्गीकरण और प्रतिगामी<a class="headerlink" href="#तंत्रिका-नेटवर्क-वर्गीकरण-और-प्रतिगामी" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h1>
 <p>इस ट्यूटोरियल में हम बताते हैं कि किस तरह 'NeuralNetworkClassifier' और ''NeuralNetworkRegressor '' का इस्तेमाल किया जाता है। दोनों ही एक इनपुट के रूप में (क्वांटम) <a href="#id1"><span class="problematic" id="id2">``</span></a>NeuralNetwork'' लेते हैं और इसे एक विशिष्ट संदर्भ में उपयोग करते हैं. दोनों ही मामलों में हम सुविधा के लिए पूर्व-विन्यस्त संस्करण भी प्रदान करते हैं, परिवर्तनशील क्वांटम वर्गीकृत (` ` VQC ` <cite>) और परिवर्तनशील क्वांटम प्रतिगामी (</cite> ` VQR ` ` '). ट्यूटोरियल के रूप में संरचित है:</p>
 <ol class="arabic simple">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="वर्गीकरण">
+<div class="section" id="वर्गीकरण">
 <h2>वर्गीकरण<a class="headerlink" href="#वर्गीकरण" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p>हम निम्नलिखित एल्गोरिदम को स्पष्ट करने के लिए एक सरल वर्गीकरण डेटासेट तैयार करते हैं।</p>
 <div class="nbinput docutils container">
@@ -599,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-के-साथ-वर्गीकरण">
+<div class="section" id="OpflowQNN-के-साथ-वर्गीकरण">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> के साथ वर्गीकरण<a class="headerlink" href="#OpflowQNN-के-साथ-वर्गीकरण" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <p>पहले हम दिखाते हैं कि कैसे एक <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> का उपयोग <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> में वर्गीकरण के लिए किया जा सकता है। इस संदर्भ में, <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> से <span class="math notranslate nohighlight">\([-1, +1]\)</span> में एक-आयामी उत्पाद लौटाने की उम्मीद है। यह केवल द्विचर वर्गीकरण के लिए काम करता है और हम दो वर्गों को <span class="math notranslate nohighlight">\(\{-1, +1\}\)</span> पर निर्दिष्ट करते हैं। सुविधा के लिए, हम <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> का उपयोग करते हैं, जो एक विशेष प्रकार का <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> है जिसे फीचर मैप और ansatz के माध्यम से परिभाषित किया गया है।</p>
 <div class="nbinput nblast docutils container">
@@ -725,8 +724,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</section>
-<section id="CircuitQNN-के-साथ-वर्गीकरण">
+</div>
+<div class="section" id="CircuitQNN-के-साथ-वर्गीकरण">
 <h3><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> के साथ वर्गीकरण<a class="headerlink" href="#CircuitQNN-के-साथ-वर्गीकरण" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <p>अब हम दिखाते हैं कि कैसे <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> का उपयोग <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> में वर्गीकरण के लिए किया जा सकता है। इस संदर्भ में, <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> से <span class="math notranslate nohighlight">\(d\)</span>-आयामी प्रायिकता वेक्टर के उत्पाद की उम्मीद है, जहां <span class="math notranslate nohighlight">\(d\)</span> वर्गों की संख्या को दर्शाता है। <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> से नमूना लेने से स्वचालित रूप से एक संभाव्यता वितरण होता है और हमें केवल मापा बिटस्ट्रिंग से विभिन्न वर्गों की मैपिंग को परिभाषित करने की आवश्यकता होती है। द्विचर वर्गीकरण के लिए हम समता मानचित्रण का उपयोग करते हैं।</p>
 <div class="nbinput docutils container">
@@ -860,8 +859,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</section>
-<section id="वैरिएशनल-क्वांटम-क्लासिफायर-(VQC)">
+</div>
+<div class="section" id="वैरिएशनल-क्वांटम-क्लासिफायर-(VQC)">
 <h3>वैरिएशनल क्वांटम क्लासिफायर (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#वैरिएशनल-क्वांटम-क्लासिफायर-(VQC)" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> के साथ <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> का एक विशेष प्रकार है। यह बिटस्ट्रिंग से वर्गीकरण कॊ मैप करने के लिए समता मानचित्रण (या कई वर्गों के विस्तार) लागू करता है, जिसके परिणामस्वरूप एक संभाव्यता वेक्टर होता है, जिसे एक-हॉट एन्कोडेड परिणाम के रूप में व्याख्या किया जाता है। डिफ़ॉल्ट रूप से, यह इसपर <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> फ़ंक्शन लागू करता है जो एक-हॉट एन्कोडेड प्रारूप में दिए गए नामपत्र की अपेक्षा करता है और उस प्रारूप में पूर्वानुमान भी लौटाएगा।</p>
 <div class="nbinput nblast docutils container">
@@ -948,9 +947,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="प्रतिगमन">
+</div>
+</div>
+<div class="section" id="प्रतिगमन">
 <h2>प्रतिगमन<a class="headerlink" href="#प्रतिगमन" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p>हम निम्नलिखित एल्गोरिदम को स्पष्ट करने के लिए एक साधारण प्रतिगमन डेटासेट तैयार करते हैं।</p>
 <div class="nbinput docutils container">
@@ -980,7 +979,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-के-साथ-प्रतिगमन">
+<div class="section" id="OpflowQNN-के-साथ-प्रतिगमन">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> के साथ प्रतिगमन<a class="headerlink" href="#OpflowQNN-के-साथ-प्रतिगमन" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <p>यहां हम एक <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> के साथ प्रतिगमन तक सीमित हैं जो <span class="math notranslate nohighlight">\([-1, +1]\)</span> में मान लौटाता है। <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> के आधार पर अधिक जटिल और बहु-आयामी मॉडल भी बनाए जा सकते हैं, लेकिन यह इस ट्यूटोरियल के दायरे से अधिक है।</p>
 <div class="nbinput nblast docutils container">
@@ -1077,8 +1076,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</section>
-<section id="वैरिएशनल-क्वांटम-रेजिस्टर-के-साथ-रिग्रेशन-(VQR)">
+</div>
+<div class="section" id="वैरिएशनल-क्वांटम-रेजिस्टर-के-साथ-रिग्रेशन-(VQR)">
 <h3>वैरिएशनल क्वांटम रेजिस्टर के साथ रिग्रेशन (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)<a class="headerlink" href="#वैरिएशनल-क्वांटम-रेजिस्टर-के-साथ-रिग्रेशन-(VQR)" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <p>वर्गीकरण के लिए <code class="docutils literal notranslate"><span class="pre">VQC`</span> <span class="pre">के</span> <span class="pre">समान,</span> <span class="pre">``VQR</span></code> <cite>OpflowQNN`</cite> के साथ <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> का एक विशेष प्रकार है। डिफ़ॉल्ट रूप से यह पूर्वानुमानों और लक्ष्यों के बीच माध्य चुकता त्रुटि को कम करने के लिए <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> फ़ंक्शन पर विचार करता है।</p>
 <div class="nbinput nblast docutils container">
@@ -1178,9 +1177,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

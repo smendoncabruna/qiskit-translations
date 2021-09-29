@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="de-DE" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Neuronale Quantennetze &mdash; Qiskit Machine Learning 0.2.1 Dokumentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Bemerkung</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
-<section id="Neuronale-Quantennetze">
+<div class="section" id="Neuronale-Quantennetze">
 <h1>Neuronale Quantennetze<a class="headerlink" href="#Neuronale-Quantennetze" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Dieses Notebook demonstriert die verschiedenen generischen Implementierungen von Quantennetzwerken (QNN) in Qiskit Machine Learning. Sie sind als allgemeine rechnerische Einheiten ohne bestimmten Anwendungsfall gedacht. Abhängig von der Anwendung kann eine gewisse Art von Netzwerk mehr oder weniger gut geeignet sein, oder muss möglicherweise auf eine bestimmte Art konfiguriert werden. Die verfügbaren neuronalen Netze werden nun genauer vorgestellt:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Das <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> stellt die Schnittstelle für alle neuronalen Netze dar, die in Qiskit Machine Learning zur Verfügung stehen. Sie legt einen Forward- und einen Backward-Pass vor, wobei die Daten-Samples und trainierbaren Gewichte als Inputs verwendet werden. Ein <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> ermöglicht kein Training. Dieses wird in die eigentlichen Algorithmen/Anwendungen veragert. Ein <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> speichert also auch nicht die Werte von trainierbaren Gewichten. Im Folgenden werden unterschiedliche Implementierungen dieser Schnittstellen eingeführt.</p>
 <p>Angenommen, ein ` ` NeuralNetwork ` ` ` namens ` ` nn ` <a href="#id1"><span class="problematic" id="id2">`</span></a>. Dann nimmt der ` <a href="#id3"><span class="problematic" id="id4">`</span></a>nn.forward (Eingabe, Gewichte) ` ` -Pass entweder flache Eingaben für die Daten und Gewichte der Größe ` <a href="#id5"><span class="problematic" id="id6">`</span></a>nn.num_inputs ` ` bzw. ` <a href="#id7"><span class="problematic" id="id8">`</span></a>nn.num_Gewichte ` ` an. ` ` NeuralNetwork ` ` unterstützt die Stapelung von Eingaben und gibt Chargen der Ausgabe der entsprechenden Form zurück.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Link zu dieser Überschrift">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> nimmt einen (parametrisierten) Operator von Qiskit auf und nutzt Qiskits Gradient Framework, um den Backward-Pass bereitzustellen. Ein solcher Operator kann zum Beispiel der Erwartungswert einer quantenmechanischen Observablen sein, der in Bezug auf einen parametrisierten Quantenzustand beobachtet werden kann. Die Parameter können sowohl zum Laden klassischer Daten als auch zur Darstellung trainierbarer Gewichte verwendet werden. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> erlaubt auch Listen von Operatoren und komplexere Strukturen um komplexere QNN zu konstruieren.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQN">
+</div>
+<div class="section" id="3.-TwoLayerQN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQN</span></code><a class="headerlink" href="#3.-TwoLayerQN" title="Link zu dieser Überschrift">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQN</span></code> ist ein spezielles <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> auf <span class="math notranslate nohighlight">\(n\)</span> Qubit, das erstens aus einer Feature-Map zum Einfügen von Daten und zweitens einem trainierten Ansatz. Die standardmäßige Observable ist <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, d.h. die Parität.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> basiert auf einem (parametrisierten) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> und kann sowohl Eingaben als auch Gewichtsparameter annehmen und Samples aus der Messung erzeugen. Die Samples können entweder als Wahrscheinlichkeiten für die Messung des Integer-Index, der einem Bitstring entspricht, oder als Stapel von binären Ausgaben interpretiert werden. Im Falle von Wahrscheinlichkeiten können Gradienten effizient geschätzt werden, und das <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> stellt auch einen Backward-Pass zur Verfügung. Im Fall von Samples ist eine Ableitung unmöglich und der Backward-Pass gibt <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code> zurück.</p>
 <p>Further, the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> allows to specify an <code class="docutils literal notranslate"><span class="pre">interpret</span></code> function to post-process the samples. This is expected to take a measured integer (from a bitstring) and map it to a new index, i.e. non-negative integer. In this case, the output shape needs to be provided and the probabilities are aggregated accordingly.</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-Ausgabe:-Schwach-besetzte-Integer-Wahrscheinlichkeiten">
+<div class="section" id="4.1-Ausgabe:-Schwach-besetzte-Integer-Wahrscheinlichkeiten">
 <h3>4.1 Ausgabe: Schwach besetzte Integer-Wahrscheinlichkeiten<a class="headerlink" href="#4.1-Ausgabe:-Schwach-besetzte-Integer-Wahrscheinlichkeiten" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-Ausgabe:-Dichte-Paritätswahrscheinlichkeiten">
+</div>
+<div class="section" id="4.2-Ausgabe:-Dichte-Paritätswahrscheinlichkeiten">
 <h3>4.2 Ausgabe: Dichte Paritätswahrscheinlichkeiten<a class="headerlink" href="#4.2-Ausgabe:-Dichte-Paritätswahrscheinlichkeiten" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-Ausgabe:-Samples">
+</div>
+<div class="section" id="4.3-Ausgabe:-Samples">
 <h3>4.3 Ausgabe: Samples<a class="headerlink" href="#4.3-Ausgabe:-Samples" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-Ausgabe:-Paritäts-Samples">
+</div>
+<div class="section" id="4.4-Ausgabe:-Paritäts-Samples">
 <h3>4.4 Ausgabe: Paritäts-Samples<a class="headerlink" href="#4.4-Ausgabe:-Paritäts-Samples" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

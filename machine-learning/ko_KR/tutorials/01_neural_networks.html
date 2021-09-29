@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>양자 신경망 &mdash; Qiskit Machine Learning 0.2.1 문서</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="양자-신경망">
+<div class="section" id="양자-신경망">
 <h1>양자 신경망<a class="headerlink" href="#양자-신경망" title="이 표제에 대한 퍼머링크">¶</a></h1>
 <p>이 노트북은 Qiskit Machine Learning에서 제공하는 여러 가지 QNN (일반적인 양자 신경망)을 시연한다. 네트워크는 애플리케이션에 구애받지 않는 컴퓨터적인 단위로써 다양한 예제에 사용될 수 있다 . 애플리케이션에 따라 특정 유형의 네트워크가 더 적합하거나 적합하지 않을 수 있으며,  경우에 따라 네트워크를 특별한 방식으로 설정해야 할 수도 있다. 이제 다음과 같은 다른 사용 가능한 신경망을 자세히 설명한다.</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> 은 Qiskit Machine Learning에서 사용할 수 있는 모든 신경망에 대한 인터페이스를 나타낸다. 신경망은 데이터 샘플과 학습 가능한 가중치를 입력으로하는 정방향 및 역방향 경로를 나타낸다. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> 에는 훈련 기능이 포함되어 있지 않으며 실제 알고리즘/애플리케이션으로 푸시된다. 이와 같이 <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> 은 학습 가능한 가중치를 저장하지 않는다. 다음은 이 인터페이스의 다양한 구현 예제가 소개한다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> 을 <code class="docutils literal notranslate"><span class="pre">nn</span></code> 이라 부르자. 그러면 <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> 경로는 데이터의 입력과 가중치를 <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> 과 <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code> 로 받는다. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> 는 입력의 배치처리를 지원하고 해당 형상의 출력 배치를 반환한다.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> 은 Qiskit의 (매개 변수화된) 연산자를 취하여 Qiskit의 기울기 프레임워크를 활용해 역방향 경로를 제공한다. 예를 들어, 이러한 연산자는 매개 변수화된 양자 상태에 관한 양자 기계적 관찰의 기댓값이 될 수 있다. 매개변수를 사용하여 훈련 가능한 가중치를 표시할 뿐만 아니라 고전적 데이터를 불러오는데 사용할 수 있다. 또한 <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> 은 더욱 복잡한 QNN을 구성하기 위한 연산자 목록과 복잡한 구조를 가능하게 한다.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> 은 <span class="math notranslate nohighlight">\(n\)</span> 큐비트에 작용하는 특별한 종류의 <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> 으로서 두 가지 요소로 구성되어 있다. 첫 번째는 데이터를 삽입하기 위한 feature map이고 두 번째는 훈련된 ansatz이다. 기본 관측값은 <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, 즉 parity이다.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> 은 (파라미터화된) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> 에 기반으로 한다. 이것은 가중치뿐만 아니라 입력을 취할 수 있고, 측정을 통해 샘플을 생성할 수 있다. 샘플들은 비트열에 대응하는 정수 인덱스를 측정하는 확률 또는 이진 출력의 배치(batch) 로서 직접적으로 해석될 수 있다. 확률의 경우 기울기는 효율적으로 추정될 수 있고, <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> 은 역방향 경로 또한 제공된다. 샘플의 경우에는 미분이 가능하지 않으며 역방향 경로는 <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code> 을 반환한다.</p>
 <p>또한, <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> 은 샘플들을 후처리하기 위한 <code class="docutils literal notranslate"><span class="pre">interpret</span></code> 함수를 설정할 수 있다. 이것은 비트열에서 측정된 정수를 가져와 새로운 인덱스 (예를 들면, 음이 아닌 정수)에 mapping 하게 된다. 이 경우, 출력 형태가 제공되어야 하며 이에 따라 확률이 집계되어야 한다.</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-출력:-희소-정수-확률">
+<div class="section" id="4.1-출력:-희소-정수-확률">
 <h3>4.1 출력: 희소 정수 확률<a class="headerlink" href="#4.1-출력:-희소-정수-확률" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-출력:-조밀한-패리티-확률">
+</div>
+<div class="section" id="4.2-출력:-조밀한-패리티-확률">
 <h3>4.2 출력: 조밀한 패리티 확률<a class="headerlink" href="#4.2-출력:-조밀한-패리티-확률" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-출력:-샘플">
+</div>
+<div class="section" id="4.3-출력:-샘플">
 <h3>4.3 출력: 샘플<a class="headerlink" href="#4.3-출력:-샘플" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-출력:-패리티-샘플">
+</div>
+<div class="section" id="4.4-출력:-패리티-샘플">
 <h3>4.4 출력: 패리티 샘플<a class="headerlink" href="#4.4-출력:-패리티-샘플" title="이 표제에 대한 퍼머링크">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

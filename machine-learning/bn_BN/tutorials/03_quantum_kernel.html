@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>কোয়ান্টাম কার্নেল মেশিন লার্নিং &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পেজটি <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a> থেকে তৈরি হয়েছে।</p>
 </div>
-<section id="কোয়ান্টাম-কার্নেল-মেশিন-লার্নিং">
+<div class="section" id="কোয়ান্টাম-কার্নেল-মেশিন-লার্নিং">
 <h1>কোয়ান্টাম কার্নেল মেশিন লার্নিং<a class="headerlink" href="#কোয়ান্টাম-কার্নেল-মেশিন-লার্নিং" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <p>মেশিন লার্নিং এর কাজ হচ্ছে তথ্য ( ডেটা ) বিন্যাস করা। ডেটাসেটসমূহ খুব ভালোভাবে বিশ্লেষন করা যায় উচ্চ মাত্রার ফিচার স্পেস পর্যবেক্ষন করে, এইজন্য প্রয়োজন একটি কার্নেল ফাংশনঃ <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span>, যেখানে <span class="math notranslate nohighlight">\(k\)</span> হচ্ছে কার্নেল ফাংশন, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> হচ্ছে <span class="math notranslate nohighlight">\(n\)</span> মাত্রিক ইনপুট বা ডাইমেনশনাল ইনপুট, <span class="math notranslate nohighlight">\(f\)</span> হচ্ছে একটি ম্যাপিং যা <span class="math notranslate nohighlight">\(n\)</span> ডাইমেনশন থেকে <span class="math notranslate nohighlight">\(m\)</span> ডাইমেনশন স্পেস এবং <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> হচ্ছে ডট গুণন। যখন কোন সসীম ডাটা হিসাব করা হয় তখন, কার্নেল ফাংশন কে রিপ্রেসেন্ট করা হয় : :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>K_{ij} = k(vec{x}_i,vec{x}_j)`এই ম্যাট্রিক্স দ্বারা।</p>
 <p>কার্নেল মেশিন লার্নিং এ ক্লাসিক্যাল ফিচার ভেক্টর <span class="math notranslate nohighlight">\(\vec{x}\)</span> কে কোয়ান্টাম হিলবার্ট স্পেস <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span> যেমন, <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span> এ ম্যাপিং করে গুছিয়ে নিতে একটি কোয়ান্টাম ফিচার ম্যাপ <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> ব্যবহৃত হয়। আরও জানতে <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> পেপারটি দেখুন।</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="শ্রেণিবিভাগ-(ক্লাসিফিকেশন)">
+<div class="section" id="শ্রেণিবিভাগ-(ক্লাসিফিকেশন)">
 <h2>শ্রেণিবিভাগ (ক্লাসিফিকেশন)<a class="headerlink" href="#শ্রেণিবিভাগ-(ক্লাসিফিকেশন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>এবার ক্লাসিফিকেশনের উদাহরনের জন্য আমরা <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>  এ উল্লেখিত <em>ad hoc dataset</em> এবং <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a>  ক্লাসিফিকেশন (<code class="docutils literal notranslate"><span class="pre">svc</span></code>) অ্যালোগরিদমটি ব্যবহার করব।</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="ক্লাস্টারিং">
+</div>
+<div class="section" id="ক্লাস্টারিং">
 <h2>ক্লাস্টারিং<a class="headerlink" href="#ক্লাস্টারিং" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>ক্লাস্টারিং উদাহরনের জন্য আমরা আবার পূর্বের অনুরূপ <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> এবং <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code> ক্লাস্টারিং অ্যালোগরিদমের মধ্যে <em>ad hoc dataset</em> ব্যবহার করব।</p>
 <p>আমরা দুটি ক্লাসের ভেতর বিশাল গ্যাপ দিয়ে পুনরায় ডেটাসেটটি সৃষ্টি করব। যেহেতু ক্লাস্টারিং হল এক প্রকার আনসুপারভাইজড মেশিন লার্নিং কাজ, কাজেই আমাদের কোনো টেস্ট স্যাম্পল প্রয়োজন নেই।</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

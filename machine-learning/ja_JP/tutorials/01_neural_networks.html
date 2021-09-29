@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>量子ニューラル・ネットワーク &mdash; Qiskit Machine Learning 0.2.1 ドキュメント</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a> から生成されました。</p>
 </div>
-<section id="量子ニューラル・ネットワーク">
+<div class="section" id="量子ニューラル・ネットワーク">
 <h1>量子ニューラル・ネットワーク<a class="headerlink" href="#量子ニューラル・ネットワーク" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>このノートブックでは、 Qiskit 機械学習で提供される、さまざまな汎用的な量子ニューラル・ネットワーク (QNN) の実装を紹介します。 このネットワークは、アプリケーションに依存しない計算ユニットとして、様々なユースケースに使用することができます。アプリケーションによっては、特定のタイプのネットワークが適していたり、適していなかったり、特定の方法でセットアップする必要があったりします。ここでは、次のような種類のニューラルネットワークについて、詳しく説明します。</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> represents the interface for all neural networks available in Qiskit Machine Learning. It exposes a forward and a backward pass taking the data samples and trainable weights as input. A <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> does not contain any training capabilities, these are pushed to the actual algorithms / applications. Thus, a <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> also does not store the values for trainable weights. In the following, different implementations of this interfaces are introduced.</p>
 <p><code class="docutils literal notranslate"><span class="pre">nn</span></code> という <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code>  を想定します。次に、 <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code>  パスは、データのフラット入力と、サイズ　<code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> および <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code> の重みをそれぞれ受け取ります。 <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> は入力のバッチ処理をサポートし、対応する形状の出力のバッチを返します。</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> は、Qiskitから（パラメーター化された）演算子を取得し、Qiskitのgradientフレームワークを利用して逆伝搬パスを提供します。このような演算子は、たとえば、パラメーター化された量子状態に関する量子力学における観測量の期待値です。パラメーターを使用して、古典的なデータをロードしたり、トレーニング可能な重みを表すことができます。<code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> を使用すると、演算子のリストとより複雑な構造を使用して、より複雑なQNNを構築することもできます。</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> は、<span class="math notranslate nohighlight">\(n\)</span> 量子ビット上の特別な <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> で、第一にデータを挿入する特徴マップ、第二に学習されるアンサツから構成されています。デフォルトの観測値は <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span> 、すなわちパリティです。</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> は、（パラメータ化された） <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> をベースにしています。これは、入力だけでなくウェイトパラメーターも取ることができ、測定からサンプルを生成します。サンプルは、ビット列に対応する整数インデックスを測定する確率として解釈することも、バイナリー出力のバッチとして直接解釈することもできます。確率の場合、勾配を効率的に推定することができ、 <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> は逆伝搬パスも提供します。サンプルの場合、微分は不可能であり、逆伝搬パスは <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code> を返します。</p>
 <p>さらに、 <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> では、サンプルを後処理するための <code class="docutils literal notranslate"><span class="pre">interpret</span></code> 関数を指定することができます。これは、（ビット列から）測定された整数を受け取り、それを新しいインデックス、すなわち非負の整数にマッピングすることが期待されます。この場合、出力の形を提供する必要があり、それに応じて確率が調整されます。</p>
@@ -943,7 +942,7 @@ probability vector of length 2.</p>
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-出力:-疎な整数の確率">
+<div class="section" id="4.1-出力:-疎な整数の確率">
 <h3>4.1 出力: 疎な整数の確率<a class="headerlink" href="#4.1-出力:-疎な整数の確率" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1005,8 +1004,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-出力:-密なパリティ確率">
+</div>
+<div class="section" id="4.2-出力:-密なパリティ確率">
 <h3>4.2 出力: 密なパリティ確率<a class="headerlink" href="#4.2-出力:-密なパリティ確率" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1074,8 +1073,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-出力:-サンプル">
+</div>
+<div class="section" id="4.3-出力:-サンプル">
 <h3>4.3 出力: サンプル<a class="headerlink" href="#4.3-出力:-サンプル" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1146,8 +1145,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-出力:-パリティー・サンプル">
+</div>
+<div class="section" id="4.4-出力:-パリティー・サンプル">
 <h3>4.4 出力: パリティー・サンプル<a class="headerlink" href="#4.4-出力:-パリティー・サンプル" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1251,9 +1250,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

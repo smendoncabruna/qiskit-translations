@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>কোয়ান্টাম নিউরাল নেটওয়ার্ক &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পেজটি <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a> থেকে তৈরি হয়েছে।</p>
 </div>
-<section id="কোয়ান্টাম-নিউরাল-নেটওয়ার্ক">
+<div class="section" id="কোয়ান্টাম-নিউরাল-নেটওয়ার্ক">
 <h1>কোয়ান্টাম নিউরাল নেটওয়ার্ক<a class="headerlink" href="#কোয়ান্টাম-নিউরাল-নেটওয়ার্ক" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <p>এই নোটবুকটি Qiskit মেশিন লার্নিং এ উপলব্ধ কোয়ান্টাম নিউরাল নেটওয়ার্ক (কিউ এন এন) এর বিভিন্ন রূপায়ণ (ইমপ্লিমেন্টেশন) প্রদর্শন করে। নেটওয়ার্ক গুলো অ্যাপ্লিকেশন-এগ্নস্টিক কম্পিউটেশনাল ইউনিট হিসেবে বোঝানো হয় যা অনেক গুলি বিভিন্ন ক্ষেত্রে ব্যবহার করা যেতে পারে।এপ্লিকেশনের উপর নির্ভর করে, একটি নির্দিষ্ট ধরনের নেটওয়ার্ক কম-বেশি উপযুক্ত হতে পারে এবং একটি নির্দিষ্ট উপায়ে সেটাপ করার প্রয়োজনীয়তা দেখা দিতে পারে। নিম্নে বিভিন্ন উপলব্ধ নিউরাল নেটওয়ার্ক গুলো আরো বিশদ ভাবে আলোচনা করা হবে:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="১.-NeuralNetwork">
+<div class="section" id="১.-NeuralNetwork">
 <h2>১. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#১.-NeuralNetwork" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> Qiskit মেশিন লার্নিংয়ে উপলভ্য সমস্ত নিউরাল নেটওয়ার্কগুলির ইন্টারফেসের প্রতিনিধিত্ব করে। এটি ইনপুট হিসাবে ডেটা নমুনা এবং প্রশিক্ষণযোগ্য ওয়েট গ্রহণ করে একটি ফরোয়ার্ড এবং একটি ব্যাকওয়ার্ড পাস উন্মুক্ত করে।একটি <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> কোনও প্রশিক্ষণ ক্ষমতা রাখে না, এগুলি প্রকৃত অ্যালগরিদম / অ্যাপ্লিকেশনগুলিতে পুস করা যায়।সুতরাং একটি, <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> প্রশিক্ষণযোগ্য ওয়েটের মানগুলিও সঞ্চয় করে না।নিচে, এই ইন্টারফেসগুলির বিভিন্ন প্রয়োগ দেখানো হয়েছে।</p>
 <p>ধরুন, একটি <code class="docutils literal notranslate"><span class="pre">neuralnetwork</span></code> যার সংক্ষিপ্ত নাম <code class="docutils literal notranslate"><span class="pre">nn</span></code>। এরপরে, <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> পাসের জন্য যথাক্রমে <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> এবং <code class="docutils literal notranslate"><span class="pre">nn.num_weights``এর</span> <span class="pre">সমান</span> <span class="pre">ইনপুট</span> <span class="pre">ও</span> <span class="pre">তথ্য</span> <span class="pre">লাগে।</span> <span class="pre">``NeuralNetwork</span></code> ইনপুটের ব্যাচিং সমর্থন করে এবং সংশ্লিষ্ট আকৃতির আউটপুট ব্যাচ প্রদান করে।</p>
-</section>
-<section id="২.-OpflowQNN">
+</div>
+<div class="section" id="২.-OpflowQNN">
 <h2>২. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#২.-OpflowQNN" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>`` OpflowQNN`` Qiskit থেকে একটি (প্যারাম্যাট্রাইজড) অপারেটর নেয় এবং পিছনের পাসটি সরবরাহের জন্য Qiskit এর গ্রেডিয়েন্ট কাঠামোটি ব্যবহার করে। যেমন একটি অপারেটর উদাহরণস্বরূপ একটি প্যারামাইট্রাইজড কোয়ান্টাম রাষ্ট্রের সাথে পর্যবেক্ষণযোগ্য কোয়ান্টাম মেকানিকালটির প্রত্যাশিত মান হতে পারে। প্যারামিটারগুলি ক্লাসিকাল ডেটা লোড করার পাশাপাশি প্রশিক্ষণযোগ্য ওজন উপস্থাপন করতে ব্যবহার করা যেতে পারে। <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> অপারেটরগুলির তালিকা এবং আরও জটিল কাঠামোকে আরও জটিল কিউএনএন তৈরি করার অনুমতি দেয়।</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="৩.-TwoLayerQNN">
+</div>
+<div class="section" id="৩.-TwoLayerQNN">
 <h2>৩. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#৩.-TwoLayerQNN" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>`` TwoLayerQNN`` হল একটি বিশেষ <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> on <span class="math notranslate nohighlight">\(n\)</span> কিউবিটসমূহ যারা ডেটা সন্নিবেশ করানোর জন্য প্রথম বৈশিষ্ট্যের মানচিত্র এবং দ্বিতীয়টি একটি আনস্যাটজ যা প্রশিক্ষিত। প্রাথমিক পর্যবেক্ষণযোগ্য হ’ল :math: <cite>Z ^ {otimes n}</cite>, উদাহরণস্বরূপ, প্যারিটি(parity) ।</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="৪.-CircuitQNN">
+</div>
+<div class="section" id="৪.-CircuitQNN">
 <h2>৪. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#৪.-CircuitQNN" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> একটি (প্যারাম্যাট্রাইজড) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> এর উপর ভিত্তি করে গঠিত। এটি ইনপুট নেয়ার পাশাপাশি প্যারামিটার মাপতে পারে এবং পরিমাপ থেকে নমুনা তৈরি করে। নমুনাগুলি হয় হয় একটি বিটস্ট্রিংয়ের সাথে সম্পর্কিত ইন্টিজার সূচকটি পরিমাপের সম্ভাব্যতা হিসাবে বা সরাসরি বাইনারি আউটপুটটির ব্যাচ হিসাবে ব্যাখ্যা করা যেতে পারে। সম্ভাবনার ক্ষেত্রে গ্রেডিয়েন্টগুলি দক্ষতার সাথে অনুমান করা যায় এবং <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> পাশাপাশি একটি পশ্চাৎ পাস সরবরাহ করে। নমুনার ক্ষেত্রে, পার্থক্য সম্ভব নয় এবং পিছনের পাসটি <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code> রিটার্ন করে।</p>
 <p>উপরন্তু, <code class="docutils literal notranslate"><span class="pre">CircuitQNN`</span> <span class="pre">,</span> <span class="pre">নমুনাগুলি</span> <span class="pre">পোস্ট-প্রসেস</span> <span class="pre">করার</span> <span class="pre">জন্য,</span> <span class="pre">একটি</span> <span class="pre">``interpret</span></code> ফাংশন নির্দিষ্ট করার অনুমতি দেয়। এটি একটি পরিমাপ করা পূর্ণসংখ্যা (একটি বিটস্ট্রিং থেকে) গ্রহণ করবে এবং এটি একটি নতুন সূচকে, যেমন অ-নেতিবাচক পূর্ণসংখ্যা ম্যাপ করবে বলে আশা করা হচ্ছে। এই ক্ষেত্রে, আউটপুট আকৃতি সরবরাহ করা প্রয়োজন এবং সম্ভাব্যতাগুলি সেই অনুযায়ী সংযুক্ত করা হয়।</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-আউটপুট:-স্পার্স-পূর্ণসংখ্যার-সম্ভাবনা">
+<div class="section" id="4.1-আউটপুট:-স্পার্স-পূর্ণসংখ্যার-সম্ভাবনা">
 <h3>4.1 আউটপুট: স্পার্স পূর্ণসংখ্যার সম্ভাবনা<a class="headerlink" href="#4.1-আউটপুট:-স্পার্স-পূর্ণসংখ্যার-সম্ভাবনা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-আউটপুট:-ঘন-(ডেন্স)-সমতা-(প্যারিটি)-সম্ভাবনা">
+</div>
+<div class="section" id="4.2-আউটপুট:-ঘন-(ডেন্স)-সমতা-(প্যারিটি)-সম্ভাবনা">
 <h3>4.2 আউটপুট: ঘন (ডেন্স) সমতা (প্যারিটি) সম্ভাবনা<a class="headerlink" href="#4.2-আউটপুট:-ঘন-(ডেন্স)-সমতা-(প্যারিটি)-সম্ভাবনা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="৪.৩-আউটপুট-:-নমুনা-(স্যাম্পল)">
+</div>
+<div class="section" id="৪.৩-আউটপুট-:-নমুনা-(স্যাম্পল)">
 <h3>৪.৩ আউটপুট : নমুনা (স্যাম্পল)<a class="headerlink" href="#৪.৩-আউটপুট-:-নমুনা-(স্যাম্পল)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="৪.৪-আউটপুট:-প্যরিটি-নমুনা-(স্যাম্পল)">
+</div>
+<div class="section" id="৪.৪-আউটপুট:-প্যরিটি-নমুনা-(স্যাম্পল)">
 <h3>৪.৪ আউটপুট: প্যরিটি নমুনা (স্যাম্পল)<a class="headerlink" href="#৪.৪-আউটপুট:-প্যরিটি-নমুনা-(স্যাম্পল)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

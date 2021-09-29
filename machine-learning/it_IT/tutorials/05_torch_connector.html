@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="it-IT" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Torch Connector e QNNs Ibride &mdash; Qiskit Machine Learning 0.2.1 documentazione</title>
@@ -511,10 +510,10 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Questa pagina è stata generata da <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/05_torch_connector.ipynb">docs/tutorials/05_torch_connector.ipynb</a>.</p>
 </div>
-<section id="Torch-Connector-e-QNNs-Ibride">
+<div class="section" id="Torch-Connector-e-QNNs-Ibride">
 <h1>Torch Connector e QNNs Ibride<a class="headerlink" href="#Torch-Connector-e-QNNs-Ibride" title="Link a questa intestazione">¶</a></h1>
 <p>Questo tutorial introduce la classe di Qiskit <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> e dimostra come essa permetta una facile integrazione di qualsiasi <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> da Qiskit Machine Learning in un flusso di lavoro in PyTorch. <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> rende disponibile una <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> di Qiskit come un <code class="docutils literal notranslate"><span class="pre">Module</span></code> di PyTorch. Il modulo che ne risulta può essere perfettamente incorporato in una classica architettura PyTorch e allenato senza considerazioni addizionali, permettendo quindi lo sviluppo ed il testing di nuove architetture di machine learning <strong>ibride quantistiche-classiche</strong>.</p>
-<section id="Contenuto:">
+<div class="section" id="Contenuto:">
 <h2>Contenuto:<a class="headerlink" href="#Contenuto:" title="Link a questa intestazione">¶</a></h2>
 <p><a class="reference external" href="#Part-1:-Simple-Classification-&amp;-Regression">Parte 1: Semplice Classificazione &amp; Regressione</a></p>
 <p>La prima parte di questo tutorial dimostra come, per semplici compiti di classificazione e regressione, si possa allenare una quantum neural network usando un motore di differenziazione automatica di PyTorch (<code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code>, <a class="reference external" href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">link</a>).</p>
@@ -561,10 +560,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Parte-1:-Semplice-Classificazione-&amp;-Regressione">
+</div>
+<div class="section" id="Parte-1:-Semplice-Classificazione-&amp;-Regressione">
 <h2>Parte 1: Semplice Classificazione &amp; Regressione<a class="headerlink" href="#Parte-1:-Semplice-Classificazione-&-Regressione" title="Link a questa intestazione">¶</a></h2>
-<section id="1.-Classificazione">
+<div class="section" id="1.-Classificazione">
 <h3>1. Classificazione<a class="headerlink" href="#1.-Classificazione" title="Link a questa intestazione">¶</a></h3>
 <p>Per prima cosa, mostriamo come <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> permetta di allenare una Quantum <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> per risolvere i compiti di classificazione usando il motore di differenziazione automatica in PyTorch. Per illustrare ciò, eseguiremo una <strong>classificazione binaria</strong> su un dataset generato in modo casuale.</p>
 <div class="nbinput docutils container">
@@ -609,7 +608,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_05_torch_connector_4_0.png" src="../_images/tutorials_05_torch_connector_4_0.png" />
 </div>
 </div>
-<section id="A.-Classificazione-con-PyTorch-e-OpflowQNN">
+<div class="section" id="A.-Classificazione-con-PyTorch-e-OpflowQNN">
 <h4>A. Classificazione con PyTorch e <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#A.-Classificazione-con-PyTorch-e-OpflowQNN" title="Link a questa intestazione">¶</a></h4>
 <p>Collegare una <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> a PyTorch è relativamente semplice. Qui lo illustriamo usando la <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>, un caso minore delle <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> introdotto nei tutorial precedenti.</p>
 <div class="nbinput docutils container">
@@ -673,11 +672,11 @@ Initial weights:  [ 0.05426413 -0.09584961  0.02672965  0.04976078 -0.0002986  -
 tensor([-0.0547], grad_fn=&lt;_TorchNNFunctionBackward&gt;)
 </pre></div></div>
 </div>
-<section id="Optimizer">
+<div class="section" id="Optimizer">
 <h5>Optimizer<a class="headerlink" href="#Optimizer" title="Link a questa intestazione">¶</a></h5>
 <p>La scelta dell’optimizer può essere cruciale per il successo dell’addestramento di qualsiasi modello di machine learning. Quando usiamo <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>, abbiamo accesso a tutti gli algoritmi di ottimizzazione definiti nel package [<code class="docutils literal notranslate"><span class="pre">torch.optim</span></code>] (<a class="reference external" href="https://pytorch.org/docs/stable/optim.html">link</a>). Alcuni degli algoritmi più famosi usati in popolari architetture di machine learning includono <em>Adam</em>, <em>SGD</em>, o <em>Adagrad</em>. Ad ogni modo, in questo tutorial useremo l’algoritmo L-BFGS (<code class="docutils literal notranslate"><span class="pre">torch.optim.LBFGS</span></code>), che è uno uno dei più conosciuti algoritmi di ottimizzazione di secondo-ordine per compiti di ottimizzazione numerica.</p>
-</section>
-<section id="Funzione-di-Costo">
+</div>
+<div class="section" id="Funzione-di-Costo">
 <h5>Funzione di Costo<a class="headerlink" href="#Funzione-di-Costo" title="Link a questa intestazione">¶</a></h5>
 <p>Per quanto riguarda la funzioni di costo (loss function), possiamo sfruttare i moduli predefiniti di PyTorch che si posso trovare in <code class="docutils literal notranslate"><span class="pre">torch.nn</span></code>, come ad esempio le loss <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">Cross-Entropy</a> o <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">Mean Squared Error</a>.</p>
 <p><strong>💡 Chiarificazione :</strong> Nel machine learning classico, in genere si utilizza la funzione di costo Cross-Entropy nel caso della classificazione, mentre la MSE nel caso della regressione. Tuttavia, questa raccomandazione assume che l’output della rete di classificazione sia una classe di probabilità con valori nel range [0, 1] (solitamente ottenuto tramite un layer Softmax). Poiché nell’esempio seguente per <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> non c’è questo layer e non applichiamo nessun mapping all’output ( la sezione successiva mostra una esempio di applicazione di un mapping di parità utilizzando <code class="docutils literal notranslate"><span class="pre">CircuitQNNs</span></code>), l’output della QNN può assumere qualsiasi valore nel range [-1, 1]. In caso te lo stessi domandando, per quanto non sia la norma, è esattamente questa la ragione per cui la MSELoss viene utilizzata in questo esempio di classificazione (ma incoraggiamo a sperimentare con diverse funzioni di costo e vedere qual è l” impatto sui risultati sul training).</p>
@@ -791,9 +790,9 @@ Accuracy: 0.55
 </div>
 </div>
 <p>I cerchi rossi indicano dei dati che sono stati classificati in modo errato.</p>
-</section>
-</section>
-<section id="B.-Classificazione-con-PyTorch-e-CircuitQNN">
+</div>
+</div>
+<div class="section" id="B.-Classificazione-con-PyTorch-e-CircuitQNN">
 <h4>B. Classificazione con PyTorch e <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#B.-Classificazione-con-PyTorch-e-CircuitQNN" title="Link a questa intestazione">¶</a></h4>
 <p>Collegare una <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> a PyTorch richiede un po” più di attenzione rispetto alle <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>. Senza il setup corretto non sarà possibile la backpropagation.</p>
 <p>In particolare, dobbiamo assicurarci di restituire un vettore di probabilità denso nel pass forward della rete (<code class="docutils literal notranslate"><span class="pre">sparse=False</span></code>). Questo parametro è impostato a <code class="docutils literal notranslate"><span class="pre">False</span></code> di default, quindi dobbiamo solo essere sicuri che non venga modificato.</p>
@@ -935,9 +934,9 @@ Accuracy: 0.75
 </div>
 </div>
 <p>I cerchi rossi indicano dei dati che sono stati classificati in modo errato.</p>
-</section>
-</section>
-<section id="2.-Regressione">
+</div>
+</div>
+<div class="section" id="2.-Regressione">
 <h3>2. Regressione<a class="headerlink" href="#2.-Regressione" title="Link a questa intestazione">¶</a></h3>
 <p>Utilizziamo un modello basato su <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> per mostrare anche un esempio su come eseguire una regressione. Il dataset scelto in questo caso è stato generato in modo casuale seguendo una funzione seno.</p>
 <div class="nbinput docutils container">
@@ -968,7 +967,7 @@ Accuracy: 0.75
 <img alt="../_images/tutorials_05_torch_connector_19_0.png" src="../_images/tutorials_05_torch_connector_19_0.png" />
 </div>
 </div>
-<section id="A.-Regressione-con-PyTorch-e-OpflowQNN">
+<div class="section" id="A.-Regressione-con-PyTorch-e-OpflowQNN">
 <h4>A. Regressione con PyTorch e <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#A.-Regressione-con-PyTorch-e-OpflowQNN" title="Link a questa intestazione">¶</a></h4>
 <p>La definizione della rete e il processo di allenamento saranno gli stessi del caso della classificazione con la <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>. In questo caso definiamo la nostra feature map e l’ansatz, invece di usare valori predefiniti.</p>
 <div class="nbinput docutils container">
@@ -1105,11 +1104,11 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 <img alt="../_images/tutorials_05_torch_connector_25_0.png" src="../_images/tutorials_05_torch_connector_25_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section id="Part-2:-Classificazione-su-MNIST,-QNNs-Ibride">
+<div class="section" id="Part-2:-Classificazione-su-MNIST,-QNNs-Ibride">
 <h2>Part 2: Classificazione su MNIST, QNNs Ibride<a class="headerlink" href="#Part-2:-Classificazione-su-MNIST,-QNNs-Ibride" title="Link a questa intestazione">¶</a></h2>
 <p>In questa seconda parte, mostriamo come sfruttare una neural network ibrida quantistica-classica, usando <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>, per eseguire una complessa classificazione sul dataset MNIST che contiene immagini di numeri scritti a mano.</p>
 <p>Puoi leggere la sezione dedicata nel <a class="reference external" href="https://qiskit.org/textbook/ch-machine-learning/machine-learning-qiskit-pytorch.html">Qiskit Textbook</a>. per una più dettagliata spiegazione sulle neural network ibride quantistico-classiche (pre-<code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>).</p>
@@ -1129,7 +1128,7 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-<section id="Step-1:-Definire-i-Data-loader-per-train-e-test">
+<div class="section" id="Step-1:-Definire-i-Data-loader-per-train-e-test">
 <h3>Step 1: Definire i Data-loader per train e test<a class="headerlink" href="#Step-1:-Definire-i-Data-loader-per-train-e-test" title="Link a questa intestazione">¶</a></h3>
 <p>Utilizziamo la <a class="reference external" href="https://pytorch.org/vision/stable/datasets.html">API</a> <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> per scaricare direttamente un sottoinsieme del <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST dataset</a> e definire un torch <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> (<a class="reference external" href="https://pytorch.org/docs/stable/data.html">link</a>) per train e test.</p>
 <div class="nbinput nblast docutils container">
@@ -1219,8 +1218,8 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-2:-Definire-la-QNN-ed-il-Modello-Ibrido">
+</div>
+<div class="section" id="Step-2:-Definire-la-QNN-ed-il-Modello-Ibrido">
 <h3>Step 2: Definire la QNN ed il Modello Ibrido<a class="headerlink" href="#Step-2:-Definire-la-QNN-ed-il-Modello-Ibrido" title="Link a questa intestazione">¶</a></h3>
 <p>Questo secondo step mostra il potere del <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>. Dopo aver definito il nostro layer di quantum neural network ( in questo caso una <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>), inizializzando un torch connector nel modo seguente <code class="docutils literal notranslate"><span class="pre">TorchConnector(qnn)</span></code>, possiamo inglobarla in un layer <code class="docutils literal notranslate"><span class="pre">Module</span></code> di Torch.</p>
 <p><strong>⚠️ Attenzione:</strong> Per avere una adeguate backpropagation dei gradienti dei modelli ibridi DOBBIAMO impostare il parametro iniziale <code class="docutils literal notranslate"><span class="pre">input_gradients</span></code> a TRUE durante l’inializzazione della qnn.</p>
@@ -1292,8 +1291,8 @@ ComposedOp([
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-3:-Addestramento-(Training)">
+</div>
+<div class="section" id="Step-3:-Addestramento-(Training)">
 <h3>Step 3: Addestramento (Training)<a class="headerlink" href="#Step-3:-Addestramento-(Training)" title="Link a questa intestazione">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1362,8 +1361,8 @@ Training [100%] Loss: -2.4982
 <img alt="../_images/tutorials_05_torch_connector_40_0.png" src="../_images/tutorials_05_torch_connector_40_0.png" />
 </div>
 </div>
-</section>
-<section id="Step-4:-Valutazione-del-modello-(Evaluation)">
+</div>
+<div class="section" id="Step-4:-Valutazione-del-modello-(Evaluation)">
 <h3>Step 4: Valutazione del modello (Evaluation)<a class="headerlink" href="#Step-4:-Valutazione-del-modello-(Evaluation)" title="Link a questa intestazione">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -1466,9 +1465,9 @@ Performance on test data:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

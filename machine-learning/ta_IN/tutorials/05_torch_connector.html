@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>டார்ச் இணைப்பான் மற்றும் கலப்பின QNN கள் &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,10 +510,10 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/05_torch_connector.ipynb">docs/tutorials/05_torch_connector.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="டார்ச்-இணைப்பான்-மற்றும்-கலப்பின-QNN-கள்">
+<div class="section" id="டார்ச்-இணைப்பான்-மற்றும்-கலப்பின-QNN-கள்">
 <h1>டார்ச் இணைப்பான் மற்றும் கலப்பின QNN கள்<a class="headerlink" href="#டார்ச்-இணைப்பான்-மற்றும்-கலப்பின-QNN-கள்" title="Permalink to this headline">¶</a></h1>
 <p>இந்த பயிற்சிகள் Qiskit-ன் <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> வகுப்பை அறிமுகப்படுத்துகிறது, மேலும் <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> Qiskit பொறி கற்றலிருந்து எந்த ஒரு <code class="docutils literal notranslate"><span class="pre">நியூரல்</span> <span class="pre">நெட்வொர்க்</span></code> ஐ ஒரு இயற்கையான ஒருங்கிணைப்பை அனுமதிக்கிறது. <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> ஒரு Qiskit <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> ஐ எடுத்து அதை PyTorch <code class="docutils literal notranslate"><span class="pre">தொகுதி</span></code> ஆக கிடைக்கச் செய்கிறது. இதன் விளைவாக தொகுதி PyTorch கிளாசிக்கல் கட்டமைப்புகளில் தடையின்றி இணைக்கப்படலாம் மற்றும் கூடுதல் பரிசீலனைகள் இல்லாமல் கூட்டாக பயிற்சி பெறலாம், நாவல் <strong>hybrid quantum-classical</strong> பொறி கற்றல் கட்டமைப்புகளின் வளர்ச்சி மற்றும் சோதனைக்கு உதவுகிறது.</p>
-<section id="உள்ளடக்கம்:">
+<div class="section" id="உள்ளடக்கம்:">
 <h2>உள்ளடக்கம்:<a class="headerlink" href="#உள்ளடக்கம்:" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="#Part-1:-Simple-Classification-&amp;-Regression">பகுதி 1: எளிய வகைப்பாடு &amp; பின்னடைவு</a></p>
 <p>இந்த பயிற்சிகளின் முதல் பகுதி எளிய வகைப்பாடு மற்றும் பின்னடைவு பணிகளுக்கு பைடார்ச்சின் தானியங்கி வேறுபாடு இயந்திரத்தை (<code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code>, <a class="reference external" href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">link</a>) பயன்படுத்தி எப்படி குவாண்டம் neural network-களைப் பயிற்றுவிக்க முடியும் என்பதைக் காட்டுகிறது.</p>
@@ -561,10 +560,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="பகுதி-1:-எளிய-வகைப்பாடு-மற்றும்-பின்னடைவு">
+</div>
+<div class="section" id="பகுதி-1:-எளிய-வகைப்பாடு-மற்றும்-பின்னடைவு">
 <h2>பகுதி 1: எளிய வகைப்பாடு மற்றும் பின்னடைவு<a class="headerlink" href="#பகுதி-1:-எளிய-வகைப்பாடு-மற்றும்-பின்னடைவு" title="Permalink to this headline">¶</a></h2>
-<section id="1.-வகைப்பாடு">
+<div class="section" id="1.-வகைப்பாடு">
 <h3>1. வகைப்பாடு<a class="headerlink" href="#1.-வகைப்பாடு" title="Permalink to this headline">¶</a></h3>
 <p>முதலில், <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> ஒரு குவாண்டம் <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> ஐ எவ்வாறு பயிற்சி அளிக்க அனுமதிக்கிறது என்பதை PyTorch இன் தானியங்கி வேறுபாடு இயந்திரத்தைப் பயன்படுத்தி ஒரு வகைப்படுத்தல் பணிகளைத் தீர்க்க உதவுகிறது. இதை விளக்கும் பொருட்டு, <strong>binary classification</strong> தோராயமாக உருவாக்கப்பட்ட தரவுத்தொகுப்பில் செய்வோம்.</p>
 <div class="nbinput docutils container">
@@ -609,7 +608,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_05_torch_connector_4_0.png" src="../_images/tutorials_05_torch_connector_4_0.png" />
 </div>
 </div>
-<section id="A.-PyTorch-மற்றும்-OpflowQNN-உடன்-வகைப்பாடு">
+<div class="section" id="A.-PyTorch-மற்றும்-OpflowQNN-உடன்-வகைப்பாடு">
 <h4>A. PyTorch மற்றும் <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> உடன் வகைப்பாடு<a class="headerlink" href="#A.-PyTorch-மற்றும்-OpflowQNN-உடன்-வகைப்பாடு" title="Permalink to this headline">¶</a></h4>
 <p>ஒரு <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ஐ PyTorch உடன் இணைப்பது ஒப்பீட்டளவில் நேரடியானது. முந்தைய பயிற்சிகளில் அறிமுகப்படுத்தப்பட்ட <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> இன் துணை வழக்கு <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> ஐப் பயன்படுத்தி இங்கே விளக்குகிறோம்.</p>
 <div class="nbinput docutils container">
@@ -673,11 +672,11 @@ Initial weights:  [ 0.05426413 -0.09584961  0.02672965  0.04976078 -0.0002986  -
 tensor([-0.0547], grad_fn=&lt;_TorchNNFunctionBackward&gt;)
 </pre></div></div>
 </div>
-<section id="ஆப்டிமைசெர்">
+<div class="section" id="ஆப்டிமைசெர்">
 <h5>ஆப்டிமைசெர்<a class="headerlink" href="#ஆப்டிமைசெர்" title="Permalink to this headline">¶</a></h5>
 <p>எந்த இயந்திர கற்றல் மாதிரியையும் பயிற்றுவிப்பதற்கான ஆப்டிமைசரின் தேர்வு எங்கள் பயிற்சியின் முடிவின் வெற்றியை தீர்மானிப்பதில் முக்கியமானதாக இருக்கும். <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> ஐப் பயன்படுத்தும் போது, [<code class="docutils literal notranslate"><span class="pre">torch.optim</span></code>] தொகுப்பில் (<a class="reference external" href="https://pytorch.org/docs/stable/optim.html">இணைப்பு</a>) வரையறுக்கப்பட்ட அனைத்து ஆப்டிமைசர் வழிமுறைகளையும் அணுகலாம். பிரபலமான இயந்திர கற்றல் கட்டமைப்புகளில் பயன்படுத்தப்படும் மிகவும் பிரபலமான வழிமுறைகளில் <em>Adam</em>, <em>SDG</em>, அல்லது <em>Adagrad</em> ஆகியவை அடங்கும். எவ்வாறாயினும், இந்த டுடோரியலுக்கு நாம் L-BFGS அல்காரிதம் (<code class="docutils literal notranslate"><span class="pre">torch.optim.LBFGS</span></code>) ஐப் பயன்படுத்துவோம்.</p>
-</section>
-<section id="Loss-Function">
+</div>
+<div class="section" id="Loss-Function">
 <h5>Loss Function<a class="headerlink" href="#Loss-Function" title="Permalink to this headline">¶</a></h5>
 <p>Loss function பொறுத்தவரை, <code class="docutils literal notranslate"><span class="pre">டார்ச்.என்என்</span></code> இலிருந்து பைடார்ச்சின் முன் வரையறுக்கப்பட்ட தொகுதிகளையும் நாம் பயன்படுத்திக் கொள்ளலாம், அதாவது, <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">கிராஸ்-என்ட்ரோபி</a> அல்லது <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">சராசரி சதுர பிழை</a> இழப்புகள்.</p>
 <p><strong>💡விளக்கம்:</strong>, இந்த பரிந்துரை வகைப்படுத்தல் நெட்வொர்க்கின் வெளியீடு [0,1] வரம்பில் ஒரு வகுப்பு நிகழ்தகவு மதிப்பு என்ற அனுமானத்தின் கீழ் வழங்கப்படுகிறது (பொதுவாக இது ஒரு Softmax அடுக்கு மூலம் அடையப்படுகிறது). <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> க்கான பின்வரும் உதாரணம் அத்தகைய லேயரை உள்ளடக்கவில்லை, மேலும் வெளியீட்டில் எந்த மேப்பிங்கையும் நாங்கள் பயன்படுத்தவில்லை (பின்வரும் பிரிவு <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> உடன் சமநிலை மேப்பிங்கின் உதாரணத்தைக் காட்டுகிறது), QNN வெளியீடு வரம்பில் எந்த மதிப்பையும் எடுக்கலாம் [-1,1]. நீங்கள் ஆச்சரியப்படுகிறீர்கள் என்றால், இந்த குறிப்பிட்ட உதாரணம் MSELoss ஐ வகைப்படுத்தலுக்குப் பயன்படுத்துவதற்கு இது விதிமுறையாக இல்லாவிட்டாலும் (ஆனால் வெவ்வேறு இழப்புச் செயல்பாடுகளை பரிசோதிக்கவும், பயிற்சி முடிவுகளை எப்படி பாதிக்கலாம் என்பதைப் பார்க்கவும் நாங்கள் ஊக்குவிக்கிறோம்).</p>
@@ -791,9 +790,9 @@ Accuracy: 0.55
 </div>
 </div>
 <p>சிவப்பு வட்டங்கள் தவறாக வகைப்படுத்தப்பட்ட தரவு புள்ளிகளைக் குறிக்கின்றன.</p>
-</section>
-</section>
-<section id="B.-PyTorch-மற்றும்-CircuitQNN-உடன்-வகைப்பாடு">
+</div>
+</div>
+<div class="section" id="B.-PyTorch-மற்றும்-CircuitQNN-உடன்-வகைப்பாடு">
 <h4>B. PyTorch மற்றும் <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> உடன் வகைப்பாடு<a class="headerlink" href="#B.-PyTorch-மற்றும்-CircuitQNN-உடன்-வகைப்பாடு" title="Permalink to this headline">¶</a></h4>
 <p>PyTorch உடன் ஒரு <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ஐ இணைப்பதற்கு <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ஐ விட சற்று அதிக கவனம் தேவை. சரியான அமைப்பு இல்லாமல், பின்னடைவு சாத்தியமில்லை.</p>
 <p>குறிப்பாக, நெட்வொர்க்கின் முன்னோக்கி பாஸில் அடர்த்தியான சாத்தியக்கூறுகளை நாங்கள் திருப்பித் தருகிறோம் என்பதை உறுதி செய்ய வேண்டும் (<code class="docutils literal notranslate"><span class="pre">spares=False</span></code>). இந்த அளவுரு இயல்பாக <code class="docutils literal notranslate"><span class="pre">False</span></code> என அமைக்கப்பட்டுள்ளது, எனவே அது மாற்றப்படவில்லை என்பதை நாம் உறுதி செய்ய வேண்டும்.</p>
@@ -935,9 +934,9 @@ Accuracy: 0.75
 </div>
 </div>
 <p>சிவப்பு வட்டங்கள் தவறாக வகைப்படுத்தப்பட்ட தரவு புள்ளிகளைக் குறிக்கின்றன.</p>
-</section>
-</section>
-<section id="2.-பின்னடைவு">
+</div>
+</div>
+<div class="section" id="2.-பின்னடைவு">
 <h3>2. பின்னடைவு<a class="headerlink" href="#2.-பின்னடைவு" title="Permalink to this headline">¶</a></h3>
 <p>ஒரு பின்னடைவு பணியை எப்படிச் செய்வது என்பதை விளக்குவதற்கு <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> அடிப்படையிலான மாதிரியைப் பயன்படுத்துகிறோம். இந்த வழக்கில் தேர்ந்தெடுக்கப்பட்ட தரவுத் தொகுப்பு சைன் அலைகளைத் தொடர்ந்து தோராயமாக உருவாக்கப்பட்டது.</p>
 <div class="nbinput docutils container">
@@ -968,7 +967,7 @@ Accuracy: 0.75
 <img alt="../_images/tutorials_05_torch_connector_19_0.png" src="../_images/tutorials_05_torch_connector_19_0.png" />
 </div>
 </div>
-<section id="A.-PyTorch-மற்றும்-OpflowQNN-உடன்-பின்னடைவு">
+<div class="section" id="A.-PyTorch-மற்றும்-OpflowQNN-உடன்-பின்னடைவு">
 <h4>A. PyTorch மற்றும் <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> உடன் பின்னடைவு<a class="headerlink" href="#A.-PyTorch-மற்றும்-OpflowQNN-உடன்-பின்னடைவு" title="Permalink to this headline">¶</a></h4>
 <p>நெட்வொர்க் வரையறை மற்றும் பயிற்சி வளையம் <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> ஐப் பயன்படுத்தி வகைப்பாடு பணிக்கு ஒத்ததாக இருக்கும். இந்த வழக்கில், இயல்புநிலை மதிப்புகளைப் பயன்படுத்துவதற்குப் பதிலாக, எங்கள் சொந்த அம்ச வரைபடம் மற்றும் அன்சாட்ஸை நாங்கள் வரையறுக்கிறோம்.</p>
 <div class="nbinput docutils container">
@@ -1105,11 +1104,11 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 <img alt="../_images/tutorials_05_torch_connector_25_0.png" src="../_images/tutorials_05_torch_connector_25_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section id="பகுதி-2:-MNIST-வகைப்பாடு,-கலப்பின-QNN-கள்">
+<div class="section" id="பகுதி-2:-MNIST-வகைப்பாடு,-கலப்பின-QNN-கள்">
 <h2>பகுதி 2: MNIST வகைப்பாடு, கலப்பின QNN கள்<a class="headerlink" href="#பகுதி-2:-MNIST-வகைப்பாடு,-கலப்பின-QNN-கள்" title="Permalink to this headline">¶</a></h2>
 <p>இந்த இரண்டாம் பாகத்தில், MNIST கையால் எழுதப்பட்ட இலக்கங்கள் தரவுத்தொகுப்பில் மிகவும் சிக்கலான பட வகைப்பாடு பணியைச் செய்ய, <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> ஐப் பயன்படுத்தி ஒரு கலப்பின குவாண்டம்-கிளாசிக்கல் நரம்பியல் நெட்வொர்க்கை எவ்வாறு மேம்படுத்துவது என்பதைக் காண்பிப்போம்.</p>
 <p>ஹைபிரிட் குவாண்டம்-கிளாசிக்கல் நியூரல் நெட்வொர்க்குகள் பற்றிய விரிவான (முன்-<code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>) விளக்கத்திற்கு, நீங்கள் <a class="reference external" href="https://qiskit.org/textbook/ch-machine-learning/machine-learning-qiskit-pytorch.html">Qiskit Textbook</a> இல் தொடர்புடைய பிரிவைப் பார்க்கலாம்.</p>
@@ -1129,7 +1128,7 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-<section id="படி-1:-ரயில்-மற்றும்-சோதனைக்கான-தரவு-ஏற்றிகளை-வரையறுத்தல்">
+<div class="section" id="படி-1:-ரயில்-மற்றும்-சோதனைக்கான-தரவு-ஏற்றிகளை-வரையறுத்தல்">
 <h3>படி 1: ரயில் மற்றும் சோதனைக்கான தரவு ஏற்றிகளை வரையறுத்தல்<a class="headerlink" href="#படி-1:-ரயில்-மற்றும்-சோதனைக்கான-தரவு-ஏற்றிகளை-வரையறுத்தல்" title="Permalink to this headline">¶</a></h3>
 <p>நாங்கள் <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> <a class="reference external" href="https://pytorch.org/vision/stable/datasets.html">API</a> ஐப் பயன்படுத்தி <a class="reference external" href="https://en.org/wiki/MNIST_database">MNIST தரவுத்தொகுப்பு</a> மற்றும் டார்ச்சை வரையறுக்கவும் <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>s (<a class="reference external" href="https://pytorch.org/docs/stable/data.html">இணைப்பு</a>) ரயில் மற்றும் சோதனை.</p>
 <div class="nbinput nblast docutils container">
@@ -1219,8 +1218,8 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-</section>
-<section id="படி-2:-QNN-மற்றும்-கலப்பின-மாதிரியை-வரையறுத்தல்">
+</div>
+<div class="section" id="படி-2:-QNN-மற்றும்-கலப்பின-மாதிரியை-வரையறுத்தல்">
 <h3>படி 2: QNN மற்றும் கலப்பின மாதிரியை வரையறுத்தல்<a class="headerlink" href="#படி-2:-QNN-மற்றும்-கலப்பின-மாதிரியை-வரையறுத்தல்" title="Permalink to this headline">¶</a></h3>
 <p>இந்த இரண்டாவது படி <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> இன் சக்தியைக் காட்டுகிறது. எங்கள் குவாண்டம் நரம்பியல் நெட்வொர்க் லேயரை வரையறுத்த பிறகு (இந்த விஷயத்தில், <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>), <code class="docutils literal notranslate"><span class="pre">TorchConnector(qnn)</span></code> என டார்ச் கனெக்டரை துவக்குவதன் மூலம் அதை <code class="docutils literal notranslate"><span class="pre">Module</span></code> இல் ஒரு லேயரில் உட்பொதிக்கலாம்.</p>
 <p><a href="#id1"><span class="problematic" id="id2">**</span></a>⚠️கவனம்: ** கலப்பின மாடல்களில் போதிய சாய்வு பின்னணி இருக்க, நாம் qnn துவக்கத்தின் போது ஆரம்ப அளவுரு <code class="docutils literal notranslate"><span class="pre">input_gradients</span></code> ஐ TRUE க்கு அமைக்க வேண்டும்.</p>
@@ -1292,8 +1291,8 @@ ComposedOp([
 </pre></div>
 </div>
 </div>
-</section>
-<section id="படி-3:-பயிற்சி">
+</div>
+<div class="section" id="படி-3:-பயிற்சி">
 <h3>படி 3: பயிற்சி<a class="headerlink" href="#படி-3:-பயிற்சி" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1362,8 +1361,8 @@ Training [100%] Loss: -2.4982
 <img alt="../_images/tutorials_05_torch_connector_40_0.png" src="../_images/tutorials_05_torch_connector_40_0.png" />
 </div>
 </div>
-</section>
-<section id="படி-4:-மதிப்பீடு">
+</div>
+<div class="section" id="படி-4:-மதிப்பீடு">
 <h3>படி 4: மதிப்பீடு<a class="headerlink" href="#படி-4:-மதிப்பீடு" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -1466,9 +1465,9 @@ Performance on test data:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

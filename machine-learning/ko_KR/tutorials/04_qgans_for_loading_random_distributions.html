@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ko-KR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>무작위 분포를 로드하기 위한 qGAN &mdash; Qiskit Machine Learning 0.2.1 문서</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a> 에서 생성되었다.</p>
 </div>
-<section id="무작위-분포를-로드하기-위한-qGAN">
+<div class="section" id="무작위-분포를-로드하기-위한-qGAN">
 <h1>무작위 분포를 로드하기 위한 qGAN<a class="headerlink" href="#무작위-분포를-로드하기-위한-qGAN" title="이 표제에 대한 퍼머링크">¶</a></h1>
 <p><span class="math notranslate nohighlight">\(k\)</span> 차원 데이터 샘플을 고려할 때, 우리는 양자 생성적 적대 신경망 (quantum Generative Adversarial Network) (qGAN) 를 골라 데이터의 근본적인 무작위 분포를 학습하고 이를 양자 상태로 직접 로드한다.</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="훈련-데이터-불러오기">
+<div class="section" id="훈련-데이터-불러오기">
 <h2>훈련 데이터 불러오기<a class="headerlink" href="#훈련-데이터-불러오기" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>첫째, <span class="math notranslate nohighlight">\(k\)</span> 차원 훈련 데이터 샘플 (여기서 k= 1) 을 로드해야 한다.</p>
 <p>다음으로, 데이터 해상도가 설정되고, 즉, 최소/최대 데이터 값들 및 각각의 데이터 차원을 표현하기 위해 사용되는 큐비트들의 수가 설정된다.</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-초기화하기">
+</div>
+<div class="section" id="qGAN-초기화하기">
 <h2>qGAN 초기화하기<a class="headerlink" href="#qGAN-초기화하기" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>qGAN은 양자생성기 <span class="math notranslate nohighlight">\(G_{\theta}\)</span> , 즉 ansatz와 고전적인 식별자 <span class="math notranslate nohighlight">\(D_{\phi}\)</span> (신경망)로 구성되어 있다.</p>
 <p>양자 생성기를 구현하기 위해서는 <span class="math notranslate nohighlight">\(R_Y\)</span> 회전을 구현하는 깊이 1 의 ansatz와 입력 상태로 균일한 분포를 취하는 <span class="math notranslate nohighlight">\(CZ\)</span> 게이트를 선택해야 한다. 특히 <span class="math notranslate nohighlight">\(k&gt;1\)</span> 의 경우 생성기의 매개변수를 신중하게 선택해야 한다. 예를 들어, 더 높은 회로 깊이가 더 복잡한 구조의 표현을 가능하게 하기 때문에 회로 깊이는 <span class="math notranslate nohighlight">\(k&gt;1\)</span> 이어야 한다.</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-학습-실행하기">
+</div>
+<div class="section" id="qGAN-학습-실행하기">
 <h2>qGAN 학습 실행하기<a class="headerlink" href="#qGAN-학습-실행하기" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>훈련 중에 식별자 및 생성기의 매개변수는 다음과 같은 손실 함수가 번갈아 업데이트된다.</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="학습-진행-및-결과">
+</div>
+<div class="section" id="학습-진행-및-결과">
 <h2>학습 진행 및 결과<a class="headerlink" href="#학습-진행-및-결과" title="이 표제에 대한 퍼머링크">¶</a></h2>
 <p>이제, 학습하는 동안 생성기의 및 식별자의 손실 함수의 전개 뿐만 아니라 훈련된 및 타겟 분포 사이의 상대적 엔트로피의 진행을 플로팅한다.</p>
 <p>마지막으로, 학습된 분포의 누적 분포 함수 (CDF) 를 타겟 분포의 CDF와 비교한다.</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

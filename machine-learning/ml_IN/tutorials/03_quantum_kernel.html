@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ml-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ക്വാണ്ടം കേർണൽ മെഷീൻ ലേണിംഗ് &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<section id="ക്വാണ്ടം-കേർണൽ-മെഷീൻ-ലേണിംഗ്">
+<div class="section" id="ക്വാണ്ടം-കേർണൽ-മെഷീൻ-ലേണിംഗ്">
 <h1>ക്വാണ്ടം കേർണൽ മെഷീൻ ലേണിംഗ്<a class="headerlink" href="#ക്വാണ്ടം-കേർണൽ-മെഷീൻ-ലേണിംഗ്" title="Permalink to this headline">¶</a></h1>
 <p>ഡാറ്റയിലെ പാറ്റേണുകൾ കണ്ടെത്തുകയും പഠിക്കുകയും ചെയ്യുക എന്നതാണ് മെശീൻ ലേണിംഗിൻ്റെ പൊതുവായ ചുമതല.പല ഡാറ്റാസെറ്റുകൾ‌ക്കും, കേർ‌ണൽ‌ ഫംഗ്ഷന്റെ ഉപയോഗത്തിലൂടെ ഡാറ്റാ പോയിൻറുകൾ‌ ഉയർന്ന ഡൈമെൻ‌ഷൻ‌ ഫീച്ചർ‌ സ്‌പെയ്‌സിൽ‌ നന്നായി മനസ്സിലാക്കാം: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> ഇവിടെ <span class="math notranslate nohighlight">\(k\)</span> എന്നത് കേർണൽ ഫംഗ്ഷനാണ്, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> ഇവ <span class="math notranslate nohighlight">\(n\)</span> ഡൈമൻഷണൽ ഇൻപുട്ടുകളാണ്, <span class="math notranslate nohighlight">\(f\)</span> എന്നത് <span class="math notranslate nohighlight">\(n\)</span>- ഡൈമൻഷനിൽ നിന്ന് <span class="math notranslate nohighlight">\(m\)</span>- ഡൈമൻഷൻ സ്‌പെയ്‌സിലേക്കുള്ള മാപ്പാണ്, കൂടാതെ <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> എന്നത് ഡോട്ട് പ്രൊഡക്റ്റിനെ സൂചിപ്പിക്കുന്നു. പരിമിത ഡാറ്റ പരിഗണിക്കുമ്പോൾ, ഒരു കേർണൽ ഫംഗ്ഷനെ ഒരു മാട്രിക്സായി പ്രതിനിധീകരിക്കാം: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>ക്വാണ്ടം കേർണൽ മെഷീൻ ലേണിംഗിൽ, ഒരു ക്വാണ്ടം സവിശേഷത മാപ്പ് <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> നെ ഒരു ക്ലാസിക്കൽ സവിശേഷത വെക്റ്ററിനെ <span class="math notranslate nohighlight">\(\vec{x}\)</span> ഒരു ക്വാണ്ടം ഹിൽബർട്ട് സ്പേസിലേക്ക് <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span> മാപ്പ് ചെയ്യാൻ ഉപയോഗിക്കുന്നു, അങ്ങനെ <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. കൂടുതൽ വിവരങ്ങൾക്ക് <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> കാണുക.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classification">
+<div class="section" id="Classification">
 <h2>Classification<a class="headerlink" href="#Classification" title="Permalink to this headline">¶</a></h2>
 <p>ഞമ്മളുടെ വർഗ്ഗീകരണ ഉദാഹരണത്തിനായി, <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> പഠനത്തിൽ വിവരിച്ചിരിക്കുന്നതുപോലെ <em>ad hoc dataset</em> ഉം, കൂടാതെ <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a> (<code class="docutils literal notranslate"><span class="pre">svc</span></code>)അൽഗോരിതവും ഉപയോഗിക്കും.</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="ക്ലസ്റ്ററിംഗ്">
+</div>
+<div class="section" id="ക്ലസ്റ്ററിംഗ്">
 <h2>ക്ലസ്റ്ററിംഗ്<a class="headerlink" href="#ക്ലസ്റ്ററിംഗ്" title="Permalink to this headline">¶</a></h2>
 <p>ഞമ്മളുടെ ക്ലസ്റ്ററിംഗ് ഉദാഹരണത്തിനായി, <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> പഠനത്തിൽ വിവരിച്ചിരിക്കുന്നതുപോലെ <em>ad hoc dataset</em> ഉം, കൂടാതെ <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a href="#id1"><span class="problematic" id="id2">``</span></a>spectral``അൽഗോരിതവും ഉപയോഗിക്കും.</p>
 <p>രണ്ട് ക്ലാസുകൾക്കിടയിലുള്ള വലുതാക്കിയ വിടവ് ഉപയോഗിച്ചു ഞമ്മൾ ഡാറ്റാസെറ്റിനെ ഉണ്ടാക്കുകയും, കൂടാതെ ക്ലസ്റ്ററിംഗ് ഒരു മേൽനോട്ടമില്ലാത്ത മെഷീൻ ലേണിംഗ് ടാസ്ക് ആയതിനാൽ, ഞങ്ങൾക്ക് ഒരു പരീക്ഷണ സാമ്പിൾ ആവശ്യമില്ല.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

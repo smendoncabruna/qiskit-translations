@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ml-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>റാൻഡം ഡിസ്ട്രിബൂഷൻ ലോഡുചെയ്യുന്നതിനുള്ള qGAN- കൾ &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a>.</p>
 </div>
-<section id="റാൻഡം-ഡിസ്ട്രിബൂഷൻ-ലോഡുചെയ്യുന്നതിനുള്ള-qGAN--കൾ">
+<div class="section" id="റാൻഡം-ഡിസ്ട്രിബൂഷൻ-ലോഡുചെയ്യുന്നതിനുള്ള-qGAN--കൾ">
 <h1>റാൻഡം ഡിസ്ട്രിബൂഷൻ ലോഡുചെയ്യുന്നതിനുള്ള qGAN- കൾ<a class="headerlink" href="#റാൻഡം-ഡിസ്ട്രിബൂഷൻ-ലോഡുചെയ്യുന്നതിനുള്ള-qGAN--കൾ" title="Permalink to this headline">¶</a></h1>
 <p>നൽകിയിട്ടുള്ളത് <span class="math notranslate nohighlight">\(k\)</span>-ഡൈമൻഷണൽ ഡാറ്റ സാമ്പിളുകൾ, ഡാറ്റയുടെ അടിസ്ഥാന റാൻഡം ഡിസ്ട്രിബൂഷനിനെക്കുറിച്ച് മനസിലാക്കുന്നതിനും നേരിട്ട് ഒരു ക്വാണ്ടം അവസ്ഥയിലേക്ക് ലോഡുചെയ്യുന്നതിനും ഞമ്മൾ ഒരു ക്വാണ്ടം ജനറേറ്റീവ് അഡ്വേർസറിയൽ നെറ്റ്‌വർക്ക് (qGAN) ഉപയോഗിക്കുന്നു:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="പരിശീലന-ഡാറ്റ-ലോഡുചെയ്യുക">
+<div class="section" id="പരിശീലന-ഡാറ്റ-ലോഡുചെയ്യുക">
 <h2>പരിശീലന ഡാറ്റ ലോഡുചെയ്യുക<a class="headerlink" href="#പരിശീലന-ഡാറ്റ-ലോഡുചെയ്യുക" title="Permalink to this headline">¶</a></h2>
 <p>ആദ്യം, ഞമ്മൾ <span class="math notranslate nohighlight">\(k\)</span>- ഡൈമൻഷണൽ പരിശീലന ഡാറ്റ സാമ്പിളുകൾ ലോഡുചെയ്യേണ്ടതുണ്ട് (ഇവിടെ k = 1).</p>
 <p>അടുത്തതായി, ഡാറ്റ റിസൊലൂഷൻ സജ്ജമാക്കുന്നു, അതായത് മിനിമം / പരമാവധി ഡാറ്റ മൂല്യങ്ങൾ, ഒപ്പം ഓരോ ഡാറ്റ അളവിനെയും പ്രതിനിധീകരിക്കുന്നതിന് ഉപയോഗിക്കുന്ന ക്യൂബിറ്റുകളുടെ എണ്ണവും.</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-സമാരംഭിക്കുക">
+</div>
+<div class="section" id="qGAN-സമാരംഭിക്കുക">
 <h2>qGAN സമാരംഭിക്കുക<a class="headerlink" href="#qGAN-സമാരംഭിക്കുക" title="Permalink to this headline">¶</a></h2>
 <p>qGANൽ ഒരു ക്വാണ്ടം ജനറേറ്റർ <span class="math notranslate nohighlight">\(G_{\theta}\)</span> , അതായത്, ഒരു അൻസാറ്റ്സും, ഒരു ക്ലാസിക്കൽ ഡിസ്ക്രിമിനേറ്റർ <span class="math notranslate nohighlight">\(D_{\phi}\)</span> :, ഒരു ന്യൂറൽ നെറ്റ്‌വർക്കും ഉൾക്കൊള്ളുന്നു.</p>
 <p>ക്വാണ്ടം ജനറേറ്റർ നടപ്പിലാക്കാൻ, <span class="math notranslate nohighlight">\(R_Y\)</span> റൊട്ടേഷനുകളും <span class="math notranslate nohighlight">\(CZ\)</span> ഗേറ്റുകളും നടപ്പിലാക്കുന്ന ഒരു ഡെപ്ത്-<span class="math notranslate nohighlight">\(1\)</span> അൻസാറ്റ്സ് ഞമ്മൾ തിരഞ്ഞെടുക്കുന്നു, അത് ഇൻപുട്ട് സ്റ്റേറ്റായി യൂണിഫോം ഡിസ്ട്രിബൂഷൻ എടുക്കുന്നു. ശ്രദ്ധേയമായി, ഇതിനായി <span class="math notranslate nohighlight">\(k&gt;1\)</span> ജനറേറ്ററിന്റെ പാരാമീറ്ററുകൾ ശ്രദ്ധാപൂർവ്വം തിരഞ്ഞെടുക്കണം. ഉദാഹരണത്തിന്, സർക്യൂട്ട് ഡെപ്ത് ഇതായിരിക്കണം <span class="math notranslate nohighlight">\(&gt;1\)</span> കാരണം ഉയർന്ന സർക്യൂട്ട് ഡെപ്ത് കൂടുതൽ സങ്കീർണ്ണമായ ഘടനകളുടെ പ്രാതിനിധ്യം പ്രാപ്തമാക്കുന്നു.</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="qGAN-പരിശീലനം-പ്രവർത്തിപ്പിക്കുക">
+</div>
+<div class="section" id="qGAN-പരിശീലനം-പ്രവർത്തിപ്പിക്കുക">
 <h2>qGAN പരിശീലനം പ്രവർത്തിപ്പിക്കുക<a class="headerlink" href="#qGAN-പരിശീലനം-പ്രവർത്തിപ്പിക്കുക" title="Permalink to this headline">¶</a></h2>
 <p>പരിശീലന സമയത്ത് ഡിസ്ക്രിമിനേറ്ററുടെയും ജനറേറ്ററിന്റെയും പാരാമീറ്ററുകൾ ഇനിപ്പറയുന്ന ലോസ് ഫംഗ്ഷനുമായി ബന്ധപ്പെട്ട് മാറിമാറി അപ്‌ഡേറ്റുചെയ്യുന്നു:</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="പരിശീലന-പുരോഗതിയും-ഫലവും">
+</div>
+<div class="section" id="പരിശീലന-പുരോഗതിയും-ഫലവും">
 <h2>പരിശീലന പുരോഗതിയും ഫലവും<a class="headerlink" href="#പരിശീലന-പുരോഗതിയും-ഫലവും" title="Permalink to this headline">¶</a></h2>
 <p>ഇപ്പോൾ, പരിശീലന സമയത്ത് ജനറേറ്ററിന്റെ പരിണാമവും ഡിസ്ക്രിമിനേറ്ററുടെ ലോസ്സ് ഫംഗ്ഷനും, അതുപോലെ തന്നെ പരിശീലനം നേടിയതും ടാർഗെറ്റ് ചെയ്ത ഡിസ്ട്രിബൂഷനും തമ്മിലുള്ള എൻട്രോപ്പിയിലെ(relative entropy) പുരോഗതിയും, ഞമ്മൾ പ്ലോട്ട് ചെയ്യുന്നു.</p>
 <p>അവസാനമായി, പരിശീലനം ലഭിച്ച വിതരണത്തിന്റെ ക്യുമുലേറ്റീവ് ഡിസ്ട്രിബ്യൂഷൻ ഫംഗ്ഷനും (CDF) ടാർഗെറ്റ് ഡിസ്ട്രിബ്യൂഷന്റെ സിഡിഎഫുമായി താരതമ്യം ചെയ്യുന്നു.</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

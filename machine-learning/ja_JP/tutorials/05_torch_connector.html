@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Torch コネクターおよびハイブリッド QNN &mdash; Qiskit Machine Learning 0.2.1 ドキュメント</title>
@@ -511,10 +510,10 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/05_torch_connector.ipynb">docs/tutorials/05_torch_connector.ipynb</a> から生成されました。</p>
 </div>
-<section id="Torch-コネクターおよびハイブリッド-QNN">
+<div class="section" id="Torch-コネクターおよびハイブリッド-QNN">
 <h1>Torch コネクターおよびハイブリッド QNN<a class="headerlink" href="#Torch-コネクターおよびハイブリッド-QNN" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>このチュートリアルでは、Qiskitの <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> クラスを紹介します。そして、 <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> が Qiskit 機械学習から PyTorch ワークフローに <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> を自然に統合する方法を示します。 <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> は Qiskitの <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> を受け取り、PyTorchの <code class="docutils literal notranslate"><span class="pre">Module</span></code> として利用できるようにします。 得られたモジュールは、PyTorchの古典アーキテクチャーにシームレスに組み込むことができ、追加の考慮事項なしに一緒に学習することができます。 また、新しい <strong>ハイブリッド量子古典</strong> 機械学習アーキテクチャーの開発とテストを可能にします。</p>
-<section id="目次:">
+<div class="section" id="目次:">
 <h2>目次:<a class="headerlink" href="#目次:" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference external" href="#Part-1:-Simple-Classification-&amp;-Regression">パート 1: 簡単な分類と回帰</a></p>
 <p>このチュートリアルの最初の部分は、PyTorchの自動微分エンジン( <code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code>、 <a class="reference external" href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">リンク</a>) を使用して簡単な分類と回帰タスクのための量子ニューラルネットワークを学習させる方法を示しています。</p>
@@ -561,10 +560,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="パート-1:-簡単な分類と回帰">
+</div>
+<div class="section" id="パート-1:-簡単な分類と回帰">
 <h2>パート 1: 簡単な分類と回帰<a class="headerlink" href="#パート-1:-簡単な分類と回帰" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="1.-分類">
+<div class="section" id="1.-分類">
 <h3>1. 分類<a class="headerlink" href="#1.-分類" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>最初に、<code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> が PyTorch の自動微分エンジンを使用して、分類タスクを解決するために 量子 <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> を学習させる方法を示します。 これを示すために、ランダムに生成されたデータセットに対し <strong>バイナリ分類</strong> を実行します。</p>
 <div class="nbinput docutils container">
@@ -609,7 +608,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_05_torch_connector_4_0.png" src="../_images/tutorials_05_torch_connector_4_0.png" />
 </div>
 </div>
-<section id="A.-PyTorch-と-OpflowQNN-を用いた分類">
+<div class="section" id="A.-PyTorch-と-OpflowQNN-を用いた分類">
 <h4>A. PyTorch と <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> を用いた分類<a class="headerlink" href="#A.-PyTorch-と-OpflowQNN-を用いた分類" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>Linking an <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> to PyTorch is relatively straightforward. Here we illustrate this using the <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>, a sub-case of <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> introduced in previous tutorials.</p>
 <div class="nbinput docutils container">
@@ -673,12 +672,12 @@ Initial weights:  [ 0.05426413 -0.09584961  0.02672965  0.04976078 -0.0002986  -
 tensor([-0.0547], grad_fn=&lt;_TorchNNFunctionBackward&gt;)
 </pre></div></div>
 </div>
-<section id="オプティマイザー">
+<div class="section" id="オプティマイザー">
 <h5>オプティマイザー<a class="headerlink" href="#オプティマイザー" title="このヘッドラインへのパーマリンク">¶</a></h5>
 <p>The choice of optimizer for training any machine learning model can be crucial in determining the success of our training’s outcome. When using <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>, we get access to all of the optimizer algorithms defined in the [<code class="docutils literal notranslate"><span class="pre">torch.optim</span></code>] package (<a class="reference external" href="https://pytorch.org/docs/stable/optim.html">link</a>). Some of the most famous algorithms used in popular machine learning architectures include <em>Adam</em>, <em>SGD</em>, or <em>Adagrad</em>. However, for this tutorial we will be using the L-BFGS algorithm
 (<code class="docutils literal notranslate"><span class="pre">torch.optim.LBFGS</span></code>), one of the most well know second-order optimization algorithms for numerical optimization.</p>
-</section>
-<section id="損失関数">
+</div>
+<div class="section" id="損失関数">
 <h5>損失関数<a class="headerlink" href="#損失関数" title="このヘッドラインへのパーマリンク">¶</a></h5>
 <p>As for the loss function, we can also take advantage of PyTorch’s pre-defined modules from <code class="docutils literal notranslate"><span class="pre">torch.nn</span></code>, such as the <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">Cross-Entropy</a> or <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">Mean Squared Error</a> losses.</p>
 <p><strong>💡 Clarification :</strong> In classical machine learning, the general rule of thumb is to apply a Cross-Entropy loss to classification tasks, and MSE loss to regression tasks. However, this recommendation is given under the assumption that the output of the classification network is a class probability value in the [0,1] range (usually this is achieved through a Softmax layer). Because the following example for <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> does not include such layer, and we don’t apply any mapping to the output
@@ -793,9 +792,9 @@ Accuracy: 0.55
 </div>
 </div>
 <p>The red circles indicate wrongly classified data points.</p>
-</section>
-</section>
-<section id="B.-PyTorch-と-CircuitQNN-を用いた分類">
+</div>
+</div>
+<div class="section" id="B.-PyTorch-と-CircuitQNN-を用いた分類">
 <h4>B. PyTorch と <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> を用いた分類<a class="headerlink" href="#B.-PyTorch-と-CircuitQNN-を用いた分類" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>Linking an <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> to PyTorch requires a bit more attention than <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>. Without the correct setup, backpropagation is not possible.</p>
 <p>In particular, we must make sure that we are returning a dense array of probabilities in the network’s forward pass (<code class="docutils literal notranslate"><span class="pre">sparse=False</span></code>). This parameter is set up to <code class="docutils literal notranslate"><span class="pre">False</span></code> by default, so we just have to make sure that it has not been changed.</p>
@@ -937,9 +936,9 @@ Accuracy: 0.75
 </div>
 </div>
 <p>The red circles indicate wrongly classified data points.</p>
-</section>
-</section>
-<section id="2.-回帰">
+</div>
+</div>
+<div class="section" id="2.-回帰">
 <h3>2. 回帰<a class="headerlink" href="#2.-回帰" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>We use a model based on the <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> to also illustrate how to perform a regression task. The chosen dataset in this case is randomly generated following a sine wave.</p>
 <div class="nbinput docutils container">
@@ -970,7 +969,7 @@ Accuracy: 0.75
 <img alt="../_images/tutorials_05_torch_connector_19_0.png" src="../_images/tutorials_05_torch_connector_19_0.png" />
 </div>
 </div>
-<section id="A.-PyTorchと-OpflowQNN-による回帰">
+<div class="section" id="A.-PyTorchと-OpflowQNN-による回帰">
 <h4>A. PyTorchと <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> による回帰<a class="headerlink" href="#A.-PyTorchと-OpflowQNN-による回帰" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>The network definition and training loop will be analogous to those of the classification task using <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>. In this case, we define our own feature map and ansatz, instead of using the default values.</p>
 <div class="nbinput docutils container">
@@ -1107,11 +1106,11 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 <img alt="../_images/tutorials_05_torch_connector_25_0.png" src="../_images/tutorials_05_torch_connector_25_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section id="パート-2:-MNIST-分類、ハイブリッドQNN">
+<div class="section" id="パート-2:-MNIST-分類、ハイブリッドQNN">
 <h2>パート 2: MNIST 分類、ハイブリッドQNN<a class="headerlink" href="#パート-2:-MNIST-分類、ハイブリッドQNN" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>In this second part, we show how to leverage a hybrid quantum-classical neural network using <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>, to perform a more complex image classification task on the MNIST handwritten digits dataset.</p>
 <p>For a more detailed (pre-<code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>) explanation on hybrid quantum-classical neural networks, you can check out the corresponding section in the <a class="reference external" href="https://qiskit.org/textbook/ch-machine-learning/machine-learning-qiskit-pytorch.html">Qiskit Textbook</a>.</p>
@@ -1131,7 +1130,7 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-<section id="ステップ-1:-学習とテスト用のデータ・ローダーの定義">
+<div class="section" id="ステップ-1:-学習とテスト用のデータ・ローダーの定義">
 <h3>ステップ 1: 学習とテスト用のデータ・ローダーの定義<a class="headerlink" href="#ステップ-1:-学習とテスト用のデータ・ローダーの定義" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>We take advantage of the <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> <a class="reference external" href="https://pytorch.org/vision/stable/datasets.html">API</a> to directly load a subset of the <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST dataset</a> and define torch <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>s (<a class="reference external" href="https://pytorch.org/docs/stable/data.html">link</a>) for train and test.</p>
 <div class="nbinput nblast docutils container">
@@ -1221,8 +1220,8 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-</section>
-<section id="ステップ-2:-QNNとハイブリッド・モデルの定義">
+</div>
+<div class="section" id="ステップ-2:-QNNとハイブリッド・モデルの定義">
 <h3>ステップ 2: QNNとハイブリッド・モデルの定義<a class="headerlink" href="#ステップ-2:-QNNとハイブリッド・モデルの定義" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>This second step shows the power of the <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code>. After defining our quantum neural network layer (in this case, a <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>), we can embed it into a layer in our torch <code class="docutils literal notranslate"><span class="pre">Module</span></code> by initializing a torch connector as <code class="docutils literal notranslate"><span class="pre">TorchConnector(qnn)</span></code>.</p>
 <p><strong>⚠️ 注意:</strong> ハイブリッド・モデルで、適切な勾配バックプロパゲーションを行うためには、QNNの初期化中に、初期パラメーター <code class="docutils literal notranslate"><span class="pre">input_gradients</span></code> を TRUE に設定する必要があります。</p>
@@ -1294,8 +1293,8 @@ ComposedOp([
 </pre></div>
 </div>
 </div>
-</section>
-<section id="ステップ-3:-学習">
+</div>
+<div class="section" id="ステップ-3:-学習">
 <h3>ステップ 3: 学習<a class="headerlink" href="#ステップ-3:-学習" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1364,8 +1363,8 @@ Training [100%] Loss: -2.4982
 <img alt="../_images/tutorials_05_torch_connector_40_0.png" src="../_images/tutorials_05_torch_connector_40_0.png" />
 </div>
 </div>
-</section>
-<section id="ステップ-4:-評価">
+</div>
+<div class="section" id="ステップ-4:-評価">
 <h3>ステップ 4: 評価<a class="headerlink" href="#ステップ-4:-評価" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -1468,9 +1467,9 @@ Performance on test data:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

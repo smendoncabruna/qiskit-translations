@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="pt-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Núcleo Quântico de Aprendizagem de Máquina &mdash; Documentação Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página foi gerada a partir <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<section id="Núcleo-Quântico-de-Aprendizagem-de-Máquina">
+<div class="section" id="Núcleo-Quântico-de-Aprendizagem-de-Máquina">
 <h1>Núcleo Quântico de Aprendizagem de Máquina<a class="headerlink" href="#Núcleo-Quântico-de-Aprendizagem-de-Máquina" title="Link permanente para este título">¶</a></h1>
 <p>A tarefa geral do machine learning é encontrar e estudar padrões em dados. Para muitos conjuntos de dados, os pontos de dados são melhores entendidos em um espaço de recursos de dimensão superior, através do uso de uma função kernel: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> onde <span class="math notranslate nohighlight">\(k\)</span> representa a função kernel, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> são <span class="math notranslate nohighlight">\(n\)</span> inputs dimensionais, <span class="math notranslate nohighlight">\(f\)</span> é um mapa da <span class="math notranslate nohighlight">\(n\)</span>-dimensão para <span class="math notranslate nohighlight">\(m\)</span>-dimensão espacial e <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> denota o produto escalar. Quando consideramos dados finitos, a função kernel pode ser representada como uma matrix: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>No aprendizado de máquina do kernel quântico, um mapa de recurso quântico <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> é utilizado para mapear um vetor de funcionalidade clássico <span class="math notranslate nohighlight">\(\vec{x}\)</span> para um espaço quântico Hilbert <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span>, como este <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. Veja <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Aprendizado supervisionado com espaços de recursos quânticos aprimorados</a> para mais detalhes.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classificação">
+<div class="section" id="Classificação">
 <h2>Classificação<a class="headerlink" href="#Classificação" title="Link permanente para este título">¶</a></h2>
 <p>Para o nosso exemplo de classificação, nós iremos utilizar um <em>conjunto de dados ad hoc</em> como descrito em <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Aprendizado supervisionado com espaços de recursos quânticos aprimorados</a>, e o <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">maquina de vetor de suporte</a> classificação de algoritmo (<code class="docutils literal notranslate"><span class="pre">svc</span></code>).</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="Agrupamento">
+</div>
+<div class="section" id="Agrupamento">
 <h2>Agrupamento<a class="headerlink" href="#Agrupamento" title="Link permanente para este título">¶</a></h2>
 <p>Para nosso exemplo de agrupamento, nós usaremos novamente o <em>conjunto de dados ad hoc</em> como descrito em <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Aprendizado supervisionado com espaços de recursos quânticos aprimorados</a>, e o algoritmo de agrupamento <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code>.</p>
 <p>Nós regeramos o dataset com uma lacuna maior entre as duas classes, e como agrupamento é uma tarefa de aprendizado de máquina não supervisionada, não precisamos de uma amostra de teste.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

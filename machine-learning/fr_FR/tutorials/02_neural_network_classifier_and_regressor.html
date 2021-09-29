@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="fr-FR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Classification et régression de réseau de neurones &mdash; Documentation Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>Cette page a été générée à partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a>.</p>
 </div>
-<section id="Classification-et-régression-de-réseau-de-neurones">
+<div class="section" id="Classification-et-régression-de-réseau-de-neurones">
 <h1>Classification et régression de réseau de neurones<a class="headerlink" href="#Classification-et-régression-de-réseau-de-neurones" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Dans ce tutoriel, nous montrons comment utiliser <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> et <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code>. Les deux prennent comme entrée (Quantique) <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> et l’exploitent dans un contexte spécifique. Dans les deux cas, nous proposons également pour plus de commodité, une variante préconfigurée : Le Classificateur Variationnel Quantique (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>) et le Régresseur Variationnel Quantique (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>). Le didacticiel est structuré comme suit :</p>
 <ol class="arabic simple">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classification">
+<div class="section" id="Classification">
 <h2>Classification<a class="headerlink" href="#Classification" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous préparons un ensemble de données de classification simple pour illustrer les algorithmes suivants.</p>
 <div class="nbinput docutils container">
@@ -599,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<section id="Classification-avec-OpflowQNN">
+<div class="section" id="Classification-avec-OpflowQNN">
 <h3>Classification avec <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#Classification-avec-OpflowQNN" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Premièrement, nous montrons comment <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> peut être utilisé pour la classification dans un <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>. Dans ce contexte, <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> est censé renvoyer une sortie unidimensionnelle dans <span class="math notranslate nohighlight">\([ -1, + 1 ]\)</span>. Cela ne fonctionne que pour la classification binaire et nous affectons les deux classes à :math:` { -1, + 1}`. Pour plus de commodité, nous utilisons le <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>, qui est un type spécial de <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> défini via une carte de features et un ansatz.</p>
 <div class="nbinput nblast docutils container">
@@ -725,8 +724,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</section>
-<section id="Classification-avec-CircuitQNN">
+</div>
+<div class="section" id="Classification-avec-CircuitQNN">
 <h3>Classification avec <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#Classification-avec-CircuitQNN" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ensuite, nous montrons comment <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> peut être utilisé pour la classification à l’intérieur d’un <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>. Dans ce contexte, le <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> est censé renvoyer le vecteur de probabilité <span class="math notranslate nohighlight">\(d\)</span>-dimensionnel comme sortie, où <span class="math notranslate nohighlight">\(d\)</span> indique le nombre de classes. L’échantillonnage d’un <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> donne automatiquement lieu à une distribution de probabilité et il suffit de définir une correspondance entre les chaînes de bits mesurées et les différentes classes. Pour la classification binaire, nous utilisons la correspondance de parité.</p>
 <div class="nbinput docutils container">
@@ -860,8 +859,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</section>
-<section id="Classifieur-Variationnel-Quantique-(VQC)">
+</div>
+<div class="section" id="Classifieur-Variationnel-Quantique-(VQC)">
 <h3>Classifieur Variationnel Quantique (VQC)<a class="headerlink" href="#Classifieur-Variationnel-Quantique-(VQC)" title="Lien permanent vers ce titre">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> est une variante spéciale de <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> avec un <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code>. Il applique une correspondance de parité (ou des extensions à plusieurs classes) pour mapper la chaîne de bits à la classification, ce qui donne lieu à un vecteur de probabilité, qui est interprété comme un résultat codé à chaud. Par défaut, il applique la fonction <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> qui attend les étiquettes données en un format codé à chaud et qui renverra également les prédictions dans ce format.</p>
 <div class="nbinput nblast docutils container">
@@ -948,9 +947,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="Régression">
+</div>
+</div>
+<div class="section" id="Régression">
 <h2>Régression<a class="headerlink" href="#Régression" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Nous préparons un ensemble de données de régression simple pour illustrer les algorithmes suivants.</p>
 <div class="nbinput docutils container">
@@ -980,7 +979,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="Régression-avec-OpflowQNN">
+<div class="section" id="Régression-avec-OpflowQNN">
 <h3>Régression avec <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#Régression-avec-OpflowQNN" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ici, nous limitons à la régression avec <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> qui renvoie des valeurs dans <span class="math notranslate nohighlight">\([ -1, +1]\)</span>. Des modèles plus complexes et aussi multidimensionnels pourraient être construits, également basés sur <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> mais cela dépasse la cadre de ce tutoriel.</p>
 <div class="nbinput nblast docutils container">
@@ -1077,8 +1076,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</section>
-<section id="Régression-avec-le-Régresseur-Quantique-Variationnel-(VQR)">
+</div>
+<div class="section" id="Régression-avec-le-Régresseur-Quantique-Variationnel-(VQR)">
 <h3>Régression avec le Régresseur Quantique Variationnel (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)<a class="headerlink" href="#Régression-avec-le-Régresseur-Quantique-Variationnel-(VQR)" title="Lien permanent vers ce titre">¶</a></h3>
 <p>A l’instar du <code class="docutils literal notranslate"><span class="pre">VQC</span></code> pour la classification, le <code class="docutils literal notranslate"><span class="pre">VQR</span></code> est une variante spéciale de <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> avec un <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>. Par défaut, il considère la fonction <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> pour minimiser l’erreur quadratique moyenne entre les prédictions et les cibles.</p>
 <div class="nbinput nblast docutils container">
@@ -1178,9 +1177,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

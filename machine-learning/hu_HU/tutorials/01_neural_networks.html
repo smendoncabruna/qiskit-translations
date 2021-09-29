@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="hu-HU" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Quantum Neural Networks &mdash; Qiskit Machine Learning 0.2.1 dokumentáció</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Megjegyzés</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
-<section id="Quantum-Neural-Networks">
+<div class="section" id="Quantum-Neural-Networks">
 <h1>Quantum Neural Networks<a class="headerlink" href="#Quantum-Neural-Networks" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <p>This notebook demonstrates the different generic quantum neural network (QNN) implementations provided in Qiskit Machine Learning. The networks are meant as application-agnostic computational units that can be used for many different use cases. Depending on the application, a particular type of network might more or less suitable and might require to be set up in a particular way. The following different available neural networks will now be discussed in more detail:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> represents the interface for all neural networks available in Qiskit Machine Learning. It exposes a forward and a backward pass taking the data samples and trainable weights as input. A <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> does not contain any training capabilities, these are pushed to the actual algorithms / applications. Thus, a <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> also does not store the values for trainable weights. In the following, different implementations of this interfaces are introduced.</p>
 <p>Suppose a <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> called <code class="docutils literal notranslate"><span class="pre">nn</span></code>. Then, the <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> pass takes either flat inputs for the data and weights of size <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code>, respectively. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> supports batching of inputs and returns batches of output of the corresponding shape.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> takes a (parametrized) operator from Qiskit and leverages Qiskit’s gradient framework to provide the backward pass. Such an operator can for instance be an expected value of a quantum mechanical observable with respect to a parametrized quantum state. The Parameters can be used to load classical data as well as represent trainable weights. The <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> also allows lists of operators and more complex structures to construct more complex QNNs.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> is a special <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> on <span class="math notranslate nohighlight">\(n\)</span> qubits that consists of first a feature map to insert data and second an ansatz that is trained. The default observable is <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, i.e., parity.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> is based on a (parametrized) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. This can take input as well as weight parameters and produces samples from the measurement. The samples can either be interpreted as probabilities of measuring the integer index corresponding to a bitstring or directly as a batch of binary output. In the case of probabilities, gradients can be estimated efficiently and the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> provides a backward pass as well. In case of samples, differentiation is not possible and
 the backward pass returns <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
@@ -944,7 +943,7 @@ probability vector of length 2.</p>
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-Output:-sparse-integer-probabilities">
+<div class="section" id="4.1-Output:-sparse-integer-probabilities">
 <h3>4.1 Output: sparse integer probabilities<a class="headerlink" href="#4.1-Output:-sparse-integer-probabilities" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1006,8 +1005,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-Output:-dense-parity-probabilities">
+</div>
+<div class="section" id="4.2-Output:-dense-parity-probabilities">
 <h3>4.2 Output: dense parity probabilities<a class="headerlink" href="#4.2-Output:-dense-parity-probabilities" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1075,8 +1074,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-Output:-Samples">
+</div>
+<div class="section" id="4.3-Output:-Samples">
 <h3>4.3 Output: Samples<a class="headerlink" href="#4.3-Output:-Samples" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1147,8 +1146,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-Output:-Parity-Samples">
+</div>
+<div class="section" id="4.4-Output:-Parity-Samples">
 <h3>4.4 Output: Parity Samples<a class="headerlink" href="#4.4-Output:-Parity-Samples" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1252,9 +1251,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

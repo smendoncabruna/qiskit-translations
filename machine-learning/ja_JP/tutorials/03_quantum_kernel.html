@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>量子カーネル法機械学習 &mdash; Qiskit Machine Learning 0.2.1 ドキュメント</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a> から生成されました。</p>
 </div>
-<section id="量子カーネル法機械学習">
+<div class="section" id="量子カーネル法機械学習">
 <h1>量子カーネル法機械学習<a class="headerlink" href="#量子カーネル法機械学習" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>機械学習の一般的タスクはデータからパターンを発見したり学習することです。多くのデータセットに対し、データポイントはカーネル関数: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> を用いて高次元特徴空間で理解することができます。ここで、<span class="math notranslate nohighlight">\(k\)</span> はカーネル関数、<span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span>  は n 次元のインプット、<span class="math notranslate nohighlight">\(f\)</span> は <span class="math notranslate nohighlight">\(n\)</span>-次元空間から <span class="math notranslate nohighlight">\(m\)</span>-次元空間への写像、<span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> は内積を表します。有限のデータに対して、カーネル関数は行列 <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span> で表現することができます。</p>
 <p>量子カーネル法機械学習において、量子特徴マップ <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> は古典特徴ベクトル <span class="math notranslate nohighlight">\(\vec{x}\)</span> を <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span> なる量子ヒルベルト空間 <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span> にマップする際に使用されます。詳細は <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> を参照してください。</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="分類">
+<div class="section" id="分類">
 <h2>分類<a class="headerlink" href="#分類" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>分類の例では、<a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> で説明されている <em>アドホック・データセット</em> と <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> の <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">サポートベクターマシン</a> (svc) 分類アルゴリズムを使用します。</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="クラスタリング">
+</div>
+<div class="section" id="クラスタリング">
 <h2>クラスタリング<a class="headerlink" href="#クラスタリング" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クラスタリングの例では、<a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning, with quantum enhanced feature spaces</a> で説明されている <em>アドホック・データセット</em> と <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> の <code class="docutils literal notranslate"><span class="pre">spectral</span></code> クラスタリング・アルゴリズムを再度使用します。</p>
 <p>2 つのクラス間に大きなギャップがあるデータ・セットを再生成します。クラスタリングは教師なし機械学習タスクであるため、テスト・サンプルは必要ありません。</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

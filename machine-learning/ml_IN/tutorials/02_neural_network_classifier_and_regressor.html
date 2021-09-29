@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ml-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ന്യൂറൽ നെറ്റ്‌വർക്ക് ക്ലാസിഫയർ &amp; റിഗ്രസ്സർ &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a>.</p>
 </div>
-<section id="ന്യൂറൽ-നെറ്റ്‌വർക്ക്-ക്ലാസിഫയർ-&amp;-റിഗ്രസ്സർ">
+<div class="section" id="ന്യൂറൽ-നെറ്റ്‌വർക്ക്-ക്ലാസിഫയർ-&amp;-റിഗ്രസ്സർ">
 <h1>ന്യൂറൽ നെറ്റ്‌വർക്ക് ക്ലാസിഫയർ &amp; റിഗ്രസ്സർ<a class="headerlink" href="#ന്യൂറൽ-നെറ്റ്‌വർക്ക്-ക്ലാസിഫയർ-&-റിഗ്രസ്സർ" title="Permalink to this headline">¶</a></h1>
 <p>ഈ ട്യൂട്ടോറിയലിൽ <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>, <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor``എന്നിവ</span> <span class="pre">എങ്ങനെ</span> <span class="pre">ഉപയോഗിക്കുന്നുവെന്ന്</span> <span class="pre">ഞങ്ങൾ</span> <span class="pre">കാണിക്കുന്നു.</span> <span class="pre">രണ്ടും</span> <span class="pre">ഇൻപുട്ടായി</span> <span class="pre">ഒരു</span> <span class="pre">(ക്വാണ്ടം)</span> <span class="pre">``NeuralNetwork</span></code> എടുത്ത് ഒരു പ്രത്യേക സന്ദർഭത്തിൽ അത് പ്രയോജനപ്പെടുത്തുന്നു. രണ്ട് സാഹചര്യങ്ങളിലും ഞങ്ങൾ സൗകര്യത്തിനായി മുൻകൂട്ടി ക്രമീകരിച്ച വേരിയൻ്റുകൾ, വേരിയേഷൻൽ ക്വാണ്ടം ക്ലാസിഫയർ (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>), വേരിയേഷൻൽ ക്വാണ്ടം റിഗ്രെസർ (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>) എന്നിവ നൽകുന്നു. ട്യൂട്ടോറിയൽ ഇനിപ്പറയുന്ന രീതിയിൽ ക്രമീകരിച്ചിരിക്കുന്നു:</p>
 <ol class="arabic simple">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Classification">
+<div class="section" id="Classification">
 <h2>Classification<a class="headerlink" href="#Classification" title="Permalink to this headline">¶</a></h2>
 <p>ഇനിപ്പറയുന്ന അൽ‌ഗോരിതം വിശദീകരിക്കുന്നതിന് ഞമ്മൾ ഒരു ലളിതമായ ക്ലാസ്സിഫിക്കേഷൻ ഡാറ്റാസെറ്റ് തയ്യാറാക്കുന്നു.</p>
 <div class="nbinput docutils container">
@@ -599,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-ഉപയോഗിച്ചുള്ള-ക്ലാസ്സിഫിക്കേഷൻ">
+<div class="section" id="OpflowQNN-ഉപയോഗിച്ചുള്ള-ക്ലാസ്സിഫിക്കേഷൻ">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ഉപയോഗിച്ചുള്ള ക്ലാസ്സിഫിക്കേഷൻ<a class="headerlink" href="#OpflowQNN-ഉപയോഗിച്ചുള്ള-ക്ലാസ്സിഫിക്കേഷൻ" title="Permalink to this headline">¶</a></h3>
 <p>ഒരു <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> <code class="docutils literal notranslate"><span class="pre">OpflowQNN``എങ്ങനെ</span> <span class="pre">ക്ലാസ്സിഫിക്കേഷനിനായി</span> <span class="pre">ഉപയോഗിക്കാമെന്ന്</span> <span class="pre">ആദ്യം</span> <span class="pre">ഞങ്ങൾ</span> <span class="pre">കാണിക്കുന്നു.</span> <span class="pre">ഈ</span> <span class="pre">സന്ദർഭത്തിൽ,</span> <span class="pre">``OpflowQNN</span></code> <span class="math notranslate nohighlight">\([-1, +1]\)</span> എന്ന രൂപത്തിൽ ഒരു-ഡൈമൻഷണൽ ഔട്ട്‌പുട്ട് നൽകുമെന്ന് പ്രതീക്ഷിക്കുന്നു. ഇത് ബൈനറി വർഗ്ഗീകരണത്തിന് മാത്രമേ പ്രവർത്തിക്കൂ,
 അതിനാൽ ഞമ്മൾ രണ്ട് ക്ലാസുകൾ ഇവയിലേക്ക് നിയോഗിക്കുന്നു <span class="math notranslate nohighlight">\(\{-1, +1\}\)</span>. സൗകര്യത്തിനായി, ഞമ്മൾ ഒരു സവിശേഷത മാപ്പിലൂടെയും അൻസാറ്റ്സിലൂടെയും നിർവചിച്ചിരിക്കുന്ന ഒരു പ്രത്യേക തരം <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ആയ <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> ഉപയോഗിക്കുന്നത്.</p>
@@ -726,8 +725,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</section>
-<section id="CircuitQNN-ഉപയോഗിച്ചുള്ള-ക്ലാസിഫിക്കേഷൻ">
+</div>
+<div class="section" id="CircuitQNN-ഉപയോഗിച്ചുള്ള-ക്ലാസിഫിക്കേഷൻ">
 <h3><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ഉപയോഗിച്ചുള്ള ക്ലാസിഫിക്കേഷൻ<a class="headerlink" href="#CircuitQNN-ഉപയോഗിച്ചുള്ള-ക്ലാസിഫിക്കേഷൻ" title="Permalink to this headline">¶</a></h3>
 <p>അടുത്തതായി ഒരു <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> എങ്ങനെ ക്ലാസ്സിഫിക്കേഷനിനായി ഉപയോഗിക്കാമെന്ന് ഞങ്ങൾ കാണിക്കുന്നു. ഈ സന്ദർഭത്തിൽ, <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> <span class="math notranslate nohighlight">\(d\)</span>-ഡൈമൻഷണൽ പ്രോബബിലിറ്റി വെക്റ്റർ ഔട്ട്‌പുട്ടായി നൽകുമെന്ന് പ്രതീക്ഷിക്കുന്നു, ഇവിടെ <span class="math notranslate nohighlight">\(d\)</span> ക്ലാസുകളുടെ എണ്ണത്തെ സൂചിപ്പിക്കുന്നു. ഒരു <a href="#id1"><span class="problematic" id="id2">``</span></a>QuantumCircuit``ൽ നിന്നുള്ള സാമ്പിൾ ഓട്ടോമാറ്റിക്കായി ഒരു പ്രോബബിലിറ്റി വിതരണത്തിന് കാരണമാകുന്നു, മാത്രമല്ല അളന്ന ബിറ്റ്സ്ട്രിംഗുകളിൽ നിന്ന് വ്യത്യസ്ത ക്ലാസുകളിലേക്കുള്ള മാപ്പിംഗ് ഞമ്മൾ നിർവചിക്കേണ്ടതുണ്ട്. ബൈനറി ക്ലാസ്സിഫിക്കേഷനിനായി ഞമ്മൾ പാരിറ്റി മാപ്പിംഗ് ഉപയോഗിക്കുന്നു.</p>
 <div class="nbinput docutils container">
@@ -861,8 +860,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</section>
-<section id="വേരിയേഷൻൽ-ക്വാണ്ടം-ക്ലാസിഫയർ(VQC)">
+</div>
+<div class="section" id="വേരിയേഷൻൽ-ക്വാണ്ടം-ക്ലാസിഫയർ(VQC)">
 <h3>വേരിയേഷൻൽ ക്വാണ്ടം ക്ലാസിഫയർ(<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#വേരിയേഷൻൽ-ക്വാണ്ടം-ക്ലാസിഫയർ(VQC)" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ഉള്ള <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> ഒരു പ്രത്യേക വകഭേദമാണ് <code class="docutils literal notranslate"><span class="pre">VQC</span></code>. ബിറ്റ്സ്ട്രിംഗിൽ നിന്ന് ക്ലാസ്സിഫിക്കേഷനിലേക്ക് മാപ്പ് ചെയ്യുന്നതിന് ഇത് ഒരു പാരിറ്റി മാപ്പിംഗ് (അല്ലെങ്കിൽ ഒന്നിലധികം ക്ലാസുകളിലേക്കുള്ള വിപുലീകരണങ്ങൾക്ക്) പ്രയോഗിക്കുന്നു, ഇത് പ്രോബബിലിറ്റി വെക്റ്ററിന് കാരണമാകുന്നു, ഇത് വൻ-ഹോട്ട് എൻ‌കോഡുചെയ്‌ത (one-hot encoded) ഫലമായി വ്യാഖ്യാനിക്കപ്പെടുന്നു. സ്ഥിരസ്ഥിതിയായി, ഇത് ഒരു ഹോട്ട് എൻ‌കോഡുചെയ്‌ത ഫോർ‌മാറ്റിൽ‌ ലേബലുകൾ‌ പ്രതീക്ഷിക്കുന്ന <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> ഫംഗ്ഷൻ‌ പ്രയോഗിക്കുന്നു, മാത്രമല്ല ഇത് അതേ ഫോർ‌മാറ്റിലേക്ക് തന്നെ പ്രവചനങ്ങൾ‌ നൽ‌കുകയും ചെയ്യുന്നു.</p>
 <div class="nbinput nblast docutils container">
@@ -949,9 +948,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="Regression">
+</div>
+</div>
+<div class="section" id="Regression">
 <h2>Regression<a class="headerlink" href="#Regression" title="Permalink to this headline">¶</a></h2>
 <p>ഇനിപ്പറയുന്ന അൽ‌ഗോരിതം വിശദീകരിക്കുന്നതിന് ഞമ്മൾ ഒരു ലളിതമായ റിഗ്രഷൻ ഡാറ്റാസെറ്റ് തയ്യാറാക്കുന്നു.</p>
 <div class="nbinput docutils container">
@@ -981,7 +980,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-ഉപയോഗിച്ചുള്ള-റിഗ്രഷൻ">
+<div class="section" id="OpflowQNN-ഉപയോഗിച്ചുള്ള-റിഗ്രഷൻ">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ഉപയോഗിച്ചുള്ള റിഗ്രഷൻ<a class="headerlink" href="#OpflowQNN-ഉപയോഗിച്ചുള്ള-റിഗ്രഷൻ" title="Permalink to this headline">¶</a></h3>
 <p>ഇനിപ്പറയുന്നവയിൽ <span class="math notranslate nohighlight">\([-1, +1]\)</span> എന്ന വാല്യു നൽകുന്ന ഒരു <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ഉപയോഗിച്ച് റിഗ്രഷൻ ഞമ്മൾ പരിമിതപ്പെടുത്തുന്നു. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> അടിസ്ഥാനമാക്കി കൂടുതൽ‌ സങ്കീർ‌ണ്ണവും മൾ‌ട്ടി-ഡൈമെൻ‌ഷനലുമായ മോഡലുകളും നിർമ്മിക്കാൻ‌ കഴിയും, പക്ഷേ അത് ഈ ട്യൂട്ടോറിയലിന്റെ വ്യാപ്തി കവിയുന്നു.</p>
 <div class="nbinput nblast docutils container">
@@ -1078,8 +1077,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</section>
-<section id="വേരിയേഷൻൽ-ക്വാണ്ടം-റിഗ്രസർ-(VQR)-ഉപയോഗിച്ചുള്ള-റിഗ്രഷൻ">
+</div>
+<div class="section" id="വേരിയേഷൻൽ-ക്വാണ്ടം-റിഗ്രസർ-(VQR)-ഉപയോഗിച്ചുള്ള-റിഗ്രഷൻ">
 <h3>വേരിയേഷൻൽ ക്വാണ്ടം റിഗ്രസർ (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>) ഉപയോഗിച്ചുള്ള റിഗ്രഷൻ<a class="headerlink" href="#വേരിയേഷൻൽ-ക്വാണ്ടം-റിഗ്രസർ-(VQR)-ഉപയോഗിച്ചുള്ള-റിഗ്രഷൻ" title="Permalink to this headline">¶</a></h3>
 <p>ക്ലാസ്സിഫിക്കേഷനിനായുള്ള <code class="docutils literal notranslate"><span class="pre">VQC``ക്ക്</span> <span class="pre">സമാനമായി,</span> <span class="pre">``VQR</span></code> എന്നത് <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ഉള്ള <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> ഒരു പ്രത്യേക വകഭേദമാണ്. സ്ഥിരസ്ഥിതിയായി ഇത് പ്രവചനങ്ങളും ടാർഗെറ്റുകളും തമ്മിലുള്ള ശരാശരി സ്ക്വയർഡ് ഇറർ (mean squared error) കുറയ്ക്കുന്നതിന് <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> ഫംഗ്ഷനെ പരിഗണിക്കുന്നു.</p>
 <div class="nbinput nblast docutils container">
@@ -1179,9 +1178,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

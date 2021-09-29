@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="vi-VN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>các qGAN để tải sự phân phối ngẫu nhiên &mdash; Tài liệu Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Ghi chú</p>
 <p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a>.</p>
 </div>
-<section id="các-qGAN-để-tải-sự-phân-phối-ngẫu-nhiên">
+<div class="section" id="các-qGAN-để-tải-sự-phân-phối-ngẫu-nhiên">
 <h1>các qGAN để tải sự phân phối ngẫu nhiên<a class="headerlink" href="#các-qGAN-để-tải-sự-phân-phối-ngẫu-nhiên" title="Permalink to this headline">¶</a></h1>
 <p>Với mẫu dữ liệu <span class="math notranslate nohighlight">\(k\)</span> chiều, chúng tôi sử dụng một Mạng Lượng Tử Đối Địch (qGAN) để tìm hiểu phân phối ngẫu nhiên cơ bản của dữ liệu và tải trực tiếp nó vào trạng thái lượng tử:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +541,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Tải-dữ-liệu-đào-tạo">
+<div class="section" id="Tải-dữ-liệu-đào-tạo">
 <h2>Tải dữ liệu đào tạo<a class="headerlink" href="#Tải-dữ-liệu-đào-tạo" title="Permalink to this headline">¶</a></h2>
 <p>Đầu tiên, chúng ta cần tải các mẫu dữ liệu đào tạo <span class="math notranslate nohighlight">\(k\)</span>- chiều (ở đây k=1).</p>
 <p>Tiếp theo, độ phân giải dữ liệu được đặt, tức các giá trị dữ liệu nhỏ nhất/lớn nhất và số lượng qubit được sử dụng để đại diện cho mỗi chiều dữ liệu.</p>
@@ -568,8 +567,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Khởi-tạo-qGAN">
+</div>
+<div class="section" id="Khởi-tạo-qGAN">
 <h2>Khởi tạo qGAN<a class="headerlink" href="#Khởi-tạo-qGAN" title="Permalink to this headline">¶</a></h2>
 <p>Qgan bao gồm một bộ tạo lượng tử <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, i.e., một ansatz, và một bộ phân loại tách biệt <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, một mạng lưới neuron.</p>
 <p>Để thi hành một bộ tạo lượng tử, chúng ta chọn ansatz có độ sâu <span class="math notranslate nohighlight">\(1\)</span> thực thi các phép quay <span class="math notranslate nohighlight">\(R_Y\)</span> và các cổng <span class="math notranslate nohighlight">\(CZ\)</span> gates với một trạng thái đầu vào đều liên tục. Cụ thể, cho <span class="math notranslate nohighlight">\(k&gt;1\)</span> tham số của bộ tạo cần được chọn một cách cẩn thận. Ví dụ như, độ sâu của mạch nên <span class="math notranslate nohighlight">\(&gt;1\)</span> vì mạch càng sâu thì cho phép biểu diễn những cấu trúc càng phức tạp.</p>
@@ -623,8 +622,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Chạy-đào-tạo-qGAN">
+</div>
+<div class="section" id="Chạy-đào-tạo-qGAN">
 <h2>Chạy đào tạo qGAN<a class="headerlink" href="#Chạy-đào-tạo-qGAN" title="Permalink to this headline">¶</a></h2>
 <p>Trong quá trình đào tạo các tham số của bộ tách biệt của bộ tạo được cập nhật một cách luân phiên dựa trên các hàm mất mát sau:</p>
 <div class="math notranslate nohighlight">
@@ -670,8 +669,8 @@ Training results:
   rel_entr : 0.107
 </pre></div></div>
 </div>
-</section>
-<section id="Tiến-trình-đào-tạo-&amp;-kết-quả">
+</div>
+<div class="section" id="Tiến-trình-đào-tạo-&amp;-kết-quả">
 <h2>Tiến trình đào tạo &amp; kết quả<a class="headerlink" href="#Tiến-trình-đào-tạo-&-kết-quả" title="Permalink to this headline">¶</a></h2>
 <p>Bây giờ, chúng ta vẽ đồ thị sự tiến hóa của sự mất mát của bộ tạo và bộ tách biệt trong suốt quá trình đào tạo, cũng như sự tiến bộ trong entropy tương đối giữa các sự phân phối của nhóm được đào tạo và mục tiêu cuối cùng.</p>
 <p>Cuối cùng, chúng ta cũng so sánh hàm phân phối tích lũy (CDF) của phân phối được đào tạo với CDF của phân phối mục tiêu.</p>
@@ -786,8 +785,8 @@ Training results:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

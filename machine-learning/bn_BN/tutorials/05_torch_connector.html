@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>টর্চ (PyTorch) সংযোগকারী এবং দোআঁশলা কোয়ান্টাম নিউরাল নেটওয়ার্ক &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,10 +510,10 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/05_torch_connector.ipynb">docs/tutorials/05_torch_connector.ipynb</a> -থেকে বানানো হয়েছে।</p>
 </div>
-<section id="টর্চ-(PyTorch)-সংযোগকারী-এবং-দোআঁশলা-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক">
+<div class="section" id="টর্চ-(PyTorch)-সংযোগকারী-এবং-দোআঁশলা-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক">
 <h1>টর্চ (PyTorch) সংযোগকারী এবং দোআঁশলা কোয়ান্টাম নিউরাল নেটওয়ার্ক<a class="headerlink" href="#টর্চ-(PyTorch)-সংযোগকারী-এবং-দোআঁশলা-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <p>এই পাঠসমূহতে (টিউটোরিয়াল) Qiskit - এর <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> ক্লাস ব্যবহার করে কিভাবে Qiskit Machine Learning - এর <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> যেকোনো PyTorch কর্মধারায় সংযোজন করা যেতে পারে সেটা দেখানো হয়েছে। Qiskit এর <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> - টি <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> একটি PyTorch <code class="docutils literal notranslate"><span class="pre">Module</span></code> হিসাবে উপলব্ধ করে। সেই মডিউল (<code class="docutils literal notranslate"><span class="pre">Module</span></code>) যেকোনো PyTorch এর প্রথাগত স্থাপত্যতে নির্বিঘ্নে অন্তর্ভুক্ত করা যেতে পারে এবং অতিরিক্ত বিবেচনা ছাড়াই যৌথভাবে প্রশিক্ষিত করা যেতে পারে। এই ভাবে এটি নতুন <strong>দোআঁশলা কোয়ান্টাম - ক্লাসিক্যাল</strong> মেশিন লার্নিং স্থাপত্তের উন্নয়ন এবং পরীক্ষা করা অত্যন্ত সহজ বানিয়ে ফেলে।</p>
-<section id="সুচি:">
+<div class="section" id="সুচি:">
 <h2>সুচি:<a class="headerlink" href="#সুচি:" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p><a class="reference external" href="#Part-1:-Simple-Classification-&amp;-Regression">প্রথম অধ্যায়: সরল শ্রেণীবিভাগ ও প্রত্যাবর্তন</a></p>
 <p>এই পাঠসমূহের প্রথম ভাগে কিভাবে কোয়ান্টাম নিউরাল নেটওয়ার্ক PyTorch - এর স্বয়ংক্রিয় বিভাজন যন্ত্র (<code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code>, <a class="reference external" href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html">link</a>) দিয়ে সহজ শ্রেণিবিন্যাস এবং রিগ্রেশন কাজের জন্যে প্রশিক্ষণ করা যেতে পারে সেটা দেখানো হয়েছে।</p>
@@ -561,10 +560,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="পর্ব-1:-সরল-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)-ও-রিগ্রেশন">
+</div>
+<div class="section" id="পর্ব-1:-সরল-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)-ও-রিগ্রেশন">
 <h2>পর্ব 1: সরল শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন) ও রিগ্রেশন<a class="headerlink" href="#পর্ব-1:-সরল-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)-ও-রিগ্রেশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<section id="1.-শ্রেণিবিভাগ-(ক্লাসিফিকেশন)">
+<div class="section" id="1.-শ্রেণিবিভাগ-(ক্লাসিফিকেশন)">
 <h3>1. শ্রেণিবিভাগ (ক্লাসিফিকেশন)<a class="headerlink" href="#1.-শ্রেণিবিভাগ-(ক্লাসিফিকেশন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>প্রথমত কিভাবে PyTorch - এর স্বয়ংক্রিয় বিভাজন যন্ত্র ব্যবহার করে <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> একটি কোয়ান্টাম <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> দ্বারা শ্রেণিবিন্যাসকরণ করতে সাহায্য করে সেটা আমরা দেখিয়েছি। উদাহরণ হিসাবে আমরা এখানে একটি যথেচ্ছভাবে বানানো ডেটাসেটের ওপরে দুইভাগবিশিষ্ট / দ্বিমূল শ্রেণীবিন্যাস করেছি।</p>
 <div class="nbinput docutils container">
@@ -609,7 +608,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_05_torch_connector_4_0.png" src="../_images/tutorials_05_torch_connector_4_0.png" />
 </div>
 </div>
-<section id="A.-PyTorch-এবং-OpflowQNN-দ্বারা-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)">
+<div class="section" id="A.-PyTorch-এবং-OpflowQNN-দ্বারা-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)">
 <h4>A. PyTorch এবং <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> দ্বারা শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন)<a class="headerlink" href="#A.-PyTorch-এবং-OpflowQNN-দ্বারা-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h4>
 <p>PyTorch এর সাথে একটি <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> লিঙ্ক করা তুলনামূলকভাবে সহজবোধ্য। এখানে আমরা <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>, পূর্ববর্তী পাঠসমূহে (টিউটোরিয়ালস) <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> এর একটি সাব-কেস ব্যবহার করে এটি ব্যাখ্যা করেছি।</p>
 <div class="nbinput docutils container">
@@ -673,11 +672,11 @@ Initial weights:  [ 0.05426413 -0.09584961  0.02672965  0.04976078 -0.0002986  -
 tensor([-0.0547], grad_fn=&lt;_TorchNNFunctionBackward&gt;)
 </pre></div></div>
 </div>
-<section id="অনুকূলায়ক">
+<div class="section" id="অনুকূলায়ক">
 <h5>অনুকূলায়ক<a class="headerlink" href="#অনুকূলায়ক" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h5>
 <p>যে কোন মেশিন লার্নিং মডেলকে প্রশিক্ষণের জন্য অনুকূলায়ক -এর (অপটিমাইজার) পছন্দ আমাদের প্রশিক্ষণের ফলাফলের সাফল্য নির্ধারণে গুরুত্বপূর্ণ হতে পারে। <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> ব্যবহার করার সময়, আমরা [<code class="docutils literal notranslate"><span class="pre">torch.optim</span></code>] প্যাকেজে (<a class="reference external" href="https://pytorch.org/docs/stable/optim.html">link</a>) সংজ্ঞায়িত সমস্ত অপটিমাইজার অ্যালগরিদমগুলিতে অ্যাক্সেস পাই। জনপ্রিয় মেশিন লার্নিং আর্কিটেকচারে ব্যবহৃত কিছু বিখ্যাত অ্যালগরিদমের মধ্যে রয়েছে <a href="#id1"><span class="problematic" id="id2">*</span></a>অ্যাডাম <a href="#id3"><span class="problematic" id="id4">*</span></a>, <a href="#id5"><span class="problematic" id="id6">*</span></a>এসজিডি <a href="#id7"><span class="problematic" id="id8">*</span></a>, অথবা <a href="#id9"><span class="problematic" id="id10">*</span></a>অ্যাডাগ্রেড <a href="#id11"><span class="problematic" id="id12">*</span></a>(Adagrad)। যাইহোক, এই টিউটোরিয়ালের জন্য আমরা L-BFGS অ্যালগরিদম (<code class="docutils literal notranslate"><span class="pre">torch.optim.LBFGS</span></code>) ব্যবহার করব, সংখ্যাসূচক অপ্টিমাইজেশনের জন্য সবচেয়ে ভালোভাবে পরিচিত দ্বিতীয়-অর্ডার অনুকূলকরণ (অপটিমাইজার) অ্যালগরিদম।</p>
-</section>
-<section id="হ্রাস-ফাংশন-(Loss-Function)">
+</div>
+<div class="section" id="হ্রাস-ফাংশন-(Loss-Function)">
 <h5>হ্রাস ফাংশন (Loss Function)<a class="headerlink" href="#হ্রাস-ফাংশন-(Loss-Function)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h5>
 <p>হ্রাস (লস) ফাংশনের ক্ষেত্রে, আমরা <code class="docutils literal notranslate"><span class="pre">torch.nn</span></code> থেকে PyTorch- এর পূর্বনির্ধারিত মডিউলগুলির সুবিধা নিতে পারি, যেমন <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">Cross-Entropy</a> অথবা <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">Mean Squared Error</a> হ্রাস।</p>
 <p><strong>💡 স্পষ্টীকরণ :</strong> সাধারণত প্রথাগত (ক্লাসিক্যাল) মেশিন লার্নিং- এ আমরা শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন) এর সময় ক্রস-এনট্রপি ক্ষতিমাপ এবং রিগ্রেশনের ক্ষেত্রে ক্ষতির দ্বিঘাত রাশিতে উন্নীতকরণ করা গড় ক্ষতিমাপ হিসাবে ব্যবহার করি। কিন্তু এইটা এই ভেবে করা হয়ে যে শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন) নেটওয়ার্কের আউটপুট [০, ১] এর মধ্যে বিভাগের সম্ভাবনার হয়ে (সফটমাক্স স্তর এর জন্যে)। <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> এর ক্ষেত্রে এরম স্তর না থাকায় এবং আউটপুটের ওপরে কোনো রকম ম্যাপিং (চিত্রায়ন) না করে থাকায়(<code class="docutils literal notranslate"><span class="pre">CircuitQNNs</span></code> এর সাথে সমতা ম্যাপিং (চিত্রায়ন) ব্যবহার করবে উদাহরণ পরের ভাগে দেখানো রয়েছে) কোয়ান্টাম নিউরাল নেটওয়ার্ক এর আউটপুট [-১, ১] এর মধ্যে থাকবে। এই জন্যেই আমরা এখানে ক্ষতির দ্বিঘাত রাশিতে উন্নীতকরণ করা গড় ক্ষতিমাপ (MSELoss) ব্যবহার করেছি। কিন্তু আমরা পাঠকদের বিভিন্ন ক্ষতির ফাংশন নিয়ে পরীক্ষা -নিরীক্ষা করে দেখতে বলবো এবং সেই খতিমাপ ব্যবহার প্রশিক্ষণের ফলাফলকে কিভাবে প্রভাবিত করতে পারে তা দেখতে বলবো।</p>
@@ -791,9 +790,9 @@ Accuracy: 0.55
 </div>
 </div>
 <p>লাল বৃত্তগুলি ভুলভাবে শ্রেণিবদ্ধ ডেটা পয়েন্ট নির্দেশ করছে।</p>
-</section>
-</section>
-<section id="B.-PyTorch-এবং-CircuitQNN-এর-সঙ্গে-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)">
+</div>
+</div>
+<div class="section" id="B.-PyTorch-এবং-CircuitQNN-এর-সঙ্গে-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)">
 <h4>B. PyTorch এবং <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> এর সঙ্গে শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন)<a class="headerlink" href="#B.-PyTorch-এবং-CircuitQNN-এর-সঙ্গে-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h4>
 <p>PyTorch এর সাথে <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> যোগ করাটা <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>- এর যোগ করা থেকে অনেকটা আলাদা। ঠিক করে যোগ না করলে পিছনের দিকে প্রচার করাটা (ব্যাকপ্রপাগেশন) সম্ভব হয়ে উঠবে না।</p>
 <p>বিশেষ করে, আমাদের এটা নিশ্চিত করতে হবে যে নেটওয়ার্কের সামনের দিকে যাবার সময় আমরা সম্ভাবনার একটি ঘন বিন্যাস (array) ফেরাচ্ছি (<code class="docutils literal notranslate"><span class="pre">sparse=False</span></code> করে)। এই স্থিতিমাপ বা প্যারামিটারটা স্বতঃসিদ্ধ নিয়মানুসারে <code class="docutils literal notranslate"><span class="pre">False</span></code> এই থাকে।</p>
@@ -935,9 +934,9 @@ Accuracy: 0.75
 </div>
 </div>
 <p>লাল বৃত্তগুলি ভুলভাবে শ্রেণিবদ্ধ ডেটা পয়েন্ট নির্দেশ করছে।</p>
-</section>
-</section>
-<section id="2.-রিগ্রেশন">
+</div>
+</div>
+<div class="section" id="2.-রিগ্রেশন">
 <h3>2. রিগ্রেশন<a class="headerlink" href="#2.-রিগ্রেশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>কিভাবে রিগ্রেশনের কাজ করা যাবে সেটার জন্যেও আমরা <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> এর ওপরে বানানো মডেল এখানে ব্যবহার করছি । এই ক্ষেত্রে আমরা সাইন ওয়েভ মিলিয়ে একটি ইচ্ছামতন বানানো ডেটাসেট ব্যবহার করছি।</p>
 <div class="nbinput docutils container">
@@ -968,7 +967,7 @@ Accuracy: 0.75
 <img alt="../_images/tutorials_05_torch_connector_19_0.png" src="../_images/tutorials_05_torch_connector_19_0.png" />
 </div>
 </div>
-<section id="A.-PyTorch-এবং-OpflowQNN-দিয়ে-রিগ্রেশন">
+<div class="section" id="A.-PyTorch-এবং-OpflowQNN-দিয়ে-রিগ্রেশন">
 <h4>A. PyTorch এবং <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> দিয়ে রিগ্রেশন<a class="headerlink" href="#A.-PyTorch-এবং-OpflowQNN-দিয়ে-রিগ্রেশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h4>
 <p>নেটওয়ার্ক সংজ্ঞা এবং প্রশিক্ষণ লুপ <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> এর সাথে শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন) এর সঙ্গে অনুরূপ হবে। এই ক্ষেত্রে গতানুগতিক মান না ব্যবহার করে আমরা নিজেদের বৈশিষ্ট্য নকশা (ফিচার ম্যাপ) এবং অন্সাৎজ (ansatz) ব্যবহার করবো।</p>
 <div class="nbinput docutils container">
@@ -1105,11 +1104,11 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 <img alt="../_images/tutorials_05_torch_connector_25_0.png" src="../_images/tutorials_05_torch_connector_25_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section id="দ্বিতীয়-অধ্যায়:-MNIST-এর-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন),-দোআঁশলা-(Hybrid)-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক">
+<div class="section" id="দ্বিতীয়-অধ্যায়:-MNIST-এর-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন),-দোআঁশলা-(Hybrid)-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক">
 <h2>দ্বিতীয় অধ্যায়: MNIST এর শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন), দোআঁশলা (Hybrid) কোয়ান্টাম নিউরাল নেটওয়ার্ক<a class="headerlink" href="#দ্বিতীয়-অধ্যায়:-MNIST-এর-শ্রেণিবিন্যাসকরণ-(ক্লাসিফিকেশন),-দোআঁশলা-(Hybrid)-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>এই দ্বিতীয় অধ্যায়ে আমরা <code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> এর সাহায্যে হাইব্রিড কোয়ান্টাম নিউরাল নেটওয়ার্ক বানানো এবং সেটা দিয়ে কিভাবে MNIST (হাতে লেখা সংখ্যা) ডেটাসেটের ওপরে আরো জটিল ছবির শ্রেণিবিন্যাসকরণ (ক্লাসিফিকেশন) কাজ করা যায় সেটা দেখিয়েছি।</p>
 <p><a class="reference external" href="https://qiskit.org/textbook/ch-machine-learning/machine-learning-qiskit-pytorch.html">Qiskit Textbook</a> - এ আরো সবিশেষ ভাবে দোআঁশলা (Hybrid) কোয়ান্টাম নিউরাল নেটওয়ার্কের ব্যাপারে বোঝানো হয়েছে।</p>
@@ -1129,7 +1128,7 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-<section id="ধাপ-১:-প্রশিক্ষণ-এবং-পরীক্ষার-জন্য-ডেটা-লোডার-সংজ্ঞায়িত-করা">
+<div class="section" id="ধাপ-১:-প্রশিক্ষণ-এবং-পরীক্ষার-জন্য-ডেটা-লোডার-সংজ্ঞায়িত-করা">
 <h3>ধাপ ১: প্রশিক্ষণ এবং পরীক্ষার জন্য ডেটা-লোডার সংজ্ঞায়িত করা<a class="headerlink" href="#ধাপ-১:-প্রশিক্ষণ-এবং-পরীক্ষার-জন্য-ডেটা-লোডার-সংজ্ঞায়িত-করা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>প্রশিক্ষণ এবং পরিক্ষার জন্যে <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> <a class="reference external" href="https://pytorch.org/vision/stable/datasets.html">API</a> এর সাহায্যে সরাসরি <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST dataset</a>  এর একাংশ লোড করে  <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>s (<a class="reference external" href="https://pytorch.org/docs/stable/data.html">link</a>) বর্ণনা করছি ।</p>
 <div class="nbinput nblast docutils container">
@@ -1219,8 +1218,8 @@ tensor(21.3484, grad_fn=&lt;MseLossBackward&gt;)
 </pre></div>
 </div>
 </div>
-</section>
-<section id="ধাপ-২:-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক-বানানো-এবং-দোআঁশলা-(Hybrid)-মডেল">
+</div>
+<div class="section" id="ধাপ-২:-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক-বানানো-এবং-দোআঁশলা-(Hybrid)-মডেল">
 <h3>ধাপ ২: কোয়ান্টাম নিউরাল নেটওয়ার্ক বানানো এবং দোআঁশলা (Hybrid) মডেল<a class="headerlink" href="#ধাপ-২:-কোয়ান্টাম-নিউরাল-নেটওয়ার্ক-বানানো-এবং-দোআঁশলা-(Hybrid)-মডেল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">TorchConnector</span></code> এর ক্ষমতা এই দ্বিতীয় ধাপে দেখা যাচ্ছে। আমাদের কোয়ান্টাম নিউরাল নেটওয়ার্কটি (এই ক্ষেত্রে একটি <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code>) বানানোর পরে এটা আমরা নিজেদের torch <code class="docutils literal notranslate"><span class="pre">Module</span></code> - এ <code class="docutils literal notranslate"><span class="pre">TorchConnector(qnn)</span></code> দ্বারা ঢোকাতে পারবো</p>
 <p><strong>⚠️ সাবধান:</strong> কোয়ান্টাম নিউরাল নেটওয়ার্ক বানানোর সময়ে আমাদের প্রাথমিক <code class="docutils literal notranslate"><span class="pre">input_gradients</span></code> স্থিতিমাপ বা প্যারামিটারটি TRUE থাকা দরকার যাতে নতিমাত্রা যথেষ্ট ভাবে পিছনের দিকে প্রচার করা (ব্যাকপ্রপাগেশন) যায়।</p>
@@ -1292,8 +1291,8 @@ ComposedOp([
 </pre></div>
 </div>
 </div>
-</section>
-<section id="ধাপ-৩:-প্রশিক্ষণ">
+</div>
+<div class="section" id="ধাপ-৩:-প্রশিক্ষণ">
 <h3>ধাপ ৩: প্রশিক্ষণ<a class="headerlink" href="#ধাপ-৩:-প্রশিক্ষণ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1362,8 +1361,8 @@ Training [100%] Loss: -2.4982
 <img alt="../_images/tutorials_05_torch_connector_40_0.png" src="../_images/tutorials_05_torch_connector_40_0.png" />
 </div>
 </div>
-</section>
-<section id="ধাপ-৪:-মূল্যায়ন">
+</div>
+<div class="section" id="ধাপ-৪:-মূল্যায়ন">
 <h3>ধাপ ৪: মূল্যায়ন<a class="headerlink" href="#ধাপ-৪:-মূল্যায়ন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -1466,9 +1465,9 @@ Performance on test data:
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

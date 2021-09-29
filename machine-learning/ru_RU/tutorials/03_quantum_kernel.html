@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ru-RU" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Квантовый ядерный метод машинного обучения &mdash; документация Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Примечание</p>
 <p>Страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<section id="Квантовый-ядерный-метод-машинного-обучения">
+<div class="section" id="Квантовый-ядерный-метод-машинного-обучения">
 <h1>Квантовый ядерный метод машинного обучения<a class="headerlink" href="#Квантовый-ядерный-метод-машинного-обучения" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Общая задача машинного обучения заключается в поиске и изучении закономерностей в данных. Для многих наборов данных элементы данных (datapoints) лучше распознаются в большем пространстве измерений, через использование ядерной функции: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span>, где <span class="math notranslate nohighlight">\(k\)</span> - ядерная функция, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> - входные данные с количеством измерений равным <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f\)</span> — это преобразование от <span class="math notranslate nohighlight">\(n\)</span>-мерного до <span class="math notranslate nohighlight">\(m\)</span>-мерного пространства и <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> обозначает точечный результат. При рассмотрении конечных данных, ядерная функция может быть представлена в виде матрицы: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>В квантовом машинном обучении методом ядерной функции, преобразование <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> используется для сопоставления классической векторной функции <span class="math notranslate nohighlight">\(\vec{x} с квантовым Гильбертовым пространством, :math:\)</span>, таким, что <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. См. <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Контролируемое обучение с квантово расширенными функциональными пространствами</a> для более подробной информации.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Классификация">
+<div class="section" id="Классификация">
 <h2>Классификация<a class="headerlink" href="#Классификация" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Для нашего примера классификации мы будем использовать набор данных <em>ad hoc dataset</em> как в статье <code class="docutils literal notranslate"><span class="pre">Supervised</span> <span class="pre">learning</span> <span class="pre">with</span> <span class="pre">quantum</span> <span class="pre">enhanced</span> <span class="pre">feature</span> <span class="pre">spaces</span> <span class="pre">&lt;https://arxiv.org/pdf/1804.11326.pdf&gt;`__,</span> <span class="pre">и</span> <span class="pre">алгоритм</span> <span class="pre">``scikit-learn</span></code>, <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">поддерживающий алгоритм векторной машинной</a> классификации (<code class="docutils literal notranslate"><span class="pre">svc</span></code>).</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="Кластеризация">
+</div>
+<div class="section" id="Кластеризация">
 <h2>Кластеризация<a class="headerlink" href="#Кластеризация" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Для нашего примера кластеризации мы снова будем использовать набор данных <em>ad hoc dataset</em> из статьи <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, и алгоритм кластеризации <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code>.</p>
 <p>Мы создадим набор данных с большим разрывом между двумя классами, и, поскольку кластеризация является заданием неконтролируемого (unsupervised) машинного обучения, нам не нужна тестовая выборка.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

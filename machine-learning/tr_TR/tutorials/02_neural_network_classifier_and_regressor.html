@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Sinirsel Ağ Sınıflandırıcısı ve Regresörü &mdash; Qiskit Machine Learning 0.2.1 belgelendirmesi</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa, <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a> sayfasından oluşturulmuştur.</p>
 </div>
-<section id="Sinirsel-Ağ-Sınıflandırıcısı-ve-Regresörü">
+<div class="section" id="Sinirsel-Ağ-Sınıflandırıcısı-ve-Regresörü">
 <h1>Sinirsel Ağ Sınıflandırıcısı ve Regresörü<a class="headerlink" href="#Sinirsel-Ağ-Sınıflandırıcısı-ve-Regresörü" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
 <p>Bu eğitimde <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> ve <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor``ın</span> <span class="pre">nasıl</span> <span class="pre">kullanıldığını</span> <span class="pre">gösteriyoruz.</span> <span class="pre">Her</span> <span class="pre">ikisini</span> <span class="pre">de</span> <span class="pre">(Quantum)</span> <span class="pre">``NeuralNetwork``a</span> <span class="pre">giriş</span> <span class="pre">olarak</span> <span class="pre">alın</span> <span class="pre">ve</span> <span class="pre">belirli</span> <span class="pre">bir</span> <span class="pre">bağlamda</span> <span class="pre">kullanın.</span> <span class="pre">Her</span> <span class="pre">iki</span> <span class="pre">durumda</span> <span class="pre">da,</span> <span class="pre">kolaylık</span> <span class="pre">amacıyla</span> <span class="pre">önceden</span> <span class="pre">yapılandırılmış</span> <span class="pre">bir</span> <span class="pre">çeşitleme</span> <span class="pre">sağlıyoruz:</span> <span class="pre">Varitional</span> <span class="pre">Quantum</span> <span class="pre">Classifier</span> <span class="pre">(``VQC</span></code>) ve Varitional Quantum Regressor (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>). Öğretici program aşağıdaki gibi yapılandırılır:</p>
 <ol class="arabic simple">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Sınıflandırma">
+<div class="section" id="Sınıflandırma">
 <h2>Sınıflandırma<a class="headerlink" href="#Sınıflandırma" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Takip eden algoritmaları göstermek için basit bir sınıflandırma veri seti hazırlıyoruz.</p>
 <div class="nbinput docutils container">
@@ -599,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-ile-Sınıflandırma">
+<div class="section" id="OpflowQNN-ile-Sınıflandırma">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ile Sınıflandırma<a class="headerlink" href="#OpflowQNN-ile-Sınıflandırma" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>İlk olarak <code class="docutils literal notranslate"><span class="pre">OpflowQNN``nin</span> <span class="pre">nasıl</span> <span class="pre">kullanılabileceğini</span> <span class="pre">bir</span> <span class="pre">``NeuralNetworkClassifier</span></code> içinde sınıflandırma ile gösteriyoruz. Bu anlamda, <code class="docutils literal notranslate"><span class="pre">OpflowQNN``nin</span> <span class="pre">:math:`[-1,</span> <span class="pre">+1]`</span> <span class="pre">biçiminde</span> <span class="pre">tek</span> <span class="pre">boyutlu</span> <span class="pre">çıktı</span> <span class="pre">döndürmesi</span> <span class="pre">beklenir.</span> <span class="pre">Bu</span> <span class="pre">yalnızca</span> <span class="pre">ikili</span> <span class="pre">sınıflandırma</span> <span class="pre">için</span> <span class="pre">çalışır</span> <span class="pre">ve</span> <span class="pre">iki</span> <span class="pre">sınıfı</span> <span class="pre">:math:`\{-1,</span> <span class="pre">+1\}`</span> <span class="pre">olarak</span> <span class="pre">atarız.</span> <span class="pre">Bize</span> <span class="pre">kolaylık</span> <span class="pre">sağlaması</span> <span class="pre">için,</span> <span class="pre">bir</span> <span class="pre">özellik</span> <span class="pre">haritası</span> <span class="pre">ve</span> <span class="pre">bir</span> <span class="pre">ansatz</span> <span class="pre">ile</span> <span class="pre">tanımlanan</span> <span class="pre">özel</span> <span class="pre">bir</span> <span class="pre">``OpflowQNN</span></code> türü olan <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> kullanıyoruz.</p>
 <div class="nbinput nblast docutils container">
@@ -725,8 +724,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</section>
-<section id="CircuitQNN-ile-Sınıflandırma">
+</div>
+<div class="section" id="CircuitQNN-ile-Sınıflandırma">
 <h3><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ile Sınıflandırma<a class="headerlink" href="#CircuitQNN-ile-Sınıflandırma" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>Daha sonra bir <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> içinde sınıflandırma için bir <code class="docutils literal notranslate"><span class="pre">CircuitQNN``nin</span> <span class="pre">nasıl</span> <span class="pre">kullanılabileceğini</span> <span class="pre">göstereceğiz.</span> <span class="pre">Bu</span> <span class="pre">bağlamda,</span> <span class="pre">``CircuitQNN</span></code> çıktı olarak <span class="math notranslate nohighlight">\(d\)</span> boyutlu olasılık vektörü döndürmesi beklenir, burada <span class="math notranslate nohighlight">\(d\)</span> sınıf sayısını gösterir. Bir <a href="#id1"><span class="problematic" id="id2">``</span></a>QuantumCircuit``ten örnekleme, otomatik olarak bir olasılık dağılımıyla sonuçlanır ve bizim sadece ölçülen bit dizilerinden farklı sınıflara bir eşleme tanımlamamız gerekir. İkili sınıflandırma için eşitlik eşlemesini kullanıyoruz.</p>
 <div class="nbinput docutils container">
@@ -860,8 +859,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</section>
-<section id="Değişimsel-Kuantum-Sınıflandırıcısı-(VQC)">
+</div>
+<div class="section" id="Değişimsel-Kuantum-Sınıflandırıcısı-(VQC)">
 <h3>Değişimsel Kuantum Sınıflandırıcısı (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#Değişimsel-Kuantum-Sınıflandırıcısı-(VQC)" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ile <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier``ın</span> <span class="pre">özel</span> <span class="pre">bir</span> <span class="pre">çeşididir.</span> <span class="pre">Bit</span> <span class="pre">dizgisinden</span> <span class="pre">sınıflandırmaya</span> <span class="pre">eşlemek</span> <span class="pre">için</span> <span class="pre">bir</span> <span class="pre">eşlik</span> <span class="pre">eşlemesi</span> <span class="pre">(veya</span> <span class="pre">birden</span> <span class="pre">çok</span> <span class="pre">sınıfa</span> <span class="pre">uzantılar)</span> <span class="pre">uygular,</span> <span class="pre">bu</span> <span class="pre">da</span> <span class="pre">tek-sıcak</span> <span class="pre">kodlanmış</span> <span class="pre">bir</span> <span class="pre">sonuç</span> <span class="pre">olarak</span> <span class="pre">yorumlanan</span> <span class="pre">bir</span> <span class="pre">olasılık</span> <span class="pre">vektörü</span> <span class="pre">ile</span> <span class="pre">sonuçlanır.</span> <span class="pre">Varsayılan</span> <span class="pre">olarak</span> <span class="pre">tek-sıcak</span> <span class="pre">kodlanmış</span> <span class="pre">biçimde</span> <span class="pre">verilen</span> <span class="pre">etiketleri</span> <span class="pre">bekleyen</span> <span class="pre">ve</span> <span class="pre">bu</span> <span class="pre">biçimde</span> <span class="pre">de</span> <span class="pre">tahminler</span> <span class="pre">döndüren</span> <span class="pre">``CrossEntropyLoss</span></code> fonksiyonunu uygular.</p>
 <div class="nbinput nblast docutils container">
@@ -948,9 +947,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="Gerileme-(Regresyon)">
+</div>
+</div>
+<div class="section" id="Gerileme-(Regresyon)">
 <h2>Gerileme (Regresyon)<a class="headerlink" href="#Gerileme-(Regresyon)" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Aşağıdaki algoritmaları göstermek için basit bir regresyon veri kümesi hazırlıyoruz.</p>
 <div class="nbinput docutils container">
@@ -980,7 +979,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-ile-Regresyon">
+<div class="section" id="OpflowQNN-ile-Regresyon">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ile Regresyon<a class="headerlink" href="#OpflowQNN-ile-Regresyon" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>Burada, <span class="math notranslate nohighlight">\([-1, +1]\)</span> içindeki değerleri döndüren bir <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ile gerilemeyi kısıtlıyoruz. <a href="#id1"><span class="problematic" id="id2">``</span></a>CircuitQNN``ye dayalı olarak daha karmaşık ve ayrıca çok boyutlu modeller oluşturulabilir, ancak bu bu eğitimin kapsamını aşmaktadır.</p>
 <div class="nbinput nblast docutils container">
@@ -1077,8 +1076,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</section>
-<section id="Varyasyonel-Kuantum-Regresörü-(VQR)-ile-Regresyon">
+</div>
+<div class="section" id="Varyasyonel-Kuantum-Regresörü-(VQR)-ile-Regresyon">
 <h3>Varyasyonel Kuantum Regresörü (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>) ile Regresyon<a class="headerlink" href="#Varyasyonel-Kuantum-Regresörü-(VQR)-ile-Regresyon" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>Sınıflandırma için <code class="docutils literal notranslate"><span class="pre">VQC``ye</span> <span class="pre">benzer</span> <span class="pre">şekilde,</span> <span class="pre">``VQR</span></code>, <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ile <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor``un</span> <span class="pre">özel</span> <span class="pre">bir</span> <span class="pre">çeşididir.</span> <span class="pre">Varsayılan</span> <span class="pre">olarak</span> <span class="pre">tahminler</span> <span class="pre">ve</span> <span class="pre">hedefler</span> <span class="pre">arasındaki</span> <span class="pre">ortalama</span> <span class="pre">karesel</span> <span class="pre">hatayı</span> <span class="pre">en</span> <span class="pre">aza</span> <span class="pre">indirmek</span> <span class="pre">için</span> <span class="pre">``L2Loss</span></code> işlevini dikkate alır.</p>
 <div class="nbinput nblast docutils container">
@@ -1178,9 +1177,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

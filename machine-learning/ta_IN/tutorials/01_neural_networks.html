@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>குவாண்டம் நியூரல் நெட்வொர்க்குகள் &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="குவாண்டம்-நியூரல்-நெட்வொர்க்குகள்">
+<div class="section" id="குவாண்டம்-நியூரல்-நெட்வொர்க்குகள்">
 <h1>குவாண்டம் நியூரல் நெட்வொர்க்குகள்<a class="headerlink" href="#குவாண்டம்-நியூரல்-நெட்வொர்க்குகள்" title="Permalink to this headline">¶</a></h1>
 <p>இந்த நோட்புக் qiskit இயந்திர கற்றலில் வழங்கப்பட்ட வெவ்வேறு பொதுவான குவாண்டம் நியூரல் நெட்வொர்க் (QNN) செயலாக்கங்களை நிரூபிக்கிறது. நெட்வொர்க்குகள் பயன்பாட்டு-அஞ்ஞான கணக்கீட்டு அலகுகளாகக் கருதப்படுகின்றன, அவை பலவிதமான பயன்பாட்டு நிகழ்வுகளுக்குப் பயன்படுத்தப்படலாம். பயன்பாட்டைப் பொறுத்து, ஒரு குறிப்பிட்ட வகை நெட்வொர்க் அதிகமாகவோ அல்லது குறைவாகவோ பொருத்தமானதாக இருக்கலாம் மற்றும் ஒரு குறிப்பிட்ட வழியில் அமைக்க வேண்டியிருக்கும். பின்வரும் வெவ்வேறு நரம்பியல் நெட்வொர்க்குகள் இப்போது விரிவாக விவாதிக்கப்படும்:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> என்பது qiskit இயந்திர கற்றலில் கிடைக்கும் அனைத்து நரம்பியல் நெட்வொர்க்குகளுக்கான இடைமுகத்தைக் குறிக்கிறது. இது தரவு மாதிரிகள் மற்றும் பயிற்சியளிக்கக்கூடிய எடைகளை உள்ளீடாக எடுத்து முன்னோக்கி மற்றும் பின்தங்கிய பாஸை அம்பலப்படுத்துகிறது. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> எந்த பயிற்சி திறன்களையும் கொண்டிருக்கவில்லை, இவை உண்மையான வழிமுறைகள் / பயன்பாடுகளுக்குத் தள்ளப்படுகின்றன. எனவே, ஒரு <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> பயிற்சியளிக்கக்கூடிய எடைகளுக்கான மதிப்புகளையும் சேமிக்காது. பின்வருவனவற்றில், இந்த இடைமுகங்களின் வெவ்வேறு செயலாக்கங்கள் அறிமுகப்படுத்தப்படுகின்றன.</p>
 <p><code class="docutils literal notranslate"><span class="pre">nn</span></code> எனப்படும் <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> என்று வைத்துக்கொள்வோம். பின்னர், <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> பாஸ் முறையே தரவு மற்றும் எடைகள் <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code> ஆகியவற்றிற்கான தட்டையான உள்ளீடுகளை எடுக்கும். <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> உள்ளீடுகளின் தொகுப்பை ஆதரிக்கிறது மற்றும் தொடர்புடைய வடிவத்தின் வெளியீட்டின் தொகுப்புகளை வழங்குகிறது.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> qiskit-டிலிருந்து ஒரு (அளவுரு) ஆபரேட்டரை எடுத்து பின்தங்கிய பாஸை வழங்க qiskit-டின் சாய்வு கட்டமைப்பை ஆதரிக்கிறது. அத்தகைய ஆபரேட்டர் உதாரணமாக, ஒரு அளவுரு குவாண்டம் நிலையைப் பொறுத்தவரை கவனிக்கக்கூடிய ஒரு குவாண்டம் இயந்திரத்தின் எதிர்பார்க்கப்படும் மதிப்பாக இருக்கலாம். கிளாசிக்கல் தரவை ஏற்றுவதற்கும், பயிற்சியளிக்கக்கூடிய எடைகளைக் குறிப்பதற்கும் அளவுருக்கள் பயன்படுத்தப்படலாம். <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ஆபரேட்டர்கள் மற்றும் மிகவும் சிக்கலான கட்டமைப்புகளின் பட்டியல்களை மிகவும் சிக்கலான QNN களை உருவாக்க அனுமதிக்கிறது.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> என்பது ஒரு சிறப்பு <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> இல் <span class="math notranslate nohighlight">\(n\)</span> குவிட்ஸ், இது முதலில் தரவைச் செருகுவதற்கான அம்ச வரைபடத்தையும், இரண்டாவதாக பயிற்சியளிக்கப்பட்ட ஒரு அன்சாட்ஸையும் கொண்டுள்ளது. இயல்புநிலையாகக் காணக்கூடியது <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, அதாவது, சமநிலை.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> என்பது ஒரு (அளவுருவாக்கப்பட்ட) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> ஐ அடிப்படையாகக் கொண்டது. இது உள்ளீடு மற்றும் எடை அளவுருக்களை எடுத்து அளவீட்டிலிருந்து மாதிரிகளை உருவாக்குகிறது. மாதிரிகள் ஒரு பிட்ஸ்ட்ரிங்கிற்கு ஒத்த முழு எண் குறியீட்டை அளவிடுவதற்கான நிகழ்தகவுகள் அல்லது நேரடியாக பைனரி வெளியீட்டின் தொகுப்பாக விளக்கப்படலாம். நிகழ்தகவுகளின் விஷயத்தில், சாய்வுகளை திறமையாக மதிப்பிடலாம் மற்றும் <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> பின்தங்கிய பாஸையும் வழங்குகிறது. மாதிரிகள் விஷயத்தில், வேறுபாடு சாத்தியமில்லை மற்றும் பின்தங்கிய பாஸ் <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
 <p>மேலும், <code class="docutils literal notranslate"><span class="pre">CircuitQN</span></code> மாதிரிகளை பிந்தைய செயலாக்க <code class="docutils literal notranslate"><span class="pre">interpret</span></code> செயல்பாட்டைக் குறிப்பிட அனுமதிக்கிறது. இது அளவிடப்பட்ட முழு எண்ணை (bitstring-ல் இருந்து) எடுத்து புதிய அட்டவணைக்கு ஒப்பிடப்படுகிறது என்று எதிர்பார்க்கப்படுகிறது, அதாவது எதிர்மறை அல்லாத முழு எண். இந்த வழக்கில், வெளியீட்டு வடிவத்தை வழங்க வேண்டும் மற்றும் அதற்கேற்ப நிகழ்தகவு திரட்டப்படுகிறது.</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-வெளியீடு:-சிதறல்-முழு-எண்-நிகழ்தகவுகள்">
+<div class="section" id="4.1-வெளியீடு:-சிதறல்-முழு-எண்-நிகழ்தகவுகள்">
 <h3>4.1 வெளியீடு: சிதறல் முழு எண் நிகழ்தகவுகள்<a class="headerlink" href="#4.1-வெளியீடு:-சிதறல்-முழு-எண்-நிகழ்தகவுகள்" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-வெளியீடு:-அடர்த்தியான-சமநிலை-நிகழ்தகவுகள்">
+</div>
+<div class="section" id="4.2-வெளியீடு:-அடர்த்தியான-சமநிலை-நிகழ்தகவுகள்">
 <h3>4.2 வெளியீடு: அடர்த்தியான சமநிலை நிகழ்தகவுகள்<a class="headerlink" href="#4.2-வெளியீடு:-அடர்த்தியான-சமநிலை-நிகழ்தகவுகள்" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-வெளியீடு:-மாதிரிகள்">
+</div>
+<div class="section" id="4.3-வெளியீடு:-மாதிரிகள்">
 <h3>4.3 வெளியீடு: மாதிரிகள்<a class="headerlink" href="#4.3-வெளியீடு:-மாதிரிகள்" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-வெளியீடு:-பரிதி-மாதிரிகள்">
+</div>
+<div class="section" id="4.4-வெளியீடு:-பரிதி-மாதிரிகள்">
 <h3>4.4 வெளியீடு: பரிதி மாதிரிகள்<a class="headerlink" href="#4.4-வெளியீடு:-பரிதி-மாதிரிகள்" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

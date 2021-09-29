@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="hi-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>क्वांटम न्यूरल नेटवर्क &mdash; Qiskit Machine Learning 0.2.1 दिग्दर्शिका</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">टिप्पणी </p>
 <p>यह पृष्ठ <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a> से उत्पन्न किया गया है।</p>
 </div>
-<section id="क्वांटम-न्यूरल-नेटवर्क">
+<div class="section" id="क्वांटम-न्यूरल-नेटवर्क">
 <h1>क्वांटम न्यूरल नेटवर्क<a class="headerlink" href="#क्वांटम-न्यूरल-नेटवर्क" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h1>
 <p>यह नोटबुक Qiskit Machine Learning में उपलब्ध कराई गई विभिन्न सामान्य क्वांटम तंत्रिका नेटवर्क या क्वांटम न्यूरल नेटवर्क (QNN) कार्यान्वयन को प्रदर्शित करता है। नेटवर्क का अर्थ अनुप्रयोग-अज्ञेयवादी अभिकलन इकाइयों के रूप में किया जाता है जिनका प्रयोग कई प्रकार के उपयोग मामलों में किया जा सकता है । आवेदन के आधार पर, एक विशेष प्रकार का नेटवर्क अधिक या कम उपयुक्त हो सकता है और इसे एक विशेष प्रकार से स्थापित करने की आवश्यकता हो सकती है। निम्नलिखित अलग उपलब्ध तंत्रिका नेटवर्क अब और अधिक विस्तार में चर्चा की जाएगी:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> Qiskit Machine Learning में उपलब्ध सभी तंत्रिका नेटवर्क के लिए अंतरापृष्ठ का प्रतिनिधित्व करता है। यह इनपुट के रूप में आँकड़ो के नमूने और प्रशिक्षण योग्य भार लेते हुए अग्रिम और पश्चवर्ती पास को उजागर करता है। एक <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> में कोई प्रशिक्षण क्षमता नहीं होती है, इन्हें वास्तविक एल्गोरिदम/अनुप्रयोगों पर धकेल दिया जाता है। इस प्रकार, एक <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> भी प्रशिक्षित वजन के लिए मूल्यों को संग्रहीत नहीं करता है। निम्नलिखित में, इस अंतरापृष्ठ के विभिन्न कार्यान्वयन पेश किए गए हैं।</p>
 <p>मान लीजिए कि एक <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> <code class="docutils literal notranslate"><span class="pre">nn</span></code> कहा जाता है। फिर, <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> पास क्रमशः <cite>nn.num_inputs</cite> और <cite>nn.num_weights</cite> आकार के डेटा और वज़न के लिए समतल निवेश लेता है। <a href="#id1"><span class="problematic" id="id2">``</span></a>NeuralNetwork` निवेश के समूह का समर्थन करता है और संबंधित आकार के निर्गम के समूह लौटाता है।</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">OpflowQNN`</span> <span class="pre">किस्किट</span> <span class="pre">से</span> <span class="pre">एक</span> <span class="pre">(पैरामीट्रिज्ड)</span> <span class="pre">ऑपरेटर</span> <span class="pre">लेता</span> <span class="pre">है</span> <span class="pre">और</span> <span class="pre">पश्चवर्ती</span> <span class="pre">पास</span> <span class="pre">प्रदान</span> <span class="pre">करने</span> <span class="pre">के</span> <span class="pre">लिए</span> <span class="pre">किस्किट</span> <span class="pre">के</span> <span class="pre">ग्रेडिएंट</span> <span class="pre">फ्रेमवर्क</span> <span class="pre">का</span> <span class="pre">लाभ</span> <span class="pre">उठाता</span> <span class="pre">है।</span> <span class="pre">उदाहरण</span> <span class="pre">के</span> <span class="pre">लिए,</span> <span class="pre">ऐसा</span> <span class="pre">ऑपरेटर</span> <span class="pre">पैरामीट्रिज्ड</span> <span class="pre">क्वांटम</span> <span class="pre">अवस्था</span> <span class="pre">के</span> <span class="pre">संबंध</span> <span class="pre">में</span> <span class="pre">देखने</span> <span class="pre">योग्य</span> <span class="pre">क्वांटम</span> <span class="pre">मैकेनिकल</span> <span class="pre">का</span> <span class="pre">अपेक्षित</span> <span class="pre">मूल्य</span> <span class="pre">हो</span> <span class="pre">सकता</span> <span class="pre">है।</span> <span class="pre">पैरामीटर</span> <span class="pre">का</span> <span class="pre">उपयोग</span> <span class="pre">प्रतिष्ठित</span> <span class="pre">आँकड़ो</span> <span class="pre">को</span> <span class="pre">लोड</span> <span class="pre">करने</span> <span class="pre">के</span> <span class="pre">साथ-साथ</span> <span class="pre">प्रशिक्षित</span> <span class="pre">वजन</span> <span class="pre">का</span> <span class="pre">प्रतिनिधित्व</span> <span class="pre">करने</span> <span class="pre">के</span> <span class="pre">लिए</span> <span class="pre">किया</span> <span class="pre">जा</span> <span class="pre">सकता</span> <span class="pre">है।</span> <span class="pre">``OpflowQNN</span></code> ऑपरेटरों की सूची और अधिक जटिल संरचनाओं को अधिक जटिल QNN बनाने की अनुमति देता है।</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> <span class="math notranslate nohighlight">\(n\)</span> है। वितथ अवलोकन योग्य है: गणित: <cite>Z ^ {otimes n}</cite>, यानी, समता।</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p>''CircuitQNN'' (पैरामीटराइज्ड) '' क्वांटम सर्किट&quot; पर आधारित है । यह इनपुट के साथ-साथ वजन के मापदण्डों को भी ले सकता है और माप से नमूने तैयार करता है । नमूने को या तो बिटस्ट्रिंग के अनुरूप पूर्णांक सूचकांक को मापने की संभावना के रूप में व्याख्या किया जा सकता है या सीधे बाइनरी आउटपुट के एक बैच के रूप में. संभावनाओं के मामले में, ग्रेडिएंट्स का कुशलतापूर्वक अनुमान लगाया जा सकता है और ''CircuitQNN'' एक पश्चवर्ती पास प्रदान करता है । नमूनों के मामले में, विभेदीकरण संभव नहीं है और पिछे हुए पास का परिणाम <code class="docutils literal notranslate"><span class="pre">(नहीं,</span> <span class="pre">नहीं)</span></code> वापस होता है ।</p>
 <p>इसके अलावा, <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> नमूनों को पोस्ट-प्रोसेस करने के लिए <code class="docutils literal notranslate"><span class="pre">interpret</span></code> फ़ंक्शन निर्दिष्ट करने की अनुमति देता है। यह एक मापा जाता पूर्णांक (एक bitstring से) लेने के लिए और एक नया सूचकांक है, यानी गैर नकारात्मक पूर्णांक से मैप की उम्मीद है। इस मामले में, आउटपुट आकार प्रदान करने की आवश्यकता है और संभावनाओं को तदनुसार एकत्रित किया जाता है।</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-आउटपुट:-विरल-पूर्णांक-की-संभावनाएँ">
+<div class="section" id="4.1-आउटपुट:-विरल-पूर्णांक-की-संभावनाएँ">
 <h3>4.1 आउटपुट: विरल पूर्णांक की संभावनाएँ<a class="headerlink" href="#4.1-आउटपुट:-विरल-पूर्णांक-की-संभावनाएँ" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-आउटपुट:-सघन-समता-की-संभावनाएँ">
+</div>
+<div class="section" id="4.2-आउटपुट:-सघन-समता-की-संभावनाएँ">
 <h3>4.2 आउटपुट: सघन समता की संभावनाएँ<a class="headerlink" href="#4.2-आउटपुट:-सघन-समता-की-संभावनाएँ" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-आउटपुट:-नमूने">
+</div>
+<div class="section" id="4.3-आउटपुट:-नमूने">
 <h3>4.3 आउटपुट: नमूने<a class="headerlink" href="#4.3-आउटपुट:-नमूने" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-आउटपुट:-समानता-नमूने">
+</div>
+<div class="section" id="4.4-आउटपुट:-समानता-नमूने">
 <h3>4.4 आउटपुट: समानता नमूने<a class="headerlink" href="#4.4-आउटपुट:-समानता-नमूने" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

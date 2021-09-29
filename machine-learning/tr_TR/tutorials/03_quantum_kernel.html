@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="tr-TR" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Kuantum Çekirdek Makine Öğrenimi &mdash; Qiskit Machine Learning 0.2.1 belgelendirmesi</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Not</p>
 <p>Bu sayfa, <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a> sayfasından oluşturulmuştur.</p>
 </div>
-<section id="Kuantum-Çekirdek-Makine-Öğrenimi">
+<div class="section" id="Kuantum-Çekirdek-Makine-Öğrenimi">
 <h1>Kuantum Çekirdek Makine Öğrenimi<a class="headerlink" href="#Kuantum-Çekirdek-Makine-Öğrenimi" title="Bu başlık için kalıcı bağlantı">¶</a></h1>
 <p>Makine öğrenmesinin genel görevi, verilerdeki kalıpları bulmak ve incelemektir. Birçok veri kümesi için, veri noktaları daha yüksek boyutlu bir öznitelik uzayında, bir çekirdek fonksiyonu kullanılarak daha iyi anlaşılır: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\ vec{x}_i), f(\vec{x}_j) \rangle\)</span> burada <span class="math notranslate nohighlight">\(k\)</span> çekirdek fonksiyonudur, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> <span class="math notranslate nohighlight">\(n\)</span> boyutlu girdiler, <span class="math notranslate nohighlight">\(f\)</span> <span class="math notranslate nohighlight">\(n\)</span>-boyutundan <span class="math notranslate nohighlight">\(m\)</span>-boyut uzayına ve <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> arasındaki bir haritadır ve nokta çarpımını gösterir. Sonlu verileri dikkate alırken; bir çekirdek fonksiyonu, bir matris olarak temsil edilebilir: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>Kuantum çekirdek makine öğreniminde, bir kuantum öznitelik haritası <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> klasik bir özellik vektörünü <span class="math notranslate nohighlight">\(\vec{x}\)</span> bir kuantum Hilbert uzayına eşlemek için kullanılır, <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span>, öyle ki <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>.Daha fazla ayrıntı için <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> bölümüne bakın.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Sınıflandırma">
+<div class="section" id="Sınıflandırma">
 <h2>Sınıflandırma<a class="headerlink" href="#Sınıflandırma" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Sınıflandırma örneğimiz için, <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> ve <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> ile denetimli öğrenme’de açıklandığı gibi <em>ad hoc veri kümesini</em> kullanacağız. <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a> sınıflandırma (<code class="docutils literal notranslate"><span class="pre">svc</span></code>) algoritması.</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="Kümelemek">
+</div>
+<div class="section" id="Kümelemek">
 <h2>Kümelemek<a class="headerlink" href="#Kümelemek" title="Bu başlık için kalıcı bağlantı">¶</a></h2>
 <p>Kümeleme örneğimiz için, yine <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> bölümünde açıklandığı gibi <em>ad hoc veri kümesini</em> ve <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code> kümeleme algoritmasını kullanacağız.</p>
 <p>Veri kümesini iki sınıf arasında daha büyük bir boşlukla yeniden oluşturacağız ve kümeleme denetimsiz bir makine öğrenimi görevi olduğundan, bir test örneğine ihtiyacımız yok.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

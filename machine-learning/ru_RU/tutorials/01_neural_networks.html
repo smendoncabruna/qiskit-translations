@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ru-RU" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Квантовые нейронные сети &mdash; документация Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Примечание</p>
 <p>Страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
-<section id="Квантовые-нейронные-сети">
+<div class="section" id="Квантовые-нейронные-сети">
 <h1>Квантовые нейронные сети<a class="headerlink" href="#Квантовые-нейронные-сети" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Этот блокнот демонстрирует различные общие реализации квантовых нейронных сетей (QNN), предоставляемые в Qiskit Machine Learning. Сети предназначены для использования в качестве вычислительных единиц, не зависящих от области применения, которые могут быть использованы для множества различных случаев. В зависимости от задачи, конкретный тип сети может быть более или менее подходящим и может потребовать определенной настройки. Ниже будут более подробно рассмотрены различные доступные нейронные сети:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-`-`-NeuralNetwork-`-`">
+<div class="section" id="1.-`-`-NeuralNetwork-`-`">
 <h2>1. ` ` NeuralNetwork ` `<a class="headerlink" href="#1.-`-`-NeuralNetwork-`-`" title="Ссылка на этот заголовок">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> это интерфейс для всех нейронных сетей, доступных в Qiskit Machine Learning. Он предоставляет собой прямой и обратный проход, принимающий на вход образцы данных и обучаемые веса. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> не содержит никаких возможностей для обучения, они предоставляются конкретными алгоритмами / приложениями. Таким образом, <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> также не хранит значения обучаемых весов. Далее будут представлены различные реализации этих интерфейсов.</p>
 <p>Предположим, что <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> называется <code class="docutils literal notranslate"><span class="pre">nn</span></code>. Затем проход <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> принимает либо одинаковые входные значения для данных и весов размера <code class="docutils literal notranslate"><span class="pre">nn.</span> <span class="pre">um_inputs</span></code> и <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code>, соответственно. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> поддерживает группировку входных данных и возвращает набор выходных данных соответствующей формы.</p>
-</section>
-<section id="2.-`-`-OpflowQNN-`-`">
+</div>
+<div class="section" id="2.-`-`-OpflowQNN-`-`">
 <h2>2. ` ` OpflowQNN ` `<a class="headerlink" href="#2.-`-`-OpflowQNN-`-`" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Функция <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> принимает (параметризованный) оператор из Qiskit и использует градиентную схему Qiskit для обеспечения обратного прохода. Таким оператором может быть, например, математическое ожидание квантово-механической наблюдаемой величины относительно параметризованного квантового состояния. Параметры могут быть использованы для загрузки классических данных, а также для представления обучаемых весов. В <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> также допускаются списки операторов и более сложные структуры для построения более сложных QNN.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-`-`-TwoLayerQNN-`-`">
+</div>
+<div class="section" id="3.-`-`-TwoLayerQNN-`-`">
 <h2>3. ` ` TwoLayerQNN ` `<a class="headerlink" href="#3.-`-`-TwoLayerQNN-`-`" title="Ссылка на этот заголовок">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">TwoLayerQNN`</span> <span class="pre">-</span> <span class="pre">это</span> <span class="pre">специальная</span> <span class="pre">``OpflowQNN</span></code> на <span class="math notranslate nohighlight">\(n\)</span> кубитах, которая состоит из: (1) карты признаков для вставки данных и (2) анзаца, который обучается. Наблюдаемой по умолчанию является <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, т.е. четность.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-`-`-CircuitQNN-`-`">
+</div>
+<div class="section" id="4.-`-`-CircuitQNN-`-`">
 <h2>4. ` ` CircuitQNN ` `<a class="headerlink" href="#4.-`-`-CircuitQNN-`-`" title="Ссылка на этот заголовок">¶</a></h2>
 <p>В основе <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> лежит (параметризованная) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. Она может принимать как входные, так и весовые параметры и производит выборки из измерений. Выборки могут быть интерпретированы как вероятности измерения целочисленного индекса, соответствующего битовой строке, или непосредственно как пакет двоичного вывода. В случае вероятностей градиенты могут быть оценены эффективно, а <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> обеспечивает также обратный проход. В случае выборок дифференцирование невозможно, и обратный проход возвращает <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
 <p>Более того, <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> позволяет указать <code class="docutils literal notranslate"><span class="pre">interpret</span></code> (интерпретирующую) функцию для последующей обработки выборки. Предполагается, что она будет принимать измеренное целое число (из битовой строки) и преобразовывать его в новый индекс, т.е. неотрицательное целое число. В этом случае необходимо указать форму выходных данных, и вероятности будут распределены соответствующим образом.</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-Выходные-данные:-разреженные-целочисленные-вероятности">
+<div class="section" id="4.1-Выходные-данные:-разреженные-целочисленные-вероятности">
 <h3>4.1 Выходные данные: разреженные целочисленные вероятности<a class="headerlink" href="#4.1-Выходные-данные:-разреженные-целочисленные-вероятности" title="Ссылка на этот заголовок">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.1-Выходные-данные:-плотные-четные-вероятности">
+</div>
+<div class="section" id="4.1-Выходные-данные:-плотные-четные-вероятности">
 <h3>4.1 Выходные данные: плотные четные вероятности<a class="headerlink" href="#4.1-Выходные-данные:-плотные-четные-вероятности" title="Ссылка на этот заголовок">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-Выходные-данные:-выборки">
+</div>
+<div class="section" id="4.3-Выходные-данные:-выборки">
 <h3>4.3 Выходные данные: выборки<a class="headerlink" href="#4.3-Выходные-данные:-выборки" title="Ссылка на этот заголовок">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-Выходные-данные:-четные-выборки">
+</div>
+<div class="section" id="4.4-Выходные-данные:-четные-выборки">
 <h3>4.4 Выходные данные: четные выборки<a class="headerlink" href="#4.4-Выходные-данные:-четные-выборки" title="Ссылка на этот заголовок">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ta-IN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>நரம்பியல் நெட்வொர்க் வகைப்படுத்தி &amp; பின்னடைவு &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<section id="நரம்பியல்-நெட்வொர்க்-வகைப்படுத்தி-&amp;-பின்னடைவு">
+<div class="section" id="நரம்பியல்-நெட்வொர்க்-வகைப்படுத்தி-&amp;-பின்னடைவு">
 <h1>நரம்பியல் நெட்வொர்க் வகைப்படுத்தி &amp; பின்னடைவு<a class="headerlink" href="#நரம்பியல்-நெட்வொர்க்-வகைப்படுத்தி-&-பின்னடைவு" title="Permalink to this headline">¶</a></h1>
 <p>இந்த டுடோரியலில் <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> எவ்வாறு பயன்படுத்தப்படுகின்றன என்பதைக் காட்டுகிறோம். இருவரும் ஒரு உள்ளீடாக ஒரு (குவாண்டம்) <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> ஐ எடுத்து ஒரு குறிப்பிட்ட சூழலில் பயன்படுத்துகிறார்கள். இரண்டு நிகழ்வுகளிலும் வசதிக்காக முன்பே உள்ளமைக்கப்பட்ட மாறுபாட்டை நாங்கள் வழங்குகிறோம், மாறுபட்ட குவாண்டம் வகைப்படுத்தி (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>) மற்றும் மாறுபட்ட குவாண்டம் பின்னடைவு (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>). பயிற்சி பின்வருமாறு கட்டமைக்கப்பட்டுள்ளது:</p>
 <ol class="arabic simple">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="வகைப்படுத்துதல்">
+<div class="section" id="வகைப்படுத்துதல்">
 <h2>வகைப்படுத்துதல்<a class="headerlink" href="#வகைப்படுத்துதல்" title="Permalink to this headline">¶</a></h2>
 <p>பின்வரும் வழிமுறைகளை விளக்குவதற்கு எளிய வகைப்பாடு தரவுத்தொகுப்பை நாங்கள் தயார் செய்கிறோம்.</p>
 <div class="nbinput docutils container">
@@ -599,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-உடன்-வகைப்பாடு">
+<div class="section" id="OpflowQNN-உடன்-வகைப்பாடு">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> உடன் வகைப்பாடு<a class="headerlink" href="#OpflowQNN-உடன்-வகைப்பாடு" title="Permalink to this headline">¶</a></h3>
 <p>முதலில் <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> க்குள் வகைப்படுத்தலுக்கு <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> எவ்வாறு பயன்படுத்தப்படலாம் என்பதைக் காண்பிப்போம். இந்த சூழலில், `` OpflowQNN`` இதில் ஒரு பரிமாண வெளியீட்டை வழங்கும் <span class="math notranslate nohighlight">\([-1, +1]\)</span>. இது பைனரி வகைப்பாட்டிற்கு மட்டுமே செயல்படும், மேலும் இரண்டு வகுப்புகளையும் இதற்கு ஒதுக்குகிறோம் <span class="math notranslate nohighlight">\(\{-1, +1\}\)</span>. வசதிக்காக, <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> ஐப் பயன்படுத்துகிறோம், இது ஒரு சிறப்பு வகை <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> ஒரு அம்ச வரைபடம் மற்றும் ஒரு அன்சாட்ஸ் வழியாக வரையறுக்கப்பட்டுள்ளது.</p>
 <div class="nbinput nblast docutils container">
@@ -725,8 +724,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</section>
-<section id="CircuitQNN-உடன்-வகைப்பாடு">
+</div>
+<div class="section" id="CircuitQNN-உடன்-வகைப்பாடு">
 <h3><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> உடன் வகைப்பாடு<a class="headerlink" href="#CircuitQNN-உடன்-வகைப்பாடு" title="Permalink to this headline">¶</a></h3>
 <p>அடுத்து <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> க்குள் வகைப்படுத்தலுக்கு <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> எவ்வாறு பயன்படுத்தப்படலாம் என்பதைக் காண்பிப்போம். இந்த சூழலில், <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> திரும்பும் என்று எதிர்பார்க்கப்படுகிறது <span class="math notranslate nohighlight">\(d\)</span>-பரிமாண நிகழ்தகவு திசையன் வெளியீடாக, எங்கே <span class="math notranslate nohighlight">\(d\)</span> என்பது வகுப்புகளின் எண்ணிக்கையைக் குறிக்கிறது. <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> இலிருந்து மாதிரியானது தானாக நிகழ்தகவு விநியோகத்தில் விளைகிறது, மேலும் அளவிடப்பட்ட பிட்ஸ்ட்ரிங்கிலிருந்து வெவ்வேறு வகுப்புகளுக்கு ஒரு மேப்பிங்கை வரையறுக்க வேண்டும். பைனரி வகைப்பாட்டிற்கு நாங்கள் பரிதி மேப்பிங்கைப் பயன்படுத்துகிறோம்.</p>
 <div class="nbinput docutils container">
@@ -860,8 +859,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</section>
-<section id="மாறுபட்ட-குவாண்டம்-வகைப்படுத்தி-(VQC)">
+</div>
+<div class="section" id="மாறுபட்ட-குவாண்டம்-வகைப்படுத்தி-(VQC)">
 <h3>மாறுபட்ட குவாண்டம் வகைப்படுத்தி (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#மாறுபட்ட-குவாண்டம்-வகைப்படுத்தி-(VQC)" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> என்பது <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> உடன் <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> சிறப்பு மாறுபாடாகும். இது பிட்ஸ்ட்ரிங்கிலிருந்து வகைப்பாட்டிற்கு வரைபட ஒரு சமநிலை மேப்பிங்கை (அல்லது பல வகுப்புகளுக்கு நீட்டிப்புகள்) பயன்படுத்துகிறது, இதன் விளைவாக நிகழ்தகவு திசையன் உருவாகிறது, இது ஒரு சூடான குறியாக்கப்பட்ட விளைவாக விளக்கப்படுகிறது. இயல்பாக, இது ஒரு ஹாட் என்கோடட் வடிவத்தில் கொடுக்கப்பட்ட லேபிள்களை எதிர்பார்க்கும் <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> செயல்பாட்டைப் பயன்படுத்துகிறது, மேலும் அந்த வடிவமைப்பிலும் கணிப்புகளைத் தரும்.</p>
 <div class="nbinput nblast docutils container">
@@ -948,9 +947,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="பின்னடைவு">
+</div>
+</div>
+<div class="section" id="பின்னடைவு">
 <h2>பின்னடைவு<a class="headerlink" href="#பின்னடைவு" title="Permalink to this headline">¶</a></h2>
 <p>பின்வரும் வழிமுறைகளை விளக்குவதற்கு எளிய பின்னடைவு தரவுத்தொகுப்பை நாங்கள் தயார் செய்கிறோம்.</p>
 <div class="nbinput docutils container">
@@ -980,7 +979,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-உடன்-பின்னடைவு">
+<div class="section" id="OpflowQNN-உடன்-பின்னடைவு">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> உடன் பின்னடைவு<a class="headerlink" href="#OpflowQNN-உடன்-பின்னடைவு" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\([-1, +1]\)</span> இல் மதிப்புகளை வழங்கும் <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> உடன் பின்னடைவை இங்கு கட்டுப்படுத்துகிறோம். <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ஐ அடிப்படையாகக் கொண்டு மிகவும் சிக்கலான மற்றும் பல பரிமாண மாதிரிகள் உருவாக்கப்படலாம், ஆனால் இது இந்த டுடோரியலின் நோக்கத்தை மீறுகிறது.</p>
 <div class="nbinput nblast docutils container">
@@ -1077,8 +1076,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</section>
-<section id="மாறுபட்ட-குவாண்டம்-பின்னடைவுடன்-பின்னடைவு-(VQR)">
+</div>
+<div class="section" id="மாறுபட்ட-குவாண்டம்-பின்னடைவுடன்-பின்னடைவு-(VQR)">
 <h3>மாறுபட்ட குவாண்டம் பின்னடைவுடன் பின்னடைவு (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)<a class="headerlink" href="#மாறுபட்ட-குவாண்டம்-பின்னடைவுடன்-பின்னடைவு-(VQR)" title="Permalink to this headline">¶</a></h3>
 <p>வகைப்பாட்டிற்கான <code class="docutils literal notranslate"><span class="pre">VQC</span></code> ஐப் போலவே, <code class="docutils literal notranslate"><span class="pre">VQR</span></code> என்பது <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> உடன் <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> இன் சிறப்பு மாறுபாடாகும். முன்னிருப்பாக இது கணிப்புகள் மற்றும் இலக்குகளுக்கு இடையிலான சராசரி ஸ்கொயர் பிழையைக் குறைக்க <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> செயல்பாட்டைக் கருதுகிறது.</p>
 <div class="nbinput nblast docutils container">
@@ -1178,9 +1177,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

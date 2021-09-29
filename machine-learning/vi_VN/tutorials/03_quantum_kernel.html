@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="vi-VN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Nhân của trình học máy lượng tử &mdash; Tài liệu Qiskit Machine Learning 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Ghi chú</p>
 <p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<section id="Nhân-của-trình-học-máy-lượng-tử">
+<div class="section" id="Nhân-của-trình-học-máy-lượng-tử">
 <h1>Nhân của trình học máy lượng tử<a class="headerlink" href="#Nhân-của-trình-học-máy-lượng-tử" title="Permalink to this headline">¶</a></h1>
 <p>Nhiệm vụ chung của học máy là để tìm và nghiên cứu những mô hình trong dữ liệu. Với rất nhiều tập dữ liệu, các điểm dữ liệu có thể được hiểu tốt hơn trong những không gian tính năng với số chiều lớn hơn, do đó chúng sử dụng hàm hạt nhân: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> trong đó <span class="math notranslate nohighlight">\(k\)</span> là hàm hạt nhân, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> là những đầu vào <span class="math notranslate nohighlight">\(n\)</span> chiều, <span class="math notranslate nohighlight">\(f\)</span> chiều tới không gian <span class="math notranslate nohighlight">\(m\)</span> chiều và <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> chỉ tích vô hướng. Khi xem xét một dữ liệu có hạn, một hàm hạt nhân có thể được viết dưới dạng mọt ma trận: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
 <p>Trong học máy nhân lượng tử, một ánh xạ tính năng lượng tử <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> được sử dụng để ánh xạ một véc-tơ tính năng cổ điển <span class="math notranslate nohighlight">\(\vec{x}\)</span> cho một không gian Hilbert lượng tử, <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span>, sao cho <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. Xem <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> để biết thêm chi tiết.</p>
@@ -540,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Phân-loại">
+<div class="section" id="Phân-loại">
 <h2>Phân loại<a class="headerlink" href="#Phân-loại" title="Permalink to this headline">¶</a></h2>
 <p>Dành cho ví dụ về phân loại, chúng ta sẽ lại sử dụng tập dữ liệu <em>ad hoc dataset</em> như đã mô tả trong <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, and thuật toán phân loại (<code class="docutils literal notranslate"><span class="pre">svc</span></code>) <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a>.</p>
 <div class="nbinput docutils container">
@@ -689,8 +688,8 @@ Precomputed kernel classification test score: 1.0
 QSVC classification test score: 1.0
 </pre></div></div>
 </div>
-</section>
-<section id="Cụm-dữ-liệu">
+</div>
+<div class="section" id="Cụm-dữ-liệu">
 <h2>Cụm dữ liệu<a class="headerlink" href="#Cụm-dữ-liệu" title="Permalink to this headline">¶</a></h2>
 <p>Với ví dụ về cụm dữ liệu, chúng ta sẽ lại sử dụng tập dữ liệu <em>ad hoc dataset</em> như đã mô tả trong <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, và thuật toán phân cụm dữ liệu <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code>.</p>
 <p>Chúng ta sẽ tái tạo tập dữ liệu với khoảng cách lớn hơn giữa hai lớp, và vì cụm dữ liệu là một nhiệm vụ học máy không giám sát, chúng ta không cần mẫu thử nghiệm.</p>
@@ -816,8 +815,8 @@ Clustering score: 0.7287008798015754
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-UN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Redes Neuronales Cuánticas &mdash; documentación de Qiskit Machine Learning - 0.2.1</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
-<section id="Redes-Neuronales-Cuánticas">
+<div class="section" id="Redes-Neuronales-Cuánticas">
 <h1>Redes Neuronales Cuánticas<a class="headerlink" href="#Redes-Neuronales-Cuánticas" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Este cuaderno muestra las diferentes implementaciones genéricas de redes neuronales cuánticas (quantum neural network, QNN) proporcionadas en Qiskit Machine Learning. Las redes están pensadas como unidades computacionales independientes de la aplicación en las que se pueden utilizar para muchos casos de uso diferentes. Dependiendo de la aplicación, un tipo particular de red puede ser más o menos adecuado y puede ser necesario configurarlo de una manera particular. Las siguientes redes neuronales disponibles diferentes se discutirán ahora con más detalle:</p>
 <ol class="arabic simple">
@@ -554,12 +553,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="1.-NeuralNetwork">
+<div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> representa la interface para todas las redes neuronales disponibles en Qiskit Machine Learning. Este muestra un pase hacia adelante y un pase hacia atrás tomando las muestras y ponderaciones entrenables como entrada. Un <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> no contiene ninguna capacidad de entrenamiento, esto se le asigna a los algoritmos y a las aplicaciones. Por ello, un <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> tampoco guarda los valores de las ponderaciones entrenables. Enseguida, se introducen las diferentes implementaciones de estas interfaces.</p>
 <p>Supongamos que tenemos un <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> llamado <code class="docutils literal notranslate"><span class="pre">nn</span></code>. A continuación, el paso <code class="docutils literal notranslate"><span class="pre">nn.forward</span> <span class="pre">(input,</span> <span class="pre">weights)</span></code> toma cualquiera de las entradas planas para los datos y las ponderaciones del tamaño <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> y <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code>, respectivamente. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> es compatible con la carga de entradas y devuelve lotes de salida de la forma correspondiente.</p>
-</section>
-<section id="2.-OpflowQNN">
+</div>
+<div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> toma un operador (parametrizado) de Qiskit y aprovecha el entorno de trabajo de gradiente de Qiskit para proporcionar el pase hacia atrás. Tal operador puede ser, por ejemplo, un valor esperado de un observable en la mecánica cuántica con respecto a un estado cuántico parametrizado. Los parámetros se pueden utilizar para cargar datos clásicos y representar pesos entrenables. El <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> también permite listas de operadores y estructuras más complejas para construir QNN más complejas.</p>
 <div class="nbinput nblast docutils container">
@@ -765,8 +764,8 @@ array([[0.81422018, 0.81422018]])
          [0.0008565]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="3.-TwoLayerQNN">
+</div>
+<div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> es un <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> especial en <span class="math notranslate nohighlight">\(n\)</span> qubits qué consiste en primer lugar de un mapa de características para insertar datos y en segundo de un ansatz entrenado. El observable predeterminado es <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, es decir, paridad.</p>
 <div class="nbinput nblast docutils container">
@@ -909,8 +908,8 @@ array([[0.28520667]])
            0.11644461, -0.4073129 ]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.-CircuitQNN">
+</div>
+<div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> está basado en un <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> (parametrizado). Esto puede tomar tanto parámetros de entrada como de ponderación y producir muestras a partir de la medición. Las muestras pueden interpretarse como probabilidades de medir el índice entero correspondiente a una cadena de bits o directamente como un lote de salida binaria. En el caso de las probabilidades, los gradientes se pueden estimar de manera eficiente y el <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> también proporciona un pase hacia atrás. En el caso de las muestras, la diferenciación no es posible y el pase hacia atrás devuelve <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
 <p>Además, el <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> permite especificar una función <code class="docutils literal notranslate"><span class="pre">interpret</span></code> para procesar las muestras. Se espera que esto tome un entero medido (de una cadena de bits) y que se mapee con un nuevo índice, es decir, un entero no negativo. En este caso, es necesario proporcionar la forma de la salida y las probabilidades se agregan en consecuencia.</p>
@@ -942,7 +941,7 @@ array([[0.28520667]])
 <img alt="../_images/tutorials_01_neural_networks_29_0.png" src="../_images/tutorials_01_neural_networks_29_0.png" />
 </div>
 </div>
-<section id="4.1-Salida:-probabilidades-de-enteros-dispersos">
+<div class="section" id="4.1-Salida:-probabilidades-de-enteros-dispersos">
 <h3>4.1 Salida: probabilidades de enteros dispersos<a class="headerlink" href="#4.1-Salida:-probabilidades-de-enteros-dispersos" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -1004,8 +1003,8 @@ array([[0.5, 0. , 0. , 0. , 0.3, 0. , 0. , 0.2]])
  &lt;COO: shape=(1, 8, 6), dtype=float64, nnz=22, fill_value=0.0&gt;)
 </pre></div></div>
 </div>
-</section>
-<section id="4.2-Salida:-probabilidades-de-paridad-densa">
+</div>
+<div class="section" id="4.2-Salida:-probabilidades-de-paridad-densa">
 <h3>4.2 Salida: probabilidades de paridad densa<a class="headerlink" href="#4.2-Salida:-probabilidades-de-paridad-densa" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
@@ -1073,8 +1072,8 @@ array([[0.8, 0.2]])
           -5.55111512e-17,  2.00000000e-01, -5.00000000e-02]]]))
 </pre></div></div>
 </div>
-</section>
-<section id="4.3-Salida:-Muestras">
+</div>
+<div class="section" id="4.3-Salida:-Muestras">
 <h3>4.3 Salida: Muestras<a class="headerlink" href="#4.3-Salida:-Muestras" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -1145,8 +1144,8 @@ array([[[4.],
 (None, None)
 </pre></div></div>
 </div>
-</section>
-<section id="4.4-Salida:-Muestras-de-Paridad">
+</div>
+<div class="section" id="4.4-Salida:-Muestras-de-Paridad">
 <h3>4.4 Salida: Muestras de Paridad<a class="headerlink" href="#4.4-Salida:-Muestras-de-Paridad" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1250,9 +1249,9 @@ array([[[1.],
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

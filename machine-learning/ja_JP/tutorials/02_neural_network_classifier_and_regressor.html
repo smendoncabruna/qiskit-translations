@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja-JP" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ニューラル・ネットワーク分類器と回帰器 &mdash; Qiskit Machine Learning 0.2.1 ドキュメント</title>
@@ -511,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">注釈</p>
 <p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/02_neural_network_classifier_and_regressor.ipynb">docs/tutorials/02_neural_network_classifier_and_regressor.ipynb</a> から生成されました。</p>
 </div>
-<section id="ニューラル・ネットワーク分類器と回帰器">
+<div class="section" id="ニューラル・ネットワーク分類器と回帰器">
 <h1>ニューラル・ネットワーク分類器と回帰器<a class="headerlink" href="#ニューラル・ネットワーク分類器と回帰器" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>このチュートリアルでは、<code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> と <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> がどのように使用されるかを示します。どちらも入力として (量子) <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> を受け取り、特定のコンテキストでそれを活用します。どちらの場合も、利便性のためにあらかじめ設定されたバリエーション、変分量子分類器 (Variational Quantum Classifier, <code class="docutils literal notranslate"><span class="pre">VQC</span></code>) と変分量子回帰器 (Variational Quantum Regressor, <code class="docutils literal notranslate"><span class="pre">VQR</span></code>) を提供しています。チュートリアルの構成は以下の通りです。</p>
 <ol class="arabic simple">
@@ -565,7 +564,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="分類">
+<div class="section" id="分類">
 <h2>分類<a class="headerlink" href="#分類" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>以下のアルゴリズムを説明するために、簡単な分類データセットを用意します。</p>
 <div class="nbinput docutils container">
@@ -599,7 +598,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_4_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-による分類">
+<div class="section" id="OpflowQNN-による分類">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> による分類<a class="headerlink" href="#OpflowQNN-による分類" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>まず、 <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> が <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> の中でどのように分類に使われるかを示します。ここでは、 <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> は、 <span class="math notranslate nohighlight">\([-1, +1]\)</span> の1次元の出力を返すことが期待されています。 これは、二値分類にしか使えないので、2つのクラスを <span class="math notranslate nohighlight">\(\{-1, +1\}\)</span> に割り当てます。ここでは、便宜上、特徴マップとansatzを用いて定義された <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> の特別なタイプである <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> を使用します。</p>
 <div class="nbinput nblast docutils container">
@@ -725,8 +724,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
-</section>
-<section id="CircuitQNN-による分類">
+</div>
+<div class="section" id="CircuitQNN-による分類">
 <h3><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> による分類<a class="headerlink" href="#CircuitQNN-による分類" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>次に、 <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> が <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> の中でどのように分類に使われるかを示します。ここでは、 <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> は、 <span class="math notranslate nohighlight">\(d\)</span> -次元の確率ベクトルを出力として返すことが期待されます。ここで <span class="math notranslate nohighlight">\(d\)</span> はクラス数です。<code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> からのサンプリングは、自動的に確率分布になりますので、測定されたビット列から異なるクラスへのマッピングを定義するだけです。バイナリー分類には，パリティー・マッピングを使います。</p>
 <div class="nbinput docutils container">
@@ -860,8 +859,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
-</section>
-<section id="変分量子分類器-(VQC)">
+</div>
+<div class="section" id="変分量子分類器-(VQC)">
 <h3>変分量子分類器 (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#変分量子分類器-(VQC)" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> は、 <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> を用いた <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> の特別なバリエーションです。これは、パリティー・マッピング（または複数のクラスへの拡張）を適用して、ビット列から分類にマッピングし、その結果、確率ベクトルが得られ、ワンショットでエンコードされた結果として解釈されます。デフォルトでは、 <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> 関数を適用します。この関数は、ワンショットでエンコードされたフォーマットで与えられたラベルを想定しており、そのフォーマットでも予測値を返します。</p>
 <div class="nbinput nblast docutils container">
@@ -948,9 +947,9 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="回帰">
+</div>
+</div>
+<div class="section" id="回帰">
 <h2>回帰<a class="headerlink" href="#回帰" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>以下のアルゴリズムを説明するために、簡単な回帰データセットを用意します。</p>
 <div class="nbinput docutils container">
@@ -980,7 +979,7 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
-<section id="OpflowQNN-による回帰">
+<div class="section" id="OpflowQNN-による回帰">
 <h3><code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> による回帰<a class="headerlink" href="#OpflowQNN-による回帰" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ここでは、 <span class="math notranslate nohighlight">\([-1, +1]\)</span> の値を返す <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> を使った回帰に限定します。もっと複雑で多次元のモデルを <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> をベースにして構築することもできますが、このチュートリアルの範囲を超えています。</p>
 <div class="nbinput nblast docutils container">
@@ -1077,8 +1076,8 @@ parameters mentioned passed.</p>
 <img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
-</section>
-<section id="変分量子回帰器-(VQR)-による回帰">
+</div>
+<div class="section" id="変分量子回帰器-(VQR)-による回帰">
 <h3>変分量子回帰器 (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>) による回帰<a class="headerlink" href="#変分量子回帰器-(VQR)-による回帰" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQR</span></code> は、分類用の <code class="docutils literal notranslate"><span class="pre">VQC</span></code> と同様に、 <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> を用いた <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> の特別な改良版です。デフォルトでは、予測値と目標値の間の平均二乗誤差を最小化するために、 <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> 関数を考慮します。</p>
 <div class="nbinput nblast docutils container">
@@ -1178,9 +1177,9 @@ parameters mentioned passed.</p>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>
