@@ -1,24 +1,19 @@
-﻿qiskit.providers.BaseProvider
-=============================
+﻿BaseProvider
+============
 
 .. currentmodule:: qiskit.providers
 
 .. autoclass:: BaseProvider
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BaseProvider.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BaseProvider.backends
       ~BaseProvider.get_backend
-   
-   
 
-   
-   
-   
+

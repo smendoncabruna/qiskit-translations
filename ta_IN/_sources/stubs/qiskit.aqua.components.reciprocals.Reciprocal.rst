@@ -1,24 +1,19 @@
-﻿qiskit.aqua.components.reciprocals.Reciprocal
-=============================================
+﻿Reciprocal
+==========
 
 .. currentmodule:: qiskit.aqua.components.reciprocals
 
 .. autoclass:: Reciprocal
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Reciprocal.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Reciprocal.construct_circuit
       ~Reciprocal.sv_to_resvec
-   
-   
 
-   
-   
-   
+

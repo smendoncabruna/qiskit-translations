@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.MergeAdjacentBarriers
-==============================================
+﻿MergeAdjacentBarriers
+=====================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: MergeAdjacentBarriers
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MergeAdjacentBarriers.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MergeAdjacentBarriers.name
       ~MergeAdjacentBarriers.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MergeAdjacentBarriers.is_analysis_pass
-      ~MergeAdjacentBarriers.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

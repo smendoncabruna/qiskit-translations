@@ -1,33 +1,26 @@
-﻿qiskit.chemistry.drivers.HDF5Driver
-===================================
+﻿HDF5Driver
+==========
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: HDF5Driver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HDF5Driver.__init__
-      ~HDF5Driver.run
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~HDF5Driver.run
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HDF5Driver.basis
-      ~HDF5Driver.hf_method
-      ~HDF5Driver.molecule
-      ~HDF5Driver.supports_molecule
-      ~HDF5Driver.work_path
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule
+   .. autoattribute:: work_path

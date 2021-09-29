@@ -1,32 +1,25 @@
-﻿qiskit.algorithms.HamiltonianPhaseEstimationResult
-==================================================
+﻿HamiltonianPhaseEstimationResult
+================================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: HamiltonianPhaseEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HamiltonianPhaseEstimationResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~HamiltonianPhaseEstimationResult.combine
       ~HamiltonianPhaseEstimationResult.filter_phases
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HamiltonianPhaseEstimationResult.most_likely_eigenvalue
-      ~HamiltonianPhaseEstimationResult.most_likely_phase
-      ~HamiltonianPhaseEstimationResult.phase
-   
-   
+   .. autoattribute:: most_likely_eigenvalue
+   .. autoattribute:: most_likely_phase
+   .. autoattribute:: phase

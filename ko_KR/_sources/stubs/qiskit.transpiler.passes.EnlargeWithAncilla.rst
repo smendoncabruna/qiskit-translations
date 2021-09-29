@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.EnlargeWithAncilla
-===========================================
+﻿EnlargeWithAncilla
+==================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: EnlargeWithAncilla
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EnlargeWithAncilla.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EnlargeWithAncilla.name
       ~EnlargeWithAncilla.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EnlargeWithAncilla.is_analysis_pass
-      ~EnlargeWithAncilla.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

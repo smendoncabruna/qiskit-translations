@@ -1,33 +1,26 @@
-﻿qiskit.chemistry.drivers.GaussianLogResult
-==========================================
+﻿GaussianLogResult
+=================
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: GaussianLogResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GaussianLogResult.__init__
-      ~GaussianLogResult.get_watson_hamiltonian
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~GaussianLogResult.get_watson_hamiltonian
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GaussianLogResult.a_to_h_numbering
-      ~GaussianLogResult.cubic_force_constants
-      ~GaussianLogResult.log
-      ~GaussianLogResult.quadratic_force_constants
-      ~GaussianLogResult.quartic_force_constants
-   
-   
+   .. autoattribute:: a_to_h_numbering
+   .. autoattribute:: cubic_force_constants
+   .. autoattribute:: log
+   .. autoattribute:: quadratic_force_constants
+   .. autoattribute:: quartic_force_constants

@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.LogNormalDistribution
-================================================================
+﻿LogNormalDistribution
+=====================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: LogNormalDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LogNormalDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LogNormalDistribution.build
       ~LogNormalDistribution.build_controlled
       ~LogNormalDistribution.build_controlled_inverse
@@ -27,20 +26,14 @@
       ~LogNormalDistribution.pdf_to_probabilities
       ~LogNormalDistribution.required_ancillas
       ~LogNormalDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LogNormalDistribution.high
-      ~LogNormalDistribution.low
-      ~LogNormalDistribution.num_target_qubits
-      ~LogNormalDistribution.num_values
-      ~LogNormalDistribution.probabilities
-      ~LogNormalDistribution.values
-   
-   
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: values

@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.StabilizerTable
-====================================
+﻿StabilizerTable
+===============
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: StabilizerTable
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~StabilizerTable.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~StabilizerTable.adjoint
       ~StabilizerTable.anticommutes_with_all
       ~StabilizerTable.argsort
@@ -39,25 +38,19 @@
       ~StabilizerTable.to_matrix
       ~StabilizerTable.transpose
       ~StabilizerTable.unique
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~StabilizerTable.X
-      ~StabilizerTable.Z
-      ~StabilizerTable.array
-      ~StabilizerTable.dim
-      ~StabilizerTable.num_qubits
-      ~StabilizerTable.pauli
-      ~StabilizerTable.phase
-      ~StabilizerTable.qargs
-      ~StabilizerTable.settings
-      ~StabilizerTable.shape
-      ~StabilizerTable.size
-   
-   
+   .. autoattribute:: X
+   .. autoattribute:: Z
+   .. autoattribute:: array
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: pauli
+   .. autoattribute:: phase
+   .. autoattribute:: qargs
+   .. autoattribute:: settings
+   .. autoattribute:: shape
+   .. autoattribute:: size

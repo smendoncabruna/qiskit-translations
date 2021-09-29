@@ -1,19 +1,18 @@
-﻿qiskit.circuit.ControlledGate
-=============================
+﻿ControlledGate
+==============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: ControlledGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ControlledGate.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ControlledGate.add_decomposition
       ~ControlledGate.assemble
       ~ControlledGate.broadcast_arguments
@@ -30,23 +29,17 @@
       ~ControlledGate.soft_compare
       ~ControlledGate.to_matrix
       ~ControlledGate.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ControlledGate.ctrl_state
-      ~ControlledGate.decompositions
-      ~ControlledGate.definition
-      ~ControlledGate.duration
-      ~ControlledGate.label
-      ~ControlledGate.name
-      ~ControlledGate.num_ctrl_qubits
-      ~ControlledGate.params
-      ~ControlledGate.unit
-   
-   
+   .. autoattribute:: ctrl_state
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: num_ctrl_qubits
+   .. autoattribute:: params
+   .. autoattribute:: unit

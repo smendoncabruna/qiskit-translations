@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.FixedPoint
-===================================
+﻿FixedPoint
+==========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: FixedPoint
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FixedPoint.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FixedPoint.name
       ~FixedPoint.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FixedPoint.is_analysis_pass
-      ~FixedPoint.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

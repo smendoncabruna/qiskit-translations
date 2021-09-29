@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.converters.pauli_basis_change &mdash; Qiskit 0.29.0 belgelendirmesi</title>
+  <title>qiskit.opflow.converters.pauli_basis_change &mdash; Qiskit 0.30.0 belgelendirmesi</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Belgeleme ana sayfası</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Ön Bölümler</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Kaynakları</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simülatör (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Deneyleri (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Uygulama Modülleri (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Sağlayıcı)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hata Giderme</span></p>
 <ul>
@@ -377,7 +384,7 @@
 <span class="sd">    this method, such as the placement of the CNOT chains.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PauliBasisChange.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.__init__">[belgeler]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">destination_basis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Pauli</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">traverse</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -410,7 +417,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_destination</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[PauliOp]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_traverse</span> <span class="o">=</span> <span class="n">traverse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_replacement_fn</span> <span class="o">=</span> <span class="n">replacement_fn</span> <span class="ow">or</span> <span class="n">PauliBasisChange</span><span class="o">.</span><span class="n">operator_replacement_fn</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_replacement_fn</span> <span class="o">=</span> <span class="n">replacement_fn</span> <span class="ow">or</span> <span class="n">PauliBasisChange</span><span class="o">.</span><span class="n">operator_replacement_fn</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">destination</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PauliOp</span><span class="p">]:</span>
@@ -437,7 +444,7 @@
 
     <span class="c1"># TODO see whether we should make this performant by handling ListOps of Paulis later.</span>
     <span class="c1"># pylint: disable=too-many-return-statements</span>
-<div class="viewcode-block" id="PauliBasisChange.convert"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.convert">[belgeler]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliBasisChange.convert"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.convert.html#qiskit.opflow.converters.PauliBasisChange.convert">[belgeler]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Given a ``PauliOp``, or an Operator containing ``PauliOps`` if ``_traverse`` is True,</span>
 <span class="sd">        converts each Pauli into the basis specified by self._destination and a</span>
@@ -545,7 +552,7 @@
 
         <span class="k">return</span> <span class="n">operator</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.measurement_replacement_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.measurement_replacement_fn">[belgeler]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PauliBasisChange.measurement_replacement_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.measurement_replacement_fn.html#qiskit.opflow.converters.PauliBasisChange.measurement_replacement_fn">[belgeler]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">measurement_replacement_fn</span><span class="p">(</span>
         <span class="n">cob_instr_op</span><span class="p">:</span> <span class="n">PrimitiveOp</span><span class="p">,</span> <span class="n">dest_pauli_op</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">PauliOp</span><span class="p">,</span> <span class="n">PauliSumOp</span><span class="p">,</span> <span class="n">ListOp</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
@@ -563,7 +570,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ComposedOp</span><span class="p">([</span><span class="n">StateFn</span><span class="p">(</span><span class="n">dest_pauli_op</span><span class="p">,</span> <span class="n">is_measurement</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">cob_instr_op</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.statefn_replacement_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.statefn_replacement_fn">[belgeler]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PauliBasisChange.statefn_replacement_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.statefn_replacement_fn.html#qiskit.opflow.converters.PauliBasisChange.statefn_replacement_fn">[belgeler]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">statefn_replacement_fn</span><span class="p">(</span>
         <span class="n">cob_instr_op</span><span class="p">:</span> <span class="n">PrimitiveOp</span><span class="p">,</span> <span class="n">dest_pauli_op</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">PauliOp</span><span class="p">,</span> <span class="n">PauliSumOp</span><span class="p">,</span> <span class="n">ListOp</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
@@ -581,7 +588,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ComposedOp</span><span class="p">([</span><span class="n">cob_instr_op</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(),</span> <span class="n">StateFn</span><span class="p">(</span><span class="n">dest_pauli_op</span><span class="p">)])</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.operator_replacement_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.operator_replacement_fn">[belgeler]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="PauliBasisChange.operator_replacement_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.operator_replacement_fn.html#qiskit.opflow.converters.PauliBasisChange.operator_replacement_fn">[belgeler]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">operator_replacement_fn</span><span class="p">(</span>
         <span class="n">cob_instr_op</span><span class="p">:</span> <span class="n">PrimitiveOp</span><span class="p">,</span> <span class="n">dest_pauli_op</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">PauliOp</span><span class="p">,</span> <span class="n">PauliSumOp</span><span class="p">,</span> <span class="n">ListOp</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
@@ -599,7 +606,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ComposedOp</span><span class="p">([</span><span class="n">cob_instr_op</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(),</span> <span class="n">dest_pauli_op</span><span class="p">,</span> <span class="n">cob_instr_op</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.get_tpb_pauli"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.get_tpb_pauli">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_tpb_pauli</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_op</span><span class="p">:</span> <span class="n">ListOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pauli</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliBasisChange.get_tpb_pauli"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.get_tpb_pauli.html#qiskit.opflow.converters.PauliBasisChange.get_tpb_pauli">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_tpb_pauli</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_op</span><span class="p">:</span> <span class="n">ListOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pauli</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the Pauli (not ``PauliOp``!) whose diagonalizing single-qubit rotations is a</span>
 <span class="sd">        superset of the diagonalizing single-qubit rotations for each of the Paulis in</span>
@@ -617,7 +624,7 @@
         <span class="n">origin_x</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">,</span> <span class="p">[</span><span class="n">p_op</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">p_op</span> <span class="ow">in</span> <span class="n">oplist</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">Pauli</span><span class="p">((</span><span class="n">origin_z</span><span class="p">,</span> <span class="n">origin_x</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.get_diagonal_pauli_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.get_diagonal_pauli_op">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_diagonal_pauli_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pauli_op</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PauliOp</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliBasisChange.get_diagonal_pauli_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.get_diagonal_pauli_op.html#qiskit.opflow.converters.PauliBasisChange.get_diagonal_pauli_op">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_diagonal_pauli_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pauli_op</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PauliOp</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Get the diagonal ``PualiOp`` to which ``pauli_op`` could be rotated with only</span>
 <span class="sd">        single-qubit operations.</span>
 
@@ -637,7 +644,7 @@
             <span class="n">coeff</span><span class="o">=</span><span class="n">pauli_op</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.get_diagonalizing_clifford"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.get_diagonalizing_clifford">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_diagonalizing_clifford</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pauli</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Pauli</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliBasisChange.get_diagonalizing_clifford"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.get_diagonalizing_clifford.html#qiskit.opflow.converters.PauliBasisChange.get_diagonalizing_clifford">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_diagonalizing_clifford</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pauli</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Pauli</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Construct a ``CircuitOp`` with only single-qubit gates which takes the eigenvectors</span>
 <span class="sd">        of ``pauli`` to eigenvectors composed only of \|0⟩ and \|1⟩ tensor products. Equivalently,</span>
@@ -667,7 +674,7 @@
         <span class="n">x_to_z_origin</span> <span class="o">=</span> <span class="n">tensorall</span><span class="p">([</span><span class="n">H</span> <span class="k">if</span> <span class="n">has_x</span> <span class="k">else</span> <span class="n">I</span> <span class="k">for</span> <span class="n">has_x</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">pauli</span><span class="o">.</span><span class="n">x</span><span class="p">)])</span>
         <span class="k">return</span> <span class="n">x_to_z_origin</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">y_to_x_origin</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.pad_paulis_to_equal_length"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.pad_paulis_to_equal_length">[belgeler]</a>    <span class="k">def</span> <span class="nf">pad_paulis_to_equal_length</span><span class="p">(</span>
+<div class="viewcode-block" id="PauliBasisChange.pad_paulis_to_equal_length"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.pad_paulis_to_equal_length.html#qiskit.opflow.converters.PauliBasisChange.pad_paulis_to_equal_length">[belgeler]</a>    <span class="k">def</span> <span class="nf">pad_paulis_to_equal_length</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">pauli_op1</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">,</span> <span class="n">pauli_op2</span><span class="p">:</span> <span class="n">PauliOp</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">PauliOp</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">]:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
@@ -707,7 +714,7 @@
 
         <span class="k">return</span> <span class="n">PauliOp</span><span class="p">(</span><span class="n">pauli_1</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">pauli_op1</span><span class="o">.</span><span class="n">coeff</span><span class="p">),</span> <span class="n">PauliOp</span><span class="p">(</span><span class="n">pauli_2</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">pauli_op2</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.construct_cnot_chain"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.construct_cnot_chain">[belgeler]</a>    <span class="k">def</span> <span class="nf">construct_cnot_chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diag_pauli_op1</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">,</span> <span class="n">diag_pauli_op2</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveOp</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliBasisChange.construct_cnot_chain"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.construct_cnot_chain.html#qiskit.opflow.converters.PauliBasisChange.construct_cnot_chain">[belgeler]</a>    <span class="k">def</span> <span class="nf">construct_cnot_chain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diag_pauli_op1</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">,</span> <span class="n">diag_pauli_op2</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveOp</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Construct a ``CircuitOp`` (or ``PauliOp`` if equal to the identity) which takes the</span>
 <span class="sd">        eigenvectors of ``diag_pauli_op1`` to the eigenvectors of ``diag_pauli_op2``,</span>
@@ -782,7 +789,7 @@
 
         <span class="k">return</span> <span class="n">PrimitiveOp</span><span class="p">(</span><span class="n">cnots</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliBasisChange.get_cob_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange.get_cob_circuit">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_cob_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Pauli</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">PrimitiveOp</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">]:</span>
+<div class="viewcode-block" id="PauliBasisChange.get_cob_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.converters.PauliBasisChange.get_cob_circuit.html#qiskit.opflow.converters.PauliBasisChange.get_cob_circuit">[belgeler]</a>    <span class="k">def</span> <span class="nf">get_cob_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Pauli</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">PrimitiveOp</span><span class="p">,</span> <span class="n">PauliOp</span><span class="p">]:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Construct an Operator which maps the +1 and -1 eigenvectors</span>
 <span class="sd">        of the origin Pauli to the +1 and -1 eigenvectors of the destination Pauli. It does so by</span>
@@ -879,7 +886,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Son güncelleme: 2021/08/13.
+      Son güncelleme: 2021/09/23.
 
     </p>
   </div>
@@ -959,7 +966,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -982,9 +989,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

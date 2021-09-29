@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>ErrorCorrectingCode &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Tìm Kiếm" href="../search.html" />
-    <link rel="next" title="Neural Networks (qiskit.aqua.components.neural_networks)" href="../apidoc/qiskit.aqua.components.neural_networks.html" />
-    <link rel="prev" title="qiskit.aqua.components.multiclass_extensions.OneAgainstRest" href="qiskit.aqua.components.multiclass_extensions.OneAgainstRest.html" /> 
+    <link rel="next" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict" href="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict.html" />
+    <link rel="prev" title="qiskit.aqua.components.multiclass_extensions.OneAgainstRest.train" href="qiskit.aqua.components.multiclass_extensions.OneAgainstRest.train.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.components.multiclass_extensions.html">Multi-class Extensions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.components.multiclass_extensions</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode</li>
+      <li>ErrorCorrectingCode</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,12 +339,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-components-multiclass-extensions-errorcorrectingcode">
-<h1>qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode<a class="headerlink" href="#qiskit-aqua-components-multiclass-extensions-errorcorrectingcode" title="Permalink to this headline">¶</a></h1>
+  <section id="errorcorrectingcode">
+<h1>ErrorCorrectingCode<a class="headerlink" href="#errorcorrectingcode" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode">
 <em class="property">class </em><code class="sig-name descname">ErrorCorrectingCode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code_size</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/multiclass_extensions/error_correcting_code.html#ErrorCorrectingCode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Error Correcting Code multiclass extension.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.components.multiclass_extensions.multiclass_extension.MulticlassExtension</span></code></p>
+<p>The Error Correcting Code multiclass extension.</p>
 <p>Error Correcting Code (ECC) is an ensemble method designed for the multiclass classification
 problem.  As for the other multiclass methods, the task is to decide one label from
 <span class="math notranslate nohighlight">\(k &gt; 2\)</span> possible choices.</p>
@@ -401,16 +409,6 @@ output string as the predicted label. This implementation of ECC uses the Euclid
 <dd class="field-odd"><p><strong>code_size</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- Size of error correcting code</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code_size</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/multiclass_extensions/error_correcting_code.html#ErrorCorrectingCode.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Tham số</dt>
-<dd class="field-odd"><p><strong>code_size</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- Size of error correcting code</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -418,94 +416,20 @@ output string as the predicted label. This implementation of ECC uses the Euclid
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.__init__" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([code_size])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type code_size</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict.html#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a></p></td>
 <td><p>Applying multiple estimators for prediction.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_estimator</span></code></a>(estimator_cls[, params])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator.html#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_estimator</span></code></a></p></td>
 <td><p>Called internally to set <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code> and parameters :type estimator_cls: <code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code>] :param estimator_cls: An <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code> class :type params: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>] :param params: Parameters for the estimator</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a>(x, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test.html#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">test</span></code></a></p></td>
 <td><p>Testing multiple estimators each for distinguishing a pair of classes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>(x, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train.html#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a></p></td>
 <td><p>Training multiple estimators each for distinguishing a pair of classes.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/multiclass_extensions/error_correcting_code.html#ErrorCorrectingCode.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Applying multiple estimators for prediction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Tham số</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>numpy.ndarray</em>) -- NxD array</p>
-</dd>
-<dt class="field-even">Trả về</dt>
-<dd class="field-even"><p>predicted labels, Nx1 array</p>
-</dd>
-<dt class="field-odd">Kiểu trả về</dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator">
-<code class="sig-name descname">set_estimator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">estimator_cls</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.set_estimator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Called internally to set <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code> and parameters
-:type estimator_cls: <code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code>]
-:param estimator_cls: An <code class="xref py py-class docutils literal notranslate"><span class="pre">Estimator</span></code> class
-:type params: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]
-:param params: Parameters for the estimator</p>
-<dl class="field-list simple">
-<dt class="field-odd">Kiểu trả về</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test">
-<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/multiclass_extensions/error_correcting_code.html#ErrorCorrectingCode.test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.test" title="Permalink to this definition">¶</a></dt>
-<dd><p>Testing multiple estimators each for distinguishing a pair of classes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Tham số</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) -- input points</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em>) -- input labels</p></li>
-</ul>
-</dd>
-<dt class="field-even">Trả về</dt>
-<dd class="field-even"><p>accuracy</p>
-</dd>
-<dt class="field-odd">Kiểu trả về</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/multiclass_extensions/error_correcting_code.html#ErrorCorrectingCode.train"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.train" title="Permalink to this definition">¶</a></dt>
-<dd><p>Training multiple estimators each for distinguishing a pair of classes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Tham số</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) -- input points</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em>) -- input labels</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -518,10 +442,10 @@ output string as the predicted label. This implementation of ECC uses the Euclid
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.aqua.components.neural_networks.html" class="btn btn-neutral float-right" title="Neural Networks (qiskit.aqua.components.neural_networks)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode.predict" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.components.multiclass_extensions.OneAgainstRest.html" class="btn btn-neutral" title="qiskit.aqua.components.multiclass_extensions.OneAgainstRest" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.components.multiclass_extensions.OneAgainstRest.train.html" class="btn btn-neutral" title="qiskit.aqua.components.multiclass_extensions.OneAgainstRest.train" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -535,7 +459,7 @@ output string as the predicted label. This implementation of ECC uses the Euclid
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -554,7 +478,7 @@ output string as the predicted label. This implementation of ECC uses the Euclid
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.components.multiclass_extensions.ErrorCorrectingCode</a></li>
+<li><a class="reference internal" href="#">ErrorCorrectingCode</a></li>
 </ul>
 
             </div>
@@ -618,7 +542,7 @@ output string as the predicted label. This implementation of ECC uses the Euclid
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -641,9 +565,11 @@ output string as the predicted label. This implementation of ECC uses the Euclid
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

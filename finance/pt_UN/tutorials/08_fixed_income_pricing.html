@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing Fixed-Income Assets &mdash; Documentação Qiskit Finance 0.2.0</title>
+  <title>Precificando ativos de Renda Fixa &mdash; Documentação Qiskit Finance 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Credit Risk Analysis" href="09_credit_risk_analysis.html" />
-    <link rel="prev" title="Pricing Asian Barrier Spreads" href="07_asian_barrier_spread_pricing.html" /> 
+    <link rel="next" title="Análise de Risco de Crédito" href="09_credit_risk_analysis.html" />
+    <link rel="prev" title="Precificando Barrier Spreads Asiáticas" href="07_asian_barrier_spread_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -202,9 +202,9 @@
       </li>
 
         
-          <li><a href="index.html">Finance Tutorials</a> &gt;</li>
+          <li><a href="index.html">Tutoriais de Finanças</a> &gt;</li>
         
-      <li>Pricing Fixed-Income Assets</li>
+      <li>Precificando ativos de Renda Fixa</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,17 +484,16 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/08_fixed_income_pricing.ipynb">docs/tutorials/08_fixed_income_pricing.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/08_fixed_income_pricing.ipynb">docs/tutorials/08_fixed_income_pricing.ipynb</a>.</p>
 </div>
-<div class="section" id="Pricing-Fixed-Income-Assets">
-<h1>Pricing Fixed-Income Assets<a class="headerlink" href="#Pricing-Fixed-Income-Assets" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="Precificando-ativos-de-Renda-Fixa">
+<h1>Precificando ativos de Renda Fixa<a class="headerlink" href="#Precificando-ativos-de-Renda-Fixa" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Buscamos precificar um ativo de renda fixa sabendo as distribuições, que descrevem as taxas de juros relevantes. Os fluxos de caixa <span class="math notranslate nohighlight">\(c_t\)</span> do ativo e as datas em que ocorrem são conhecidos. O valor total <span class="math notranslate nohighlight">\(V\)</span> do ativo é, assim, o valor esperado de:</p>
 <div class="math notranslate nohighlight">
 \[V = \sum_{t=1}^T \frac{c_t}{(1+r_t)^t}\]</div>
-<p>Each cash flow is treated as a zero coupon bond with a corresponding interest rate <span class="math notranslate nohighlight">\(r_t\)</span> that depends on its maturity. The user must specify the distribution modeling the uncertainty in each <span class="math notranslate nohighlight">\(r_t\)</span> (possibly correlated) as well as the number of qubits he wishes to use to sample each distribution. In this example we expand the value of the asset to first order in the interest rates <span class="math notranslate nohighlight">\(r_t\)</span>. This corresponds to studying the asset in terms of its duration. The approximation of the
-objective function follows the following paper: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>Cada fluxo de caixa é tratado como um título de cupom zero com uma taxa de juros correspondente <span class="math notranslate nohighlight">\(r_t\)</span> que depende da sua maturidade. O usu[ario deve especificar a distribuição modelando a incerteza em cada <span class="math notranslate nohighlight">\(r_t\)</span> (possivelmente correlacionado) bem como o n[umero de qubits que deseja usar para ele deseja usar para a amostragem de cada distribuição. Neste exemplo, expandimos o valor do ativo para a primeira ordem nas taxas de juros <span class="math notranslate nohighlight">\(r_t\)</span>. Isso corresponde a estudar o ativo em termos de sua duração. A aproximação da função objetivo segue o seguinte artigo: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -810,10 +809,10 @@ Confidence interval:    [2.3015, 2.3823]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="09_credit_risk_analysis.html" class="btn btn-neutral float-right" title="Credit Risk Analysis" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="09_credit_risk_analysis.html" class="btn btn-neutral float-right" title="Análise de Risco de Crédito" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral" title="Pricing Asian Barrier Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral" title="Precificando Barrier Spreads Asiáticas" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -845,7 +844,7 @@ Confidence interval:    [2.3015, 2.3823]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing Fixed-Income Assets</a><ul>
+<li><a class="reference internal" href="#">Precificando ativos de Renda Fixa</a><ul>
 <li><a class="reference internal" href="#Introdução">Introdução</a><ul>
 <li><a class="reference internal" href="#Modelo-de-incerteza">Modelo de incerteza</a></li>
 <li><a class="reference internal" href="#Fluxo-de-caixa,-função-payoff-e-valor-esperado-exato">Fluxo de caixa, função payoff e valor esperado exato</a></li>

@@ -1,34 +1,27 @@
-﻿qiskit.ignis.mitigation.TensoredFilter
-======================================
+﻿TensoredFilter
+==============
 
 .. currentmodule:: qiskit.ignis.mitigation
 
 .. autoclass:: TensoredFilter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TensoredFilter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TensoredFilter.apply
       ~TensoredFilter.compute_index_of_cal_mat
       ~TensoredFilter.flip_state
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TensoredFilter.cal_matrices
-      ~TensoredFilter.nqubits
-      ~TensoredFilter.qubit_list_sizes
-      ~TensoredFilter.substate_labels_list
-   
-   
+   .. autoattribute:: cal_matrices
+   .. autoattribute:: nqubits
+   .. autoattribute:: qubit_list_sizes
+   .. autoattribute:: substate_labels_list

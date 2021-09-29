@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.ConsolidateBlocks
-==========================================
+﻿ConsolidateBlocks
+=================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: ConsolidateBlocks
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ConsolidateBlocks.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ConsolidateBlocks.name
       ~ConsolidateBlocks.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ConsolidateBlocks.is_analysis_pass
-      ~ConsolidateBlocks.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

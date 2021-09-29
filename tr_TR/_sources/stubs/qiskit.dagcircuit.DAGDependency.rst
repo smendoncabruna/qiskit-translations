@@ -1,19 +1,18 @@
-﻿qiskit.dagcircuit.DAGDependency
-===============================
+﻿DAGDependency
+=============
 
 .. currentmodule:: qiskit.dagcircuit
 
 .. autoclass:: DAGDependency
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DAGDependency.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DAGDependency.add_clbits
       ~DAGDependency.add_creg
       ~DAGDependency.add_op_node
@@ -36,16 +35,10 @@
       ~DAGDependency.to_networkx
       ~DAGDependency.to_retworkx
       ~DAGDependency.topological_nodes
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DAGDependency.calibrations
-      ~DAGDependency.global_phase
-   
-   
+   .. autoattribute:: calibrations
+   .. autoattribute:: global_phase

@@ -1,24 +1,19 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.PolynomialExtrapolator
-================================================================
+﻿PolynomialExtrapolator
+======================
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: PolynomialExtrapolator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PolynomialExtrapolator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PolynomialExtrapolator.extrapolate
       ~PolynomialExtrapolator.factory
-   
-   
 
-   
-   
-   
+

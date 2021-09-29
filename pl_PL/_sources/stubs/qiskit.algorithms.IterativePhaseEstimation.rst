@@ -1,24 +1,19 @@
-﻿qiskit.algorithms.IterativePhaseEstimation
-==========================================
+﻿IterativePhaseEstimation
+========================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: IterativePhaseEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IterativePhaseEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IterativePhaseEstimation.construct_circuit
       ~IterativePhaseEstimation.estimate
-   
-   
 
-   
-   
-   
+

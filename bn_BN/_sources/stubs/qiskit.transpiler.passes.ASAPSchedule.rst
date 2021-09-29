@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.ASAPSchedule
-=====================================
+﻿ASAPSchedule
+============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: ASAPSchedule
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ASAPSchedule.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ASAPSchedule.name
       ~ASAPSchedule.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ASAPSchedule.is_analysis_pass
-      ~ASAPSchedule.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

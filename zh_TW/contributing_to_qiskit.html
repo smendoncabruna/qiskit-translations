@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contributing to Qiskit &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>Contributing to Qiskit &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul class="current">
@@ -233,27 +240,27 @@
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -944,13 +951,13 @@ conda activate QiskitDevenv
 <p>Installing from source requires that you have a C++ compiler on your system that supports
 C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="1b309fad-6c30-498e-a856-4a17c1584b08" name="939e134c-bf6e-4c52-8a2c-47f2720690eb" type="radio">
-</input><label class="tabbed-label" for="1b309fad-6c30-498e-a856-4a17c1584b08">
+<input checked="checked" id="ca7fa2ba-7389-4aa4-8991-2d2ef4b404c5" name="4d2939b3-30c3-405a-9e0c-83d12aacb3df" type="radio">
+</input><label class="tabbed-label" for="ca7fa2ba-7389-4aa4-8991-2d2ef4b404c5">
 Compiler for Linux</label><div class="tabbed-content docutils">
 <p>On most Linux platforms, the necessary GCC compiler is already installed.</p>
 </div>
-<input id="466ea12f-ef1b-4f62-ab3c-86bac96ad3ad" name="939e134c-bf6e-4c52-8a2c-47f2720690eb" type="radio">
-</input><label class="tabbed-label" for="466ea12f-ef1b-4f62-ab3c-86bac96ad3ad">
+<input id="779f33e8-0a5d-45cd-8a08-b6881c10757c" name="4d2939b3-30c3-405a-9e0c-83d12aacb3df" type="radio">
+</input><label class="tabbed-label" for="779f33e8-0a5d-45cd-8a08-b6881c10757c">
 Compiler for macOS</label><div class="tabbed-content docutils">
 <p>If you use macOS, you can install the Clang compiler by installing XCode.
 Check if you have XCode and Clang installed by opening a terminal window and entering the
@@ -963,8 +970,8 @@ following.</p>
 </pre></div>
 </div>
 </div>
-<input id="6dc4a514-56a9-4429-abc7-e6f2ff369ee7" name="939e134c-bf6e-4c52-8a2c-47f2720690eb" type="radio">
-</input><label class="tabbed-label" for="6dc4a514-56a9-4429-abc7-e6f2ff369ee7">
+<input id="12f3d72e-2aa0-464c-8a56-70efdc364ad7" name="4d2939b3-30c3-405a-9e0c-83d12aacb3df" type="radio">
+</input><label class="tabbed-label" for="12f3d72e-2aa0-464c-8a56-70efdc364ad7">
 Compiler for Windows</label><div class="tabbed-content docutils">
 <p>On Windows, it is easiest to install the Visual C++ compiler from the
 <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>.
@@ -1048,8 +1055,8 @@ using. Since Aer is a compiled C++ program with a Python interface, there are
 non-Python dependencies for building the Aer binary which can’t be installed
 universally depending on operating system.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ecd1c878-31d8-4bf5-9560-e445d348cff2" name="4b5c39c6-18f5-43f8-97a1-a631886d0767" type="radio">
-</input><label class="tabbed-label" for="ecd1c878-31d8-4bf5-9560-e445d348cff2">
+<input checked="checked" id="a06b3b73-b287-47b2-a5bd-ef32d81346cc" name="2cf21b5b-d9cf-4c7c-8da1-3b6e4a99abf7" type="radio">
+</input><label class="tabbed-label" for="a06b3b73-b287-47b2-a5bd-ef32d81346cc">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Install compiler requirements.</p>
@@ -1077,8 +1084,8 @@ install using:</p>
 </li>
 </ol>
 </div>
-<input id="91b624c3-552e-4a8c-b6ea-a77a76a390ee" name="4b5c39c6-18f5-43f8-97a1-a631886d0767" type="radio">
-</input><label class="tabbed-label" for="91b624c3-552e-4a8c-b6ea-a77a76a390ee">
+<input id="dd82c1c0-8c82-498e-92ca-b05abb3763a9" name="2cf21b5b-d9cf-4c7c-8da1-3b6e4a99abf7" type="radio">
+</input><label class="tabbed-label" for="dd82c1c0-8c82-498e-92ca-b05abb3763a9">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Install dependencies.</p>
@@ -1101,8 +1108,8 @@ is the default choice.</p>
 </li>
 </ol>
 </div>
-<input id="f0c8599d-59d8-48e6-9444-765e2f441b9f" name="4b5c39c6-18f5-43f8-97a1-a631886d0767" type="radio">
-</input><label class="tabbed-label" for="f0c8599d-59d8-48e6-9444-765e2f441b9f">
+<input id="457700b2-2169-4050-aac1-19d3eb6bf931" name="2cf21b5b-d9cf-4c7c-8da1-3b6e4a99abf7" type="radio">
+</input><label class="tabbed-label" for="457700b2-2169-4050-aac1-19d3eb6bf931">
 Windows</label><div class="tabbed-content docutils">
 <p>On Windows you need to use <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a>
 or <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> to install all the
@@ -1468,7 +1475,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1609,7 +1616,7 @@ multiple elements more transparent.</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1632,9 +1639,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

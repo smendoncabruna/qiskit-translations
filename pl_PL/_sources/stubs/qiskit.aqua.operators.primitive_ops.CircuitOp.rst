@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.primitive\_ops.CircuitOp
-==============================================
+﻿CircuitOp
+=========
 
 .. currentmodule:: qiskit.aqua.operators.primitive_ops
 
 .. autoclass:: CircuitOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CircuitOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CircuitOp.add
       ~CircuitOp.adjoint
       ~CircuitOp.assign_parameters
@@ -38,20 +37,14 @@
       ~CircuitOp.to_matrix
       ~CircuitOp.to_matrix_op
       ~CircuitOp.to_pauli_op
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CircuitOp.ENABLE_DEPRECATION
-      ~CircuitOp.INDENTATION
-      ~CircuitOp.coeff
-      ~CircuitOp.num_qubits
-      ~CircuitOp.parameters
-      ~CircuitOp.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

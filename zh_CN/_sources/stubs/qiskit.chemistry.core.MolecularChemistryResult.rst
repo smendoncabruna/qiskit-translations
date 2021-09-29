@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.core.MolecularChemistryResult
-==============================================
+﻿MolecularChemistryResult
+========================
 
 .. currentmodule:: qiskit.chemistry.core
 
 .. autoclass:: MolecularChemistryResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MolecularChemistryResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MolecularChemistryResult.clear
       ~MolecularChemistryResult.combine
       ~MolecularChemistryResult.copy
@@ -26,18 +25,12 @@
       ~MolecularChemistryResult.setdefault
       ~MolecularChemistryResult.update
       ~MolecularChemistryResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MolecularChemistryResult.algorithm_result
-      ~MolecularChemistryResult.hartree_fock_energy
-      ~MolecularChemistryResult.nuclear_dipole_moment
-      ~MolecularChemistryResult.nuclear_repulsion_energy
-   
-   
+   .. autoattribute:: algorithm_result
+   .. autoattribute:: hartree_fock_energy
+   .. autoattribute:: nuclear_dipole_moment
+   .. autoattribute:: nuclear_repulsion_energy

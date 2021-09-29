@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.neural_networks.neural_network &mdash; Qiskit Machine Learning 0.2.0 belgelendirmesi</title>
+  <title>qiskit_machine_learning.neural_networks.neural_network &mdash; Qiskit Machine Learning 0.2.1 belgelendirmesi</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/neural_networks/neural_network.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/neural_networks/neural_network.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/neural_networks/neural_network.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/neural_networks/neural_network.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/neural_networks/neural_network.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/neural_networks/neural_network.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -318,13 +324,9 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_sparse</span> <span class="o">=</span> <span class="n">sparse</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output_shape</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
-            <span class="n">output_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">output_shape</span><span class="p">,)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">output_shape</span><span class="p">]):</span>
-            <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Invalid output shape, all components must be &gt; 0, but got: </span><span class="si">{</span><span class="n">output_shape</span><span class="si">}</span><span class="s2">.&quot;</span>
-            <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_output_shape</span> <span class="o">=</span> <span class="n">output_shape</span>
+        <span class="c1"># output shape may be derived later, so check it only if it is not None</span>
+        <span class="k">if</span> <span class="n">output_shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_output_shape</span><span class="p">(</span><span class="n">output_shape</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span> <span class="o">=</span> <span class="n">input_gradients</span>
 
@@ -358,6 +360,15 @@
     <span class="k">def</span> <span class="nf">input_gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_gradients</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Turn on/off computation of gradients with respect to input data.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span> <span class="o">=</span> <span class="n">input_gradients</span>
+
+    <span class="k">def</span> <span class="nf">_validate_output_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output_shape</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">output_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">output_shape</span><span class="p">,)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">output_shape</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Invalid output shape, all components must be &gt; 0, but got: </span><span class="si">{</span><span class="n">output_shape</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">output_shape</span>
 
     <span class="k">def</span> <span class="nf">_validate_input</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span>

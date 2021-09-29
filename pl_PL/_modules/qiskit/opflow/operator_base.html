@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.operator_base &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>qiskit.opflow.operator_base &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -366,8 +373,8 @@
 
     <span class="n">_count</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<div class="viewcode-block" id="OperatorBase.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.__init__">[dokumentacja]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_instance_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_count</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_instance_id</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_count</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="nd">@abstractmethod</span>
@@ -400,7 +407,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
-<div class="viewcode-block" id="OperatorBase.primitive_strings"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.primitive_strings">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.primitive_strings"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.primitive_strings.html#qiskit.opflow.OperatorBase.primitive_strings">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a set of strings describing the primitives contained in the Operator. For</span>
 <span class="sd">        example, ``{&#39;QuantumCircuit&#39;, &#39;Pauli&#39;}``. For hierarchical Operators, such as ``ListOps``,</span>
@@ -412,7 +419,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.eval"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.eval">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.eval"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.eval.html#qiskit.opflow.OperatorBase.eval">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">front</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
@@ -450,7 +457,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.reduce"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.reduce">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.reduce"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.reduce.html#qiskit.opflow.OperatorBase.reduce">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Try collapsing the Operator structure, usually after some type of conversion,</span>
 <span class="sd">        e.g. trying to add Operators in a SummedOp or delete needless IGates in a CircuitOp.</span>
@@ -461,7 +468,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.to_matrix"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.to_matrix">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.to_matrix"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.to_matrix.html#qiskit.opflow.OperatorBase.to_matrix">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return NumPy representation of the Operator. Represents the evaluation of</span>
 <span class="sd">        the Operator&#39;s underlying function on every combination of basis binary strings.</span>
@@ -473,17 +480,17 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.to_matrix_op"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.to_matrix_op">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.to_matrix_op"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.to_matrix_op.html#qiskit.opflow.OperatorBase.to_matrix_op">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a ``MatrixOp`` equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.to_circuit_op"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.to_circuit_op">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.to_circuit_op"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.to_circuit_op.html#qiskit.opflow.OperatorBase.to_circuit_op">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">to_circuit_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a ``CircuitOp`` equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.to_spmatrix"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.to_spmatrix">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">to_spmatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spmatrix</span><span class="p">:</span>
+<div class="viewcode-block" id="OperatorBase.to_spmatrix"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.to_spmatrix.html#qiskit.opflow.OperatorBase.to_spmatrix">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">to_spmatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">spmatrix</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return SciPy sparse matrix representation of the Operator. Represents the evaluation of</span>
 <span class="sd">        the Operator&#39;s underlying function on every combination of basis binary strings.</span>
 
@@ -502,7 +509,7 @@
 
     <span class="c1"># Addition / Subtraction</span>
 
-<div class="viewcode-block" id="OperatorBase.add"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.add">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.add"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.add.html#qiskit.opflow.OperatorBase.add">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return Operator addition of self and other, overloaded by ``+``.</span>
 
@@ -518,7 +525,7 @@
 
     <span class="c1"># Negation</span>
 
-<div class="viewcode-block" id="OperatorBase.neg"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.neg">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">neg</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="OperatorBase.neg"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.neg.html#qiskit.opflow.OperatorBase.neg">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">neg</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return the Operator&#39;s negation, effectively just multiplying by -1.0,</span>
 <span class="sd">        overloaded by ``-``.</span>
 
@@ -529,7 +536,7 @@
 
     <span class="c1"># Adjoint</span>
 
-<div class="viewcode-block" id="OperatorBase.adjoint"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.adjoint">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.adjoint"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.adjoint.html#qiskit.opflow.OperatorBase.adjoint">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a new Operator equal to the Operator&#39;s adjoint (conjugate transpose),</span>
 <span class="sd">        overloaded by ``~``. For StateFns, this also turns the StateFn into a measurement.</span>
@@ -554,7 +561,7 @@
             <span class="k">return</span> <span class="bp">NotImplemented</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">cast</span><span class="p">(</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="n">other</span><span class="p">))</span>
 
-<div class="viewcode-block" id="OperatorBase.equals"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.equals">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.equals"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.equals.html#qiskit.opflow.OperatorBase.equals">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluate Equality between Operators, overloaded by ``==``. Only returns True if self and</span>
@@ -575,7 +582,7 @@
     <span class="c1"># Scalar Multiplication</span>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="OperatorBase.mul"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.mul">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.mul"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.mul.html#qiskit.opflow.OperatorBase.mul">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the scalar multiplication of the Operator, overloaded by ``*``, including</span>
@@ -591,7 +598,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.tensor"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.tensor">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.tensor"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.tensor.html#qiskit.opflow.OperatorBase.tensor">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return tensor product between self and other, overloaded by ``^``.</span>
 <span class="sd">        Note: You must be conscious of Qiskit&#39;s big-endian bit printing convention.</span>
@@ -612,7 +619,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.tensorpower"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.tensorpower">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.tensorpower"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.tensorpower.html#qiskit.opflow.OperatorBase.tensorpower">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">tensorpower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;OperatorBase&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return tensor product with self multiple times, overloaded by ``^``.</span>
 
@@ -632,7 +639,7 @@
 
     <span class="c1"># Utility functions for parameter binding</span>
 
-<div class="viewcode-block" id="OperatorBase.assign_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.assign_parameters">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.assign_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.assign_parameters.html#qiskit.opflow.OperatorBase.assign_parameters">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">param_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span>
@@ -669,7 +676,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
-<div class="viewcode-block" id="OperatorBase.permute"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.permute">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.permute"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.permute.html#qiskit.opflow.OperatorBase.permute">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Permutes the qubits of the operator.</span>
 
@@ -685,7 +692,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="OperatorBase.bind_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.bind_parameters">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">bind_parameters</span><span class="p">(</span>
+<div class="viewcode-block" id="OperatorBase.bind_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.bind_parameters.html#qiskit.opflow.OperatorBase.bind_parameters">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">bind_parameters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">param_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span>
             <span class="n">ParameterExpression</span><span class="p">,</span>
@@ -755,14 +762,14 @@
                 <span class="n">new_self</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_dim</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">new_self</span><span class="p">,</span> <span class="n">other</span>
 
-<div class="viewcode-block" id="OperatorBase.copy"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.copy">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="OperatorBase.copy"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.copy.html#qiskit.opflow.OperatorBase.copy">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a deep copy of the Operator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
     <span class="c1"># Composition</span>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="OperatorBase.compose"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.html#qiskit.opflow.OperatorBase.compose">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="OperatorBase.compose"><a class="viewcode-back" href="../../../stubs/qiskit.opflow.OperatorBase.compose.html#qiskit.opflow.OperatorBase.compose">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
@@ -838,7 +845,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -918,7 +925,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -941,9 +948,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

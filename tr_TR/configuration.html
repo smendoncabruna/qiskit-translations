@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Yerel Yapılandırma &mdash; Qiskit 0.29.0 belgelendirmesi</title>
+  <title>Yerel Yapılandırma &mdash; Qiskit 0.30.0 belgelendirmesi</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Belgeleme ana sayfası</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Ön Bölümler</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Kaynakları</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Simülatör (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Deneyleri (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Uygulama Modülleri (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Sağlayıcı)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hata Giderme</span></p>
 <ul>
@@ -345,10 +352,10 @@
 <p>Mevcut Seçenekler:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">circuit_drawer</span></code>: Bu devre çiziciye <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> ve <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> uygun varsayılan backendi değiştirmek için kullanılır. <code class="docutils literal notranslate"><span class="pre">latex</span></code>, <a href="#id1"><span class="problematic" id="id2">``</span></a>mpl´´, <a href="#id3"><span class="problematic" id="id4">``</span></a>text´´ veya <a href="#id5"><span class="problematic" id="id6">``</span></a>lateks kaynağı´´ olarak ayarlanabilir ve <a href="#id7"><span class="problematic" id="id8">``</span></a>çıktı´´ anahtar kelime argümanı açıkça çiziciyi ayarlanmadığında backend kullanılacaktır.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style</span></code>: Bu, <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> ve <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> çizicilerine uygun `` mpl ‘’ çıktı backendi için kullanılan varsayılan stil sayfasıdır. <code class="docutils literal notranslate"><span class="pre">default</span></code> (varsayılan) ya da <code class="docutils literal notranslate"><span class="pre">bw</span></code> olarak ayarlanabilir.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style_path</span></code>: Bu, devre çekmecesine sahip yol(lar)ı ayarlamak için kullanılabilir, <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> veya <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a>, bakmak için kullanın <code class="docutils literal notranslate"><span class="pre">mpl</span></code> çıkış modunu kullanırken json stil sayfalarını aramak için kullanın.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">state_drawer</span></code>: Bu, durum görselleştirme çizim yöntemleri için varsayılan arkayüzeyi değiştirmek için kullanılır <a class="reference internal" href="stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.draw" title="qiskit.quantum_info.Statevector.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.Statevector.draw()</span></code></a> ve <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.DensityMatrix.draw()</span></code></a>. <code class="docutils literal notranslate"><span class="pre">repr</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>’, <code class="docutils literal notranslate"><span class="pre">latex</span></code>, <code class="docutils literal notranslate"><span class="pre">latex_source</span></code>, <code class="docutils literal notranslate"><span class="pre">qsphere</span></code>, <code class="docutils literal notranslate"><span class="pre">hinton</span></code> veya bloch <code class="docutils literal notranslate"><span class="pre">bloch</span></code> olarak ayarlanabilir ve <code class="docutils literal notranslate"><span class="pre">output`</span></code> kwarg <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> yönteminde açıkça ayarlanmadığında, bu çıktı yöntemi kullanılacaktır.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circuit_drawer</span></code>: Bu devre çiziciye <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> ve <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> uygun varsayılan backendi değiştirmek için kullanılır. <code class="docutils literal notranslate"><span class="pre">latex</span></code>, <a href="#id1"><span class="problematic" id="id2">``</span></a>mpl´´, <a href="#id3"><span class="problematic" id="id4">``</span></a>text´´ veya <a href="#id5"><span class="problematic" id="id6">``</span></a>lateks kaynağı´´ olarak ayarlanabilir ve <a href="#id7"><span class="problematic" id="id8">``</span></a>çıktı´´ anahtar kelime argümanı açıkça çiziciyi ayarlanmadığında backend kullanılacaktır.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style</span></code>: Bu, <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> ve <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> çizicilerine uygun `` mpl ‘’ çıktı backendi için kullanılan varsayılan stil sayfasıdır. <code class="docutils literal notranslate"><span class="pre">default</span></code> (varsayılan) ya da <code class="docutils literal notranslate"><span class="pre">bw</span></code> olarak ayarlanabilir.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style_path</span></code>: Bu, devre çekmecesine sahip yol(lar)ı ayarlamak için kullanılabilir, <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> veya <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a>, bakmak için kullanın <code class="docutils literal notranslate"><span class="pre">mpl</span></code> çıkış modunu kullanırken json stil sayfalarını aramak için kullanın.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state_drawer</span></code>: Bu, durum görselleştirme çizim yöntemleri için varsayılan arkayüzeyi değiştirmek için kullanılır <a class="reference internal" href="stubs/qiskit.quantum_info.Statevector.draw.html#qiskit.quantum_info.Statevector.draw" title="qiskit.quantum_info.Statevector.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.Statevector.draw()</span></code></a> ve <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.draw.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.DensityMatrix.draw()</span></code></a>. <code class="docutils literal notranslate"><span class="pre">repr</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>’, <code class="docutils literal notranslate"><span class="pre">latex</span></code>, <code class="docutils literal notranslate"><span class="pre">latex_source</span></code>, <code class="docutils literal notranslate"><span class="pre">qsphere</span></code>, <code class="docutils literal notranslate"><span class="pre">hinton</span></code> veya bloch <code class="docutils literal notranslate"><span class="pre">bloch</span></code> olarak ayarlanabilir ve <code class="docutils literal notranslate"><span class="pre">output`</span></code> kwarg <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.draw.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> yönteminde açıkça ayarlanmadığında, bu çıktı yöntemi kullanılacaktır.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">transpile_optimization_level</span></code>: Bu, 0-3 arasında bir sayı alır ve bunu <a class="reference internal" href="stubs/qiskit.compiler.transpile.html#qiskit.compiler.transpile" title="qiskit.compiler.transpile"><code class="xref py py-func docutils literal notranslate"><span class="pre">transpile()</span></code></a> ve :func:<a href="#id1"><span class="problematic" id="id2">`</span></a>~qiskit.execute.execute için varsayılan optimizasyon seviyelerini değiştirmek için kullanır.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">parallel</span></code>: Bu seçenek bir boole değeri alır (“Doğru” veya “Yanlış”) ve paralel çalışmayı destekleyen işlemler için <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">Python multiprocessing</a>’nin etkinleştirilip etkinleştirilmediğini yapılandırmak için kullanılır (örneğin, birden fazla <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></a> nesnesi). Kullanıcı yapılandırma dosyasındaki varsayılan ayar, <code class="docutils literal notranslate"><span class="pre">QISKIT_PARALLEL</span></code> ortam değişkeni tarafından geçersiz kılınabilir.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">num_processes</span></code>: Bu seçenek, paralel yürütme etkinleştirilmişse, paralel işlemler için başlatılacak maksimum paralel işlem sayısını belirtmek için kullanılan bir tamsayı değeri (&gt; 0) alır. Kullanıcı yapılandırma dosyasındaki varsayılan ayar, <code class="docutils literal notranslate"><span class="pre">QISKIT_NUM_PROCS</span></code> ortam değişkeni tarafından geçersiz kılınabilir.</p></li>
@@ -395,7 +402,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Son güncelleme: 2021/08/13.
+      Son güncelleme: 2021/09/23.
 
     </p>
   </div>
@@ -482,7 +489,7 @@
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -505,9 +512,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

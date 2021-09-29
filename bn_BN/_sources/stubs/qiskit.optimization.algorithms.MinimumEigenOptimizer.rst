@@ -1,31 +1,24 @@
-﻿qiskit.optimization.algorithms.MinimumEigenOptimizer
-====================================================
+﻿MinimumEigenOptimizer
+=====================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: MinimumEigenOptimizer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MinimumEigenOptimizer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MinimumEigenOptimizer.get_compatibility_msg
       ~MinimumEigenOptimizer.is_compatible
       ~MinimumEigenOptimizer.solve
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MinimumEigenOptimizer.min_eigen_solver
-   
-   
+   .. autoattribute:: min_eigen_solver

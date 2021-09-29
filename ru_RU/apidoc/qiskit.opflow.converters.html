@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Converters (qiskit.opflow.converters) &mdash; документация Qiskit 0.29.0</title>
+  <title>Converters (qiskit.opflow.converters) &mdash; документация Qiskit 0.29.1</title>
   
 
   
@@ -30,19 +30,16 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
-    <link rel="search" title="Поиск" href="../search.html" />
-    <link rel="next" title="qiskit.opflow.converters.ConverterBase" href="../stubs/qiskit.opflow.converters.ConverterBase.html" />
-    <link rel="prev" title="qiskit.opflow.state_fns.CVaRMeasurement" href="../stubs/qiskit.opflow.state_fns.CVaRMeasurement.html" /> 
+    <link rel="search" title="Поиск" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -240,8 +237,8 @@
 <li class="toctree-l1"><a class="reference internal" href="circuit_library.html">Библиотека цепей</a></li>
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="terra.html">Qiskit (Terra)</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="terra.html">Qiskit (Terra)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aer.html">Qiskit симулятор (Aer)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ignis.html">Qiskit эксперименты (Ignis)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aqua.html">Модули Qiskit Application (Aqua)</a></li>
@@ -294,10 +291,6 @@
       </li>
 
         
-          <li><a href="terra.html">Qiskit Terra API Reference</a> &gt;</li>
-        
-          <li><a href="opflow.html">Operators (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow</span></code>)</a> &gt;</li>
-        
       <li>Converters (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.converters</span></code>)</li>
     
     
@@ -329,7 +322,7 @@
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
   <span class="target" id="module-qiskit.opflow.converters"><span id="qiskit-opflow-converters"></span></span><section id="converters-qiskit-opflow-converters">
-<h1>Converters (<a class="reference internal" href="#module-qiskit.opflow.converters" title="qiskit.opflow.converters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.converters</span></code></a>)<a class="headerlink" href="#converters-qiskit-opflow-converters" title="Ссылка на этот заголовок">¶</a></h1>
+<h1>Converters (<a class="reference internal" href="../stubs/qiskit.opflow.converters.html#module-qiskit.opflow.converters" title="qiskit.opflow.converters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.converters</span></code></a>)<a class="headerlink" href="#converters-qiskit-opflow-converters" title="Ссылка на этот заголовок">¶</a></h1>
 <p>Converters are objects which manipulate Operators, usually traversing an Operator to
 change certain sub-Operators into a desired representation. Often the converted Operator is
 isomorphic or approximate to the original Operator in some way, but not always. For example,
@@ -346,27 +339,26 @@ exponential in the number of qubits unless a clever trick is known
 (such as the use of sparse matrices).</p>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
-<p>Not all converters are in this module, as <a class="reference internal" href="qiskit.opflow.expectations.html#module-qiskit.opflow.expectations" title="qiskit.opflow.expectations"><code class="xref py py-mod docutils literal notranslate"><span class="pre">expectations</span></code></a>
-and <a class="reference internal" href="qiskit.opflow.evolutions.html#module-qiskit.opflow.evolutions" title="qiskit.opflow.evolutions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">evolutions</span></code></a> are also converters.</p>
+<p>Not all converters are in this module, as <a class="reference internal" href="../stubs/qiskit.opflow.expectations.html#module-qiskit.opflow.expectations" title="qiskit.opflow.expectations"><code class="xref py py-mod docutils literal notranslate"><span class="pre">expectations</span></code></a>
+and <a class="reference internal" href="../stubs/qiskit.opflow.evolutions.html#module-qiskit.opflow.evolutions" title="qiskit.opflow.evolutions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">evolutions</span></code></a> are also converters.</p>
 </div>
-</section>
 <section id="converter-base-class">
-<h1>Converter Base Class<a class="headerlink" href="#converter-base-class" title="Ссылка на этот заголовок">¶</a></h1>
-<p>The converter base class simply enforces the presence of a <a class="reference internal" href="../stubs/qiskit.opflow.converters.ConverterBase.html#qiskit.opflow.converters.ConverterBase.convert" title="qiskit.opflow.converters.ConverterBase.convert"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert()</span></code></a> method.</p>
+<h2>Converter Base Class<a class="headerlink" href="#converter-base-class" title="Ссылка на этот заголовок">¶</a></h2>
+<p>The converter base class simply enforces the presence of a <a class="reference internal" href="../stubs/qiskit.opflow.converters.ConverterBase.convert.html#qiskit.opflow.converters.ConverterBase.convert" title="qiskit.opflow.converters.ConverterBase.convert"><code class="xref py py-meth docutils literal notranslate"><span class="pre">convert()</span></code></a> method.</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.ConverterBase.html#qiskit.opflow.converters.ConverterBase" title="qiskit.opflow.converters.ConverterBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConverterBase</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.ConverterBase.html#qiskit.opflow.converters.ConverterBase" title="qiskit.opflow.converters.ConverterBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConverterBase</span></code></a>()</p></td>
 <td><p>Converters take an Operator and return a new Operator, generally isomorphic in some way with the first, but with certain desired properties.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="converters">
-<h1>Converters<a class="headerlink" href="#converters" title="Ссылка на этот заголовок">¶</a></h1>
+<h2>Converters<a class="headerlink" href="#converters" title="Ссылка на этот заголовок">¶</a></h2>
 <p>In addition to the base class, directory holds a few miscellaneous converters which are used
 frequently around the Operator flow.</p>
 <table class="longtable docutils align-default">
@@ -375,23 +367,24 @@ frequently around the Operator flow.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.CircuitSampler.html#qiskit.opflow.converters.CircuitSampler" title="qiskit.opflow.converters.CircuitSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CircuitSampler</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.CircuitSampler.html#qiskit.opflow.converters.CircuitSampler" title="qiskit.opflow.converters.CircuitSampler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CircuitSampler</span></code></a>(backend[, statevector, …])</p></td>
 <td><p>The CircuitSampler traverses an Operator and converts any CircuitStateFns into approximations of the state function by a DictStateFn or VectorStateFn using a quantum backend.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.AbelianGrouper.html#qiskit.opflow.converters.AbelianGrouper" title="qiskit.opflow.converters.AbelianGrouper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AbelianGrouper</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.AbelianGrouper.html#qiskit.opflow.converters.AbelianGrouper" title="qiskit.opflow.converters.AbelianGrouper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AbelianGrouper</span></code></a>([traverse])</p></td>
 <td><p>The AbelianGrouper converts SummedOps into a sum of Abelian sums.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.DictToCircuitSum.html#qiskit.opflow.converters.DictToCircuitSum" title="qiskit.opflow.converters.DictToCircuitSum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictToCircuitSum</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.DictToCircuitSum.html#qiskit.opflow.converters.DictToCircuitSum" title="qiskit.opflow.converters.DictToCircuitSum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictToCircuitSum</span></code></a>([traverse, convert_dicts, …])</p></td>
 <td><p>Converts <code class="docutils literal notranslate"><span class="pre">DictStateFns</span></code> or <code class="docutils literal notranslate"><span class="pre">VectorStateFns</span></code> to equivalent <code class="docutils literal notranslate"><span class="pre">CircuitStateFns</span></code> or sums thereof.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange" title="qiskit.opflow.converters.PauliBasisChange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PauliBasisChange</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.PauliBasisChange.html#qiskit.opflow.converters.PauliBasisChange" title="qiskit.opflow.converters.PauliBasisChange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PauliBasisChange</span></code></a>([destination_basis, …])</p></td>
 <td><p>Converter for changing Paulis into other bases.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.TwoQubitReduction.html#qiskit.opflow.converters.TwoQubitReduction" title="qiskit.opflow.converters.TwoQubitReduction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TwoQubitReduction</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.converters.TwoQubitReduction.html#qiskit.opflow.converters.TwoQubitReduction" title="qiskit.opflow.converters.TwoQubitReduction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TwoQubitReduction</span></code></a>(num_particles)</p></td>
 <td><p>Two qubit reduction converter which eliminates the central and last qubit in a list of Pauli that has diagonal operators (Z,I) at those positions.</p></td>
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 
 
@@ -399,15 +392,6 @@ frequently around the Operator flow.</p>
              
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../stubs/qiskit.opflow.converters.ConverterBase.html" class="btn btn-neutral float-right" title="qiskit.opflow.converters.ConverterBase" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="../stubs/qiskit.opflow.state_fns.CVaRMeasurement.html" class="btn btn-neutral" title="qiskit.opflow.state_fns.CVaRMeasurement" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   
@@ -419,7 +403,7 @@ frequently around the Operator flow.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/11.
 
     </p>
   </div>
@@ -438,9 +422,11 @@ frequently around the Operator flow.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Converters (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.converters</span></code>)</a></li>
+<li><a class="reference internal" href="#">Converters (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.converters</span></code>)</a><ul>
 <li><a class="reference internal" href="#converter-base-class">Converter Base Class</a></li>
 <li><a class="reference internal" href="#converters">Converters</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -504,7 +490,7 @@ frequently around the Operator flow.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">

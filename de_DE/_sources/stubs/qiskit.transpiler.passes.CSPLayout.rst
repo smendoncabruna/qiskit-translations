@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.CSPLayout
-==================================
+﻿CSPLayout
+=========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CSPLayout
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CSPLayout.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CSPLayout.name
       ~CSPLayout.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CSPLayout.is_analysis_pass
-      ~CSPLayout.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

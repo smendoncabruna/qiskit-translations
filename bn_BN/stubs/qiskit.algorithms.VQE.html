@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.VQE &mdash; Qiskit 0.29.0 documentation</title>
+  <title>VQE &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="ইনডেক্স" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="Optimizers (qiskit.algorithms.optimizers)" href="../apidoc/qiskit.algorithms.optimizers.html" />
-    <link rel="prev" title="qiskit.algorithms.QAOA" href="qiskit.algorithms.QAOA.html" /> 
+    <link rel="next" title="qiskit.algorithms.VQE.cleanup_parameterized_circuits" href="qiskit.algorithms.VQE.cleanup_parameterized_circuits.html" />
+    <link rel="prev" title="qiskit.algorithms.QAOA.supports_aux_operators" href="qiskit.algorithms.QAOA.supports_aux_operators.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,15 +231,15 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">নথির কেন্দ্রস্থল</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">ফ্রন্টম্যাটার</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../qc_intro.html">Quantum computing in a nutshell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_tutorial1.html">Introduction to Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qc_intro.html">এক নজরে কোয়ান্টাম কম্পিউটিং</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_tutorial1.html">Qiskit পরিচিতি</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Local Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">লোকাল কনফিগারেশন</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 </ul>
 <p><span class="caption-text">গ্রন্থাগারসমূহ</span></p>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (টেরা)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit সিমুলেটর (এয়ার)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit পরীক্ষণ (এক্সপেরিমেন্ট) (ইগ্নিস)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit অ্যাপ্লিকেশন মডিউলসমূহ (অ্যাকোয়া)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM কোয়ান্টাম পরিষেবা সরবরাহকারী</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit অ্যাপ্লিকেশন (অ্যাকোয়া) স্থানান্তর (মাইগ্রেশন) নির্দেশিকা</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit অ্যাপ্লিকেশন (অ্যাকোয়া) স্থানান্তর (মাইগ্রেশন) নির্দেশিকা</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">সমস্যার সমাধান</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.VQE</li>
+      <li>VQE</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,18 +335,19 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-vqe">
-<h1>qiskit.algorithms.VQE<a class="headerlink" href="#qiskit-algorithms-vqe" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+  <section id="vqe">
+<h1>VQE<a class="headerlink" href="#vqe" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.VQE">
 <em class="property">class </em><code class="sig-name descname">VQE</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ansatz</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_point</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gradient</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expectation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_custom</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_evals_grouped</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_parameters_by_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>The Variational Quantum Eigensolver algorithm.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.algorithms.variational_algorithm.VariationalAlgorithm</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.algorithms.minimum_eigen_solvers.minimum_eigen_solver.MinimumEigensolver</span></code></p>
+<p>The Variational Quantum Eigensolver algorithm.</p>
 <p><a class="reference external" href="https://arxiv.org/abs/1304.3061">VQE</a> is a quantum algorithm that uses a
 variational technique to find
 the minimum eigenvalue of the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> of a given system.</p>
 <p>An instance of VQE requires defining two algorithmic sub-components:
 a trial state (a.k.a. ansatz) which is a <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, and one of the classical
-<a class="reference internal" href="../apidoc/qiskit.algorithms.optimizers.html#module-qiskit.algorithms.optimizers" title="qiskit.algorithms.optimizers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optimizers</span></code></a>. The ansatz is varied, via its set of parameters, by the
+<a class="reference internal" href="qiskit.algorithms.optimizers.html#module-qiskit.algorithms.optimizers" title="qiskit.algorithms.optimizers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">optimizers</span></code></a>. The ansatz is varied, via its set of parameters, by the
 optimizer, such that it works towards a state, as determined by the parameters applied to the
 ansatz, that will result in the minimum expectation value being measured of the input operator
 (Hamiltonian).</p>
@@ -401,53 +409,6 @@ to Qiskit Terra 0.18.0.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ansatz</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_point</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gradient</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expectation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_custom</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_evals_grouped</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_parameters_by_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.__init__" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ansatz</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]) -- A parameterized circuit used as Ansatz for the wave function.</p></li>
-<li><p><strong>optimizer</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code>]) -- A classical optimizer.</p></li>
-<li><p><strong>initial_point</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]) -- An optional initial point (i.e. initial parameter values)
-for the optimizer. If <code class="docutils literal notranslate"><span class="pre">None</span></code> then VQE will look to the ansatz for a preferred
-point and if not will simply compute a random one.</p></li>
-<li><p><strong>gradient</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">GradientBase</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- An optional gradient function or operator for optimizer.</p></li>
-<li><p><strong>expectation</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ExpectationBase</span></code>]) -- The Expectation converter for taking the average value of the
-Observable over the ansatz state function. When <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default) an
-<a class="reference internal" href="qiskit.opflow.expectations.ExpectationFactory.html#qiskit.opflow.expectations.ExpectationFactory" title="qiskit.opflow.expectations.ExpectationFactory"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpectationFactory</span></code></a> is used to select
-an appropriate expectation based on the operator and backend. When using Aer
-qasm_simulator backend, with paulis, it is however much faster to leverage custom
-Aer function for the computation but, although VQE performs much faster
-with it, the outcome is ideal, with no shot noise, like using a state vector
-simulator. If you are just looking for the quickest performance when choosing Aer
-qasm_simulator and the lack of shot noise is not an issue then set <cite>include_custom</cite>
-parameter here to <code class="docutils literal notranslate"><span class="pre">True</span></code> (defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
-<li><p><strong>include_custom</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- When <cite>expectation</cite> parameter here is None setting this to <code class="docutils literal notranslate"><span class="pre">True</span></code> will
-allow the factory to include the custom Aer pauli expectation.</p></li>
-<li><p><strong>max_evals_grouped</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- Max number of evaluations performed simultaneously. Signals the
-given optimizer that more than one set of parameters can be supplied so that
-potentially the expectation values can be computed in parallel. Typically this is
-possible when a finite difference gradient is used by the optimizer such that
-multiple points to compute the gradient can be passed and if computed in parallel
-improve overall execution time. Deprecated if a gradient operator or function is
-given.</p></li>
-<li><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]]) -- a callback that can access the intermediate data during the optimization.
-Four parameter values are passed to the callback as follows during each evaluation
-by the optimizer for its current set of parameters as it works towards the minimum.
-These are: the evaluation count, the optimizer parameters for the
-ansatz, the evaluated mean and the evaluated standard deviation.`</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- Quantum Instance or Backend</p></li>
-<li><p><strong>sort_parameters_by_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) -- Deprecated. If True, the initial point is bound to the ansatz
-parameters strictly sorted by name instead of the default circuit order. That means
-that the ansatz parameters are e.g. sorted as <code class="docutils literal notranslate"><span class="pre">x[0]</span> <span class="pre">x[1]</span> <span class="pre">x[10]</span> <span class="pre">x[2]</span> <span class="pre">...</span></code> instead
-of <code class="docutils literal notranslate"><span class="pre">x[0]</span> <span class="pre">x[1]</span> <span class="pre">x[2]</span> <span class="pre">...</span> <span class="pre">x[10]</span></code>. Set this to <code class="docutils literal notranslate"><span class="pre">True</span></code> to obtain the behavior prior
-to Qiskit Terra 0.18.0.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -455,91 +416,51 @@ to Qiskit Terra 0.18.0.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.__init__" title="qiskit.algorithms.VQE.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([ansatz, optimizer, initial_point, ...])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type ansatz</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.cleanup_parameterized_circuits" title="qiskit.algorithms.VQE.cleanup_parameterized_circuits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cleanup_parameterized_circuits</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.cleanup_parameterized_circuits.html#qiskit.algorithms.VQE.cleanup_parameterized_circuits" title="qiskit.algorithms.VQE.cleanup_parameterized_circuits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cleanup_parameterized_circuits</span></code></a></p></td>
 <td><p>set parameterized circuits to None</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.compute_minimum_eigenvalue" title="qiskit.algorithms.VQE.compute_minimum_eigenvalue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_minimum_eigenvalue</span></code></a>(operator[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.compute_minimum_eigenvalue.html#qiskit.algorithms.VQE.compute_minimum_eigenvalue" title="qiskit.algorithms.VQE.compute_minimum_eigenvalue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_minimum_eigenvalue</span></code></a></p></td>
 <td><p>Computes minimum eigenvalue.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.construct_circuit" title="qiskit.algorithms.VQE.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(parameter, operator)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.construct_circuit.html#qiskit.algorithms.VQE.construct_circuit" title="qiskit.algorithms.VQE.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Return the circuits used to compute the expectation value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.construct_expectation" title="qiskit.algorithms.VQE.construct_expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_expectation</span></code></a>(parameter, operator[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.construct_expectation.html#qiskit.algorithms.VQE.construct_expectation" title="qiskit.algorithms.VQE.construct_expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_expectation</span></code></a></p></td>
 <td><p>Generate the ansatz circuit and expectation value measurement, and return their runnable composition.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.find_minimum" title="qiskit.algorithms.VQE.find_minimum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_minimum</span></code></a>([initial_point, ansatz, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.find_minimum.html#qiskit.algorithms.VQE.find_minimum" title="qiskit.algorithms.VQE.find_minimum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_minimum</span></code></a></p></td>
 <td><p>Optimize to find the minimum cost value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.get_energy_evaluation" title="qiskit.algorithms.VQE.get_energy_evaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_energy_evaluation</span></code></a>(operator[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.get_energy_evaluation.html#qiskit.algorithms.VQE.get_energy_evaluation" title="qiskit.algorithms.VQE.get_energy_evaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_energy_evaluation</span></code></a></p></td>
 <td><p>Returns a function handle to evaluates the energy at given parameters for the ansatz.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.get_optimal_circuit" title="qiskit.algorithms.VQE.get_optimal_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_circuit</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.get_optimal_circuit.html#qiskit.algorithms.VQE.get_optimal_circuit" title="qiskit.algorithms.VQE.get_optimal_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_circuit</span></code></a></p></td>
 <td><p>Get the circuit with the optimal parameters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.get_optimal_cost" title="qiskit.algorithms.VQE.get_optimal_cost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_cost</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.get_optimal_cost.html#qiskit.algorithms.VQE.get_optimal_cost" title="qiskit.algorithms.VQE.get_optimal_cost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_cost</span></code></a></p></td>
 <td><p>Get the minimal cost or energy found by the VQE.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.get_optimal_vector" title="qiskit.algorithms.VQE.get_optimal_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_vector</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.get_optimal_vector.html#qiskit.algorithms.VQE.get_optimal_vector" title="qiskit.algorithms.VQE.get_optimal_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_optimal_vector</span></code></a></p></td>
 <td><p>Get the simulation outcome of the optimal circuit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.get_prob_vector_for_params" title="qiskit.algorithms.VQE.get_prob_vector_for_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_prob_vector_for_params</span></code></a>(...[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.get_prob_vector_for_params.html#qiskit.algorithms.VQE.get_prob_vector_for_params" title="qiskit.algorithms.VQE.get_prob_vector_for_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_prob_vector_for_params</span></code></a></p></td>
 <td><p>Helper function to get probability vectors for a set of params</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.get_probabilities_for_counts" title="qiskit.algorithms.VQE.get_probabilities_for_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_probabilities_for_counts</span></code></a>(counts)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.get_probabilities_for_counts.html#qiskit.algorithms.VQE.get_probabilities_for_counts" title="qiskit.algorithms.VQE.get_probabilities_for_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_probabilities_for_counts</span></code></a></p></td>
 <td><p>get probabilities for counts</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.print_settings" title="qiskit.algorithms.VQE.print_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_settings</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.print_settings.html#qiskit.algorithms.VQE.print_settings" title="qiskit.algorithms.VQE.print_settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_settings</span></code></a></p></td>
 <td><p>Preparing the setting of VQE into a string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.supports_aux_operators" title="qiskit.algorithms.VQE.supports_aux_operators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supports_aux_operators</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.VQE.supports_aux_operators.html#qiskit.algorithms.VQE.supports_aux_operators" title="qiskit.algorithms.VQE.supports_aux_operators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supports_aux_operators</span></code></a></p></td>
 <td><p>Whether computing the expectation value of auxiliary operators is supported.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.ansatz" title="qiskit.algorithms.VQE.ansatz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansatz</span></code></a></p></td>
-<td><p>Returns the ansatz.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.expectation" title="qiskit.algorithms.VQE.expectation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expectation</span></code></a></p></td>
-<td><p>The expectation value algorithm used to construct the expectation measurement from the observable.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.gradient" title="qiskit.algorithms.VQE.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a></p></td>
-<td><p>Returns the gradient.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.initial_point" title="qiskit.algorithms.VQE.initial_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial_point</span></code></a></p></td>
-<td><p>Returns initial point</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.optimal_params" title="qiskit.algorithms.VQE.optimal_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimal_params</span></code></a></p></td>
-<td><p>The optimal parameters for the ansatz.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.optimizer" title="qiskit.algorithms.VQE.optimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimizer</span></code></a></p></td>
-<td><p>Returns optimizer</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.quantum_instance" title="qiskit.algorithms.VQE.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
-<td><p>Returns quantum instance.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.VQE.setting" title="qiskit.algorithms.VQE.setting"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setting</span></code></a></p></td>
-<td><p>Prepare the setting of VQE as a string.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.ansatz">
-<em class="property">property </em><code class="sig-name descname">ansatz</code><a class="headerlink" href="#qiskit.algorithms.VQE.ansatz" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">ansatz</code><a class="headerlink" href="#qiskit.algorithms.VQE.ansatz" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Returns the ansatz.</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -548,93 +469,9 @@ to Qiskit Terra 0.18.0.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.cleanup_parameterized_circuits">
-<code class="sig-name descname">cleanup_parameterized_circuits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.algorithms.VQE.cleanup_parameterized_circuits" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>set parameterized circuits to None</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.compute_minimum_eigenvalue">
-<code class="sig-name descname">compute_minimum_eigenvalue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">aux_operators</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.compute_minimum_eigenvalue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.compute_minimum_eigenvalue" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Computes minimum eigenvalue. Operator and aux_operators can be supplied here and
-if not None will override any already set into algorithm so it can be reused with
-different operators. While an operator is required by algorithms, aux_operators
-are optional. To 'remove' a previous aux_operators array use an empty list here.</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) -- Qubit operator of the Observable</p></li>
-<li><p><strong>aux_operators</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>]]]) -- Optional list of auxiliary operators to be evaluated with the
-eigenstate of the minimum eigenvalue main result and their expectation values
-returned. For instance in chemistry these can be dipole operators, total particle
-count operators so we can get values for these at the ground state.</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolverResult</span></code></p>
-</dd>
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>MinimumEigensolverResult</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em>, <em class="sig-param"><span class="n">operator</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.construct_circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.construct_circuit" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Return the circuits used to compute the expectation value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>parameter</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]) -- Parameters for the ansatz circuit.</p></li>
-<li><p><strong>operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) -- Qubit operator of the Observable</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]</p>
-</dd>
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>A list of the circuits used to compute the expectation value.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.construct_expectation">
-<code class="sig-name descname">construct_expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em>, <em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">return_expectation</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.construct_expectation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.construct_expectation" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Generate the ansatz circuit and expectation value measurement, and return their
-runnable composition.</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>parameter</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]) -- Parameters for the ansatz circuit.</p></li>
-<li><p><strong>operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) -- Qubit operator of the Observable</p></li>
-<li><p><strong>return_expectation</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- If True, return the <code class="docutils literal notranslate"><span class="pre">ExpectationBase</span></code> expectation converter used
-in the construction of the expectation value. Useful e.g. to compute the standard
-deviation of the expectation value.</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpectationBase</span></code>]]</p>
-</dd>
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>The Operator equalling the measurement of the ansatz <code class="xref py py-class docutils literal notranslate"><span class="pre">StateFn</span></code> by the
-Observable's expectation <code class="xref py py-class docutils literal notranslate"><span class="pre">StateFn</span></code>, and, optionally, the expectation converter.</p>
-</dd>
-<dt class="field-even">রেইজেস</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.algorithms.AlgorithmError.html#qiskit.algorithms.AlgorithmError" title="qiskit.algorithms.AlgorithmError"><strong>AlgorithmError</strong></a> -- If no operator has been provided.</p></li>
-<li><p><a class="reference internal" href="qiskit.algorithms.AlgorithmError.html#qiskit.algorithms.AlgorithmError" title="qiskit.algorithms.AlgorithmError"><strong>AlgorithmError</strong></a> -- If no expectation is passed and None could be inferred via the
-    ExpectationFactory.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.expectation">
-<em class="property">property </em><code class="sig-name descname">expectation</code><a class="headerlink" href="#qiskit.algorithms.VQE.expectation" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">expectation</code><a class="headerlink" href="#qiskit.algorithms.VQE.expectation" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>The expectation value algorithm used to construct the expectation measurement from
 the observable.</p>
 <dl class="field-list simple">
@@ -644,111 +481,9 @@ the observable.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.find_minimum">
-<code class="sig-name descname">find_minimum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initial_point</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ansatz</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cost_fn</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gradient_fn</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.algorithms.VQE.find_minimum" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Optimize to find the minimum cost value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>initial_point</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]) -- If not <cite>None</cite> will be used instead of any initial point supplied via
-constructor. If <cite>None</cite> and <cite>None</cite> was supplied to constructor then a random
-point will be used if the optimizer requires an initial point.</p></li>
-<li><p><strong>ansatz</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]) -- If not <cite>None</cite> will be used instead of any ansatz supplied via constructor.</p></li>
-<li><p><strong>cost_fn</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>]) -- If not <cite>None</cite> will be used instead of any cost_fn supplied via
-constructor.</p></li>
-<li><p><strong>optimizer</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code>]) -- If not <cite>None</cite> will be used instead of any optimizer supplied via
-constructor.</p></li>
-<li><p><strong>gradient_fn</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>]) -- Optional gradient function for optimizer</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্নস</dt>
-<dd class="field-even"><p>Optimized variational parameters, and corresponding minimum cost value.</p>
-</dd>
-<dt class="field-odd">রিটার্ন টাইপ</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-<dt class="field-even">রেইজেস</dt>
-<dd class="field-even"><p><strong>ValueError</strong> -- invalid input</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.get_energy_evaluation">
-<code class="sig-name descname">get_energy_evaluation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">return_expectation</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.get_energy_evaluation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.get_energy_evaluation" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Returns a function handle to evaluates the energy at given parameters for the ansatz.</p>
-<p>This is the objective function to be passed to the optimizer that is used for evaluation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) -- The operator whose energy to evaluate.</p></li>
-<li><p><strong>return_expectation</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- If True, return the <code class="docutils literal notranslate"><span class="pre">ExpectationBase</span></code> expectation converter used
-in the construction of the expectation value. Useful e.g. to evaluate other
-operators with the same expectation value converter.</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]]</p>
-</dd>
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>Energy of the hamiltonian of each parameter, and, optionally, the expectation
-converter.</p>
-</dd>
-<dt class="field-even">রেইজেস</dt>
-<dd class="field-even"><p><strong>RuntimeError</strong> -- If the circuit is not parameterized (i.e. has 0 free parameters).</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.get_optimal_circuit">
-<code class="sig-name descname">get_optimal_circuit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.get_optimal_circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.get_optimal_circuit" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Get the circuit with the optimal parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">রিটার্ন টাইপ</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.get_optimal_cost">
-<code class="sig-name descname">get_optimal_cost</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.get_optimal_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.get_optimal_cost" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Get the minimal cost or energy found by the VQE.</p>
-<dl class="field-list simple">
-<dt class="field-odd">রিটার্ন টাইপ</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.get_optimal_vector">
-<code class="sig-name descname">get_optimal_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.get_optimal_vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.get_optimal_vector" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Get the simulation outcome of the optimal circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">রিটার্ন টাইপ</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.get_prob_vector_for_params">
-<code class="sig-name descname">get_prob_vector_for_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">construct_circuit_fn</span></em>, <em class="sig-param"><span class="n">params_s</span></em>, <em class="sig-param"><span class="n">quantum_instance</span></em>, <em class="sig-param"><span class="n">construct_circuit_args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.algorithms.VQE.get_prob_vector_for_params" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Helper function to get probability vectors for a set of params</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.get_probabilities_for_counts">
-<code class="sig-name descname">get_probabilities_for_counts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">counts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.algorithms.VQE.get_probabilities_for_counts" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>get probabilities for counts</p>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.gradient">
-<em class="property">property </em><code class="sig-name descname">gradient</code><a class="headerlink" href="#qiskit.algorithms.VQE.gradient" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">gradient</code><a class="headerlink" href="#qiskit.algorithms.VQE.gradient" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Returns the gradient.</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -757,9 +492,9 @@ converter.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.initial_point">
-<em class="property">property </em><code class="sig-name descname">initial_point</code><a class="headerlink" href="#qiskit.algorithms.VQE.initial_point" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">initial_point</code><a class="headerlink" href="#qiskit.algorithms.VQE.initial_point" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Returns initial point</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -768,9 +503,9 @@ converter.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.optimal_params">
-<em class="property">property </em><code class="sig-name descname">optimal_params</code><a class="headerlink" href="#qiskit.algorithms.VQE.optimal_params" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">optimal_params</code><a class="headerlink" href="#qiskit.algorithms.VQE.optimal_params" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>The optimal parameters for the ansatz.</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -779,9 +514,9 @@ converter.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.optimizer">
-<em class="property">property </em><code class="sig-name descname">optimizer</code><a class="headerlink" href="#qiskit.algorithms.VQE.optimizer" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">optimizer</code><a class="headerlink" href="#qiskit.algorithms.VQE.optimizer" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Returns optimizer</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -790,23 +525,9 @@ converter.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.print_settings">
-<code class="sig-name descname">print_settings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.print_settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.print_settings" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Preparing the setting of VQE into a string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>the formatted setting of VQE</p>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.quantum_instance">
-<em class="property">property </em><code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.algorithms.VQE.quantum_instance" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.algorithms.VQE.quantum_instance" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Returns quantum instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -815,27 +536,10 @@ converter.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.VQE.setting">
-<em class="property">property </em><code class="sig-name descname">setting</code><a class="headerlink" href="#qiskit.algorithms.VQE.setting" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">setting</code><a class="headerlink" href="#qiskit.algorithms.VQE.setting" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Prepare the setting of VQE as a string.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.VQE.supports_aux_operators">
-<em class="property">classmethod </em><code class="sig-name descname">supports_aux_operators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/minimum_eigen_solvers/vqe.html#VQE.supports_aux_operators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.VQE.supports_aux_operators" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Whether computing the expectation value of auxiliary operators is supported.</p>
-<p>If the minimum eigensolver computes an eigenstate of the main operator then it
-can compute the expectation value of the aux_operators for that state. Otherwise
-they will be ignored.</p>
-<dl class="field-list simple">
-<dt class="field-odd">রিটার্ন টাইপ</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-even">রিটার্নস</dt>
-<dd class="field-even"><p>True if aux_operator expectations can be evaluated, False otherwise</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -850,10 +554,10 @@ they will be ignored.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.algorithms.optimizers.html" class="btn btn-neutral float-right" title="Optimizers (qiskit.algorithms.optimizers)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.VQE.cleanup_parameterized_circuits.html" class="btn btn-neutral float-right" title="qiskit.algorithms.VQE.cleanup_parameterized_circuits" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.QAOA.html" class="btn btn-neutral" title="qiskit.algorithms.QAOA" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.QAOA.supports_aux_operators.html" class="btn btn-neutral" title="qiskit.algorithms.QAOA.supports_aux_operators" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -867,7 +571,7 @@ they will be ignored.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      2021/08/13 সর্বশেষ পরিবর্তন করা হয়েছে।
+      2021/09/23 সর্বশেষ পরিবর্তন করা হয়েছে।
 
     </p>
   </div>
@@ -886,7 +590,7 @@ they will be ignored.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.VQE</a></li>
+<li><a class="reference internal" href="#">VQE</a></li>
 </ul>
 
             </div>
@@ -950,7 +654,7 @@ they will be ignored.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -973,9 +677,11 @@ they will be ignored.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

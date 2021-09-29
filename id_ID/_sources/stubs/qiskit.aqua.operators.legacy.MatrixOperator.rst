@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.legacy.MatrixOperator
-===========================================
+﻿MatrixOperator
+==============
 
 .. currentmodule:: qiskit.aqua.operators.legacy
 
 .. autoclass:: MatrixOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MatrixOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MatrixOperator.add
       ~MatrixOperator.chop
       ~MatrixOperator.construct_evaluation_circuit
@@ -25,22 +24,16 @@
       ~MatrixOperator.print_details
       ~MatrixOperator.sub
       ~MatrixOperator.to_opflow
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MatrixOperator.atol
-      ~MatrixOperator.basis
-      ~MatrixOperator.dense_matrix
-      ~MatrixOperator.dia_matrix
-      ~MatrixOperator.matrix
-      ~MatrixOperator.name
-      ~MatrixOperator.num_qubits
-      ~MatrixOperator.z2_symmetries
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: basis
+   .. autoattribute:: dense_matrix
+   .. autoattribute:: dia_matrix
+   .. autoattribute:: matrix
+   .. autoattribute:: name
+   .. autoattribute:: num_qubits
+   .. autoattribute:: z2_symmetries

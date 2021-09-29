@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.LinearsolverResult
-=========================================
+﻿LinearsolverResult
+==================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: LinearsolverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LinearsolverResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LinearsolverResult.clear
       ~LinearsolverResult.combine
       ~LinearsolverResult.copy
@@ -27,15 +26,9 @@
       ~LinearsolverResult.setdefault
       ~LinearsolverResult.update
       ~LinearsolverResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LinearsolverResult.solution
-   
-   
+   .. autoattribute:: solution

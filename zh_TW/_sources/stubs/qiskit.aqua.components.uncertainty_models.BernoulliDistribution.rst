@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.BernoulliDistribution
-================================================================
+﻿BernoulliDistribution
+=====================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: BernoulliDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BernoulliDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BernoulliDistribution.build
       ~BernoulliDistribution.build_controlled
       ~BernoulliDistribution.build_controlled_inverse
@@ -27,21 +26,15 @@
       ~BernoulliDistribution.pdf_to_probabilities
       ~BernoulliDistribution.required_ancillas
       ~BernoulliDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BernoulliDistribution.high
-      ~BernoulliDistribution.low
-      ~BernoulliDistribution.num_target_qubits
-      ~BernoulliDistribution.num_values
-      ~BernoulliDistribution.p
-      ~BernoulliDistribution.probabilities
-      ~BernoulliDistribution.values
-   
-   
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: p
+   .. autoattribute:: probabilities
+   .. autoattribute:: values

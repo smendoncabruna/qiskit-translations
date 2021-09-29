@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.SparsePauliOp
-==================================
+﻿SparsePauliOp
+=============
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: SparsePauliOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SparsePauliOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SparsePauliOp.adjoint
       ~SparsePauliOp.compose
       ~SparsePauliOp.conjugate
@@ -35,23 +34,17 @@
       ~SparsePauliOp.to_matrix
       ~SparsePauliOp.to_operator
       ~SparsePauliOp.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SparsePauliOp.atol
-      ~SparsePauliOp.coeffs
-      ~SparsePauliOp.dim
-      ~SparsePauliOp.num_qubits
-      ~SparsePauliOp.qargs
-      ~SparsePauliOp.rtol
-      ~SparsePauliOp.settings
-      ~SparsePauliOp.size
-      ~SparsePauliOp.table
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: coeffs
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings
+   .. autoattribute:: size
+   .. autoattribute:: table

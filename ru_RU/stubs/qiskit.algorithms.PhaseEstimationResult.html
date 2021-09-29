@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.PhaseEstimationResult &mdash; документация Qiskit 0.29.0</title>
+  <title>PhaseEstimationResult &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
     <link rel="search" title="Поиск" href="../search.html" />
-    <link rel="next" title="qiskit.algorithms.IterativePhaseEstimation" href="qiskit.algorithms.IterativePhaseEstimation.html" />
-    <link rel="prev" title="qiskit.algorithms.PhaseEstimation" href="qiskit.algorithms.PhaseEstimation.html" /> 
+    <link rel="next" title="qiskit.algorithms.PhaseEstimationResult.combine" href="qiskit.algorithms.PhaseEstimationResult.combine.html" />
+    <link rel="prev" title="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit" href="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.PhaseEstimationResult</li>
+      <li>PhaseEstimationResult</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-phaseestimationresult">
-<h1>qiskit.algorithms.PhaseEstimationResult<a class="headerlink" href="#qiskit-algorithms-phaseestimationresult" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="phaseestimationresult">
+<h1>PhaseEstimationResult<a class="headerlink" href="#phaseestimationresult" title="Ссылка на этот заголовок">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.PhaseEstimationResult">
 <em class="property">class </em><code class="sig-name descname">PhaseEstimationResult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_evaluation_qubits</span></em>, <em class="sig-param"><span class="n">circuit_result</span></em>, <em class="sig-param"><span class="n">phases</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation_result.html#PhaseEstimationResult"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Store and manipulate results from running <cite>PhaseEstimation</cite>.</p>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.algorithms.phase_estimators.phase_estimator.PhaseEstimatorResult</span></code></p>
+</div></blockquote>
+<p>Store and manipulate results from running <cite>PhaseEstimation</cite>.</p>
 <p>This class is instantiated by the <code class="docutils literal notranslate"><span class="pre">PhaseEstimation</span></code> class, not via user code.
 The <code class="docutils literal notranslate"><span class="pre">PhaseEstimation</span></code> class generates a list of phases and corresponding weights. Upon
 completion it returns the results as an instance of this class. The main method for
@@ -349,20 +359,6 @@ attribute <cite>phase</cite>, is the most likely phase.</p>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimationResult.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_evaluation_qubits</span></em>, <em class="sig-param"><span class="n">circuit_result</span></em>, <em class="sig-param"><span class="n">phases</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation_result.html#PhaseEstimationResult.__init__"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.__init__" title="Ссылка на это определение">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>num_evaluation_qubits</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – number of qubits in phase-readout register.</p></li>
-<li><p><strong>circuit_result</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code>) – result object returned by method running circuit.</p></li>
-<li><p><strong>phases</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – ndarray or dict of phases and frequencies determined by QPE.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -370,46 +366,18 @@ attribute <cite>phase</cite>, is the most likely phase.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.__init__" title="qiskit.algorithms.PhaseEstimationResult.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(num_evaluation_qubits, …)</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type num_evaluation_qubits</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.combine" title="qiskit.algorithms.PhaseEstimationResult.combine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine</span></code></a>(result)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.PhaseEstimationResult.combine.html#qiskit.algorithms.PhaseEstimationResult.combine" title="qiskit.algorithms.PhaseEstimationResult.combine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine</span></code></a></p></td>
 <td><p>Any property from the argument that exists in the receiver is updated.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.filter_phases" title="qiskit.algorithms.PhaseEstimationResult.filter_phases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_phases</span></code></a>([cutoff, as_float])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.PhaseEstimationResult.filter_phases.html#qiskit.algorithms.PhaseEstimationResult.filter_phases" title="qiskit.algorithms.PhaseEstimationResult.filter_phases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_phases</span></code></a></p></td>
 <td><p>Return a filtered dict of phases (keys) and frequencies (values).</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.circuit_result" title="qiskit.algorithms.PhaseEstimationResult.circuit_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circuit_result</span></code></a></p></td>
-<td><p>Return the result object returned by running the QPE circuit (on hardware or simulator).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.most_likely_phase" title="qiskit.algorithms.PhaseEstimationResult.most_likely_phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">most_likely_phase</span></code></a></p></td>
-<td><p>DEPRECATED - Return the most likely phase as a number in <span class="math notranslate nohighlight">\([0.0, 1.0)\)</span>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.phase" title="qiskit.algorithms.PhaseEstimationResult.phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">phase</span></code></a></p></td>
-<td><p>Return the most likely phase as a number in <span class="math notranslate nohighlight">\([0.0, 1.0)\)</span>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimationResult.phases" title="qiskit.algorithms.PhaseEstimationResult.phases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">phases</span></code></a></p></td>
-<td><p>Return all phases and their frequencies computed by QPE.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.PhaseEstimationResult.circuit_result">
-<em class="property">property </em><code class="sig-name descname">circuit_result</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.circuit_result" title="Ссылка на это определение">¶</a></dt>
+<code class="sig-name descname">circuit_result</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.circuit_result" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Return the result object returned by running the QPE circuit (on hardware or simulator).</p>
 <p>This is useful for inspecting and troubleshooting the QPE algorithm.</p>
 <dl class="field-list simple">
@@ -419,55 +387,9 @@ attribute <cite>phase</cite>, is the most likely phase.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimationResult.combine">
-<code class="sig-name descname">combine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.combine" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Any property from the argument that exists in the receiver is
-updated.
-:type result: <code class="xref py py-class docutils literal notranslate"><span class="pre">AlgorithmResult</span></code>
-:param result: Argument result with properties to be set.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Исключение</dt>
-<dd class="field-odd"><p><strong>TypeError</strong> – Argument is None</p>
-</dd>
-<dt class="field-even">Тип результата</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimationResult.filter_phases">
-<code class="sig-name descname">filter_phases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cutoff</span><span class="o">=</span><span class="default_value">0.0</span></em>, <em class="sig-param"><span class="n">as_float</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation_result.html#PhaseEstimationResult.filter_phases"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.filter_phases" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Return a filtered dict of phases (keys) and frequencies (values).</p>
-<p>Only phases with frequencies (counts) larger than <cite>cutoff</cite> are included.
-It is assumed that the <cite>run</cite> method has been called so that the phases have been computed.
-When using a noiseless, shot-based simulator to read a single phase that can
-be represented exactly by <cite>num_evaluation_qubits</cite>, all the weight will
-be concentrated on a single phase. In all other cases, many, or all, bit
-strings will have non-zero weight. This method is useful for filtering
-out these uninteresting bit strings.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cutoff</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Minimum weight of number of counts required to keep a bit string.
-The default value is <cite>0.0</cite>.</p></li>
-<li><p><strong>as_float</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <cite>True</cite>, returned keys are floats in <span class="math notranslate nohighlight">\([0.0, 1.0)\)</span>. If <cite>False</cite>
-returned keys are bit strings.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Тип результата</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
-</dd>
-<dt class="field-odd">Результат</dt>
-<dd class="field-odd"><p>A filtered dict of phases (keys) and frequencies (values).</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.PhaseEstimationResult.most_likely_phase">
-<em class="property">property </em><code class="sig-name descname">most_likely_phase</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.most_likely_phase" title="Ссылка на это определение">¶</a></dt>
+<code class="sig-name descname">most_likely_phase</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.most_likely_phase" title="Ссылка на это определение">¶</a></dt>
 <dd><p>DEPRECATED - Return the most likely phase as a number in <span class="math notranslate nohighlight">\([0.0, 1.0)\)</span>.</p>
 <p>1.0 corresponds to a phase of <span class="math notranslate nohighlight">\(2\pi\)</span>. This selects the phase corresponding
 to the bit string with the highesest probability. This is the most likely phase.</p>
@@ -478,9 +400,9 @@ to the bit string with the highesest probability. This is the most likely phase.
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.PhaseEstimationResult.phase">
-<em class="property">property </em><code class="sig-name descname">phase</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.phase" title="Ссылка на это определение">¶</a></dt>
+<code class="sig-name descname">phase</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.phase" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Return the most likely phase as a number in <span class="math notranslate nohighlight">\([0.0, 1.0)\)</span>.</p>
 <p>1.0 corresponds to a phase of <span class="math notranslate nohighlight">\(2\pi\)</span>. This selects the phase corresponding
 to the bit string with the highesest probability. This is the most likely phase.</p>
@@ -491,9 +413,9 @@ to the bit string with the highesest probability. This is the most likely phase.
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.PhaseEstimationResult.phases">
-<em class="property">property </em><code class="sig-name descname">phases</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.phases" title="Ссылка на это определение">¶</a></dt>
+<code class="sig-name descname">phases</code><a class="headerlink" href="#qiskit.algorithms.PhaseEstimationResult.phases" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Return all phases and their frequencies computed by QPE.</p>
 <p>This is an array or dict whose values correspond to weights on bit strings.</p>
 <dl class="field-list simple">
@@ -515,10 +437,10 @@ to the bit string with the highesest probability. This is the most likely phase.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.algorithms.IterativePhaseEstimation.html" class="btn btn-neutral float-right" title="qiskit.algorithms.IterativePhaseEstimation" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.PhaseEstimationResult.combine.html" class="btn btn-neutral float-right" title="qiskit.algorithms.PhaseEstimationResult.combine" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.PhaseEstimation.html" class="btn btn-neutral" title="qiskit.algorithms.PhaseEstimation" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit.html" class="btn btn-neutral" title="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -532,7 +454,7 @@ to the bit string with the highesest probability. This is the most likely phase.
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -551,7 +473,7 @@ to the bit string with the highesest probability. This is the most likely phase.
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.PhaseEstimationResult</a></li>
+<li><a class="reference internal" href="#">PhaseEstimationResult</a></li>
 </ul>
 
             </div>
@@ -615,7 +537,7 @@ to the bit string with the highesest probability. This is the most likely phase.
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -638,9 +560,11 @@ to the bit string with the highesest probability. This is the most likely phase.
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

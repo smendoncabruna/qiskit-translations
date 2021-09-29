@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.optimizers.ADAM
-======================================
+﻿ADAM
+====
 
 .. currentmodule:: qiskit.aqua.components.optimizers
 
 .. autoclass:: ADAM
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ADAM.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ADAM.get_support_level
       ~ADAM.gradient_num_diff
       ~ADAM.load_params
@@ -24,27 +23,21 @@
       ~ADAM.set_max_evals_grouped
       ~ADAM.set_options
       ~ADAM.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ADAM.bounds_support_level
-      ~ADAM.gradient_support_level
-      ~ADAM.initial_point_support_level
-      ~ADAM.is_bounds_ignored
-      ~ADAM.is_bounds_required
-      ~ADAM.is_bounds_supported
-      ~ADAM.is_gradient_ignored
-      ~ADAM.is_gradient_required
-      ~ADAM.is_gradient_supported
-      ~ADAM.is_initial_point_ignored
-      ~ADAM.is_initial_point_required
-      ~ADAM.is_initial_point_supported
-      ~ADAM.setting
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting

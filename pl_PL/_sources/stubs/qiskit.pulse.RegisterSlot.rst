@@ -1,33 +1,26 @@
-﻿qiskit.pulse.RegisterSlot
-=========================
+﻿RegisterSlot
+============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: RegisterSlot
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RegisterSlot.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RegisterSlot.assign
       ~RegisterSlot.is_parameterized
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RegisterSlot.index
-      ~RegisterSlot.name
-      ~RegisterSlot.parameters
-      ~RegisterSlot.prefix
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: name
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix

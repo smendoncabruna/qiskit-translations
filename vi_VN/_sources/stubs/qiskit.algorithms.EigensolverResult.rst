@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.EigensolverResult
-===================================
+﻿EigensolverResult
+=================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: EigensolverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EigensolverResult.__init__
-      ~EigensolverResult.combine
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~EigensolverResult.combine
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EigensolverResult.aux_operator_eigenvalues
-      ~EigensolverResult.eigenstates
-      ~EigensolverResult.eigenvalues
-   
-   
+   .. autoattribute:: aux_operator_eigenvalues
+   .. autoattribute:: eigenstates
+   .. autoattribute:: eigenvalues

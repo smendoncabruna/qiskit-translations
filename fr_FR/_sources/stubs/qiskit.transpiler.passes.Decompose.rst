@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.Decompose
-==================================
+﻿Decompose
+=========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: Decompose
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Decompose.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Decompose.name
       ~Decompose.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Decompose.is_analysis_pass
-      ~Decompose.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

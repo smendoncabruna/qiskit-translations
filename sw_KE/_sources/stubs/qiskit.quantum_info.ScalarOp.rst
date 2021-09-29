@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.ScalarOp
-=============================
+﻿ScalarOp
+========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: ScalarOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ScalarOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ScalarOp.adjoint
       ~ScalarOp.compose
       ~ScalarOp.conjugate
@@ -29,21 +28,15 @@
       ~ScalarOp.to_matrix
       ~ScalarOp.to_operator
       ~ScalarOp.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ScalarOp.atol
-      ~ScalarOp.coeff
-      ~ScalarOp.dim
-      ~ScalarOp.num_qubits
-      ~ScalarOp.qargs
-      ~ScalarOp.rtol
-      ~ScalarOp.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: coeff
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

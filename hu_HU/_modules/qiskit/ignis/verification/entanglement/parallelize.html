@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.verification.entanglement.parallelize &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>qiskit.ignis.verification.entanglement.parallelize &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -363,12 +370,12 @@
 <span class="sd">    with parallellized CNOT gates to increase fidelity</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="BConfig.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">backend</span> <span class="o">=</span> <span class="n">backend</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cmap</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">configuration</span><span class="p">()</span><span class="o">.</span><span class="n">coupling_map</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_nodes</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">indicator</span> <span class="o">=</span> <span class="n">indicator</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indicator</span> <span class="o">=</span> <span class="n">indicator</span>
 
     <span class="k">def</span> <span class="nf">_initialize_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -471,7 +478,7 @@
 
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">children</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">child</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cx_error</span><span class="p">()[(</span><span class="n">child</span><span class="p">,</span> <span class="n">parent</span><span class="p">)])</span>
 
-<div class="viewcode-block" id="BConfig.get_tier_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_tier_dict">[docs]</a>    <span class="k">def</span> <span class="nf">get_tier_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<div class="viewcode-block" id="BConfig.get_tier_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_tier_dict.html#qiskit.ignis.verification.BConfig.get_tier_dict">[docs]</a>    <span class="k">def</span> <span class="nf">get_tier_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Take the nodes of the BConfig to create a Tier Dictionary,</span>
 <span class="sd">        where keys are the steps in the process,</span>
@@ -532,7 +539,7 @@
 
         <span class="k">return</span> <span class="n">tier</span></div>
 
-<div class="viewcode-block" id="BConfig.get_ghz_layout"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_ghz_layout">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_ghz_layout"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_ghz_layout.html#qiskit.ignis.verification.BConfig.get_ghz_layout">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                        <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                        <span class="n">transpiled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                        <span class="n">barriered</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
@@ -585,7 +592,7 @@
 
         <span class="k">return</span> <span class="n">circ</span><span class="p">,</span> <span class="n">initial_layout</span></div>
 
-<div class="viewcode-block" id="BConfig.get_measurement_circ"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_measurement_circ">[docs]</a>    <span class="k">def</span> <span class="nf">get_measurement_circ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_measurement_circ"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_measurement_circ.html#qiskit.ignis.verification.BConfig.get_measurement_circ">[docs]</a>    <span class="k">def</span> <span class="nf">get_measurement_circ</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                              <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                              <span class="n">qregname</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                              <span class="n">cregname</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -622,7 +629,7 @@
         <span class="n">meas</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cla</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">meas</span></div>
 
-<div class="viewcode-block" id="BConfig.get_ghz_mqc"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_ghz_mqc">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_mqc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_ghz_mqc"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_ghz_mqc.html#qiskit.ignis.verification.BConfig.get_ghz_mqc">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_mqc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                     <span class="n">delta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
                     <span class="n">full_measurement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
@@ -663,7 +670,7 @@
 
         <span class="k">return</span> <span class="n">new_circ</span><span class="p">,</span> <span class="n">initial_layout</span></div>
 
-<div class="viewcode-block" id="BConfig.get_ghz_mqc_para"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_ghz_mqc_para">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_mqc_para</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_ghz_mqc_para"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_ghz_mqc_para.html#qiskit.ignis.verification.BConfig.get_ghz_mqc_para">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_mqc_para</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                          <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                          <span class="n">full_measurement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
                          <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Parameter</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
@@ -699,7 +706,7 @@
         <span class="n">new_circ</span> <span class="o">=</span> <span class="n">circ</span> <span class="o">+</span> <span class="n">rotate</span> <span class="o">+</span> <span class="n">circ</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span> <span class="o">+</span> <span class="n">meas</span>
         <span class="k">return</span> <span class="n">new_circ</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="n">initial_layout</span></div>
 
-<div class="viewcode-block" id="BConfig.get_ghz_po"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_ghz_po">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_po</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_ghz_po"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_ghz_po.html#qiskit.ignis.verification.BConfig.get_ghz_po">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_po</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                    <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                    <span class="n">delta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
                    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
@@ -736,7 +743,7 @@
 
         <span class="k">return</span> <span class="n">new_circ</span><span class="p">,</span> <span class="n">initial_layout</span></div>
 
-<div class="viewcode-block" id="BConfig.get_ghz_po_para"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_ghz_po_para">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_po_para</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_ghz_po_para"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_ghz_po_para.html#qiskit.ignis.verification.BConfig.get_ghz_po_para">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_po_para</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                         <span class="n">n</span><span class="p">:</span> <span class="nb">int</span>
                         <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">],</span> <span class="n">Dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -772,7 +779,7 @@
         <span class="n">new_circ</span> <span class="o">=</span> <span class="n">circ</span> <span class="o">+</span> <span class="n">rotate</span> <span class="o">+</span> <span class="n">meas</span>
         <span class="k">return</span> <span class="n">new_circ</span><span class="p">,</span> <span class="p">[</span><span class="n">delta</span><span class="p">,</span> <span class="n">deltaneg</span><span class="p">],</span> <span class="n">initial_layout</span></div>
 
-<div class="viewcode-block" id="BConfig.get_ghz_simple"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.html#qiskit.ignis.verification.BConfig.get_ghz_simple">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="BConfig.get_ghz_simple"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.BConfig.get_ghz_simple.html#qiskit.ignis.verification.BConfig.get_ghz_simple">[docs]</a>    <span class="k">def</span> <span class="nf">get_ghz_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                        <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                        <span class="n">full_measurement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
                        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
@@ -815,7 +822,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -895,7 +902,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -918,9 +925,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

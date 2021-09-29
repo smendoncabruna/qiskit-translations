@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Portfolio Diversification &mdash; Qiskit Finance 0.2.0 documentation</title>
+  <title>போர்ட்ஃபோலியோ பல்வகைப்படுத்தல் &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
-    <link rel="next" title="Pricing European Call Options" href="03_european_call_option_pricing.html" />
-    <link rel="prev" title="Portfolio Optimization" href="01_portfolio_optimization.html" /> 
+    <link rel="next" title="ஐரோப்பிய அழைப்பு விருப்பங்களின் விலை" href="03_european_call_option_pricing.html" />
+    <link rel="prev" title="போர்ட்ஃபோலியோ உகப்பாக்கம்" href="01_portfolio_optimization.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Portfolio Diversification</li>
+      <li>போர்ட்ஃபோலியோ பல்வகைப்படுத்தல்</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,12 +484,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/02_portfolio_diversification.ipynb">docs/tutorials/02_portfolio_diversification.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/02_portfolio_diversification.ipynb">docs/tutorials/02_portfolio_diversification.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<div class="section" id="Portfolio-Diversification">
-<h1>Portfolio Diversification<a class="headerlink" href="#Portfolio-Diversification" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="போர்ட்ஃபோலியோ-பல்வகைப்படுத்தல்">
+<h1>போர்ட்ஃபோலியோ பல்வகைப்படுத்தல்<a class="headerlink" href="#போர்ட்ஃபோலியோ-பல்வகைப்படுத்தல்" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="முன்னுரை">
+<h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>சொத்து நிர்வாகத்தில், பரவலாக இரண்டு அணுகுமுறைகள் உள்ளன: செயலில் மற்றும் செயலற்ற முதலீட்டு மேலாண்மை. செயலற்ற முதலீட்டு நிர்வாகத்திற்குள், குறியீட்டு-கண்காணிப்பு நிதிகள் உள்ளன மற்றும் போர்ட்ஃபோலியோ பல்வகைப்படுத்தலின் அடிப்படையில் அணுகுமுறைகள் உள்ளன, அவை குறைந்த எண்ணிக்கையிலான பிரதிநிதித்துவ பங்குகளால் அதிக எண்ணிக்கையிலான சொத்துக்களைக் கொண்ட ஒரு போர்ட்ஃபோலியோவை பிரதிநிதித்துவப்படுத்துவதை நோக்கமாகக் கொண்டுள்ளன. இந்த நோட்புக் ஒரு போர்ட்ஃபோலியோ பல்வகைப்படுத்தல் சிக்கலை விளக்குகிறது, இது சமீபத்தில் இரண்டு காரணங்களுக்காக பிரபலமாகிவிட்டது: 1. இது ஒரு வரையறுக்கப்பட்ட பட்ஜெட்டுடன், வரையறுக்கப்பட்ட பரிவர்த்தனை செலவில் ஒரு குறியீட்டின் (அல்லது இதேபோன்ற பெரிய சொத்துக்களின்) செயல்திறனைப் பிரதிபலிக்க உதவுகிறது. அதாவது: பாரம்பரிய குறியீட்டு-கண்காணிப்பு குறியீட்டில் உள்ள அனைத்து சொத்துக்களையும் வாங்கக்கூடும், குறியீட்டில் உள்ள அதே எடையுடன். இது பல காரணங்களுக்காக நடைமுறைக்கு மாறானதாக இருக்கலாம்: ஒரு சொத்துக்கு ஒரு சுற்று நிறைய கூட நிர்வாகத்தின் கீழ் உள்ள சொத்துக்களை விட அதிகமாக இருக்கலாம், ஒருங்கிணைந்த கட்டுப்பாடுகளுடன் கூடிய குறியீட்டு-கண்காணிப்பு சிக்கலின் பெரிய அளவு தேர்வுமுறை சிக்கலை கடினமாக்குகிறது, மற்றும் குறியீட்டில் உள்ள எடைகளுக்கு நிலைகளை சரிசெய்ய அடிக்கடி மறுசீரமைப்பின் பரிவர்த்தனை செலவுகள் அணுகுமுறையை விலை உயர்ந்ததாக மாற்றக்கூடும். எனவே, ஒரு பிரபலமான அணுகுமுறை <span class="math notranslate nohighlight">\(q\)</span> சொத்துகள் சந்தையை பிரதிநிதித்துவப்படுத்தும் <span class="math notranslate nohighlight">\(n\)</span> சொத்துக்கள், எங்கே <span class="math notranslate nohighlight">\(q\)</span> ஐ விட கணிசமாக சிறியது <span class="math notranslate nohighlight">\(n\)</span>, ஆனால் போர்ட்ஃபோலியோ அடிப்படை சந்தையின் நடத்தையை பிரதிபலிக்கிறது. சொத்துக்களை எவ்வாறு குழுவாக்குவது என்பதை தீர்மானிக்க <span class="math notranslate nohighlight">\(q\)</span> கொத்துகள் மற்றும் எது தீர்மானிக்க வேண்டும் <span class="math notranslate nohighlight">\(q\)</span> சொத்துக்கள் பின்வருவனவற்றைக் குறிக்க வேண்டும் <span class="math notranslate nohighlight">\(q\)</span> கொத்துகள் ஒரு பெரிய அளவிலான தேர்வுமுறை சிக்கலைத் தீர்ப்பதற்கு சமம். [கார்னூஜோல்ஸ் &amp; டுட்டுங்கு, 2006] இல் அறிமுகப்படுத்தப்பட்ட போர்ட்ஃபோலியோ பல்வகைப்படுத்தல் சிக்கலுக்கான கணித மாதிரியை பின்வருவனவற்றில் விவரிக்கிறோம். இது கோவாரன்ஸ் மேட்ரிக்ஸைத் தாண்டி நேரத் தொடர்களுக்கு இடையிலான ஒற்றுமை நடவடிக்கைகளை அனுமதிக்கிறது. பாரம்பரியமாக, நவீன போர்ட்ஃபோலியோ கோட்பாடு கோவாரன்ஸ் மேட்ரிக்ஸை சொத்துக்களுக்கு இடையிலான ஒற்றுமையின் ஒரு நடவடிக்கையாக கருதுகிறது என்பதைக் கவனியுங்கள். இருப்பினும், கோவாரன்ஸ் மேட்ரிக்ஸ் அபூரணமானது. உதாரணமாக, லண்டன் மற்றும் நியூயார்க்கில் பட்டியலிடப்பட்ட ஒரு நிறுவனத்தைக் கவனியுங்கள். இரண்டு பட்டியல்களும் மிகவும் ஒத்ததாக இருக்க வேண்டும் என்றாலும், இரண்டு பட்டியல்களின் விலைகளின் நேரத் தொடரின் பகுதிகள் மட்டுமே ஒன்றுடன் ஒன்று சேரும், ஏனெனில் சந்தைகள் திறக்கும் நேரங்களின் ஓரளவு ஒன்றுடன் ஒன்று. ஒத்திசைவுக்குப் பதிலாக, [பெர்ன்ட் மற்றும் கிளிஃபோர்ட், 1994] இன் டைனமிக் டைம் வார்பிங்கை இரண்டு நேரத் தொடர்களுக்கிடையிலான ஒற்றுமையின் ஒரு நடவடிக்கையாகக் கருதலாம், இது சில காலங்களுக்கு, தரவு ஒரே ஒருவரால் மட்டுமே கைப்பற்றப்படுகிறது என்பதை அனுமதிக்கிறது நேரத் தொடரின், மற்றவர்களுக்கு, இரு நேரத் தொடர்களும் பங்கு விலையின் இணையான பரிணாமத்தின் காரணமாக ஒற்றுமையை வெளிப்படுத்துகின்றன.</p>
 <p>நாங்கள் நிரூபிக்கும் ஒட்டுமொத்த பணிப்பாய்வு பின்வருமாறு:</p>
 <ol class="arabic simple">
@@ -533,7 +533,7 @@ div.rendered_html tbody tr:hover {
 <p>ஃபார்ஹி, கோல்ட்ஸ்டோன் மற்றும் குட்மேன் (2014) ஆகியவற்றின் குவாண்டம் தோராயமான தேர்வுமுறை அணுகுமுறையைப் பின்பற்றி, கிளாசிக்கல் மற்றும் குவாண்டம் கம்ப்யூட்டிங் படிகளை இணைக்கும் அணுகுமுறையை இங்கே நாங்கள் நிரூபிக்கிறோம்.</p>
 <div class="section" id="பைனரி-பல்லுறுப்புறுப்பு-தேர்வுமுறையை-உருவாக்குங்கள்">
 <h3>பைனரி பல்லுறுப்புறுப்பு தேர்வுமுறையை உருவாக்குங்கள்<a class="headerlink" href="#பைனரி-பல்லுறுப்புறுப்பு-தேர்வுமுறையை-உருவாக்குங்கள்" title="Permalink to this headline">¶</a></h3>
-<p>From <span class="math notranslate nohighlight">\((M)\)</span> one can construct a binary polynomial optimization with equality constraints only, by substituting the <span class="math notranslate nohighlight">\(x_{ij} \leq y_j\)</span> inequality constraints with the equivalent equality constraints <span class="math notranslate nohighlight">\(x_{ij} (1- y_j) = 0\)</span>. Then the problem becomes:</p>
+<p><span class="math notranslate nohighlight">\((M)\)</span> இல் இருந்து <span class="math notranslate nohighlight">\(x_{ij} \leq y_j\)</span> சமத்துவமின்மை கட்டுப்பாடுகள் சமமான சமத்துவக் கட்டுப்பாடுகளுடன் மாற்றுவதன் மூலம் மட்டுமே சமத்துவக் கட்டுப்பாடுகளுடன் ஒரு binary constraints தேர்வுமுறையை உருவாக்க முடியும். <span class="math notranslate nohighlight">\(x_{ij} (1- y_j) = 0\)</span>. பிறகு இந்த பிரச்சனை இவ்வாறு போகும்:</p>
 <div class="math notranslate nohighlight">
 \[(BPO) \quad f = \max_ {x_{ij}, y_{j}}\,\, \sum_ {i= 1} ^ n \sum_ {j=1} ^ n \rho_{ij} x_{ij}\]</div>
 <p>clustering கட்டுப்பாடுகள், ஒருங்கிணைந்த கட்டுப்பாடுகள், மற்றும் பின்வரும் திருத்தப்பட்ட தொடக்க கட்டுப்பாடுகள்:</p>
@@ -618,7 +618,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Next, we download price data for two stocks and compute their pair-wise similarity matrix (<a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">dynamic time warping</a> distance normalized to (0,1] by taking the reciprocal). If this fails, e.g., due to you being offline or exceeding the daily limit for accesses to the stock-market data, we consider a constant matrix instead.</p>
+<p>அடுத்து, இரண்டு பங்குகளுக்கான விலைத் தரவைப் பதிவிறக்கம் செய்து அவற்றின் ஜோடி வாரியான ஒற்றுமை அணியைக் கணக்கிடுகிறோம் (<a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">dynamic time warping</a> பரஸ்பரம் எடுத்துக்கொள்வதன் மூலம் (0,1] தூரம் இயல்பாக்கப்பட்டது).இது தோல்வியுற்றால், எ.கா., நீங்கள் ஆஃப்லைனில் இருப்பதால் அல்லது பங்குச் சந்தை தரவை அணுகுவதற்கான தினசரி வரம்பை மீறுவதால், அதற்கு பதிலாக ஒரு நிலையான மேட்ரிக்ஸை நாங்கள் கருதுகிறோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -1062,10 +1062,10 @@ VQE does not produce the same solution as the exact eigensolver, but that is to 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="03_european_call_option_pricing.html" class="btn btn-neutral float-right" title="Pricing European Call Options" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="03_european_call_option_pricing.html" class="btn btn-neutral float-right" title="ஐரோப்பிய அழைப்பு விருப்பங்களின் விலை" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="01_portfolio_optimization.html" class="btn btn-neutral" title="Portfolio Optimization" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="01_portfolio_optimization.html" class="btn btn-neutral" title="போர்ட்ஃபோலியோ உகப்பாக்கம்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1097,8 +1097,8 @@ VQE does not produce the same solution as the exact eigensolver, but that is to 
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Portfolio Diversification</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#">போர்ட்ஃபோலியோ பல்வகைப்படுத்தல்</a><ul>
+<li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
 <li><a class="reference internal" href="#மாதிரி">மாதிரி</a></li>
 <li><a class="reference internal" href="#ஒரு-கலப்பின-அணுகல்">ஒரு கலப்பின அணுகல்</a><ul>
 <li><a class="reference internal" href="#பைனரி-பல்லுறுப்புறுப்பு-தேர்வுமுறையை-உருவாக்குங்கள்">பைனரி பல்லுறுப்புறுப்பு தேர்வுமுறையை உருவாக்குங்கள்</a></li>

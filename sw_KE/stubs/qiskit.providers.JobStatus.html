@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.JobStatus &mdash; Qiskit 0.29.0 documentation</title>
+  <title>JobStatus &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -42,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="qiskit.providers.QiskitBackendNotFoundError" href="qiskit.providers.QiskitBackendNotFoundError.html" />
-    <link rel="prev" title="qiskit.providers.BaseJob" href="qiskit.providers.BaseJob.html" /> 
+    <link rel="prev" title="qiskit.providers.BaseJob.wait_for_final_state" href="qiskit.providers.BaseJob.wait_for_final_state.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/providers.html">Providers Interface (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.providers</span></code>)</a> &gt;</li>
         
-      <li>qiskit.providers.JobStatus</li>
+      <li>JobStatus</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,48 +335,49 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-providers-jobstatus">
-<h1>qiskit.providers.JobStatus<a class="headerlink" href="#qiskit-providers-jobstatus" title="Permalink to this headline">¶</a></h1>
+  <section id="jobstatus">
+<h1>JobStatus<a class="headerlink" href="#jobstatus" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.providers.JobStatus">
 <em class="property">class </em><code class="sig-name descname">JobStatus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/jobstatus.html#JobStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.JobStatus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class for job status enumerated type.</p>
-<dl class="py method">
-<dt id="qiskit.providers.JobStatus.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.JobStatus.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Class for job status enumerated type.</p>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CANCELLED</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DONE</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ERROR</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">INITIALIZING</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">QUEUED</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">RUNNING</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">VALIDATING</span></code></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.CANCELLED">
+<code class="sig-name descname">CANCELLED</code><em class="property"> = 'job has been cancelled'</em><a class="headerlink" href="#qiskit.providers.JobStatus.CANCELLED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.DONE">
+<code class="sig-name descname">DONE</code><em class="property"> = 'job has successfully run'</em><a class="headerlink" href="#qiskit.providers.JobStatus.DONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.ERROR">
+<code class="sig-name descname">ERROR</code><em class="property"> = 'job incurred error'</em><a class="headerlink" href="#qiskit.providers.JobStatus.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.INITIALIZING">
+<code class="sig-name descname">INITIALIZING</code><em class="property"> = 'job is being initialized'</em><a class="headerlink" href="#qiskit.providers.JobStatus.INITIALIZING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.QUEUED">
+<code class="sig-name descname">QUEUED</code><em class="property"> = 'job is queued'</em><a class="headerlink" href="#qiskit.providers.JobStatus.QUEUED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.RUNNING">
+<code class="sig-name descname">RUNNING</code><em class="property"> = 'job is actively running'</em><a class="headerlink" href="#qiskit.providers.JobStatus.RUNNING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.JobStatus.VALIDATING">
+<code class="sig-name descname">VALIDATING</code><em class="property"> = 'job is being validated'</em><a class="headerlink" href="#qiskit.providers.JobStatus.VALIDATING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
@@ -385,7 +393,7 @@
         <a href="qiskit.providers.QiskitBackendNotFoundError.html" class="btn btn-neutral float-right" title="qiskit.providers.QiskitBackendNotFoundError" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.providers.BaseJob.html" class="btn btn-neutral" title="qiskit.providers.BaseJob" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.providers.BaseJob.wait_for_final_state.html" class="btn btn-neutral" title="qiskit.providers.BaseJob.wait_for_final_state" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -399,7 +407,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -418,7 +426,7 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.providers.JobStatus</a></li>
+<li><a class="reference internal" href="#">JobStatus</a></li>
 </ul>
 
             </div>
@@ -482,7 +490,7 @@
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -505,9 +513,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

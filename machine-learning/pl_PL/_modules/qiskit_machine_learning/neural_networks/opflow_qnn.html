@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.neural_networks.opflow_qnn &mdash; Qiskit Machine Learning 0.2.0 - dokumentacja</title>
+  <title>qiskit_machine_learning.neural_networks.opflow_qnn &mdash; Qiskit Machine Learning 0.2.1 - dokumentacja</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/neural_networks/opflow_qnn.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/neural_networks/opflow_qnn.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/neural_networks/opflow_qnn.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/neural_networks/opflow_qnn.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/neural_networks/opflow_qnn.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/neural_networks/opflow_qnn.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -324,28 +330,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_params</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_weight_params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">weight_params</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">,</span> <span class="p">(</span><span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">)):</span>
-            <span class="n">quantum_instance</span> <span class="o">=</span> <span class="n">QuantumInstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">quantum_instance</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="o">=</span> <span class="n">quantum_instance</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_sampler</span> <span class="o">=</span> <span class="n">CircuitSampler</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="p">,</span>
-                <span class="n">param_qobj</span><span class="o">=</span><span class="n">is_aer_provider</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="o">.</span><span class="n">backend</span><span class="p">),</span>
-                <span class="n">caching</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_sampler</span> <span class="o">=</span> <span class="kc">None</span>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_quantum_instance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_operator</span> <span class="o">=</span> <span class="n">operator</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_forward_operator</span> <span class="o">=</span> <span class="n">exp_val</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span> <span class="k">if</span> <span class="n">exp_val</span> <span class="k">else</span> <span class="n">operator</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_gradient</span> <span class="o">=</span> <span class="n">gradient</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span> <span class="o">=</span> <span class="n">input_gradients</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_construct_gradient_operator</span><span class="p">()</span>
 
-        <span class="n">output_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_output_shape_from_op</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span>
+        <span class="n">output_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_output_shape</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_input_params</span><span class="p">),</span>
             <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_weight_params</span><span class="p">),</span>
@@ -367,19 +359,16 @@
         <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="n">OpflowError</span><span class="p">,</span> <span class="n">QiskitError</span><span class="p">):</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Cannot compute gradient operator! Continuing without gradients!&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_get_output_shape_from_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">_compute_output_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Determines the output shape of a given operator.&quot;&quot;&quot;</span>
         <span class="c1"># TODO: the whole method should eventually be moved to opflow and rewritten in a better way.</span>
         <span class="c1"># if the operator is a composed one, then we only need to look at the first element of it.</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">ComposedOp</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_output_shape_from_op</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">oplist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">primitive</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_output_shape</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">oplist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">primitive</span><span class="p">)</span>
         <span class="c1"># this &quot;if&quot; statement is on purpose, to prevent sub-classes.</span>
         <span class="c1"># pylint:disable=unidiomatic-typecheck</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">op</span><span class="p">)</span> <span class="o">==</span> <span class="n">ListOp</span><span class="p">:</span>
-            <span class="n">shapes</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">op_</span> <span class="ow">in</span> <span class="n">op</span><span class="o">.</span><span class="n">oplist</span><span class="p">:</span>
-                <span class="n">shape_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_output_shape_from_op</span><span class="p">(</span><span class="n">op_</span><span class="p">)</span>
-                <span class="n">shapes</span> <span class="o">+=</span> <span class="p">[</span><span class="n">shape_</span><span class="p">]</span>
+            <span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_compute_output_shape</span><span class="p">(</span><span class="n">op_</span><span class="p">)</span> <span class="k">for</span> <span class="n">op_</span> <span class="ow">in</span> <span class="n">op</span><span class="o">.</span><span class="n">oplist</span><span class="p">]</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="n">shape</span> <span class="o">==</span> <span class="n">shapes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">]):</span>
                 <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
                     <span class="s2">&quot;Only supports ListOps with children that return the same shape.&quot;</span>
@@ -408,6 +397,44 @@
         <span class="sd">&quot;&quot;&quot;Turn on/off computation of gradients with respect to input data.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span> <span class="o">=</span> <span class="n">input_gradients</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_construct_gradient_operator</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">quantum_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumInstance</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the quantum instance to evaluate the operator.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span>
+
+    <span class="nd">@quantum_instance</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">quantum_instance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">quantum_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QuantumInstance</span><span class="p">,</span> <span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Sets the quantum instance to evaluate the operator.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_quantum_instance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_quantum_instance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">quantum_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QuantumInstance</span><span class="p">,</span> <span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal method to set a quantum instance and compute/initialize a sampler.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            quantum_instance: A quantum instance to set.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">,</span> <span class="p">(</span><span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">)):</span>
+            <span class="n">quantum_instance</span> <span class="o">=</span> <span class="n">QuantumInstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="o">=</span> <span class="n">quantum_instance</span>
+
+        <span class="k">if</span> <span class="n">quantum_instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_sampler</span> <span class="o">=</span> <span class="n">CircuitSampler</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="p">,</span>
+                <span class="n">param_qobj</span><span class="o">=</span><span class="n">is_aer_provider</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="o">.</span><span class="n">backend</span><span class="p">),</span>
+                <span class="n">caching</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_sampler</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">weights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>

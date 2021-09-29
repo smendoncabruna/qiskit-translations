@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveMatrixProductState
-===================================================
+﻿SaveMatrixProductState
+======================
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveMatrixProductState
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveMatrixProductState.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveMatrixProductState.add_decomposition
       ~SaveMatrixProductState.assemble
       ~SaveMatrixProductState.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveMatrixProductState.reverse_ops
       ~SaveMatrixProductState.soft_compare
       ~SaveMatrixProductState.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveMatrixProductState.decompositions
-      ~SaveMatrixProductState.definition
-      ~SaveMatrixProductState.duration
-      ~SaveMatrixProductState.label
-      ~SaveMatrixProductState.params
-      ~SaveMatrixProductState.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

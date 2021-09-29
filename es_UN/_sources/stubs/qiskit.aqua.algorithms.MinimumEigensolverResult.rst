@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.MinimumEigensolverResult
-===============================================
+﻿MinimumEigensolverResult
+========================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: MinimumEigensolverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MinimumEigensolverResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MinimumEigensolverResult.clear
       ~MinimumEigensolverResult.combine
       ~MinimumEigensolverResult.copy
@@ -27,17 +26,11 @@
       ~MinimumEigensolverResult.setdefault
       ~MinimumEigensolverResult.update
       ~MinimumEigensolverResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MinimumEigensolverResult.aux_operator_eigenvalues
-      ~MinimumEigensolverResult.eigenstate
-      ~MinimumEigensolverResult.eigenvalue
-   
-   
+   .. autoattribute:: aux_operator_eigenvalues
+   .. autoattribute:: eigenstate
+   .. autoattribute:: eigenvalue

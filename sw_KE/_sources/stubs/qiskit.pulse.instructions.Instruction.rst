@@ -1,19 +1,18 @@
-qiskit.pulse.instructions.Instruction
-=====================================
+Instruction
+===========
 
 .. currentmodule:: qiskit.pulse.instructions
 
 .. autoclass:: Instruction
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Instruction.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Instruction.append
       ~Instruction.assign_parameters
       ~Instruction.ch_duration
@@ -24,23 +23,17 @@ qiskit.pulse.instructions.Instruction
       ~Instruction.insert
       ~Instruction.is_parameterized
       ~Instruction.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Instruction.channels
-      ~Instruction.duration
-      ~Instruction.id
-      ~Instruction.instructions
-      ~Instruction.name
-      ~Instruction.operands
-      ~Instruction.parameters
-      ~Instruction.start_time
-      ~Instruction.stop_time
-   
-   
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

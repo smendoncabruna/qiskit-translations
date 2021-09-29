@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.circuit.classicalfunction.classicalfunction &mdash; Qiskit 0.29.0 दिग्दर्शिका</title>
+  <title>qiskit.circuit.classicalfunction.classicalfunction &mdash; Qiskit 0.30.0 दिग्दर्शिका</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -350,7 +357,7 @@
 <div class="viewcode-block" id="ClassicalFunction"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.html#qiskit.circuit.classicalfunction.ClassicalFunction">[docs]</a><span class="k">class</span> <span class="nc">ClassicalFunction</span><span class="p">(</span><span class="n">ClassicalElement</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Represent a classical function function and its logic network.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="ClassicalFunction.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.html#qiskit.circuit.classicalfunction.ClassicalFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a ``ClassicalFunction`` from Python source code in ``source``.</span>
 
 <span class="sd">        The code should be a single function with types.</span>
@@ -373,9 +380,9 @@
             <span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;*classicalfunction*&quot;</span><span class="p">,</span>
             <span class="n">num_qubits</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">qreg</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">qreg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">qregs</span><span class="p">),</span>
             <span class="n">params</span><span class="o">=</span><span class="p">[],</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
 
-<div class="viewcode-block" id="ClassicalFunction.compile"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.html#qiskit.circuit.classicalfunction.ClassicalFunction.compile">[docs]</a>    <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ClassicalFunction.compile"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.compile.html#qiskit.circuit.classicalfunction.ClassicalFunction.compile">[docs]</a>    <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Parses and creates the logical circuit&quot;&quot;&quot;</span>
         <span class="n">_classical_function_visitor</span> <span class="o">=</span> <span class="n">ClassicalFunctionVisitor</span><span class="p">()</span>
         <span class="n">_classical_function_visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ast</span><span class="p">)</span>
@@ -418,7 +425,7 @@
             <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">scope</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-<div class="viewcode-block" id="ClassicalFunction.simulate"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.html#qiskit.circuit.classicalfunction.ClassicalFunction.simulate">[docs]</a>    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bitstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="ClassicalFunction.simulate"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.simulate.html#qiskit.circuit.classicalfunction.ClassicalFunction.simulate">[docs]</a>    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bitstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Evaluate the expression on a bitstring.</span>
 
 <span class="sd">        This evaluation is done classically.</span>
@@ -431,7 +438,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">simulate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_network</span><span class="p">,</span> <span class="n">bitstring</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ClassicalFunction.simulate_all"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.html#qiskit.circuit.classicalfunction.ClassicalFunction.simulate_all">[docs]</a>    <span class="k">def</span> <span class="nf">simulate_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ClassicalFunction.simulate_all"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.simulate_all.html#qiskit.circuit.classicalfunction.ClassicalFunction.simulate_all">[docs]</a>    <span class="k">def</span> <span class="nf">simulate_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a truth table.</span>
 
@@ -452,7 +459,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_truth_table</span> <span class="o">=</span> <span class="n">simulate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_network</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_truth_table</span>
 
-<div class="viewcode-block" id="ClassicalFunction.synth"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.html#qiskit.circuit.classicalfunction.ClassicalFunction.synth">[docs]</a>    <span class="k">def</span> <span class="nf">synth</span><span class="p">(</span>
+<div class="viewcode-block" id="ClassicalFunction.synth"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.ClassicalFunction.synth.html#qiskit.circuit.classicalfunction.ClassicalFunction.synth">[docs]</a>    <span class="k">def</span> <span class="nf">synth</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">registerless</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">synthesizer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">ClassicalElement</span><span class="p">],</span> <span class="n">QuantumCircuit</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -506,7 +513,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      अंतिम बार सम्पादित 2021/08/13.
+      अंतिम बार सम्पादित 2021/09/23.
 
     </p>
   </div>
@@ -587,7 +594,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -610,9 +617,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

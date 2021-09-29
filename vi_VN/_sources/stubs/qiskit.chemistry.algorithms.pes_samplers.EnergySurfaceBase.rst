@@ -1,27 +1,22 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.EnergySurfaceBase
-===========================================================
+﻿EnergySurfaceBase
+=================
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: EnergySurfaceBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EnergySurfaceBase.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EnergySurfaceBase.eval
       ~EnergySurfaceBase.fit
       ~EnergySurfaceBase.get_equilibrium_geometry
       ~EnergySurfaceBase.get_minimal_energy
       ~EnergySurfaceBase.get_trust_region
-   
-   
 
-   
-   
-   
+

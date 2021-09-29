@@ -1,19 +1,18 @@
-﻿qiskit.transpiler.CouplingMap
-=============================
+﻿CouplingMap
+===========
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: CouplingMap
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CouplingMap.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CouplingMap.add_edge
       ~CouplingMap.add_physical_qubit
       ~CouplingMap.distance
@@ -31,17 +30,11 @@
       ~CouplingMap.shortest_undirected_path
       ~CouplingMap.size
       ~CouplingMap.subgraph
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CouplingMap.distance_matrix
-      ~CouplingMap.is_symmetric
-      ~CouplingMap.physical_qubits
-   
-   
+   .. autoattribute:: distance_matrix
+   .. autoattribute:: is_symmetric
+   .. autoattribute:: physical_qubits

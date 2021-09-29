@@ -1,19 +1,18 @@
-﻿qiskit.aqua.utils.CircuitFactory
-================================
+﻿CircuitFactory
+==============
 
 .. currentmodule:: qiskit.aqua.utils
 
 .. autoclass:: CircuitFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CircuitFactory.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CircuitFactory.build
       ~CircuitFactory.build_controlled
       ~CircuitFactory.build_controlled_inverse
@@ -26,15 +25,9 @@
       ~CircuitFactory.get_num_qubits_controlled
       ~CircuitFactory.required_ancillas
       ~CircuitFactory.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CircuitFactory.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>प्रारंभ करें &mdash; Qiskit Machine Learning 0.2.0 दिग्दर्शिका</title>
+  <title>प्रारंभ करें &mdash; Qiskit Machine Learning 0.2.1 दिग्दर्शिका</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    <link rel="index" title="अनुक्रमणिका" href="genindex.html" />
-    <link rel="search" title="खोज" href="search.html" />
+    <link rel="index" title="विषयसूची" href="genindex.html" />
+    <link rel="search" title="खोज करें" href="search.html" />
     <link rel="next" title="Qiskit Machine Learning API Reference" href="apidocs/qiskit_machine_learning.html" />
     <link rel="prev" title="Qiskit Machine Learning प्रलेखन" href="index.html" /> 
 
@@ -91,15 +91,21 @@
 
     <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
-    <span class="rst-current-version-label">hi_IN</span>
+    <span class="rst-current-version-label">Hindi</span>
     <span class="rst-versions-dropdown-icon"></span>
   </span>
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>भाषाएँ</dt>
       
         <dd><a class="version" href="/documentation/machine-learning/getting_started.html">English</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/getting_started.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/getting_started.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/getting_started.html">Hindi</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/getting_started.html">Italian</a></dd>
       
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -254,68 +260,51 @@
 <h1>प्रारंभ करें<a class="headerlink" href="#getting-started" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h1>
 <div class="section" id="installation">
 <h2>संस्थापन<a class="headerlink" href="#installation" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
-<p>Qiskit Machine Learning depends on the main Qiskit package which has its own
-<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> detailing the
-installation options for Qiskit and its supported environments/platforms. You should refer to
-that first. Then the information here can be followed which focuses on the additional installation
-specific to Qiskit Machine Learning.</p>
-<p>Qiskit Machine Learning has some functions that have been made optional where the dependent code and/or
-support program(s) are not (or cannot be) installed by default. Those are PyTorch and Sparse.
-See <a class="reference internal" href="#optional-installs"><span class="std std-ref">Optional installs</span></a> for more information.</p>
+<p>Qiskit मशीन लर्निंग मुख्य Qiskit संकुलों पर निर्भर करती है जिसका अपना <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Get Started</a> प्रारंभिक प्रलेखन समर्थित वातावरण/प्लेटफ़ॉर्म की स्थापना के लिए विकल्पों का विवरण करता है। आपको पहले इसका उल्लेख करना चाहिए। फिर यहां दी गई जानकारी का अनुसरण किया जा सकता है जो किस्किट मशीन लर्निंग के लिए विशिष्ट अतिरिक्त अधिष्ठापनों पर केंद्रित है।</p>
+<p>Qiskit Machine Learning में कुछ ऐसे फलन हैं जिन्हें वैकल्पिक बना दिया गया है जहाँ आश्रित कोड और/अथवा समर्थन क्रमादेश वितथ रूप से स्थापित नहीं हैं (या नहीं किए जा सकते)। वे हैं PyTorch और Sparse। अधिक जानकारी के लिए :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>optional_installs`देखें।</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c8a70403-3f17-457a-a4d2-ae354547a5ec" name="20888113-36d7-4a55-bb34-c33c81a55bc1" type="radio">
-</input><label class="tabbed-label" for="c8a70403-3f17-457a-a4d2-ae354547a5ec">
-Start locally</label><div class="tabbed-content docutils">
-<p>The simplest way to get started is to follow the getting started 'Start locally' for Qiskit
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<p>In your virtual environment where you installed Qiskit simply add <code class="docutils literal notranslate"><span class="pre">machine-learning</span></code> to the
-extra list in a similar manner to how the extra <code class="docutils literal notranslate"><span class="pre">visualization</span></code> support is installed for
-Qiskit, i.e:</p>
+<input checked="checked" id="daaa0166-e1db-4f76-9905-cd5e533e1d35" name="47a43f9d-e7b5-4367-b9c2-771fc9f3a715" type="radio">
+</input><label class="tabbed-label" for="daaa0166-e1db-4f76-9905-cd5e533e1d35">
+स्थानीय आरंभ करें</label><div class="tabbed-content docutils">
+<p>सरल आरंभ करने के लिए यहाँ पर Qiskit के लिए 'स्थानीय आरंभ करें' <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Get Started</a>।</p>
+<p>जिस आभासी वातावरण में आपने Qiskit स्थापित किया है, उसकी अतिरिक्त सूची में <code class="docutils literal notranslate"><span class="pre">machine-learning</span></code> को उसी तरह से जोड़ें जिस प्रकार Qiskit के लिए अतिरिक्त <code class="docutils literal notranslate"><span class="pre">visualization</span></code> समर्थन की स्थापना की जाती है, अर्थात :</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install qiskit<span class="o">[</span>machine-learning<span class="o">]</span>
 </pre></div>
 </div>
-<p>It is worth pointing out that if you're a zsh user (which is the default shell on newer
-versions of macOS), you'll need to put <code class="docutils literal notranslate"><span class="pre">qiskit[machine-learning]</span></code> in quotes:</p>
+<p>यह इंगित करने योग्य है कि यदि आप एक zsh उपयोगकर्ता हैं (जो कि macOS के नए संस्करणों पर डिफ़ॉल्ट शेल है), तो आपको उद्धरणों में <code class="docutils literal notranslate"><span class="pre">qiskit[machine-learning]</span></code> डालना होगा :</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install <span class="s1">&#39;qiskit[machine-learning]&#39;</span>
 </pre></div>
 </div>
 </div>
-<input id="c22c6c16-c41c-43b4-a83c-893e35ce29c2" name="20888113-36d7-4a55-bb34-c33c81a55bc1" type="radio">
-</input><label class="tabbed-label" for="c22c6c16-c41c-43b4-a83c-893e35ce29c2">
+<input id="29968d00-2b9f-4024-b2cb-7174386eea57" name="47a43f9d-e7b5-4367-b9c2-771fc9f3a715" type="radio">
+</input><label class="tabbed-label" for="29968d00-2b9f-4024-b2cb-7174386eea57">
 स्रोत से संस्थापन</label><div class="tabbed-content docutils">
-<p>Installing Qiskit Machine Learning from source allows you to access the most recently
-updated version under development instead of using the version in the Python Package
-Index (PyPI) repository. This will give you the ability to inspect and extend
-the latest version of the Qiskit Machine Learning code more efficiently.</p>
-<p>Since Qiskit Machine Learning depends on Qiskit, and its latest changes may require new or changed
-features of Qiskit, you should first follow Qiskit's <cite>&quot;Install from source&quot;</cite> instructions
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<h2>Installing Qiskit Machine Learning from Source</h2><p>Using the same development environment that you installed Qiskit in you are ready to install
-Qiskit Machine Learning.</p>
+<p>स्रोत से तत्वों को स्थापित करने से आप Python Package Index (PyPI) रिपॉजिटरी में संस्करण का उपयोग करने के बजाय Qiskit के सबसे अद्यतन संस्करण का उपयोग कर सकते हैं। यह आपको Qiskit कोड के नवीनतम संस्करण का अधिक कुशलता से निरीक्षण और विस्तार करने की क्षमता देगा।</p>
+<p>क्यूंकि Qiskit Machine Learning Qiskit पर निर्भर करता है, और इसके नवीनतम परिवर्तनों के लिए Qiskit की नई या परिवर्तित सुविधाओं की आवश्यकता हो सकती है, आपको पहले Qiskit के <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">&quot;स्रोत से संस्थापन&quot; में दिए गए निर्देशों का अनुसरण यहाँ `Qiskit Getting Started</a> से करना चाहिए।</p>
+<h2>Installing Qiskit Machine Learning from Source</h2><p>आप उसी उत्थान वातावरण में Qiskit Machine Learning को स्थापित करने के लिए तैयार हैं जिस उत्थान वातावरण का उपयोग करते हुए आपने Qiskit को स्थापित किया था।</p>
 <ol class="arabic">
-<li><p>Clone the Qiskit Machine Learning repository.</p>
+<li><p>Qiskit Machine Learning रिपॉजिटरी को क्लोन करें।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Qiskit/qiskit-machine-learning.git
 </pre></div>
 </div>
 </li>
-<li><p>Cloning the repository creates a local folder called <code class="docutils literal notranslate"><span class="pre">qiskit-machine-learning</span></code>.</p>
+<li><p>रिपॉजिटरी को क्लोन करने से <code class="docutils literal notranslate"><span class="pre">qiskit-machine-learning</span></code> नामक एक स्थानीय फ़ोल्डर बन जाता है।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> qiskit-machine-learning
 </pre></div>
 </div>
 </li>
-<li><p>If you want to run tests or linting checks, install the developer requirements.</p>
+<li><p>यदि आप परीक्षण या लिंटिंग परीक्षण चलाना चाहते हैं, तो डेवलपर आवश्यकताओं को स्थापित करें।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -r requirements-dev.txt
 </pre></div>
 </div>
 </li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">qiskit-machine-learning</span></code>.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">qiskit-machine-learning</span></code> स्थापित करें।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install .
 </pre></div>
 </div>
 </li>
 </ol>
-<p>If you want to install it in editable mode, meaning that code changes to the
-project don't require a reinstall to be applied, you can do this with:</p>
+<p>यदि आप इसे संपादन योग्य मोड में स्थापित करना चाहते हैं, अर्थात प्रोजेक्ट में कोड परिवर्तन को लागू करने के लिए पुनर्स्थापना की आवश्यकता नहीं है, तो आप इसे इस प्रकार से लागू कर सकते हैं :</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -e .
 </pre></div>
 </div>
@@ -323,18 +312,15 @@ project don't require a reinstall to be applied, you can do this with:</p>
 </div>
 </div>
 <div class="section" id="optional-installs">
-<span id="id1"></span><h2>Optional installs<a class="headerlink" href="#optional-installs" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
+<span id="id1"></span><h2>वैकल्पिक संस्थापन<a class="headerlink" href="#optional-installs" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <ul class="simple">
-<li><p><strong>PyTorch</strong>, may be installed either using command <cite>pip install 'qiskit-machine-learning[torch]'</cite> to install the
-package or refer to PyTorch <a class="reference external" href="https://pytorch.org/get-started/locally/">getting started</a>. When PyTorch
-is installed, the <cite>TorchConnector</cite> facilitates its use of quantum computed networks.</p></li>
-<li><p><strong>Sparse</strong>, may be installed using command <cite>pip install 'qiskit-machine-learning[sparse]'</cite> to install the
-package. Sparse being installed will enable the usage of sparse arrays/tensors.</p></li>
+<li><p><strong>PyTorch</strong>, package को install करने के लिए <cite>pip install 'qiskit-machine-learning[torch]'</cite> command का उपयोग करके install किया जा सकता है या फिर yTorch <a class="reference external" href="https://pytorch.org/get-started/locally/">getting started</a>. उल्लेलख से देखकर। PyTorch की स्थापना होने पर <cite>TorchConnector</cite> क्वांटम गणना नेटवर्क के उपयोग की सुविधा प्रदान करता है।</p></li>
+<li><p><strong>Sparse</strong>, संकुल को स्थापित करने के लिए <cite>pip install 'qiskit-machine-learning[sparse]'</cite> कमांड का उपयोग करके स्थापना की जा सकती है। Sparse स्थापित होने पर विरल सरणियों/प्रदिशों(टेंसर) के उपयोग को सक्षम करेगा।</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="ready-to-get-going">
-<h2>Ready to get going?...<a class="headerlink" href="#ready-to-get-going" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
+<h2>आगे बढ़ने के लिए तैयार?...<a class="headerlink" href="#ready-to-get-going" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
     <div class="text-container">
@@ -392,8 +378,8 @@ package. Sparse being installed will enable the usage of sparse arrays/tensors.<
               <ul>
 <li><a class="reference internal" href="#">प्रारंभ करें</a><ul>
 <li><a class="reference internal" href="#installation">संस्थापन</a></li>
-<li><a class="reference internal" href="#optional-installs">Optional installs</a></li>
-<li><a class="reference internal" href="#ready-to-get-going">Ready to get going?...</a></li>
+<li><a class="reference internal" href="#optional-installs">वैकल्पिक संस्थापन</a></li>
+<li><a class="reference internal" href="#ready-to-get-going">आगे बढ़ने के लिए तैयार?...</a></li>
 </ul>
 </li>
 </ul>

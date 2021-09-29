@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.DensityMatrix
-==================================
+﻿DensityMatrix
+=============
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: DensityMatrix
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DensityMatrix.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DensityMatrix.conjugate
       ~DensityMatrix.copy
       ~DensityMatrix.dims
@@ -39,19 +38,13 @@
       ~DensityMatrix.to_operator
       ~DensityMatrix.to_statevector
       ~DensityMatrix.trace
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DensityMatrix.atol
-      ~DensityMatrix.data
-      ~DensityMatrix.dim
-      ~DensityMatrix.num_qubits
-      ~DensityMatrix.rtol
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: rtol

@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.SuperOp
-============================
+﻿SuperOp
+=======
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: SuperOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SuperOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SuperOp.adjoint
       ~SuperOp.compose
       ~SuperOp.conjugate
@@ -32,21 +31,15 @@
       ~SuperOp.to_instruction
       ~SuperOp.to_operator
       ~SuperOp.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SuperOp.atol
-      ~SuperOp.data
-      ~SuperOp.dim
-      ~SuperOp.num_qubits
-      ~SuperOp.qargs
-      ~SuperOp.rtol
-      ~SuperOp.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

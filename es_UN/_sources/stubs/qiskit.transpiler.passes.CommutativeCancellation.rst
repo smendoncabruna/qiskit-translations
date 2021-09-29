@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.CommutativeCancellation
-================================================
+﻿CommutativeCancellation
+=======================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CommutativeCancellation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CommutativeCancellation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CommutativeCancellation.name
       ~CommutativeCancellation.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CommutativeCancellation.is_analysis_pass
-      ~CommutativeCancellation.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

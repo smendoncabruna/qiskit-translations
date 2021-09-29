@@ -1,31 +1,14 @@
-﻿qiskit.opflow.gradients.HessianBase
-===================================
+HessianBase
+===========
 
 .. currentmodule:: qiskit.opflow.gradients
 
 .. autoclass:: HessianBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~HessianBase.__init__
-      ~HessianBase.convert
-      ~HessianBase.gradient_wrapper
-      ~HessianBase.parameter_expression_grad
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HessianBase.hess_method
-   
-   
+   .. autoattribute:: hess_method

@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.extensions.SnapshotExpectationValue
-========================================================
+﻿SnapshotExpectationValue
+========================
 
 .. currentmodule:: qiskit.providers.aer.extensions
 
 .. autoclass:: SnapshotExpectationValue
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SnapshotExpectationValue.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SnapshotExpectationValue.add_decomposition
       ~SnapshotExpectationValue.assemble
       ~SnapshotExpectationValue.broadcast_arguments
@@ -28,21 +27,15 @@
       ~SnapshotExpectationValue.reverse_ops
       ~SnapshotExpectationValue.soft_compare
       ~SnapshotExpectationValue.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SnapshotExpectationValue.decompositions
-      ~SnapshotExpectationValue.definition
-      ~SnapshotExpectationValue.duration
-      ~SnapshotExpectationValue.label
-      ~SnapshotExpectationValue.params
-      ~SnapshotExpectationValue.snapshot_type
-      ~SnapshotExpectationValue.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: snapshot_type
+   .. autoattribute:: unit

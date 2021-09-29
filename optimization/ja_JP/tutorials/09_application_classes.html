@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>最適化問題のアプリケーション・クラス &mdash; Qiskit Optimization 0.2.2 ドキュメント</title>
+  <title>最適化問題のアプリケーション・クラス &mdash; Qiskit Optimization 0.2.3 ドキュメント</title>
   
 
   
@@ -35,9 +35,9 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="index" title="インデックス" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="Warm-starting quantum optimization" href="10_warm_start_qaoa.html" />
+    <link rel="next" title="ウォーム・スタート・量子最適化" href="10_warm_start_qaoa.html" />
     <link rel="prev" title="CVaRを使用した変分量子最適化の改善" href="08_cvar_optimization.html" /> 
 
   
@@ -95,7 +95,7 @@
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>言語</dt>
       
         <dd><a class="version" href="/documentation/optimization/tutorials/09_application_classes.html">English</a></dd>
       
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -156,10 +156,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API リファレンス</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">リリースノート</a></li>
 </ul>
 
             
@@ -482,84 +482,84 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/09_application_classes.ipynb">docs/tutorials/09_application_classes.ipynb</a>.</p>
+<p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/09_application_classes.ipynb">docs/tutorials/09_application_classes.ipynb</a> から生成されました。</p>
 </div>
 <div class="section" id="最適化問題のアプリケーション・クラス">
 <h1>最適化問題のアプリケーション・クラス<a class="headerlink" href="#最適化問題のアプリケーション・クラス" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>We introduce application classes for the following optimization problems so that users can easily try various optimization problems on quantum computers.</p>
+<div class="section" id="はじめに">
+<h2>はじめに<a class="headerlink" href="#はじめに" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ユーザーが量子コンピューターで様々な最適化問題を簡単に試みることができるように、以下の最適化問題のアプリケーションクラスを導入します。</p>
 <ol class="arabic simple">
-<li><p>Exact cover problem</p></li>
+<li><p>厳密被覆問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a collection of subsets of items, find a subcollection such that each item is covered exactly once.</p></li>
+<li><p>アイテムのサブセットのコレクションが与えられた場合、それぞれのアイテムが正確に１回カバーされるような、サブコレクションを探します。</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Knapsack problem</p></li>
+<li><p>ナップサック問題</p></li>
 </ol>
 <ul class="simple">
 <li><p>一連のアイテムを与えられた場合、合計重量が容量内にあり、合計値が最大化されるようなアイテムのサブセットを見つけます。</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p>Number partition problem</p></li>
+<li><p>整数分割問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a multiset of positive integers, find a partition of the multiset into two subsets such that the sums of the subsets are equal.</p></li>
+<li><p>正の整数のマルチセットが所与の時、合計が等しい 2 つのサブセットにする分割を探します。</p></li>
 </ul>
 <ol class="arabic simple" start="4">
 <li><p>パッキング問題の設定</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a collection of subsets of items, find a subcollection such that all subsets of the subcollection are pairwise disjoint and the number of items in the subcollection is maximized.</p></li>
+<li><p>アイテムのサブセットのコレクションが所与の時、全てのサブセットが互いに素で、アイテム数が最大になるサブコレクションを探します。</p></li>
 </ul>
 <p>グラフ問題</p>
 <ol class="arabic simple" start="5">
 <li><p>クリーク問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a subset of nodes with a specified number or the maximum number such that the induced subgraph is complete.</p></li>
+<li><p>無向グラフが与えられた場合、誘導部分グラフが完全になるような、特定の数または最大数のノードの部分集合を探します。</p></li>
 </ul>
 <ol class="arabic simple" start="6">
-<li><p>Graph partition problem</p></li>
+<li><p>グラフ分割問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a partition into two components whose sizes are equal such that the total capacity of the edges between the two components is minimized.</p></li>
+<li><p>無向グラフが与えられた場合、サイズが同じ２つのコンポーネントへの分割を探します。２つのコンポーネント間のエッジの合計容量は最小にします。</p></li>
 </ul>
 <ol class="arabic simple" start="7">
-<li><p>Max-cut problem</p></li>
+<li><p>最大カット問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a partition of nodes into two subsets such that the total weight of the edges between the two subsets is maximized.</p></li>
+<li><p>無向グラフが所与の時、ノードの二つの部分集合への分割を探します。二つの部分集合のエッジの重みの合計は最大になるようにします。</p></li>
 </ul>
 <ol class="arabic simple" start="8">
-<li><p>Stable set problem</p></li>
+<li><p>安定集合問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a subset of nodes such that no edge connects the nodes in the subset and the number of nodes is maximized.</p></li>
+<li><p>無向グラフが所与の時、以下のノードのサブセットを探します。サブセット中でエッジがノードに接続せず、ノード数が最大のサブセットです。</p></li>
 </ul>
 <ol class="arabic simple" start="9">
-<li><p>Traveling salesman problem</p></li>
+<li><p>巡回セールスマン問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a graph, find a route with the minimum distance such that the route visits each city exactly once.</p></li>
+<li><p>グラフが所与の時、最小の距離のルートを探します。ルートは街を正確に一度訪れます。</p></li>
 </ul>
 <ol class="arabic simple" start="10">
-<li><p>Vehicle routing problem</p></li>
+<li><p>車両ルーティング問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a graph, a depot node, and the number of vehicles (routes), find a set of routes such that each node is covered exactly once except the depot and the total distance of the routes is minimized.</p></li>
+<li><p>グラフと倉庫ノードと車輌 (ルート) 数が所与の時、ルートのセットを探します。倉庫ノードを除くノードは厳密に一度カバーされ、ルートの合計距離は最小になるようにします。</p></li>
 </ul>
 <ol class="arabic simple" start="11">
-<li><p>Vertex cover problem</p></li>
+<li><p>頂点被覆問題</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a subset of nodes with the minimum size such that each edge has at least one endpoint in the subsets.</p></li>
+<li><p>無向グラフが所与の時、それぞれのエッジが最低一つのエンドポイントを持つような、最小サイズのノードサブセットを探します。</p></li>
 </ul>
-<p>The application classes for graph problems (<code class="docutils literal notranslate"><span class="pre">GraphOptimizationApplication</span></code>) provide a functionality to draw graphs of an instance and a result. Note that you need to install <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> beforehand to utilize the functionality.</p>
-<p>We introduce examples of the vertex cover problem and the knapsack problem in this page.</p>
-<p>Examples of the max-cut problem and the traveling salesman problem are available in <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a>.</p>
-<p>We first import packages necessary for application classes.</p>
+<p>グラフの問題のアプリケーション・クラス (<code class="docutils literal notranslate"><span class="pre">GraphOptimizationApplication</span></code>) は、インスタンスと結果のグラフを描画する機能を提供します。 この機能を利用するには、あらかじめ <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> をインストールする必要があることに注意してください。</p>
+<p>このページでは、頂点被覆問題とナップサック問題の例を紹介します。</p>
+<p>最大カット問題と巡回セールスマン問題の例は <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a> にあります。</p>
+<p>最初にアプリケーションクラスに必要なパッケージをインポートします。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -573,10 +573,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Vertex-cover-problem">
-<h2>Vertex cover problem<a class="headerlink" href="#Vertex-cover-problem" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>We introduce the application class for the vertex cover problem as an example of graph problems. Given an undirected graph, the vertex cover problem asks us to find a subset of nodes with the minimum size such that all edges are covered by any node selected.</p>
-<p>We import the application class <code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> for the vertex cover problem and <code class="docutils literal notranslate"><span class="pre">networkx</span></code> to generate a random graph.</p>
+<div class="section" id="頂点被覆問題">
+<h2>頂点被覆問題<a class="headerlink" href="#頂点被覆問題" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>グラフの問題の例として、頂点被覆問題のアプリケーションクラスを紹介します。頂点被覆問題では、無向グラフを所与として、選択されたノードによって全てのエッジがカバーされるような、最小サイズのノードサブセットを検索することを求められます。</p>
+<p>頂点被覆問題のための <code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> アプリケーションクラスと、ランダムグラフを生成するための <code class="docutils literal notranslate"><span class="pre">networkx</span></code> をインポートします。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -617,7 +617,7 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_application_classes_8_0.svg" src="../_images/tutorials_09_application_classes_8_0.svg" /></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> takes a graph as an instance and <code class="docutils literal notranslate"><span class="pre">to_quadratic_program</span></code> generates a corresponding <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> of the instance of the vertex cover problem.</p>
+<p><code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> はインスタンスとしてグラフを取り、<code class="docutils literal notranslate"><span class="pre">to_quadratic_program</span></code> は頂点被覆問題のインスタンスに対応する <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> を生成します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -664,7 +664,7 @@ Binaries
 End
 </pre></div></div>
 </div>
-<p>You can solve the problem as follows. <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code> finds the minimum eigen vector. You can also apply QAOA. Note that the solution by QAOA is not always optimal.</p>
+<p>この問題は以下のように解けます。<code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code> で最小固有ベクトルを見つけます。QAOA を適用しても良いです。ただし QAOA によるソリューションは常に最適ではないことに注意してください。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -737,9 +737,9 @@ time: 2.0216140747070312
 <img alt="../_images/tutorials_09_application_classes_13_1.svg" src="../_images/tutorials_09_application_classes_13_1.svg" /></div>
 </div>
 </div>
-<div class="section" id="Knapsack-problem">
-<h2>Knapsack problem<a class="headerlink" href="#Knapsack-problem" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The knapsack problem asks us to find a combination of items such that the total weight is within the capacity of the knapsack and maximize the total value of the items. The following examples solve an instance of the knapsack problem with 5 items by Numpy eigensolver and QAOA.</p>
+<div class="section" id="ナップサック問題">
+<h2>ナップサック問題<a class="headerlink" href="#ナップサック問題" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ナップサック問題は、総重量がナップサックの容量以下で、アイテムの総価値が最大になるアイテムの組合せを見つける問題です。 以下の例では、Numpy eigensolver と QAOA によって、5 アイテムのナップサック問題の例を解きます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -845,9 +845,9 @@ time: 0.7132740020751953
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="How-to-check-the-Hamiltonian">
-<h2>How to check the Hamiltonian<a class="headerlink" href="#How-to-check-the-Hamiltonian" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>If you want to check the actual Hamiltonian generated from your problem instance, you need to apply a converter as follows.</p>
+<div class="section" id="ハミルトニアンの確認方法">
+<h2>ハミルトニアンの確認方法<a class="headerlink" href="#ハミルトニアンの確認方法" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>問題インスタンスから生成された実際のハミルトニアンを確認するには、次のようにコンバーターを適用する必要があります。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1066,7 +1066,7 @@ num qubits: 9, offset: 1417.5
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10_warm_start_qaoa.html" class="btn btn-neutral float-right" title="Warm-starting quantum optimization" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="10_warm_start_qaoa.html" class="btn btn-neutral float-right" title="ウォーム・スタート・量子最適化" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="08_cvar_optimization.html" class="btn btn-neutral" title="CVaRを使用した変分量子最適化の改善" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1102,10 +1102,10 @@ num qubits: 9, offset: 1417.5
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">最適化問題のアプリケーション・クラス</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Vertex-cover-problem">Vertex cover problem</a></li>
-<li><a class="reference internal" href="#Knapsack-problem">Knapsack problem</a></li>
-<li><a class="reference internal" href="#How-to-check-the-Hamiltonian">How to check the Hamiltonian</a></li>
+<li><a class="reference internal" href="#はじめに">はじめに</a></li>
+<li><a class="reference internal" href="#頂点被覆問題">頂点被覆問題</a></li>
+<li><a class="reference internal" href="#ナップサック問題">ナップサック問題</a></li>
+<li><a class="reference internal" href="#ハミルトニアンの確認方法">ハミルトニアンの確認方法</a></li>
 </ul>
 </li>
 </ul>

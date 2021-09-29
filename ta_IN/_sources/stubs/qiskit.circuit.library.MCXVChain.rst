@@ -1,54 +1,32 @@
-﻿qiskit.circuit.library.MCXVChain
-================================
+﻿MCXVChain
+=========
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: MCXVChain
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~MCXVChain.__init__
-      ~MCXVChain.add_decomposition
-      ~MCXVChain.assemble
-      ~MCXVChain.broadcast_arguments
-      ~MCXVChain.c_if
-      ~MCXVChain.control
-      ~MCXVChain.copy
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MCXVChain.get_num_ancilla_qubits
       ~MCXVChain.inverse
-      ~MCXVChain.is_parameterized
-      ~MCXVChain.mirror
-      ~MCXVChain.power
-      ~MCXVChain.qasm
-      ~MCXVChain.repeat
-      ~MCXVChain.reverse_ops
-      ~MCXVChain.soft_compare
-      ~MCXVChain.to_matrix
-      ~MCXVChain.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MCXVChain.ctrl_state
-      ~MCXVChain.decompositions
-      ~MCXVChain.definition
-      ~MCXVChain.duration
-      ~MCXVChain.label
-      ~MCXVChain.name
-      ~MCXVChain.num_ancilla_qubits
-      ~MCXVChain.num_ctrl_qubits
-      ~MCXVChain.params
-      ~MCXVChain.unit
-   
-   
+   .. autoattribute:: ctrl_state
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: num_ancilla_qubits
+   .. autoattribute:: num_ctrl_qubits
+   .. autoattribute:: params
+   .. autoattribute:: unit

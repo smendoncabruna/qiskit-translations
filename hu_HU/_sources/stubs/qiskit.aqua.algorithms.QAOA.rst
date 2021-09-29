@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.QAOA
-===========================
+﻿QAOA
+====
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: QAOA
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QAOA.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QAOA.cleanup_parameterized_circuits
       ~QAOA.compute_minimum_eigenvalue
       ~QAOA.construct_circuit
@@ -28,27 +27,21 @@
       ~QAOA.run
       ~QAOA.set_backend
       ~QAOA.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QAOA.aux_operators
-      ~QAOA.backend
-      ~QAOA.expectation
-      ~QAOA.initial_point
-      ~QAOA.initial_state
-      ~QAOA.mixer
-      ~QAOA.operator
-      ~QAOA.optimal_params
-      ~QAOA.optimizer
-      ~QAOA.quantum_instance
-      ~QAOA.random
-      ~QAOA.setting
-      ~QAOA.var_form
-   
-   
+   .. autoattribute:: aux_operators
+   .. autoattribute:: backend
+   .. autoattribute:: expectation
+   .. autoattribute:: initial_point
+   .. autoattribute:: initial_state
+   .. autoattribute:: mixer
+   .. autoattribute:: operator
+   .. autoattribute:: optimal_params
+   .. autoattribute:: optimizer
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: setting
+   .. autoattribute:: var_form

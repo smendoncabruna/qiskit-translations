@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.pulse.system_models.pulse_system_model &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>qiskit.providers.aer.pulse.system_models.pulse_system_model &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -373,7 +380,7 @@
 
 <span class="sd">        system_model = PulseSystemModel.from_backend(armonk_backend)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="PulseSystemModel.__init__"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">hamiltonian</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">u_channel_lo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">control_channel_labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -399,9 +406,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">u_channel_lo</span> <span class="o">=</span> <span class="n">u_channel_lo</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">control_channel_labels</span> <span class="o">=</span> <span class="n">control_channel_labels</span> <span class="ow">or</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">subsystem_list</span> <span class="o">=</span> <span class="n">subsystem_list</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span>
 
-<div class="viewcode-block" id="PulseSystemModel.from_backend"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel.from_backend">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PulseSystemModel.from_backend"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.from_backend.html#qiskit.providers.aer.pulse.PulseSystemModel.from_backend">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_backend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">subsystem_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a PulseSystemModel constructed from an OpenPulse enabled backend object.</span>
 
@@ -427,7 +434,7 @@
 
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">subsystem_list</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PulseSystemModel.from_config"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel.from_config">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PulseSystemModel.from_config"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.from_config.html#qiskit.providers.aer.pulse.PulseSystemModel.from_config">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">configuration</span><span class="p">,</span> <span class="n">subsystem_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Construct a model from configuration and defaults.&quot;&quot;&quot;</span>
 
@@ -479,7 +486,7 @@
                    <span class="n">subsystem_list</span><span class="o">=</span><span class="n">subsystem_list</span><span class="p">,</span>
                    <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PulseSystemModel.control_channel_index"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index">[docs]</a>    <span class="k">def</span> <span class="nf">control_channel_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+<div class="viewcode-block" id="PulseSystemModel.control_channel_index"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index.html#qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index">[docs]</a>    <span class="k">def</span> <span class="nf">control_channel_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the index of the control channel with identifying label.</span>
 
 <span class="sd">        Args:</span>
@@ -494,7 +501,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_channel_labels</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">label</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PulseSystemModel.calculate_channel_frequencies"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel.calculate_channel_frequencies">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_channel_frequencies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit_lo_freq</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PulseSystemModel.calculate_channel_frequencies"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.pulse.PulseSystemModel.calculate_channel_frequencies.html#qiskit.providers.aer.pulse.PulseSystemModel.calculate_channel_frequencies">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_channel_frequencies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit_lo_freq</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate frequencies for each channel given qubit_lo_freq.</span>
 
 <span class="sd">        Args:</span>
@@ -546,7 +553,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -626,7 +633,7 @@
             <a href="../../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -649,9 +656,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

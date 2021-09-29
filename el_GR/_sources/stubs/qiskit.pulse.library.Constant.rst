@@ -1,37 +1,30 @@
-qiskit.pulse.library.Constant
-=============================
+Constant
+========
 
 .. currentmodule:: qiskit.pulse.library
 
 .. autoclass:: Constant
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Constant.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Constant.assign
       ~Constant.assign_parameters
       ~Constant.draw
       ~Constant.get_waveform
       ~Constant.is_parameterized
       ~Constant.validate_parameters
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Constant.amp
-      ~Constant.id
-      ~Constant.limit_amplitude
-      ~Constant.parameters
-   
-   
+   .. autoattribute:: amp
+   .. autoattribute:: id
+   .. autoattribute:: limit_amplitude
+   .. autoattribute:: parameters

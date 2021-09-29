@@ -1,24 +1,19 @@
-﻿qiskit.qobj.QobjMeasurementOption
-=================================
+﻿QobjMeasurementOption
+=====================
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: QobjMeasurementOption
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QobjMeasurementOption.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QobjMeasurementOption.from_dict
       ~QobjMeasurementOption.to_dict
-   
-   
 
-   
-   
-   
+

@@ -1,24 +1,19 @@
-﻿qiskit.optimization.converters.QuadraticProgramConverter
-========================================================
+﻿QuadraticProgramConverter
+=========================
 
 .. currentmodule:: qiskit.optimization.converters
 
 .. autoclass:: QuadraticProgramConverter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuadraticProgramConverter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuadraticProgramConverter.convert
       ~QuadraticProgramConverter.interpret
-   
-   
 
-   
-   
-   
+

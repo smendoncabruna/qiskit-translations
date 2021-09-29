@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.evolutions.EvolvedOp
-==========================================
+﻿EvolvedOp
+=========
 
 .. currentmodule:: qiskit.aqua.operators.evolutions
 
 .. autoclass:: EvolvedOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EvolvedOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EvolvedOp.add
       ~EvolvedOp.adjoint
       ~EvolvedOp.assign_parameters
@@ -38,20 +37,14 @@
       ~EvolvedOp.to_matrix
       ~EvolvedOp.to_matrix_op
       ~EvolvedOp.to_pauli_op
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EvolvedOp.ENABLE_DEPRECATION
-      ~EvolvedOp.INDENTATION
-      ~EvolvedOp.coeff
-      ~EvolvedOp.num_qubits
-      ~EvolvedOp.parameters
-      ~EvolvedOp.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

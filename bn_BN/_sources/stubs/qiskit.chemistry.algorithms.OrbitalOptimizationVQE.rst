@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.algorithms.OrbitalOptimizationVQE
-==================================================
+﻿OrbitalOptimizationVQE
+======================
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: OrbitalOptimizationVQE
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~OrbitalOptimizationVQE.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~OrbitalOptimizationVQE.evaluate_operators
       ~OrbitalOptimizationVQE.returns_groundstate
       ~OrbitalOptimizationVQE.solve
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OrbitalOptimizationVQE.solver
-      ~OrbitalOptimizationVQE.transformation
-   
-   
+   .. autoattribute:: solver
+   .. autoattribute:: transformation

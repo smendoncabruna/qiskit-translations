@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.verification.quantum_volume.fitters &mdash; документация Qiskit 0.29.0</title>
+  <title>qiskit.ignis.verification.quantum_volume.fitters &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -360,7 +367,7 @@
 <div class="viewcode-block" id="QVFitter"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter">[документация]</a><span class="k">class</span> <span class="nc">QVFitter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Class for fitters for quantum volume.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="QVFitter.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.__init__">[документация]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend_result</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">statevector_result</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backend_result</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">statevector_result</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">qubit_lists</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
@@ -384,7 +391,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_ydata</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_heavy_outputs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_statevectors</span><span class="p">(</span><span class="n">statevector_result</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">backend_result</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">backend_result</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">depths</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -421,7 +428,7 @@
         <span class="sd">&quot;&quot;&quot;Return the average and std of the output probability.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ydata</span>
 
-<div class="viewcode-block" id="QVFitter.add_statevectors"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.add_statevectors">[документация]</a>    <span class="k">def</span> <span class="nf">add_statevectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_statevector_result</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.add_statevectors"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.add_statevectors.html#qiskit.ignis.verification.QVFitter.add_statevectors">[документация]</a>    <span class="k">def</span> <span class="nf">add_statevectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_statevector_result</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add the ideal results and convert to the heavy outputs.</span>
 
@@ -470,7 +477,7 @@
                         <span class="bp">self</span><span class="o">.</span><span class="n">_heavy_outputs</span><span class="p">[</span><span class="n">circ_name</span><span class="p">],</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">_all_output_prob_ideal</span><span class="p">[</span><span class="n">circ_name</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="QVFitter.add_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.add_data">[документация]</a>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_backend_result</span><span class="p">,</span> <span class="n">rerun_fit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.add_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.add_data.html#qiskit.ignis.verification.QVFitter.add_data">[документация]</a>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_backend_result</span><span class="p">,</span> <span class="n">rerun_fit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a new result. Re calculate fit</span>
 
@@ -510,7 +517,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">calc_data</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">calc_statistics</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="QVFitter.calc_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.calc_data">[документация]</a>    <span class="k">def</span> <span class="nf">calc_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.calc_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.calc_data.html#qiskit.ignis.verification.QVFitter.calc_data">[документация]</a>    <span class="k">def</span> <span class="nf">calc_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Make a count dictionary for each unique circuit from all the results.</span>
 
@@ -553,7 +560,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_heavy_output_prob_exp</span><span class="p">[</span><span class="n">circ_name</span><span class="p">]</span> <span class="o">=</span> \
                     <span class="bp">self</span><span class="o">.</span><span class="n">_heavy_output_counts</span><span class="p">[</span><span class="n">circ_name</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_circ_shots</span><span class="p">[</span><span class="n">circ_name</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="QVFitter.calc_statistics"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.calc_statistics">[документация]</a>    <span class="k">def</span> <span class="nf">calc_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.calc_statistics"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.calc_statistics.html#qiskit.ignis.verification.QVFitter.calc_statistics">[документация]</a>    <span class="k">def</span> <span class="nf">calc_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert the heavy outputs in the different trials into mean and error</span>
 <span class="sd">        for plotting.</span>
@@ -591,7 +598,7 @@
                                         <span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_ydata</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">depthidx</span><span class="p">])</span>
                                         <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ntrials</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span></div>
 
-<div class="viewcode-block" id="QVFitter.plot_qv_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.plot_qv_data">[документация]</a>    <span class="k">def</span> <span class="nf">plot_qv_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_plt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">set_title</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.plot_qv_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.plot_qv_data.html#qiskit.ignis.verification.QVFitter.plot_qv_data">[документация]</a>    <span class="k">def</span> <span class="nf">plot_qv_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_plt</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">set_title</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Plot the qv data as a function of depth</span>
 
 <span class="sd">        Args:</span>
@@ -665,7 +672,7 @@
 
         <span class="k">return</span> <span class="n">fig</span></div>
 
-<div class="viewcode-block" id="QVFitter.plot_qv_trial"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.plot_qv_trial">[документация]</a>    <span class="k">def</span> <span class="nf">plot_qv_trial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">trial_index</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.plot_qv_trial"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.plot_qv_trial.html#qiskit.ignis.verification.QVFitter.plot_qv_trial">[документация]</a>    <span class="k">def</span> <span class="nf">plot_qv_trial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">trial_index</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Plot individual trial.</span>
 <span class="sd">        Args:</span>
 <span class="sd">            depth(int): circuit depth</span>
@@ -715,7 +722,7 @@
 
         <span class="k">return</span> <span class="n">fig</span></div>
 
-<div class="viewcode-block" id="QVFitter.plot_hop_accumulative"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.plot_hop_accumulative">[документация]</a>    <span class="k">def</span> <span class="nf">plot_hop_accumulative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
+<div class="viewcode-block" id="QVFitter.plot_hop_accumulative"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.plot_hop_accumulative.html#qiskit.ignis.verification.QVFitter.plot_hop_accumulative">[документация]</a>    <span class="k">def</span> <span class="nf">plot_hop_accumulative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">)):</span>
         <span class="sd">&quot;&quot;&quot;Plot individual and accumulative heavy output probability (HOP)</span>
 <span class="sd">        as a function of number of trials.</span>
 
@@ -785,7 +792,7 @@
 
         <span class="k">return</span> <span class="n">fig</span></div>
 
-<div class="viewcode-block" id="QVFitter.qv_success"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.qv_success">[документация]</a>    <span class="k">def</span> <span class="nf">qv_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.qv_success"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.qv_success.html#qiskit.ignis.verification.QVFitter.qv_success">[документация]</a>    <span class="k">def</span> <span class="nf">qv_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether each depth was successful (&gt; 2/3 with confidence</span>
 <span class="sd">        level &gt; 0.977 corresponding to z_value = 2) and the confidence level.</span>
 
@@ -811,7 +818,7 @@
 
         <span class="k">return</span> <span class="n">success_list</span></div>
 
-<div class="viewcode-block" id="QVFitter.calc_z_value"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.calc_z_value">[документация]</a>    <span class="k">def</span> <span class="nf">calc_z_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.calc_z_value"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.calc_z_value.html#qiskit.ignis.verification.QVFitter.calc_z_value">[документация]</a>    <span class="k">def</span> <span class="nf">calc_z_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate z value using mean and sigma.</span>
 
 <span class="sd">        Args:</span>
@@ -831,7 +838,7 @@
 
         <span class="k">return</span> <span class="n">z_value</span></div>
 
-<div class="viewcode-block" id="QVFitter.calc_confidence_level"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.calc_confidence_level">[документация]</a>    <span class="k">def</span> <span class="nf">calc_confidence_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_value</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.calc_confidence_level"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.calc_confidence_level.html#qiskit.ignis.verification.QVFitter.calc_confidence_level">[документация]</a>    <span class="k">def</span> <span class="nf">calc_confidence_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z_value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Calculate confidence level using z value.</span>
 
 <span class="sd">        Accumulative probability for standard normal distribution</span>
@@ -849,7 +856,7 @@
 
         <span class="k">return</span> <span class="n">confidence_level</span></div>
 
-<div class="viewcode-block" id="QVFitter.quantum_volume"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.html#qiskit.ignis.verification.QVFitter.quantum_volume">[документация]</a>    <span class="k">def</span> <span class="nf">quantum_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QVFitter.quantum_volume"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.QVFitter.quantum_volume.html#qiskit.ignis.verification.QVFitter.quantum_volume">[документация]</a>    <span class="k">def</span> <span class="nf">quantum_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the volume for each depth.</span>
 
 <span class="sd">        Returns:</span>
@@ -924,7 +931,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -1004,7 +1011,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1027,9 +1034,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Начало работы &mdash; документация Qiskit Optimization 0.2.2</title>
+  <title>Начало работы &mdash; документация Qiskit Optimization 0.2.3</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Главная" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
     <link rel="next" title="Qiskit Optimization API Reference" href="apidocs/qiskit_optimization.html" />
-    <link rel="prev" title="Qiskit Optimization documentation" href="index.html" /> 
+    <link rel="prev" title="Документация по оптимизации Qiskit" href="index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -234,50 +234,35 @@
 <h1>Начало работы<a class="headerlink" href="#getting-started" title="Ссылка на этот заголовок">¶</a></h1>
 <div class="section" id="installation">
 <h2>Инструкция по установке<a class="headerlink" href="#installation" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Qiskit Optimization depends on the main Qiskit package which has its own
-<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> detailing the
-installation options for Qiskit and its supported environments/platforms. You should refer to
-that first. Then the information here can be followed which focuses on the additional installation
-specific to Qiskit Optimization.</p>
-<p>Qiskit Optimization has some functions that have been made optional where the dependent code and/or
-support program(s) are not (or cannot be) installed by default. Those are IBM CPLEX, CVXPY and Matplotlib.
-See <a class="reference internal" href="#optional-installs"><span class="std std-ref">Необязательные для установки компоненты</span></a> for more information.</p>
+<p>Пакет Qiskit Optimization зависит от основного пакета Qiskit, который имеет свою собственную страницу <cite>Qiskit Getting Started &lt;https://qiskit.org/documentation/getting_started.html&gt;</cite> __ с подробным описанием опций установки Qiskit и поддерживаемых сред/платформ. Обратите на это внимание в первую очередь. Далее здесь можно найти информацию, которая сфокусируется на дополнительной установке, специфичной для Qiskit Optimization.</p>
+<p>В Qiskit Optimization есть некоторые функции, которые были сделаны необязательными, если зависимые программы и/или программы поддержки не установлены (или не могут быть установлены) по умолчанию. Это IBM CPLEX, CVXPY и Matplotlib. Дополнительная информация приведена в разделе <a class="reference internal" href="#optional-installs"><span class="std std-ref">Необязательные для установки компоненты</span></a>.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c455c6e1-ecca-4265-9908-52c4fc730004" name="68b7482d-360d-47bc-8a0d-7de9333baea8" type="radio">
-</input><label class="tabbed-label" for="c455c6e1-ecca-4265-9908-52c4fc730004">
+<input checked="checked" id="3ebd4496-9ff5-49f9-af23-0db1e9193bab" name="d5cb64b7-74f8-40c0-ac8a-54190a4e6258" type="radio">
+</input><label class="tabbed-label" for="3ebd4496-9ff5-49f9-af23-0db1e9193bab">
 Запустить локально</label><div class="tabbed-content docutils">
 <p>Самый простой способ - начать с раздела „Запуск локально“ для Qiskit здесь <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<p>In your virtual environment where you installed Qiskit simply add <code class="docutils literal notranslate"><span class="pre">optimization</span></code> to the
-extra list in a similar manner to how the extra <code class="docutils literal notranslate"><span class="pre">visualization</span></code> support is installed for
-Qiskit, i.e:</p>
+<p>В Вашей виртуальной среде, где Вы установили Qiskit, просто добавьте <code class="docutils literal notranslate"><span class="pre">optimization</span></code> в дополнительный список пакетов подобно тому как устанавливается дополнительная поддержка <code class="docutils literal notranslate"><span class="pre">visualization</span></code> в Qiskit, например:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install qiskit<span class="o">[</span>optimization<span class="o">]</span>
 </pre></div>
 </div>
-<p>It is worth pointing out that if you’re a zsh user (which is the default shell on newer
-versions of macOS), you’ll need to put <code class="docutils literal notranslate"><span class="pre">qiskit[optimization]</span></code> in quotes:</p>
+<p>Стоит отметить, что если Вы используете zsh (оболочка по умолчанию для более новых версий macOS), Вам нужно указать <code class="docutils literal notranslate"><span class="pre">qiskit[optimization]</span></code> в кавычках:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install <span class="s1">&#39;qiskit[optimization]&#39;</span>
 </pre></div>
 </div>
 </div>
-<input id="57890220-8506-4aa5-a9f3-17eb42728607" name="68b7482d-360d-47bc-8a0d-7de9333baea8" type="radio">
-</input><label class="tabbed-label" for="57890220-8506-4aa5-a9f3-17eb42728607">
+<input id="64dfeca6-d797-42e2-8556-0c34c41d823d" name="d5cb64b7-74f8-40c0-ac8a-54190a4e6258" type="radio">
+</input><label class="tabbed-label" for="64dfeca6-d797-42e2-8556-0c34c41d823d">
 Установить из исходного кода</label><div class="tabbed-content docutils">
-<p>Installing Qiskit Optimization from source allows you to access the most recently
-updated version under development instead of using the version in the Python Package
-Index (PyPI) repository. This will give you the ability to inspect and extend
-the latest version of the Qiskit Optimization code more efficiently.</p>
-<p>Since Qiskit Optimization depends on Qiskit, and its latest changes may require new or changed
-features of Qiskit, you should first follow Qiskit’s <cite>«Install from source»</cite> instructions
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<h2>Installing Qiskit Optimization from Source</h2><p>Using the same development environment that you installed Qiskit in you are ready to install
-Qiskit Optimization.</p>
+<p>Установка элементов из исходного кода позволит Вам получить доступ к последней обновленной версии Qiskit Optimization вместо использования версии из репозитория Python Package Index (PyPI). Это даст Вам возможность более эффективно изучить и внести свой вклад в улучшение кода последней версии Qiskit Optimization.</p>
+<p>Так как Qiskit Optimization зависит от Qiskit, и его последние изменения могут потребовать новых или измененных функций Qiskit, сначала следуйте инструкциям <cite>«Установить из исходного кода»</cite> здесь <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
+<h2>Installing Qiskit Optimization from Source</h2><p>Используя ту же среду разработки, в которой Вы установили Qiskit, Вы можете установить пакет Qiskit Optimization.</p>
 <ol class="arabic">
-<li><p>Clone the Qiskit Optimization repository.</p>
+<li><p>Клонируйте репозиторий Qiskit Optimization.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Qiskit/qiskit-optimization.git
 </pre></div>
 </div>
 </li>
-<li><p>Cloning the repository creates a local folder called <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
+<li><p>Клонирование репозитория создает локальную папку с названием <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> qiskit-optimization
 </pre></div>
 </div>
@@ -287,7 +272,7 @@ Qiskit Optimization.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
+<li><p>Установите <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install .
 </pre></div>
 </div>
@@ -303,20 +288,15 @@ Qiskit Optimization.</p>
 <div class="section" id="optional-installs">
 <span id="id1"></span><h2>Необязательные для установки компоненты<a class="headerlink" href="#optional-installs" title="Ссылка на этот заголовок">¶</a></h2>
 <ul class="simple">
-<li><p><strong>IBM CPLEX</strong> may be installed using <cite>pip install „qiskit-optimization[cplex]“</cite> to enable the reading of <cite>LP</cite> files and the usage of
-the <cite>CplexOptimizer</cite>, wrapper for <code class="docutils literal notranslate"><span class="pre">cplex.Cplex</span></code>. Currently there is no python 3.9 version of CPLEX. In this case, the CPLEX install
-command will have no effect.</p></li>
-<li><p><strong>CVXPY</strong>, may be installed using command <cite>pip install „qiskit-optimization[cvx]“</cite> to install the
-package. CVXPY being installed will enable the usage of the Goemans-Williamson algorithm as an optimizer <cite>GoemansWilliamsonOptimizer</cite>.</p></li>
-<li><p><strong>Matplotlib</strong>, may be installed using command <cite>pip install „qiskit-optimization[matplotlib]“</cite> to install the
-package. Matplotlib being installed will enable the usage of the <cite>draw</cite> method in the graph optimization application classes.</p></li>
-<li><p><strong>Gurobipy</strong> may be installed using command <cite>pip install „qiskit-optimization[gurobi]“</cite> to install the
-package. Gurobipy being installed will enable the usage of the GurobiOptimizer.</p></li>
+<li><p>** IBM CPLEX* * может быть установлен с помощью команды <cite>pip install „qiskit-optimization[cplex]“</cite> для включения чтения <cite>LP</cite> файлов и использования <cite>CplexOptimizer</cite>, оболочки для <a href="#id1"><span class="problematic" id="id2">``</span></a>cplex.Cplex <a href="#id3"><span class="problematic" id="id4">``</span></a>. В настоящее время нет версии CPLEX под Python 3.9. В этом случае команда установки CPLEX не сработает.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a>CVXPY* <a href="#id3"><span class="problematic" id="id4">*</span></a>, можно установить с помощью команды <cite>pip install „qiskit-optimization[cvx]“</cite>. Установка CVXPY позволит использовать алгоритм Goemans-Williamson в качестве оптимизатора <cite>GoanesswilliamsonOptimizer</cite>.</p></li>
+<li><p><strong>Matplotlib</strong> можно установить с помощью команды <cite>pip install „qiskit-optimization[matplotlib]“</cite>. Установка Matplotlib позволит использовать метод <cite>draw</cite> в приложениях по оптимизации графов.</p></li>
+<li><p><strong>Gurobipy</strong> может быть установлен с помощью команды <cite>pip install „qiskit-machine-learning[gurobi]“</cite>. Gurobipy позволяет использовать GurobiOptimizer.</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="ready-to-get-going">
-<h2>Ready to get going?…<a class="headerlink" href="#ready-to-get-going" title="Ссылка на этот заголовок">¶</a></h2>
+<h2>Готовы идти дальше?<a class="headerlink" href="#ready-to-get-going" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
     <div class="text-container">
@@ -340,7 +320,7 @@ package. Gurobipy being installed will enable the usage of the GurobiOptimizer.<
         <a href="apidocs/qiskit_optimization.html" class="btn btn-neutral float-right" title="Qiskit Optimization API Reference" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Qiskit Optimization documentation" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Документация по оптимизации Qiskit" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -375,7 +355,7 @@ package. Gurobipy being installed will enable the usage of the GurobiOptimizer.<
 <li><a class="reference internal" href="#">Начало работы</a><ul>
 <li><a class="reference internal" href="#installation">Инструкция по установке</a></li>
 <li><a class="reference internal" href="#optional-installs">Необязательные для установки компоненты</a></li>
-<li><a class="reference internal" href="#ready-to-get-going">Ready to get going?…</a></li>
+<li><a class="reference internal" href="#ready-to-get-going">Готовы идти дальше?</a></li>
 </ul>
 </li>
 </ul>

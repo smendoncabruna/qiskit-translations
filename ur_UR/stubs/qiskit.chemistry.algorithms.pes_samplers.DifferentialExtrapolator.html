@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator &mdash; Qiskit 0.29.0 documentation</title>
+  <title>DifferentialExtrapolator &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="qiskit.chemistry.algorithms.pes_samplers.PCAExtrapolator" href="qiskit.chemistry.algorithms.pes_samplers.PCAExtrapolator.html" />
-    <link rel="prev" title="qiskit.chemistry.algorithms.pes_samplers.Extrapolator" href="qiskit.chemistry.algorithms.pes_samplers.Extrapolator.html" /> 
+    <link rel="next" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate" href="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate.html" />
+    <link rel="prev" title="qiskit.chemistry.algorithms.pes_samplers.Extrapolator.factory" href="qiskit.chemistry.algorithms.pes_samplers.Extrapolator.factory.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.chemistry.algorithms.pes_samplers.html">Potential energy surface samplers (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.chemistry.algorithms.pes_samplers</span></code>)</a> &gt;</li>
         
-      <li>qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator</li>
+      <li>DifferentialExtrapolator</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,12 +339,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-chemistry-algorithms-pes-samplers-differentialextrapolator">
-<h1>qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator<a class="headerlink" href="#qiskit-chemistry-algorithms-pes-samplers-differentialextrapolator" title="Permalink to this headline">¶</a></h1>
+  <section id="differentialextrapolator">
+<h1>DifferentialExtrapolator<a class="headerlink" href="#differentialextrapolator" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator">
 <em class="property">class </em><code class="sig-name descname">DifferentialExtrapolator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/algorithms/pes_samplers/extrapolator.html#DifferentialExtrapolator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator" title="Permalink to this definition">¶</a></dt>
-<dd><p>An extrapolator based on treating each param set as a point in space, and fitting a
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.chemistry.algorithms.pes_samplers.extrapolator.Extrapolator</span></code></p>
+<p>An extrapolator based on treating each param set as a point in space, and fitting a
 Hamiltonian which evolves each point to the next. The user specifies the type of regression
 model to perform fitting, and a degree which adds derivatives to the values in the point
 vector; serving as features for the regression model.
@@ -355,23 +363,6 @@ LinearRegression(), Ridge(), RidgeCV(), and SGDRegressor().</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">model</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/algorithms/pes_samplers/extrapolator.html#DifferentialExtrapolator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">LinearRegression</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Ridge</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">RidgeCV</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">SGDRegressor</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- Regression model (from sklearn) to be used for fitting
-variational parameters. Currently supports the following models:
-LinearRegression(), Ridge(), RidgeCV(), and SGDRegressor().</p></li>
-<li><p><strong>degree</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- Specifies (degree -1) derivatives to be added as
-'features' in regression model.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -379,74 +370,14 @@ LinearRegression(), Ridge(), RidgeCV(), and SGDRegressor().</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.__init__" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([degree, model])</p></td>
-<td><p>Constructor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extrapolate</span></code></a>(points, param_dict)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate.html#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extrapolate</span></code></a></p></td>
 <td><p>Extrapolate at specified point of interest given a set of variational parameters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factory</span></code></a>(mode, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory.html#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factory</span></code></a></p></td>
 <td><p>Factory method for constructing extrapolators.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate">
-<code class="sig-name descname">extrapolate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">param_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/algorithms/pes_samplers/extrapolator.html#DifferentialExtrapolator.extrapolate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extrapolate at specified point of interest given a set of variational parameters.
-Each parameter list and list of numerical gradients is treated as a single point
-in vector space. The regression model tries to fit a Hamiltonian that describes
-the evolution from one parameter set (and its gradient features) at point r,
-to another parameter set at point, r + epsilon. The regression model is then
-used to predict the parameter set at the point of interest. Note that this
-extrapolation technique does not explicitly use the spacing of the points
-(step size) but rather infers it from the list of parameter values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>points</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) -- List of point(s) to be used for extrapolation. Can represent
-some degree of freedom, ex, interatomic distance.</p></li>
-<li><p><strong>param_dict</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]]) -- Dictionary of variational parameters. Each key is the point</p></li>
-<li><p><strong>the value is a list of the variational parameters.</strong> (<em>and</em>) -- </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Dictionary of variational parameters for extrapolated point(s).</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory">
-<em class="property">static </em><code class="sig-name descname">factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.factory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Factory method for constructing extrapolators.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- Extrapolator to instantiate. Can be one of:
-- 'window'
-- 'poly'
-- 'diff_model'
-- 'pca'
-- 'l1'</p></li>
-<li><p><strong>kwargs</strong> -- arguments to be passed to the constructor of an extrapolator</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Extrapolator</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A newly created extrapolator instance.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> -- if specified mode is unknown.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -459,10 +390,10 @@ some degree of freedom, ex, interatomic distance.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.chemistry.algorithms.pes_samplers.PCAExtrapolator.html" class="btn btn-neutral float-right" title="qiskit.chemistry.algorithms.pes_samplers.PCAExtrapolator" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate.html" class="btn btn-neutral float-right" title="qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator.extrapolate" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.chemistry.algorithms.pes_samplers.Extrapolator.html" class="btn btn-neutral" title="qiskit.chemistry.algorithms.pes_samplers.Extrapolator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.chemistry.algorithms.pes_samplers.Extrapolator.factory.html" class="btn btn-neutral" title="qiskit.chemistry.algorithms.pes_samplers.Extrapolator.factory" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -476,7 +407,7 @@ some degree of freedom, ex, interatomic distance.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -495,7 +426,7 @@ some degree of freedom, ex, interatomic distance.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.chemistry.algorithms.pes_samplers.DifferentialExtrapolator</a></li>
+<li><a class="reference internal" href="#">DifferentialExtrapolator</a></li>
 </ul>
 
             </div>
@@ -559,7 +490,7 @@ some degree of freedom, ex, interatomic distance.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -582,9 +513,11 @@ some degree of freedom, ex, interatomic distance.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

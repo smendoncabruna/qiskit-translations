@@ -1,31 +1,24 @@
-﻿qiskit.opflow.converters.CircuitSampler
-=======================================
+CircuitSampler
+==============
 
 .. currentmodule:: qiskit.opflow.converters
 
 .. autoclass:: CircuitSampler
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~CircuitSampler.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CircuitSampler.clear_cache
       ~CircuitSampler.convert
       ~CircuitSampler.sample_circuits
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CircuitSampler.quantum_instance
-   
-   
+   .. autoattribute:: quantum_instance

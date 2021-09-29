@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.drivers.FermionicDriver
-========================================
+﻿FermionicDriver
+===============
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: FermionicDriver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FermionicDriver.__init__
-      ~FermionicDriver.run
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~FermionicDriver.run
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FermionicDriver.basis
-      ~FermionicDriver.hf_method
-      ~FermionicDriver.molecule
-      ~FermionicDriver.supports_molecule
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule

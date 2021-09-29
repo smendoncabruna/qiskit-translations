@@ -1,19 +1,18 @@
-﻿qiskit.extensions.Initialize
-============================
+﻿Initialize
+==========
 
 .. currentmodule:: qiskit.extensions
 
 .. autoclass:: Initialize
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Initialize.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Initialize.add_decomposition
       ~Initialize.assemble
       ~Initialize.broadcast_arguments
@@ -28,20 +27,14 @@
       ~Initialize.reverse_ops
       ~Initialize.soft_compare
       ~Initialize.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Initialize.decompositions
-      ~Initialize.definition
-      ~Initialize.duration
-      ~Initialize.label
-      ~Initialize.params
-      ~Initialize.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

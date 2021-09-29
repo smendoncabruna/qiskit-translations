@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.expectations.pauli_expectation &mdash; Documentation Qiskit 0.29.0</title>
+  <title>qiskit.opflow.expectations.pauli_expectation &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -230,7 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -363,16 +370,16 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PauliExpectation.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.expectations.PauliExpectation.html#qiskit.opflow.expectations.PauliExpectation.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_paulis</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_paulis</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            group_paulis: Whether to group the Pauli measurements into commuting sums, which all</span>
 <span class="sd">                have the same diagonalizing circuit.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_grouper</span> <span class="o">=</span> <span class="n">AbelianGrouper</span><span class="p">()</span> <span class="k">if</span> <span class="n">group_paulis</span> <span class="k">else</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_grouper</span> <span class="o">=</span> <span class="n">AbelianGrouper</span><span class="p">()</span> <span class="k">if</span> <span class="n">group_paulis</span> <span class="k">else</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="PauliExpectation.convert"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.expectations.PauliExpectation.html#qiskit.opflow.expectations.PauliExpectation.convert">[docs]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliExpectation.convert"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.expectations.PauliExpectation.convert.html#qiskit.opflow.expectations.PauliExpectation.convert">[docs]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Accepts an Operator and returns a new Operator with the Pauli measurements replaced by</span>
 <span class="sd">        diagonal Pauli post-rotation based measurements so they can be evaluated by sampling and</span>
 <span class="sd">        averaging.</span>
@@ -413,7 +420,7 @@
 
         <span class="k">return</span> <span class="n">operator</span></div>
 
-<div class="viewcode-block" id="PauliExpectation.compute_variance"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.expectations.PauliExpectation.html#qiskit.opflow.expectations.PauliExpectation.compute_variance">[docs]</a>    <span class="k">def</span> <span class="nf">compute_variance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exp_op</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+<div class="viewcode-block" id="PauliExpectation.compute_variance"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.expectations.PauliExpectation.compute_variance.html#qiskit.opflow.expectations.PauliExpectation.compute_variance">[docs]</a>    <span class="k">def</span> <span class="nf">compute_variance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exp_op</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
         <span class="k">def</span> <span class="nf">sum_variance</span><span class="p">(</span><span class="n">operator</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="n">ComposedOp</span><span class="p">):</span>
                 <span class="n">sfdict</span> <span class="o">=</span> <span class="n">operator</span><span class="o">.</span><span class="n">oplist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -448,7 +455,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -528,7 +535,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -551,9 +558,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

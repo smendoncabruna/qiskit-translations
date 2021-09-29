@@ -1,23 +1,18 @@
-﻿qiskit.algorithms.NumPyLinearSolver
-===================================
+﻿NumPyLinearSolver
+=================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: NumPyLinearSolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyLinearSolver.__init__
-      ~NumPyLinearSolver.solve
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~NumPyLinearSolver.solve
+
+

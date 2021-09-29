@@ -1,19 +1,18 @@
-﻿qiskit.ml.circuit.library.RawFeatureVector
-==========================================
+﻿RawFeatureVector
+================
 
 .. currentmodule:: qiskit.ml.circuit.library
 
 .. autoclass:: RawFeatureVector
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RawFeatureVector.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RawFeatureVector.add_bits
       ~RawFeatureVector.add_calibration
       ~RawFeatureVector.add_register
@@ -158,33 +157,27 @@
       ~RawFeatureVector.x
       ~RawFeatureVector.y
       ~RawFeatureVector.z
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RawFeatureVector.ancillas
-      ~RawFeatureVector.calibrations
-      ~RawFeatureVector.clbits
-      ~RawFeatureVector.data
-      ~RawFeatureVector.extension_lib
-      ~RawFeatureVector.feature_dimension
-      ~RawFeatureVector.global_phase
-      ~RawFeatureVector.header
-      ~RawFeatureVector.instances
-      ~RawFeatureVector.metadata
-      ~RawFeatureVector.num_ancillas
-      ~RawFeatureVector.num_clbits
-      ~RawFeatureVector.num_parameters
-      ~RawFeatureVector.num_qubits
-      ~RawFeatureVector.ordered_parameters
-      ~RawFeatureVector.parameters
-      ~RawFeatureVector.prefix
-      ~RawFeatureVector.qregs
-      ~RawFeatureVector.qubits
-   
-   
+   .. autoattribute:: ancillas
+   .. autoattribute:: calibrations
+   .. autoattribute:: clbits
+   .. autoattribute:: data
+   .. autoattribute:: extension_lib
+   .. autoattribute:: feature_dimension
+   .. autoattribute:: global_phase
+   .. autoattribute:: header
+   .. autoattribute:: instances
+   .. autoattribute:: metadata
+   .. autoattribute:: num_ancillas
+   .. autoattribute:: num_clbits
+   .. autoattribute:: num_parameters
+   .. autoattribute:: num_qubits
+   .. autoattribute:: ordered_parameters
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix
+   .. autoattribute:: qregs
+   .. autoattribute:: qubits

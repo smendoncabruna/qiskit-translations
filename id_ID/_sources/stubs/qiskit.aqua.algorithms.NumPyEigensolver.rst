@@ -1,35 +1,28 @@
-﻿qiskit.aqua.algorithms.NumPyEigensolver
-=======================================
+﻿NumPyEigensolver
+================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: NumPyEigensolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyEigensolver.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NumPyEigensolver.compute_eigenvalues
       ~NumPyEigensolver.run
       ~NumPyEigensolver.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumPyEigensolver.aux_operators
-      ~NumPyEigensolver.filter_criterion
-      ~NumPyEigensolver.k
-      ~NumPyEigensolver.operator
-      ~NumPyEigensolver.random
-   
-   
+   .. autoattribute:: aux_operators
+   .. autoattribute:: filter_criterion
+   .. autoattribute:: k
+   .. autoattribute:: operator
+   .. autoattribute:: random

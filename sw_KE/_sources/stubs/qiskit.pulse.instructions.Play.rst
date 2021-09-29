@@ -1,19 +1,18 @@
-qiskit.pulse.instructions.Play
-==============================
+Play
+====
 
 .. currentmodule:: qiskit.pulse.instructions
 
 .. autoclass:: Play
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Play.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Play.append
       ~Play.assign_parameters
       ~Play.ch_duration
@@ -24,25 +23,19 @@ qiskit.pulse.instructions.Play
       ~Play.insert
       ~Play.is_parameterized
       ~Play.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Play.channel
-      ~Play.channels
-      ~Play.duration
-      ~Play.id
-      ~Play.instructions
-      ~Play.name
-      ~Play.operands
-      ~Play.parameters
-      ~Play.pulse
-      ~Play.start_time
-      ~Play.stop_time
-   
-   
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: pulse
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.runtime.ProgramBackend
-============================================
+﻿ProgramBackend
+==============
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: ProgramBackend
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ProgramBackend.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ProgramBackend.configuration
       ~ProgramBackend.name
       ~ProgramBackend.properties
@@ -21,16 +20,10 @@
       ~ProgramBackend.run
       ~ProgramBackend.set_options
       ~ProgramBackend.status
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ProgramBackend.options
-      ~ProgramBackend.version
-   
-   
+   .. autoattribute:: options
+   .. autoattribute:: version

@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.drivers.BosonicDriver
-======================================
+﻿BosonicDriver
+=============
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: BosonicDriver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BosonicDriver.__init__
-      ~BosonicDriver.run
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~BosonicDriver.run
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BosonicDriver.basis
-      ~BosonicDriver.hf_method
-      ~BosonicDriver.molecule
-      ~BosonicDriver.supports_molecule
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule

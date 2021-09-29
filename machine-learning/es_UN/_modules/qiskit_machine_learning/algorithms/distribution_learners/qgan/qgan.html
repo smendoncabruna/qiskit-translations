@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.algorithms.distribution_learners.qgan.qgan &mdash; documentación de Qiskit Machine Learning - 0.2.0</title>
+  <title>qiskit_machine_learning.algorithms.distribution_learners.qgan.qgan &mdash; documentación de Qiskit Machine Learning - 0.2.1</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/algorithms/distribution_learners/qgan/qgan.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/algorithms/distribution_learners/qgan/qgan.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/algorithms/distribution_learners/qgan/qgan.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/algorithms/distribution_learners/qgan/qgan.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/algorithms/distribution_learners/qgan/qgan.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/algorithms/distribution_learners/qgan/qgan.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -605,7 +611,9 @@
         <span class="k">return</span> <span class="n">rel_entr</span></div>
 
     <span class="k">def</span> <span class="nf">_store_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">d_loss</span><span class="p">,</span> <span class="n">g_loss</span><span class="p">,</span> <span class="n">rel_entr</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_dir</span><span class="p">,</span> <span class="s2">&quot;output.csv&quot;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_dir</span><span class="p">,</span> <span class="s2">&quot;output.csv&quot;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
             <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;loss_discriminator&quot;</span><span class="p">,</span>
@@ -634,7 +642,9 @@
 <span class="sd">                                        items in the truncated data set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_dir</span><span class="p">,</span> <span class="s2">&quot;output.csv&quot;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_dir</span><span class="p">,</span> <span class="s2">&quot;output.csv&quot;</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
                 <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span>
                     <span class="s2">&quot;epoch&quot;</span><span class="p">,</span>
                     <span class="s2">&quot;loss_discriminator&quot;</span><span class="p">,</span>

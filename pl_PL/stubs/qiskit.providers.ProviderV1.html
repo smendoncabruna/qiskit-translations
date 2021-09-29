@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ProviderV1 &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>ProviderV1 &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Spis treści" href="../genindex.html" />
     <link rel="search" title="Wyszukiwanie" href="../search.html" />
-    <link rel="next" title="qiskit.providers.Backend" href="qiskit.providers.Backend.html" />
-    <link rel="prev" title="qiskit.providers.Provider" href="qiskit.providers.Provider.html" /> 
+    <link rel="next" title="qiskit.providers.ProviderV1.backends" href="qiskit.providers.ProviderV1.backends.html" />
+    <link rel="prev" title="Provider" href="qiskit.providers.Provider.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/providers.html">Providers Interface (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.providers</span></code>)</a> &gt;</li>
         
-      <li>qiskit.providers.ProviderV1</li>
+      <li>ProviderV1</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,18 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-providers-providerv1">
-<h1>qiskit.providers.ProviderV1<a class="headerlink" href="#qiskit-providers-providerv1" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+  <section id="providerv1">
+<h1>ProviderV1<a class="headerlink" href="#providerv1" title="Stały odnośnik do tego nagłówka">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.providers.ProviderV1">
 <em class="property">class </em><code class="sig-name descname">ProviderV1</code><a class="reference internal" href="../_modules/qiskit/providers/provider.html#ProviderV1"><span class="viewcode-link">[źródło]</span></a><a class="headerlink" href="#qiskit.providers.ProviderV1" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>Base class for a Backend Provider.</p>
-<dl class="py method">
-<dt id="qiskit.providers.ProviderV1.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.ProviderV1.__init__" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.providers.provider.Provider</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for a Backend Provider.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -347,76 +349,19 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ProviderV1.__init__" title="qiskit.providers.ProviderV1.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ProviderV1.backends" title="qiskit.providers.ProviderV1.backends"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backends</span></code></a>([name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ProviderV1.backends.html#qiskit.providers.ProviderV1.backends" title="qiskit.providers.ProviderV1.backends"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backends</span></code></a></p></td>
 <td><p>Return a list of backends matching the specified filtering.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ProviderV1.get_backend" title="qiskit.providers.ProviderV1.get_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_backend</span></code></a>([name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ProviderV1.get_backend.html#qiskit.providers.ProviderV1.get_backend" title="qiskit.providers.ProviderV1.get_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_backend</span></code></a></p></td>
 <td><p>Return a single backend matching the specified filtering.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">version</span></code></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.providers.ProviderV1.backends">
-<em class="property">abstract </em><code class="sig-name descname">backends</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/provider.html#ProviderV1.backends"><span class="viewcode-link">[źródło]</span></a><a class="headerlink" href="#qiskit.providers.ProviderV1.backends" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>Return a list of backends matching the specified filtering.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametry</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – name of the backend.</p></li>
-<li><p><strong>**kwargs</strong> – dict used for filtering.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Zwraca</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>a list of Backends that match the filtering</dt><dd><p>criteria.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Typ zwracany</dt>
-<dd class="field-odd"><p>list[<a class="reference internal" href="qiskit.providers.Backend.html#qiskit.providers.Backend" title="qiskit.providers.Backend">Backend</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ProviderV1.get_backend">
-<code class="sig-name descname">get_backend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/provider.html#ProviderV1.get_backend"><span class="viewcode-link">[źródło]</span></a><a class="headerlink" href="#qiskit.providers.ProviderV1.get_backend" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>Return a single backend matching the specified filtering.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametry</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – name of the backend.</p></li>
-<li><p><strong>**kwargs</strong> – dict used for filtering.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Zwraca</dt>
-<dd class="field-even"><p>a backend matching the filtering.</p>
-</dd>
-<dt class="field-odd">Typ zwracany</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.providers.Backend.html#qiskit.providers.Backend" title="qiskit.providers.Backend">Backend</a></p>
-</dd>
-<dt class="field-even">Wyrzuca</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.QiskitBackendNotFoundError.html#qiskit.providers.QiskitBackendNotFoundError" title="qiskit.providers.QiskitBackendNotFoundError"><strong>QiskitBackendNotFoundError</strong></a> – if no backend could be found or
-    more than one backend matches the filtering criteria.</p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.providers.ProviderV1.version">
+<code class="sig-name descname">version</code><em class="property"> = 1</em><a class="headerlink" href="#qiskit.providers.ProviderV1.version" title="Stały odnośnik do tej definicji">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -430,10 +375,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.providers.Backend.html" class="btn btn-neutral float-right" title="qiskit.providers.Backend" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.providers.ProviderV1.backends.html" class="btn btn-neutral float-right" title="qiskit.providers.ProviderV1.backends" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.providers.Provider.html" class="btn btn-neutral" title="qiskit.providers.Provider" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.providers.Provider.html" class="btn btn-neutral" title="Provider" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -447,7 +392,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -466,7 +411,7 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.providers.ProviderV1</a></li>
+<li><a class="reference internal" href="#">ProviderV1</a></li>
 </ul>
 
             </div>
@@ -530,7 +475,7 @@
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -553,9 +498,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

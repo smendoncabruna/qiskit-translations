@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.FermionicOperator
-==================================
+﻿FermionicOperator
+=================
 
 .. currentmodule:: qiskit.chemistry
 
 .. autoclass:: FermionicOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FermionicOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FermionicOperator.fermion_mode_elimination
       ~FermionicOperator.fermion_mode_freezing
       ~FermionicOperator.mapping
@@ -22,17 +21,11 @@
       ~FermionicOperator.total_magnetization
       ~FermionicOperator.total_particle_number
       ~FermionicOperator.transform
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FermionicOperator.h1
-      ~FermionicOperator.h2
-      ~FermionicOperator.modes
-   
-   
+   .. autoattribute:: h1
+   .. autoattribute:: h2
+   .. autoattribute:: modes

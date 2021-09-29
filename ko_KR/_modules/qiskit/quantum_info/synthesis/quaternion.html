@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.synthesis.quaternion &mdash; Qiskit 0.29.0 문서</title>
+  <title>qiskit.quantum_info.synthesis.quaternion &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -343,8 +350,8 @@
 <div class="viewcode-block" id="Quaternion"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion">[문서]</a><span class="k">class</span> <span class="nc">Quaternion</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A class representing a Quaternion.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Quaternion.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.__init__">[문서]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
@@ -367,11 +374,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Multiplication by other not supported.&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Quaternion.norm"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.norm">[문서]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Quaternion.norm"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.norm.html#qiskit.quantum_info.Quaternion.norm">[문서]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Norm of quaternion.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">la</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Quaternion.normalize"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.normalize">[문서]</a>    <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Quaternion.normalize"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.normalize.html#qiskit.quantum_info.Quaternion.normalize">[문서]</a>    <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Normalizes a Quaternion to unit length</span>
 <span class="sd">        so that it represents a valid rotation.</span>
 
@@ -390,7 +397,7 @@
         <span class="n">data_copy</span> <span class="o">/=</span> <span class="n">nrm</span>
         <span class="k">return</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">data_copy</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Quaternion.to_matrix"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.to_matrix">[문서]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Quaternion.to_matrix"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.to_matrix.html#qiskit.quantum_info.Quaternion.to_matrix">[문서]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Converts a unit-length quaternion to a rotation matrix.</span>
 
 <span class="sd">        Returns:</span>
@@ -407,7 +414,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">mat</span></div>
 
-<div class="viewcode-block" id="Quaternion.to_zyz"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.to_zyz">[문서]</a>    <span class="k">def</span> <span class="nf">to_zyz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Quaternion.to_zyz"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.to_zyz.html#qiskit.quantum_info.Quaternion.to_zyz">[문서]</a>    <span class="k">def</span> <span class="nf">to_zyz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Converts a unit-length quaternion to a sequence</span>
 <span class="sd">        of ZYZ Euler angles.</span>
 
@@ -428,7 +435,7 @@
             <span class="n">euler</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">euler</span></div>
 
-<div class="viewcode-block" id="Quaternion.from_axis_rotation"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.from_axis_rotation">[문서]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Quaternion.from_axis_rotation"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.from_axis_rotation.html#qiskit.quantum_info.Quaternion.from_axis_rotation">[문서]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_axis_rotation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return quaternion for rotation about given axis.</span>
 
@@ -455,7 +462,7 @@
         <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">out</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Quaternion.from_euler"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.html#qiskit.quantum_info.Quaternion.from_euler">[문서]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Quaternion.from_euler"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Quaternion.from_euler.html#qiskit.quantum_info.Quaternion.from_euler">[문서]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_euler</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">angles</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;yzy&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate a quaternion from a set of Euler angles.</span>
 
@@ -491,7 +498,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -571,7 +578,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -594,9 +601,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,31 +1,24 @@
-﻿qiskit.opflow.evolutions.PauliTrotterEvolution
-==============================================
+PauliTrotterEvolution
+=====================
 
 .. currentmodule:: qiskit.opflow.evolutions
 
 .. autoclass:: PauliTrotterEvolution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~PauliTrotterEvolution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliTrotterEvolution.convert
       ~PauliTrotterEvolution.evolution_for_abelian_paulisum
       ~PauliTrotterEvolution.evolution_for_pauli
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PauliTrotterEvolution.trotter
-   
-   
+   .. autoattribute:: trotter

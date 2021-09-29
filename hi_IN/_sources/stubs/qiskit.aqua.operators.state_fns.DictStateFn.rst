@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.state\_fns.DictStateFn
-============================================
+﻿DictStateFn
+===========
 
 .. currentmodule:: qiskit.aqua.operators.state_fns
 
 .. autoclass:: DictStateFn
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DictStateFn.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DictStateFn.add
       ~DictStateFn.adjoint
       ~DictStateFn.assign_parameters
@@ -37,21 +36,15 @@
       ~DictStateFn.to_matrix_op
       ~DictStateFn.to_spmatrix
       ~DictStateFn.traverse
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DictStateFn.ENABLE_DEPRECATION
-      ~DictStateFn.INDENTATION
-      ~DictStateFn.coeff
-      ~DictStateFn.is_measurement
-      ~DictStateFn.num_qubits
-      ~DictStateFn.parameters
-      ~DictStateFn.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: is_measurement
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

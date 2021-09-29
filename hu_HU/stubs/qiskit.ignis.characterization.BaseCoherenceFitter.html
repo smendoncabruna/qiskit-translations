@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.characterization.BaseCoherenceFitter &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>BaseCoherenceFitter &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Tárgymutató" href="../genindex.html" />
     <link rel="search" title="Keresés" href="../search.html" />
-    <link rel="next" title="qiskit.ignis.characterization.BaseGateFitter" href="qiskit.ignis.characterization.BaseGateFitter.html" />
-    <link rel="prev" title="qiskit.ignis.characterization.ZZFitter" href="qiskit.ignis.characterization.ZZFitter.html" /> 
+    <link rel="next" title="qiskit.ignis.characterization.BaseCoherenceFitter.add_data" href="qiskit.ignis.characterization.BaseCoherenceFitter.add_data.html" />
+    <link rel="prev" title="qiskit.ignis.characterization.ZZFitter.time_err" href="qiskit.ignis.characterization.ZZFitter.time_err.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/characterization.html">Characterization (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.ignis.characterization</span></code>)</a> &gt;</li>
         
-      <li>qiskit.ignis.characterization.BaseCoherenceFitter</li>
+      <li>BaseCoherenceFitter</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-ignis-characterization-basecoherencefitter">
-<h1>qiskit.ignis.characterization.BaseCoherenceFitter<a class="headerlink" href="#qiskit-ignis-characterization-basecoherencefitter" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+  <section id="basecoherencefitter">
+<h1>BaseCoherenceFitter<a class="headerlink" href="#basecoherencefitter" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter">
 <em class="property">class </em><code class="sig-name descname">BaseCoherenceFitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">description</span></em>, <em class="sig-param"><span class="n">backend_result</span></em>, <em class="sig-param"><span class="n">xdata</span></em>, <em class="sig-param"><span class="n">qubits</span></em>, <em class="sig-param"><span class="n">fit_fun</span></em>, <em class="sig-param"><span class="n">fit_p0</span></em>, <em class="sig-param"><span class="n">fit_bounds</span></em>, <em class="sig-param"><span class="n">circuit_names</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expected_state</span><span class="o">=</span><span class="default_value">'0'</span></em>, <em class="sig-param"><span class="n">time_index</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">time_unit</span><span class="o">=</span><span class="default_value">'micro-seconds'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/fitters.html#BaseCoherenceFitter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Base class for fitters of characteristic times</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.ignis.characterization.fitters.BaseFitter</span></code></p>
+<p>Base class for fitters of characteristic times</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paraméterek</dt>
 <dd class="field-odd"><ul class="simple">
@@ -355,12 +363,6 @@ which one is the characteristic time.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.BaseCoherenceFitter.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">description</span></em>, <em class="sig-param"><span class="n">backend_result</span></em>, <em class="sig-param"><span class="n">xdata</span></em>, <em class="sig-param"><span class="n">qubits</span></em>, <em class="sig-param"><span class="n">fit_fun</span></em>, <em class="sig-param"><span class="n">fit_p0</span></em>, <em class="sig-param"><span class="n">fit_bounds</span></em>, <em class="sig-param"><span class="n">circuit_names</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expected_state</span><span class="o">=</span><span class="default_value">'0'</span></em>, <em class="sig-param"><span class="n">time_index</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">time_unit</span><span class="o">=</span><span class="default_value">'micro-seconds'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/fitters.html#BaseCoherenceFitter.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.__init__" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -368,80 +370,27 @@ which one is the characteristic time.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.__init__" title="qiskit.ignis.characterization.BaseCoherenceFitter.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(description, backend_result, xdata, …)</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.add_data" title="qiskit.ignis.characterization.BaseCoherenceFitter.add_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_data</span></code></a>(results[, recalc, refit])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.characterization.BaseCoherenceFitter.add_data.html#qiskit.ignis.characterization.BaseCoherenceFitter.add_data" title="qiskit.ignis.characterization.BaseCoherenceFitter.add_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_data</span></code></a></p></td>
 <td><p>Add new execution results to previous execution results</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.fit_data" title="qiskit.ignis.characterization.BaseCoherenceFitter.fit_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_data</span></code></a>([qid, p0, bounds, series])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.characterization.BaseCoherenceFitter.fit_data.html#qiskit.ignis.characterization.BaseCoherenceFitter.fit_data" title="qiskit.ignis.characterization.BaseCoherenceFitter.fit_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_data</span></code></a></p></td>
 <td><p>Fit the curve.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.plot" title="qiskit.ignis.characterization.BaseCoherenceFitter.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(qind, series[, ax, show_plot])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.characterization.BaseCoherenceFitter.plot.html#qiskit.ignis.characterization.BaseCoherenceFitter.plot" title="qiskit.ignis.characterization.BaseCoherenceFitter.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p></td>
 <td><p>Plot coherence data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.time" title="qiskit.ignis.characterization.BaseCoherenceFitter.time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time</span></code></a>([qid, series])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.characterization.BaseCoherenceFitter.time.html#qiskit.ignis.characterization.BaseCoherenceFitter.time" title="qiskit.ignis.characterization.BaseCoherenceFitter.time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time</span></code></a></p></td>
 <td><p>Return the characteristic time for the given qubit and series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.time_err" title="qiskit.ignis.characterization.BaseCoherenceFitter.time_err"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_err</span></code></a>([qid, series])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.characterization.BaseCoherenceFitter.time_err.html#qiskit.ignis.characterization.BaseCoherenceFitter.time_err" title="qiskit.ignis.characterization.BaseCoherenceFitter.time_err"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_err</span></code></a></p></td>
 <td><p>Return the error of characteristic time for the given qubit and series</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.backend_result" title="qiskit.ignis.characterization.BaseCoherenceFitter.backend_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend_result</span></code></a></p></td>
-<td><p>Return the execution results</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.description" title="qiskit.ignis.characterization.BaseCoherenceFitter.description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">description</span></code></a></p></td>
-<td><p>Return the fitter’s purpose, e.g.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.fit_fun" title="qiskit.ignis.characterization.BaseCoherenceFitter.fit_fun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_fun</span></code></a></p></td>
-<td><p>Return the function used in the fit, e.g.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.measured_qubits" title="qiskit.ignis.characterization.BaseCoherenceFitter.measured_qubits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">measured_qubits</span></code></a></p></td>
-<td><p>Return the indices of the qubits to be characterized</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.params" title="qiskit.ignis.characterization.BaseCoherenceFitter.params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code></a></p></td>
-<td><p>Return the fit function parameters that were calculated by curve_fit</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.params_err" title="qiskit.ignis.characterization.BaseCoherenceFitter.params_err"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params_err</span></code></a></p></td>
-<td><p>Return the error of the fit function parameters</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.series" title="qiskit.ignis.characterization.BaseCoherenceFitter.series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">series</span></code></a></p></td>
-<td><p>Return the list of series for the data</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.xdata" title="qiskit.ignis.characterization.BaseCoherenceFitter.xdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xdata</span></code></a></p></td>
-<td><p>Return the data points on the x-axis, the independenet parameter which is fit against</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.BaseCoherenceFitter.ydata" title="qiskit.ignis.characterization.BaseCoherenceFitter.ydata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ydata</span></code></a></p></td>
-<td><p>Return the data points on the y-axis</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.BaseCoherenceFitter.add_data">
-<code class="sig-name descname">add_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">results</span></em>, <em class="sig-param"><span class="n">recalc</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">refit</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.add_data" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Add new execution results to previous execution results</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>results</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code>]]) – new execution results</p></li>
-<li><p><strong>recalc</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – whether tp recalculate the data</p></li>
-<li><p><strong>refit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – whether to refit the data</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.backend_result">
-<em class="property">property </em><code class="sig-name descname">backend_result</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.backend_result" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">backend_result</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.backend_result" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the execution results</p>
 <dl class="field-list simple">
 <dt class="field-odd">Visszatérés típusa</dt>
@@ -450,9 +399,9 @@ which one is the characteristic time.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.description">
-<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.description" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">description</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.description" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the fitter’s purpose, e.g. «T1»</p>
 <dl class="field-list simple">
 <dt class="field-odd">Visszatérés típusa</dt>
@@ -461,26 +410,9 @@ which one is the characteristic time.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.BaseCoherenceFitter.fit_data">
-<code class="sig-name descname">fit_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qid</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">p0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bounds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.fit_data" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Fit the curve.</p>
-<p>Compute self._params and self._params_err</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – qubit for fitting. If -1 fit for all the qubits</p></li>
-<li><p><strong>p0</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – initial guess, equivalent to <cite>p0</cite> in <cite>scipy.optimize</cite></p></li>
-<li><p><strong>bounds</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]]) – bounds, equivalent to <cite>bounds</cite> in <cite>scipy.optimize</cite></p></li>
-<li><p><strong>series</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – series to fit (if None fit all)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.fit_fun">
-<em class="property">property </em><code class="sig-name descname">fit_fun</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.fit_fun" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">fit_fun</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.fit_fun" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the function used in the fit,
 e.g. BaseFitter._exp_fit_fun</p>
 <dl class="field-list simple">
@@ -490,9 +422,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.measured_qubits">
-<em class="property">property </em><code class="sig-name descname">measured_qubits</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.measured_qubits" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">measured_qubits</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.measured_qubits" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the indices of the qubits to be characterized</p>
 <dl class="field-list simple">
 <dt class="field-odd">Visszatérés típusa</dt>
@@ -501,9 +433,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.params">
-<em class="property">property </em><code class="sig-name descname">params</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.params" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">params</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.params" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the fit function parameters that were calculated by curve_fit</p>
 <dl class="field-list simple">
 <dt class="field-odd">Visszatérés típusa</dt>
@@ -512,9 +444,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.params_err">
-<em class="property">property </em><code class="sig-name descname">params_err</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.params_err" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">params_err</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.params_err" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the error of the fit function parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Visszatérés típusa</dt>
@@ -523,34 +455,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.BaseCoherenceFitter.plot">
-<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qind</span></em>, <em class="sig-param"><span class="n">series</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/fitters.html#BaseCoherenceFitter.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.plot" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Plot coherence data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qind</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – qubit index to plot</p></li>
-<li><p><strong>series</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – which series to plot (if list then plot multiple)</p></li>
-<li><p><strong>ax</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – plot axes</p></li>
-<li><p><strong>show_plot</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – whether to call plt.show()</p></li>
-</ul>
-</dd>
-<dt class="field-even">Visszatérési érték</dt>
-<dd class="field-even"><p>The axes object</p>
-</dd>
-<dt class="field-odd">Visszatérés típusa</dt>
-<dd class="field-odd"><p>Axes</p>
-</dd>
-<dt class="field-even">Kivétel</dt>
-<dd class="field-even"><p><strong>ImportError</strong> – if matplotlib is not installed</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.series">
-<em class="property">property </em><code class="sig-name descname">series</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.series" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">series</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.series" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the list of series for the data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Visszatérés típusa</dt>
@@ -559,49 +466,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.BaseCoherenceFitter.time">
-<code class="sig-name descname">time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qid</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">'0'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/fitters.html#BaseCoherenceFitter.time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.time" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Return the characteristic time for the given qubit and series</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the qubit index (or all qubits if -1)</p></li>
-<li><p><strong>series</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the series to get</p></li>
-</ul>
-</dd>
-<dt class="field-even">Visszatérés típusa</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]</p>
-</dd>
-<dt class="field-odd">Visszatérési érték</dt>
-<dd class="field-odd"><p>The characteristic time of the qubit, or all qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.BaseCoherenceFitter.time_err">
-<code class="sig-name descname">time_err</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qid</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">'0'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/fitters.html#BaseCoherenceFitter.time_err"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.time_err" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Return the error of characteristic time for the given qubit and series</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the qubit index (or all qubits if -1)</p></li>
-<li><p><strong>series</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the series to get</p></li>
-</ul>
-</dd>
-<dt class="field-even">Visszatérés típusa</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]</p>
-</dd>
-<dt class="field-odd">Visszatérési érték</dt>
-<dd class="field-odd"><p>The error of the characteristic time of the qubit, or all qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.xdata">
-<em class="property">property </em><code class="sig-name descname">xdata</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.xdata" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">xdata</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.xdata" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the data points on the x-axis, the independenet
 parameter which is fit against</p>
 <dl class="field-list simple">
@@ -611,9 +478,9 @@ parameter which is fit against</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.BaseCoherenceFitter.ydata">
-<em class="property">property </em><code class="sig-name descname">ydata</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.ydata" title="Hivatkozás erre a definícióra">¶</a></dt>
+<code class="sig-name descname">ydata</code><a class="headerlink" href="#qiskit.ignis.characterization.BaseCoherenceFitter.ydata" title="Hivatkozás erre a definícióra">¶</a></dt>
 <dd><p>Return the data points on the y-axis</p>
 <p>The data points are returning in the form of a list of dictionaries:</p>
 <blockquote>
@@ -650,10 +517,10 @@ of qubit i for a circuit that lasts xdata[j].</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.ignis.characterization.BaseGateFitter.html" class="btn btn-neutral float-right" title="qiskit.ignis.characterization.BaseGateFitter" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.ignis.characterization.BaseCoherenceFitter.add_data.html" class="btn btn-neutral float-right" title="qiskit.ignis.characterization.BaseCoherenceFitter.add_data" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.ignis.characterization.ZZFitter.html" class="btn btn-neutral" title="qiskit.ignis.characterization.ZZFitter" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.ignis.characterization.ZZFitter.time_err.html" class="btn btn-neutral" title="qiskit.ignis.characterization.ZZFitter.time_err" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -667,7 +534,7 @@ of qubit i for a circuit that lasts xdata[j].</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -686,7 +553,7 @@ of qubit i for a circuit that lasts xdata[j].</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.ignis.characterization.BaseCoherenceFitter</a></li>
+<li><a class="reference internal" href="#">BaseCoherenceFitter</a></li>
 </ul>
 
             </div>
@@ -750,7 +617,7 @@ of qubit i for a circuit that lasts xdata[j].</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -773,9 +640,11 @@ of qubit i for a circuit that lasts xdata[j].</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.ValidatePulseGates
-===========================================
+﻿ValidatePulseGates
+==================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: ValidatePulseGates
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ValidatePulseGates.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ValidatePulseGates.name
       ~ValidatePulseGates.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ValidatePulseGates.is_analysis_pass
-      ~ValidatePulseGates.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

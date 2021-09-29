@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.SabreSwap
-==================================
+﻿SabreSwap
+=========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: SabreSwap
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SabreSwap.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SabreSwap.name
       ~SabreSwap.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SabreSwap.is_analysis_pass
-      ~SabreSwap.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

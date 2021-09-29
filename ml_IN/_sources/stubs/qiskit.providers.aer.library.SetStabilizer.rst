@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SetStabilizer
-==========================================
+﻿SetStabilizer
+=============
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SetStabilizer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SetStabilizer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SetStabilizer.add_decomposition
       ~SetStabilizer.assemble
       ~SetStabilizer.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SetStabilizer.reverse_ops
       ~SetStabilizer.soft_compare
       ~SetStabilizer.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SetStabilizer.decompositions
-      ~SetStabilizer.definition
-      ~SetStabilizer.duration
-      ~SetStabilizer.label
-      ~SetStabilizer.params
-      ~SetStabilizer.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

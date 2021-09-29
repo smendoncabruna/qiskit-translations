@@ -1,22 +1,14 @@
-﻿qiskit.chemistry.transformations.BosonicTransformationType
-==========================================================
+﻿BosonicTransformationType
+=========================
 
 .. currentmodule:: qiskit.chemistry.transformations
 
 .. autoclass:: BosonicTransformationType
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BosonicTransformationType.HARMONIC
-   
-   
+   .. autoattribute:: HARMONIC

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Portfolio Optimization &mdash; Qiskit Finance 0.2.0 documentation</title>
+  <title>পোর্টফোলিও অপটিমাইজেশন &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -159,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Portfolio Optimization</li>
+      <li>পোর্টফোলিও অপটিমাইজেশন</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,29 +484,29 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a> -থেকে বানানো হয়েছে।</p>
 </div>
-<div class="section" id="Portfolio-Optimization">
-<h1>Portfolio Optimization<a class="headerlink" href="#Portfolio-Optimization" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<div class="section" id="পোর্টফোলিও-অপটিমাইজেশন">
+<h1>পোর্টফোলিও অপটিমাইজেশন<a class="headerlink" href="#পোর্টফোলিও-অপটিমাইজেশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>এই টিউটোরিয়াল দেখায় কীভাবে  <span class="math notranslate nohighlight">\(n\)</span> সম্পদের জন্য নীচের মীন-ভ্যারিয়্যান্স পোর্টফোলিও অপ্টিমাইজেশান সমস্যাটি সমাধান করা যায়:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \min_{x \in \{0, 1\}^n}  q x^T \Sigma x - \mu^T x\\
 \text{subject to: } 1^T x = B
 \end{aligned}\end{split}\]</div>
-<p>where we use the following notation:</p>
+<p>যেখানে আমরা নিম্নলিখিত স্বরলিপি ব্যবহার করি:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x \in \{0, 1\}^n\)</span> denotes the vector of binary decision variables, which indicate which assets to pick (<span class="math notranslate nohighlight">\(x[i] = 1\)</span>) and which not to pick (<span class="math notranslate nohighlight">\(x[i] = 0\)</span>),</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mu \in \mathbb{R}^n\)</span> defines the expected returns for the assets,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Sigma \in \mathbb{R}^{n \times n}\)</span> specifies the covariances between the assets,</p></li>
-<li><p><span class="math notranslate nohighlight">\(q &gt; 0\)</span> controls the risk appetite of the decision maker,</p></li>
-<li><p>and <span class="math notranslate nohighlight">\(B\)</span> denotes the budget, i.e. the number of assets to be selected out of <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \{0, 1\}^n\)</span> বাইনারি সিদ্ধান্ত ভেরিয়েবলের ভেক্টরকে বোঝায়, যা কোন সম্পদ বাছাই করে তা নির্দেশ করে (<span class="math notranslate nohighlight">\(x[i] = 1\)</span>) এবং কোনটি বেছে নেবে না (<span class="math notranslate nohighlight">\(x[i] = 0\)</span>),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu \in \mathbb{R}^n\)</span> সম্পদের প্রত্যাশিত রিটার্ন সংজ্ঞায়িত করে,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Sigma \in \mathbb{R}^{n \times n}\)</span> সম্পদের মধ্যে সমবায়িকাগুলি নির্দিষ্ট করে,</p></li>
+<li><p><span class="math notranslate nohighlight">\(q &gt; 0\)</span> সিদ্ধান্ত গ্রহণকারীর ঝুঁকি ক্ষুধা নিয়ন্ত্রণ করে,</p></li>
+<li><p>এবং :math: <cite>B</cite> দ্বারা বোঝায় বাজেটকে, অর্থাৎ :math: <cite>n</cite> থেকে নির্বাচিত হওয়া সম্পদের সংখ্যাকে।</p></li>
 </ul>
-<p>We assume the following simplifications: - all assets have the same price (normalized to 1), - the full budget <span class="math notranslate nohighlight">\(B\)</span> has to be spent, i.e. one has to select exactly <span class="math notranslate nohighlight">\(B\)</span> assets.</p>
-<p>The equality constraint <span class="math notranslate nohighlight">\(1^T x = B\)</span> is mapped to a penalty term <span class="math notranslate nohighlight">\((1^T x - B)^2\)</span> which is scaled by a parameter and subtracted from the objective function. The resulting problem can be mapped to a Hamiltonian whose ground state corresponds to the optimal solution. This notebook shows how to use the Variational Quantum Eigensolver (VQE) or the Quantum Approximate Optimization Algorithm (QAOA) to find the optimal solution for a given set of parameters.</p>
-<p>Experiments on real quantum hardware for this problem are reported for instance in the following paper: <a class="reference external" href="https://arxiv.org/abs/1907.04769">Improving Variational Quantum Optimization using CVaR. Barkoutsos et al. 2019.</a></p>
+<p>আমরা নিম্নোক্ত সরলীকরণগুলি ধরে নিই: - সমস্ত সম্পদের একই দাম রয়েছে (1 এ নরমালাইযকৃত ), - সম্পূর্ণ বাজেট :math: <cite>B</cite> যা ব্যয় করতে হবে, অর্থাত্ একজন ব্যক্তিকে অবিকল :math: ` B` সম্পদ নির্বাচন করতে হবে।</p>
+<p>সাম্যতার সীমাবদ্ধতা :math: <cite>1^T x = B</cite> একটি পেনাল্টি শর্ত :math:` (1^T x - B)^2`-তে ম্যাপ করা হয় যা একটি পরামিতি দ্বারা স্কেল করা হয় এবং নৈর্ব্যক্তিক অন্বয় (অব্জেক্টিভ ফাংশন) থেকে বিয়োগ করা হয়। ফলস্বরূপ প্রাপ্ত সমস্যাটি হ্যামিলটোনিয়ানে ম্যাপ করা যেতে পারে যার ভিত্তি/ভূমি মান বা অবস্থা সর্বোত্তম সমাধানের সাথে মিলে যায়। এই নোটবুকটি দেখায় যে কীভাবে ভ্যারিয়েশনাল কোয়ান্টাম আইজেনসলভার (ভিকিউই) বা কোয়ান্টাম অ্যাপ্রক্সিমেইট অপ্টিমাইজেশন অ্যালগরিদম (কিউএওএ) ব্যবহার করে কোনও নির্দিষ্ট পরামিতি সেটের জন্য অনুকূল সমাধান সন্ধান করা যায় ।</p>
+<p>এই সমস্যার জন্য বাস্তব কোয়ান্টাম হার্ডওয়্যারের পরীক্ষাগুলি নিম্নলিখিত গবেষণাপত্রে আলোচিত হয়েছে: <a class="reference external" href="https://arxiv.org/abs/1907.04769">Improving Variational Quantum Optimization using CVaR. Barkoutsos et al. 2019.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -528,15 +528,15 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="[Optional]-Setup-token-to-run-the-experiment-on-a-real-device">
-<h3>[Optional] Setup token to run the experiment on a real device<a class="headerlink" href="#[Optional]-Setup-token-to-run-the-experiment-on-a-real-device" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>If you would like to run the experiment on a real device, you need to setup your account first.</p>
-<p>Note: If you do not store your token yet, use <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> to store it first.</p>
+<div class="section" id="[Optional]-একটি-বাস্তব-ডিভাইসে-পরীক্ষা-চালানোর-জন্য-কুপন-(টোকেন)-সেটআপ-করুন">
+<h3>[Optional] একটি বাস্তব ডিভাইসে পরীক্ষা চালানোর জন্য কুপন (টোকেন) সেটআপ করুন<a class="headerlink" href="#[Optional]-একটি-বাস্তব-ডিভাইসে-পরীক্ষা-চালানোর-জন্য-কুপন-(টোকেন)-সেটআপ-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>আপনি যদি সত্যিকারের ডিভাইসে পরীক্ষা চালাতে চান তবে আপনাকে প্রথমে আপনার অ্যাকাউন্টটি সেটআপ করতে হবে।</p>
+<p>টীকা: আপনি যদি এখনও আপনার কুপন (টোকেন) সংরক্ষণ করে না রাখেন, তবে <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> ব্যবহার করে প্রথমে তা সংরক্ষণ করে নিন।</p>
 </div>
 </div>
 <div class="section" id="সমস্যা-দৃষ্টান্ত-(ইনস্ট্যান্স)-সংজ্ঞায়িত-করুন">
 <h2>সমস্যা দৃষ্টান্ত (ইনস্ট্যান্স) সংজ্ঞায়িত করুন<a class="headerlink" href="#সমস্যা-দৃষ্টান্ত-(ইনস্ট্যান্স)-সংজ্ঞায়িত-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Here an Operator instance is created for our Hamiltonian. In this case the paulis are from an Ising Hamiltonian translated from the portfolio problem. We use a random portfolio problem for this notebook. It is straight-forward to extend this to using real financial data as illustrated here: <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a></p>
+<p>আমাদের হ্যামিলটনীয়ানের জন্য এখানে একটি অপারেটর উদাহরণ তৈরি করা হয়েছে। এক্ষেত্রে পলিসগুলি পোর্টফোলিও সমস্যা থেকে অনূদিত আইসিং হ্যামিলটোনিয়ান থেকে এসেছে। এই নোটবুকের জন্য আমরা একটি এলোমেলো পোর্টফোলিও সমস্যা ব্যবহার করি। বাস্তব অর্থনৈতিক ডাটা ব্যবহার করে একে বিস্তৃত করা বেশ সোজা-সাপ্টা, যেমনটা দেখানো হয়েছে এখানটায়: <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -620,7 +620,7 @@ Binaries
 End
 </pre></div></div>
 </div>
-<p>We define some utility methods to print the results in a nice format.</p>
+<p>ফলাফলগুলি সুন্দর বিন্যাসে মুদ্রণের জন্য আমরা কিছু উপযোগী কার্যপ্রণালী সংজ্ঞায়িত করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -653,10 +653,10 @@ End
 </div>
 </div>
 </div>
-<div class="section" id="NumPyMinimumEigensolver-(as-a-classical-reference)">
-<h2>NumPyMinimumEigensolver (as a classical reference)<a class="headerlink" href="#NumPyMinimumEigensolver-(as-a-classical-reference)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Lets solve the problem. First classically…</p>
-<p>We can now use the Operator we built above without regard to the specifics of how it was created. We set the algorithm for the NumPyMinimumEigensolver so we can have a classical reference. The problem is set for ‘ising’. Backend is not required since this is computed classically not using quantum computation. The result is returned as a dictionary.</p>
+<div class="section" id="NumPyMinimumEigensolver-(একটি-ধ্রুপদী-তথ্যসূত্র-(রেফারেন্স)-হিসাবে)">
+<h2>NumPyMinimumEigensolver (একটি ধ্রুপদী তথ্যসূত্র (রেফারেন্স) হিসাবে)<a class="headerlink" href="#NumPyMinimumEigensolver-(একটি-ধ্রুপদী-তথ্যসূত্র-(রেফারেন্স)-হিসাবে)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>সমস্যাটির সমাধান করা যাক। প্রথমে ধ্রুপদী পদ্ধতিতে…</p>
+<p>কীভাবে গঠন বা নির্মাণ (বিল্ড) হয়েছিল তার নির্দিষ্টতা বিবেচনা না করেই আমরা এখন উপরে নির্মিত অপারেটরটি ব্যবহার করতে পারি। আমরা NumPyMinimumEigensolver এর জন্য অ্যালগরিদম সেট করেছি যাতে আমাদের একটি শাস্ত্রীয় তথ্যসূত্র (রেফারেন্স) থাকতে পারে। সমস্যাটি 'ইজিং' এর জন্য সেট করা আছে।কোয়ান্টাম কম্পিউটেশনের পরিবর্তে, ধ্রুপদিভাবে হিসেব করা হয় বলে এখানে ব্যাকএন্ডের প্রয়োজন হয় না। ফলাফলটি ডিকশনারি হিসাবে ফিরে আসে</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -702,8 +702,8 @@ selection       value           probability
 </div>
 <div class="section" id="ভি-কিউ-ই-ব্যবহার-করে-সমাধান">
 <h2>ভি কিউ ই ব্যবহার করে সমাধান<a class="headerlink" href="#ভি-কিউ-ই-ব্যবহার-করে-সমাধান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We can now use the Variational Quantum Eigensolver (VQE) to solve the problem. We will specify the optimizer and variational form to be used.</p>
-<p>Note: You can switch to different backends by providing the name of backend.</p>
+<p>সমস্যাটি সমাধানের জন্য আমরা এখন ভেরিয়েশনাল কোয়ান্টাম আইজেনসলভার (ভিকিউই) ব্যবহার করতে পারি। ব্যবহারের জন্য আমরা অপটিমাইজার (অনুকূলায়ক) এবং পরিবর্তনশীল (ভ্যারিয়েশনাল) ফর্মটি নির্দিষ্ট করব।</p>
+<p>টীকা: আপনি ব্যাকএন্ডের নাম সরবরাহ করে বিভিন্ন ব্যাকএন্ডে পরিবর্তন করতে পারেন।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -756,7 +756,7 @@ selection       value           probability
 </div>
 <div class="section" id="কিউএওএ-(QAOA)-ব্যবহার-করে-সমাধান">
 <h3>কিউএওএ (QAOA) ব্যবহার করে সমাধান<a class="headerlink" href="#কিউএওএ-(QAOA)-ব্যবহার-করে-সমাধান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>We also show here a result using the Quantum Approximate Optimization Algorithm (QAOA). This is another variational algorithm and it uses an internal variational form that is created based on the problem.</p>
+<p>আমরা এখানে কোয়ান্টাম অ্যাপ্রক্সিমেইট অপ্টিমাইজেশন অ্যালগরিদম কিউএওএ (QAOA) ব্যবহার করে পাওয়া একটি ফলাফলও দেখাই। এটি আরেকটি পরিবর্তনশীল (ভ্যারিয়েশনাল) অ্যালগরিদম এবং এটি ব্যবহার করে সমস্যার ভিত্তিতে তৈরি একটি অভ্যন্তরীণ পরিবর্তনশীল (ভ্যারিয়েশনাল) ফর্ম।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -884,13 +884,13 @@ selection       value           probability
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Portfolio Optimization</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#[Optional]-Setup-token-to-run-the-experiment-on-a-real-device">[Optional] Setup token to run the experiment on a real device</a></li>
+<li><a class="reference internal" href="#">পোর্টফোলিও অপটিমাইজেশন</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a><ul>
+<li><a class="reference internal" href="#[Optional]-একটি-বাস্তব-ডিভাইসে-পরীক্ষা-চালানোর-জন্য-কুপন-(টোকেন)-সেটআপ-করুন">[Optional] একটি বাস্তব ডিভাইসে পরীক্ষা চালানোর জন্য কুপন (টোকেন) সেটআপ করুন</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#সমস্যা-দৃষ্টান্ত-(ইনস্ট্যান্স)-সংজ্ঞায়িত-করুন">সমস্যা দৃষ্টান্ত (ইনস্ট্যান্স) সংজ্ঞায়িত করুন</a></li>
-<li><a class="reference internal" href="#NumPyMinimumEigensolver-(as-a-classical-reference)">NumPyMinimumEigensolver (as a classical reference)</a></li>
+<li><a class="reference internal" href="#NumPyMinimumEigensolver-(একটি-ধ্রুপদী-তথ্যসূত্র-(রেফারেন্স)-হিসাবে)">NumPyMinimumEigensolver (একটি ধ্রুপদী তথ্যসূত্র (রেফারেন্স) হিসাবে)</a></li>
 <li><a class="reference internal" href="#ভি-কিউ-ই-ব্যবহার-করে-সমাধান">ভি কিউ ই ব্যবহার করে সমাধান</a><ul>
 <li><a class="reference internal" href="#কিউএওএ-(QAOA)-ব্যবহার-করে-সমাধান">কিউএওএ (QAOA) ব্যবহার করে সমাধান</a></li>
 </ul>

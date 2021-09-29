@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit におけるアルゴリズム入門 &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>Qiskit におけるアルゴリズム入門 &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -579,9 +586,8 @@ div.rendered_html tbody tr:hover {
 <p>このチュートリアルは Qiskit によるアルゴリズムの入門編となっており、入門にあたって様々な機能の理解に役立つ高水準の概観を提供しています。その他のチュートリアルでは、アルゴリズムやその使用方法などについて、より詳細な資料を提供します。</p>
 <section id="アルゴリズム・ライブラリの構成">
 <h2>アルゴリズム・ライブラリの構成<a class="headerlink" href="#アルゴリズム・ライブラリの構成" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Qiskit provides a number of <a class="reference external" href="https://qiskit.org/documentation/apidoc/algorithms.html">Algorithms</a> and they are grouped by category according to the task they can perform. For instance <code class="docutils literal notranslate"><span class="pre">Minimum</span> <span class="pre">Eigensolvers</span></code> to find the smallest eigen value of an operator, for example ground state energy of a chemistry Hamiltonian or a solution to an optimization problem when expressed as an Ising Hamiltonian. There are <code class="docutils literal notranslate"><span class="pre">Linear</span> <span class="pre">Solvers</span></code> for linear systems of equations problems and <code class="docutils literal notranslate"><span class="pre">Amplitude</span> <span class="pre">Estimators</span></code>
-for value estimation that can be used say in financial applications. The full set of categories can be seen in the Algorithms documentation link above.</p>
-<p>Algorithms are configurable and often part of the configuration will be in the form of smaller building blocks, of which different instances of the building block type can be given. For instance with <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, the Variational Quantum Eigensolver, it takes a trial wavefunction, in the form of a <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> and a classical optimizer among other things.</p>
+<p>Qiskit は、多くの <a class="reference external" href="https://qiskit.org/documentation/apidoc/algorithms.html">アルゴリズム</a> を提供しており、それらは適用可能なタスクに応じてカテゴリーごとにグループ分けされています。例えば、化学的なハミルトニアンの基底エネルギーや、イジング・ハミルトニアンとして表現された最適化問題の解といった、演算子の最小固有値を求めるための <code class="docutils literal notranslate"><span class="pre">Minimum</span> <span class="pre">Eigensolvers</span></code> があります。また、線形方程式問題のための <code class="docutils literal notranslate"><span class="pre">Linear</span> <span class="pre">Solvers</span></code> や、金融アプリケーションなどに用いられる推定のための <code class="docutils literal notranslate"><span class="pre">Amplitude</span> <span class="pre">Estimators</span></code> があります。カテゴリーの全セットは、上記リンク先のアルゴリズム・ドキュメンテーションで見ることができます。</p>
+<p>アルゴリズムは設定可能で、多くの場合構成の一部は小さなブロックの形になり、構成ブロック・タイプの異なるインスタンスを与えることができます。例えば、変数量子固有ソルバーである <code class="docutils literal notranslate"><span class="pre">VQE</span></code> の場合、<code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> と古典的なオプティマイザーの形で、試行波動方程式を取ります。</p>
 <p>VQE インスタンスを構築する例を見てみましょう。ここで <code class="docutils literal notranslate"><span class="pre">TwoLocal</span></code> は変分形式 (試行波動関数) 、つまりパラメーター表示されている変分可能な回路であり、 <code class="docutils literal notranslate"><span class="pre">SLSQP</span></code> は古典的なオプティマイザーです。これらは別々のインスタンスとして作成され、 VQE の構築時に渡されます。例えば、別の古典的なオプティマイザーや変分形式を試す場合には、単純に所望のインスタンスを作成して、 VQE に渡すだけでよいです。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -624,7 +630,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
 </section>
 <section id="アルゴリズムの実行">
 <h2>アルゴリズムの実行<a class="headerlink" href="#アルゴリズムの実行" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In order to run an algorithm we need to have backend, a simulator or real device, on which the circuits that comprise the algorithm can be run. So for example we can use the <code class="docutils literal notranslate"><span class="pre">aer_simulator_statevector</span></code> from the Aer provider.</p>
+<p>アルゴリズムを実行するためには、そのアルゴリズムを構成する回路の実行が可能なバックエンド、シミュレーター、実デバイスが必要です。例えば、 Aer プロバイダーの <code class="docutils literal notranslate"><span class="pre">aer_simulator_statevector</span></code> を用いることができます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -636,7 +642,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
 </pre></div>
 </div>
 </div>
-<p>Now a backend on its own does not have information on how you might want to run the circuits etc. For example how many shots, do you want a noise model, even options around transpiling the circuits. For this Qiskit Terra has a <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.utils.QuantumInstance.html">QuantumInstance</a> which is provided both the backend as well as various settings around the circuit processing and execution so for instance:</p>
+<p>この時点で、バックエンド単体はどのように回路を動作させるかといった情報をもっていません。例えば、ショット数、ノイズモデルを使うかどうか、回路のトランスパイル周りのオプションなどです。そのため、Qiskit Terraには <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.utils.QuantumInstance.html">QuantumInstance</a> があり、バックエンドだけでなく、回路の処理や実行に関する様々な設定を提供しています。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -650,7 +656,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
 </div>
 </div>
 <p>注: バックエンドを直接提供した場合は、デフォルト設定で内部的に QuantumInstance が作成されるので、アルゴリズムは常に QuantumInstance を通して動作します。</p>
-<p>So now we would be able to call the <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.compute_minimum_eigenvalue">compute_mininum_eigenvalue()</a> method. The latter is the interface of choice for the application modules, such as Nature and Optimization, in order that they can work interchangeably with any algorithm within the specific category.</p>
+<p>これで、<a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.compute_minimum_eigenvalue">compute_minimum_eigenvalue()</a> メソッドを呼び出せるようになりました。 後者は、NatureやOptimizationなどのアプリケーション・モジュール用のインターフェースです。 特定のカテゴリ内のあらゆるアルゴリズムとの相互作用を可能にするためのものです。</p>
 </section>
 <section id="完全な実例">
 <h2>完全な実例<a class="headerlink" href="#完全な実例" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -670,7 +676,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
 </pre></div>
 </div>
 </div>
-<p>So let’s build a VQE instance passing a backend using a QuantumInstance, to the constructor. Now VQE does have setters so the QuantumInstance can also be passed later.</p>
+<p>では、QuantumInstanceを使用してバックエンドをコンストラクターに渡すVQEインスタンスを構築しましょう。 VQEにはセッターがあるので、QuantumInstanceを後で渡すこともできます。</p>
 <p>注: このノートブックを実行して全く同じ出力が得られるようにするため、アルゴリズム全体で用いられている乱数生成器は algorithms_globalsで、トランスパイラーとシミュレーターは QuantimInstance を通して、それぞれシード値が固定されています。このようにする必要は必ずしもありませんが、毎回全く同じ結果を再現したい場合にはこのようにします。</p>
 <p>それでは VQE を実行して、その返り値を表示してみましょう。</p>
 <div class="nbinput docutils container">
@@ -718,9 +724,9 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
 </div>
 <p>上記の結果から、与えられた H2 分子の電子の基底エネルギーである <code class="docutils literal notranslate"><span class="pre">-1.85727</span></code> という最小固有値を得るまで、オプティマイザーが <code class="docutils literal notranslate"><span class="pre">65</span></code> 回のパラメーター評価を要したことがわかります。また、 ansatz の最適パラメーターは、 ansatz が最小値であったときの値を見ればわかります。</p>
 </section>
-<section id="Using-VQE-setting-QuantumInstance-after-Construction">
-<h2>Using VQE setting QuantumInstance after Construction<a class="headerlink" href="#Using-VQE-setting-QuantumInstance-after-Construction" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To close off let’s also create a VQE instance without supplying the QuantumInstance. We later set it as long as by the time VQE runs it has a QuantumInstance to use.</p>
+<section id="作成済みVQE-への-QuantumInstance-設定">
+<h2>作成済みVQE への QuantumInstance 設定<a class="headerlink" href="#作成済みVQE-への-QuantumInstance-設定" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>最後にQuantumInstanceを与えずにVQEインスタンスを作成してみましょう。QuantumInstanceを使用するVQEを実行する前までに、それを設定すればよいです。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -818,7 +824,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -841,7 +847,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
 <li><a class="reference internal" href="#アルゴリズム・ライブラリの構成">アルゴリズム・ライブラリの構成</a></li>
 <li><a class="reference internal" href="#アルゴリズムの実行">アルゴリズムの実行</a></li>
 <li><a class="reference internal" href="#完全な実例">完全な実例</a></li>
-<li><a class="reference internal" href="#Using-VQE-setting-QuantumInstance-after-Construction">Using VQE setting QuantumInstance after Construction</a></li>
+<li><a class="reference internal" href="#作成済みVQE-への-QuantumInstance-設定">作成済みVQE への QuantumInstance 設定</a></li>
 </ul>
 </li>
 </ul>
@@ -907,7 +913,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -930,9 +936,11 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

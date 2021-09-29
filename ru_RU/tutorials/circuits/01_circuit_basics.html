@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Circuit Basics &mdash; документация Qiskit 0.29.0</title>
+  <title>Основы цепей &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Circuit Basics</li>
+      <li>Основы цепей</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -572,12 +579,11 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits/01_circuit_basics.ipynb">tutorials/circuits/01_circuit_basics.ipynb</a>.</p>
+<p>Страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits/01_circuit_basics.ipynb">tutorials/circuits/01_circuit_basics.ipynb</a>.</p>
 </div>
-<section id="Circuit-Basics">
-<h1>Circuit Basics<a class="headerlink" href="#Circuit-Basics" title="Ссылка на этот заголовок">¶</a></h1>
-<p>Here, we provide an overview of working with Qiskit. Qiskit provides the basic building blocks necessary to program quantum computers. The fundamental unit of Qiskit is the <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_circuit">quantum circuit</a>. A basic workflow using Qiskit consists of two stages: <strong>Build</strong> and <strong>Run</strong>. <strong>Build</strong> allows you to make different quantum circuits that represent the problem you are solving, and <strong>Run</strong> that allows you to run them on different backends. After the jobs
-have been run, the data is collected and postprocessed depending on the desired output.</p>
+<section id="Основы-цепей">
+<h1>Основы цепей<a class="headerlink" href="#Основы-цепей" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Здесь мы представляем обзор работы с Qiskit. Qiskit предоставляет основные блоки, необходимые для программирования квантовых компьютеров. Фундаментальная единица Qiskit — это цепь <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_circuit">(quantum circuit)</a>. Базовый процесс работы с Qiskit состоит из двух этапов: <strong>Создание (Build)</strong> и <strong>Запуск (Run)</strong>. <strong>Build</strong> позволяет создавать различные квантовые схемы, представляющие решаемую проблему, и <strong>Run</strong>, запускающий их в разных окружениях. После выполнения задач, с окружения собираются данные и обрабатываются в зависимости от желаемого результата.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -590,9 +596,9 @@ have been run, the data is collected and postprocessed depending on the desired 
 </pre></div>
 </div>
 </div>
-<section id="Building-the-circuit">
-<h2>Building the circuit<a class="headerlink" href="#Building-the-circuit" title="Ссылка на этот заголовок">¶</a></h2>
-<p>The basic element needed for your first program is the QuantumCircuit. We begin by creating a <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> comprised of three qubits.</p>
+<section id="Построение-цепей">
+<h2>Построение цепей<a class="headerlink" href="#Построение-цепей" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Основным элементом, необходимым для первой программы, является QuantumCircuit. Начнем с создания <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, состоящего из трех кубитов.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -603,12 +609,15 @@ have been run, the data is collected and postprocessed depending on the desired 
 </pre></div>
 </div>
 </div>
-<p>After you create the circuit with its registers, you can add gates (“operations”) to manipulate the registers. As you proceed through the tutorials you will find more gates and circuits; below is an example of a quantum circuit that makes a three-qubit GHZ state</p>
+<p>После создания цепи с регистрами, можно добавлять гейты («операции») для работы с регистрами. По мере прохождения учебных материалов Вы найдете больше гейтов и цепей; ниже приведен пример квантовой цепи, которая создает состояние GHZ для трех кубитов</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = \left(|000\rangle+|111\rangle\right)/\sqrt{2}.\]</div>
-<p>To create such a state, we start with a three-qubit quantum register. By default, each qubit in the register is initialized to <span class="math notranslate nohighlight">\(|0\rangle\)</span>. To make the GHZ state, we apply the following gates: - A Hadamard gate <span class="math notranslate nohighlight">\(H\)</span> on qubit 0, which puts it into the superposition state <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>. - A controlled-Not operation (<span class="math notranslate nohighlight">\(C_{X}\)</span>) between qubit 0 and qubit 1. - A controlled-Not operation between qubit 0 and qubit 2.</p>
+<p>Чтобы создать такое состояние, необходим квантовый регистр с тремя кубитами. По умолчанию каждый кубит инициализируется в состоянии <span class="math notranslate nohighlight">\(|0\rangle\)</span>. Чтобы создать состояние GHZ, мы применяем следующее:
+- Гейт Адамара <span class="math notranslate nohighlight">\(H\)</span> на кубит с индексом 0, которая помещает его в состояние суперпозиции <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>.
+- Гейт CNOT (контролируемое логическое «НЕ») (<span class="math notranslate nohighlight">\(C_{X}\)</span>) между кубитами с адресами 0 и 1.
+- Гейт CNOT между кубитами 0 и 2.</p>
 <p>On an ideal quantum computer, the state produced by running this circuit would be the GHZ state above.</p>
-<p>In Qiskit, operations can be added to the circuit one by one, as shown below.</p>
+<p>В Qiskit операции можно добавить к цепи один за другим, как показано ниже.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -635,9 +644,9 @@ have been run, the data is collected and postprocessed depending on the desired 
 </pre></div></div>
 </div>
 </section>
-<section id="Visualize-Circuit">
-<h2>Visualize Circuit<a class="headerlink" href="#Visualize-Circuit" title="Ссылка на этот заголовок">¶</a></h2>
-<p>You can visualize your circuit using Qiskit <code class="docutils literal notranslate"><span class="pre">QuantumCircuit.draw()</span></code>, which plots the circuit in the form found in many textbooks.</p>
+<section id="Визуализация-цепи">
+<h2>Визуализация цепи<a class="headerlink" href="#Визуализация-цепи" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Вы можете визуализировать свою схему с помощью метода Qiskit <code class="docutils literal notranslate"><span class="pre">QuantumCircuit.draw()</span></code>, который выводит схему в форме, которую можно найти во многих пособиях.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -654,17 +663,17 @@ have been run, the data is collected and postprocessed depending on the desired 
 <div class="output_area docutils container">
 <img alt="../../_images/tutorials_circuits_01_circuit_basics_7_0.svg" src="../../_images/tutorials_circuits_01_circuit_basics_7_0.svg" /></div>
 </div>
-<p>In this circuit, the qubits are put in order, with qubit zero at the top and qubit two at the bottom. The circuit is read left to right (meaning that gates that are applied earlier in the circuit show up further to the left).</p>
-<div class="alert alert-block alert-info"><p>When representing the state of a multi-qubit system, the tensor order used in Qiskit is different than that used in most physics textbooks. Suppose there are <span class="math notranslate nohighlight">\(n\)</span> qubits, and qubit <span class="math notranslate nohighlight">\(j\)</span> is labeled as <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit uses an ordering in which the <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> qubit is on the left side of the tensor product, so that the basis vectors are labeled as <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
-<p>For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as <span class="math notranslate nohighlight">\(|100\rangle\)</span>, whereas many physics textbooks would represent it as <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
-<p>This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) operation with qubit 0 being the control and qubit 1 being the target as</p>
+<p>В данной схеме кубиты нумеруются сверху вниз, начиная с нулевого. Цепь читается слева направо, то есть гейты, которые применяются раньше других, расположены левее.</p>
+<div class="alert alert-block alert-info"><p>При представлении состояния многокубитной системы, порядок, используемый в Qiskit, отличается от того, что используется в большинстве пособий по физике. Предположим, что имеется <span class="math notranslate nohighlight">\(n\)</span> кубитов, и кубит <span class="math notranslate nohighlight">\(j\)</span> отмечен как <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit использует порядок, в котором кубит <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> находится в левой части тензорного произведения так, что базисные векторы отмечены как <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
+<p>Например, если нулевой кубит находится в состоянии 0, 1-й кубит также находится в состоянии 0, а кубит 2 находится в состоянии 1, Qiskit представит это состояние как <span class="math notranslate nohighlight">\(|100\rangle\)</span>, в то время как многие книги по физике будут представлять его как <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
+<p>Это различие в обозначении влияет на то, как многокубитные операции представляются с помощью матриц. Например, Qiskit представляет управляемую операцию X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) с нулевым контролирующим кубитом и 1-м целевым как</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_X = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\  0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\\end{pmatrix}.\end{split}\]</div>
 </div></section>
-<section id="Simulating-circuits">
-<h2>Simulating circuits<a class="headerlink" href="#Simulating-circuits" title="Ссылка на этот заголовок">¶</a></h2>
-<p>To simulate a circuit we use the quant_info module in Qiskit. This simulator returns the quantum state, which is a complex vector of dimensions <span class="math notranslate nohighlight">\(2^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of qubits (so be careful using this as it will quickly get too large to run on your machine).</p>
-<p>There are two stages to the simulator. The first is to set the input state and the second to evolve the state by the quantum circuit.</p>
+<section id="Симуляция-цепи">
+<h2>Симуляция цепи<a class="headerlink" href="#Симуляция-цепи" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Для симуляции цепи мы используем модуль quant_info Qiskit. Данный симулятор возвращает квантовое состояние, являющееся комплексным вектором с кол-вом измерений <span class="math notranslate nohighlight">\(2^n\)</span>, где <span class="math notranslate nohighlight">\(n\)</span> — это количество кубитов (будьте осторожны, так как схема может легко стать слишком сложной для запуска на вашем компьютере).</p>
+<p>Симуляция имеет два этапа. Первый — установить состояние ввода, а второй - постепенно изменять состояние в соответствии с квантовой цепью.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -756,8 +765,8 @@ $$</div></div>
 <img alt="../../_images/tutorials_circuits_01_circuit_basics_15_0.svg" src="../../_images/tutorials_circuits_01_circuit_basics_15_0.svg" /></div>
 </div>
 </section>
-<section id="Unitary-representation-of-a-circuit">
-<h2>Unitary representation of a circuit<a class="headerlink" href="#Unitary-representation-of-a-circuit" title="Ссылка на этот заголовок">¶</a></h2>
+<section id="Унитарное-представление-цепи">
+<h2>Унитарное представление цепи<a class="headerlink" href="#Унитарное-представление-цепи" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Qiskit’s quant_info module also has an operator method which can be used to make a unitary operator for the circuit. This calculates the <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span> matrix representing the quantum circuit.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -806,19 +815,19 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
 </pre></div></div>
 </div>
 </section>
-<section id="OpenQASM-backend">
-<h2>OpenQASM backend<a class="headerlink" href="#OpenQASM-backend" title="Ссылка на этот заголовок">¶</a></h2>
-<p>The simulators above are useful because they provide information about the state output by the ideal circuit and the matrix representation of the circuit. However, a real experiment terminates by <em>measuring</em> each qubit (usually in the computational <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span> basis). Without measurement, we cannot gain information about the state. Measurements cause the quantum system to collapse into classical bits.</p>
-<p>For example, suppose we make independent measurements on each qubit of the three-qubit GHZ state</p>
+<section id="Окружение-OpenQASM">
+<h2>Окружение OpenQASM<a class="headerlink" href="#Окружение-OpenQASM" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Приведенные выше симуляторы полезны, поскольку они предоставляют информацию о результирующем состоянии с помощью идеальной цепи и ее матричного представления. Однако, реальный эксперимент заканчивается <em>измерением</em> каждого кубита (обычно в вычислительном базисе <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span>). Без измерения мы не можем получить информацию о состоянии. Измерения заставляют квантовую систему схлопываться в классические биты.</p>
+<p>Например, предположим, что мы производим независимые друг от друга измерения каждого кубита состояния GHZ из трех кубитов</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = (|000\rangle +|111\rangle)/\sqrt{2},\]</div>
-<p>and let <span class="math notranslate nohighlight">\(xyz\)</span> denote the bitstring that results. Recall that, under the qubit labeling used by Qiskit, <span class="math notranslate nohighlight">\(x\)</span> would correspond to the outcome on qubit 2, <span class="math notranslate nohighlight">\(y\)</span> to the outcome on qubit 1, and <span class="math notranslate nohighlight">\(z\)</span> to the outcome on qubit 0.</p>
-<div class="alert alert-block alert-info"><p>Note: This representation of the bitstring puts the most significant bit (MSB) on the left, and the least significant bit (LSB) on the right. This is the standard ordering of binary bitstrings. We order the qubits in the same way (qubit representing the MSB has index 0), which is why Qiskit uses a non-standard tensor product order.</p>
-</div><p>Recall the probability of obtaining outcome <span class="math notranslate nohighlight">\(xyz\)</span> is given by</p>
+<p>и пусть <span class="math notranslate nohighlight">\(xyz\)</span> - результирующая строка из нулей и единиц. Напомним, что в системе упорядочивания, используемой Qiskit, <span class="math notranslate nohighlight">\(x\)</span> будет соответствовать результату на втором кубите, <span class="math notranslate nohighlight">\(y\)</span> - результату на 1-м кубите, и <span class="math notranslate nohighlight">\(z\)</span> - на нулевом.</p>
+<div class="alert alert-block alert-info"><p>Примечание: Такое представление битовой строки делает наиболее значительный бит (MSB - most significant bit) слева, а наименее значительный бит (LSB - least significant bit) - справа. Это стандартный порядок бинарных битовых строк. Мы упорядочиваем кубиты аналогичным образом (кубит, представляющий MSB, имеет индекс 0), поэтому Qiskit использует нестандартный порядок тензорного произведения.</p>
+</div><p>Вероятность получения одного конкретного результата <span class="math notranslate nohighlight">\(xyz\)</span> равна</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}\]</div>
-<p>and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.</p>
-<p>To simulate a circuit that includes measurement, we need to add measurements to the original circuit above, and use a different Aer backend.</p>
+<p>в этом случае вероятности получения 000 или 111 в состоянии GHZ равны 1/2.</p>
+<p>Для симуляции цепи, включающей измерения, необходимо добавить измерения в оригинальную схему, представленную выше, и использовать другое окружение Aer.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -847,8 +856,8 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
 <div class="output_area docutils container">
 <img alt="../../_images/tutorials_circuits_01_circuit_basics_21_0.svg" src="../../_images/tutorials_circuits_01_circuit_basics_21_0.svg" /></div>
 </div>
-<p>This circuit adds a classical register, and three measurements that are used to map the outcome of qubits to the classical bits.</p>
-<p>To simulate this circuit, we use the <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> in Qiskit Aer. Each run of this circuit will yield either the bitstring 000 or 111. To build up statistics about the distribution of the bitstrings (to, e.g., estimate <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span>), we need to repeat the circuit many times. The number of times the circuit is repeated can be specified in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function, via the <code class="docutils literal notranslate"><span class="pre">shots</span></code> keyword.</p>
+<p>Эта схема добавляет классические регистры и три измерения, которые используются для сопоставления результатов кубитов с классическими битами.</p>
+<p>Чтобы симулировать эту цепь, мы используем <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> из Qiskit Aer. Каждый запуск даст либо строку 000, либо 111. Чтобы собрать статистику о распределении битовых строк (т.e. оценить <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span>), нам нужно повторить запуск схемы множество раз. Количество повторений запусков может быть указано в функции <code class="docutils literal notranslate"><span class="pre">execute</span></code>, при помощи именованного параметра <code class="docutils literal notranslate"><span class="pre">shots</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -915,7 +924,7 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
 <div class="output_area docutils container">
 <img alt="../../_images/tutorials_circuits_01_circuit_basics_27_0.svg" src="../../_images/tutorials_circuits_01_circuit_basics_27_0.svg" /></div>
 </div>
-<p>The estimated outcome probabilities <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{Pr}(111)\)</span> are computed by taking the aggregate counts and dividing by the number of shots (times the circuit was repeated). Try changing the <code class="docutils literal notranslate"><span class="pre">shots</span></code> keyword in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function and see how the estimated probabilities change.</p>
+<p>Рассчитанные вероятности <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> и <span class="math notranslate nohighlight">\(\mathrm{Pr}(111)\)</span> вычисляются путем деления количества раз, когда был получен конкретный результат на количество запусков (повторений). Попробуйте изменить значения параметра <code class="docutils literal notranslate"><span class="pre">shots</span></code> в функции <code class="docutils literal notranslate"><span class="pre">execute</span></code> и посмотрите, как изменяются рассчитанные вероятности.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -959,7 +968,7 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -978,12 +987,12 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Circuit Basics</a><ul>
-<li><a class="reference internal" href="#Building-the-circuit">Building the circuit</a></li>
-<li><a class="reference internal" href="#Visualize-Circuit">Visualize Circuit</a></li>
-<li><a class="reference internal" href="#Simulating-circuits">Simulating circuits</a></li>
-<li><a class="reference internal" href="#Unitary-representation-of-a-circuit">Unitary representation of a circuit</a></li>
-<li><a class="reference internal" href="#OpenQASM-backend">OpenQASM backend</a></li>
+<li><a class="reference internal" href="#">Основы цепей</a><ul>
+<li><a class="reference internal" href="#Построение-цепей">Построение цепей</a></li>
+<li><a class="reference internal" href="#Визуализация-цепи">Визуализация цепи</a></li>
+<li><a class="reference internal" href="#Симуляция-цепи">Симуляция цепи</a></li>
+<li><a class="reference internal" href="#Унитарное-представление-цепи">Унитарное представление цепи</a></li>
+<li><a class="reference internal" href="#Окружение-OpenQASM">Окружение OpenQASM</a></li>
 </ul>
 </li>
 </ul>
@@ -1049,7 +1058,7 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1072,9 +1081,11 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

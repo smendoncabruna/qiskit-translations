@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Clifford
-=============================
+﻿Clifford
+========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Clifford
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Clifford.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Clifford.adjoint
       ~Clifford.compose
       ~Clifford.conjugate
@@ -35,21 +34,15 @@
       ~Clifford.to_matrix
       ~Clifford.to_operator
       ~Clifford.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Clifford.destabilizer
-      ~Clifford.dim
-      ~Clifford.num_qubits
-      ~Clifford.qargs
-      ~Clifford.settings
-      ~Clifford.stabilizer
-      ~Clifford.table
-   
-   
+   .. autoattribute:: destabilizer
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: settings
+   .. autoattribute:: stabilizer
+   .. autoattribute:: table

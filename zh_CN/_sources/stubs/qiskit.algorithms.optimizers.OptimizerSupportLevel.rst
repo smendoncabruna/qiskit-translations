@@ -1,25 +1,17 @@
-﻿qiskit.algorithms.optimizers.OptimizerSupportLevel
-==================================================
+OptimizerSupportLevel
+=====================
 
 .. currentmodule:: qiskit.algorithms.optimizers
 
 .. autoclass:: OptimizerSupportLevel
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OptimizerSupportLevel.ignored
-      ~OptimizerSupportLevel.not_supported
-      ~OptimizerSupportLevel.required
-      ~OptimizerSupportLevel.supported
-   
-   
+   .. autoattribute:: ignored
+   .. autoattribute:: not_supported
+   .. autoattribute:: required
+   .. autoattribute:: supported

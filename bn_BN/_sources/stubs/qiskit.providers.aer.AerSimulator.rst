@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.AerSimulator
-=================================
+﻿AerSimulator
+============
 
 .. currentmodule:: qiskit.providers.aer
 
 .. autoclass:: AerSimulator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AerSimulator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AerSimulator.available_devices
       ~AerSimulator.available_methods
       ~AerSimulator.clear_options
@@ -27,16 +26,10 @@
       ~AerSimulator.set_option
       ~AerSimulator.set_options
       ~AerSimulator.status
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AerSimulator.options
-      ~AerSimulator.version
-   
-   
+   .. autoattribute:: options
+   .. autoattribute:: version

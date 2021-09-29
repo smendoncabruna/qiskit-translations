@@ -1,49 +1,19 @@
-﻿qiskit.circuit.library.DCXGate
-==============================
+﻿DCXGate
+=======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: DCXGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~DCXGate.__init__
-      ~DCXGate.add_decomposition
-      ~DCXGate.assemble
-      ~DCXGate.broadcast_arguments
-      ~DCXGate.c_if
-      ~DCXGate.control
-      ~DCXGate.copy
-      ~DCXGate.inverse
-      ~DCXGate.is_parameterized
-      ~DCXGate.mirror
-      ~DCXGate.power
-      ~DCXGate.qasm
-      ~DCXGate.repeat
-      ~DCXGate.reverse_ops
-      ~DCXGate.soft_compare
-      ~DCXGate.to_matrix
-      ~DCXGate.validate_parameter
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DCXGate.decompositions
-      ~DCXGate.definition
-      ~DCXGate.duration
-      ~DCXGate.label
-      ~DCXGate.params
-      ~DCXGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

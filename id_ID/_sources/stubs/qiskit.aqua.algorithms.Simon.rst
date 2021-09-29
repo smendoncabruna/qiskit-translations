@@ -1,33 +1,26 @@
-﻿qiskit.aqua.algorithms.Simon
-============================
+﻿Simon
+=====
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: Simon
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Simon.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Simon.construct_circuit
       ~Simon.run
       ~Simon.set_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Simon.backend
-      ~Simon.quantum_instance
-      ~Simon.random
-   
-   
+   .. autoattribute:: backend
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random

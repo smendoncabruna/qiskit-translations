@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hamiltonian and Gate Characterization &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>Hamiltonian 與量子閘的校準 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Hamiltonian and Gate Characterization</li>
+      <li>Hamiltonian 與量子閘的校準</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -574,8 +581,8 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">備註</p>
 <p>此頁面是從 <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/noise/1_hamiltonian_and_gate_characterization.ipynb">tutorials/noise/1_hamiltonian_and_gatew_characterization.ipynb</a> 所產生的。</p>
 </div>
-<section id="Hamiltonian-and-Gate-Characterization">
-<h1>Hamiltonian and Gate Characterization<a class="headerlink" href="#Hamiltonian-and-Gate-Characterization" title="本標題的永久連結">¶</a></h1>
+<section id="Hamiltonian-與量子閘的校準">
+<h1>Hamiltonian 與量子閘的校準<a class="headerlink" href="#Hamiltonian-與量子閘的校準" title="本標題的永久連結">¶</a></h1>
 <p>此記事本示範如何在 Qiskit Ignis 中使用 <code class="docutils literal notranslate"><span class="pre">characterization.hamiltonian</span></code> 和 <code class="docutils literal notranslate"><span class="pre">characterization.gates</span></code> 模組。 若想知道更多理論背景，請參閱 <a class="reference external" href="https://github.com/Qiskit/qiskit-community-tutorials/tree/master/ignis">Ignis Community Notebook</a>。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -598,8 +605,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Measuring-ZZ">
-<h2>Measuring ZZ<a class="headerlink" href="#Measuring-ZZ" title="本標題的永久連結">¶</a></h2>
+<section id="量測-ZZ-交互作用">
+<h2>量測 ZZ 交互作用<a class="headerlink" href="#量測-ZZ-交互作用" title="本標題的永久連結">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">characterization.hamiltonian.zz_circuits</span></code> 模組會建置電路來執行一對量子位元間的 ZZ 量測實驗。這裡， ZZ 被定義為 <span class="math notranslate nohighlight">\(|11\rangle\)</span> 量子態的能階偏移：</p>
 <div class="math notranslate nohighlight">
 \[H=\omega_0 (1-\sigma_{Z,0})/2 +\omega_1 (1-\sigma_{Z,1})/2 + \xi |11\rangle\langle 11|\]</div>
@@ -955,7 +962,7 @@ Angle error between X and Y: 0.096159 rads
 </section>
 <section id="CX-閘的振幅誤差量測">
 <h2>CX 閘的振幅誤差量測<a class="headerlink" href="#CX-閘的振幅誤差量測" title="本標題的永久連結">¶</a></h2>
-<p>This looks for a rotation error in the CX gate, i.e. if the gate is actually <span class="math notranslate nohighlight">\(CR_x(\pi/2+\delta)\)</span> measure <span class="math notranslate nohighlight">\(\delta\)</span>. This is very similar to the single qubit amplitude error calibration except we need to specify a control qubit (which is set to be in state <span class="math notranslate nohighlight">\(|1\rangle\)</span>) and the rotation is <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>這會在 CX 閘中尋找旋轉誤差，也就是說，如果此閘實際上是 <span class="math notranslate nohighlight">\(CR_x(\pi/2+\delta)\)</span> 測量 <span class="math notranslate nohighlight">\(\delta\)</span>。 這與單量子位元振幅誤差校準非常相似，除了我們需要指定一個控制量子位元（其被設定處於量子態 <span class="math notranslate nohighlight">\(|1\rangle\)</span>）之外，且其旋轉則為 <span class="math notranslate nohighlight">\(\pi\)</span>。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1230,7 +1237,7 @@ Rotation Error on CX: 0.099402 rads
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1249,8 +1256,8 @@ Rotation Error on CX: 0.099402 rads
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Hamiltonian and Gate Characterization</a><ul>
-<li><a class="reference internal" href="#Measuring-ZZ">Measuring ZZ</a></li>
+<li><a class="reference internal" href="#">Hamiltonian 與量子閘的校準</a><ul>
+<li><a class="reference internal" href="#量測-ZZ-交互作用">量測 ZZ 交互作用</a></li>
 <li><a class="reference internal" href="#單一量子位元閘的振幅誤差量測">單一量子位元閘的振幅誤差量測</a></li>
 <li><a class="reference internal" href="#單一量子位元閘的角度誤差量測">單一量子位元閘的角度誤差量測</a></li>
 <li><a class="reference internal" href="#CX-閘的振幅誤差量測">CX 閘的振幅誤差量測</a></li>
@@ -1321,7 +1328,7 @@ Rotation Error on CX: 0.099402 rads
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1344,9 +1351,11 @@ Rotation Error on CX: 0.099402 rads
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.state\_fns.CircuitStateFn
-===============================================
+﻿CircuitStateFn
+==============
 
 .. currentmodule:: qiskit.aqua.operators.state_fns
 
 .. autoclass:: CircuitStateFn
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CircuitStateFn.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CircuitStateFn.add
       ~CircuitStateFn.adjoint
       ~CircuitStateFn.assign_parameters
@@ -40,21 +39,15 @@
       ~CircuitStateFn.to_matrix
       ~CircuitStateFn.to_matrix_op
       ~CircuitStateFn.traverse
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CircuitStateFn.ENABLE_DEPRECATION
-      ~CircuitStateFn.INDENTATION
-      ~CircuitStateFn.coeff
-      ~CircuitStateFn.is_measurement
-      ~CircuitStateFn.num_qubits
-      ~CircuitStateFn.parameters
-      ~CircuitStateFn.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: is_measurement
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.chemistry.drivers.PyQuanteDriver &mdash; Qiskit 0.29.0 文档</title>
+  <title>PyQuanteDriver &mdash; Qiskit 0.30.0 文档</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="qiskit.chemistry.drivers.PySCFDriver" href="qiskit.chemistry.drivers.PySCFDriver.html" />
-    <link rel="prev" title="qiskit.chemistry.drivers.PSI4Driver" href="qiskit.chemistry.drivers.PSI4Driver.html" /> 
+    <link rel="next" title="qiskit.chemistry.drivers.PyQuanteDriver.run" href="qiskit.chemistry.drivers.PyQuanteDriver.run.html" />
+    <link rel="prev" title="qiskit.chemistry.drivers.PSI4Driver.run" href="qiskit.chemistry.drivers.PSI4Driver.run.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.chemistry.drivers.html">Chemistry Drivers (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.chemistry.drivers</span></code>)</a> &gt;</li>
         
-      <li>qiskit.chemistry.drivers.PyQuanteDriver</li>
+      <li>PyQuanteDriver</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-chemistry-drivers-pyquantedriver">
-<h1>qiskit.chemistry.drivers.PyQuanteDriver<a class="headerlink" href="#qiskit-chemistry-drivers-pyquantedriver" title="永久链接至标题">¶</a></h1>
+  <section id="pyquantedriver">
+<h1>PyQuanteDriver<a class="headerlink" href="#pyquantedriver" title="永久链接至标题">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.chemistry.drivers.PyQuanteDriver">
 <em class="property">class </em><code class="sig-name descname">PyQuanteDriver</code><span class="sig-paren">(</span><em class="sig-param">atoms='H 0.0 0.0 0.0; H 0.0 0.0 0.735'</em>, <em class="sig-param">units=&lt;UnitsType.ANGSTROM: 'Angstrom'&gt;</em>, <em class="sig-param">charge=0</em>, <em class="sig-param">multiplicity=1</em>, <em class="sig-param">basis=&lt;BasisType.BSTO3G: 'sto3g'&gt;</em>, <em class="sig-param">hf_method=&lt;HFMethodType.RHF: 'rhf'&gt;</em>, <em class="sig-param">tol=1e-08</em>, <em class="sig-param">maxiters=100</em>, <em class="sig-param">molecule=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/drivers/pyquanted/pyquantedriver.html#PyQuanteDriver"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver" title="永久链接至目标">¶</a></dt>
-<dd><p>Qiskit chemistry driver using the PyQuante2 library.</p>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.chemistry.drivers.fermionic_driver.FermionicDriver</span></code></p>
+<p>Qiskit chemistry driver using the PyQuante2 library.</p>
 <p>See <a class="reference external" href="https://github.com/rpmuller/pyquante2">https://github.com/rpmuller/pyquante2</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
@@ -363,37 +371,6 @@ to be updated to compute different points.</p></li>
 <dd class="field-even"><p><a class="reference internal" href="qiskit.chemistry.QiskitChemistryError.html#qiskit.chemistry.QiskitChemistryError" title="qiskit.chemistry.QiskitChemistryError"><strong>QiskitChemistryError</strong></a> – Invalid Input</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.chemistry.drivers.PyQuanteDriver.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">atoms='H 0.0 0.0 0.0; H 0.0 0.0 0.735'</em>, <em class="sig-param">units=&lt;UnitsType.ANGSTROM: 'Angstrom'&gt;</em>, <em class="sig-param">charge=0</em>, <em class="sig-param">multiplicity=1</em>, <em class="sig-param">basis=&lt;BasisType.BSTO3G: 'sto3g'&gt;</em>, <em class="sig-param">hf_method=&lt;HFMethodType.RHF: 'rhf'&gt;</em>, <em class="sig-param">tol=1e-08</em>, <em class="sig-param">maxiters=100</em>, <em class="sig-param">molecule=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/drivers/pyquanted/pyquantedriver.html#PyQuanteDriver.__init__"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.__init__" title="永久链接至目标">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">参数</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>atoms</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Atoms list or string separated by semicolons or line breaks. Each element in the
-list is an atom followed by position e.g. <cite>H 0.0 0.0 0.5</cite>. The preceding example
-shows the <cite>XYZ</cite> format for position but <cite>Z-Matrix</cite> format is supported too here.</p></li>
-<li><p><strong>units</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">UnitsType</span></code>) – Angstrom or Bohr</p></li>
-<li><p><strong>charge</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Charge on the molecule</p></li>
-<li><p><strong>multiplicity</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Spin multiplicity (2S+1)</p></li>
-<li><p><strong>basis</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">BasisType</span></code>) – Basis set; sto3g, 6-31g or 6-31g**</p></li>
-<li><p><strong>hf_method</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HFMethodType</span></code>) – Hartree-Fock Method type</p></li>
-<li><p><strong>tol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Convergence tolerance see pyquante2.scf hamiltonians and iterators</p></li>
-<li><p><strong>maxiters</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Convergence max iterations see pyquante2.scf hamiltonians and iterators,
-has a min. value of 1.</p></li>
-<li><p><strong>molecule</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Molecule</span></code>]) – A driver independent Molecule definition instance may be provided. When
-a molecule is supplied the <cite>atoms</cite>, <cite>units</cite>, <cite>charge</cite> and <cite>multiplicity</cite> parameters
-are all ignored as the Molecule instance now defines these instead. The Molecule
-object is read when the driver is run and converted to the driver dependent
-configuration for the computation. This allows, for example, the Molecule geometry
-to be updated to compute different points.</p></li>
-</ul>
-</dd>
-<dt class="field-even">引发</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.chemistry.QiskitChemistryError.html#qiskit.chemistry.QiskitChemistryError" title="qiskit.chemistry.QiskitChemistryError"><strong>QiskitChemistryError</strong></a> – Invalid Input</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -401,43 +378,15 @@ to be updated to compute different points.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.drivers.PyQuanteDriver.__init__" title="qiskit.chemistry.drivers.PyQuanteDriver.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([atoms, units, charge, …])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type atoms</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.drivers.PyQuanteDriver.run" title="qiskit.chemistry.drivers.PyQuanteDriver.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.chemistry.drivers.PyQuanteDriver.run.html#qiskit.chemistry.drivers.PyQuanteDriver.run" title="qiskit.chemistry.drivers.PyQuanteDriver.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
 <td><p>Runs driver to produce a QMolecule output.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.drivers.PyQuanteDriver.basis" title="qiskit.chemistry.drivers.PyQuanteDriver.basis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">basis</span></code></a></p></td>
-<td><p>return basis</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.drivers.PyQuanteDriver.hf_method" title="qiskit.chemistry.drivers.PyQuanteDriver.hf_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hf_method</span></code></a></p></td>
-<td><p>return Hartree-Fock method</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.drivers.PyQuanteDriver.molecule" title="qiskit.chemistry.drivers.PyQuanteDriver.molecule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">molecule</span></code></a></p></td>
-<td><p>return molecule</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.drivers.PyQuanteDriver.supports_molecule" title="qiskit.chemistry.drivers.PyQuanteDriver.supports_molecule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supports_molecule</span></code></a></p></td>
-<td><p>True for derived classes that support Molecule.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.chemistry.drivers.PyQuanteDriver.basis">
-<em class="property">property </em><code class="sig-name descname">basis</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.basis" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">basis</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.basis" title="永久链接至目标">¶</a></dt>
 <dd><p>return basis</p>
 <dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
@@ -446,9 +395,9 @@ to be updated to compute different points.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.chemistry.drivers.PyQuanteDriver.hf_method">
-<em class="property">property </em><code class="sig-name descname">hf_method</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.hf_method" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">hf_method</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.hf_method" title="永久链接至目标">¶</a></dt>
 <dd><p>return Hartree-Fock method</p>
 <dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
@@ -457,9 +406,9 @@ to be updated to compute different points.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.chemistry.drivers.PyQuanteDriver.molecule">
-<em class="property">property </em><code class="sig-name descname">molecule</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.molecule" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">molecule</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.molecule" title="永久链接至目标">¶</a></dt>
 <dd><p>return molecule</p>
 <dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
@@ -468,23 +417,9 @@ to be updated to compute different points.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.chemistry.drivers.PyQuanteDriver.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/drivers/pyquanted/pyquantedriver.html#PyQuanteDriver.run"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.run" title="永久链接至目标">¶</a></dt>
-<dd><p>Runs driver to produce a QMolecule output.</p>
-<dl class="field-list simple">
-<dt class="field-odd">返回类型</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QMolecule</span></code></p>
-</dd>
-<dt class="field-even">返回</dt>
-<dd class="field-even"><p>A QMolecule containing the molecular data.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.chemistry.drivers.PyQuanteDriver.supports_molecule">
-<em class="property">property </em><code class="sig-name descname">supports_molecule</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.supports_molecule" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">supports_molecule</code><a class="headerlink" href="#qiskit.chemistry.drivers.PyQuanteDriver.supports_molecule" title="永久链接至目标">¶</a></dt>
 <dd><p>True for derived classes that support Molecule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
@@ -508,10 +443,10 @@ to be updated to compute different points.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.chemistry.drivers.PySCFDriver.html" class="btn btn-neutral float-right" title="qiskit.chemistry.drivers.PySCFDriver" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.chemistry.drivers.PyQuanteDriver.run.html" class="btn btn-neutral float-right" title="qiskit.chemistry.drivers.PyQuanteDriver.run" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.chemistry.drivers.PSI4Driver.html" class="btn btn-neutral" title="qiskit.chemistry.drivers.PSI4Driver" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.chemistry.drivers.PSI4Driver.run.html" class="btn btn-neutral" title="qiskit.chemistry.drivers.PSI4Driver.run" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -525,7 +460,7 @@ to be updated to compute different points.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最后更新于 2021/08/13.
+      最后更新于 2021/09/23.
 
     </p>
   </div>
@@ -544,7 +479,7 @@ to be updated to compute different points.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.chemistry.drivers.PyQuanteDriver</a></li>
+<li><a class="reference internal" href="#">PyQuanteDriver</a></li>
 </ul>
 
             </div>
@@ -609,7 +544,7 @@ to be updated to compute different points.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -632,9 +567,11 @@ to be updated to compute different points.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

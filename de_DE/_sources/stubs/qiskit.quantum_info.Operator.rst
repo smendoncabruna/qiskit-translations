@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Operator
-=============================
+﻿Operator
+========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Operator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Operator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Operator.adjoint
       ~Operator.compose
       ~Operator.conjugate
@@ -32,21 +31,15 @@
       ~Operator.to_instruction
       ~Operator.to_operator
       ~Operator.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Operator.atol
-      ~Operator.data
-      ~Operator.dim
-      ~Operator.num_qubits
-      ~Operator.qargs
-      ~Operator.rtol
-      ~Operator.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

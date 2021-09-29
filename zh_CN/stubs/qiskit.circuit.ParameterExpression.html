@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.circuit.ParameterExpression &mdash; Qiskit 0.29.0 文档</title>
+  <title>ParameterExpression &mdash; Qiskit 0.30.0 文档</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="qiskit.circuit.random.random_circuit" href="qiskit.circuit.random.random_circuit.html" />
-    <link rel="prev" title="qiskit.circuit.ParameterVector" href="qiskit.circuit.ParameterVector.html" /> 
+    <link rel="next" title="qiskit.circuit.ParameterExpression.arccos" href="qiskit.circuit.ParameterExpression.arccos.html" />
+    <link rel="prev" title="qiskit.circuit.ParameterVector.resize" href="qiskit.circuit.ParameterVector.resize.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/circuit.html">Quantum Circuits (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.circuit</span></code>)</a> &gt;</li>
         
-      <li>qiskit.circuit.ParameterExpression</li>
+      <li>ParameterExpression</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-circuit-parameterexpression">
-<h1>qiskit.circuit.ParameterExpression<a class="headerlink" href="#qiskit-circuit-parameterexpression" title="永久链接至标题">¶</a></h1>
+  <section id="parameterexpression">
+<h1>ParameterExpression<a class="headerlink" href="#parameterexpression" title="永久链接至标题">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.circuit.ParameterExpression">
 <em class="property">class </em><code class="sig-name descname">ParameterExpression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol_map</span></em>, <em class="sig-param"><span class="n">expr</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression" title="永久链接至目标">¶</a></dt>
-<dd><p>ParameterExpression class to enable creating expressions of Parameters.</p>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>ParameterExpression class to enable creating expressions of Parameters.</p>
 <p>Create a new <a class="reference internal" href="#qiskit.circuit.ParameterExpression" title="qiskit.circuit.ParameterExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></a>.</p>
 <p>Not intended to be called directly, but to be instantiated via operations
 on other <a class="reference internal" href="qiskit.circuit.Parameter.html#qiskit.circuit.Parameter" title="qiskit.circuit.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> or <a class="reference internal" href="#qiskit.circuit.ParameterExpression" title="qiskit.circuit.ParameterExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></a> objects.</p>
@@ -346,23 +354,6 @@ serving as their placeholder in expr.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol_map</span></em>, <em class="sig-param"><span class="n">expr</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.__init__"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.__init__" title="永久链接至目标">¶</a></dt>
-<dd><p>Create a new <a class="reference internal" href="#qiskit.circuit.ParameterExpression" title="qiskit.circuit.ParameterExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></a>.</p>
-<p>Not intended to be called directly, but to be instantiated via operations
-on other <a class="reference internal" href="qiskit.circuit.Parameter.html#qiskit.circuit.Parameter" title="qiskit.circuit.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> or <a class="reference internal" href="#qiskit.circuit.ParameterExpression" title="qiskit.circuit.ParameterExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></a> objects.</p>
-<dl class="field-list simple">
-<dt class="field-odd">参数</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>symbol_map</strong> (<em>Dict</em><em>[</em><a class="reference internal" href="qiskit.circuit.Parameter.html#qiskit.circuit.Parameter" title="qiskit.circuit.Parameter"><em>Parameter</em></a><em>, </em><em>[</em><a class="reference internal" href="#qiskit.circuit.ParameterExpression" title="qiskit.circuit.ParameterExpression"><em>ParameterExpression</em></a><em>, </em><em>float</em><em>, or </em><em>int</em><em>]</em><em>]</em>) – Mapping of <a class="reference internal" href="qiskit.circuit.Parameter.html#qiskit.circuit.Parameter" title="qiskit.circuit.Parameter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameter</span></code></a> instances to the <code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.Symbol</span></code>
-serving as their placeholder in expr.</p></li>
-<li><p><strong>expr</strong> (<em>sympy.Expr</em>) – Expression of <code class="xref py py-class docutils literal notranslate"><span class="pre">sympy.Symbol</span></code> s.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -370,235 +361,60 @@ serving as their placeholder in expr.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.__init__" title="qiskit.circuit.ParameterExpression.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(symbol_map, expr)</p></td>
-<td><p>Create a new <a class="reference internal" href="#qiskit.circuit.ParameterExpression" title="qiskit.circuit.ParameterExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.arccos" title="qiskit.circuit.ParameterExpression.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.arccos.html#qiskit.circuit.ParameterExpression.arccos" title="qiskit.circuit.ParameterExpression.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a></p></td>
 <td><p>Arccos of a ParameterExpression</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.arcsin" title="qiskit.circuit.ParameterExpression.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.arcsin.html#qiskit.circuit.ParameterExpression.arcsin" title="qiskit.circuit.ParameterExpression.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a></p></td>
 <td><p>Arcsin of a ParameterExpression</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.arctan" title="qiskit.circuit.ParameterExpression.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.arctan.html#qiskit.circuit.ParameterExpression.arctan" title="qiskit.circuit.ParameterExpression.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a></p></td>
 <td><p>Arctan of a ParameterExpression</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.assign" title="qiskit.circuit.ParameterExpression.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a>(parameter, value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.assign.html#qiskit.circuit.ParameterExpression.assign" title="qiskit.circuit.ParameterExpression.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a></p></td>
 <td><p>Assign one parameter to a value, which can either be numeric or another parameter expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.bind" title="qiskit.circuit.ParameterExpression.bind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code></a>(parameter_values)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.bind.html#qiskit.circuit.ParameterExpression.bind" title="qiskit.circuit.ParameterExpression.bind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code></a></p></td>
 <td><p>Binds the provided set of parameters to their corresponding values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.conjugate" title="qiskit.circuit.ParameterExpression.conjugate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.conjugate.html#qiskit.circuit.ParameterExpression.conjugate" title="qiskit.circuit.ParameterExpression.conjugate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></a></p></td>
 <td><p>Return the conjugate.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.cos" title="qiskit.circuit.ParameterExpression.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.cos.html#qiskit.circuit.ParameterExpression.cos" title="qiskit.circuit.ParameterExpression.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a></p></td>
 <td><p>Cosine of a ParameterExpression</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.exp" title="qiskit.circuit.ParameterExpression.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.exp.html#qiskit.circuit.ParameterExpression.exp" title="qiskit.circuit.ParameterExpression.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a></p></td>
 <td><p>Exponential of a ParameterExpression</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.gradient" title="qiskit.circuit.ParameterExpression.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a>(param)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.gradient.html#qiskit.circuit.ParameterExpression.gradient" title="qiskit.circuit.ParameterExpression.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a></p></td>
 <td><p>Get the derivative of a parameter expression w.r.t.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.is_real" title="qiskit.circuit.ParameterExpression.is_real"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_real</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.is_real.html#qiskit.circuit.ParameterExpression.is_real" title="qiskit.circuit.ParameterExpression.is_real"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_real</span></code></a></p></td>
 <td><p>Return whether the expression is real</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.log" title="qiskit.circuit.ParameterExpression.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.log.html#qiskit.circuit.ParameterExpression.log" title="qiskit.circuit.ParameterExpression.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
 <td><p>Logarithm of a ParameterExpression</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.sin" title="qiskit.circuit.ParameterExpression.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.sin.html#qiskit.circuit.ParameterExpression.sin" title="qiskit.circuit.ParameterExpression.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a></p></td>
 <td><p>Sine of a ParameterExpression</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.subs" title="qiskit.circuit.ParameterExpression.subs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subs</span></code></a>(parameter_map)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.subs.html#qiskit.circuit.ParameterExpression.subs" title="qiskit.circuit.ParameterExpression.subs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subs</span></code></a></p></td>
 <td><p>Returns a new Expression with replacement Parameters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.tan" title="qiskit.circuit.ParameterExpression.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.circuit.ParameterExpression.tan.html#qiskit.circuit.ParameterExpression.tan" title="qiskit.circuit.ParameterExpression.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a></p></td>
 <td><p>Tangent of a ParameterExpression</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.circuit.ParameterExpression.parameters" title="qiskit.circuit.ParameterExpression.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a></p></td>
-<td><p>Returns a set of the unbound Parameters in the expression.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.arccos">
-<code class="sig-name descname">arccos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.arccos"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.arccos" title="永久链接至目标">¶</a></dt>
-<dd><p>Arccos of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.arcsin">
-<code class="sig-name descname">arcsin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.arcsin"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.arcsin" title="永久链接至目标">¶</a></dt>
-<dd><p>Arcsin of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.arctan">
-<code class="sig-name descname">arctan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.arctan"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.arctan" title="永久链接至目标">¶</a></dt>
-<dd><p>Arctan of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.assign">
-<code class="sig-name descname">assign</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.assign"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.assign" title="永久链接至目标">¶</a></dt>
-<dd><p>Assign one parameter to a value, which can either be numeric or another parameter
-expression.</p>
-<dl class="field-list simple">
-<dt class="field-odd">参数</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>parameter</strong> (<a class="reference internal" href="qiskit.circuit.Parameter.html#qiskit.circuit.Parameter" title="qiskit.circuit.Parameter"><em>Parameter</em></a>) – A parameter in this expression whose value will be updated.</p></li>
-<li><p><strong>value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – The new value to bind to.</p></li>
-</ul>
-</dd>
-<dt class="field-even">返回类型</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></p>
-</dd>
-<dt class="field-odd">返回</dt>
-<dd class="field-odd"><p>A new expression parameterized by any parameters which were not bound by assignment.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.bind">
-<code class="sig-name descname">bind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.bind"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.bind" title="永久链接至目标">¶</a></dt>
-<dd><p>Binds the provided set of parameters to their corresponding values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>parameter_values</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – Mapping of Parameter instances to the numeric value to which
-they will be bound.</p>
-</dd>
-<dt class="field-even">引发</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>CircuitError</strong> – <ul>
-<li><p>If parameter_values contains Parameters outside those in self.
-    - If a non-numeric value is passed in parameter_values.</p></li>
-</ul>
-</p></li>
-<li><p><strong>ZeroDivisionError</strong> – <ul>
-<li><p>If binding the provided values requires division by zero.</p></li>
-</ul>
-</p></li>
-</ul>
-</dd>
-<dt class="field-odd">返回类型</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></p>
-</dd>
-<dt class="field-even">返回</dt>
-<dd class="field-even"><p>A new expression parameterized by any parameters which were not bound by
-parameter_values.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.conjugate">
-<code class="sig-name descname">conjugate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.conjugate"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.conjugate" title="永久链接至目标">¶</a></dt>
-<dd><p>Return the conjugate.</p>
-<dl class="field-list simple">
-<dt class="field-odd">返回类型</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.cos">
-<code class="sig-name descname">cos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.cos"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.cos" title="永久链接至目标">¶</a></dt>
-<dd><p>Cosine of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.exp">
-<code class="sig-name descname">exp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.exp"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.exp" title="永久链接至目标">¶</a></dt>
-<dd><p>Exponential of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.gradient">
-<code class="sig-name descname">gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">param</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.gradient"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.gradient" title="永久链接至目标">¶</a></dt>
-<dd><p>Get the derivative of a parameter expression w.r.t. a specified parameter expression.</p>
-<dl class="field-list simple">
-<dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>param</strong> (<a class="reference internal" href="qiskit.circuit.Parameter.html#qiskit.circuit.Parameter" title="qiskit.circuit.Parameter"><em>Parameter</em></a>) – Parameter w.r.t. which we want to take the derivative</p>
-</dd>
-<dt class="field-even">返回类型</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</p>
-</dd>
-<dt class="field-odd">返回</dt>
-<dd class="field-odd"><p>ParameterExpression representing the gradient of param_expr w.r.t. param</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.is_real">
-<code class="sig-name descname">is_real</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.is_real"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.is_real" title="永久链接至目标">¶</a></dt>
-<dd><p>Return whether the expression is real</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.log">
-<code class="sig-name descname">log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.log"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.log" title="永久链接至目标">¶</a></dt>
-<dd><p>Logarithm of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.circuit.ParameterExpression.parameters">
-<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.circuit.ParameterExpression.parameters" title="永久链接至目标">¶</a></dt>
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.circuit.ParameterExpression.parameters" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns a set of the unbound Parameters in the expression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">返回类型</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code></p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.sin">
-<code class="sig-name descname">sin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.sin"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.sin" title="永久链接至目标">¶</a></dt>
-<dd><p>Sine of a ParameterExpression</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.subs">
-<code class="sig-name descname">subs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter_map</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.subs"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.subs" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns a new Expression with replacement Parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>parameter_map</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – Mapping from Parameters in self to the ParameterExpression
-instances with which they should be replaced.</p>
-</dd>
-<dt class="field-even">引发</dt>
-<dd class="field-even"><p><strong>CircuitError</strong> – <ul class="simple">
-<li><p>If parameter_map contains Parameters outside those in self.
-    - If the replacement Parameters in parameter_map would result in
-      a name conflict in the generated expression.</p></li>
-</ul>
-</p>
-</dd>
-<dt class="field-odd">返回类型</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code></p>
-</dd>
-<dt class="field-even">返回</dt>
-<dd class="field-even"><p>A new expression with the specified parameters replaced.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.circuit.ParameterExpression.tan">
-<code class="sig-name descname">tan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/circuit/parameterexpression.html#ParameterExpression.tan"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#qiskit.circuit.ParameterExpression.tan" title="永久链接至目标">¶</a></dt>
-<dd><p>Tangent of a ParameterExpression</p>
 </dd></dl>
 
 </dd></dl>
@@ -613,10 +429,10 @@ instances with which they should be replaced.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.circuit.random.random_circuit.html" class="btn btn-neutral float-right" title="qiskit.circuit.random.random_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.circuit.ParameterExpression.arccos.html" class="btn btn-neutral float-right" title="qiskit.circuit.ParameterExpression.arccos" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.circuit.ParameterVector.html" class="btn btn-neutral" title="qiskit.circuit.ParameterVector" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.circuit.ParameterVector.resize.html" class="btn btn-neutral" title="qiskit.circuit.ParameterVector.resize" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -630,7 +446,7 @@ instances with which they should be replaced.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最后更新于 2021/08/13.
+      最后更新于 2021/09/23.
 
     </p>
   </div>
@@ -649,7 +465,7 @@ instances with which they should be replaced.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.circuit.ParameterExpression</a></li>
+<li><a class="reference internal" href="#">ParameterExpression</a></li>
 </ul>
 
             </div>
@@ -714,7 +530,7 @@ instances with which they should be replaced.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -737,9 +553,11 @@ instances with which they should be replaced.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

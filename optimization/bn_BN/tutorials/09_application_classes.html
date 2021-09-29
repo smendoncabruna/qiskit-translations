@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Application Classes for Optimization Problems &mdash; Qiskit Optimization 0.2.2 documentation</title>
+  <title>অপ্টিমাইজেশন সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="Warm-starting quantum optimization" href="10_warm_start_qaoa.html" />
+    <link rel="next" title="কোয়ান্টাম অনুকূলকরণের (অপটিমাইজেশন) প্রস্তুতিপর্ব" href="10_warm_start_qaoa.html" />
     <link rel="prev" title="Improving Variational Quantum Optimization using CVaR" href="08_cvar_optimization.html" /> 
 
   
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
         
-      <li>Application Classes for Optimization Problems</li>
+      <li>অপ্টিমাইজেশন সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,84 +482,84 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/09_application_classes.ipynb">docs/tutorials/09_application_classes.ipynb</a>.</p>
+<p>এই পেজটি <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/09_application_classes.ipynb">docs/tutorials/09_application_classes.ipynb</a> থেকে তৈরি হয়েছে।</p>
 </div>
-<div class="section" id="Application-Classes-for-Optimization-Problems">
-<h1>Application Classes for Optimization Problems<a class="headerlink" href="#Application-Classes-for-Optimization-Problems" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We introduce application classes for the following optimization problems so that users can easily try various optimization problems on quantum computers.</p>
+<div class="section" id="অপ্টিমাইজেশন-সমস্যার-জন্য-অ্যাপ্লিকেশন-ক্লাস">
+<h1>অপ্টিমাইজেশন সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস<a class="headerlink" href="#অপ্টিমাইজেশন-সমস্যার-জন্য-অ্যাপ্লিকেশন-ক্লাস" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা নিম্নলিখিত অপ্টিমাইজেশান সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস চালু করি যাতে ব্যবহারকারীরা সহজেই কোয়ান্টাম কম্পিউটারে বিভিন্ন অপ্টিমাইজেশান সমস্যার চেষ্টা করতে পারে।</p>
 <ol class="arabic simple">
-<li><p>Exact cover problem</p></li>
+<li><p>Exact কভার সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a collection of subsets of items, find a subcollection such that each item is covered exactly once.</p></li>
+<li><p>আইটেমের উপসেটগুলির একটি সংগ্রহ দেওয়া, একটি উপ -সংগ্রহ খুঁজুন যাতে প্রতিটি আইটেম ঠিক একবার আচ্ছাদিত হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Knapsack problem</p></li>
+<li><p>ন্যাপস্যাক সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a set of items, find a subset of items such that the total weight is within the capacity and the total value is maximized.</p></li>
+<li><p>আইটেমের একটি সেট দেওয়া, আইটেমগুলির একটি উপসেট খুঁজুন যাতে মোট ওজন ধারণক্ষমতার মধ্যে থাকে এবং মোট মান সর্বাধিক হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p>Number partition problem</p></li>
+<li><p>সংখ্যা বিভাজন সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a multiset of positive integers, find a partition of the multiset into two subsets such that the sums of the subsets are equal.</p></li>
+<li><p>ধনাত্মক পূর্ণসংখ্যার একটি মাল্টিসেট দেওয়া হলে, মাল্টিসেটের একটি বিভাজন দুটি উপসেটগুলিতে খুঁজুন যাতে উপসেটগুলির যোগফল সমান হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="4">
-<li><p>Set packing problem</p></li>
+<li><p>সেট প্যাকিং সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a collection of subsets of items, find a subcollection such that all subsets of the subcollection are pairwise disjoint and the number of items in the subcollection is maximized.</p></li>
+<li><p>আইটেমের উপসেটগুলির একটি সংগ্রহ দেওয়া হলে, এমন একটি উপ -সংগ্রহ খুঁজুন যাতে উপ -সংগ্রহের সমস্ত উপগোষ্ঠী জোড়া যুক্ত হয় এবং উপ -সংগ্রহে আইটেমের সংখ্যা সর্বাধিক হয়।</p></li>
 </ul>
-<p>Graph problems</p>
+<p>গ্রাফ সমস্যা</p>
 <ol class="arabic simple" start="5">
-<li><p>Clique problem</p></li>
+<li><p>ক্লিকে সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a subset of nodes with a specified number or the maximum number such that the induced subgraph is complete.</p></li>
+<li><p>একটি অনির্দেশিত গ্রাফ দেওয়া, একটি নির্দিষ্ট সংখ্যা বা সর্বাধিক সংখ্যক নোডগুলির একটি উপসেট খুঁজুন যাতে প্ররোচিত সাবগ্রাফটি সম্পূর্ণ হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="6">
-<li><p>Graph partition problem</p></li>
+<li><p>গ্রাফ পার্টিশন সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a partition into two components whose sizes are equal such that the total capacity of the edges between the two components is minimized.</p></li>
+<li><p>একটি অনির্দেশিত গ্রাফ দেওয়া, দুটি অংশে একটি পার্টিশন খুঁজুন যার আকার সমান যে দুটি উপাদানগুলির মধ্যে প্রান্তের মোট ক্ষমতা কমিয়ে আনা হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="7">
-<li><p>Max-cut problem</p></li>
+<li><p>সর্বোচ্চ-কাট সমস্যা (Max-Cut problem)</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a partition of nodes into two subsets such that the total weight of the edges between the two subsets is maximized.</p></li>
+<li><p>একটি অনির্দেশিত গ্রাফ দেওয়া, দুটি উপসেটগুলিতে নোডের একটি পার্টিশন খুঁজুন যাতে দুটি উপসেটগুলির মধ্যে প্রান্তের মোট ওজন সর্বাধিক হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="8">
-<li><p>Stable set problem</p></li>
+<li><p>স্থিত সেট সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a subset of nodes such that no edge connects the nodes in the subset and the number of nodes is maximized.</p></li>
+<li><p>একটি অনির্দেশিত গ্রাফ দেওয়া, নোডের একটি উপসেট খুঁজুন যাতে কোন প্রান্ত উপসেটগুলির নোডগুলিকে সংযুক্ত না করে এবং নোডের সংখ্যা সর্বাধিক হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="9">
-<li><p>Traveling salesman problem</p></li>
+<li><p>ট্রাভেলিং সেলসম্যান সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a graph, find a route with the minimum distance such that the route visits each city exactly once.</p></li>
+<li><p>একটি গ্রাফ দেওয়া, ন্যূনতম দূরত্ব সহ একটি রুট খুঁজুন যাতে রুটটি প্রতিটি শহরে একবার ঠিক ভিজিট করে।</p></li>
 </ul>
 <ol class="arabic simple" start="10">
-<li><p>Vehicle routing problem</p></li>
+<li><p>যানবাহন চলাচলের সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given a graph, a depot node, and the number of vehicles (routes), find a set of routes such that each node is covered exactly once except the depot and the total distance of the routes is minimized.</p></li>
+<li><p>একটি গ্রাফ, একটি ডিপো নোড এবং যানবাহনের সংখ্যা (রুট) দেওয়া হলে, রুটগুলির একটি সেট খুঁজুন যাতে প্রতিটি নোড ডিপো ছাড়া ঠিক একবার আচ্ছাদিত হয় এবং রুটগুলির মোট দূরত্ব কম হয়।</p></li>
 </ul>
 <ol class="arabic simple" start="11">
-<li><p>Vertex cover problem</p></li>
+<li><p>ভারটেক্স কভার সমস্যা</p></li>
 </ol>
 <ul class="simple">
-<li><p>Given an undirected graph, find a subset of nodes with the minimum size such that each edge has at least one endpoint in the subsets.</p></li>
+<li><p>একটি অনির্দেশিত গ্রাফ দেওয়া, ন্যূনতম আকারের নোডগুলির একটি উপসেট খুঁজুন যাতে প্রতিটি প্রান্তের উপসেটগুলিতে কমপক্ষে একটি শেষ বিন্দু থাকে।</p></li>
 </ul>
-<p>The application classes for graph problems (<code class="docutils literal notranslate"><span class="pre">GraphOptimizationApplication</span></code>) provide a functionality to draw graphs of an instance and a result. Note that you need to install <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> beforehand to utilize the functionality.</p>
-<p>We introduce examples of the vertex cover problem and the knapsack problem in this page.</p>
-<p>Examples of the max-cut problem and the traveling salesman problem are available in <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a>.</p>
-<p>We first import packages necessary for application classes.</p>
+<p>গ্রাফ সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস (<code class="docutils literal notranslate"><span class="pre">GraphOptimizationApplication</span></code>) একটি দৃষ্টান্ত এবং ফলাফলের গ্রাফ আঁকার জন্য একটি কার্যকারিতা প্রদান করে। নোট করুন যে কার্যকারিতাটি ব্যবহার করার জন্য আপনাকে আগে থেকেই <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> ইনস্টল করতে হবে।</p>
+<p>আমরা এই পৃষ্ঠায় ভারটেক্স কভার সমস্যা এবং ন্যাপস্যাক সমস্যার উদাহরণ উপস্থাপন করি।</p>
+<p>ম্যাক্স-কাট সমস্যা এবং ট্রাভেলিং সেলসম্যান সমস্যার উদাহরণ <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a> তে পাওয়া যায়।</p>
+<p>আমরা প্রথমে অ্যাপ্লিকেশন ক্লাসের জন্য প্রয়োজনীয় প্যাকেজ আমদানি করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -573,10 +573,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Vertex-cover-problem">
-<h2>Vertex cover problem<a class="headerlink" href="#Vertex-cover-problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We introduce the application class for the vertex cover problem as an example of graph problems. Given an undirected graph, the vertex cover problem asks us to find a subset of nodes with the minimum size such that all edges are covered by any node selected.</p>
-<p>We import the application class <code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> for the vertex cover problem and <code class="docutils literal notranslate"><span class="pre">networkx</span></code> to generate a random graph.</p>
+<div class="section" id="ভারটেক্স-কভার-সমস্যা">
+<h2>ভারটেক্স কভার সমস্যা<a class="headerlink" href="#ভারটেক্স-কভার-সমস্যা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা গ্রাফ সমস্যার উদাহরণ হিসাবে শিরোনাম কভার সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস চালু করি। একটি অনির্দেশিত গ্রাফ দেওয়া, শিরোনাম কভার সমস্যাটি আমাদেরকে ন্যূনতম আকারের নোডগুলির একটি উপসেট খুঁজে পেতে বলে, যাতে সমস্ত প্রান্তগুলি নির্বাচিত কোনও নোড দ্বারা আবৃত থাকে।</p>
+<p>আমরা ভারটেক্স কভার সমস্যা এবং <code class="docutils literal notranslate"><span class="pre">networkx</span></code> দৈব গ্রাফ তৈরির জন্য অ্যাপ্লিকেশন শ্রেণী <code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> আমদানি করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -617,7 +617,7 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_application_classes_8_0.svg" src="../_images/tutorials_09_application_classes_8_0.svg" /></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> takes a graph as an instance and <code class="docutils literal notranslate"><span class="pre">to_quadratic_program</span></code> generates a corresponding <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> of the instance of the vertex cover problem.</p>
+<p><code class="docutils literal notranslate"><span class="pre">VertexCover</span></code> একটি গ্রাফ গ্রহন করে একটি উদাহরণ হিসেবে এবং <code class="docutils literal notranslate"><span class="pre">to_quadratic_program</span></code> তৈরি করে একটি অনুরূপ <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> যা ভারটেক্স কভার সমস্যার উদাহরণ তৈরি করে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -664,7 +664,7 @@ Binaries
 End
 </pre></div></div>
 </div>
-<p>You can solve the problem as follows. <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code> finds the minimum eigen vector. You can also apply QAOA. Note that the solution by QAOA is not always optimal.</p>
+<p>আপনি নিম্নরূপ সমস্যা সমাধান করতে পারেন। <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code> সর্বনিম্ন eigen ভেক্টর খুঁজে পায়। আপনি QAOA প্রয়োগ করতে পারেন। মনে রাখবেন QAOA দ্বারা সমাধান সবসময় অনুকূল নয়।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -737,9 +737,9 @@ time: 2.0216140747070312
 <img alt="../_images/tutorials_09_application_classes_13_1.svg" src="../_images/tutorials_09_application_classes_13_1.svg" /></div>
 </div>
 </div>
-<div class="section" id="Knapsack-problem">
-<h2>Knapsack problem<a class="headerlink" href="#Knapsack-problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The knapsack problem asks us to find a combination of items such that the total weight is within the capacity of the knapsack and maximize the total value of the items. The following examples solve an instance of the knapsack problem with 5 items by Numpy eigensolver and QAOA.</p>
+<div class="section" id="ন্যাপস্যাক-সমস্যা">
+<h2>ন্যাপস্যাক সমস্যা<a class="headerlink" href="#ন্যাপস্যাক-সমস্যা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>ন্যাপস্যাক সমস্যাটি আমাদের আইটেমের সংমিশ্রণ খুঁজে পেতে বলে, যাতে মোট ওজন ন্যাপস্যাকের ধারণক্ষমতার মধ্যে থাকে এবং আইটেমের মোট মূল্য সর্বাধিক হয়। নিচের উদাহরণগুলি NumPy eigensolver এবং কিউএওএ দ্বারা 5 টি আইটেমের সাথে ন্যাপস্যাক সমস্যার একটি উদাহরণ সমাধান করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -845,9 +845,9 @@ time: 0.7132740020751953
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="How-to-check-the-Hamiltonian">
-<h2>How to check the Hamiltonian<a class="headerlink" href="#How-to-check-the-Hamiltonian" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>If you want to check the actual Hamiltonian generated from your problem instance, you need to apply a converter as follows.</p>
+<div class="section" id="কিভাবে-হ্যামিল্টোনিয়ান-চেক-করবেন">
+<h2>কিভাবে হ্যামিল্টোনিয়ান চেক করবেন<a class="headerlink" href="#কিভাবে-হ্যামিল্টোনিয়ান-চেক-করবেন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আপনি যদি আপনার সমস্যার উদাহরণ থেকে উৎপন্ন প্রকৃত হ্যামিল্টোনিয়ান পরীক্ষা করতে চান, তাহলে আপনাকে নিম্নরূপ একটি রূপান্তরকারী প্রয়োগ করতে হবে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1066,7 +1066,7 @@ num qubits: 9, offset: 1417.5
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10_warm_start_qaoa.html" class="btn btn-neutral float-right" title="Warm-starting quantum optimization" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="10_warm_start_qaoa.html" class="btn btn-neutral float-right" title="কোয়ান্টাম অনুকূলকরণের (অপটিমাইজেশন) প্রস্তুতিপর্ব" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="08_cvar_optimization.html" class="btn btn-neutral" title="Improving Variational Quantum Optimization using CVaR" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1101,11 +1101,11 @@ num qubits: 9, offset: 1417.5
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Application Classes for Optimization Problems</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Vertex-cover-problem">Vertex cover problem</a></li>
-<li><a class="reference internal" href="#Knapsack-problem">Knapsack problem</a></li>
-<li><a class="reference internal" href="#How-to-check-the-Hamiltonian">How to check the Hamiltonian</a></li>
+<li><a class="reference internal" href="#">অপ্টিমাইজেশন সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a></li>
+<li><a class="reference internal" href="#ভারটেক্স-কভার-সমস্যা">ভারটেক্স কভার সমস্যা</a></li>
+<li><a class="reference internal" href="#ন্যাপস্যাক-সমস্যা">ন্যাপস্যাক সমস্যা</a></li>
+<li><a class="reference internal" href="#কিভাবে-হ্যামিল্টোনিয়ান-চেক-করবেন">কিভাবে হ্যামিল্টোনিয়ান চেক করবেন</a></li>
 </ul>
 </li>
 </ul>

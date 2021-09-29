@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.pulse.Play &mdash; Qiskit 0.29.0 documentazione</title>
+  <title>Play &mdash; Qiskit 0.30.0 documentazione</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Indice" href="../genindex.html" />
     <link rel="search" title="Cerca" href="../search.html" />
-    <link rel="next" title="qiskit.pulse.SetFrequency" href="qiskit.pulse.SetFrequency.html" />
-    <link rel="prev" title="qiskit.pulse.Delay" href="qiskit.pulse.Delay.html" /> 
+    <link rel="next" title="qiskit.pulse.Play.append" href="qiskit.pulse.Play.append.html" />
+    <link rel="prev" title="qiskit.pulse.Delay.shift" href="qiskit.pulse.Delay.shift.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Homepage della documentazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Prefazione</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Riferimenti API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guida alla migrazione delle applicazioni Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guida alla migrazione delle applicazioni Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Risoluzione Dei Problemi</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/pulse.html">Pulse (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.pulse</span></code>)</a> &gt;</li>
         
-      <li>qiskit.pulse.Play</li>
+      <li>Play</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-pulse-play">
-<h1>qiskit.pulse.Play<a class="headerlink" href="#qiskit-pulse-play" title="Link a questa intestazione">¶</a></h1>
+  <section id="play">
+<h1>Play<a class="headerlink" href="#play" title="Link a questa intestazione">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.pulse.Play">
 <em class="property">class </em><code class="sig-name descname">Play</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulse</span></em>, <em class="sig-param"><span class="n">channel</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/instructions/play.html#Play"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#qiskit.pulse.Play" title="Link a questa definizione">¶</a></dt>
-<dd><p>This instruction is responsible for applying a pulse on a channel.</p>
+<dd><blockquote>
+<div><p>Basi: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.pulse.instructions.instruction.Instruction</span></code></p>
+</div></blockquote>
+<p>This instruction is responsible for applying a pulse on a channel.</p>
 <p>The pulse specifies the exact time dynamics of the output signal envelope for a limited
 time. The output is modulated by a phase and frequency which are controlled by separate
 instructions. The pulse duration must be fixed, and is implicitly given in terms of the
@@ -344,7 +354,7 @@ cycle time, dt, of the backend.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pulse</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Pulse</span></code>) – A pulse waveform description, such as
 <a class="reference internal" href="qiskit.pulse.library.Waveform.html#qiskit.pulse.library.Waveform" title="qiskit.pulse.library.Waveform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Waveform</span></code></a>.</p></li>
-<li><p><strong>channel</strong> (<a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.PulseChannel" title="qiskit.pulse.channels.PulseChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code></a>) – The channel to which the pulse is applied.</p></li>
+<li><p><strong>channel</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code>) – The channel to which the pulse is applied.</p></li>
 <li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the instruction for display purposes. Defaults to <code class="docutils literal notranslate"><span class="pre">pulse.name</span></code>.</p></li>
 </ul>
 </dd>
@@ -352,25 +362,6 @@ cycle time, dt, of the backend.</p>
 <dd class="field-even"><p><a class="reference internal" href="qiskit.pulse.PulseError.html#qiskit.pulse.PulseError" title="qiskit.pulse.PulseError"><strong>PulseError</strong></a> – If pulse is not a Pulse type.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.pulse.Play.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulse</span></em>, <em class="sig-param"><span class="n">channel</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/instructions/play.html#Play.__init__"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#qiskit.pulse.Play.__init__" title="Link a questa definizione">¶</a></dt>
-<dd><p>Create a new pulse instruction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>pulse</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Pulse</span></code>) – A pulse waveform description, such as
-<a class="reference internal" href="qiskit.pulse.library.Waveform.html#qiskit.pulse.library.Waveform" title="qiskit.pulse.library.Waveform"><code class="xref py py-class docutils literal notranslate"><span class="pre">Waveform</span></code></a>.</p></li>
-<li><p><strong>channel</strong> (<a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.PulseChannel" title="qiskit.pulse.channels.PulseChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code></a>) – The channel to which the pulse is applied.</p></li>
-<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the instruction for display purposes. Defaults to <code class="docutils literal notranslate"><span class="pre">pulse.name</span></code>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Solleva</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.pulse.PulseError.html#qiskit.pulse.PulseError" title="qiskit.pulse.PulseError"><strong>PulseError</strong></a> – If pulse is not a Pulse type.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -378,221 +369,65 @@ cycle time, dt, of the backend.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.__init__" title="qiskit.pulse.Play.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(pulse, channel[, name])</p></td>
-<td><p>Create a new pulse instruction.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.append" title="qiskit.pulse.Play.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(schedule[, name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Play.append.html#qiskit.pulse.Play.append" title="qiskit.pulse.Play.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a></p></td>
 <td><p>Return a new <a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a> with <code class="docutils literal notranslate"><span class="pre">schedule</span></code> inserted at the maximum time over all channels shared between <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.assign_parameters" title="qiskit.pulse.Play.assign_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_parameters</span></code></a>(value_dict)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Play.assign_parameters.html#qiskit.pulse.Play.assign_parameters" title="qiskit.pulse.Play.assign_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_parameters</span></code></a></p></td>
 <td><p>Modify and return self with parameters assigned according to the input.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.ch_duration" title="qiskit.pulse.Play.ch_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_duration</span></code></a>(*channels)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Play.ch_duration.html#qiskit.pulse.Play.ch_duration" title="qiskit.pulse.Play.ch_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_duration</span></code></a></p></td>
 <td><p>Return duration of the supplied channels in this Instruction.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.ch_start_time" title="qiskit.pulse.Play.ch_start_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_start_time</span></code></a>(*channels)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Play.ch_start_time.html#qiskit.pulse.Play.ch_start_time" title="qiskit.pulse.Play.ch_start_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_start_time</span></code></a></p></td>
 <td><p>Return minimum start time for supplied channels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.ch_stop_time" title="qiskit.pulse.Play.ch_stop_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_stop_time</span></code></a>(*channels)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Play.ch_stop_time.html#qiskit.pulse.Play.ch_stop_time" title="qiskit.pulse.Play.ch_stop_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ch_stop_time</span></code></a></p></td>
 <td><p>Return maximum start time for supplied channels.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.draw" title="qiskit.pulse.Play.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>([dt, style, filename, interp_method, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Play.draw.html#qiskit.pulse.Play.draw" title="qiskit.pulse.Play.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a></p></td>
 <td><p>Plot the instruction.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.flatten" title="qiskit.pulse.Play.flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Play.flatten.html#qiskit.pulse.Play.flatten" title="qiskit.pulse.Play.flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten</span></code></a></p></td>
 <td><p>Return itself as already single instruction.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.insert" title="qiskit.pulse.Play.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(start_time, schedule[, name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Play.insert.html#qiskit.pulse.Play.insert" title="qiskit.pulse.Play.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a></p></td>
 <td><p>Return a new <a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a> with <code class="docutils literal notranslate"><span class="pre">schedule</span></code> inserted within <code class="docutils literal notranslate"><span class="pre">self</span></code> at <code class="docutils literal notranslate"><span class="pre">start_time</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.is_parameterized" title="qiskit.pulse.Play.is_parameterized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_parameterized</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Play.is_parameterized.html#qiskit.pulse.Play.is_parameterized" title="qiskit.pulse.Play.is_parameterized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_parameterized</span></code></a></p></td>
 <td><p>Return True iff the instruction is parameterized.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.shift" title="qiskit.pulse.Play.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(time[, name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Play.shift.html#qiskit.pulse.Play.shift" title="qiskit.pulse.Play.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a></p></td>
 <td><p>Return a new schedule shifted forward by <cite>time</cite>.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.channel" title="qiskit.pulse.Play.channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channel</span></code></a></p></td>
-<td><p>Return the <a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.Channel" title="qiskit.pulse.channels.Channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a> that this instruction is scheduled on.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.channels" title="qiskit.pulse.Play.channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">channels</span></code></a></p></td>
-<td><p>Returns the channels that this schedule uses.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.duration" title="qiskit.pulse.Play.duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">duration</span></code></a></p></td>
-<td><p>Duration of this instruction.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.id" title="qiskit.pulse.Play.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
-<td><p>Unique identifier for this instruction.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.instructions" title="qiskit.pulse.Play.instructions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instructions</span></code></a></p></td>
-<td><p>Iterable for getting instructions from Schedule tree.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.name" title="qiskit.pulse.Play.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
-<td><p>Name of this instruction.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.operands" title="qiskit.pulse.Play.operands"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operands</span></code></a></p></td>
-<td><p>Return instruction operands.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.parameters" title="qiskit.pulse.Play.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a></p></td>
-<td><p>Parameters which determine the instruction behavior.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.pulse" title="qiskit.pulse.Play.pulse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pulse</span></code></a></p></td>
-<td><p>A description of the samples that will be played.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Play.start_time" title="qiskit.pulse.Play.start_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_time</span></code></a></p></td>
-<td><p>Relative begin time of this instruction.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Play.stop_time" title="qiskit.pulse.Play.stop_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stop_time</span></code></a></p></td>
-<td><p>Relative end time of this instruction.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.pulse.Play.append">
-<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">schedule</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.append" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return a new <a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a> with <code class="docutils literal notranslate"><span class="pre">schedule</span></code> inserted at the
-maximum time over all channels shared between <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">schedule</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>schedule</strong> (<em>Union</em><em>[</em><em>'Schedule'</em><em>, </em><em>'Instruction'</em><em>]</em>) – Schedule or instruction to be appended</p></li>
-<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the new schedule. Defaults to name of self</p></li>
-</ul>
-</dd>
-<dt class="field-even">Ritorna</dt>
-<dd class="field-even"><p>A new schedule with <code class="docutils literal notranslate"><span class="pre">schedule</span></code> a this instruction at t=0.</p>
-</dd>
-<dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule">Schedule</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Play.assign_parameters">
-<code class="sig-name descname">assign_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/instructions/play.html#Play.assign_parameters"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#qiskit.pulse.Play.assign_parameters" title="Link a questa definizione">¶</a></dt>
-<dd><p>Modify and return self with parameters assigned according to the input.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><p><strong>value_dict</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – A mapping from Parameters to either numeric values or another
-Parameter expression.</p>
-</dd>
-<dt class="field-even">Tipo di ritorno</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Play</span></code></p>
-</dd>
-<dt class="field-odd">Ritorna</dt>
-<dd class="field-odd"><p>Self with updated parameters.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Play.ch_duration">
-<code class="sig-name descname">ch_duration</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">channels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.ch_duration" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return duration of the supplied channels in this Instruction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><p><strong>*channels</strong> – Supplied channels</p>
-</dd>
-<dt class="field-even">Tipo di ritorno</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Play.ch_start_time">
-<code class="sig-name descname">ch_start_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">channels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.ch_start_time" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return minimum start time for supplied channels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><p><strong>*channels</strong> – Supplied channels</p>
-</dd>
-<dt class="field-even">Tipo di ritorno</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Play.ch_stop_time">
-<code class="sig-name descname">ch_stop_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">channels</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.ch_stop_time" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return maximum start time for supplied channels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><p><strong>*channels</strong> – Supplied channels</p>
-</dd>
-<dt class="field-even">Tipo di ritorno</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.channel">
-<em class="property">property </em><code class="sig-name descname">channel</code><a class="headerlink" href="#qiskit.pulse.Play.channel" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return the <a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.Channel" title="qiskit.pulse.channels.Channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a> that this instruction is
+<code class="sig-name descname">channel</code><a class="headerlink" href="#qiskit.pulse.Play.channel" title="Link a questa definizione">¶</a></dt>
+<dd><p>Return the <code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code> that this instruction is
 scheduled on.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.PulseChannel" title="qiskit.pulse.channels.PulseChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code></a></p>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.channels">
-<em class="property">property </em><code class="sig-name descname">channels</code><a class="headerlink" href="#qiskit.pulse.Play.channels" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">channels</code><a class="headerlink" href="#qiskit.pulse.Play.channels" title="Link a questa definizione">¶</a></dt>
 <dd><p>Returns the channels that this schedule uses.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.PulseChannel" title="qiskit.pulse.channels.PulseChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code></a>]</p>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">PulseChannel</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Play.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">style</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interp_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">plot_all</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">plot_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interactive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">table</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">label</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">framechange</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.draw" title="Link a questa definizione">¶</a></dt>
-<dd><p>Plot the instruction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>dt</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Time interval of samples</p></li>
-<li><p><strong>style</strong> (<em>Optional</em><em>[</em><em>SchedStyle</em><em>]</em>) – A style sheet to configure plot appearance</p></li>
-<li><p><strong>filename</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name required to save pulse image</p></li>
-<li><p><strong>interp_method</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>]) – A function for interpolation</p></li>
-<li><p><strong>scale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Relative visual scaling of waveform amplitudes</p></li>
-<li><p><strong>plot_all</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Plot empty channels</p></li>
-<li><p><strong>plot_range</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – A tuple of time range to plot</p></li>
-<li><p><strong>interactive</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – When set true show the circuit in a new window
-(this depends on the matplotlib backend being used supporting this)</p></li>
-<li><p><strong>table</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Draw event table for supported instructions</p></li>
-<li><p><strong>label</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Label individual instructions</p></li>
-<li><p><strong>framechange</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Add framechange indicators</p></li>
-<li><p><strong>channels</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.Channel" title="qiskit.pulse.channels.Channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a>]]) – A list of channel names to plot</p></li>
-</ul>
-</dd>
-<dt class="field-even">Ritorna</dt>
-<dd class="field-even"><p>A matplotlib figure object of the pulse schedule</p>
-</dd>
-<dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p>matplotlib.figure</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.duration">
-<em class="property">property </em><code class="sig-name descname">duration</code><a class="headerlink" href="#qiskit.pulse.Play.duration" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">duration</code><a class="headerlink" href="#qiskit.pulse.Play.duration" title="Link a questa definizione">¶</a></dt>
 <dd><p>Duration of this instruction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -601,20 +436,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Play.flatten">
-<code class="sig-name descname">flatten</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.flatten" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return itself as already single instruction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Instruction</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.id">
-<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#qiskit.pulse.Play.id" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">id</code><a class="headerlink" href="#qiskit.pulse.Play.id" title="Link a questa definizione">¶</a></dt>
 <dd><p>Unique identifier for this instruction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -623,31 +447,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Play.insert">
-<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span></em>, <em class="sig-param"><span class="n">schedule</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.insert" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return a new <a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a> with <code class="docutils literal notranslate"><span class="pre">schedule</span></code> inserted within
-<code class="docutils literal notranslate"><span class="pre">self</span></code> at <code class="docutils literal notranslate"><span class="pre">start_time</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>start_time</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Time to insert the schedule schedule</p></li>
-<li><p><strong>schedule</strong> (<em>Union</em><em>[</em><em>'Schedule'</em><em>, </em><em>'Instruction'</em><em>]</em>) – Schedule or instruction to insert</p></li>
-<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the new schedule. Defaults to name of self</p></li>
-</ul>
-</dd>
-<dt class="field-even">Ritorna</dt>
-<dd class="field-even"><p>A new schedule with <code class="docutils literal notranslate"><span class="pre">schedule</span></code> inserted with this instruction at t=0.</p>
-</dd>
-<dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule">Schedule</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.instructions">
-<em class="property">property </em><code class="sig-name descname">instructions</code><a class="headerlink" href="#qiskit.pulse.Play.instructions" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">instructions</code><a class="headerlink" href="#qiskit.pulse.Play.instructions" title="Link a questa definizione">¶</a></dt>
 <dd><p>Iterable for getting instructions from Schedule tree.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -656,20 +458,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Play.is_parameterized">
-<code class="sig-name descname">is_parameterized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/instructions/play.html#Play.is_parameterized"><span class="viewcode-link">[sorgente]</span></a><a class="headerlink" href="#qiskit.pulse.Play.is_parameterized" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return True iff the instruction is parameterized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.pulse.Play.name" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.pulse.Play.name" title="Link a questa definizione">¶</a></dt>
 <dd><p>Name of this instruction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -678,9 +469,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.operands">
-<em class="property">property </em><code class="sig-name descname">operands</code><a class="headerlink" href="#qiskit.pulse.Play.operands" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">operands</code><a class="headerlink" href="#qiskit.pulse.Play.operands" title="Link a questa definizione">¶</a></dt>
 <dd><p>Return instruction operands.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -689,9 +480,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.parameters">
-<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.pulse.Play.parameters" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.pulse.Play.parameters" title="Link a questa definizione">¶</a></dt>
 <dd><p>Parameters which determine the instruction behavior.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -700,9 +491,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.pulse">
-<em class="property">property </em><code class="sig-name descname">pulse</code><a class="headerlink" href="#qiskit.pulse.Play.pulse" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">pulse</code><a class="headerlink" href="#qiskit.pulse.Play.pulse" title="Link a questa definizione">¶</a></dt>
 <dd><p>A description of the samples that will be played.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -711,29 +502,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Play.shift">
-<code class="sig-name descname">shift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Play.shift" title="Link a questa definizione">¶</a></dt>
-<dd><p>Return a new schedule shifted forward by <cite>time</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parametri</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>time</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Time to shift by</p></li>
-<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the new schedule. Defaults to name of self</p></li>
-</ul>
-</dd>
-<dt class="field-even">Ritorna</dt>
-<dd class="field-even"><p>The shifted schedule.</p>
-</dd>
-<dt class="field-odd">Tipo di ritorno</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule">Schedule</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.start_time">
-<em class="property">property </em><code class="sig-name descname">start_time</code><a class="headerlink" href="#qiskit.pulse.Play.start_time" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">start_time</code><a class="headerlink" href="#qiskit.pulse.Play.start_time" title="Link a questa definizione">¶</a></dt>
 <dd><p>Relative begin time of this instruction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -742,9 +513,9 @@ scheduled on.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Play.stop_time">
-<em class="property">property </em><code class="sig-name descname">stop_time</code><a class="headerlink" href="#qiskit.pulse.Play.stop_time" title="Link a questa definizione">¶</a></dt>
+<code class="sig-name descname">stop_time</code><a class="headerlink" href="#qiskit.pulse.Play.stop_time" title="Link a questa definizione">¶</a></dt>
 <dd><p>Relative end time of this instruction.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Tipo di ritorno</dt>
@@ -765,10 +536,10 @@ scheduled on.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.pulse.SetFrequency.html" class="btn btn-neutral float-right" title="qiskit.pulse.SetFrequency" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.pulse.Play.append.html" class="btn btn-neutral float-right" title="qiskit.pulse.Play.append" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.pulse.Delay.html" class="btn btn-neutral" title="qiskit.pulse.Delay" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.pulse.Delay.shift.html" class="btn btn-neutral" title="qiskit.pulse.Delay.shift" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -782,7 +553,7 @@ scheduled on.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ultimo aggiornamento 2021/08/13.
+      Ultimo aggiornamento 2021/09/23.
 
     </p>
   </div>
@@ -801,7 +572,7 @@ scheduled on.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.pulse.Play</a></li>
+<li><a class="reference internal" href="#">Play</a></li>
 </ul>
 
             </div>
@@ -865,7 +636,7 @@ scheduled on.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -888,9 +659,11 @@ scheduled on.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,33 +1,26 @@
-﻿qiskit.circuit.AncillaRegister
-==============================
+﻿AncillaRegister
+===============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: AncillaRegister
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AncillaRegister.__init__
-      ~AncillaRegister.qasm
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~AncillaRegister.qasm
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AncillaRegister.instances_counter
-      ~AncillaRegister.name
-      ~AncillaRegister.name_format
-      ~AncillaRegister.prefix
-      ~AncillaRegister.size
-   
-   
+   .. autoattribute:: instances_counter
+   .. autoattribute:: name
+   .. autoattribute:: name_format
+   .. autoattribute:: prefix
+   .. autoattribute:: size

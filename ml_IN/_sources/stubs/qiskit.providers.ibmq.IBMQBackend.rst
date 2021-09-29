@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.IBMQBackend
-=================================
+﻿IBMQBackend
+===========
 
 .. currentmodule:: qiskit.providers.ibmq
 
 .. autoclass:: IBMQBackend
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMQBackend.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMQBackend.active_jobs
       ~IBMQBackend.configuration
       ~IBMQBackend.defaults
@@ -28,18 +27,12 @@
       ~IBMQBackend.run
       ~IBMQBackend.set_options
       ~IBMQBackend.status
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IBMQBackend.id_warning_issued
-      ~IBMQBackend.options
-      ~IBMQBackend.qobj_warning_issued
-      ~IBMQBackend.version
-   
-   
+   .. autoattribute:: id_warning_issued
+   .. autoattribute:: options
+   .. autoattribute:: qobj_warning_issued
+   .. autoattribute:: version

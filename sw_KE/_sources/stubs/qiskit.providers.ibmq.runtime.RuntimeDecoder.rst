@@ -1,25 +1,20 @@
-﻿qiskit.providers.ibmq.runtime.RuntimeDecoder
-============================================
+﻿RuntimeDecoder
+==============
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: RuntimeDecoder
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RuntimeDecoder.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RuntimeDecoder.decode
       ~RuntimeDecoder.object_hook
       ~RuntimeDecoder.raw_decode
-   
-   
 
-   
-   
-   
+

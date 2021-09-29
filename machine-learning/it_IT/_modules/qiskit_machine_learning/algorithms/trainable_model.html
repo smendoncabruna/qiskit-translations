@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.algorithms.trainable_model &mdash; Qiskit Machine Learning 0.2.0 documentazione</title>
+  <title>qiskit_machine_learning.algorithms.trainable_model &mdash; Qiskit Machine Learning 0.2.1 documentazione</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/algorithms/trainable_model.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/algorithms/trainable_model.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/algorithms/trainable_model.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/algorithms/trainable_model.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/algorithms/trainable_model.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/algorithms/trainable_model.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -261,10 +267,11 @@
 <span class="sd">&quot;&quot;&quot;A base ML model with a Scikit-Learn like interface.&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Callable</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">qiskit.algorithms.optimizers</span> <span class="kn">import</span> <span class="n">Optimizer</span><span class="p">,</span> <span class="n">SLSQP</span>
+<span class="kn">from</span> <span class="nn">qiskit.utils</span> <span class="kn">import</span> <span class="n">algorithm_globals</span>
 
 <span class="kn">from</span> <span class="nn">qiskit_machine_learning</span> <span class="kn">import</span> <span class="n">QiskitMachineLearningError</span>
 <span class="kn">from</span> <span class="nn">qiskit_machine_learning.neural_networks</span> <span class="kn">import</span> <span class="n">NeuralNetwork</span>
@@ -276,6 +283,8 @@
     <span class="n">CrossEntropySigmoidLoss</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">qiskit_machine_learning.deprecation</span> <span class="kn">import</span> <span class="n">deprecate_values</span>
+
+<span class="kn">from</span> <span class="nn">.objective_functions</span> <span class="kn">import</span> <span class="n">ObjectiveFunction</span>
 
 
 <div class="viewcode-block" id="TrainableModel"><a class="viewcode-back" href="../../../stubs/qiskit_machine_learning.algorithms.TrainableModel.html#qiskit_machine_learning.algorithms.TrainableModel">[documenti]</a><span class="k">class</span> <span class="nc">TrainableModel</span><span class="p">:</span>
@@ -291,6 +300,7 @@
         <span class="n">optimizer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Optimizer</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">warm_start</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">initial_point</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">callback</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
@@ -311,7 +321,11 @@
 <span class="sd">            optimizer: An instance of an optimizer to be used in training. When `None` defaults to SLSQP.</span>
 <span class="sd">            warm_start: Use weights from previous fit to start next fit.</span>
 <span class="sd">            initial_point: Initial point for the optimizer to start from.</span>
-
+<span class="sd">            callback: a reference to a user&#39;s callback function that has two parameters and</span>
+<span class="sd">                returns ``None``. The callback can access intermediate data during training.</span>
+<span class="sd">                On each iteration an optimizer invokes the callback and passes current weights</span>
+<span class="sd">                as an array and a computed value as a float of the objective function being</span>
+<span class="sd">                optimized. This allows to track how well optimization / training process is going on.</span>
 <span class="sd">        Raises:</span>
 <span class="sd">            QiskitMachineLearningError: unknown loss, invalid neural network</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -343,6 +357,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_warm_start</span> <span class="o">=</span> <span class="n">warm_start</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fit_result</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span> <span class="o">=</span> <span class="n">initial_point</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span> <span class="o">=</span> <span class="n">callback</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">neural_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -443,8 +458,32 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_warm_start</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_neural_network</span><span class="o">.</span><span class="n">num_weights</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span> <span class="o">=</span> <span class="n">algorithm_globals</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_neural_network</span><span class="o">.</span><span class="n">num_weights</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initial_point</span>
+
+    <span class="k">def</span> <span class="nf">_get_objective</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">function</span><span class="p">:</span> <span class="n">ObjectiveFunction</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Wraps the given `ObjectiveFunction` to add callback calls, if `callback` is not None, along</span>
+<span class="sd">        with evaluating the objective value. Returned objective function is passed to</span>
+<span class="sd">        `Optimizer.optimize()`.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            function: The objective function whose objective is to be evaluated.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Objective function to evaluate objective value and optionally invoke callback calls.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">function</span><span class="o">.</span><span class="n">objective</span>
+
+        <span class="k">def</span> <span class="nf">objective</span><span class="p">(</span><span class="n">objective_weights</span><span class="p">):</span>
+            <span class="n">objective_value</span> <span class="o">=</span> <span class="n">function</span><span class="o">.</span><span class="n">objective</span><span class="p">(</span><span class="n">objective_weights</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_callback</span><span class="p">(</span><span class="n">objective_weights</span><span class="p">,</span> <span class="n">objective_value</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">objective_value</span>
+
+        <span class="k">return</span> <span class="n">objective</span></div>
 </pre></div>
 
              </article>

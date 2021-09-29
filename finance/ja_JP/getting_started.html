@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>はじめに &mdash; Qiskit Finance 0.2.0 ドキュメント</title>
+  <title>はじめに &mdash; Qiskit Finance 0.2.1 ドキュメント</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="目次" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="Qiskit Finance API Reference" href="apidocs/qiskit_finance.html" />
-    <link rel="prev" title="Qiskit Finance documentation" href="index.html" /> 
+    <link rel="prev" title="Qiskit Financeドキュメント" href="index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -158,10 +158,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs/qiskit_finance.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs/qiskit_finance.html">API リファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">リリースノート</a></li>
 </ul>
 
             
@@ -236,53 +236,39 @@
 <h1>はじめに<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="installation">
 <h2>インストール<a class="headerlink" href="#installation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Qiskit Finance depends on the main Qiskit package which has its own
-<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> detailing the
-installation options for Qiskit and its supported environments/platforms. You should refer to
-that first. Then the information here can be followed which focuses on the additional installation
-specific to Qiskit Finance.</p>
+<p>Qiskit Financeは、Qiskit のインストール・オプションとそのサポート環境/プラットフォームを詳述した「<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit はじめに</a> 」にて説明された主要 Qiskit パッケージに依存しています。 まずそれを参照してください。次に、ここで説明する情報に従って、Qiskit Financeに固有の追加インストールをしましょう。</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0afa4f96-31e2-481d-8682-1c82361ad7e7" name="aa7485d1-d3b6-4b9a-ada2-7465e39f936f" type="radio">
-</input><label class="tabbed-label" for="0afa4f96-31e2-481d-8682-1c82361ad7e7">
+<input checked="checked" id="eba3548c-4d50-4e55-88fa-a8b47f9f4b58" name="75ee5b84-7200-474e-a58a-6c3e35392e42" type="radio">
+</input><label class="tabbed-label" for="eba3548c-4d50-4e55-88fa-a8b47f9f4b58">
 ローカルからの開始</label><div class="tabbed-content docutils">
-<p>The simplest way to get started is to follow the getting started 『Start locally』 for Qiskit
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<p>In your virtual environment where you installed Qiskit simply add <code class="docutils literal notranslate"><span class="pre">finance</span></code> to the
-extra list in a similar manner to how the extra <code class="docutils literal notranslate"><span class="pre">visualization</span></code> support is installed for
-Qiskit, i.e:</p>
+<p>最も簡単な方法は「 <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit はじめに</a> 」の「ローカルで始める」を参照して開始することです。</p>
+<p>Qiskit をインストールした仮想環境で、 Qiskit に追加の <code class="docutils literal notranslate"><span class="pre">visualization</span></code> サポートをインストールした方法と同様の方法で、以下のようにして追加リストに <code class="docutils literal notranslate"><span class="pre">finance</span></code> を追加してください:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install qiskit<span class="o">[</span>finance<span class="o">]</span>
 </pre></div>
 </div>
-<p>It is worth pointing out that if you’re a zsh user (which is the default shell on newer
-versions of macOS), you’ll need to put <code class="docutils literal notranslate"><span class="pre">qiskit[finance]</span></code> in quotes:</p>
+<p>Zshユーザー（新しいバージョンのmacOSのデフォルトシェル）の場合は、 <code class="docutils literal notranslate"><span class="pre">qiskit[finance]</span></code> を引用符で囲む必要があります。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install <span class="s1">&#39;qiskit[finance]&#39;</span>
 </pre></div>
 </div>
 </div>
-<input id="095cb051-3df1-4a29-b84e-a098e00caaa6" name="aa7485d1-d3b6-4b9a-ada2-7465e39f936f" type="radio">
-</input><label class="tabbed-label" for="095cb051-3df1-4a29-b84e-a098e00caaa6">
+<input id="4449f2f7-d8de-4b6a-b3c9-c2c90a5ef318" name="75ee5b84-7200-474e-a58a-6c3e35392e42" type="radio">
+</input><label class="tabbed-label" for="4449f2f7-d8de-4b6a-b3c9-c2c90a5ef318">
 ソースからのインストール</label><div class="tabbed-content docutils">
-<p>Installing Qiskit Finance from source allows you to access the most recently
-updated version under development instead of using the version in the Python Package
-Index (PyPI) repository. This will give you the ability to inspect and extend
-the latest version of the Qiskit Finance code more efficiently.</p>
-<p>Since Qiskit Finance depends on Qiskit, and its latest changes may require new or changed
-features of Qiskit, you should first follow Qiskit’s <cite>「Install from source」</cite> instructions
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<h2>Installing Qiskit Finance from Source</h2><p>Using the same development environment that you installed Qiskit in you are ready to install
-Qiskit Finance.</p>
+<p>ソースから Qiskit Financeをインストールすることにより、Python Package Index (PyPI) リポジトリのバージョンを使う代わりに、最新の Qiskit バージョンにアクセスすることができます。これにより、Qiskit Financeコードの最新版を調査したり、拡張することがより効果的にできるようになります。</p>
+<p>Qiskit Financeは Qiskit に依存しており、最新の変更が Qiskit の新規機能または変更された機能を必要とする場合があるので、まず「 <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit はじめに</a> 」の <cite>「ソースからのインストール」</cite> の指示に従ってください。</p>
+<h2>Installing Qiskit Finance from Source</h2><p>Qiskit をインストールしたものと同じ開発環境を使用して、 Qiskit Financeをインストールすることができます。</p>
 <ol class="arabic">
-<li><p>Clone the Qiskit Finance repository.</p>
+<li><p>Qiskit Financeリポジトリをクローンします。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Qiskit/qiskit-finance.git
 </pre></div>
 </div>
 </li>
-<li><p>Cloning the repository creates a local folder called <code class="docutils literal notranslate"><span class="pre">qiskit-finance</span></code>.</p>
+<li><p>リポジトリをクローンすると、<a href="#id1"><span class="problematic" id="id2">``</span></a>qiskit-finance``という名前のローカル・フォルダが作成されます。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> qiskit-finance
 </pre></div>
 </div>
 </li>
-<li><p>If you want to run tests or linting checks, install the developer requirements.</p>
+<li><p>もし、テストを実行したり文法をチェックしたい場合は、開発者向けライブラリをインストールします。</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -r requirements-dev.txt
 </pre></div>
 </div>
@@ -293,8 +279,7 @@ Qiskit Finance.</p>
 </div>
 </li>
 </ol>
-<p>If you want to install it in editable mode, meaning that code changes to the
-project don’t require a reinstall to be applied, you can do this with:</p>
+<p>編集可能モード(プロジェクトのコードを変更しても再インストールする必要なし) でインストールする場合は、次の手順を実行します:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -e .
 </pre></div>
 </div>
@@ -303,7 +288,7 @@ project don’t require a reinstall to be applied, you can do this with:</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="ready-to-get-going">
-<h2>Ready to get going?…<a class="headerlink" href="#ready-to-get-going" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>準備はいいですか？…<a class="headerlink" href="#ready-to-get-going" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
     <div class="text-container">
@@ -327,7 +312,7 @@ project don’t require a reinstall to be applied, you can do this with:</p>
         <a href="apidocs/qiskit_finance.html" class="btn btn-neutral float-right" title="Qiskit Finance API Reference" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Qiskit Finance documentation" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Qiskit Financeドキュメント" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -361,7 +346,7 @@ project don’t require a reinstall to be applied, you can do this with:</p>
               <ul>
 <li><a class="reference internal" href="#">はじめに</a><ul>
 <li><a class="reference internal" href="#installation">インストール</a></li>
-<li><a class="reference internal" href="#ready-to-get-going">Ready to get going?…</a></li>
+<li><a class="reference internal" href="#ready-to-get-going">準備はいいですか？…</a></li>
 </ul>
 </li>
 </ul>

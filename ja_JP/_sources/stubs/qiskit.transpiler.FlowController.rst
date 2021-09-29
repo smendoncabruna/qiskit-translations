@@ -1,32 +1,25 @@
-﻿qiskit.transpiler.FlowController
-================================
+﻿FlowController
+==============
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: FlowController
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FlowController.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FlowController.add_flow_controller
       ~FlowController.controller_factory
       ~FlowController.dump_passes
       ~FlowController.remove_flow_controller
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FlowController.registered_controllers
-   
-   
+   .. autoattribute:: registered_controllers

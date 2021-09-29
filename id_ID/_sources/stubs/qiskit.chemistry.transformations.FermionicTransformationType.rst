@@ -1,23 +1,15 @@
-﻿qiskit.chemistry.transformations.FermionicTransformationType
-============================================================
+﻿FermionicTransformationType
+===========================
 
 .. currentmodule:: qiskit.chemistry.transformations
 
 .. autoclass:: FermionicTransformationType
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FermionicTransformationType.FULL
-      ~FermionicTransformationType.PARTICLE_HOLE
-   
-   
+   .. autoattribute:: FULL
+   .. autoattribute:: PARTICLE_HOLE

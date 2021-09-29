@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.qasm.QasmTerminalStyle &mdash; Qiskit 0.29.0 documentation</title>
+  <title>QasmTerminalStyle &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -42,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Qobj (qiskit.qobj)" href="../apidoc/qobj.html" />
-    <link rel="prev" title="qiskit.qasm.QasmHTMLStyle" href="qiskit.qasm.QasmHTMLStyle.html" /> 
+    <link rel="prev" title="QasmHTMLStyle" href="qiskit.qasm.QasmHTMLStyle.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/qasm.html">Qasm (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.qasm</span></code>)</a> &gt;</li>
         
-      <li>qiskit.qasm.QasmTerminalStyle</li>
+      <li>QasmTerminalStyle</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,60 +335,49 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-qasm-qasmterminalstyle">
-<h1>qiskit.qasm.QasmTerminalStyle<a class="headerlink" href="#qiskit-qasm-qasmterminalstyle" title="Permalink to this headline">¶</a></h1>
+  <section id="qasmterminalstyle">
+<h1>QasmTerminalStyle<a class="headerlink" href="#qasmterminalstyle" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.qasm.QasmTerminalStyle">
 <em class="property">class </em><code class="sig-name descname">QasmTerminalStyle</code><a class="reference internal" href="../_modules/qiskit/qasm/pygments/lexer.html#QasmTerminalStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle" title="Permalink to this definition">¶</a></dt>
-<dd><p>A style for OpenQasm in a Terminal env (e.g. Jupyter print).</p>
-<dl class="py method">
-<dt id="qiskit.qasm.QasmTerminalStyle.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.qasm.QasmTerminalStyle.__init__" title="qiskit.qasm.QasmTerminalStyle.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-</tbody>
-</table>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pygments.style.Style</span></code></p>
+<p>A style for OpenQasm in a Terminal env (e.g. Jupyter print).</p>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">background_color</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_color</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_number_background_color</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_number_color</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_number_special_background_color</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_number_special_color</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">styles</span></code></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.background_color">
+<code class="sig-name descname">background_color</code><em class="property"> = '#ffffff'</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.highlight_color">
+<code class="sig-name descname">highlight_color</code><em class="property"> = '#ffffcc'</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.highlight_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.line_number_background_color">
+<code class="sig-name descname">line_number_background_color</code><em class="property"> = 'transparent'</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.line_number_background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.line_number_color">
+<code class="sig-name descname">line_number_color</code><em class="property"> = 'inherit'</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.line_number_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.line_number_special_background_color">
+<code class="sig-name descname">line_number_special_background_color</code><em class="property"> = '#ffffc0'</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.line_number_special_background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.line_number_special_color">
+<code class="sig-name descname">line_number_special_color</code><em class="property"> = '#000000'</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.line_number_special_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.qasm.QasmTerminalStyle.styles">
+<code class="sig-name descname">styles</code><em class="property"> = {Token: '', Token.Comment: '', Token.Comment.Hashbang: '', Token.Comment.Multiline: '', Token.Comment.Preproc: '', Token.Comment.PreprocFile: '', Token.Comment.Single: '', Token.Comment.Special: '', Token.Error: '', Token.Escape: '', Token.Generic: '', Token.Generic.Deleted: '', Token.Generic.Emph: '', Token.Generic.Error: '', Token.Generic.Heading: '', Token.Generic.Inserted: '', Token.Generic.Output: '', Token.Generic.Prompt: '', Token.Generic.Strong: '', Token.Generic.Subheading: '', Token.Generic.Traceback: '', Token.Keyword: '', Token.Keyword.Constant: '', Token.Keyword.Declaration: 'ansibrightgreen', Token.Keyword.Namespace: '', Token.Keyword.Pseudo: '', Token.Keyword.Reserved: 'ansibrightgreen', Token.Keyword.Type: 'ansibrightmagenta', Token.Literal: '', Token.Literal.Date: '', Token.Literal.Number: 'ansibrightcyan', Token.Literal.Number.Bin: '', Token.Literal.Number.Float: '', Token.Literal.Number.Hex: '', Token.Literal.Number.Integer: '', Token.Literal.Number.Integer.Long: '', Token.Literal.Number.Oct: '', Token.Literal.String: 'ansibrightred', Token.Literal.String.Affix: '', Token.Literal.String.Backtick: '', Token.Literal.String.Char: '', Token.Literal.String.Delimiter: '', Token.Literal.String.Doc: '', Token.Literal.String.Double: '', Token.Literal.String.Escape: '', Token.Literal.String.Heredoc: '', Token.Literal.String.Interpol: '', Token.Literal.String.Other: '', Token.Literal.String.Regex: '', Token.Literal.String.Single: '', Token.Literal.String.Symbol: '', Token.Name: '', Token.Name.Attribute: '', Token.Name.Builtin: 'ansibrightblue', Token.Name.Builtin.Pseudo: '', Token.Name.Class: '', Token.Name.Constant: '', Token.Name.Decorator: '', Token.Name.Entity: '', Token.Name.Exception: '', Token.Name.Function: 'ansibrightyellow', Token.Name.Function.Magic: '', Token.Name.Label: '', Token.Name.Namespace: '', Token.Name.Other: '', Token.Name.Property: '', Token.Name.Tag: '', Token.Name.Variable: '', Token.Name.Variable.Class: '', Token.Name.Variable.Global: '', Token.Name.Variable.Instance: '', Token.Name.Variable.Magic: '', Token.Operator: '', Token.Operator.Word: '', Token.Other: '', Token.Punctuation: '', Token.Text: '', Token.Text.Whitespace: ''}</em><a class="headerlink" href="#qiskit.qasm.QasmTerminalStyle.styles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
@@ -397,7 +393,7 @@
         <a href="../apidoc/qobj.html" class="btn btn-neutral float-right" title="Qobj (qiskit.qobj)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.qasm.QasmHTMLStyle.html" class="btn btn-neutral" title="qiskit.qasm.QasmHTMLStyle" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.qasm.QasmHTMLStyle.html" class="btn btn-neutral" title="QasmHTMLStyle" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -411,7 +407,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -430,7 +426,7 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.qasm.QasmTerminalStyle</a></li>
+<li><a class="reference internal" href="#">QasmTerminalStyle</a></li>
 </ul>
 
             </div>
@@ -494,7 +490,7 @@
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -517,9 +513,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.primitive\_ops.PrimitiveOp
-================================================
+﻿PrimitiveOp
+===========
 
 .. currentmodule:: qiskit.aqua.operators.primitive_ops
 
 .. autoclass:: PrimitiveOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PrimitiveOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PrimitiveOp.add
       ~PrimitiveOp.adjoint
       ~PrimitiveOp.assign_parameters
@@ -38,20 +37,14 @@
       ~PrimitiveOp.to_matrix
       ~PrimitiveOp.to_matrix_op
       ~PrimitiveOp.to_pauli_op
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PrimitiveOp.ENABLE_DEPRECATION
-      ~PrimitiveOp.INDENTATION
-      ~PrimitiveOp.coeff
-      ~PrimitiveOp.num_qubits
-      ~PrimitiveOp.parameters
-      ~PrimitiveOp.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

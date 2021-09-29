@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.AmplitudeEstimator &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>AmplitudeEstimator &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
-    <link rel="next" title="qiskit.algorithms.AmplitudeEstimatorResult" href="qiskit.algorithms.AmplitudeEstimatorResult.html" />
-    <link rel="prev" title="qiskit.algorithms.GroverResult" href="qiskit.algorithms.GroverResult.html" /> 
+    <link rel="next" title="qiskit.algorithms.AmplitudeEstimator.estimate" href="qiskit.algorithms.AmplitudeEstimator.estimate.html" />
+    <link rel="prev" title="qiskit.algorithms.GroverResult.combine" href="qiskit.algorithms.GroverResult.combine.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -233,27 +240,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.AmplitudeEstimator</li>
+      <li>AmplitudeEstimator</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,18 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-amplitudeestimator">
-<h1>qiskit.algorithms.AmplitudeEstimator<a class="headerlink" href="#qiskit-algorithms-amplitudeestimator" title="本標題的永久連結">¶</a></h1>
+  <section id="amplitudeestimator">
+<h1>AmplitudeEstimator<a class="headerlink" href="#amplitudeestimator" title="本標題的永久連結">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.AmplitudeEstimator">
 <em class="property">class </em><code class="sig-name descname">AmplitudeEstimator</code><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/amplitude_estimator.html#AmplitudeEstimator"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.algorithms.AmplitudeEstimator" title="本定義的永久連結">¶</a></dt>
-<dd><p>The Amplitude Estimation interface.</p>
-<dl class="py method">
-<dt id="qiskit.algorithms.AmplitudeEstimator.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.algorithms.AmplitudeEstimator.__init__" title="本定義的永久連結">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
+<dd><p>基礎類別：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The Amplitude Estimation interface.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -347,29 +349,11 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.AmplitudeEstimator.__init__" title="qiskit.algorithms.AmplitudeEstimator.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.AmplitudeEstimator.estimate" title="qiskit.algorithms.AmplitudeEstimator.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a>(estimation_problem)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.AmplitudeEstimator.estimate.html#qiskit.algorithms.AmplitudeEstimator.estimate" title="qiskit.algorithms.AmplitudeEstimator.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a></p></td>
 <td><p>Run the amplitude estimation algorithm.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.algorithms.AmplitudeEstimator.estimate">
-<em class="property">abstract </em><code class="sig-name descname">estimate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">estimation_problem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/amplitude_estimator.html#AmplitudeEstimator.estimate"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.algorithms.AmplitudeEstimator.estimate" title="本定義的永久連結">¶</a></dt>
-<dd><p>Run the amplitude estimation algorithm.</p>
-<dl class="field-list simple">
-<dt class="field-odd">參數</dt>
-<dd class="field-odd"><p><strong>estimation_problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">EstimationProblem</span></code>) – An <code class="docutils literal notranslate"><span class="pre">EstimationProblem</span></code> containing all problem-relevant information
-such as the state preparation and the objective qubits.</p>
-</dd>
-<dt class="field-even">傳回型態</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AmplitudeEstimatorResult</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -382,10 +366,10 @@ such as the state preparation and the objective qubits.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.algorithms.AmplitudeEstimatorResult.html" class="btn btn-neutral float-right" title="qiskit.algorithms.AmplitudeEstimatorResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.AmplitudeEstimator.estimate.html" class="btn btn-neutral float-right" title="qiskit.algorithms.AmplitudeEstimator.estimate" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.GroverResult.html" class="btn btn-neutral" title="qiskit.algorithms.GroverResult" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.GroverResult.combine.html" class="btn btn-neutral" title="qiskit.algorithms.GroverResult.combine" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -399,7 +383,7 @@ such as the state preparation and the objective qubits.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -418,7 +402,7 @@ such as the state preparation and the objective qubits.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.AmplitudeEstimator</a></li>
+<li><a class="reference internal" href="#">AmplitudeEstimator</a></li>
 </ul>
 
             </div>
@@ -483,7 +467,7 @@ such as the state preparation and the objective qubits.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -506,9 +490,11 @@ such as the state preparation and the objective qubits.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

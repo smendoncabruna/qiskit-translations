@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveExpectationValueVariance
-=========================================================
+﻿SaveExpectationValueVariance
+============================
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveExpectationValueVariance
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveExpectationValueVariance.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveExpectationValueVariance.add_decomposition
       ~SaveExpectationValueVariance.assemble
       ~SaveExpectationValueVariance.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveExpectationValueVariance.reverse_ops
       ~SaveExpectationValueVariance.soft_compare
       ~SaveExpectationValueVariance.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveExpectationValueVariance.decompositions
-      ~SaveExpectationValueVariance.definition
-      ~SaveExpectationValueVariance.duration
-      ~SaveExpectationValueVariance.label
-      ~SaveExpectationValueVariance.params
-      ~SaveExpectationValueVariance.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

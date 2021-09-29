@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.eigs.EigsQPE &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>EigsQPE &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
-    <link rel="next" title="Feature Maps (qiskit.aqua.components.feature_maps)" href="../apidoc/qiskit.aqua.components.feature_maps.html" />
-    <link rel="prev" title="qiskit.aqua.components.eigs.Eigenvalues" href="qiskit.aqua.components.eigs.Eigenvalues.html" /> 
+    <link rel="next" title="qiskit.aqua.components.eigs.EigsQPE.construct_circuit" href="qiskit.aqua.components.eigs.EigsQPE.construct_circuit.html" />
+    <link rel="prev" title="qiskit.aqua.components.eigs.Eigenvalues.get_scaling" href="qiskit.aqua.components.eigs.Eigenvalues.get_scaling.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -233,27 +240,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.components.eigs.html">Eigenvalues (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.components.eigs</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.components.eigs.EigsQPE</li>
+      <li>EigsQPE</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,12 +339,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-components-eigs-eigsqpe">
-<h1>qiskit.aqua.components.eigs.EigsQPE<a class="headerlink" href="#qiskit-aqua-components-eigs-eigsqpe" title="本標題的永久連結">¶</a></h1>
+  <section id="eigsqpe">
+<h1>EigsQPE<a class="headerlink" href="#eigsqpe" title="本標題的永久連結">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.components.eigs.EigsQPE">
 <em class="property">class </em><code class="sig-name descname">EigsQPE</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">iqft</span></em>, <em class="sig-param"><span class="n">num_time_slices</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num_ancillae</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">expansion_mode</span><span class="o">=</span><span class="default_value">'trotter'</span></em>, <em class="sig-param"><span class="n">expansion_order</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">evo_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">negative_evals</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ne_qfts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs_qpe.html#EigsQPE"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.EigsQPE" title="本定義的永久連結">¶</a></dt>
-<dd><p>Eigenvalues using Quantum Phase Estimation.</p>
+<dd><p>基礎類別：<code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.components.eigs.eigs.Eigenvalues</span></code></p>
+<p>Eigenvalues using Quantum Phase Estimation.</p>
 <p>Specifically, this class is based on PhaseEstimationCircuit with no measurements and
 has additional handling of negative eigenvalues, e.g. for <a class="reference internal" href="qiskit.aqua.algorithms.HHL.html#qiskit.aqua.algorithms.HHL" title="qiskit.aqua.algorithms.HHL"><code class="xref py py-class docutils literal notranslate"><span class="pre">HHL</span></code></a>.
 It depends on the <a class="reference internal" href="qiskit.circuit.library.QFT.html#qiskit.circuit.library.QFT" title="qiskit.circuit.library.QFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">QFT</span></code></a> class.</p>
@@ -359,29 +367,6 @@ has a minimum value of 1.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.EigsQPE.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">iqft</span></em>, <em class="sig-param"><span class="n">num_time_slices</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num_ancillae</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">expansion_mode</span><span class="o">=</span><span class="default_value">'trotter'</span></em>, <em class="sig-param"><span class="n">expansion_order</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">evo_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">negative_evals</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ne_qfts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs_qpe.html#EigsQPE.__init__"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.EigsQPE.__init__" title="本定義的永久連結">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">參數</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>) – The Hamiltonian Operator object</p></li>
-<li><p><strong>iqft</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>) – The Inverse Quantum Fourier Transform circuit</p></li>
-<li><p><strong>num_time_slices</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of time slices, has a minimum value of 1.</p></li>
-<li><p><strong>num_ancillae</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of ancillary qubits to use for the measurement,
-has a minimum value of 1.</p></li>
-<li><p><strong>expansion_mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The expansion mode (『trotter』 | 『suzuki』)</p></li>
-<li><p><strong>expansion_order</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The suzuki expansion order, has a minimum value of 1.</p></li>
-<li><p><strong>evo_time</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – An optional evolution time which should scale the eigenvalue onto the range
-<span class="math notranslate nohighlight">\((0,1]\)</span> (or <span class="math notranslate nohighlight">\((-0.5,0.5]\)</span> for negative eigenvalues). Defaults to
-<code class="docutils literal notranslate"><span class="pre">None</span></code> in which case a suitably estimated evolution time is internally computed.</p></li>
-<li><p><strong>negative_evals</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Set <code class="docutils literal notranslate"><span class="pre">True</span></code> to indicate negative eigenvalues need to be handled</p></li>
-<li><p><strong>ne_qfts</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]) – The QFT and IQFT circuits for handling negative eigenvalues</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -389,93 +374,20 @@ has a minimum value of 1.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.EigsQPE.__init__" title="qiskit.aqua.components.eigs.EigsQPE.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(operator, iqft[, num_time_slices, …])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type operator</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.EigsQPE.construct_circuit" title="qiskit.aqua.components.eigs.EigsQPE.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(mode[, register])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.EigsQPE.construct_circuit.html#qiskit.aqua.components.eigs.EigsQPE.construct_circuit" title="qiskit.aqua.components.eigs.EigsQPE.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the eigenvalues estimation using the PhaseEstimationCircuit</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.EigsQPE.construct_inverse" title="qiskit.aqua.components.eigs.EigsQPE.construct_inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_inverse</span></code></a>(mode, circuit)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.EigsQPE.construct_inverse.html#qiskit.aqua.components.eigs.EigsQPE.construct_inverse" title="qiskit.aqua.components.eigs.EigsQPE.construct_inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_inverse</span></code></a></p></td>
 <td><p>Construct the inverse eigenvalue estimation quantum circuit.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.EigsQPE.get_register_sizes" title="qiskit.aqua.components.eigs.EigsQPE.get_register_sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_register_sizes</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.EigsQPE.get_register_sizes.html#qiskit.aqua.components.eigs.EigsQPE.get_register_sizes" title="qiskit.aqua.components.eigs.EigsQPE.get_register_sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_register_sizes</span></code></a></p></td>
 <td><p>get register sizes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.EigsQPE.get_scaling" title="qiskit.aqua.components.eigs.EigsQPE.get_scaling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scaling</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.EigsQPE.get_scaling.html#qiskit.aqua.components.eigs.EigsQPE.get_scaling" title="qiskit.aqua.components.eigs.EigsQPE.get_scaling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scaling</span></code></a></p></td>
 <td><p>get scaling</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.EigsQPE.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">register</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs_qpe.html#EigsQPE.construct_circuit"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.EigsQPE.construct_circuit" title="本定義的永久連結">¶</a></dt>
-<dd><p>Construct the eigenvalues estimation using the PhaseEstimationCircuit</p>
-<dl class="field-list simple">
-<dt class="field-odd">參數</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mode</strong> (<em>str</em>) – construction mode, 『matrix』 not supported</p></li>
-<li><p><strong>register</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) – the register to use for the quantum state</p></li>
-</ul>
-</dd>
-<dt class="field-even">傳回</dt>
-<dd class="field-even"><p>object for the constructed circuit</p>
-</dd>
-<dt class="field-odd">傳回型態</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-<dt class="field-even">丟出</dt>
-<dd class="field-even"><p><strong>ValueError</strong> – QPE is only possible as a circuit not as a matrix</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.EigsQPE.construct_inverse">
-<code class="sig-name descname">construct_inverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">circuit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.components.eigs.EigsQPE.construct_inverse" title="本定義的永久連結">¶</a></dt>
-<dd><p>Construct the inverse eigenvalue estimation quantum circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">參數</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mode</strong> (<em>str</em>) – construction mode, 『matrix』 not supported</p></li>
-<li><p><strong>circuit</strong> (<a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><em>QuantumCircuit</em></a>) – the quantum circuit to invert</p></li>
-</ul>
-</dd>
-<dt class="field-even">傳回</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>object for of the inverted eigenvalue estimation</dt><dd><p>circuit.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">傳回型態</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-<dt class="field-even">丟出</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>NotImplementedError</strong> – not implemented for matrix mode</p></li>
-<li><p><strong>ValueError</strong> – Circuit was not constructed beforehand</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.EigsQPE.get_register_sizes">
-<code class="sig-name descname">get_register_sizes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs_qpe.html#EigsQPE.get_register_sizes"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.EigsQPE.get_register_sizes" title="本定義的永久連結">¶</a></dt>
-<dd><p>get register sizes</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.EigsQPE.get_scaling">
-<code class="sig-name descname">get_scaling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs_qpe.html#EigsQPE.get_scaling"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.EigsQPE.get_scaling" title="本定義的永久連結">¶</a></dt>
-<dd><p>get scaling</p>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -488,10 +400,10 @@ has a minimum value of 1.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.aqua.components.feature_maps.html" class="btn btn-neutral float-right" title="Feature Maps (qiskit.aqua.components.feature_maps)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.components.eigs.EigsQPE.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.eigs.EigsQPE.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.components.eigs.Eigenvalues.html" class="btn btn-neutral" title="qiskit.aqua.components.eigs.Eigenvalues" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.components.eigs.Eigenvalues.get_scaling.html" class="btn btn-neutral" title="qiskit.aqua.components.eigs.Eigenvalues.get_scaling" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -505,7 +417,7 @@ has a minimum value of 1.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -524,7 +436,7 @@ has a minimum value of 1.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.components.eigs.EigsQPE</a></li>
+<li><a class="reference internal" href="#">EigsQPE</a></li>
 </ul>
 
             </div>
@@ -589,7 +501,7 @@ has a minimum value of 1.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -612,9 +524,11 @@ has a minimum value of 1.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

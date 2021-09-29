@@ -1,19 +1,18 @@
-﻿qiskit.ignis.mitigation.CTMPExpvalMeasMitigator
-===============================================
+﻿CTMPExpvalMeasMitigator
+=======================
 
 .. currentmodule:: qiskit.ignis.mitigation
 
 .. autoclass:: CTMPExpvalMeasMitigator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CTMPExpvalMeasMitigator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CTMPExpvalMeasMitigator.assignment_fidelity
       ~CTMPExpvalMeasMitigator.assignment_matrix
       ~CTMPExpvalMeasMitigator.expectation_value
@@ -26,9 +25,5 @@
       ~CTMPExpvalMeasMitigator.required_shots
       ~CTMPExpvalMeasMitigator.seed
       ~CTMPExpvalMeasMitigator.stddev_upper_bound
-   
-   
 
-   
-   
-   
+

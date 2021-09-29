@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.algorithms.QEomVQE
-===================================
+﻿QEomVQE
+=======
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: QEomVQE
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QEomVQE.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QEomVQE.cleanup_parameterized_circuits
       ~QEomVQE.compute_minimum_eigenvalue
       ~QEomVQE.construct_circuit
@@ -28,25 +27,19 @@
       ~QEomVQE.run
       ~QEomVQE.set_backend
       ~QEomVQE.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QEomVQE.aux_operators
-      ~QEomVQE.backend
-      ~QEomVQE.expectation
-      ~QEomVQE.initial_point
-      ~QEomVQE.operator
-      ~QEomVQE.optimal_params
-      ~QEomVQE.optimizer
-      ~QEomVQE.quantum_instance
-      ~QEomVQE.random
-      ~QEomVQE.setting
-      ~QEomVQE.var_form
-   
-   
+   .. autoattribute:: aux_operators
+   .. autoattribute:: backend
+   .. autoattribute:: expectation
+   .. autoattribute:: initial_point
+   .. autoattribute:: operator
+   .. autoattribute:: optimal_params
+   .. autoattribute:: optimizer
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: setting
+   .. autoattribute:: var_form

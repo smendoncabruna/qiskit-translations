@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.GateDirection
-======================================
+﻿GateDirection
+=============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: GateDirection
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GateDirection.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~GateDirection.name
       ~GateDirection.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GateDirection.is_analysis_pass
-      ~GateDirection.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.ibmqbackend &mdash; Qiskit 0.29.0 documentazione</title>
+  <title>qiskit.providers.ibmq.ibmqbackend &mdash; Qiskit 0.30.0 documentazione</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Homepage della documentazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Prefazione</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Riferimenti API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guida alla migrazione delle applicazioni Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Guida alla migrazione delle applicazioni Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Risoluzione Dei Problemi</span></p>
 <ul>
@@ -429,7 +436,7 @@
     <span class="n">qobj_warning_issued</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">id_warning_issued</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="IBMQBackend.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.__init__">[documenti]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">configuration</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QasmBackendConfiguration</span><span class="p">,</span> <span class="n">PulseBackendConfiguration</span><span class="p">],</span>
             <span class="n">provider</span><span class="p">:</span> <span class="s1">&#39;accountprovider.AccountProvider&#39;</span><span class="p">,</span>
@@ -454,7 +461,7 @@
 
         <span class="c1"># Attributes used by caching functions.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_default_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Options</span><span class="p">:</span>
@@ -468,7 +475,7 @@
                        <span class="n">rep_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rep_delay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                        <span class="n">init_qubits</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">use_measure_esp</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 
-<div class="viewcode-block" id="IBMQBackend.run"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.run">[documenti]</a>    <span class="nd">@deprecate_arguments</span><span class="p">({</span><span class="s1">&#39;qobj&#39;</span><span class="p">:</span> <span class="s1">&#39;circuits&#39;</span><span class="p">})</span>
+<div class="viewcode-block" id="IBMQBackend.run"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.run.html#qiskit.providers.ibmq.IBMQBackend.run">[documenti]</a>    <span class="nd">@deprecate_arguments</span><span class="p">({</span><span class="s1">&#39;qobj&#39;</span><span class="p">:</span> <span class="s1">&#39;circuits&#39;</span><span class="p">})</span>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">circuits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QasmQobj</span><span class="p">,</span> <span class="n">PulseQobj</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span>
@@ -724,7 +731,7 @@
         <span class="n">Publisher</span><span class="p">()</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;ibmq.job.start&quot;</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">job</span>
 
-<div class="viewcode-block" id="IBMQBackend.properties"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.properties">[documenti]</a>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMQBackend.properties"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.properties.html#qiskit.providers.ibmq.IBMQBackend.properties">[documenti]</a>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
             <span class="n">datetime</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">python_datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -775,7 +782,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="n">backend_properties</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.status"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.status">[documenti]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BackendStatus</span><span class="p">:</span>
+<div class="viewcode-block" id="IBMQBackend.status"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.status.html#qiskit.providers.ibmq.IBMQBackend.status">[documenti]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BackendStatus</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the backend status.</span>
 
 <span class="sd">        Note:</span>
@@ -798,7 +805,7 @@
                 <span class="s1">&#39;Unexpected return value received from the server when &#39;</span>
                 <span class="s1">&#39;getting backend status: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.defaults"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.defaults">[documenti]</a>    <span class="k">def</span> <span class="nf">defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PulseDefaults</span><span class="p">]:</span>
+<div class="viewcode-block" id="IBMQBackend.defaults"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.defaults.html#qiskit.providers.ibmq.IBMQBackend.defaults">[documenti]</a>    <span class="k">def</span> <span class="nf">defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PulseDefaults</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the pulse defaults for the backend.</span>
 
 <span class="sd">        The schema for default pulse configuration can be found in</span>
@@ -822,7 +829,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaults</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.job_limit"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.job_limit">[documenti]</a>    <span class="k">def</span> <span class="nf">job_limit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BackendJobLimit</span><span class="p">:</span>
+<div class="viewcode-block" id="IBMQBackend.job_limit"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.job_limit.html#qiskit.providers.ibmq.IBMQBackend.job_limit">[documenti]</a>    <span class="k">def</span> <span class="nf">job_limit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BackendJobLimit</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the job limit for the backend.</span>
 
 <span class="sd">        The job limit information includes the current number of active jobs</span>
@@ -866,7 +873,7 @@
                 <span class="s1">&#39;Unexpected return value received from the server when &#39;</span>
                 <span class="s1">&#39;querying job limit data for the backend: </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span> <span class="kn">from</span> <span class="nn">ex</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.remaining_jobs_count"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.remaining_jobs_count">[documenti]</a>    <span class="k">def</span> <span class="nf">remaining_jobs_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<div class="viewcode-block" id="IBMQBackend.remaining_jobs_count"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.remaining_jobs_count.html#qiskit.providers.ibmq.IBMQBackend.remaining_jobs_count">[documenti]</a>    <span class="k">def</span> <span class="nf">remaining_jobs_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the number of remaining jobs that could be submitted to the backend.</span>
 
 <span class="sd">        Note:</span>
@@ -893,7 +900,7 @@
 
         <span class="k">return</span> <span class="n">job_limit</span><span class="o">.</span><span class="n">maximum_jobs</span> <span class="o">-</span> <span class="n">job_limit</span><span class="o">.</span><span class="n">active_jobs</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.jobs"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">jobs</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMQBackend.jobs"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.jobs.html#qiskit.providers.ibmq.IBMQBackend.jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">jobs</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
             <span class="n">skip</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -968,7 +975,7 @@
             <span class="n">job_tags</span><span class="o">=</span><span class="n">job_tags</span><span class="p">,</span> <span class="n">job_tags_operator</span><span class="o">=</span><span class="n">job_tags_operator</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="o">=</span><span class="n">experiment_id</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="n">descending</span><span class="p">,</span> <span class="n">db_filter</span><span class="o">=</span><span class="n">db_filter</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.active_jobs"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.active_jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">active_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">IBMQJob</span><span class="p">]:</span>
+<div class="viewcode-block" id="IBMQBackend.active_jobs"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.active_jobs.html#qiskit.providers.ibmq.IBMQBackend.active_jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">active_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">IBMQJob</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the unfinished jobs submitted to this backend.</span>
 
 <span class="sd">        Return the jobs submitted to this backend, with this provider, that are</span>
@@ -989,7 +996,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">active_job_states</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.retrieve_job"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.retrieve_job">[documenti]</a>    <span class="k">def</span> <span class="nf">retrieve_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IBMQJob</span><span class="p">:</span>
+<div class="viewcode-block" id="IBMQBackend.retrieve_job"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.retrieve_job.html#qiskit.providers.ibmq.IBMQBackend.retrieve_job">[documenti]</a>    <span class="k">def</span> <span class="nf">retrieve_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IBMQJob</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a single job submitted to this backend.</span>
 
 <span class="sd">        Args:</span>
@@ -1015,7 +1022,7 @@
 
         <span class="k">return</span> <span class="n">job</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.reservations"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.reservations">[documenti]</a>    <span class="k">def</span> <span class="nf">reservations</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMQBackend.reservations"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.reservations.html#qiskit.providers.ibmq.IBMQBackend.reservations">[documenti]</a>    <span class="k">def</span> <span class="nf">reservations</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">start_datetime</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">python_datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">end_datetime</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">python_datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1041,7 +1048,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="n">start_datetime</span><span class="p">,</span> <span class="n">end_datetime</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">convert_reservation_data</span><span class="p">(</span><span class="n">raw_response</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="IBMQBackend.configuration"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.html#qiskit.providers.ibmq.IBMQBackend.configuration">[documenti]</a>    <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">QasmBackendConfiguration</span><span class="p">,</span> <span class="n">PulseBackendConfiguration</span><span class="p">]:</span>
+<div class="viewcode-block" id="IBMQBackend.configuration"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.ibmq.IBMQBackend.configuration.html#qiskit.providers.ibmq.IBMQBackend.configuration">[documenti]</a>    <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">QasmBackendConfiguration</span><span class="p">,</span> <span class="n">PulseBackendConfiguration</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the backend configuration.</span>
 
 <span class="sd">        Backend configuration contains fixed information about the backend, such</span>
@@ -1348,7 +1355,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ultimo aggiornamento 2021/08/13.
+      Ultimo aggiornamento 2021/09/23.
 
     </p>
   </div>
@@ -1428,7 +1435,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1451,9 +1458,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

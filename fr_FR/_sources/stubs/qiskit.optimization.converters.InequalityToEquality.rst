@@ -1,30 +1,23 @@
-﻿qiskit.optimization.converters.InequalityToEquality
-===================================================
+﻿InequalityToEquality
+====================
 
 .. currentmodule:: qiskit.optimization.converters
 
 .. autoclass:: InequalityToEquality
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~InequalityToEquality.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~InequalityToEquality.convert
       ~InequalityToEquality.interpret
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~InequalityToEquality.mode
-   
-   
+   .. autoattribute:: mode

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_finance.data_providers.exchange_data_provider &mdash; Documentation Qiskit Finance 0.2.0</title>
+  <title>qiskit_finance.data_providers.exchange_data_provider &mdash; Documentation Qiskit Finance 0.2.1</title>
   
 
   
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -338,10 +338,10 @@
                 <span class="n">stock_data</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_start</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_end</span><span class="p">)</span>
             <span class="k">except</span> <span class="n">quandl</span><span class="o">.</span><span class="n">AuthenticationError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">QiskitFinanceError</span><span class="p">(</span><span class="s2">&quot;Quandl invalid token.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
-            <span class="k">except</span> <span class="n">quandl</span><span class="o">.</span><span class="n">NotFoundError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">except</span> <span class="n">quandl</span><span class="o">.</span><span class="n">NotFoundError</span><span class="p">:</span>
                 <span class="n">stocks_notfound</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
                 <span class="k">continue</span>
-            <span class="k">except</span> <span class="n">quandl</span><span class="o">.</span><span class="n">ForbiddenError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">except</span> <span class="n">quandl</span><span class="o">.</span><span class="n">ForbiddenError</span><span class="p">:</span>
                 <span class="n">stocks_forbidden</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
                 <span class="k">continue</span>
             <span class="k">except</span> <span class="n">quandl</span><span class="o">.</span><span class="n">QuandlError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>

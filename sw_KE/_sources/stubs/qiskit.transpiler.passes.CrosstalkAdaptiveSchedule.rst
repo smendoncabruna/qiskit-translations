@@ -1,19 +1,18 @@
-﻿qiskit.transpiler.passes.CrosstalkAdaptiveSchedule
-==================================================
+﻿CrosstalkAdaptiveSchedule
+=========================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CrosstalkAdaptiveSchedule
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CrosstalkAdaptiveSchedule.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CrosstalkAdaptiveSchedule.assign_gate_id
       ~CrosstalkAdaptiveSchedule.basic_bounds
       ~CrosstalkAdaptiveSchedule.check_dag_dependency
@@ -42,16 +41,10 @@
       ~CrosstalkAdaptiveSchedule.scheduling_constraints
       ~CrosstalkAdaptiveSchedule.singleq_tuple
       ~CrosstalkAdaptiveSchedule.solve_optimization
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CrosstalkAdaptiveSchedule.is_analysis_pass
-      ~CrosstalkAdaptiveSchedule.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

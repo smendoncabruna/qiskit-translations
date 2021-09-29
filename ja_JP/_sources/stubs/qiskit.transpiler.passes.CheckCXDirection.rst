@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.CheckCXDirection
-=========================================
+﻿CheckCXDirection
+================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CheckCXDirection
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CheckCXDirection.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CheckCXDirection.name
       ~CheckCXDirection.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CheckCXDirection.is_analysis_pass
-      ~CheckCXDirection.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

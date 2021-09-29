@@ -1,22 +1,10 @@
-﻿qiskit.optimization.algorithms.ADMMParameters
-=============================================
+﻿ADMMParameters
+==============
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: ADMMParameters
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~ADMMParameters.__init__
-   
-   
-
-   
-   
-   

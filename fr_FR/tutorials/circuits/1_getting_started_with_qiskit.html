@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Démarrer avec Qiskit &mdash; Documentation Qiskit 0.29.0</title>
+  <title>Démarrer avec Qiskit &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -231,7 +238,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -661,18 +668,18 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Dans ce circuit, les qubits sont placés dans l’ordre, le qubit 0 étant en haut et le qubit 2 en bas. Le circuit est lu de gauche à droite (ce qui signifie que les portes appliquées les premières sont celles étant le plus à gauche).</p>
 <div class="alert alert-block alert-info"><p>Lorsque l’on représente l’état d’un système à plusieurs qubits, l’ordre des produits tensoriels utilisé dans Qiskit est différent de celui de la plupart des manuels de physique. Supposons qu’il y a <span class="math notranslate nohighlight">\(n\)</span> qubits, et que le qubit de numéro <span class="math notranslate nohighlight">\(j\)</span> soit dénoté par <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit utilise l’ordre dans lequel le qubit numéro <span class="math notranslate nohighlight">\(n\)</span> est à gauche dans l’expression du produit tensoriel, de telle sorte à ce que les vecteurs de base soient dénotés par :math:` Q_{n-1}otimes cdots otimes Q_1otimes Q_0`.</p>
-<p>For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as <span class="math notranslate nohighlight">\(|100\rangle\)</span>, whereas many physics textbooks would represent it as <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
-<p>This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) operation with qubit 0 being the control and qubit 1 being the target as</p>
+<p>Par exemple, si le qubit numéro zéro est dans l’état 0, le qubit 1 est dans l’état 0, le qubit 2 dans l’état 1, Qiskit représentera cet état par <span class="math notranslate nohighlight">\(|100\rangle\)</span>, tandis que de nombreux manuels de physiques l’auraient représenté par <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
+<p>Cette différence d’ordre affecte la façon dont les opérations affectant plusieurs qubits sont représentées en tant que matrices. Par exemple, Qiskit représente une opération Control-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>), où le qubit 0 est le qubit de contrôle et où le qubit 1 est la cible par</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_X = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\  0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\\end{pmatrix}.\end{split}\]</div>
 </div></section>
-<section id="Simulating-circuits-using-Qiskit-Aer">
-<h2>Simulating circuits using Qiskit Aer<a class="headerlink" href="#Simulating-circuits-using-Qiskit-Aer" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Qiskit Aer is our package for simulating quantum circuits. It provides many different backends for doing a simulation. There is also a basic, Python only, implementation called <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> in Terra that can be used as a drop-in replacement for <code class="docutils literal notranslate"><span class="pre">Aer</span></code> in the examples below.</p>
-<section id="Statevector-backend">
-<h3>Statevector backend<a class="headerlink" href="#Statevector-backend" title="Lien permanent vers ce titre">¶</a></h3>
-<p>The most common backend in Qiskit Aer is the <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>. This simulator returns the quantum state, which is a complex vector of dimensions <span class="math notranslate nohighlight">\(2^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of qubits (so be careful using this as it will quickly get too large to run on your machine).</p>
-<p>To run the above circuit using the statevector simulator, first you need to import Aer and then set the backend to <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>.</p>
+<section id="Simuler-des-circuits-en-utilisant-Qiskit-Aer">
+<h2>Simuler des circuits en utilisant Qiskit Aer<a class="headerlink" href="#Simuler-des-circuits-en-utilisant-Qiskit-Aer" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Qiskit Aer est le module qui nous permet de simuler des circuits quantiques. Il fournit plusieurs plateformes différentes pour effectuer une telle simulation. Il existe également dans Terra une implémentation simple utilisant exclusivement Python appelée <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> qui peut être utilisée comme une alternative à <code class="docutils literal notranslate"><span class="pre">Aer</span></code> dans les exemples suivants.</p>
+<section id="Backend-dédié-aux-vecteurs-d'état">
+<h3>Backend dédié aux vecteurs d’état<a class="headerlink" href="#Backend-dédié-aux-vecteurs-d'état" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le backend le plus commun de Qiskit Aer est le <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>. Ce simulateur renvoie l’état quantique, qui est un vecteur complexe de dimension <span class="math notranslate nohighlight">\(2^n\)</span>, où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de qubits (faites donc attention en utilisant ce backend, comme la taille du vecteur en question peut rapidement devenir trop grande pour votre machine).</p>
+<p>Pour exécuter le circuit ci-dessus en utilisant le simulateur de vecteur d’état, vous devez d’abord importer Aer et ensuite paramétrer l’environnement d’exécution, ou backend en anglais, sur <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -686,8 +693,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Now that we have chosen the backend, it’s time to compile and run the quantum circuit. In Qiskit we provide the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function for this. <code class="docutils literal notranslate"><span class="pre">execute</span></code> returns a <code class="docutils literal notranslate"><span class="pre">job</span></code> object that encapsulates information about the job submitted to the backend.</p>
-<div class="alert alert-block alert-info"><p>Tip: You can obtain the above parameters in Jupyter. Simply place the text cursor on a function and press Shift+Tab.</p>
+<p>Maintenant que nous avons choisi le backend, il nous est possible de compiler et d’exécuter le circuit quantique. Dans Qiskit, nous utilisons la fonction <code class="docutils literal notranslate"><span class="pre">execute</span></code> pour cela. <code class="docutils literal notranslate"><span class="pre">execute</span></code> renvoie un objet <code class="docutils literal notranslate"><span class="pre">job</span></code> qui contient certaines informations concernant la tâche lancée sur le backend.</p>
+<div class="alert alert-block alert-info"><p>Astuce: Il est possible d’obtenir les paramètres ci-dessus dans Jupyter. Placez simplement le curseur sur une fonction et pressez Shift+Tab.</p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -698,8 +705,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>When you run a program, a job object is made that has the following two useful methods: <code class="docutils literal notranslate"><span class="pre">job.status()</span></code> and <code class="docutils literal notranslate"><span class="pre">job.result()</span></code>, which return the status of the job and a result object, respectively.</p>
-<div class="alert alert-block alert-info"><p>Note: Jobs run asynchronously, but when the result method is called, it switches to synchronous and waits for it to finish before moving on to another task.</p>
+<p>Lorsque vous exécutez un programme, un objet job est créé. Cet objet possède deux méthodes pouvant se révéler utiles : <code class="docutils literal notranslate"><span class="pre">job.status()</span></code> et <code class="docutils literal notranslate"><span class="pre">job.result()</span></code>, qui retourneront respectivement l’état du job et un objet résultat.</p>
+<div class="alert alert-block alert-info"><p>Note : Les tâches s’exécutent de façon asynchrone, mais quand la méthode result est appelée, on bascule en mode synchrone et on attend que la tâche en cours soit finie avant de passer à la suivante.</p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -709,7 +716,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The results object contains the data and Qiskit provides the method <code class="docutils literal notranslate"><span class="pre">result.get_statevector(circ)</span></code> to return the state vector for the quantum circuit.</p>
+<p>L’objet result contient les données voulues et Qiskit fournit la méthode <code class="docutils literal notranslate"><span class="pre">result.get_statevector(circ)</span></code> pour retourner le vecteur d’état du circuit quantique.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -729,8 +736,8 @@ div.rendered_html tbody tr:hover {
  0.707+0.j]
 </pre></div></div>
 </div>
-<p>Qiskit also provides a visualization toolbox to allow you to view these results.</p>
-<p>Below, we use the visualization function to plot the real and imaginary components of the state density matrix <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<p>Qiskit fournit aussi une boite à outil de visualisation qui permet d’afficher ces résultats.</p>
+<p>Ci-dessous, nous utilisons la fonction de visualisation pour afficher les points correspondants aux composantes réelles et imaginaires de la matrice de densité <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -750,9 +757,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </section>
-<section id="Unitary-backend">
-<h3>Unitary backend<a class="headerlink" href="#Unitary-backend" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Qiskit Aer also includes a <code class="docutils literal notranslate"><span class="pre">unitary_simulator</span></code> that works <em>provided all the elements in the circuit are unitary operations</em>. This backend calculates the <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span> matrix representing the gates in the quantum circuit.</p>
+<section id="Backend-associé-aux-opérateurs-unitaires">
+<h3>Backend associé aux opérateurs unitaires<a class="headerlink" href="#Backend-associé-aux-opérateurs-unitaires" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Qiskit Aer inclut également <code class="docutils literal notranslate"><span class="pre">unitary_simulator</span></code> qui permet, <em>en supposant que tous les éléments du circuit soient des opérations unitaires</em>, de calculer la matrice de taille <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span> représentant les portes du circuit quantique.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -792,19 +799,19 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 </section>
-<section id="OpenQASM-backend">
-<h3>OpenQASM backend<a class="headerlink" href="#OpenQASM-backend" title="Lien permanent vers ce titre">¶</a></h3>
-<p>The simulators above are useful because they provide information about the state output by the ideal circuit and the matrix representation of the circuit. However, a real experiment terminates by <em>measuring</em> each qubit (usually in the computational <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span> basis). Without measurement, we cannot gain information about the state. Measurements cause the quantum system to collapse into classical bits.</p>
-<p>For example, suppose we make independent measurements on each qubit of the three-qubit GHZ state</p>
+<section id="Backend-OpenQASM">
+<h3>Backend OpenQASM<a class="headerlink" href="#Backend-OpenQASM" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les simulateurs précédents sont utiles car ils fournissent une information sur l’état de sortie d’un circuit idéal et la représentation matricielle de ce circuit. Toutefois, une expérience réelle se termine par la mesure de chaque qubit (habituellement sur la base de calcul <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span>). Sans mesure, on ne peut pas récupérer d’information à propos de l’état. Cependant, la mesure provoque l’effondrement du système quantique en un système de bits classiques.</p>
+<p>Par exemple, supposons que nous fassions des mesures indépendantes sur chaque qubit de l’état GHZ à trois qubits</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = (|000\rangle +|111\rangle)/\sqrt{2},\]</div>
-<p>and let <span class="math notranslate nohighlight">\(xyz\)</span> denote the bitstring that results. Recall that, under the qubit labeling used by Qiskit, <span class="math notranslate nohighlight">\(x\)</span> would correspond to the outcome on qubit 2, <span class="math notranslate nohighlight">\(y\)</span> to the outcome on qubit 1, and <span class="math notranslate nohighlight">\(z\)</span> to the outcome on qubit 0.</p>
-<div class="alert alert-block alert-info"><p>Note: This representation of the bitstring puts the most significant bit (MSB) on the left, and the least significant bit (LSB) on the right. This is the standard ordering of binary bitstrings. We order the qubits in the same way (qubit representing the MSB has index 0), which is why Qiskit uses a non-standard tensor product order.</p>
-</div><p>Recall the probability of obtaining outcome <span class="math notranslate nohighlight">\(xyz\)</span> is given by</p>
+<p>et notons <span class="math notranslate nohighlight">\(xyz\)</span> la chaîne de bits résultante. Rappelons que, dans la convention de nommage des qubits utilisée par Qiskit, <span class="math notranslate nohighlight">\(x\)</span> correspond à l’état résultant du qubit 2, <span class="math notranslate nohighlight">\(y\)</span> à l’état résultant du qubit 1 et <span class="math notranslate nohighlight">\(z\)</span> à l’état résultant du qubit 0.</p>
+<div class="alert alert-block alert-info"><p>Note: Cette représentation de la chaîne de bits place le bit le plus significatif (MSB) à gauche, et le bit le moins significatif (LSB) à droite. Il s’agit de l’ordre standard utilisé pour représenter des chaînes de bits. Nous représentons les qubits de la même façon (le qubit représentant le MSB est associé à l’index 0), c’est pourquoi Qiskit utilise un ordre de produit tensoriel non standard.</p>
+</div><p>Rappelons que la probabilité d’obtenir le résultat <span class="math notranslate nohighlight">\(xyz\)</span> est donnée par</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}\]</div>
-<p>and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.</p>
-<p>To simulate a circuit that includes measurement, we need to add measurements to the original circuit above, and use a different Aer backend.</p>
+<p>ce qui assure que les probabilités d’obtenir 000 ou 111 à partir de l’état GHZ sont toutes les deux égales à 1/2.</p>
+<p>Pour simuler un circuit qui inclut des mesures, nous avons besoin d’ajouter lesdites mesures au circuit précédent et d’utiliser un backend Aer différent.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -841,8 +848,8 @@ q_2: ──────────┤ X ├─░──╫──╫─┤M├
 c: 3/═══════════════════╩══╩══╩═
                         0  1  2 </pre></div>
 </div>
-<p>This circuit adds a classical register, and three measurements that are used to map the outcome of qubits to the classical bits.</p>
-<p>To simulate this circuit, we use the <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> in Qiskit Aer. Each run of this circuit will yield either the bitstring 000 or 111. To build up statistics about the distribution of the bitstrings (to, e.g., estimate <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span>), we need to repeat the circuit many times. The number of times the circuit is repeated can be specified in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function, via the <code class="docutils literal notranslate"><span class="pre">shots</span></code> keyword.</p>
+<p>Ce circuit ajoute un registre classique ainsi que trois mesures placées de telle sorte à faire correspondre la mesure de chaque qubit à son bit classique associé.</p>
+<p>Pour simuler ce circuit, nous utilisons le backend <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> de Qiskit Aer. Chaque exécution (« tir » ou « shot » en anglais) de ce circuit aboutira soit à une séquence 000, soit à 111. Afin d’obtenir une statistique de la distribution des résultats (par exemple, afin d’estimer <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span>), il nous est nécessaire de répéter cette expérience plusieurs fois. Le nombre d’expériences, qui est aussi le nombre de fois où le circuit sera exécuté peut être spécifié dans la fonction <code class="docutils literal notranslate"><span class="pre">execute</span></code> par le mot-clé <code class="docutils literal notranslate"><span class="pre">shots</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -861,7 +868,7 @@ c: 3/═══════════════════╩══╩══
 </pre></div>
 </div>
 </div>
-<p>Once you have a result object, you can access the counts via the function <code class="docutils literal notranslate"><span class="pre">get_counts(circuit)</span></code>. This gives you the <em>aggregated</em> binary outcomes of the circuit you submitted.</p>
+<p>Une fois que vous avez un objet résultat, vous pouvez obtenir le décompte des dits résultats (counts) par la fonction <code class="docutils literal notranslate"><span class="pre">get_counts(circuit)</span></code>. Cela vous donne le résultat sous forme <em>d’agrégats</em> de chaînes binaires du circuit testé.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -880,7 +887,7 @@ c: 3/═══════════════════╩══╩══
 {&#39;111&#39;: 514, &#39;000&#39;: 510}
 </pre></div></div>
 </div>
-<p>Approximately 50 percent of the time, the output bitstring is 000. Qiskit also provides a function <code class="docutils literal notranslate"><span class="pre">plot_histogram</span></code>, which allows you to view the outcomes.</p>
+<p>Environ 50% du temps, le résultat sera 000. Qiskit fournit également une fonction <code class="docutils literal notranslate"><span class="pre">plot_histogram</span></code> qui vous permet de visualiser les résultats.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -899,7 +906,7 @@ c: 3/═══════════════════╩══╩══
 <img alt="../../_images/tutorials_circuits_1_getting_started_with_qiskit_32_0.png" src="../../_images/tutorials_circuits_1_getting_started_with_qiskit_32_0.png" />
 </div>
 </div>
-<p>The estimated outcome probabilities <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{Pr}(111)\)</span> are computed by taking the aggregate counts and dividing by the number of shots (times the circuit was repeated). Try changing the <code class="docutils literal notranslate"><span class="pre">shots</span></code> keyword in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function and see how the estimated probabilities change.</p>
+<p>Les probabilités estimées des résultats <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> et <span class="math notranslate nohighlight">\(\mathrm{Pr}(111) sont calculées en prenant les agrégats précédents et en les divisant par le nombres de &quot;tirs&quot; (le nombre de répétitions de l'exécution du circuit). Essayez par exemple de modifier la valeur du mot-clé \)</span> dans la fonction <code class="docutils literal notranslate"><span class="pre">execute</span></code> afin de voir la manière dont la probabilité estimée est affectée.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
@@ -953,7 +960,7 @@ c: 3/═══════════════════╩══╩══
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -978,10 +985,10 @@ c: 3/═══════════════════╩══╩══
 </ul>
 </li>
 <li><a class="reference internal" href="#Visualisation-du-circuit">Visualisation du circuit</a></li>
-<li><a class="reference internal" href="#Simulating-circuits-using-Qiskit-Aer">Simulating circuits using Qiskit Aer</a><ul>
-<li><a class="reference internal" href="#Statevector-backend">Statevector backend</a></li>
-<li><a class="reference internal" href="#Unitary-backend">Unitary backend</a></li>
-<li><a class="reference internal" href="#OpenQASM-backend">OpenQASM backend</a></li>
+<li><a class="reference internal" href="#Simuler-des-circuits-en-utilisant-Qiskit-Aer">Simuler des circuits en utilisant Qiskit Aer</a><ul>
+<li><a class="reference internal" href="#Backend-dédié-aux-vecteurs-d'état">Backend dédié aux vecteurs d’état</a></li>
+<li><a class="reference internal" href="#Backend-associé-aux-opérateurs-unitaires">Backend associé aux opérateurs unitaires</a></li>
+<li><a class="reference internal" href="#Backend-OpenQASM">Backend OpenQASM</a></li>
 </ul>
 </li>
 </ul>
@@ -1049,7 +1056,7 @@ c: 3/═══════════════════╩══╩══
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1072,9 +1079,11 @@ c: 3/═══════════════════╩══╩══
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

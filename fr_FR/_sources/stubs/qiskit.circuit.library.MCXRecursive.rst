@@ -1,54 +1,32 @@
-﻿qiskit.circuit.library.MCXRecursive
-===================================
+﻿MCXRecursive
+============
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: MCXRecursive
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~MCXRecursive.__init__
-      ~MCXRecursive.add_decomposition
-      ~MCXRecursive.assemble
-      ~MCXRecursive.broadcast_arguments
-      ~MCXRecursive.c_if
-      ~MCXRecursive.control
-      ~MCXRecursive.copy
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MCXRecursive.get_num_ancilla_qubits
       ~MCXRecursive.inverse
-      ~MCXRecursive.is_parameterized
-      ~MCXRecursive.mirror
-      ~MCXRecursive.power
-      ~MCXRecursive.qasm
-      ~MCXRecursive.repeat
-      ~MCXRecursive.reverse_ops
-      ~MCXRecursive.soft_compare
-      ~MCXRecursive.to_matrix
-      ~MCXRecursive.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MCXRecursive.ctrl_state
-      ~MCXRecursive.decompositions
-      ~MCXRecursive.definition
-      ~MCXRecursive.duration
-      ~MCXRecursive.label
-      ~MCXRecursive.name
-      ~MCXRecursive.num_ancilla_qubits
-      ~MCXRecursive.num_ctrl_qubits
-      ~MCXRecursive.params
-      ~MCXRecursive.unit
-   
-   
+   .. autoattribute:: ctrl_state
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: num_ancilla_qubits
+   .. autoattribute:: num_ctrl_qubits
+   .. autoattribute:: params
+   .. autoattribute:: unit

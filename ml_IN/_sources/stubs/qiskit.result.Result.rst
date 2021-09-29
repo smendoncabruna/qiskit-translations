@@ -1,19 +1,18 @@
-﻿qiskit.result.Result
-====================
+﻿Result
+======
 
 .. currentmodule:: qiskit.result
 
 .. autoclass:: Result
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Result.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Result.data
       ~Result.from_dict
       ~Result.get_counts
@@ -21,9 +20,5 @@
       ~Result.get_statevector
       ~Result.get_unitary
       ~Result.to_dict
-   
-   
 
-   
-   
-   
+

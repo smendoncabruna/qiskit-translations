@@ -1,46 +1,27 @@
-﻿qiskit.circuit.library.Measure
-==============================
+﻿Measure
+=======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: Measure
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~Measure.__init__
-      ~Measure.add_decomposition
-      ~Measure.assemble
-      ~Measure.broadcast_arguments
-      ~Measure.c_if
-      ~Measure.copy
-      ~Measure.inverse
-      ~Measure.is_parameterized
-      ~Measure.mirror
-      ~Measure.qasm
-      ~Measure.repeat
-      ~Measure.reverse_ops
-      ~Measure.soft_compare
-      ~Measure.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~Measure.broadcast_arguments
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Measure.decompositions
-      ~Measure.definition
-      ~Measure.duration
-      ~Measure.label
-      ~Measure.params
-      ~Measure.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

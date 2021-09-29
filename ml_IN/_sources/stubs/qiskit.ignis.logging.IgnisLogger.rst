@@ -1,19 +1,18 @@
-﻿qiskit.ignis.logging.IgnisLogger
-================================
+﻿IgnisLogger
+===========
 
 .. currentmodule:: qiskit.ignis.logging
 
 .. autoclass:: IgnisLogger
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IgnisLogger.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IgnisLogger.addFilter
       ~IgnisLogger.addHandler
       ~IgnisLogger.callHandlers
@@ -41,16 +40,10 @@
       ~IgnisLogger.setLevel
       ~IgnisLogger.warn
       ~IgnisLogger.warning
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IgnisLogger.manager
-      ~IgnisLogger.root
-   
-   
+   .. autoattribute:: manager
+   .. autoattribute:: root

@@ -1,24 +1,19 @@
-﻿qiskit.providers.models.BackendStatus
-=====================================
+﻿BackendStatus
+=============
 
 .. currentmodule:: qiskit.providers.models
 
 .. autoclass:: BackendStatus
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BackendStatus.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BackendStatus.from_dict
       ~BackendStatus.to_dict
-   
-   
 
-   
-   
-   
+

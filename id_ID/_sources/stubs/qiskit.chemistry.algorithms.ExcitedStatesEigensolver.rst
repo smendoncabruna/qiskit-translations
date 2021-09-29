@@ -1,30 +1,23 @@
-﻿qiskit.chemistry.algorithms.ExcitedStatesEigensolver
-====================================================
+﻿ExcitedStatesEigensolver
+========================
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: ExcitedStatesEigensolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ExcitedStatesEigensolver.__init__
-      ~ExcitedStatesEigensolver.solve
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~ExcitedStatesEigensolver.solve
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ExcitedStatesEigensolver.solver
-      ~ExcitedStatesEigensolver.transformation
-   
-   
+   .. autoattribute:: solver
+   .. autoattribute:: transformation

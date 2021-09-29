@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.pulse.schedule &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>qiskit.pulse.schedule &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -429,7 +436,7 @@
     <span class="c1"># Counter to count instance number.</span>
     <span class="n">instances_counter</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<div class="viewcode-block" id="Schedule.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.__init__">[ドキュメント]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="n">schedules</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ScheduleComponent</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">ScheduleComponent</span><span class="p">]],</span>
         <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -473,9 +480,9 @@
             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
                 <span class="c1"># recreate as sequence starting at 0.</span>
                 <span class="n">time</span><span class="p">,</span> <span class="n">sched</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sched_pair</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_mutable_insert</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">sched</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_mutable_insert</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">sched</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Schedule.initialize_from"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.initialize_from">[ドキュメント]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Schedule.initialize_from"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.initialize_from.html#qiskit.pulse.Schedule.initialize_from">[ドキュメント]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">initialize_from</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">other_program</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Create new schedule object with metadata of another schedule object.</span>
 
@@ -606,7 +613,7 @@
         <span class="sd">&quot;&quot;&quot;Parameters which determine the schedule behavior.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_manager</span><span class="o">.</span><span class="n">parameters</span>
 
-<div class="viewcode-block" id="Schedule.ch_duration"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.ch_duration">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">ch_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="viewcode-block" id="Schedule.ch_duration"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.ch_duration.html#qiskit.pulse.Schedule.ch_duration">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">ch_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the time of the end of the last instruction over the supplied channels.</span>
 
 <span class="sd">        Args:</span>
@@ -614,7 +621,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch_stop_time</span><span class="p">(</span><span class="o">*</span><span class="n">channels</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Schedule.ch_start_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.ch_start_time">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">ch_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="viewcode-block" id="Schedule.ch_start_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.ch_start_time.html#qiskit.pulse.Schedule.ch_start_time">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">ch_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the time of the start of the first instruction over the supplied channels.</span>
 
 <span class="sd">        Args:</span>
@@ -627,7 +634,7 @@
             <span class="c1"># If there are no instructions over channels</span>
             <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="Schedule.ch_stop_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.ch_stop_time">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">ch_stop_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="viewcode-block" id="Schedule.ch_stop_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.ch_stop_time.html#qiskit.pulse.Schedule.ch_stop_time">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">ch_stop_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return maximum start time over supplied channels.</span>
 
 <span class="sd">        Args:</span>
@@ -654,7 +661,7 @@
         <span class="k">for</span> <span class="n">insert_time</span><span class="p">,</span> <span class="n">child_sched</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
             <span class="k">yield from</span> <span class="n">child_sched</span><span class="o">.</span><span class="n">_instructions</span><span class="p">(</span><span class="n">time</span> <span class="o">+</span> <span class="n">insert_time</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Schedule.shift"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.shift">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="Schedule.shift"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.shift.html#qiskit.pulse.Schedule.shift">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a schedule shifted forward by ``time``.</span>
 
 <span class="sd">        Args:</span>
@@ -702,7 +709,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__children</span> <span class="o">=</span> <span class="p">[(</span><span class="n">orig_time</span> <span class="o">+</span> <span class="n">time</span><span class="p">,</span> <span class="n">child</span><span class="p">)</span> <span class="k">for</span> <span class="n">orig_time</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="Schedule.insert"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.insert">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span>
+<div class="viewcode-block" id="Schedule.insert"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.insert.html#qiskit.pulse.Schedule.insert">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">start_time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">schedule</span><span class="p">:</span> <span class="n">ScheduleComponent</span><span class="p">,</span>
@@ -751,7 +758,7 @@
         <span class="n">new_sched</span><span class="o">.</span><span class="n">_mutable_insert</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">schedule</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">new_sched</span>
 
-<div class="viewcode-block" id="Schedule.append"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.append">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
+<div class="viewcode-block" id="Schedule.append"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.append.html#qiskit.pulse.Schedule.append">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">schedule</span><span class="p">:</span> <span class="n">ScheduleComponent</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a new schedule with ``schedule`` inserted at the maximum time over</span>
@@ -772,7 +779,7 @@
         <span class="n">time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch_stop_time</span><span class="p">(</span><span class="o">*</span><span class="n">common_channels</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">schedule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Schedule.flatten"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.flatten">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="Schedule.flatten"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.flatten.html#qiskit.pulse.Schedule.flatten">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Deprecated.&quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">qiskit.pulse.transforms</span> <span class="kn">import</span> <span class="n">flatten</span>
 
@@ -784,7 +791,7 @@
 
         <span class="k">return</span> <span class="n">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Schedule.filter"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.filter">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
+<div class="viewcode-block" id="Schedule.filter"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.filter.html#qiskit.pulse.Schedule.filter">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="n">filter_funcs</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
         <span class="n">channels</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Channel</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -821,7 +828,7 @@
             <span class="bp">self</span><span class="p">,</span> <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span> <span class="n">negate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">recurse_subroutines</span><span class="o">=</span><span class="n">check_subroutine</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Schedule.exclude"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.exclude">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exclude</span><span class="p">(</span>
+<div class="viewcode-block" id="Schedule.exclude"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.exclude.html#qiskit.pulse.Schedule.exclude">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exclude</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="n">filter_funcs</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
         <span class="n">channels</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Channel</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -966,7 +973,7 @@
         <span class="k">for</span> <span class="n">t0</span><span class="p">,</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">instructions</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_add_timeslots</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">inst</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Schedule.replace"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.replace">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
+<div class="viewcode-block" id="Schedule.replace"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.replace.html#qiskit.pulse.Schedule.replace">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">old</span><span class="p">:</span> <span class="n">ScheduleComponent</span><span class="p">,</span>
         <span class="n">new</span><span class="p">:</span> <span class="n">ScheduleComponent</span><span class="p">,</span>
@@ -1054,11 +1061,11 @@
                     <span class="s2">&quot;overlapping instructions.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">old</span><span class="o">=</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">new</span><span class="p">)</span>
                 <span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span></div>
 
-<div class="viewcode-block" id="Schedule.is_parameterized"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.is_parameterized">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">is_parameterized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="Schedule.is_parameterized"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.is_parameterized.html#qiskit.pulse.Schedule.is_parameterized">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">is_parameterized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return True iff the instruction is parameterized.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_manager</span><span class="o">.</span><span class="n">is_parameterized</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Schedule.assign_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.assign_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span>
+<div class="viewcode-block" id="Schedule.assign_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.assign_parameters.html#qiskit.pulse.Schedule.assign_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">value_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">ParameterExpression</span><span class="p">,</span> <span class="n">ParameterValueType</span><span class="p">],</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Assign the parameters in this schedule according to the input.</span>
@@ -1075,7 +1082,7 @@
             <span class="n">pulse_program</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">value_dict</span><span class="o">=</span><span class="n">value_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Schedule.get_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule.get_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">]:</span>
+<div class="viewcode-block" id="Schedule.get_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.Schedule.get_parameters.html#qiskit.pulse.Schedule.get_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Get parameter object bound to this schedule by string name.</span>
 
 <span class="sd">        Because different ``Parameter`` objects can have the same name,</span>
@@ -1232,7 +1239,7 @@
     <span class="c1"># Counter to count instance number.</span>
     <span class="n">instances_counter</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
-<div class="viewcode-block" id="ScheduleBlock.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.__init__">[ドキュメント]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">alignment_context</span><span class="o">=</span><span class="kc">None</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create an empty schedule block.</span>
@@ -1267,9 +1274,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_blocks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
         <span class="c1"># get parameters from context</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_manager</span><span class="o">.</span><span class="n">update_parameter_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_alignment_context</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_manager</span><span class="o">.</span><span class="n">update_parameter_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_alignment_context</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ScheduleBlock.initialize_from"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.initialize_from">[ドキュメント]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ScheduleBlock.initialize_from"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.initialize_from.html#qiskit.pulse.ScheduleBlock.initialize_from">[ドキュメント]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">initialize_from</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">other_program</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ScheduleBlock&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Create new schedule object with metadata of another schedule object.</span>
 
@@ -1333,7 +1340,7 @@
         <span class="sd">&quot;&quot;&quot;Return alignment instance that allocates block component to generate schedule.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_alignment_context</span>
 
-<div class="viewcode-block" id="ScheduleBlock.is_schedulable"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.is_schedulable">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">is_schedulable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="ScheduleBlock.is_schedulable"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.is_schedulable.html#qiskit.pulse.ScheduleBlock.is_schedulable">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">is_schedulable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return ``True`` if all durations are assigned.&quot;&quot;&quot;</span>
         <span class="c1"># check context assignment</span>
         <span class="k">for</span> <span class="n">context_param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">alignment_context</span><span class="o">.</span><span class="n">_context_params</span><span class="p">:</span>
@@ -1402,7 +1409,7 @@
         <span class="sd">&quot;&quot;&quot;Parameters which determine the schedule behavior.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_manager</span><span class="o">.</span><span class="n">parameters</span>
 
-<div class="viewcode-block" id="ScheduleBlock.ch_duration"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.ch_duration">[ドキュメント]</a>    <span class="nd">@_require_schedule_conversion</span>
+<div class="viewcode-block" id="ScheduleBlock.ch_duration"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.ch_duration.html#qiskit.pulse.ScheduleBlock.ch_duration">[ドキュメント]</a>    <span class="nd">@_require_schedule_conversion</span>
     <span class="k">def</span> <span class="nf">ch_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the time of the end of the last instruction over the supplied channels.</span>
 
@@ -1411,7 +1418,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch_duration</span><span class="p">(</span><span class="o">*</span><span class="n">channels</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.ch_start_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.ch_start_time">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
+<div class="viewcode-block" id="ScheduleBlock.ch_start_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.ch_start_time.html#qiskit.pulse.ScheduleBlock.ch_start_time">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
     <span class="nd">@_require_schedule_conversion</span>
     <span class="k">def</span> <span class="nf">ch_start_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the time of the start of the first instruction over the supplied channels.</span>
@@ -1421,7 +1428,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch_start_time</span><span class="p">(</span><span class="o">*</span><span class="n">channels</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.ch_stop_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.ch_stop_time">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
+<div class="viewcode-block" id="ScheduleBlock.ch_stop_time"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.ch_stop_time.html#qiskit.pulse.ScheduleBlock.ch_stop_time">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
     <span class="nd">@_require_schedule_conversion</span>
     <span class="k">def</span> <span class="nf">ch_stop_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">channels</span><span class="p">:</span> <span class="n">Channel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return maximum start time over supplied channels.</span>
@@ -1431,7 +1438,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch_stop_time</span><span class="p">(</span><span class="o">*</span><span class="n">channels</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.shift"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.shift">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
+<div class="viewcode-block" id="ScheduleBlock.shift"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.shift.html#qiskit.pulse.ScheduleBlock.shift">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
     <span class="k">def</span> <span class="nf">shift</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This method will be removed. Temporarily added for backward compatibility.</span>
 
@@ -1454,7 +1461,7 @@
             <span class="s2">&quot;this method.&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.insert"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.insert">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
+<div class="viewcode-block" id="ScheduleBlock.insert"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.insert.html#qiskit.pulse.ScheduleBlock.insert">[ドキュメント]</a>    <span class="nd">@deprecated_functionality</span>
     <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">start_time</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -1484,7 +1491,7 @@
             <span class="s2">&quot;this method.&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.append"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.append">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
+<div class="viewcode-block" id="ScheduleBlock.append"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.append.html#qiskit.pulse.ScheduleBlock.append">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">:</span> <span class="n">BlockComponent</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ScheduleBlock&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a new schedule block with ``block`` appended to the context block.</span>
@@ -1519,7 +1526,7 @@
 
             <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.filter"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.filter">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
+<div class="viewcode-block" id="ScheduleBlock.filter"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.filter.html#qiskit.pulse.ScheduleBlock.filter">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="n">filter_funcs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">],</span>
         <span class="n">channels</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Channel</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1564,7 +1571,7 @@
             <span class="s2">&quot;this method.&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.exclude"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.exclude">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exclude</span><span class="p">(</span>
+<div class="viewcode-block" id="ScheduleBlock.exclude"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.exclude.html#qiskit.pulse.ScheduleBlock.exclude">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">exclude</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="o">*</span><span class="n">filter_funcs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">],</span>
         <span class="n">channels</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Channel</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1606,7 +1613,7 @@
             <span class="s2">&quot;this method.&quot;</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.replace"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.replace">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
+<div class="viewcode-block" id="ScheduleBlock.replace"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.replace.html#qiskit.pulse.ScheduleBlock.replace">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">old</span><span class="p">:</span> <span class="n">BlockComponent</span><span class="p">,</span>
         <span class="n">new</span><span class="p">:</span> <span class="n">BlockComponent</span><span class="p">,</span>
@@ -1649,11 +1656,11 @@
             <span class="n">ret_block</span><span class="o">.</span><span class="n">_parameter_manager</span> <span class="o">=</span> <span class="n">new_parameters</span>
             <span class="k">return</span> <span class="n">ret_block</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.is_parameterized"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.is_parameterized">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">is_parameterized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="ScheduleBlock.is_parameterized"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.is_parameterized.html#qiskit.pulse.ScheduleBlock.is_parameterized">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">is_parameterized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return True iff the instruction is parameterized.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_manager</span><span class="o">.</span><span class="n">is_parameterized</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.assign_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.assign_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span>
+<div class="viewcode-block" id="ScheduleBlock.assign_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.assign_parameters.html#qiskit.pulse.ScheduleBlock.assign_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">value_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">ParameterExpression</span><span class="p">,</span> <span class="n">ParameterValueType</span><span class="p">],</span> <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ScheduleBlock&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Assign the parameters in this schedule according to the input.</span>
@@ -1670,7 +1677,7 @@
             <span class="n">pulse_program</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">value_dict</span><span class="o">=</span><span class="n">value_dict</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ScheduleBlock.get_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.html#qiskit.pulse.ScheduleBlock.get_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">]:</span>
+<div class="viewcode-block" id="ScheduleBlock.get_parameters"><a class="viewcode-back" href="../../../stubs/qiskit.pulse.ScheduleBlock.get_parameters.html#qiskit.pulse.ScheduleBlock.get_parameters">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Get parameter object bound to this schedule by string name.</span>
 
 <span class="sd">        Because different ``Parameter`` objects can have the same name,</span>
@@ -2141,7 +2148,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -2221,7 +2228,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -2244,9 +2251,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

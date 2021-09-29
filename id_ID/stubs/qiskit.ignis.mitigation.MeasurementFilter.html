@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.mitigation.MeasurementFilter &mdash; Dokumentasi Qiskit 0.29.0</title>
+  <title>MeasurementFilter &mdash; Dokumentasi Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Indeks" href="../genindex.html" />
     <link rel="search" title="Pencarian" href="../search.html" />
-    <link rel="next" title="qiskit.ignis.mitigation.TensoredFilter" href="qiskit.ignis.mitigation.TensoredFilter.html" />
+    <link rel="next" title="qiskit.ignis.mitigation.MeasurementFilter.apply" href="qiskit.ignis.mitigation.MeasurementFilter.apply.html" />
     <link rel="prev" title="qiskit.ignis.mitigation.tensored_meas_cal" href="qiskit.ignis.mitigation.tensored_meas_cal.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/mitigation.html">Mitigation (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.ignis.mitigation</span></code>)</a> &gt;</li>
         
-      <li>qiskit.ignis.mitigation.MeasurementFilter</li>
+      <li>MeasurementFilter</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-ignis-mitigation-measurementfilter">
-<h1>qiskit.ignis.mitigation.MeasurementFilter<a class="headerlink" href="#qiskit-ignis-mitigation-measurementfilter" title="Link permanen untuk headline ini">¶</a></h1>
+  <section id="measurementfilter">
+<h1>MeasurementFilter<a class="headerlink" href="#measurementfilter" title="Link permanen untuk headline ini">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.ignis.mitigation.MeasurementFilter">
 <em class="property">class </em><code class="sig-name descname">MeasurementFilter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cal_matrix</span></em>, <em class="sig-param"><span class="n">state_labels</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/mitigation/measurement/filters.html#MeasurementFilter"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Measurement error mitigation filter.</p>
+<dd><p>Basis: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Measurement error mitigation filter.</p>
 <p>Produced from a measurement calibration fitter and can be applied
 to data.</p>
 <p>Initialize a measurement error mitigation filter using the cal_matrix
@@ -346,21 +354,6 @@ from a measurement calibration fitter.</p>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.ignis.mitigation.MeasurementFilter.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cal_matrix</span></em>, <em class="sig-param"><span class="n">state_labels</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/mitigation/measurement/filters.html#MeasurementFilter.__init__"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter.__init__" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Initialize a measurement error mitigation filter using the cal_matrix
-from a measurement calibration fitter.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cal_matrix</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">matrix</span></code>) -- the calibration matrix for applying the correction</p></li>
-<li><p><strong>state_labels</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>) -- the states for the ordering of the cal matrix</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -368,71 +361,21 @@ from a measurement calibration fitter.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.mitigation.MeasurementFilter.__init__" title="qiskit.ignis.mitigation.MeasurementFilter.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(cal_matrix, state_labels)</p></td>
-<td><p>Initialize a measurement error mitigation filter using the cal_matrix from a measurement calibration fitter.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.mitigation.MeasurementFilter.apply" title="qiskit.ignis.mitigation.MeasurementFilter.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(raw_data[, method])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.mitigation.MeasurementFilter.apply.html#qiskit.ignis.mitigation.MeasurementFilter.apply" title="qiskit.ignis.mitigation.MeasurementFilter.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a></p></td>
 <td><p>Apply the calibration matrix to results.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.mitigation.MeasurementFilter.cal_matrix" title="qiskit.ignis.mitigation.MeasurementFilter.cal_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cal_matrix</span></code></a></p></td>
-<td><p>Return cal_matrix.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.mitigation.MeasurementFilter.state_labels" title="qiskit.ignis.mitigation.MeasurementFilter.state_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">state_labels</span></code></a></p></td>
-<td><p>return the state label ordering of the cal matrix</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.ignis.mitigation.MeasurementFilter.apply">
-<code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_data</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'least_squares'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/mitigation/measurement/filters.html#MeasurementFilter.apply"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter.apply" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Apply the calibration matrix to results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>raw_data</strong> (<em>dict</em><em> or </em><em>list</em>) -- <p>The data to be corrected. Can be in a number of forms:</p>
-<p>Form 1: a counts dictionary from results.get_counts</p>
-<p>Form 2: a list of counts of <cite>length==len(state_labels)</cite></p>
-<p>Form 3: a list of counts of <cite>length==M*len(state_labels)</cite> where M is an
-integer (e.g. for use with the tomography data)</p>
-<p>Form 4: a qiskit Result</p>
-</p></li>
-<li><p><strong>method</strong> (<em>str</em>) -- <p>fitting method. If <cite>None</cite>, then least_squares is used.</p>
-<p><code class="docutils literal notranslate"><span class="pre">pseudo_inverse</span></code>: direct inversion of the A matrix</p>
-<p><code class="docutils literal notranslate"><span class="pre">least_squares</span></code>: constrained to have physical probabilities</p>
-</p></li>
-</ul>
-</dd>
-<dt class="field-even">Kembali</dt>
-<dd class="field-even"><p>The corrected data in the same form as <cite>raw_data</cite></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict or list</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>QiskitError</strong> -- if <cite>raw_data</cite> is not an integer multiple
-    of the number of calibrated states.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.mitigation.MeasurementFilter.cal_matrix">
-<em class="property">property </em><code class="sig-name descname">cal_matrix</code><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter.cal_matrix" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">cal_matrix</code><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter.cal_matrix" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>Return cal_matrix.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.mitigation.MeasurementFilter.state_labels">
-<em class="property">property </em><code class="sig-name descname">state_labels</code><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter.state_labels" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">state_labels</code><a class="headerlink" href="#qiskit.ignis.mitigation.MeasurementFilter.state_labels" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>return the state label ordering of the cal matrix</p>
 </dd></dl>
 
@@ -448,7 +391,7 @@ integer (e.g. for use with the tomography data)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.ignis.mitigation.TensoredFilter.html" class="btn btn-neutral float-right" title="qiskit.ignis.mitigation.TensoredFilter" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.ignis.mitigation.MeasurementFilter.apply.html" class="btn btn-neutral float-right" title="qiskit.ignis.mitigation.MeasurementFilter.apply" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="qiskit.ignis.mitigation.tensored_meas_cal.html" class="btn btn-neutral" title="qiskit.ignis.mitigation.tensored_meas_cal" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -465,7 +408,7 @@ integer (e.g. for use with the tomography data)</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Terakhir diperbarui pada 2021/08/13.
+      Terakhir diperbarui pada 2021/09/23.
 
     </p>
   </div>
@@ -484,7 +427,7 @@ integer (e.g. for use with the tomography data)</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.ignis.mitigation.MeasurementFilter</a></li>
+<li><a class="reference internal" href="#">MeasurementFilter</a></li>
 </ul>
 
             </div>
@@ -548,7 +491,7 @@ integer (e.g. for use with the tomography data)</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -571,9 +514,11 @@ integer (e.g. for use with the tomography data)</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

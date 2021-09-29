@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Начало работы &mdash; документация Qiskit 0.29.0</title>
+  <title>Начало работы &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -327,8 +334,8 @@
 <section id="installation">
 <h2>Инструкция по установке<a class="headerlink" href="#installation" title="Ссылка на этот заголовок">¶</a></h2>
 <div class="tabbed-set docutils">
-<input checked="checked" id="acb5207d-c687-4fe0-869a-4fe2bdc940a3" name="1a861b92-3f41-4b1a-87bb-bd852c06c670" type="radio">
-</input><label class="tabbed-label" for="acb5207d-c687-4fe0-869a-4fe2bdc940a3">
+<input checked="checked" id="fc0b8dfc-84f8-497c-a135-3ea6774d44b8" name="48f219b7-e219-4640-a8a7-39e1808b4712" type="radio">
+</input><label class="tabbed-label" for="fc0b8dfc-84f8-497c-a135-3ea6774d44b8">
 Запустить локально</label><div class="tabbed-content docutils">
 <p>Qiskit поддерживает Python 3.6 или новее. Тем не менее,  Python и Qiskit развиваются независимо друг от друга, что может привести к проблемам с совместимостью при обновлении одной из данных экосистем.</p>
 <p>Мы рекомендуем установить <cite>Anaconda &lt;https://www.anaconda.com/download/&gt;</cite> __ - межплатформенный дистрибутив Python, включающий набор популярных библиотек для научных вычислений. Программа Jupyter, включённая в Anaconda, рекомендуется для взаимодействия с Qiskit.</p>
@@ -363,8 +370,8 @@
 </pre></div>
 </div>
 </div>
-<input id="85c5ea84-6e20-4344-aadb-8b744d021fdb" name="1a861b92-3f41-4b1a-87bb-bd852c06c670" type="radio">
-</input><label class="tabbed-label" for="85c5ea84-6e20-4344-aadb-8b744d021fdb">
+<input id="6e750b13-0636-467c-a1ad-f4be8b8a50e4" name="48f219b7-e219-4640-a8a7-39e1808b4712" type="radio">
+</input><label class="tabbed-label" for="6e750b13-0636-467c-a1ad-f4be8b8a50e4">
 Запустить в облаке</label><div class="tabbed-content docutils">
 <blockquote>
 <div><p>Следующие облачные вендоры (поставщики) имеют в своей среде предварительно установленный Qiskit:</p>
@@ -420,8 +427,8 @@
 </div>
 </div>
 </div></div>
-<input id="f1709226-34e4-4492-98ed-d2fbb925539a" name="1a861b92-3f41-4b1a-87bb-bd852c06c670" type="radio">
-</input><label class="tabbed-label" for="f1709226-34e4-4492-98ed-d2fbb925539a">
+<input id="40bd9530-b133-4441-97dd-eced78dfa529" name="48f219b7-e219-4640-a8a7-39e1808b4712" type="radio">
+</input><label class="tabbed-label" for="40bd9530-b133-4441-97dd-eced78dfa529">
 Установить из исходного кода</label><div class="tabbed-content docutils">
 <p>Установка элементов из исходного кода позволит Вам получить доступ к последней обновленной версии Qiskit вместо использования версии из репозитория Python Package Index (PyPI). Это даст Вам возможность более эффективно изучить и улучшить последнюю версию Qiskit кода.</p>
 <p>При установке компонентов из исходного кода, по умолчанию будет использоваться их <code class="docutils literal notranslate"><span class="pre">development</span></code> версия (которая соответствует <code class="docutils literal notranslate"><span class="pre">master</span></code> ветке в git), а не <code class="docutils literal notranslate"><span class="pre">stable</span></code> версия (которая содержит тот же код, что и опубликованные пакеты <code class="docutils literal notranslate"><span class="pre">pip</span></code>). Поскольку <code class="docutils literal notranslate"><span class="pre">development</span></code> версии элемента или компонента обычно включают в себя новые функции и последние изменения, они обычно требуют использования <code class="docutils literal notranslate"><span class="pre">development</span></code> версии и остальных компонентов.</p>
@@ -445,13 +452,13 @@ conda activate QiskitDevenv
 </div>
 <h2>Installing Terra from Source</h2><p>Установка из исходного кода требует наличия компилятора C++ в системе, поддерживающей C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="53a7a714-9fe8-4c99-8965-9266e5ea1aa6" name="c5c79ff2-0ba8-4227-be0a-60e15af86685" type="radio">
-</input><label class="tabbed-label" for="53a7a714-9fe8-4c99-8965-9266e5ea1aa6">
+<input checked="checked" id="323675e3-ed5c-4078-9db0-747dae8736ed" name="9131144f-5588-4151-9693-0289d941a14b" type="radio">
+</input><label class="tabbed-label" for="323675e3-ed5c-4078-9db0-747dae8736ed">
 Компилятор для Linux</label><div class="tabbed-content docutils">
 <p>На большинстве платформ Linux уже установлен необходимый компилятор GCC.</p>
 </div>
-<input id="58f039df-71af-430d-ab3b-24640243c274" name="c5c79ff2-0ba8-4227-be0a-60e15af86685" type="radio">
-</input><label class="tabbed-label" for="58f039df-71af-430d-ab3b-24640243c274">
+<input id="b8f2d969-a0da-4735-8055-8e22fcd632c3" name="9131144f-5588-4151-9693-0289d941a14b" type="radio">
+</input><label class="tabbed-label" for="b8f2d969-a0da-4735-8055-8e22fcd632c3">
 Компилятор для macOS</label><div class="tabbed-content docutils">
 <p>Если Вы используете macOS, то можно установить компилятор Clang, предварительно установив XCode. Проверьте, установлены ли XCode и Clang на Вашей системе, открыв окно терминала и введя следующее.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -462,8 +469,8 @@ conda activate QiskitDevenv
 </pre></div>
 </div>
 </div>
-<input id="590350a0-3493-41fa-bb94-df03ce07e9f7" name="c5c79ff2-0ba8-4227-be0a-60e15af86685" type="radio">
-</input><label class="tabbed-label" for="590350a0-3493-41fa-bb94-df03ce07e9f7">
+<input id="9e6a4892-af30-478c-897d-4051ff1b3493" name="9131144f-5588-4151-9693-0289d941a14b" type="radio">
+</input><label class="tabbed-label" for="9e6a4892-af30-478c-897d-4051ff1b3493">
 Компилятор для Windows</label><div class="tabbed-content docutils">
 <p>В Windows проще всего установить компилятор Visual C++ из <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019">Build Tools for Visual Studio 2019</a>. Также вы можете установить Visual Studio версий 2015 или 2017, выбрав в параметрах установки компилятор С++.</p>
 </div>
@@ -807,7 +814,7 @@ pip install qiskit_aer-*.whl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -894,7 +901,7 @@ pip install qiskit_aer-*.whl
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -917,9 +924,11 @@ pip install qiskit_aer-*.whl
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

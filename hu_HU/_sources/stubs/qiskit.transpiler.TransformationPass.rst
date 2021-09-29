@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.TransformationPass
-====================================
+﻿TransformationPass
+==================
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: TransformationPass
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TransformationPass.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TransformationPass.name
       ~TransformationPass.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TransformationPass.is_analysis_pass
-      ~TransformationPass.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

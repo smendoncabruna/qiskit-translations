@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CircuitQNN &mdash; documentación de Qiskit Machine Learning - 0.2.0</title>
+  <title>CircuitQNN &mdash; documentación de Qiskit Machine Learning - 0.2.1</title>
   
 
   
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/stubs/qiskit_machine_learning.neural_networks.CircuitQNN.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/stubs/qiskit_machine_learning.neural_networks.CircuitQNN.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/stubs/qiskit_machine_learning.neural_networks.CircuitQNN.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/stubs/qiskit_machine_learning.neural_networks.CircuitQNN.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/stubs/qiskit_machine_learning.neural_networks.CircuitQNN.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/stubs/qiskit_machine_learning.neural_networks.CircuitQNN.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -276,7 +282,8 @@ result in a dense return array independent of the other settings.</p></li>
 <li><p><strong>interpret</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, …]]]]) – A callable that maps the measured integer to another unsigned integer or
 tuple of unsigned integers. These are used as new indices for the (potentially
 sparse) output array. If this is used, and <code class="docutils literal notranslate"><span class="pre">sampling==False</span></code>, the output shape of
-the output needs to be given as a separate argument.</p></li>
+the output needs to be given as a separate argument. If no interpret function is
+passed, then an identity function will be used by this neural network.</p></li>
 <li><p><strong>output_shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, …], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The output shape of the custom interpretation, only used in the case
 where an interpret function is provided and <code class="docutils literal notranslate"><span class="pre">sampling==False</span></code>. Note that in the
 remaining cases, the output shape is automatically inferred by: <code class="docutils literal notranslate"><span class="pre">2^num_qubits</span></code> if
@@ -313,10 +320,13 @@ Note that this parameter is <code class="docutils literal notranslate"><span cla
 <tr class="row-odd"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.input_params.html#qiskit_machine_learning.neural_networks.CircuitQNN.input_params" title="qiskit_machine_learning.neural_networks.CircuitQNN.input_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_params</span></code></a></p></td>
 <td><p>Returns the list of input parameters.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.quantum_instance.html#qiskit_machine_learning.neural_networks.CircuitQNN.quantum_instance" title="qiskit_machine_learning.neural_networks.CircuitQNN.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.interpret.html#qiskit_machine_learning.neural_networks.CircuitQNN.interpret" title="qiskit_machine_learning.neural_networks.CircuitQNN.interpret"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpret</span></code></a></p></td>
+<td><p>Returns interpret function to be used by the neural network.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.quantum_instance.html#qiskit_machine_learning.neural_networks.CircuitQNN.quantum_instance" title="qiskit_machine_learning.neural_networks.CircuitQNN.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
 <td><p>Returns the quantum instance to evaluate the circuit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.weight_params.html#qiskit_machine_learning.neural_networks.CircuitQNN.weight_params" title="qiskit_machine_learning.neural_networks.CircuitQNN.weight_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight_params</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.weight_params.html#qiskit_machine_learning.neural_networks.CircuitQNN.weight_params" title="qiskit_machine_learning.neural_networks.CircuitQNN.weight_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight_params</span></code></a></p></td>
 <td><p>Returns the list of trainable weights parameters.</p></td>
 </tr>
 </tbody>
@@ -329,7 +339,7 @@ Note that this parameter is <code class="docutils literal notranslate"><span cla
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret.html#qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret" title="qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_interpret</span></code></a>(interpret[, output_shape])</p></td>
-<td><p>Change “interpret” and corresponding “output_shape”.</p></td>
+<td><p>Change 'interpret' and corresponding 'output_shape'.</p></td>
 </tr>
 </tbody>
 </table>

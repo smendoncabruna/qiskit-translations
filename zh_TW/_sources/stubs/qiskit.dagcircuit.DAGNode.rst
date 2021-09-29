@@ -1,36 +1,29 @@
-﻿qiskit.dagcircuit.DAGNode
-=========================
+﻿DAGNode
+=======
 
 .. currentmodule:: qiskit.dagcircuit
 
 .. autoclass:: DAGNode
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DAGNode.__init__
-      ~DAGNode.semantic_eq
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~DAGNode.semantic_eq
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DAGNode.cargs
-      ~DAGNode.condition
-      ~DAGNode.name
-      ~DAGNode.op
-      ~DAGNode.qargs
-      ~DAGNode.sort_key
-      ~DAGNode.type
-      ~DAGNode.wire
-   
-   
+   .. autoattribute:: cargs
+   .. autoattribute:: condition
+   .. autoattribute:: name
+   .. autoattribute:: op
+   .. autoattribute:: qargs
+   .. autoattribute:: sort_key
+   .. autoattribute:: type
+   .. autoattribute:: wire

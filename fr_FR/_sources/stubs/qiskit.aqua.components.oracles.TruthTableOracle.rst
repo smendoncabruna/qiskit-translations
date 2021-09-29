@@ -1,33 +1,26 @@
-﻿qiskit.aqua.components.oracles.TruthTableOracle
-===============================================
+﻿TruthTableOracle
+================
 
 .. currentmodule:: qiskit.aqua.components.oracles
 
 .. autoclass:: TruthTableOracle
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TruthTableOracle.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TruthTableOracle.construct_circuit
       ~TruthTableOracle.evaluate_classically
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TruthTableOracle.ancillary_register
-      ~TruthTableOracle.circuit
-      ~TruthTableOracle.output_register
-      ~TruthTableOracle.variable_register
-   
-   
+   .. autoattribute:: ancillary_register
+   .. autoattribute:: circuit
+   .. autoattribute:: output_register
+   .. autoattribute:: variable_register

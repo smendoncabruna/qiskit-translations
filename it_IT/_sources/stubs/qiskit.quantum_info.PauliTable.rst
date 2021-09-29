@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.PauliTable
-===============================
+﻿PauliTable
+==========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: PauliTable
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PauliTable.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliTable.adjoint
       ~PauliTable.anticommutes_with_all
       ~PauliTable.argsort
@@ -39,23 +38,17 @@
       ~PauliTable.to_matrix
       ~PauliTable.transpose
       ~PauliTable.unique
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PauliTable.X
-      ~PauliTable.Z
-      ~PauliTable.array
-      ~PauliTable.dim
-      ~PauliTable.num_qubits
-      ~PauliTable.qargs
-      ~PauliTable.settings
-      ~PauliTable.shape
-      ~PauliTable.size
-   
-   
+   .. autoattribute:: X
+   .. autoattribute:: Z
+   .. autoattribute:: array
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: settings
+   .. autoattribute:: shape
+   .. autoattribute:: size

@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.RemoveBarriers
-=======================================
+﻿RemoveBarriers
+==============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: RemoveBarriers
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RemoveBarriers.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RemoveBarriers.name
       ~RemoveBarriers.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RemoveBarriers.is_analysis_pass
-      ~RemoveBarriers.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

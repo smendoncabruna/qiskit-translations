@@ -1,19 +1,18 @@
-﻿qiskit.ignis.mitigation.TensoredExpvalMeasMitigator
-===================================================
+﻿TensoredExpvalMeasMitigator
+===========================
 
 .. currentmodule:: qiskit.ignis.mitigation
 
 .. autoclass:: TensoredExpvalMeasMitigator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TensoredExpvalMeasMitigator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TensoredExpvalMeasMitigator.assignment_fidelity
       ~TensoredExpvalMeasMitigator.assignment_matrix
       ~TensoredExpvalMeasMitigator.expectation_value
@@ -23,9 +22,5 @@
       ~TensoredExpvalMeasMitigator.plot_mitigation_matrix
       ~TensoredExpvalMeasMitigator.required_shots
       ~TensoredExpvalMeasMitigator.stddev_upper_bound
-   
-   
 
-   
-   
-   
+

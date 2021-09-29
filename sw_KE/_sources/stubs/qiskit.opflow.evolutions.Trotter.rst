@@ -1,30 +1,15 @@
-﻿qiskit.opflow.evolutions.Trotter
-================================
+Trotter
+=======
 
 .. currentmodule:: qiskit.opflow.evolutions
 
 .. autoclass:: Trotter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~Trotter.__init__
-      ~Trotter.convert
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Trotter.order
-      ~Trotter.reps
-   
-   
+   .. autoattribute:: order
+   .. autoattribute:: reps

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Vehicle Routing &mdash; Documentação Qiskit Optimization 0.2.2</title>
+  <title>Roteamento de Veículos &mdash; Documentação Qiskit Optimization 0.2.3</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
     <link rel="next" title="Melhorando a Otimização Quântica Variacional usando o CVaR" href="08_cvar_optimization.html" />
-    <link rel="prev" title="Max-Cut and Traveling Salesman Problem" href="06_examples_max_cut_and_tsp.html" /> 
+    <link rel="prev" title="Max-Cut e Problema do Caixeiro Viajante" href="06_examples_max_cut_and_tsp.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Tutoriais de Otimização</a> &gt;</li>
         
-      <li>Vehicle Routing</li>
+      <li>Roteamento de Veículos</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,10 +482,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/07_examples_vehicle_routing.ipynb">docs/tutorials/07_examples_vehicle_routing.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/07_examples_vehicle_routing.ipynb">docs/tutorials/07_examples_vehicle_routing.ipynb</a>.</p>
 </div>
-<div class="section" id="Vehicle-Routing">
-<h1>Vehicle Routing<a class="headerlink" href="#Vehicle-Routing" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="Roteamento-de-Veículos">
+<h1>Roteamento de Veículos<a class="headerlink" href="#Roteamento-de-Veículos" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>A Logística é uma importante área industrial, pois - com base em algumas estimativas - foi avaliada globalmente em 8183 bilhões de dólares, no ano de 2015. E, a maioria dos prestadores de serviços opera vários veículos (por exemplo, caminhões e navios de contêineres), efetuam vários depósitos, onde os veículos passam a noite e servem vários locais de clientes, com cada veículo, durante cada dia. Existem muitos problemas de otimização e controle, que consideram tais parâmetros. Computacionalmente, o desafio chave é como projetar rotas, a partir de depósitos para vários locais de clientes e retornar aos mesmos, de modo a minimizar os quilômetros viajados pelos veículos, tempo gasto ou funções objetivas semelhantes. Neste artigo, formalizaremos uma versão idealizada do problema e mostraremos sua solução utilizando a abordagem de otimização aproximada quântica de Farhi, Goldstone e Gutman (2014).</p>
@@ -528,14 +528,14 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Solução-quântica">
 <h2>Solução quântica<a class="headerlink" href="#Solução-quântica" title="Link permanente para este título">¶</a></h2>
 <p>Aqui, demonstraremos uma abordagem que combina etapas da computação clássica e quântica, seguindo a abordagem de otimização aproximada quântica de Farhi, Goldstone e Gutman (2014). Em particular, utilizaremos o algoritmo <strong>Variational Quantum Eigensolver (VQE)</strong>. Salientamos que, dada a profundidade limitada dos circuitos quânticos empregados (formas variacionais), é difícil discutir o <em>speedup</em> do algoritmo, já que a solução obtida é heurística por natureza. Ao mesmo tempo, devido à natureza e à importância dos problemas alvo, vale a pena investigar abordagens heurísticas, que podem valer a pena para algumas classes de problemas.</p>
-<p>Following [5], the algorithm can be summarized as follows:</p>
+<p>Seguindo [5], o algoritmo pode ser resumido da seguinte forma:</p>
 <ul class="simple">
-<li><p>Preparation steps:</p>
+<li><p>Etapas de preparação:</p>
 <ul>
-<li><p>Transform the combinatorial problem into a binary polynomial optimization problem with equality constraints only;</p></li>
-<li><p>Map the resulting problem into an Ising Hamiltonian (<span class="math notranslate nohighlight">\(H\)</span>) for variables <span class="math notranslate nohighlight">\({\bf z}\)</span> and basis <span class="math notranslate nohighlight">\(Z\)</span>, via penalty methods if necessary;</p></li>
+<li><p>Transforme o problema combinatório em um problema de otimização polinomial binário apenas com restrições de igualdade;</p></li>
+<li><p>Mapeie o problema resultante em um Hamiltoniano de Ising (<span class="math notranslate nohighlight">\(H\)</span>) para as variáveis <span class="math notranslate nohighlight">\({\bf z}\)</span> e a base <span class="math notranslate nohighlight">\(Z\)</span>, via métodos de penalidade se necessário;</p></li>
 <li><p>Escolha a profundidade do circuito quântico <span class="math notranslate nohighlight">\(m\)</span>. Observe que a profundidade pode ser modificada adaptativamente.</p></li>
-<li><p>Choose a set of controls <span class="math notranslate nohighlight">\(\theta\)</span> and make a trial function <span class="math notranslate nohighlight">\(\big|\psi(\boldsymbol\theta)\rangle\)</span>, built using a quantum circuit made of C-Phase gates and single-qubit Y rotations, parameterized by the components of <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
+<li><p>Escolha um conjunto de controles <span class="math notranslate nohighlight">\(\theta\)</span> e faça uma função de teste <span class="math notranslate nohighlight">\(\big|\psi(\boldsymbol\theta)\rangle\)</span>, construída usando um circuito quântico feito de portas C-Fase e rotações Y de um único qubit, parametrizadas pelos componentes de <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
 </ul>
 </li>
 <li><p>Etapas do algoritmo:</p>
@@ -581,7 +581,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Referências">
 <h2>Referências<a class="headerlink" href="#Referências" title="Link permanente para este título">¶</a></h2>
 <p>[1] E. Farhi, J. Goldstone, S. Gutmann e-print arXiv 1411.4028, 2014</p>
-<p>[2] <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a></p>
+<p>[2] <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut e Problema do Caixeiro Viajante</span></a></p>
 <p>[3] C. E. Miller, E. W. Tucker, and R. A. Zemlin (1960). “Integer Programming Formulations and Travelling Salesman Problems”. J. ACM. 7: 326–329. doi:10.1145/321043.321046.</p>
 <p>[4] D. L. Applegate, R. M. Bixby, V. Chvátal, and W. J. Cook (2006). The Traveling Salesman Problem. Princeton University Press, ISBN 978-0-691-12993-8.</p>
 </div>
@@ -1131,7 +1131,7 @@ Binary cost: 0
         <a href="08_cvar_optimization.html" class="btn btn-neutral float-right" title="Melhorando a Otimização Quântica Variacional usando o CVaR" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="06_examples_max_cut_and_tsp.html" class="btn btn-neutral" title="Max-Cut and Traveling Salesman Problem" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="06_examples_max_cut_and_tsp.html" class="btn btn-neutral" title="Max-Cut e Problema do Caixeiro Viajante" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1163,7 +1163,7 @@ Binary cost: 0
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Vehicle Routing</a><ul>
+<li><a class="reference internal" href="#">Roteamento de Veículos</a><ul>
 <li><a class="reference internal" href="#Introdução">Introdução</a></li>
 <li><a class="reference internal" href="#O-Modelo">O Modelo</a></li>
 <li><a class="reference internal" href="#Solução-clássica">Solução clássica</a></li>

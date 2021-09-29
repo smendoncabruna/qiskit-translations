@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit bevezető &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>Qiskit bevezető &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -377,7 +384,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-Total count for 00 and 11 are: {&#39;11&#39;: 503, &#39;00&#39;: 497}
+Total count for 00 and 11 are: {&#39;00&#39;: 491, &#39;11&#39;: 509}
 </pre></div>
 </div>
 <div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">     ┌───┐     ┌─┐   
@@ -397,7 +404,6 @@ c: 2/═══════════╩══╩═
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/intro_tutorial1_1_0.png" src="_images/intro_tutorial1_1_0.png" />
-<img alt="_images/intro_tutorial1_1_1.png" src="_images/intro_tutorial1_1_1.png" />
 </div>
 </div>
 <section id="workflow-step-by-step">
@@ -467,7 +473,7 @@ measurement result will be stored in the ith classical bit.</p></li>
 </section>
 <section id="step-4-visualize-the-circuit">
 <h3>Step 4 : Visualize the Circuit<a class="headerlink" href="#step-4-visualize-the-circuit" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
-<p>You can use <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> to view the circuit that you have designed
+<p>You can use <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> to view the circuit that you have designed
 in the various forms used in many textbooks and research articles.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -529,7 +535,7 @@ circuit will yield either the bit string 00 or 11.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-Total count for 00 and 11 are: {&#39;11&#39;: 495, &#39;00&#39;: 505}
+Total count for 00 and 11 are: {&#39;00&#39;: 477, &#39;11&#39;: 523}
 </pre></div>
 </div>
 </div>
@@ -554,7 +560,6 @@ experiment you ran.</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/intro_tutorial1_4_0.png" src="_images/intro_tutorial1_4_0.png" />
-<img alt="_images/intro_tutorial1_4_1.png" src="_images/intro_tutorial1_4_1.png" />
 </div>
 </div>
 <p>The observed probabilities <span class="math notranslate nohighlight">\(Pr(00)\)</span> and <span class="math notranslate nohighlight">\(Pr(11)\)</span> are computed by
@@ -602,7 +607,7 @@ the estimated probabilities change.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -697,7 +702,7 @@ the estimated probabilities change.</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -720,9 +725,11 @@ the estimated probabilities change.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

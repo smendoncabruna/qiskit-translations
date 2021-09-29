@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.list\_ops.SummedOp
-========================================
+﻿SummedOp
+========
 
 .. currentmodule:: qiskit.aqua.operators.list_ops
 
 .. autoclass:: SummedOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SummedOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SummedOp.add
       ~SummedOp.adjoint
       ~SummedOp.assign_parameters
@@ -41,24 +40,18 @@
       ~SummedOp.to_pauli_op
       ~SummedOp.to_spmatrix
       ~SummedOp.traverse
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SummedOp.ENABLE_DEPRECATION
-      ~SummedOp.INDENTATION
-      ~SummedOp.abelian
-      ~SummedOp.coeff
-      ~SummedOp.combo_fn
-      ~SummedOp.distributive
-      ~SummedOp.grad_combo_fn
-      ~SummedOp.num_qubits
-      ~SummedOp.oplist
-      ~SummedOp.parameters
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: abelian
+   .. autoattribute:: coeff
+   .. autoattribute:: combo_fn
+   .. autoattribute:: distributive
+   .. autoattribute:: grad_combo_fn
+   .. autoattribute:: num_qubits
+   .. autoattribute:: oplist
+   .. autoattribute:: parameters

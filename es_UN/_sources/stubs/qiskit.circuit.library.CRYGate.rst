@@ -1,52 +1,30 @@
-﻿qiskit.circuit.library.CRYGate
-==============================
+﻿CRYGate
+=======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: CRYGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~CRYGate.__init__
-      ~CRYGate.add_decomposition
-      ~CRYGate.assemble
-      ~CRYGate.broadcast_arguments
-      ~CRYGate.c_if
-      ~CRYGate.control
-      ~CRYGate.copy
-      ~CRYGate.inverse
-      ~CRYGate.is_parameterized
-      ~CRYGate.mirror
-      ~CRYGate.power
-      ~CRYGate.qasm
-      ~CRYGate.repeat
-      ~CRYGate.reverse_ops
-      ~CRYGate.soft_compare
-      ~CRYGate.to_matrix
-      ~CRYGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~CRYGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CRYGate.ctrl_state
-      ~CRYGate.decompositions
-      ~CRYGate.definition
-      ~CRYGate.duration
-      ~CRYGate.label
-      ~CRYGate.name
-      ~CRYGate.num_ctrl_qubits
-      ~CRYGate.params
-      ~CRYGate.unit
-   
-   
+   .. autoattribute:: ctrl_state
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: num_ctrl_qubits
+   .. autoattribute:: params
+   .. autoattribute:: unit

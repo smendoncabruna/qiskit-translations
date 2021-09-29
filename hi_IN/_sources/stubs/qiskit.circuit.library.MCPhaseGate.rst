@@ -1,52 +1,31 @@
-﻿qiskit.circuit.library.MCPhaseGate
-==================================
+﻿MCPhaseGate
+===========
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: MCPhaseGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~MCPhaseGate.__init__
-      ~MCPhaseGate.add_decomposition
-      ~MCPhaseGate.assemble
-      ~MCPhaseGate.broadcast_arguments
-      ~MCPhaseGate.c_if
-      ~MCPhaseGate.control
-      ~MCPhaseGate.copy
-      ~MCPhaseGate.inverse
-      ~MCPhaseGate.is_parameterized
-      ~MCPhaseGate.mirror
-      ~MCPhaseGate.power
-      ~MCPhaseGate.qasm
-      ~MCPhaseGate.repeat
-      ~MCPhaseGate.reverse_ops
-      ~MCPhaseGate.soft_compare
-      ~MCPhaseGate.to_matrix
-      ~MCPhaseGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~MCPhaseGate.control
+      ~MCPhaseGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MCPhaseGate.ctrl_state
-      ~MCPhaseGate.decompositions
-      ~MCPhaseGate.definition
-      ~MCPhaseGate.duration
-      ~MCPhaseGate.label
-      ~MCPhaseGate.name
-      ~MCPhaseGate.num_ctrl_qubits
-      ~MCPhaseGate.params
-      ~MCPhaseGate.unit
-   
-   
+   .. autoattribute:: ctrl_state
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: num_ctrl_qubits
+   .. autoattribute:: params
+   .. autoattribute:: unit

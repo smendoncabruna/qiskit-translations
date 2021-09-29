@@ -1,25 +1,20 @@
-﻿qiskit.providers.ibmq.credentials.Credentials
-=============================================
+﻿Credentials
+===========
 
 .. currentmodule:: qiskit.providers.ibmq.credentials
 
 .. autoclass:: Credentials
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Credentials.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Credentials.connection_parameters
       ~Credentials.is_ibmq
       ~Credentials.unique_id
-   
-   
 
-   
-   
-   
+

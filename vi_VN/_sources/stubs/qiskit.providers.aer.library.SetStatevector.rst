@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SetStatevector
-===========================================
+﻿SetStatevector
+==============
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SetStatevector
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SetStatevector.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SetStatevector.add_decomposition
       ~SetStatevector.assemble
       ~SetStatevector.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SetStatevector.reverse_ops
       ~SetStatevector.soft_compare
       ~SetStatevector.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SetStatevector.decompositions
-      ~SetStatevector.definition
-      ~SetStatevector.duration
-      ~SetStatevector.label
-      ~SetStatevector.params
-      ~SetStatevector.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

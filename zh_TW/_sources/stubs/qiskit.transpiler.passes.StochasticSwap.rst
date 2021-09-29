@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.StochasticSwap
-=======================================
+﻿StochasticSwap
+==============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: StochasticSwap
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~StochasticSwap.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~StochasticSwap.name
       ~StochasticSwap.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~StochasticSwap.is_analysis_pass
-      ~StochasticSwap.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

@@ -1,26 +1,21 @@
-﻿qiskit.providers.ibmq.IBMQBackendService
-========================================
+﻿IBMQBackendService
+==================
 
 .. currentmodule:: qiskit.providers.ibmq
 
 .. autoclass:: IBMQBackendService
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMQBackendService.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMQBackendService.backends
       ~IBMQBackendService.jobs
       ~IBMQBackendService.my_reservations
       ~IBMQBackendService.retrieve_job
-   
-   
 
-   
-   
-   
+

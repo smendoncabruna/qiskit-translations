@@ -1,19 +1,18 @@
-﻿qiskit.ignis.verification.QVFitter
-==================================
+﻿QVFitter
+========
 
 .. currentmodule:: qiskit.ignis.verification
 
 .. autoclass:: QVFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QVFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QVFitter.add_data
       ~QVFitter.add_statevectors
       ~QVFitter.calc_confidence_level
@@ -25,21 +24,15 @@
       ~QVFitter.plot_qv_trial
       ~QVFitter.quantum_volume
       ~QVFitter.qv_success
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QVFitter.depths
-      ~QVFitter.heavy_output_counts
-      ~QVFitter.heavy_output_prob_ideal
-      ~QVFitter.heavy_outputs
-      ~QVFitter.qubit_lists
-      ~QVFitter.results
-      ~QVFitter.ydata
-   
-   
+   .. autoattribute:: depths
+   .. autoattribute:: heavy_output_counts
+   .. autoattribute:: heavy_output_prob_ideal
+   .. autoattribute:: heavy_outputs
+   .. autoattribute:: qubit_lists
+   .. autoattribute:: results
+   .. autoattribute:: ydata

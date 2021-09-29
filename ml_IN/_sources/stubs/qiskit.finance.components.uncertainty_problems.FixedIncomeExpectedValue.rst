@@ -1,19 +1,18 @@
-﻿qiskit.finance.components.uncertainty\_problems.FixedIncomeExpectedValue
-========================================================================
+﻿FixedIncomeExpectedValue
+========================
 
 .. currentmodule:: qiskit.finance.components.uncertainty_problems
 
 .. autoclass:: FixedIncomeExpectedValue
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FixedIncomeExpectedValue.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FixedIncomeExpectedValue.build
       ~FixedIncomeExpectedValue.build_controlled
       ~FixedIncomeExpectedValue.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~FixedIncomeExpectedValue.required_ancillas
       ~FixedIncomeExpectedValue.required_ancillas_controlled
       ~FixedIncomeExpectedValue.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FixedIncomeExpectedValue.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

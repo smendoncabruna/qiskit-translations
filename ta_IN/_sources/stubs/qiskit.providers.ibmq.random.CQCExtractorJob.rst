@@ -1,31 +1,24 @@
-﻿qiskit.providers.ibmq.random.CQCExtractorJob
-============================================
+﻿CQCExtractorJob
+===============
 
 .. currentmodule:: qiskit.providers.ibmq.random
 
 .. autoclass:: CQCExtractorJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CQCExtractorJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CQCExtractorJob.block_until_ready
       ~CQCExtractorJob.status
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CQCExtractorJob.extractor_method
-      ~CQCExtractorJob.parameters
-   
-   
+   .. autoattribute:: extractor_method
+   .. autoattribute:: parameters

@@ -1,19 +1,18 @@
-﻿qiskit.algorithms.optimizers.GradientDescent
-============================================
+GradientDescent
+===============
 
 .. currentmodule:: qiskit.algorithms.optimizers
 
 .. autoclass:: GradientDescent
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GradientDescent.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~GradientDescent.get_support_level
       ~GradientDescent.gradient_num_diff
       ~GradientDescent.optimize
@@ -21,28 +20,22 @@
       ~GradientDescent.set_max_evals_grouped
       ~GradientDescent.set_options
       ~GradientDescent.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GradientDescent.bounds_support_level
-      ~GradientDescent.gradient_support_level
-      ~GradientDescent.initial_point_support_level
-      ~GradientDescent.is_bounds_ignored
-      ~GradientDescent.is_bounds_required
-      ~GradientDescent.is_bounds_supported
-      ~GradientDescent.is_gradient_ignored
-      ~GradientDescent.is_gradient_required
-      ~GradientDescent.is_gradient_supported
-      ~GradientDescent.is_initial_point_ignored
-      ~GradientDescent.is_initial_point_required
-      ~GradientDescent.is_initial_point_supported
-      ~GradientDescent.setting
-      ~GradientDescent.settings
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting
+   .. autoattribute:: settings

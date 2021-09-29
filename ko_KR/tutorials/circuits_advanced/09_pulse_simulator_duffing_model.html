@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit Aer: Duffing 오실레이터 모델을 이용한 2 큐비트의 펄스 시뮬레이션 &mdash; Qiskit 0.29.0 문서</title>
+  <title>Qiskit Aer: Duffing 오실레이터 모델을 이용한 2 큐비트의 펄스 시뮬레이션 &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -576,7 +583,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="Qiskit-Aer:-Duffing-오실레이터-모델을-이용한-2-큐비트의-펄스-시뮬레이션">
 <h1>Qiskit Aer: Duffing 오실레이터 모델을 이용한 2 큐비트의 펄스 시뮬레이션<a class="headerlink" href="#Qiskit-Aer:-Duffing-오실레이터-모델을-이용한-2-큐비트의-펄스-시뮬레이션" title="제목 주소">¶</a></h1>
-<p>This notebook shows how to use the Qiskit Aer pulse simulator, which simulates experiments specified as pulse <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> objects at the Hamiltonian level. The simulator solves the Schrodinger equation for a specified Hamiltonian model and pulse <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> in the frame of the drift Hamiltonian.</p>
+<p>이 노트북은 Hamiltonian 레벨에서 펄스 <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> 객체로 지정되는 실험을 시뮬레이션하는 Qiskit Aer 펄스 시뮬레이터의 사용법을 설명한다. 이 시뮬레이터는 특정 Hamiltonian 모델과 펄스 <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> 에 대한 Schrodinger 방정식을 drift Hamiltonian 프레임에서 해결한다.</p>
 <p>특히 이 튜토리얼에서는 다음의 작업들을 수행할 것이다:</p>
 <ul class="simple">
 <li><p>두 개의 큐비트의 초전도 시스템의 모형을 생성한다.</p></li>
@@ -587,11 +594,11 @@ div.rendered_html tbody tr:hover {
 <section id="1.-소개">
 <h2>1. 소개<a class="headerlink" href="#1.-소개" title="제목 주소">¶</a></h2>
 <p>중요 섹션은 다음과 같이 진행된다.</p>
-<section id="Section-3:-Duffing-oscillator-model">
-<h3>Section 3: Duffing oscillator model<a class="headerlink" href="#Section-3:-Duffing-oscillator-model" title="제목 주소">¶</a></h3>
-<p>To simulate a physical system, it is necessary to specify a model. In this notebook, we will model superconducting qubits as a collection of <em>Duffing oscillators</em>. The model is specified in terms of the following parameters:</p>
+<section id="섹션-3:-더핑-진동자-(Duffing-oscillator)-모델">
+<h3>섹션 3: 더핑 진동자 (Duffing oscillator) 모델<a class="headerlink" href="#섹션-3:-더핑-진동자-(Duffing-oscillator)-모델" title="제목 주소">¶</a></h3>
+<p>실제 시스템을 시뮬레이션하려면 모델을 지정해야 한다. 이 노트북에서는 <em>Duffing oscillator</em> 들의 컬렉션으로서 초전도 (superconducting) 큐비트를 모델링한다. 모델은 다음 매개 변수에 따라 지정된다.</p>
 <ul class="simple">
-<li><p>Each Duffing oscillator is specified by a frequency <span class="math notranslate nohighlight">\(\nu\)</span>, anharmonicity <span class="math notranslate nohighlight">\(\alpha\)</span>, and drive strength <span class="math notranslate nohighlight">\(r\)</span>, which result in the Hamiltonian terms:</p></li>
+<li><p>각각의 Duffing oscillator는 주파수 <span class="math notranslate nohighlight">\(\nu\)</span>, 비조화성 <span class="math notranslate nohighlight">\(\alpha\)</span>, 드라이브 강도 <span class="math notranslate nohighlight">\(r\)</span> 로 명시되어 있으며, 이로 인한 해밀토니안은 다음과 같다.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
@@ -607,36 +614,35 @@ div.rendered_html tbody tr:hover {
 \end{equation}\]</div>
 <p>여기서 아래 첨자는 연산자가 어느 큐비트에 적용되는지를 표시한다.</p>
 <ul class="simple">
-<li><p>Additionally, for numerical simulation, it is necessary to specify a cutoff dimension; the Duffing oscillator model is <em>infinite dimensional</em>, and computer simulation requires restriction of the operators to a finite dimensional subspace.</p></li>
+<li><p>추가적으로, 수치 시뮬레이션의 경우 컷오프 차원을 지정해야 한다. Duffing oscillator 모델은 <em>무한 차원</em> 이며, 컴퓨터 시뮬레이션은 유한 차원의 부분공간에 대한 연산자들의 제한을 필요로 한다.</p></li>
 </ul>
 <p>** 코드에서:** <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> 이라는 헬퍼 함수를 사용하여 두 개의 결합된 큐비트에 대해 위의 양식을 가진 모델을 정의할 것이다.</p>
 </section>
-<section id="Section-4:-\pi-pulse-calibration-using-Ignis">
-<h3>Section 4: <span class="math notranslate nohighlight">\(\pi\)</span>-pulse calibration using Ignis<a class="headerlink" href="#Section-4:-\pi-pulse-calibration-using-Ignis" title="제목 주소">¶</a></h3>
+<section id="섹션-4:-Ignis를-사용한-\pi-펄스-교정">
+<h3>섹션 4: Ignis를 사용한 <span class="math notranslate nohighlight">\(\pi\)</span>-펄스 교정<a class="headerlink" href="#섹션-4:-Ignis를-사용한-\pi-펄스-교정" title="제목 주소">¶</a></h3>
 <p>모델이 정의되고 나면 각 큐비트에 적용될 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스를 보정할 것이다. <span class="math notranslate nohighlight">\(\pi\)</span> 펄스는 큐비트를 “뒤집는” (바닥 상태를 첫번째 들뜬 상태로 바꾸거나, 첫번째 들뜬 상태를 바닥 상태로 바꾸는) 큐비트의 드라이브 채널에 대한 펄스로 정의된다.</p>
 <p>다음 절차를 사용하여 각 큐비트에 대해 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스를 실험적으로 찾을 것이다.</p>
 <ul class="simple">
-<li><p>A fixed pulse shape is set - in this case it will be a Gaussian pulse.</p></li>
-<li><p>A sequence of experiments is run, each consisting of a Gaussian pulse on the qubit, followed by a measurement, with each experiment in the sequence having a subsequently larger amplitude for the Gaussian pulse.</p></li>
-<li><p>The measurement data is fit, and the pulse amplitude that completely flips the qubit is found (i.e. the <span class="math notranslate nohighlight">\(\pi\)</span>-pulse amplitude).</p></li>
+<li><p>고정 펄스 형상이 설정되는데, 이 경우에는 Gaussian 펄스가 될 것이다.</p></li>
+<li><p>각각 큐비트에 대해 이전의 실험보다 더 큰 진폭을 가진 Gaussian 펄스로 구성되는 일련의 실험이 실행되고 측정된다.</p></li>
+<li><p>측정 데이터를 분석해 큐비트를 완전히 뒤집는 펄스 진폭을 (<span class="math notranslate nohighlight">\(\pi\)</span> 펄스 진폭을) 찾는다.</p></li>
 </ul>
 <p><strong>코드에서:</strong> 이그니스를 사용해 위의 실험들에 대한 <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> 객체를 구축하고 데이터를 분석하여 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스 진폭들을 찾을 것이다.</p>
 </section>
 <section id="섹션-5:-교차-공진-진동">
 <h3>섹션 5: 교차-공진 진동<a class="headerlink" href="#섹션-5:-교차-공진-진동" title="제목 주소">¶</a></h3>
-<p>Once the <span class="math notranslate nohighlight">\(\pi\)</span>-pulses are calibrated, we will simulate the effects of cross-resonance driving on qubit <span class="math notranslate nohighlight">\(1\)</span> with target qubit <span class="math notranslate nohighlight">\(0\)</span>. This means that we will drive qubit <span class="math notranslate nohighlight">\(1\)</span> at the frequency of qubit <span class="math notranslate nohighlight">\(0\)</span>, with the goal of observing that the trajectory and oscillations of qubit <span class="math notranslate nohighlight">\(0\)</span> <em>depends</em> on the state of qubit <span class="math notranslate nohighlight">\(1\)</span>. This phenomenon provides a basis for creating two-qubit <em>controlled</em> gates. Note: This section requires the calibration of the
-<span class="math notranslate nohighlight">\(\pi\)</span>-pulse in Section 4.</p>
+<p><span class="math notranslate nohighlight">\(\pi\)</span>-펄스들이 교정되면, 타겟 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 를 통해 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 에 교차-공명 효과를 시뮬레이션을 할 것이다. 이는 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 의 상태에 따라 <em>달라지는</em> 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 의 궤적과 진동을 관찰하는 것을 목표로, 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 의 주파수로 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 을 구동한다는 의미이다. 이 현상은 두-큐비트 <em>제어</em> 게이트들을 생성하는 기저를 제공한다. 참고: 이 섹션은 섹션 4의 <span class="math notranslate nohighlight">\(\pi\)</span>-펄스의 교정을 필요로 한다.</p>
 <p>교차-공명 구동을 관찰하기 위해 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스 보정 실험과 비슷한 실험들을 활용할 것이다:</p>
 <ul class="simple">
 <li><p>처음에는, 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 은 바닥 상태에 남아있던가, 아니면 섹션 4의 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스를 사용해 첫 번째 들뜬 상태에 올라가게 된다.</p></li>
-<li><p>A sequence of experiments is run, each consisting of a Gaussian pulse on qubit <span class="math notranslate nohighlight">\(1\)</span> driven at the frequency of qubit <span class="math notranslate nohighlight">\(0\)</span>, followed by a measurement of both qubits, with each experiment of the sequence having a subsequently larger amplitude for the Gaussian pulse.</p></li>
+<li><p>각각 큐비트에 대해 이전의 실험보다 더 큰 진폭을 가지고, 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 의 주파수를 가지며, 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 에 대해 구동되는 Gaussian 펄스로 구성되는 일련의 실험이 실행되고 측정된다.</p></li>
 </ul>
 <p><strong>코드에서:</strong> 실험들을 정의하고 데이터를 시각화하는 함수들을 구축하는데, 이에는 블로흐 구면에서 목표 큐비트의 궤적을 시각화하는 함수를 포함한다.</p>
 </section>
 </section>
 <section id="2.-가져오기">
 <h2>2. 가져오기<a class="headerlink" href="#2.-가져오기" title="제목 주소">¶</a></h2>
-<p>This notebook makes use of the following imports.</p>
+<p>이 노트북은 다음과 같은 import를 사용합니다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -660,6 +666,7 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="kn">import</span> <span class="nn">qiskit.pulse</span> <span class="k">as</span> <span class="nn">pulse</span>
 <span class="kn">from</span> <span class="nn">qiskit.pulse.library</span> <span class="kn">import</span> <span class="n">Gaussian</span><span class="p">,</span> <span class="n">GaussianSquare</span>
 <span class="kn">from</span> <span class="nn">qiskit.compiler</span> <span class="kn">import</span> <span class="n">assemble</span>
+<span class="kn">import</span> <span class="nn">qiskit.ignis</span>
 
 <span class="kn">from</span> <span class="nn">qiskit.ignis.characterization.calibrations</span> <span class="kn">import</span> <span class="n">rabi_schedules</span><span class="p">,</span> <span class="n">RabiFitter</span>
 </pre></div>
@@ -682,8 +689,8 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="3.-더핑-진동자-(Duffing-oscillator)-시스템-모델">
 <h2>3. 더핑 진동자 (Duffing oscillator) 시스템 모델<a class="headerlink" href="#3.-더핑-진동자-(Duffing-oscillator)-시스템-모델" title="제목 주소">¶</a></h2>
-<p>An object representing a model for a collection of Duffing oscillators can be constructed using the <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> function. Here we construct a <span class="math notranslate nohighlight">\(2\)</span> Duffing oscillator model with cutoff dimension <span class="math notranslate nohighlight">\(3\)</span>.</p>
-<div class="nbinput nblast docutils container">
+<p>Duffing 진동자 모음에 대한 모델을 나타내는 객체는 <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> 함수를 사용하여 구축할 수 있다. 여기서는 컷오프 (cutoff) 차원 <span class="math notranslate nohighlight">\(3\)</span> 을 가진 <span class="math notranslate nohighlight">\(2\)</span> Duffing 진동자 모델을 구축한다.</p>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -715,14 +722,23 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/providers/aer/pulse/system_models/string_model_parser/string_model_parser.py:280: DeprecationWarning: Using the `__mul__` operator `A * B` as shorthand for `A.dot(B)` is deprecated as of version 0.17.0 and will be  removed no earlier than 3 months after the release date. As an alternative, use the compose operator `B &amp; A` in place of `A * B` as a replacement.
+  stack.append(op1 * op2)
+</pre></div></div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> 함수는 <code class="docutils literal notranslate"><span class="pre">PulseSystemModel</span></code> 객체를 반환하는데, 이는 <code class="docutils literal notranslate"><span class="pre">PulseSimulator</span></code> 를 포함한 시뮬레이션에 필요한 모델 정보를 저장하는 일반적인 객체이다.</p>
 </section>
-<section id="4-Calibrating-\pi-pulses-on-each-qubit-using-Ignis">
-<h2>4 Calibrating <span class="math notranslate nohighlight">\(\pi\)</span> pulses on each qubit using Ignis<a class="headerlink" href="#4-Calibrating-\pi-pulses-on-each-qubit-using-Ignis" title="제목 주소">¶</a></h2>
+<section id="4.-Ignis를-이용하여-각각의-큐비트에-대한-\pi-의-펄스들을-보정하기">
+<h2>4. Ignis를 이용하여 각각의 큐비트에 대한 <span class="math notranslate nohighlight">\(\pi\)</span> 의 펄스들을 보정하기<a class="headerlink" href="#4.-Ignis를-이용하여-각각의-큐비트에-대한-\pi-의-펄스들을-보정하기" title="제목 주소">¶</a></h2>
 <p>도입부에 설명된 바와 같이, 이제 <code class="docutils literal notranslate"><span class="pre">two_qubit_model</span></code> 에서 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스를 보정할 수 있다. 이 교정 절차에서의 실험은 <em>Rabi experiments</em> 으로 알려져 있고, 관찰할 데이터는 <em>Rabi oscillations</em> 로 알려져 있다.</p>
 <section id="4.1-스케줄-구성하기">
 <h3>4.1 스케줄 구성하기<a class="headerlink" href="#4.1-스케줄-구성하기" title="제목 주소">¶</a></h3>
-<p>We construct the schedules using the <code class="docutils literal notranslate"><span class="pre">rabi_schedules</span></code> function in Ignis. To do this, we need to supply an <code class="docutils literal notranslate"><span class="pre">InstructionScheduleMap</span></code> containing a measurement schedule.</p>
+<p>Ignis의 <code class="docutils literal notranslate"><span class="pre">rabi_schedules</span></code> 을 사용하여 스케줄을 짤 수 있다. 이를 위해서는 측정 스케줄을 포함한 <code class="docutils literal notranslate"><span class="pre">InstructionScheduleMap</span></code> 을 공급해야 한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -772,7 +788,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">Schedule</span></code>s in <code class="docutils literal notranslate"><span class="pre">rabi_schedules</span></code> correspond to experiments to generate Rabi oscillations on both qubits in parallel. Each experiment consists of a Gaussian pulse on the qubits of a given magnitude, followed by measurement.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rabi_schedules</span></code> 의 <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> 들은 병렬 구성의 큐비트들에 모두 라비 진동을 생성하는 실험에 해당한다. 각 실험은 주어진 크기의 큐비트에 대한 Gaussian 펄스로 구성되고, 뒤이어 측정이 이루어진다.</p>
 <p>예를 들어:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -795,14 +811,14 @@ div.rendered_html tbody tr:hover {
 <section id="4.2-Rabi-실험-시뮬레이션">
 <h3>4.2 Rabi 실험 시뮬레이션<a class="headerlink" href="#4.2-Rabi-실험-시뮬레이션" title="제목 주소">¶</a></h3>
 <p>라비 실험을 시뮬레이션하기 위해서는 <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> 목록을 qobj로 조립하고, 조립할 때에는 <code class="docutils literal notranslate"><span class="pre">PulseSimulator</span></code> 를 백엔드로 사용하여야 한다.</p>
-<p>Here, we want to use local oscillators with frequencies automatically computed from Duffing model Hamiltonian.</p>
+<p>여기서는 Duffing 모델 Hamiltonian에서 자동으로 계산되는 주파수들을 갖는 로컬 진동자들을 사용할 것이다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># instantiate the pulse simulator</span>
-<span class="n">backend_sim</span> <span class="o">=</span> <span class="n">PulseSimulator</span><span class="p">()</span>
+<span class="n">backend_sim</span> <span class="o">=</span> <span class="n">PulseSimulator</span><span class="p">(</span><span class="n">system_model</span><span class="o">=</span><span class="n">two_qubit_model</span><span class="p">)</span>
 
 <span class="c1"># compute frequencies from the Hamiltonian</span>
 <span class="n">qubit_lo_freq</span> <span class="o">=</span> <span class="n">two_qubit_model</span><span class="o">.</span><span class="n">hamiltonian</span><span class="o">.</span><span class="n">get_qubit_lo_from_drift</span><span class="p">()</span>
@@ -817,20 +833,29 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>시뮬레이터 백엔드를 사용하여 시뮬레이션을 실행한다.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># run the simulation</span>
-<span class="n">rabi_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">rabi_qobj</span><span class="p">,</span> <span class="n">two_qubit_model</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="n">rabi_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">rabi_qobj</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/providers/aer/pulse/system_models/string_model_parser/operator_generators.py:154: DeprecationWarning: Using the `__matmul__` operator `A @ B` as shorthand for `A.compose(B)` is deprecated as of version 0.17.0 and will be  removed no earlier than 3 months after the release date. Use the `A &amp; B` instead.
+  proj_op += estate @ estate.adjoint()
+</pre></div></div>
 </div>
 </section>
 <section id="4.3-데이터-구성-및-시각화">
 <h3>4.3 데이터 구성 및 시각화<a class="headerlink" href="#4.3-데이터-구성-및-시각화" title="제목 주소">¶</a></h3>
-<p>Next, we use <code class="docutils literal notranslate"><span class="pre">RabiFitter</span></code> in Ignis to fit the data, extract the <span class="math notranslate nohighlight">\(\pi\)</span>-pulse amplitude, and then plot the data.</p>
+<p>다음으로는 Ignis의 <code class="docutils literal notranslate"><span class="pre">RabiFitter</span></code> 를 사용하여 데이터를 분석하고 <span class="math notranslate nohighlight">\(\pi\)</span> 펄스 진폭을 추출하며, 데이터를 도식화할 것이다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -853,8 +878,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Pi Amp: 0.310790
-Pi Amp: 0.313279
+Pi Amp: 0.612110
+Pi Amp: 0.611280
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -869,12 +894,11 @@ Pi Amp: 0.313279
 </section>
 <section id="5.-교차-공명-드라이브로부터의-진동">
 <h2>5. 교차-공명 드라이브로부터의 진동<a class="headerlink" href="#5.-교차-공명-드라이브로부터의-진동" title="제목 주소">¶</a></h2>
-<p>Next, we simulate the effects of a cross-resonance drive on qubit <span class="math notranslate nohighlight">\(1\)</span> with target qubit <span class="math notranslate nohighlight">\(0\)</span>, observing that the trajectory and oscillations of qubit <span class="math notranslate nohighlight">\(0\)</span> <em>depends</em> on the state of qubit <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>다음으로, 타겟 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 를 통해 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 에 교차-공명 효과를 시뮬레이션하여 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 의 상태에 따라 <em>달라지는</em> 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 의 궤적과 진동을 관찰한다.</p>
 <p><strong>참고:</strong> 이 섹션은 섹션 2의 <span class="math notranslate nohighlight">\(\pi\)</span>-펄스 교정에 따라 달라진다.</p>
-<section id="5.1-Cross-resonance-ControlChannel-indices">
-<h3>5.1 Cross-resonance <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> indices<a class="headerlink" href="#5.1-Cross-resonance-ControlChannel-indices" title="제목 주소">¶</a></h3>
-<p>Driving qubit <span class="math notranslate nohighlight">\(1\)</span> at the frequency of qubit <span class="math notranslate nohighlight">\(0\)</span> requires use of a pulse <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code>. The model generating function <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code>, automatically sets up <code class="docutils literal notranslate"><span class="pre">ControlChannels</span></code> for performing cross-resonance drives between pairs of coupled qubits. The index of the <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> for performing a particular cross-resonance drive is retrievable using the class method <code class="docutils literal notranslate"><span class="pre">control_channel_index</span></code> on the returned <code class="docutils literal notranslate"><span class="pre">PulseSystemModel</span></code>. For example, to get the
-<code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> index corresponding to a CR drive on qubit 1 with target 0, call the function <code class="docutils literal notranslate"><span class="pre">control_channel_index</span></code> with the tuple <code class="docutils literal notranslate"><span class="pre">(1,0)</span></code>:</p>
+<section id="5.1-교차-공명-ControlChannel-인덱스">
+<h3>5.1 교차-공명 <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> 인덱스<a class="headerlink" href="#5.1-교차-공명-ControlChannel-인덱스" title="제목 주소">¶</a></h3>
+<p>큐비트 <span class="math notranslate nohighlight">\(0\)</span> 의 주파수로 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 을 구동하려면 <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> 펄스를 사용해야 한다. 모델 생성 함수 <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> 은 결합된 큐비트들 쌍 사이에 교차-공명 구동(CR drive)을 수행하는 <code class="docutils literal notranslate"><span class="pre">ControlChannels</span></code> 를 자동으로 설정한다. 개별적인 교차-공명 구동을 수행하는 <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> 의 인덱스는 반환된 <code class="docutils literal notranslate"><span class="pre">PulseSystemModel</span></code> 에 클래스 메서드 <code class="docutils literal notranslate"><span class="pre">control_channel_index</span></code> 를 사용하여 검색할 수 있다. 예를 들어, 타겟 큐비트 0에 큐비트 1을 교차-공명 구동하는 것에 해당하는 <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> 의 인덱스를 얻으려면 튜플 <code class="docutils literal notranslate"><span class="pre">(1,0)</span></code> 과 함께 함수 <code class="docutils literal notranslate"><span class="pre">control_channel_index</span></code> 를 호출하면 된다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -893,11 +917,11 @@ Pi Amp: 0.313279
 1
 </pre></div></div>
 </div>
-<p>Hence, to perform a cross-resonance drive on qubit <span class="math notranslate nohighlight">\(1\)</span> with target qubit <span class="math notranslate nohighlight">\(0\)</span>, use <code class="docutils literal notranslate"><span class="pre">ControlChannel(1)</span></code>. This will be made use of when constructing <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> objects in this section.</p>
+<p>따라서, 타겟 큐비트 <span class="math notranslate nohighlight">\(0\)</span> 로 큐비트 <span class="math notranslate nohighlight">\(1\)</span> 에 교차-공명 구동을 수행하려면, <code class="docutils literal notranslate"><span class="pre">ControlChannel(1)</span></code> 을 사용한다. 이는 이 세션에서 <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> 객체를 구성할 때도 사용될 것이다.</p>
 </section>
-<section id="5.2-Functions-to-generate-the-experiment-list,-and-analyze-the-output">
-<h3>5.2 Functions to generate the experiment list, and analyze the output<a class="headerlink" href="#5.2-Functions-to-generate-the-experiment-list,-and-analyze-the-output" title="제목 주소">¶</a></h3>
-<p>First, we define a function <code class="docutils literal notranslate"><span class="pre">cr_drive_experiments</span></code>, which, given the drive and target indices, and the option to either start with the drive qubit in the ground or excited state, returns a list of experiments for observing the oscillations.</p>
+<section id="5.2-실험-목록-생성-및-출력-분석하는-함수">
+<h3>5.2 실험 목록 생성 및 출력 분석하는 함수<a class="headerlink" href="#5.2-실험-목록-생성-및-출력-분석하는-함수" title="제목 주소">¶</a></h3>
+<p>먼저, 주어진 구동 인덱스와 타겟 인덱스, 그리고 구동 큐비트가 바닥 상태 혹은 들뜬 상태에서 시작하는지에 대한 옵션을 받아 진동을 관찰하는 실험 목록을 반환하는 함수 <code class="docutils literal notranslate"><span class="pre">cr_drive_experiments</span></code> 를 정의한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1083,8 +1107,8 @@ Pi Amp: 0.313279
 </section>
 <section id="5.3-큐비트-0에서의-CR-진동을-관찰하기-위해-큐비트-1을-드라이브">
 <h3>5.3 큐비트 0에서의 CR 진동을 관찰하기 위해 큐비트 1을 드라이브<a class="headerlink" href="#5.3-큐비트-0에서의-CR-진동을-관찰하기-위해-큐비트-1을-드라이브" title="제목 주소">¶</a></h3>
-<section id="Qubit-1-in-the-ground-state">
-<h4>Qubit 1 in the ground state<a class="headerlink" href="#Qubit-1-in-the-ground-state" title="제목 주소">¶</a></h4>
+<section id="기저-상태의-큐비트-1">
+<h4>기저 상태의 큐비트 1<a class="headerlink" href="#기저-상태의-큐비트-1" title="제목 주소">¶</a></h4>
 <p>첫 번째로, 큐비트 0과 큐비트 1 모두를 바닥 상태에서 드라이브 한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -1116,7 +1140,7 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">,</span> <span class="n">two_qubit_model</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="n">plot_cr_pop_data</span><span class="p">(</span><span class="n">drive_idx</span><span class="p">,</span> <span class="n">target_idx</span><span class="p">,</span> <span class="n">sim_result</span><span class="p">)</span>
 </pre></div>
@@ -1141,11 +1165,20 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/visualization/bloch.py:397: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+  self.axes = Axes3D(self.fig, azim=self.view[0], elev=self.view[1])
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_0.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_0.png" />
+<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_1.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_1.png" />
 </div>
 </div>
 </section>
@@ -1181,7 +1214,7 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">,</span> <span class="n">two_qubit_model</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="n">plot_cr_pop_data</span><span class="p">(</span><span class="n">drive_idx</span><span class="p">,</span> <span class="n">target_idx</span><span class="p">,</span> <span class="n">sim_result</span><span class="p">)</span>
 </pre></div>
@@ -1206,11 +1239,20 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/visualization/bloch.py:397: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+  self.axes = Axes3D(self.fig, azim=self.view[0], elev=self.view[1])
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_0.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_0.png" />
+<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_1.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_1.png" />
 </div>
 </div>
 <p>여기서 우리는 큐비트 1이 들뜬 상태에 있을 때, 블로흐 구 상에서 <em>상이한</em> 궤적을 취한다는 것을 알 수 있다. 이것이 2개의 큐비트 사이의 제어된 동작을 가능하게 하는 것이다.</p>
@@ -1228,24 +1270,24 @@ Pi Amp: 0.313279
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/aqua/__init__.py:86: DeprecationWarning: The package qiskit.aqua is deprecated. It was moved/refactored to qiskit-terra For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
+  warn_package(&#39;aqua&#39;, &#39;qiskit-terra&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area rendered_html docutils container">
-<h3>Version Information</h3><table><tr><th>Qiskit Software</th><th>Version</th></tr><tr><td>Qiskit</td><td>0.19.6</td></tr><tr><td>Terra</td><td>0.14.2</td></tr><tr><td>Aer</td><td>0.5.2</td></tr><tr><td>Ignis</td><td>0.3.3</td></tr><tr><td>Aqua</td><td>0.7.3</td></tr><tr><td>IBM Q Provider</td><td>0.7.2</td></tr><tr><th>System information</th></tr><tr><td>Python</td><td>3.8.5 (default, Jul 27 2020, 08:42:51)
-[GCC 10.1.0]</td></tr><tr><td>OS</td><td>Linux</td></tr><tr><td>CPUs</td><td>32</td></tr><tr><td>Memory (Gb)</td><td>125.72603988647461</td></tr><tr><td colspan='2'>Sun Aug 09 12:28:03 2020 EDT</td></tr></table></div>
+<h3>Version Information</h3><table><tr><th>Qiskit Software</th><th>Version</th></tr><tr><td><code>qiskit-terra</code></td><td>0.18.2</td></tr><tr><td><code>qiskit-aer</code></td><td>0.8.2</td></tr><tr><td><code>qiskit-ignis</code></td><td>0.6.0</td></tr><tr><td><code>qiskit-ibmq-provider</code></td><td>0.16.0</td></tr><tr><td><code>qiskit-aqua</code></td><td>0.9.5</td></tr><tr><td><code>qiskit</code></td><td>0.29.1</td></tr><tr><td><code>qiskit-nature</code></td><td>0.2.1</td></tr><tr><td><code>qiskit-finance</code></td><td>0.2.1</td></tr><tr><td><code>qiskit-optimization</code></td><td>0.2.2</td></tr><tr><td><code>qiskit-machine-learning</code></td><td>0.2.1</td></tr><tr><th>System information</th></tr><tr><td>Python</td><td>3.9.6 (default, Jun 30 2021, 10:22:16)
+[GCC 11.1.0]</td></tr><tr><td>OS</td><td>Linux</td></tr><tr><td>CPUs</td><td>32</td></tr><tr><td>Memory (Gb)</td><td>125.65557479858398</td></tr><tr><td colspan='2'>Thu Sep 16 07:39:30 2021 EDT</td></tr></table></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2020.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
+<div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
 </section>
 </section>
@@ -1268,7 +1310,7 @@ Pi Amp: 0.313279
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -1289,24 +1331,24 @@ Pi Amp: 0.313279
               <ul>
 <li><a class="reference internal" href="#">Qiskit Aer: Duffing 오실레이터 모델을 이용한 2 큐비트의 펄스 시뮬레이션</a><ul>
 <li><a class="reference internal" href="#1.-소개">1. 소개</a><ul>
-<li><a class="reference internal" href="#Section-3:-Duffing-oscillator-model">Section 3: Duffing oscillator model</a></li>
-<li><a class="reference internal" href="#Section-4:-\pi-pulse-calibration-using-Ignis">Section 4: <span class="math notranslate nohighlight">\(\pi\)</span>-pulse calibration using Ignis</a></li>
+<li><a class="reference internal" href="#섹션-3:-더핑-진동자-(Duffing-oscillator)-모델">섹션 3: 더핑 진동자 (Duffing oscillator) 모델</a></li>
+<li><a class="reference internal" href="#섹션-4:-Ignis를-사용한-\pi-펄스-교정">섹션 4: Ignis를 사용한 <span class="math notranslate nohighlight">\(\pi\)</span>-펄스 교정</a></li>
 <li><a class="reference internal" href="#섹션-5:-교차-공진-진동">섹션 5: 교차-공진 진동</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#2.-가져오기">2. 가져오기</a></li>
 <li><a class="reference internal" href="#3.-더핑-진동자-(Duffing-oscillator)-시스템-모델">3. 더핑 진동자 (Duffing oscillator) 시스템 모델</a></li>
-<li><a class="reference internal" href="#4-Calibrating-\pi-pulses-on-each-qubit-using-Ignis">4 Calibrating <span class="math notranslate nohighlight">\(\pi\)</span> pulses on each qubit using Ignis</a><ul>
+<li><a class="reference internal" href="#4.-Ignis를-이용하여-각각의-큐비트에-대한-\pi-의-펄스들을-보정하기">4. Ignis를 이용하여 각각의 큐비트에 대한 <span class="math notranslate nohighlight">\(\pi\)</span> 의 펄스들을 보정하기</a><ul>
 <li><a class="reference internal" href="#4.1-스케줄-구성하기">4.1 스케줄 구성하기</a></li>
 <li><a class="reference internal" href="#4.2-Rabi-실험-시뮬레이션">4.2 Rabi 실험 시뮬레이션</a></li>
 <li><a class="reference internal" href="#4.3-데이터-구성-및-시각화">4.3 데이터 구성 및 시각화</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#5.-교차-공명-드라이브로부터의-진동">5. 교차-공명 드라이브로부터의 진동</a><ul>
-<li><a class="reference internal" href="#5.1-Cross-resonance-ControlChannel-indices">5.1 Cross-resonance <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> indices</a></li>
-<li><a class="reference internal" href="#5.2-Functions-to-generate-the-experiment-list,-and-analyze-the-output">5.2 Functions to generate the experiment list, and analyze the output</a></li>
+<li><a class="reference internal" href="#5.1-교차-공명-ControlChannel-인덱스">5.1 교차-공명 <code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code> 인덱스</a></li>
+<li><a class="reference internal" href="#5.2-실험-목록-생성-및-출력-분석하는-함수">5.2 실험 목록 생성 및 출력 분석하는 함수</a></li>
 <li><a class="reference internal" href="#5.3-큐비트-0에서의-CR-진동을-관찰하기-위해-큐비트-1을-드라이브">5.3 큐비트 0에서의 CR 진동을 관찰하기 위해 큐비트 1을 드라이브</a><ul>
-<li><a class="reference internal" href="#Qubit-1-in-the-ground-state">Qubit 1 in the ground state</a></li>
+<li><a class="reference internal" href="#기저-상태의-큐비트-1">기저 상태의 큐비트 1</a></li>
 <li><a class="reference internal" href="#첫-번째-들뜬-상태의-큐비트-1">첫 번째 들뜬 상태의 큐비트 1</a></li>
 </ul>
 </li>
@@ -1377,7 +1419,7 @@ Pi Amp: 0.313279
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1400,9 +1442,11 @@ Pi Amp: 0.313279
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

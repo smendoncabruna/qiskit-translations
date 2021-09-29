@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.RemoveFinalMeasurements
-================================================
+﻿RemoveFinalMeasurements
+=======================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: RemoveFinalMeasurements
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RemoveFinalMeasurements.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RemoveFinalMeasurements.name
       ~RemoveFinalMeasurements.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RemoveFinalMeasurements.is_analysis_pass
-      ~RemoveFinalMeasurements.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

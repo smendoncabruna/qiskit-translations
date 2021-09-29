@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.Size
-=============================
+﻿Size
+====
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: Size
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Size.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Size.name
       ~Size.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Size.is_analysis_pass
-      ~Size.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

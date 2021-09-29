@@ -1,31 +1,24 @@
-﻿qiskit.chemistry.applications.MolecularGroundStateEnergy
-========================================================
+﻿MolecularGroundStateEnergy
+==========================
 
 .. currentmodule:: qiskit.chemistry.applications
 
 .. autoclass:: MolecularGroundStateEnergy
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MolecularGroundStateEnergy.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MolecularGroundStateEnergy.compute_energy
       ~MolecularGroundStateEnergy.get_default_solver
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MolecularGroundStateEnergy.driver
-      ~MolecularGroundStateEnergy.solver
-   
-   
+   .. autoattribute:: driver
+   .. autoattribute:: solver

@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.state\_fns.StateFn
-========================================
+﻿StateFn
+=======
 
 .. currentmodule:: qiskit.aqua.operators.state_fns
 
 .. autoclass:: StateFn
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~StateFn.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~StateFn.add
       ~StateFn.adjoint
       ~StateFn.assign_parameters
@@ -35,21 +34,15 @@
       ~StateFn.to_matrix
       ~StateFn.to_matrix_op
       ~StateFn.traverse
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~StateFn.ENABLE_DEPRECATION
-      ~StateFn.INDENTATION
-      ~StateFn.coeff
-      ~StateFn.is_measurement
-      ~StateFn.num_qubits
-      ~StateFn.parameters
-      ~StateFn.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: is_measurement
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

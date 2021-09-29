@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.PotentialBase
-=======================================================
+﻿PotentialBase
+=============
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: PotentialBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PotentialBase.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PotentialBase.dissociation_energy
       ~PotentialBase.eval
       ~PotentialBase.fit
@@ -24,9 +23,5 @@
       ~PotentialBase.get_trust_region
       ~PotentialBase.update_molecule
       ~PotentialBase.vibrational_energy_level
-   
-   
 
-   
-   
-   
+

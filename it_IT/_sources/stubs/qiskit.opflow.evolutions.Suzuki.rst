@@ -1,30 +1,23 @@
-﻿qiskit.opflow.evolutions.Suzuki
-===============================
+Suzuki
+======
 
 .. currentmodule:: qiskit.opflow.evolutions
 
 .. autoclass:: Suzuki
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~Suzuki.__init__
-      ~Suzuki.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~Suzuki.convert
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Suzuki.order
-      ~Suzuki.reps
-   
-   
+   .. autoattribute:: order
+   .. autoattribute:: reps

@@ -1,19 +1,18 @@
-﻿qiskit.result.ProbDistribution
-==============================
+﻿ProbDistribution
+================
 
 .. currentmodule:: qiskit.result
 
 .. autoclass:: ProbDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ProbDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ProbDistribution.binary_probabilities
       ~ProbDistribution.clear
       ~ProbDistribution.copy
@@ -27,9 +26,5 @@
       ~ProbDistribution.setdefault
       ~ProbDistribution.update
       ~ProbDistribution.values
-   
-   
 
-   
-   
-   
+

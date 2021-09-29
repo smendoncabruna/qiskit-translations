@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.AnalysisPass
-==============================
+﻿AnalysisPass
+============
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: AnalysisPass
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AnalysisPass.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AnalysisPass.name
       ~AnalysisPass.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AnalysisPass.is_analysis_pass
-      ~AnalysisPass.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

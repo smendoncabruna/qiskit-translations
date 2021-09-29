@@ -1,19 +1,18 @@
-﻿qiskit.extensions.HamiltonianGate
-=================================
+﻿HamiltonianGate
+===============
 
 .. currentmodule:: qiskit.extensions
 
 .. autoclass:: HamiltonianGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HamiltonianGate.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~HamiltonianGate.add_decomposition
       ~HamiltonianGate.adjoint
       ~HamiltonianGate.assemble
@@ -33,20 +32,14 @@
       ~HamiltonianGate.to_matrix
       ~HamiltonianGate.transpose
       ~HamiltonianGate.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HamiltonianGate.decompositions
-      ~HamiltonianGate.definition
-      ~HamiltonianGate.duration
-      ~HamiltonianGate.label
-      ~HamiltonianGate.params
-      ~HamiltonianGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

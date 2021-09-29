@@ -1,34 +1,27 @@
-﻿qiskit.chemistry.core.ChemistryOperator
-=======================================
+﻿ChemistryOperator
+=================
 
 .. currentmodule:: qiskit.chemistry.core
 
 .. autoclass:: ChemistryOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ChemistryOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ChemistryOperator.process_algorithm_result
       ~ChemistryOperator.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ChemistryOperator.INFO_NUM_ORBITALS
-      ~ChemistryOperator.INFO_NUM_PARTICLES
-      ~ChemistryOperator.INFO_TWO_QUBIT_REDUCTION
-      ~ChemistryOperator.INFO_Z2SYMMETRIES
-      ~ChemistryOperator.molecule_info
-   
-   
+   .. autoattribute:: INFO_NUM_ORBITALS
+   .. autoattribute:: INFO_NUM_PARTICLES
+   .. autoattribute:: INFO_TWO_QUBIT_REDUCTION
+   .. autoattribute:: INFO_Z2SYMMETRIES
+   .. autoattribute:: molecule_info

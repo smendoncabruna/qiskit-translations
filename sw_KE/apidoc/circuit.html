@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quantum Circuits (qiskit.circuit) &mdash; Qiskit 0.29.0 documentation</title>
+  <title>Quantum Circuits (qiskit.circuit) &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="qiskit.circuit.QuantumCircuit" href="../stubs/qiskit.circuit.QuantumCircuit.html" />
+    <link rel="next" title="QuantumCircuit" href="../stubs/qiskit.circuit.QuantumCircuit.html" />
     <link rel="prev" title="Qiskit Terra API Reference" href="terra.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -471,7 +478,7 @@ this equivalence breaks down. As such, from now on we will not refer to the numb
 qubits in a quantum circuit as the width.</p>
 </div>
 <p class="card-text">It is also straightforward to get the number and type of the gates in a circuit using
-<a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.count_ops" title="qiskit.circuit.QuantumCircuit.count_ops"><code class="xref py py-meth docutils literal notranslate"><span class="pre">QuantumCircuit.count_ops()</span></code></a>:</p>
+<a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.count_ops.html#qiskit.circuit.QuantumCircuit.count_ops" title="qiskit.circuit.QuantumCircuit.count_ops"><code class="xref py py-meth docutils literal notranslate"><span class="pre">QuantumCircuit.count_ops()</span></code></a>:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qc</span><span class="o">.</span><span class="n">count_ops</span><span class="p">()</span>
@@ -485,7 +492,7 @@ qubits in a quantum circuit as the width.</p>
 </div>
 </div>
 <p class="card-text">We can also get just the raw count of operations by computing the circuits
-<a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.size" title="qiskit.circuit.QuantumCircuit.size"><code class="xref py py-meth docutils literal notranslate"><span class="pre">QuantumCircuit.size()</span></code></a>:</p>
+<a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.size.html#qiskit.circuit.QuantumCircuit.size" title="qiskit.circuit.QuantumCircuit.size"><code class="xref py py-meth docutils literal notranslate"><span class="pre">QuantumCircuit.size()</span></code></a>:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qc</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
@@ -510,7 +517,7 @@ experts.  Fortunately, the depth of a circuit can be easily understood by anyone
 with playing <a class="reference external" href="https://en.wikipedia.org/wiki/Tetris">Tetris</a>.  Lets see how to compute this
 graphically:</p>
 <img alt="../_images/depth.gif" src="../_images/depth.gif" />
-<br><br><p class="card-text">We can verify our graphical result using <a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.depth" title="qiskit.circuit.QuantumCircuit.depth"><code class="xref py py-meth docutils literal notranslate"><span class="pre">QuantumCircuit.depth()</span></code></a>:</p>
+<br><br><p class="card-text">We can verify our graphical result using <a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.depth.html#qiskit.circuit.QuantumCircuit.depth" title="qiskit.circuit.QuantumCircuit.depth"><code class="xref py py-meth docutils literal notranslate"><span class="pre">QuantumCircuit.depth()</span></code></a>:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qc</span><span class="o">.</span><span class="n">depth</span><span class="p">()</span>
@@ -639,7 +646,7 @@ graphically:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../stubs/qiskit.circuit.QuantumCircuit.html" class="btn btn-neutral float-right" title="qiskit.circuit.QuantumCircuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="../stubs/qiskit.circuit.QuantumCircuit.html" class="btn btn-neutral float-right" title="QuantumCircuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="terra.html" class="btn btn-neutral" title="Qiskit Terra API Reference" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -656,7 +663,7 @@ graphically:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -750,7 +757,7 @@ graphically:</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -773,9 +780,11 @@ graphically:</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

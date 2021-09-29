@@ -1,24 +1,16 @@
-﻿qiskit.providers.ibmq.experiment.ResultQuality
-==============================================
+﻿ResultQuality
+=============
 
 .. currentmodule:: qiskit.providers.ibmq.experiment
 
 .. autoclass:: ResultQuality
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ResultQuality.BAD
-      ~ResultQuality.GOOD
-      ~ResultQuality.UNKNOWN
-   
-   
+   .. autoattribute:: BAD
+   .. autoattribute:: GOOD
+   .. autoattribute:: UNKNOWN

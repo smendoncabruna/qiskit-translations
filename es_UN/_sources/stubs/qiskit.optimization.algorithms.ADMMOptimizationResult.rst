@@ -1,36 +1,22 @@
-﻿qiskit.optimization.algorithms.ADMMOptimizationResult
-=====================================================
+﻿ADMMOptimizationResult
+======================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: ADMMOptimizationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~ADMMOptimizationResult.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ADMMOptimizationResult.fval
-      ~ADMMOptimizationResult.raw_results
-      ~ADMMOptimizationResult.samples
-      ~ADMMOptimizationResult.state
-      ~ADMMOptimizationResult.status
-      ~ADMMOptimizationResult.variable_names
-      ~ADMMOptimizationResult.variables
-      ~ADMMOptimizationResult.variables_dict
-      ~ADMMOptimizationResult.x
-   
-   
+   .. autoattribute:: fval
+   .. autoattribute:: raw_results
+   .. autoattribute:: samples
+   .. autoattribute:: state
+   .. autoattribute:: status
+   .. autoattribute:: variable_names
+   .. autoattribute:: variables
+   .. autoattribute:: variables_dict
+   .. autoattribute:: x

@@ -1,24 +1,19 @@
-﻿qiskit.providers.Options
-========================
+﻿Options
+=======
 
 .. currentmodule:: qiskit.providers
 
 .. autoclass:: Options
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Options.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Options.get
       ~Options.update_options
-   
-   
 
-   
-   
-   
+

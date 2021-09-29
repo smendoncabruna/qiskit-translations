@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.transpiler.coupling &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>qiskit.transpiler.coupling &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -357,7 +364,7 @@
 <span class="sd">    to permitted CNOT gates</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="CouplingMap.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.__init__">[dokumentacja]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">couplinglist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">couplinglist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create coupling graph. By default, the generated coupling has no nodes.</span>
 
@@ -379,15 +386,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_symmetric</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="n">couplinglist</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">extend_from_edge_list</span><span class="p">([</span><span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">couplinglist</span><span class="p">])</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">extend_from_edge_list</span><span class="p">([</span><span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">couplinglist</span><span class="p">])</span>
 
-<div class="viewcode-block" id="CouplingMap.size"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.size">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.size"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.size.html#qiskit.transpiler.CouplingMap.size">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the number of physical qubits in this graph.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span></div>
 
-<div class="viewcode-block" id="CouplingMap.get_edges"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.get_edges">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">get_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.get_edges"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.get_edges.html#qiskit.transpiler.CouplingMap.get_edges">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">get_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the list of edges in the coupling graph.</span>
 
@@ -396,7 +403,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">edge_list</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="CouplingMap.add_physical_qubit"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.add_physical_qubit">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">add_physical_qubit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.add_physical_qubit"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.add_physical_qubit.html#qiskit.transpiler.CouplingMap.add_physical_qubit">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">add_physical_qubit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add a physical qubit to the coupling graph as a node.</span>
 
 <span class="sd">        physical_qubit (int): An integer representing a physical qubit.</span>
@@ -415,7 +422,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_qubit_list</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># invalidate</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_size</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># invalidate</span></div>
 
-<div class="viewcode-block" id="CouplingMap.add_edge"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.add_edge">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.add_edge"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.add_edge.html#qiskit.transpiler.CouplingMap.add_edge">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add directed edge to coupling graph.</span>
 
@@ -430,7 +437,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_dist_matrix</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># invalidate</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_symmetric</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># invalidate</span></div>
 
-<div class="viewcode-block" id="CouplingMap.subgraph"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.subgraph">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodelist</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.subgraph"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.subgraph.html#qiskit.transpiler.CouplingMap.subgraph">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">subgraph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodelist</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a CouplingMap object for a subgraph of self.</span>
 
 <span class="sd">        nodelist (list): list of integer node labels</span>
@@ -446,7 +453,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_qubit_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">node_indexes</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_qubit_list</span>
 
-<div class="viewcode-block" id="CouplingMap.is_connected"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.is_connected">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">is_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.is_connected"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.is_connected.html#qiskit.transpiler.CouplingMap.is_connected">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">is_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Test if the graph is connected.</span>
 
@@ -457,7 +464,7 @@
         <span class="k">except</span> <span class="n">rx</span><span class="o">.</span><span class="n">NullGraph</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="CouplingMap.neighbors"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.neighbors">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.neighbors"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.neighbors.html#qiskit.transpiler.CouplingMap.neighbors">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">neighbors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the nearest neighbors of a physical qubit.</span>
 
 <span class="sd">        Directionality matters, i.e. a neighbor must be reachable</span>
@@ -482,7 +489,7 @@
             <span class="k">raise</span> <span class="n">CouplingError</span><span class="p">(</span><span class="s2">&quot;coupling graph not connected&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dist_matrix</span> <span class="o">=</span> <span class="n">rx</span><span class="o">.</span><span class="n">digraph_distance_matrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">,</span> <span class="n">as_undirected</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CouplingMap.distance"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.distance">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit1</span><span class="p">,</span> <span class="n">physical_qubit2</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.distance"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.distance.html#qiskit.transpiler.CouplingMap.distance">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit1</span><span class="p">,</span> <span class="n">physical_qubit2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the undirected distance between physical_qubit1 and physical_qubit2.</span>
 
 <span class="sd">        Args:</span>
@@ -503,7 +510,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_compute_distance_matrix</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dist_matrix</span><span class="p">[</span><span class="n">physical_qubit1</span><span class="p">,</span> <span class="n">physical_qubit2</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="CouplingMap.shortest_undirected_path"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.shortest_undirected_path">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">shortest_undirected_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit1</span><span class="p">,</span> <span class="n">physical_qubit2</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.shortest_undirected_path"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.shortest_undirected_path.html#qiskit.transpiler.CouplingMap.shortest_undirected_path">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">shortest_undirected_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">physical_qubit1</span><span class="p">,</span> <span class="n">physical_qubit2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the shortest undirected path between physical_qubit1 and physical_qubit2.</span>
 
 <span class="sd">        Args:</span>
@@ -534,7 +541,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_is_symmetric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_symmetry</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_symmetric</span>
 
-<div class="viewcode-block" id="CouplingMap.make_symmetric"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.make_symmetric">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">make_symmetric</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.make_symmetric"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.make_symmetric.html#qiskit.transpiler.CouplingMap.make_symmetric">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">make_symmetric</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert uni-directional edges into bi-directional.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -554,7 +561,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">is_symmetric</span><span class="p">()</span>
 
-<div class="viewcode-block" id="CouplingMap.reduce"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.reduce">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.reduce"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.reduce.html#qiskit.transpiler.CouplingMap.reduce">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mapping</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a reduced coupling map that</span>
 <span class="sd">        corresponds to the subgraph of qubits</span>
 <span class="sd">        selected in the mapping.</span>
@@ -592,7 +599,7 @@
 
         <span class="k">return</span> <span class="n">CouplingMap</span><span class="p">(</span><span class="n">reduced_cmap</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CouplingMap.from_full"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.from_full">[dokumentacja]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="CouplingMap.from_full"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.from_full.html#qiskit.transpiler.CouplingMap.from_full">[dokumentacja]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_full</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a fully connected coupling map on n qubits.&quot;&quot;&quot;</span>
         <span class="n">cmap</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;full&quot;</span><span class="p">)</span>
@@ -606,21 +613,21 @@
             <span class="n">cmap</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">extend_from_edge_list</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cmap</span></div>
 
-<div class="viewcode-block" id="CouplingMap.from_line"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.from_line">[dokumentacja]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="CouplingMap.from_line"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.from_line.html#qiskit.transpiler.CouplingMap.from_line">[dokumentacja]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_line</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a fully connected coupling map on n qubits.&quot;&quot;&quot;</span>
         <span class="n">cmap</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">)</span>
         <span class="n">cmap</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">rx</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">directed_path_graph</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="n">bidirectional</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cmap</span></div>
 
-<div class="viewcode-block" id="CouplingMap.from_ring"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.from_ring">[dokumentacja]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="CouplingMap.from_ring"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.from_ring.html#qiskit.transpiler.CouplingMap.from_ring">[dokumentacja]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_ring</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a fully connected coupling map on n qubits.&quot;&quot;&quot;</span>
         <span class="n">cmap</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;ring&quot;</span><span class="p">)</span>
         <span class="n">cmap</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">rx</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">directed_cycle_graph</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="n">bidirectional</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cmap</span></div>
 
-<div class="viewcode-block" id="CouplingMap.from_grid"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.from_grid">[dokumentacja]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="CouplingMap.from_grid"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.from_grid.html#qiskit.transpiler.CouplingMap.from_grid">[dokumentacja]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_grid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">num_rows</span><span class="p">,</span> <span class="n">num_columns</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return qubits connected on a grid of num_rows x num_columns.&quot;&quot;&quot;</span>
         <span class="n">cmap</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;grid&quot;</span><span class="p">)</span>
@@ -629,7 +636,7 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">cmap</span></div>
 
-<div class="viewcode-block" id="CouplingMap.largest_connected_component"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.largest_connected_component">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">largest_connected_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.largest_connected_component"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.largest_connected_component.html#qiskit.transpiler.CouplingMap.largest_connected_component">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">largest_connected_component</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a set of qubits in the largest connected component.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">rx</span><span class="o">.</span><span class="n">weakly_connected_components</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span></div>
 
@@ -642,7 +649,7 @@
             <span class="n">string</span> <span class="o">+=</span> <span class="s2">&quot;]&quot;</span>
         <span class="k">return</span> <span class="n">string</span>
 
-<div class="viewcode-block" id="CouplingMap.draw"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.html#qiskit.transpiler.CouplingMap.draw">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CouplingMap.draw"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.CouplingMap.draw.html#qiskit.transpiler.CouplingMap.draw">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Draws the coupling map.</span>
 
 <span class="sd">        This function needs `pydot &lt;https://github.com/erocarrera/pydot&gt;`_,</span>
@@ -695,7 +702,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -775,7 +782,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -798,9 +805,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

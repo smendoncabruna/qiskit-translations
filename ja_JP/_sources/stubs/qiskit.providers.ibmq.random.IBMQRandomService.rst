@@ -1,24 +1,19 @@
-﻿qiskit.providers.ibmq.random.IBMQRandomService
-==============================================
+﻿IBMQRandomService
+=================
 
 .. currentmodule:: qiskit.providers.ibmq.random
 
 .. autoclass:: IBMQRandomService
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMQRandomService.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMQRandomService.get_service
       ~IBMQRandomService.services
-   
-   
 
-   
-   
-   
+

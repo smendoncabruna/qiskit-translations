@@ -1,28 +1,14 @@
-﻿qiskit.providers.Job
-====================
+﻿Job
+===
 
 .. currentmodule:: qiskit.providers
 
 .. autoclass:: Job
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~Job.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Job.version
-   
-   
+   .. autoattribute:: version

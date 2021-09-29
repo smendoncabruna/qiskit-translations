@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.runtime.RuntimeJob
-========================================
+﻿RuntimeJob
+==========
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: RuntimeJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RuntimeJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RuntimeJob.backend
       ~RuntimeJob.cancel
       ~RuntimeJob.cancel_result_streaming
@@ -24,17 +23,11 @@
       ~RuntimeJob.status
       ~RuntimeJob.stream_results
       ~RuntimeJob.wait_for_final_state
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RuntimeJob.creation_date
-      ~RuntimeJob.inputs
-      ~RuntimeJob.program_id
-   
-   
+   .. autoattribute:: creation_date
+   .. autoattribute:: inputs
+   .. autoattribute:: program_id

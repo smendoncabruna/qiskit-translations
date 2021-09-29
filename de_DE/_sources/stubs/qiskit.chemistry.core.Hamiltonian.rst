@@ -1,34 +1,27 @@
-﻿qiskit.chemistry.core.Hamiltonian
-=================================
+﻿Hamiltonian
+===========
 
 .. currentmodule:: qiskit.chemistry.core
 
 .. autoclass:: Hamiltonian
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Hamiltonian.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Hamiltonian.process_algorithm_result
       ~Hamiltonian.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Hamiltonian.INFO_NUM_ORBITALS
-      ~Hamiltonian.INFO_NUM_PARTICLES
-      ~Hamiltonian.INFO_TWO_QUBIT_REDUCTION
-      ~Hamiltonian.INFO_Z2SYMMETRIES
-      ~Hamiltonian.molecule_info
-   
-   
+   .. autoattribute:: INFO_NUM_ORBITALS
+   .. autoattribute:: INFO_NUM_PARTICLES
+   .. autoattribute:: INFO_TWO_QUBIT_REDUCTION
+   .. autoattribute:: INFO_Z2SYMMETRIES
+   .. autoattribute:: molecule_info

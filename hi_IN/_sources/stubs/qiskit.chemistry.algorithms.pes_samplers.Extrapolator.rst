@@ -1,24 +1,19 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.Extrapolator
-======================================================
+﻿Extrapolator
+============
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: Extrapolator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Extrapolator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Extrapolator.extrapolate
       ~Extrapolator.factory
-   
-   
 
-   
-   
-   
+

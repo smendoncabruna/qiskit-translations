@@ -1,34 +1,27 @@
-﻿qiskit.ignis.verification.ProcessTomographyFitter
-=================================================
+﻿ProcessTomographyFitter
+=======================
 
 .. currentmodule:: qiskit.ignis.verification
 
 .. autoclass:: ProcessTomographyFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ProcessTomographyFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ProcessTomographyFitter.add_data
       ~ProcessTomographyFitter.fit
       ~ProcessTomographyFitter.set_measure_basis
       ~ProcessTomographyFitter.set_preparation_basis
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ProcessTomographyFitter.data
-      ~ProcessTomographyFitter.measure_basis
-      ~ProcessTomographyFitter.preparation_basis
-   
-   
+   .. autoattribute:: data
+   .. autoattribute:: measure_basis
+   .. autoattribute:: preparation_basis

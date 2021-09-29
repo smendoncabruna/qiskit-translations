@@ -1,19 +1,18 @@
-﻿qiskit.algorithms.optimizers.GSLS
-=================================
+GSLS
+====
 
 .. currentmodule:: qiskit.algorithms.optimizers
 
 .. autoclass:: GSLS
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GSLS.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~GSLS.get_support_level
       ~GSLS.gradient_approximation
       ~GSLS.gradient_num_diff
@@ -25,28 +24,22 @@
       ~GSLS.set_max_evals_grouped
       ~GSLS.set_options
       ~GSLS.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GSLS.bounds_support_level
-      ~GSLS.gradient_support_level
-      ~GSLS.initial_point_support_level
-      ~GSLS.is_bounds_ignored
-      ~GSLS.is_bounds_required
-      ~GSLS.is_bounds_supported
-      ~GSLS.is_gradient_ignored
-      ~GSLS.is_gradient_required
-      ~GSLS.is_gradient_supported
-      ~GSLS.is_initial_point_ignored
-      ~GSLS.is_initial_point_required
-      ~GSLS.is_initial_point_supported
-      ~GSLS.setting
-      ~GSLS.settings
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting
+   .. autoattribute:: settings

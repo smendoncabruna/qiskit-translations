@@ -1,35 +1,28 @@
-﻿qiskit.aqua.circuits.CNF
-========================
+﻿CNF
+===
 
 .. currentmodule:: qiskit.aqua.circuits
 
 .. autoclass:: CNF
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CNF.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CNF.compute_num_ancillae
       ~CNF.construct_circuit
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CNF.ancillary_register
-      ~CNF.clause_register
-      ~CNF.num_clauses
-      ~CNF.num_variables
-      ~CNF.output_register
-      ~CNF.variable_register
-   
-   
+   .. autoattribute:: ancillary_register
+   .. autoattribute:: clause_register
+   .. autoattribute:: num_clauses
+   .. autoattribute:: num_variables
+   .. autoattribute:: output_register
+   .. autoattribute:: variable_register

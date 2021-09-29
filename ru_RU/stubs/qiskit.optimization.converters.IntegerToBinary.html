@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.converters.IntegerToBinary &mdash; документация Qiskit 0.29.0</title>
+  <title>IntegerToBinary &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
     <link rel="search" title="Поиск" href="../search.html" />
-    <link rel="next" title="qiskit.optimization.converters.LinearEqualityToPenalty" href="qiskit.optimization.converters.LinearEqualityToPenalty.html" />
-    <link rel="prev" title="qiskit.optimization.converters.InequalityToEquality" href="qiskit.optimization.converters.InequalityToEquality.html" /> 
+    <link rel="next" title="qiskit.optimization.converters.IntegerToBinary.convert" href="qiskit.optimization.converters.IntegerToBinary.convert.html" />
+    <link rel="prev" title="qiskit.optimization.converters.InequalityToEquality.interpret" href="qiskit.optimization.converters.InequalityToEquality.interpret.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.optimization.converters.html">Optimization converters (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.optimization.converters</span></code>)</a> &gt;</li>
         
-      <li>qiskit.optimization.converters.IntegerToBinary</li>
+      <li>IntegerToBinary</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-optimization-converters-integertobinary">
-<h1>qiskit.optimization.converters.IntegerToBinary<a class="headerlink" href="#qiskit-optimization-converters-integertobinary" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="integertobinary">
+<h1>IntegerToBinary<a class="headerlink" href="#integertobinary" title="Ссылка на этот заголовок">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.optimization.converters.IntegerToBinary">
 <em class="property">class </em><code class="sig-name descname">IntegerToBinary</code><a class="reference internal" href="../_modules/qiskit/optimization/converters/integer_to_binary.html#IntegerToBinary"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.optimization.converters.IntegerToBinary" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Convert a <a class="reference internal" href="qiskit.optimization.problems.QuadraticProgram.html#qiskit.optimization.problems.QuadraticProgram" title="qiskit.optimization.problems.QuadraticProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code></a> into new one by encoding
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.optimization.converters.quadratic_program_converter.QuadraticProgramConverter</span></code></p>
+</div></blockquote>
+<p>Convert a <a class="reference internal" href="qiskit.optimization.problems.QuadraticProgram.html#qiskit.optimization.problems.QuadraticProgram" title="qiskit.optimization.problems.QuadraticProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code></a> into new one by encoding
 integer with binary variables.</p>
 <p>This bounded-coefficient encoding used in this converted is proposed in [1], Eq. (5).</p>
 <p class="rubric">Примеры</p>
@@ -352,12 +362,6 @@ integer with binary variables.</p>
 <dt>[1]: Sahar Karimi, Pooya Ronagh (2017), Practical Integer-to-Binary Mapping for Quantum</dt><dd><p>Annealers. arxiv.org:1706.01945.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.optimization.converters.IntegerToBinary.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/converters/integer_to_binary.html#IntegerToBinary.__init__"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.optimization.converters.IntegerToBinary.__init__" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -365,55 +369,14 @@ integer with binary variables.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.converters.IntegerToBinary.__init__" title="qiskit.optimization.converters.IntegerToBinary.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.converters.IntegerToBinary.convert" title="qiskit.optimization.converters.IntegerToBinary.convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert</span></code></a>(problem)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.optimization.converters.IntegerToBinary.convert.html#qiskit.optimization.converters.IntegerToBinary.convert" title="qiskit.optimization.converters.IntegerToBinary.convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert</span></code></a></p></td>
 <td><p>Convert an integer problem into a new problem with binary variables.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.converters.IntegerToBinary.interpret" title="qiskit.optimization.converters.IntegerToBinary.interpret"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpret</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.optimization.converters.IntegerToBinary.interpret.html#qiskit.optimization.converters.IntegerToBinary.interpret" title="qiskit.optimization.converters.IntegerToBinary.interpret"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpret</span></code></a></p></td>
 <td><p>Convert back the converted problem (binary variables) to the original (integer variables).</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.optimization.converters.IntegerToBinary.convert">
-<code class="sig-name descname">convert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">problem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/converters/integer_to_binary.html#IntegerToBinary.convert"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.optimization.converters.IntegerToBinary.convert" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Convert an integer problem into a new problem with binary variables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><p><strong>problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>) – The problem to be solved, that may contain integer variables.</p>
-</dd>
-<dt class="field-even">Тип результата</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code></p>
-</dd>
-<dt class="field-odd">Результат</dt>
-<dd class="field-odd"><p>The converted problem, that contains no integer variables.</p>
-</dd>
-<dt class="field-even">Исключение</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.optimization.QiskitOptimizationError.html#qiskit.optimization.QiskitOptimizationError" title="qiskit.optimization.QiskitOptimizationError"><strong>QiskitOptimizationError</strong></a> – if variable or constraint type is not supported.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.converters.IntegerToBinary.interpret">
-<code class="sig-name descname">interpret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/converters/integer_to_binary.html#IntegerToBinary.interpret"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.optimization.converters.IntegerToBinary.interpret" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Convert back the converted problem (binary variables)
-to the original (integer variables).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – The result of the converted problem or the given result in case of FAILURE.</p>
-</dd>
-<dt class="field-even">Тип результата</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-odd">Результат</dt>
-<dd class="field-odd"><p>The result of the original problem.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -426,10 +389,10 @@ to the original (integer variables).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.optimization.converters.LinearEqualityToPenalty.html" class="btn btn-neutral float-right" title="qiskit.optimization.converters.LinearEqualityToPenalty" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.optimization.converters.IntegerToBinary.convert.html" class="btn btn-neutral float-right" title="qiskit.optimization.converters.IntegerToBinary.convert" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.optimization.converters.InequalityToEquality.html" class="btn btn-neutral" title="qiskit.optimization.converters.InequalityToEquality" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.optimization.converters.InequalityToEquality.interpret.html" class="btn btn-neutral" title="qiskit.optimization.converters.InequalityToEquality.interpret" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -443,7 +406,7 @@ to the original (integer variables).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -462,7 +425,7 @@ to the original (integer variables).</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.optimization.converters.IntegerToBinary</a></li>
+<li><a class="reference internal" href="#">IntegerToBinary</a></li>
 </ul>
 
             </div>
@@ -526,7 +489,7 @@ to the original (integer variables).</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -549,9 +512,11 @@ to the original (integer variables).</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

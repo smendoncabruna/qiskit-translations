@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Классификатор нейросети и регрессор &mdash; документация Qiskit Machine Learning 0.2.0</title>
+  <title>Классификатор нейросети и регрессор &mdash; документация Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/tutorials/02_neural_network_classifier_and_regressor.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/tutorials/02_neural_network_classifier_and_regressor.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/tutorials/02_neural_network_classifier_and_regressor.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/tutorials/02_neural_network_classifier_and_regressor.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/tutorials/02_neural_network_classifier_and_regressor.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/tutorials/02_neural_network_classifier_and_regressor.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -544,6 +550,8 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
 
 <span class="kn">from</span> <span class="nn">qiskit_machine_learning.exceptions</span> <span class="kn">import</span> <span class="n">QiskitMachineLearningError</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
 </pre></div>
 </div>
 </div>
@@ -619,43 +627,76 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([[0.40039062]])
+array([[0.47265625]])
 </pre></div></div>
 </div>
+<p>We will add a callback function called <code class="docutils literal notranslate"><span class="pre">callback_graph</span></code>. This will be called for each iteration of the optimizer and will be passed two parameters: the current weights and the value of the objective function at those weights. For our function, we append the value of the objective function to an array so we can plot iteration versus objective function value and update the graph with each iteration. However, you can do whatever you want with a callback function as long as it gets the two
+parameters mentioned passed.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># construct neural network classifier</span>
-<span class="n">opflow_classifier</span> <span class="o">=</span> <span class="n">NeuralNetworkClassifier</span><span class="p">(</span><span class="n">opflow_qnn</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">COBYLA</span><span class="p">())</span>
+<span></span><span class="c1"># callback function that draws a live plot when the .fit() method is called</span>
+<span class="k">def</span> <span class="nf">callback_graph</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">obj_func_eval</span><span class="p">):</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">objective_func_vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj_func_eval</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Objective function value against iteration&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Iteration&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Objective function value&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">objective_func_vals</span><span class="p">)),</span> <span class="n">objective_func_vals</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># fit classifier to data</span>
+<span></span><span class="c1"># construct neural network classifier</span>
+<span class="n">opflow_classifier</span> <span class="o">=</span> <span class="n">NeuralNetworkClassifier</span><span class="p">(</span><span class="n">opflow_qnn</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">COBYLA</span><span class="p">(),</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback_graph</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create empty array for callback to store evaluations of the objective function</span>
+<span class="n">objective_func_vals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># fit classifier to data</span>
 <span class="n">opflow_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># return to default figsize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># score classifier</span>
 <span class="n">opflow_classifier</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_11_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_11_0.png" />
+</div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.8
+0.5
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -680,7 +721,7 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_10_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_10_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
 </div>
 </div>
 </div>
@@ -688,7 +729,7 @@ array([[0.40039062]])
 <h3>Классификация с помощью » CircuitQNN ` `<a class="headerlink" href="#Классификация-с-помощью-"-CircuitQNN-`-`" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Далее мы покажем, как <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> можно использовать для классификации в <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>. В этом случае ожидается, что <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> возвращает <span class="math notranslate nohighlight">\(d\)</span>-размерный вектор вероятности в качестве вывода, где <span class="math notranslate nohighlight">\(d\)</span> обозначает число классов. Выборка из <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> автоматически приводит к распределению вероятностей, и нам просто нужно определить соответствие между измеренными битами и разными классами. Для двоичной классификации используется преобра отображение по четности.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -707,15 +748,15 @@ array([[0.40039062]])
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_12_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_14_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_14_0.png" />
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -727,7 +768,7 @@ array([[0.40039062]])
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -742,40 +783,55 @@ array([[0.40039062]])
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># construct classifier</span>
 <span class="n">circuit_classifier</span> <span class="o">=</span> <span class="n">NeuralNetworkClassifier</span><span class="p">(</span><span class="n">neural_network</span><span class="o">=</span><span class="n">circuit_qnn</span><span class="p">,</span>
-                                             <span class="n">optimizer</span><span class="o">=</span><span class="n">COBYLA</span><span class="p">())</span>
+                                             <span class="n">optimizer</span><span class="o">=</span><span class="n">COBYLA</span><span class="p">(),</span>
+                                             <span class="n">callback</span><span class="o">=</span><span class="n">callback_graph</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># fit classifier to data</span>
+<span></span><span class="c1"># create empty array for callback to store evaluations of the objective function</span>
+<span class="n">objective_func_vals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># fit classifier to data</span>
 <span class="n">circuit_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y01</span><span class="p">)</span>
+
+<span class="c1"># return to default figsize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># score classifier</span>
 <span class="n">circuit_classifier</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y01</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_18_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_18_0.png" />
+</div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.85
+0.65
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -800,7 +856,7 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_17_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_17_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_19_0.png" />
 </div>
 </div>
 </div>
@@ -808,7 +864,7 @@ array([[0.40039062]])
 <h3>Вариационный квантовый классификатор (<code class="docutils literal notranslate"><span class="pre">VQC</span></code>)<a class="headerlink" href="#Вариационный-квантовый-классификатор-(VQC)" title="Ссылка на этот заголовок">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">VQC</span></code> - это специальный вариант <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> с <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code>. Он использует отображение по четности (или расширения для нескольких классов) для отображения от битовой строки к классификации, в результате чего получается вектор вероятностей, который интерпретируется как результат, закодированный унитарным кодом. По умолчанию применяется функция <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code>, которая ожидает метки в формате унитарного кода и возвращает предсказания в этом формате.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -821,34 +877,49 @@ array([[0.40039062]])
           <span class="n">ansatz</span><span class="o">=</span><span class="n">ansatz</span><span class="p">,</span>
           <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;cross_entropy&#39;</span><span class="p">,</span>
           <span class="n">optimizer</span><span class="o">=</span><span class="n">COBYLA</span><span class="p">(),</span>
-          <span class="n">quantum_instance</span><span class="o">=</span><span class="n">quantum_instance</span><span class="p">)</span>
+          <span class="n">quantum_instance</span><span class="o">=</span><span class="n">quantum_instance</span><span class="p">,</span>
+          <span class="n">callback</span><span class="o">=</span><span class="n">callback_graph</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># fit classifier to data</span>
+<span></span><span class="c1"># create empty array for callback to store evaluations of the objective function</span>
+<span class="n">objective_func_vals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># fit classifier to data</span>
 <span class="n">vqc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_one_hot</span><span class="p">)</span>
+
+<span class="c1"># return to default figsize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># score classifier</span>
 <span class="n">vqc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_one_hot</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_22_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_22_0.png" />
+</div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.8
+0.6
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -873,7 +944,7 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_21_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_21_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
 </div>
 </div>
 </div>
@@ -882,7 +953,7 @@ array([[0.40039062]])
 <h2>Регрессия<a class="headerlink" href="#Регрессия" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Мы создаем простой регрессионный набор данных для иллюстрации следующих алгоритмов.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -905,14 +976,14 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_23_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_25_0.png" />
 </div>
 </div>
 <div class="section" id="Регрессия-с-`-`-OpflowQNN-`-`">
 <h3>Регрессия с ` ` OpflowQNN ` `<a class="headerlink" href="#Регрессия-с-`-`-OpflowQNN-`-`" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Здесь мы ограничимся регрессией с <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>, которая возвращает значения в <span class="math notranslate nohighlight">\([-1, +1]\)</span>. Можно построить более сложные и многомерные модели, также основанные на <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code>, но это выходит за рамки данного руководства.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -932,41 +1003,56 @@ array([[0.40039062]])
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># construct the regressor from the neural network</span>
 <span class="n">regressor</span> <span class="o">=</span> <span class="n">NeuralNetworkRegressor</span><span class="p">(</span><span class="n">neural_network</span><span class="o">=</span><span class="n">regression_opflow_qnn</span><span class="p">,</span>
                                    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;l2&#39;</span><span class="p">,</span>
-                                   <span class="n">optimizer</span><span class="o">=</span><span class="n">L_BFGS_B</span><span class="p">())</span>
+                                   <span class="n">optimizer</span><span class="o">=</span><span class="n">L_BFGS_B</span><span class="p">(),</span>
+                                   <span class="n">callback</span><span class="o">=</span><span class="n">callback_graph</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># fit to data</span>
+<span></span><span class="c1"># create empty array for callback to store evaluations of the objective function</span>
+<span class="n">objective_func_vals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># fit to data</span>
 <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># return to default figsize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># score the result</span>
 <span class="n">regressor</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_29_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_29_0.png" />
+</div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.9797832035970123
+0.9696567935175576
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -987,7 +1073,7 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_28_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_28_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_30_0.png" />
 </div>
 </div>
 </div>
@@ -995,41 +1081,56 @@ array([[0.40039062]])
 <h3>Регрессия с помощью Вариационной Квантовой Регрессии (<code class="docutils literal notranslate"><span class="pre">VQR</span></code>)<a class="headerlink" href="#Регрессия-с-помощью-Вариационной-Квантовой-Регрессии-(VQR)" title="Ссылка на этот заголовок">¶</a></h3>
 <p>По аналогии с <code class="docutils literal notranslate"><span class="pre">VQC</span></code> для классификации, <code class="docutils literal notranslate"><span class="pre">VQR</span></code> - это специальный вариант <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code> с <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code>. По умолчанию он рассматривает функцию <code class="docutils literal notranslate"><span class="pre">L2Loss</span></code> для минимизации средней квадратичной ошибки между предсказаниями и целями.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">vqr</span> <span class="o">=</span> <span class="n">VQR</span><span class="p">(</span><span class="n">feature_map</span><span class="o">=</span><span class="n">feature_map</span><span class="p">,</span>
           <span class="n">ansatz</span><span class="o">=</span><span class="n">ansatz</span><span class="p">,</span>
           <span class="n">optimizer</span><span class="o">=</span><span class="n">L_BFGS_B</span><span class="p">(),</span>
-          <span class="n">quantum_instance</span><span class="o">=</span><span class="n">quantum_instance</span><span class="p">)</span>
+          <span class="n">quantum_instance</span><span class="o">=</span><span class="n">quantum_instance</span><span class="p">,</span>
+          <span class="n">callback</span><span class="o">=</span><span class="n">callback_graph</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># fit regressor</span>
+<span></span><span class="c1"># create empty array for callback to store evaluations of the objective function</span>
+<span class="n">objective_func_vals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># fit regressor</span>
 <span class="n">vqr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># return to default figsize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># score result</span>
 <span class="n">vqr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_33_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_33_0.png" />
+</div>
+</div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.9811089181551182
+0.9684356876095139
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1050,11 +1151,11 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_32_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_32_0.png" />
+<img alt="../_images/tutorials_02_neural_network_classifier_and_regressor_34_0.png" src="../_images/tutorials_02_neural_network_classifier_and_regressor_34_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1068,23 +1169,13 @@ array([[0.40039062]])
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<h3>Version Information</h3><table><tr><th>Qiskit Software</th><th>Version</th></tr><tr><td>Qiskit</td><td>None</td></tr><tr><td>Terra</td><td>0.17.0.dev0+346ffa8</td></tr><tr><td>Aer</td><td>0.8.0</td></tr><tr><td>Ignis</td><td>0.6.0.dev0+d6f1ad7</td></tr><tr><td>Aqua</td><td>None</td></tr><tr><td>IBM Q Provider</td><td>0.13.0.dev0+10f19e0</td></tr><tr><th>System information</th></tr><tr><td>Python</td><td>3.8.8 (default, Feb 24 2021, 13:46:16)
-[Clang 10.0.0 ]</td></tr><tr><td>OS</td><td>Darwin</td></tr><tr><td>CPUs</td><td>6</td></tr><tr><td>Memory (Gb)</td><td>16.0</td></tr><tr><td colspan='2'>Wed Mar 31 23:31:55 2021 CEST</td></tr></table></div>
+<h3>Version Information</h3><table><tr><th>Qiskit Software</th><th>Version</th></tr><tr><td><code>qiskit-terra</code></td><td>0.19.0.dev0+803bd0d</td></tr><tr><td><code>qiskit-aer</code></td><td>0.8.2</td></tr><tr><td><code>qiskit-machine-learning</code></td><td>0.3.0</td></tr><tr><th>System information</th></tr><tr><td>Python</td><td>3.9.6 (default, Aug 18 2021, 15:44:49) [MSC v.1916 64 bit (AMD64)]</td></tr><tr><td>OS</td><td>Windows</td></tr><tr><td>CPUs</td><td>4</td></tr><tr><td>Memory (Gb)</td><td>11.83804702758789</td></tr><tr><td colspan='2'>Sun Aug 29 01:09:16 2021 Hora de verano romance</td></tr></table></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>

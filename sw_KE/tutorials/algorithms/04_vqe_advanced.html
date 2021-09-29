@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced VQE usage &mdash; Qiskit 0.29.0 documentation</title>
+  <title>Matumizi ya hali ya juu ya VQE &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Advanced VQE usage</li>
+      <li>Matumizi ya hali ya juu ya VQE</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -572,12 +579,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/04_vqe_advanced.ipynb">tutorials/algorithms/04_vqe_advanced.ipynb</a>.</p>
+<p>Ukurasa huu umezalishwa kutoka <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/04_vqe_advanced.ipynb">tutorials/algorithms/04_vqe_advanced.ipynb</a>.</p>
 </div>
-<section id="Advanced-VQE-usage">
-<h1>Advanced VQE usage<a class="headerlink" href="#Advanced-VQE-usage" title="Permalink to this headline">¶</a></h1>
+<section id="Matumizi-ya-hali-ya-juu-ya-VQE">
+<h1>Matumizi ya hali ya juu ya VQE<a class="headerlink" href="#Matumizi-ya-hali-ya-juu-ya-VQE" title="Permalink to this headline">¶</a></h1>
 <p>There exist several parameters for configuring and using more advanced <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html">VQE</a> capabilities. This tutorial will cover the parameters such as <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">expectation</span></code> and <code class="docutils literal notranslate"><span class="pre">gradient</span></code>.</p>
-<p>It will also cover advanced simulator use such as using Aer with the Matrix Product State method.</p>
+<p>Pia itashughulikia utumizi ya hali ya juu wa simulator kama vile Aer pamoja na mtindo wa Matrix Product State.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -592,7 +599,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Here we will use the same operator as used in the other VQE algorithms tutorials.</p>
+<p>Hapa tutatumia opereta sawa kama ilivyotumika katika mafunzo mengine ya alogaridhimu za VQE.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -606,8 +613,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Initial-point">
-<h2>Initial point<a class="headerlink" href="#Initial-point" title="Permalink to this headline">¶</a></h2>
+<section id="Hatua-ya-awali">
+<h2>Hatua ya awali<a class="headerlink" href="#Hatua-ya-awali" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">initial_point</span></code> parameter allows the optimization to begin at the given point, where the point is a list of parameters that will configure the ansatz. By default the initial point is <code class="docutils literal notranslate"><span class="pre">None</span></code> which means that VQE will choose one. The choice in in this case is if the supplied ansatz has a preferred point, based on the initial state provided to it, then this will be chosen, otherwise a random initial point that fits with any bounds the ansatz has will be chosen. If an initial point is
 supplied it will take priority though and be used - note though it must match in length to the number of parameters in the ansatz circuit.</p>
 <p>Why to use a initial point? One reason would be if you have guess a reasonable starting point for the problem or perhaps know have information from a prior experiment.</p>
@@ -708,8 +715,8 @@ optimizer_evals is 9 with initial point versus 65 without it.
 <p>Where this becomes useful for examples where we the solution to one problem can be used to for a guess for the solution to a very close similar problem. Chemistry is very good example where we change the inter-atomic distance(s) of molecule to plot a dissociation profile. When the distance changes are small we expect the solution to still be nearby the prior one. One technique is to simply use the optimal point from one solution as the starting point for the next step. Now more complex
 techniques are possible that do some extrapolation to compute an initial position based on prior solution(s) rather than directly use the prior solution.</p>
 </section>
-<section id="Expectation">
-<h2>Expectation<a class="headerlink" href="#Expectation" title="Permalink to this headline">¶</a></h2>
+<section id="Tarajio">
+<h2>Tarajio<a class="headerlink" href="#Tarajio" title="Permalink to this headline">¶</a></h2>
 <p>The energy of the Hamiltonian operator that VQE is working on is the expectation value when evaluated with the parameterized ansatz. To compute the expectation value VQE uses an instance of an <a class="reference external" href="https://qiskit.org/documentation/apidoc/qiskit.opflow.expectations.html">expectation</a> object. Such an instance may be supplied via the <code class="docutils literal notranslate"><span class="pre">expectation</span></code> parameter, or in the default case, where it has a value of <code class="docutils literal notranslate"><span class="pre">None</span></code>, VQE will use the
 <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.opflow.expectations.ExpectationFactory.html">ExpectationFactory</a> to create itself a suitable instance based on the supplied backend.</p>
 <p>For most cases letting VQE create a suitable instance is sufficient. However the Qiskit Aer aer_simulator supports a snapshot instruction that can be used in conjunction with the operator expectation computation. If used then the outcome is ideal, i.e. like the statevector simulator, and has no shot noise. Since people normally choose the aer_simulator to have shot noise (sampling noise), and be more like a real-device outcome, VQE has an <code class="docutils literal notranslate"><span class="pre">include_custom</span></code> flag that is passed on to the
@@ -758,7 +765,7 @@ ExpectationFactory. When using Aer qasm simulator, and this is set <code class="
     &#39;optimizer_time&#39;: 0.17621898651123047}
 </pre></div></div>
 </div>
-<p>In case you have doubts here is the aer_simulator again but include_custom has been left to default to False. The optimization ended abruptly, presumably due to the shot noise confusing the SLSQP optimizer.</p>
+<p>Ikiwa una shaka aer_simulator ipo hapa tena lakini include_custom imeachwa kwa kiada kuwa False. Usadifishaji ulimalizika kwa ghafla, labda kwa sababu ya shot noise inayochanganya optimizer ya SLSQP.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -946,8 +953,8 @@ though as shown below.</p>
 <p>Optimizers that use a gradient-based technique can be supplied with a user defined gradient that will be used instead of their default gradient computation which is usually done by simple finite difference. Gradients are passed indirectly via to the optimizer via its <code class="docutils literal notranslate"><span class="pre">gradient</span></code> parameter.</p>
 <p>As the use of a user supplied <code class="docutils literal notranslate"><span class="pre">gradient</span></code> was shown in the <a class="reference internal" href="02_vqe_convergence.html#Using-Gradient-framework"><span class="std std-ref">Monitoring VQE Convergence</span></a> tutorial I will simply refer you there. Also the <a class="reference internal" href="../operators/02_gradients_framework.html"><span class="doc">Gradients framework</span></a> tutorial has much more about the gradients themselves.</p>
 </section>
-<section id="Quantum-Instance-and-advanced-simulation">
-<h2>Quantum Instance and advanced simulation<a class="headerlink" href="#Quantum-Instance-and-advanced-simulation" title="Permalink to this headline">¶</a></h2>
+<section id="Quantum-Instance-na-uigaji-wa-hali-ya-juu">
+<h2>Quantum Instance na uigaji wa hali ya juu<a class="headerlink" href="#Quantum-Instance-na-uigaji-wa-hali-ya-juu" title="Permalink to this headline">¶</a></h2>
 <p>While you may be familiar with passing a QuantumInstancen created from a <code class="docutils literal notranslate"><span class="pre">aer_simulator_statevector</span></code> a <code class="docutils literal notranslate"><span class="pre">aer_simulator</span></code> or real device backend, it is possible to use the advanced simulation modes of Aer too when applicable. For instance we can easily use the Aer <a class="reference internal" href="../simulators/7_matrix_product_state_method.html"><span class="doc">Matrix Product State</span></a> method, that has the potential to scale to larger numbers of qubits.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1043,7 +1050,7 @@ though as shown below.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -1062,11 +1069,11 @@ though as shown below.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Advanced VQE usage</a><ul>
-<li><a class="reference internal" href="#Initial-point">Initial point</a></li>
-<li><a class="reference internal" href="#Expectation">Expectation</a></li>
+<li><a class="reference internal" href="#">Matumizi ya hali ya juu ya VQE</a><ul>
+<li><a class="reference internal" href="#Hatua-ya-awali">Hatua ya awali</a></li>
+<li><a class="reference internal" href="#Tarajio">Tarajio</a></li>
 <li><a class="reference internal" href="#Gradient">Gradient</a></li>
-<li><a class="reference internal" href="#Quantum-Instance-and-advanced-simulation">Quantum Instance and advanced simulation</a></li>
+<li><a class="reference internal" href="#Quantum-Instance-na-uigaji-wa-hali-ya-juu">Quantum Instance na uigaji wa hali ya juu</a></li>
 </ul>
 </li>
 </ul>
@@ -1132,7 +1139,7 @@ though as shown below.</p>
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1155,9 +1162,11 @@ though as shown below.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

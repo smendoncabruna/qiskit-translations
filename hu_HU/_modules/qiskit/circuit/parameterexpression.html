@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.circuit.parameterexpression &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>qiskit.circuit.parameterexpression &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -359,7 +366,7 @@
 
     <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_parameter_symbols&quot;</span><span class="p">,</span> <span class="s2">&quot;_parameters&quot;</span><span class="p">,</span> <span class="s2">&quot;_symbol_expr&quot;</span><span class="p">,</span> <span class="s2">&quot;_names&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="ParameterExpression.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a new :class:`ParameterExpression`.</span>
 
 <span class="sd">        Not intended to be called directly, but to be instantiated via operations</span>
@@ -374,14 +381,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_symbols</span> <span class="o">=</span> <span class="n">symbol_map</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameter_symbols</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_symbol_expr</span> <span class="o">=</span> <span class="n">expr</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_names</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_names</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a set of the unbound Parameters in the expression.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span>
 
-<div class="viewcode-block" id="ParameterExpression.conjugate"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.conjugate">[docs]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ParameterExpression.conjugate"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.conjugate.html#qiskit.circuit.ParameterExpression.conjugate">[docs]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the conjugate.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="n">conjugated</span> <span class="o">=</span> <span class="n">ParameterExpression</span><span class="p">(</span>
@@ -391,7 +398,7 @@
             <span class="n">conjugated</span> <span class="o">=</span> <span class="n">ParameterExpression</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameter_symbols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_symbol_expr</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">conjugated</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.assign"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.assign">[docs]</a>    <span class="k">def</span> <span class="nf">assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">ParameterValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ParameterExpression.assign"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.assign.html#qiskit.circuit.ParameterExpression.assign">[docs]</a>    <span class="k">def</span> <span class="nf">assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">ParameterValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Assign one parameter to a value, which can either be numeric or another parameter</span>
 <span class="sd">        expression.</span>
@@ -407,7 +414,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">parameter</span><span class="p">:</span> <span class="n">value</span><span class="p">})</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bind</span><span class="p">({</span><span class="n">parameter</span><span class="p">:</span> <span class="n">value</span><span class="p">})</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.bind"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.bind">[docs]</a>    <span class="k">def</span> <span class="nf">bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_values</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ParameterExpression.bind"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.bind.html#qiskit.circuit.ParameterExpression.bind">[docs]</a>    <span class="k">def</span> <span class="nf">bind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_values</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Binds the provided set of parameters to their corresponding values.</span>
 
 <span class="sd">        Args:</span>
@@ -462,7 +469,7 @@
 
         <span class="k">return</span> <span class="n">ParameterExpression</span><span class="p">(</span><span class="n">free_parameter_symbols</span><span class="p">,</span> <span class="n">bound_symbol_expr</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.subs"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.subs">[docs]</a>    <span class="k">def</span> <span class="nf">subs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ParameterExpression.subs"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.subs.html#qiskit.circuit.ParameterExpression.subs">[docs]</a>    <span class="k">def</span> <span class="nf">subs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ParameterExpression&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a new Expression with replacement Parameters.</span>
 
 <span class="sd">        Args:</span>
@@ -587,7 +594,7 @@
 
         <span class="k">return</span> <span class="n">ParameterExpression</span><span class="p">(</span><span class="n">parameter_symbols</span><span class="p">,</span> <span class="n">expr</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ParameterExpression.gradient"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.gradient">[docs]</a>    <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;ParameterExpression&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<div class="viewcode-block" id="ParameterExpression.gradient"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.gradient.html#qiskit.circuit.ParameterExpression.gradient">[docs]</a>    <span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;ParameterExpression&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Get the derivative of a parameter expression w.r.t. a specified parameter expression.</span>
 
 <span class="sd">        Args:</span>
@@ -656,7 +663,7 @@
     <span class="k">def</span> <span class="nf">_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">ParameterExpression</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameter_symbols</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_symbol_expr</span><span class="p">))</span>
 
-<div class="viewcode-block" id="ParameterExpression.sin"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.sin">[docs]</a>    <span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.sin"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.sin.html#qiskit.circuit.ParameterExpression.sin">[docs]</a>    <span class="k">def</span> <span class="nf">sin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sine of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
@@ -665,7 +672,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_sin</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.cos"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.cos">[docs]</a>    <span class="k">def</span> <span class="nf">cos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.cos"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.cos.html#qiskit.circuit.ParameterExpression.cos">[docs]</a>    <span class="k">def</span> <span class="nf">cos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Cosine of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">cos</span><span class="p">)</span>
@@ -674,7 +681,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_cos</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.tan"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.tan">[docs]</a>    <span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.tan"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.tan.html#qiskit.circuit.ParameterExpression.tan">[docs]</a>    <span class="k">def</span> <span class="nf">tan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Tangent of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">tan</span><span class="p">)</span>
@@ -683,7 +690,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_tan</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.arcsin"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.arcsin">[docs]</a>    <span class="k">def</span> <span class="nf">arcsin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.arcsin"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.arcsin.html#qiskit.circuit.ParameterExpression.arcsin">[docs]</a>    <span class="k">def</span> <span class="nf">arcsin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Arcsin of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">asin</span><span class="p">)</span>
@@ -692,7 +699,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_asin</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.arccos"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.arccos">[docs]</a>    <span class="k">def</span> <span class="nf">arccos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.arccos"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.arccos.html#qiskit.circuit.ParameterExpression.arccos">[docs]</a>    <span class="k">def</span> <span class="nf">arccos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Arccos of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">acos</span><span class="p">)</span>
@@ -701,7 +708,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_acos</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.arctan"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.arctan">[docs]</a>    <span class="k">def</span> <span class="nf">arctan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.arctan"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.arctan.html#qiskit.circuit.ParameterExpression.arctan">[docs]</a>    <span class="k">def</span> <span class="nf">arctan</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Arctan of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">atan</span><span class="p">)</span>
@@ -710,7 +717,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_atan</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.exp"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.exp">[docs]</a>    <span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.exp"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.exp.html#qiskit.circuit.ParameterExpression.exp">[docs]</a>    <span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Exponential of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">exp</span><span class="p">)</span>
@@ -719,7 +726,7 @@
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">_exp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ParameterExpression.log"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.log"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.log.html#qiskit.circuit.ParameterExpression.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Logarithm of a ParameterExpression&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">HAS_SYMENGINE</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call</span><span class="p">(</span><span class="n">symengine</span><span class="o">.</span><span class="n">log</span><span class="p">)</span>
@@ -817,7 +824,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parameter_symbols</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_names</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;names&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="ParameterExpression.is_real"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.html#qiskit.circuit.ParameterExpression.is_real">[docs]</a>    <span class="k">def</span> <span class="nf">is_real</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParameterExpression.is_real"><a class="viewcode-back" href="../../../stubs/qiskit.circuit.ParameterExpression.is_real.html#qiskit.circuit.ParameterExpression.is_real">[docs]</a>    <span class="k">def</span> <span class="nf">is_real</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether the expression is real&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_symbol_expr</span><span class="o">.</span><span class="n">is_real</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_symbol_expr</span><span class="o">.</span><span class="n">is_real</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -849,7 +856,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -929,7 +936,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -952,9 +959,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

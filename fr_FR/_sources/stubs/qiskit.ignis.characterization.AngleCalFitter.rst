@@ -1,40 +1,33 @@
-﻿qiskit.ignis.characterization.AngleCalFitter
-============================================
+﻿AngleCalFitter
+==============
 
 .. currentmodule:: qiskit.ignis.characterization
 
 .. autoclass:: AngleCalFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AngleCalFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AngleCalFitter.add_data
       ~AngleCalFitter.angle_err
       ~AngleCalFitter.fit_data
       ~AngleCalFitter.plot
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AngleCalFitter.backend_result
-      ~AngleCalFitter.description
-      ~AngleCalFitter.fit_fun
-      ~AngleCalFitter.measured_qubits
-      ~AngleCalFitter.params
-      ~AngleCalFitter.params_err
-      ~AngleCalFitter.series
-      ~AngleCalFitter.xdata
-      ~AngleCalFitter.ydata
-   
-   
+   .. autoattribute:: backend_result
+   .. autoattribute:: description
+   .. autoattribute:: fit_fun
+   .. autoattribute:: measured_qubits
+   .. autoattribute:: params
+   .. autoattribute:: params_err
+   .. autoattribute:: series
+   .. autoattribute:: xdata
+   .. autoattribute:: ydata

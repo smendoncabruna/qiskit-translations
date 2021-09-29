@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.core.MolecularExcitedStatesResult
-==================================================
+﻿MolecularExcitedStatesResult
+============================
 
 .. currentmodule:: qiskit.chemistry.core
 
 .. autoclass:: MolecularExcitedStatesResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MolecularExcitedStatesResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MolecularExcitedStatesResult.clear
       ~MolecularExcitedStatesResult.combine
       ~MolecularExcitedStatesResult.copy
@@ -26,19 +25,13 @@
       ~MolecularExcitedStatesResult.setdefault
       ~MolecularExcitedStatesResult.update
       ~MolecularExcitedStatesResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MolecularExcitedStatesResult.algorithm_result
-      ~MolecularExcitedStatesResult.energies
-      ~MolecularExcitedStatesResult.hartree_fock_energy
-      ~MolecularExcitedStatesResult.nuclear_dipole_moment
-      ~MolecularExcitedStatesResult.nuclear_repulsion_energy
-   
-   
+   .. autoattribute:: algorithm_result
+   .. autoattribute:: energies
+   .. autoattribute:: hartree_fock_energy
+   .. autoattribute:: nuclear_dipole_moment
+   .. autoattribute:: nuclear_repulsion_energy

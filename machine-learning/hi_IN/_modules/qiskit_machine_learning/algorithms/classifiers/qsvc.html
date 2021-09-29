@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.algorithms.classifiers.qsvc &mdash; Qiskit Machine Learning 0.2.0 दिग्दर्शिका</title>
+  <title>qiskit_machine_learning.algorithms.classifiers.qsvc &mdash; Qiskit Machine Learning 0.2.1 दिग्दर्शिका</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/gallery.css" type="text/css" />
-    <link rel="index" title="अनुक्रमणिका" href="../../../../genindex.html" />
-    <link rel="search" title="खोज" href="../../../../search.html" /> 
+    <link rel="index" title="विषयसूची" href="../../../../genindex.html" />
+    <link rel="search" title="खोज करें" href="../../../../search.html" /> 
 
   
   <script src="../../../../_static/js/modernizr.min.js"></script>
@@ -89,15 +89,21 @@
 
     <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
-    <span class="rst-current-version-label">hi_IN</span>
+    <span class="rst-current-version-label">Hindi</span>
     <span class="rst-versions-dropdown-icon"></span>
   </span>
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>भाषाएँ</dt>
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/algorithms/classifiers/qsvc.html">English</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/algorithms/classifiers/qsvc.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/algorithms/classifiers/qsvc.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/algorithms/classifiers/qsvc.html">Hindi</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/algorithms/classifiers/qsvc.html">Italian</a></dd>
       
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -265,6 +271,8 @@
 
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 
+<span class="kn">from</span> <span class="nn">qiskit.utils.algorithm_globals</span> <span class="kn">import</span> <span class="n">algorithm_globals</span>
+
 <span class="kn">from</span> <span class="nn">qiskit_machine_learning.kernels.quantum_kernel</span> <span class="kn">import</span> <span class="n">QuantumKernel</span>
 
 
@@ -296,7 +304,14 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_kernel</span> <span class="o">=</span> <span class="n">quantum_kernel</span> <span class="k">if</span> <span class="n">quantum_kernel</span> <span class="k">else</span> <span class="n">QuantumKernel</span><span class="p">()</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_quantum_kernel</span><span class="o">.</span><span class="n">evaluate</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;random_state&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;random_state&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">algorithm_globals</span><span class="o">.</span><span class="n">random_seed</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">kernel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_quantum_kernel</span><span class="o">.</span><span class="n">evaluate</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">quantum_kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumKernel</span><span class="p">:</span>

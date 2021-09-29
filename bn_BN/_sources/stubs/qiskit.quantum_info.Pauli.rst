@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Pauli
-==========================
+﻿Pauli
+=====
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Pauli
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Pauli.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Pauli.adjoint
       ~Pauli.anticommutes
       ~Pauli.append_paulis
@@ -48,21 +47,15 @@
       ~Pauli.transpose
       ~Pauli.update_x
       ~Pauli.update_z
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Pauli.dim
-      ~Pauli.num_qubits
-      ~Pauli.phase
-      ~Pauli.qargs
-      ~Pauli.settings
-      ~Pauli.x
-      ~Pauli.z
-   
-   
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: phase
+   .. autoattribute:: qargs
+   .. autoattribute:: settings
+   .. autoattribute:: x
+   .. autoattribute:: z

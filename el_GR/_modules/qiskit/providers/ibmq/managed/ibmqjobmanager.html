@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.managed.ibmqjobmanager &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>qiskit.providers.ibmq.managed.ibmqjobmanager &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -403,12 +410,12 @@
 <span class="sd">        retrieved_foo = job_manager.retrieve_job_set(job_set_id=job_set_id, provider=provider)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="IBMQJobManager.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.html#qiskit.providers.ibmq.managed.IBMQJobManager.__init__">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;IBMQJobManager constructor.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_job_sets</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># type: List[ManagedJobSet]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_executor</span> <span class="o">=</span> <span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_executor</span> <span class="o">=</span> <span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">()</span>
 
-<div class="viewcode-block" id="IBMQJobManager.run"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.html#qiskit.providers.ibmq.managed.IBMQJobManager.run">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMQJobManager.run"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.run.html#qiskit.providers.ibmq.managed.IBMQJobManager.run">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiments</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Schedule</span><span class="p">]],</span>
             <span class="n">backend</span><span class="p">:</span> <span class="n">IBMQBackend</span><span class="p">,</span>
@@ -518,7 +525,7 @@
 
         <span class="k">return</span> <span class="p">[</span><span class="n">experiments</span><span class="p">[</span><span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">+</span> <span class="n">chunk_size</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiments</span><span class="p">),</span> <span class="n">chunk_size</span><span class="p">)]</span>
 
-<div class="viewcode-block" id="IBMQJobManager.report"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.html#qiskit.providers.ibmq.managed.IBMQJobManager.report">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detailed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="IBMQJobManager.report"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.report.html#qiskit.providers.ibmq.managed.IBMQJobManager.report">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detailed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a report on the statuses of all jobs managed by this Job Manager.</span>
 
 <span class="sd">        Args:</span>
@@ -544,7 +551,7 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="IBMQJobManager.job_sets"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.html#qiskit.providers.ibmq.managed.IBMQJobManager.job_sets">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">job_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ManagedJobSet</span><span class="p">]:</span>
+<div class="viewcode-block" id="IBMQJobManager.job_sets"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.job_sets.html#qiskit.providers.ibmq.managed.IBMQJobManager.job_sets">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">job_sets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ManagedJobSet</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return job sets being managed in this session, subject to optional filtering.</span>
 
 <span class="sd">        Args:</span>
@@ -558,7 +565,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_job_sets</span></div>
 
-<div class="viewcode-block" id="IBMQJobManager.retrieve_job_set"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.html#qiskit.providers.ibmq.managed.IBMQJobManager.retrieve_job_set">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">retrieve_job_set</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMQJobManager.retrieve_job_set"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.IBMQJobManager.retrieve_job_set.html#qiskit.providers.ibmq.managed.IBMQJobManager.retrieve_job_set">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">retrieve_job_set</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">job_set_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">provider</span><span class="p">:</span> <span class="n">AccountProvider</span><span class="p">,</span>
@@ -608,7 +615,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -688,7 +695,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -711,9 +718,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

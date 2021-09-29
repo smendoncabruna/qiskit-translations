@@ -1,19 +1,18 @@
-﻿qiskit.circuit.Gate
-===================
+﻿Gate
+====
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Gate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Gate.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Gate.add_decomposition
       ~Gate.assemble
       ~Gate.broadcast_arguments
@@ -30,20 +29,14 @@
       ~Gate.soft_compare
       ~Gate.to_matrix
       ~Gate.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Gate.decompositions
-      ~Gate.definition
-      ~Gate.duration
-      ~Gate.label
-      ~Gate.params
-      ~Gate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

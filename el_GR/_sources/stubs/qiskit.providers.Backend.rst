@@ -1,28 +1,14 @@
-﻿qiskit.providers.Backend
-========================
+﻿Backend
+=======
 
 .. currentmodule:: qiskit.providers
 
 .. autoclass:: Backend
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~Backend.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Backend.version
-   
-   
+   .. autoattribute:: version

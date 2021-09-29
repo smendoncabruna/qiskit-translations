@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.verification.RepetitionCode &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>RepetitionCode &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="qiskit.ignis.verification.GraphDecoder" href="qiskit.ignis.verification.GraphDecoder.html" />
+    <link rel="next" title="qiskit.ignis.verification.RepetitionCode.get_circuit_list" href="qiskit.ignis.verification.RepetitionCode.get_circuit_list.html" />
     <link rel="prev" title="qiskit.ignis.verification.rho_to_fidelity" href="qiskit.ignis.verification.rho_to_fidelity.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/verification.html">Verification (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.ignis.verification</span></code>)</a> &gt;</li>
         
-      <li>qiskit.ignis.verification.RepetitionCode</li>
+      <li>RepetitionCode</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-ignis-verification-repetitioncode">
-<h1>qiskit.ignis.verification.RepetitionCode<a class="headerlink" href="#qiskit-ignis-verification-repetitioncode" title="Link zu dieser Überschrift">¶</a></h1>
+  <section id="repetitioncode">
+<h1>RepetitionCode<a class="headerlink" href="#repetitioncode" title="Link zu dieser Überschrift">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.ignis.verification.RepetitionCode">
 <em class="property">class </em><code class="sig-name descname">RepetitionCode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">T</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Implementation of a distance d repetition code, implemented over
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implementation of a distance d repetition code, implemented over
 T syndrome measurement rounds.</p>
 <p>Creates the circuits corresponding to a logical 0 and 1 encoded
 using a repetition code.</p>
@@ -352,28 +360,6 @@ qubits (corresponding to a logical measurement and final
 syndrome measurement round).</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.ignis.verification.RepetitionCode.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">T</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode.__init__"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode.__init__" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Creates the circuits corresponding to a logical 0 and 1 encoded
-using a repetition code.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>d</strong> (<em>int</em>) – Number of code qubits (and hence repetitions) used.</p></li>
-<li><p><strong>T</strong> (<em>int</em>) – Number of rounds of ancilla-assisted syndrome measurement.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Additional information:</dt><dd><p>No measurements are added to the circuit if <cite>T=0</cite>. Otherwise
-<cite>T</cite> rounds are added, followed by measurement of the code
-qubits (corresponding to a logical measurement and final
-syndrome measurement round).</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -381,10 +367,7 @@ syndrome measurement round).</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.verification.RepetitionCode.__init__" title="qiskit.ignis.verification.RepetitionCode.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(d[, T])</p></td>
-<td><p>Creates the circuits corresponding to a logical 0 and 1 encoded using a repetition code.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.verification.RepetitionCode.get_circuit_list" title="qiskit.ignis.verification.RepetitionCode.get_circuit_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_circuit_list</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.verification.RepetitionCode.get_circuit_list.html#qiskit.ignis.verification.RepetitionCode.get_circuit_list" title="qiskit.ignis.verification.RepetitionCode.get_circuit_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_circuit_list</span></code></a></p></td>
 <td><p><dl class="field-list simple">
 <dt class="field-odd">returns</dt>
 <dd class="field-odd"><p>self.circuit as a list, with</p>
@@ -392,7 +375,7 @@ syndrome measurement round).</p>
 </dl>
 </p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.verification.RepetitionCode.process_results" title="qiskit.ignis.verification.RepetitionCode.process_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_results</span></code></a>(raw_results)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.verification.RepetitionCode.process_results.html#qiskit.ignis.verification.RepetitionCode.process_results" title="qiskit.ignis.verification.RepetitionCode.process_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_results</span></code></a></p></td>
 <td><p><dl class="field-list simple">
 <dt class="field-odd">param raw_results</dt>
 <dd class="field-odd"><p>A dictionary whose keys are logical values,</p>
@@ -400,100 +383,17 @@ syndrome measurement round).</p>
 </dl>
 </p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.verification.RepetitionCode.readout" title="qiskit.ignis.verification.RepetitionCode.readout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">readout</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.verification.RepetitionCode.readout.html#qiskit.ignis.verification.RepetitionCode.readout" title="qiskit.ignis.verification.RepetitionCode.readout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">readout</span></code></a></p></td>
 <td><p>Readout of all code qubits, which corresponds to a logical measurement as well as allowing for a measurement of the syndrome to be inferred.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.verification.RepetitionCode.syndrome_measurement" title="qiskit.ignis.verification.RepetitionCode.syndrome_measurement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">syndrome_measurement</span></code></a>([reset, barrier])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.verification.RepetitionCode.syndrome_measurement.html#qiskit.ignis.verification.RepetitionCode.syndrome_measurement" title="qiskit.ignis.verification.RepetitionCode.syndrome_measurement"><code class="xref py py-obj docutils literal notranslate"><span class="pre">syndrome_measurement</span></code></a></p></td>
 <td><p>Application of a syndrome measurement round.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.verification.RepetitionCode.x" title="qiskit.ignis.verification.RepetitionCode.x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">x</span></code></a>([logs, barrier])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.verification.RepetitionCode.x.html#qiskit.ignis.verification.RepetitionCode.x" title="qiskit.ignis.verification.RepetitionCode.x"><code class="xref py py-obj docutils literal notranslate"><span class="pre">x</span></code></a></p></td>
 <td><p>Applies a logical x to the circuits for the given logical values.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.ignis.verification.RepetitionCode.get_circuit_list">
-<code class="sig-name descname">get_circuit_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode.get_circuit_list"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode.get_circuit_list" title="Link zu dieser Definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Rückgabe</dt>
-<dd class="field-odd"><p>self.circuit as a list, with
-circuit_list[0] = circuit[‚0‘]
-circuit_list[1] = circuit[‚1‘]</p>
-</dd>
-<dt class="field-even">Rückgabetyp</dt>
-<dd class="field-even"><p>circuit_list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.RepetitionCode.process_results">
-<code class="sig-name descname">process_results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_results</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode.process_results"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode.process_results" title="Link zu dieser Definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><p><strong>raw_results</strong> (<em>dict</em>) – A dictionary whose keys are logical values,
-and whose values are standard counts dictionaries, (as
-obtained from the <cite>get_counts</cite> method of a <code class="docutils literal notranslate"><span class="pre">qiskit.Result</span></code>
-object).</p>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>Dictionary with the same structure as the input, but with</dt><dd><p>the bit strings used as keys in the counts dictionaries
-converted to the form required by the decoder.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p>results</p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Additional information:</dt><dd><p>The circuits must be executed outside of this class, so that
-their is full freedom to compile, choose a backend, use a
-noise model, etc. The results from these executions should then
-be used to create the input for this method.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.RepetitionCode.readout">
-<code class="sig-name descname">readout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode.readout"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode.readout" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Readout of all code qubits, which corresponds to a logical measurement
-as well as allowing for a measurement of the syndrome to be inferred.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.RepetitionCode.syndrome_measurement">
-<code class="sig-name descname">syndrome_measurement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reset</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">barrier</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode.syndrome_measurement"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode.syndrome_measurement" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Application of a syndrome measurement round.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>reset</strong> (<em>bool</em>) – If set to true add a boolean at the end of each round</p></li>
-<li><p><strong>barrier</strong> (<em>bool</em>) – Boolean denoting whether to include a barrier at the end.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.RepetitionCode.x">
-<code class="sig-name descname">x</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">logs</span><span class="o">=</span><span class="default_value">('0', '1')</span></em>, <em class="sig-param"><span class="n">barrier</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/circuits.html#RepetitionCode.x"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.RepetitionCode.x" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Applies a logical x to the circuits for the given logical values.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>logs</strong> (<em>list</em><em> or </em><em>tuple</em>) – List or tuple of logical values expressed as
-strings.</p></li>
-<li><p><strong>barrier</strong> (<em>bool</em>) – Boolean denoting whether to include a barrier at
-the end.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -506,7 +406,7 @@ the end.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.ignis.verification.GraphDecoder.html" class="btn btn-neutral float-right" title="qiskit.ignis.verification.GraphDecoder" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.ignis.verification.RepetitionCode.get_circuit_list.html" class="btn btn-neutral float-right" title="qiskit.ignis.verification.RepetitionCode.get_circuit_list" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="qiskit.ignis.verification.rho_to_fidelity.html" class="btn btn-neutral" title="qiskit.ignis.verification.rho_to_fidelity" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -523,7 +423,7 @@ the end.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -542,7 +442,7 @@ the end.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.ignis.verification.RepetitionCode</a></li>
+<li><a class="reference internal" href="#">RepetitionCode</a></li>
 </ul>
 
             </div>
@@ -606,7 +506,7 @@ the end.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -629,9 +529,11 @@ the end.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

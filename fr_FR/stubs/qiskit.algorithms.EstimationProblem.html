@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.EstimationProblem &mdash; Documentation Qiskit 0.29.0</title>
+  <title>EstimationProblem &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Rechercher" href="../search.html" />
-    <link rel="next" title="qiskit.algorithms.FasterAmplitudeEstimation" href="qiskit.algorithms.FasterAmplitudeEstimation.html" />
-    <link rel="prev" title="qiskit.algorithms.AmplitudeEstimationResult" href="qiskit.algorithms.AmplitudeEstimationResult.html" /> 
+    <link rel="next" title="qiskit.algorithms.EstimationProblem.rescale" href="qiskit.algorithms.EstimationProblem.rescale.html" />
+    <link rel="prev" title="qiskit.algorithms.AmplitudeEstimationResult.combine" href="qiskit.algorithms.AmplitudeEstimationResult.combine.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -233,7 +240,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.EstimationProblem</li>
+      <li>EstimationProblem</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-estimationproblem">
-<h1>qiskit.algorithms.EstimationProblem<a class="headerlink" href="#qiskit-algorithms-estimationproblem" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="estimationproblem">
+<h1>EstimationProblem<a class="headerlink" href="#estimationproblem" title="Lien permanent vers ce titre">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.EstimationProblem">
 <em class="property">class </em><code class="sig-name descname">EstimationProblem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state_preparation</span></em>, <em class="sig-param"><span class="n">objective_qubits</span></em>, <em class="sig-param"><span class="n">grover_operator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_processing</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_good_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/estimation_problem.html#EstimationProblem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.EstimationProblem" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>The estimation problem is the input to amplitude estimation algorithm.</p>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The estimation problem is the input to amplitude estimation algorithm.</p>
 <p>This class contains all problem-specific information required to run an amplitude estimation
 algorithm. That means, it minimally contains the state preparation and the specification
 of the good state. It can further hold some post processing on the estimation of the amplitude
@@ -356,29 +364,6 @@ to all objective qubits being in state <span class="math notranslate nohighlight
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.algorithms.EstimationProblem.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state_preparation</span></em>, <em class="sig-param"><span class="n">objective_qubits</span></em>, <em class="sig-param"><span class="n">grover_operator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">post_processing</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_good_state</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/estimation_problem.html#EstimationProblem.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.__init__" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>state_preparation</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>) – A circuit preparing the input state, referred to as
-<span class="math notranslate nohighlight">\(\mathcal{A}\)</span>.</p></li>
-<li><p><strong>objective_qubits</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – A single qubit index or a list of qubit indices to specify which
-qubits to measure. The <code class="docutils literal notranslate"><span class="pre">is_good_state</span></code> function is applied on the bitstring of
-these objective qubits.</p></li>
-<li><p><strong>grover_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]) – The Grover operator <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> used as unitary in the
-phase estimation circuit.</p></li>
-<li><p><strong>post_processing</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – A mapping applied to the result of the algorithm
-<span class="math notranslate nohighlight">\(0 \leq a \leq 1\)</span>, usually used to map the estimate to a target interval.
-Defaults to the identity.</p></li>
-<li><p><strong>is_good_state</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]]) – A function to check whether a string represents a good state. Defaults
-to all objective qubits being in state <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -386,46 +371,15 @@ to all objective qubits being in state <span class="math notranslate nohighlight
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.__init__" title="qiskit.algorithms.EstimationProblem.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(state_preparation, objective_qubits)</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type state_preparation</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.rescale" title="qiskit.algorithms.EstimationProblem.rescale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale</span></code></a>(scaling_factor)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.EstimationProblem.rescale.html#qiskit.algorithms.EstimationProblem.rescale" title="qiskit.algorithms.EstimationProblem.rescale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale</span></code></a></p></td>
 <td><p>Rescale the good state amplitude in the estimation problem.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.grover_operator" title="qiskit.algorithms.EstimationProblem.grover_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grover_operator</span></code></a></p></td>
-<td><p>Get the <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> operator, or Grover operator.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.is_good_state" title="qiskit.algorithms.EstimationProblem.is_good_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_good_state</span></code></a></p></td>
-<td><p>Checks whether a bitstring represents a good state.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.objective_qubits" title="qiskit.algorithms.EstimationProblem.objective_qubits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">objective_qubits</span></code></a></p></td>
-<td><p>Get the criterion for a measurement outcome to be in a “good” state.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.post_processing" title="qiskit.algorithms.EstimationProblem.post_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">post_processing</span></code></a></p></td>
-<td><p>Apply post processing to the input value.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.EstimationProblem.state_preparation" title="qiskit.algorithms.EstimationProblem.state_preparation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">state_preparation</span></code></a></p></td>
-<td><p>Get the <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> operator encoding the amplitude <span class="math notranslate nohighlight">\(a\)</span>.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.EstimationProblem.grover_operator">
-<em class="property">property </em><code class="sig-name descname">grover_operator</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.grover_operator" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">grover_operator</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.grover_operator" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Get the <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> operator, or Grover operator.</p>
 <p>If the Grover operator is not set, we try to build it from the <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> operator
 and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</cite> is a list of integers.</p>
@@ -440,9 +394,9 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.EstimationProblem.is_good_state">
-<em class="property">property </em><code class="sig-name descname">is_good_state</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.is_good_state" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">is_good_state</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.is_good_state" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Checks whether a bitstring represents a good state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
@@ -454,9 +408,9 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.EstimationProblem.objective_qubits">
-<em class="property">property </em><code class="sig-name descname">objective_qubits</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.objective_qubits" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">objective_qubits</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.objective_qubits" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Get the criterion for a measurement outcome to be in a “good” state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
@@ -468,9 +422,9 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.EstimationProblem.post_processing">
-<em class="property">property </em><code class="sig-name descname">post_processing</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.post_processing" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">post_processing</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.post_processing" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Apply post processing to the input value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
@@ -482,26 +436,9 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.algorithms.EstimationProblem.rescale">
-<code class="sig-name descname">rescale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scaling_factor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/estimation_problem.html#EstimationProblem.rescale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.rescale" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Rescale the good state amplitude in the estimation problem.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>scaling_factor</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – The scaling factor in [0, 1].</p>
-</dd>
-<dt class="field-even">Type renvoyé</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EstimationProblem</span></code></p>
-</dd>
-<dt class="field-odd">Renvoie</dt>
-<dd class="field-odd"><p>A rescaled estimation problem.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.EstimationProblem.state_preparation">
-<em class="property">property </em><code class="sig-name descname">state_preparation</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.state_preparation" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">state_preparation</code><a class="headerlink" href="#qiskit.algorithms.EstimationProblem.state_preparation" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Get the <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> operator encoding the amplitude <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
@@ -525,10 +462,10 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.algorithms.FasterAmplitudeEstimation.html" class="btn btn-neutral float-right" title="qiskit.algorithms.FasterAmplitudeEstimation" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.EstimationProblem.rescale.html" class="btn btn-neutral float-right" title="qiskit.algorithms.EstimationProblem.rescale" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.AmplitudeEstimationResult.html" class="btn btn-neutral" title="qiskit.algorithms.AmplitudeEstimationResult" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.AmplitudeEstimationResult.combine.html" class="btn btn-neutral" title="qiskit.algorithms.AmplitudeEstimationResult.combine" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -542,7 +479,7 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -561,7 +498,7 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.EstimationProblem</a></li>
+<li><a class="reference internal" href="#">EstimationProblem</a></li>
 </ul>
 
             </div>
@@ -625,7 +562,7 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -648,9 +585,11 @@ and <cite>objective_qubits</cite>. This only works if <cite>objective_qubits</ci
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

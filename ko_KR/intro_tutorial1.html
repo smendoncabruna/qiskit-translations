@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit 소개 &mdash; Qiskit 0.29.0 문서</title>
+  <title>Qiskit 소개 &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -377,7 +384,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-Total count for 00 and 11 are: {&#39;00&#39;: 521, &#39;11&#39;: 479}
+Total count for 00 and 11 are: {&#39;00&#39;: 526, &#39;11&#39;: 474}
 </pre></div>
 </div>
 <div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">     ┌───┐     ┌─┐   
@@ -397,7 +404,6 @@ c: 2/═══════════╩══╩═
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/intro_tutorial1_1_0.png" src="_images/intro_tutorial1_1_0.png" />
-<img alt="_images/intro_tutorial1_1_1.png" src="_images/intro_tutorial1_1_1.png" />
 </div>
 </div>
 <section id="workflow-step-by-step">
@@ -460,7 +466,7 @@ c: 2/═══════════╩══╩═
 </section>
 <section id="step-4-visualize-the-circuit">
 <h3>4단계: 회로 시각화하기<a class="headerlink" href="#step-4-visualize-the-circuit" title="제목 주소">¶</a></h3>
-<p>직접 디자인한 회로를 많은 교과서 및 연구 자료에서 사용되는 다양한 형태들로 보기 위해서 <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> 를 사용할 수 있다.</p>
+<p>직접 디자인한 회로를 많은 교과서 및 연구 자료에서 사용되는 다양한 형태들로 보기 위해서 <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> 를 사용할 수 있다.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
@@ -509,7 +515,7 @@ from qiskit.providers.basicaer import QasmSimulatorPy
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>
-Total count for 00 and 11 are: {&#39;11&#39;: 507, &#39;00&#39;: 493}
+Total count for 00 and 11 are: {&#39;11&#39;: 515, &#39;00&#39;: 485}
 </pre></div>
 </div>
 </div>
@@ -529,7 +535,6 @@ Total count for 00 and 11 are: {&#39;11&#39;: 507, &#39;00&#39;: 493}
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/intro_tutorial1_4_0.png" src="_images/intro_tutorial1_4_0.png" />
-<img alt="_images/intro_tutorial1_4_1.png" src="_images/intro_tutorial1_4_1.png" />
 </div>
 </div>
 <p>관측된 확률 <span class="math notranslate nohighlight">\(Pr(00)\)</span> 와 <span class="math notranslate nohighlight">\(Pr(11)\)</span> 는 각각의 값이 나온 실험의 수를 총 샷 수로 나누어 계산되었다.</p>
@@ -575,7 +580,7 @@ Total count for 00 and 11 are: {&#39;11&#39;: 507, &#39;00&#39;: 493}
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -670,7 +675,7 @@ Total count for 00 and 11 are: {&#39;11&#39;: 507, &#39;00&#39;: 493}
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -693,9 +698,11 @@ Total count for 00 and 11 are: {&#39;11&#39;: 507, &#39;00&#39;: 493}
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

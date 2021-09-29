@@ -1,49 +1,28 @@
-﻿qiskit.circuit.library.UGate
-============================
+﻿UGate
+=====
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: UGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~UGate.__init__
-      ~UGate.add_decomposition
-      ~UGate.assemble
-      ~UGate.broadcast_arguments
-      ~UGate.c_if
-      ~UGate.control
-      ~UGate.copy
-      ~UGate.inverse
-      ~UGate.is_parameterized
-      ~UGate.mirror
-      ~UGate.power
-      ~UGate.qasm
-      ~UGate.repeat
-      ~UGate.reverse_ops
-      ~UGate.soft_compare
-      ~UGate.to_matrix
-      ~UGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~UGate.control
+      ~UGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UGate.decompositions
-      ~UGate.definition
-      ~UGate.duration
-      ~UGate.label
-      ~UGate.params
-      ~UGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

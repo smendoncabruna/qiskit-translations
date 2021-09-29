@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.managed.managedresults &mdash; Dokumentasi Qiskit 0.29.0</title>
+  <title>qiskit.providers.ibmq.managed.managedresults &mdash; Dokumentasi Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -357,7 +364,7 @@
 <span class="sd">    :class:`~qiskit.result.Result` class for more information on the methods.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="ManagedResults.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">job_set</span><span class="p">:</span> <span class="s1">&#39;managedjobset.ManagedJobSet&#39;</span><span class="p">,</span>
             <span class="n">backend_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -378,9 +385,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_job_set</span> <span class="o">=</span> <span class="n">job_set</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">backend_name</span> <span class="o">=</span> <span class="n">backend_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_combined_results</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[Result]</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_combined_results</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[Result]</span>
 
-<div class="viewcode-block" id="ManagedResults.data"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.data">[docs]</a>    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedResults.data"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.data.html#qiskit.providers.ibmq.managed.ManagedResults.data">[docs]</a>    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Get the raw data for an experiment.</span>
 
 <span class="sd">        Args:</span>
@@ -404,7 +411,7 @@
         <span class="n">result</span><span class="p">,</span> <span class="n">exp_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_result</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">exp_index</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedResults.get_memory"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.get_memory">[docs]</a>    <span class="k">def</span> <span class="nf">get_memory</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedResults.get_memory"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.get_memory.html#qiskit.providers.ibmq.managed.ManagedResults.get_memory">[docs]</a>    <span class="k">def</span> <span class="nf">get_memory</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="s1">&#39;numpy.ndarray&#39;</span><span class="p">]:</span>
@@ -427,7 +434,7 @@
         <span class="n">result</span><span class="p">,</span> <span class="n">exp_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_result</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">get_memory</span><span class="p">(</span><span class="n">exp_index</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedResults.get_counts"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.get_counts">[docs]</a>    <span class="k">def</span> <span class="nf">get_counts</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedResults.get_counts"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.get_counts.html#qiskit.providers.ibmq.managed.ManagedResults.get_counts">[docs]</a>    <span class="k">def</span> <span class="nf">get_counts</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
@@ -448,7 +455,7 @@
         <span class="n">result</span><span class="p">,</span> <span class="n">exp_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_result</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">exp_index</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedResults.get_statevector"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.get_statevector">[docs]</a>    <span class="k">def</span> <span class="nf">get_statevector</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedResults.get_statevector"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.get_statevector.html#qiskit.providers.ibmq.managed.ManagedResults.get_statevector">[docs]</a>    <span class="k">def</span> <span class="nf">get_statevector</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
             <span class="n">decimals</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -472,7 +479,7 @@
         <span class="n">result</span><span class="p">,</span> <span class="n">exp_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_result</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">experiment</span><span class="o">=</span><span class="n">exp_index</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedResults.get_unitary"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.get_unitary">[docs]</a>    <span class="k">def</span> <span class="nf">get_unitary</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedResults.get_unitary"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.get_unitary.html#qiskit.providers.ibmq.managed.ManagedResults.get_unitary">[docs]</a>    <span class="k">def</span> <span class="nf">get_unitary</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
             <span class="n">decimals</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -496,7 +503,7 @@
         <span class="n">result</span><span class="p">,</span> <span class="n">exp_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_result</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">get_unitary</span><span class="p">(</span><span class="n">experiment</span><span class="o">=</span><span class="n">exp_index</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedResults.combine_results"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.html#qiskit.providers.ibmq.managed.ManagedResults.combine_results">[docs]</a>    <span class="k">def</span> <span class="nf">combine_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedResults.combine_results"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedResults.combine_results.html#qiskit.providers.ibmq.managed.ManagedResults.combine_results">[docs]</a>    <span class="k">def</span> <span class="nf">combine_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Combine results from all jobs into a single `Result`.</span>
 
 <span class="sd">        Note:</span>
@@ -572,7 +579,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Terakhir diperbarui pada 2021/08/13.
+      Terakhir diperbarui pada 2021/09/23.
 
     </p>
   </div>
@@ -652,7 +659,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -675,9 +682,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

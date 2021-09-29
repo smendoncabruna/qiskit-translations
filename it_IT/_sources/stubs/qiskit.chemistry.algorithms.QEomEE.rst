@@ -1,34 +1,27 @@
-﻿qiskit.chemistry.algorithms.QEomEE
-==================================
+﻿QEomEE
+======
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: QEomEE
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QEomEE.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QEomEE.compute_minimum_eigenvalue
       ~QEomEE.run
       ~QEomEE.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QEomEE.aux_operators
-      ~QEomEE.filter_criterion
-      ~QEomEE.operator
-      ~QEomEE.random
-   
-   
+   .. autoattribute:: aux_operators
+   .. autoattribute:: filter_criterion
+   .. autoattribute:: operator
+   .. autoattribute:: random

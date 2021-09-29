@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.CountOpsLongestPath
-============================================
+﻿CountOpsLongestPath
+===================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CountOpsLongestPath
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CountOpsLongestPath.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CountOpsLongestPath.name
       ~CountOpsLongestPath.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CountOpsLongestPath.is_analysis_pass
-      ~CountOpsLongestPath.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

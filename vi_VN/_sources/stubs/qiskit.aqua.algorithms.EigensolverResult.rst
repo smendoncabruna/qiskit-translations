@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.EigensolverResult
-========================================
+﻿EigensolverResult
+=================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: EigensolverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EigensolverResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EigensolverResult.clear
       ~EigensolverResult.combine
       ~EigensolverResult.copy
@@ -27,17 +26,11 @@
       ~EigensolverResult.setdefault
       ~EigensolverResult.update
       ~EigensolverResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EigensolverResult.aux_operator_eigenvalues
-      ~EigensolverResult.eigenstates
-      ~EigensolverResult.eigenvalues
-   
-   
+   .. autoattribute:: aux_operator_eigenvalues
+   .. autoattribute:: eigenstates
+   .. autoattribute:: eigenvalues

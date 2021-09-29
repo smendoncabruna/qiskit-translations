@@ -1,42 +1,35 @@
-﻿qiskit.aqua.algorithms.AmplitudeEstimation
-==========================================
+﻿AmplitudeEstimation
+===================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: AmplitudeEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AmplitudeEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AmplitudeEstimation.confidence_interval
       ~AmplitudeEstimation.construct_circuit
       ~AmplitudeEstimation.is_good_state
       ~AmplitudeEstimation.post_processing
       ~AmplitudeEstimation.run
       ~AmplitudeEstimation.set_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AmplitudeEstimation.a_factory
-      ~AmplitudeEstimation.backend
-      ~AmplitudeEstimation.grover_operator
-      ~AmplitudeEstimation.i_objective
-      ~AmplitudeEstimation.objective_qubits
-      ~AmplitudeEstimation.q_factory
-      ~AmplitudeEstimation.quantum_instance
-      ~AmplitudeEstimation.random
-      ~AmplitudeEstimation.state_preparation
-   
-   
+   .. autoattribute:: a_factory
+   .. autoattribute:: backend
+   .. autoattribute:: grover_operator
+   .. autoattribute:: i_objective
+   .. autoattribute:: objective_qubits
+   .. autoattribute:: q_factory
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: state_preparation

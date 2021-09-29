@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ローカル構成 &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>ローカル構成 &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -341,79 +348,30 @@
 <span class="na">num_processes</span> <span class="o">=</span> <span class="s">15</span>
 </pre></div>
 </div>
-<p>By default this file lives in <code class="docutils literal notranslate"><span class="pre">~/.qiskit/settings.conf</span></code> but the path used
-can be overriden with the <code class="docutils literal notranslate"><span class="pre">QISKIT_SETTINGS</span></code> environment variable. If
-<code class="docutils literal notranslate"><span class="pre">QISKIT_SETTINGS</span></code> is set its value will used as the path to the user config
-file.</p>
-<p>Available options:</p>
+<p>デフォルトでは、このファイルは <code class="docutils literal notranslate"><span class="pre">~/.qiskit/settings.conf</span></code> にありますが、使用されるパスは <code class="docutils literal notranslate"><span class="pre">QISKIT_SETTINGS</span></code> 環境変数でオーバーライドできます。 <code class="docutils literal notranslate"><span class="pre">QISKIT_SETTINGS</span></code> が設定されている場合、その値はユーザー構成ファイルへのパスとして使用されます。</p>
+<p>利用可能なオプション：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">circuit_drawer</span></code>: This is used to change the default backend for
-the circuit drawer <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> and
-<a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a>. It can be set to <code class="docutils literal notranslate"><span class="pre">latex</span></code>,
-<code class="docutils literal notranslate"><span class="pre">mpl</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>, or <code class="docutils literal notranslate"><span class="pre">latex_source</span></code> and when the <code class="docutils literal notranslate"><span class="pre">ouptut</span></code> kwarg is
-not explicitly set that drawer backend will be used.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style</span></code>: This is the default style sheet used for the
-<code class="docutils literal notranslate"><span class="pre">mpl</span></code> output backend for the circuit drawer
-<a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> and
-<a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a>. It can be set to <code class="docutils literal notranslate"><span class="pre">default</span></code>
-or <code class="docutils literal notranslate"><span class="pre">bw</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style_path</span></code>: This can be used to set the path(s) to have the
-circuit drawer, <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> or
-<a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a>, use to look for json style
-sheets when using the <code class="docutils literal notranslate"><span class="pre">mpl</span></code> output mode.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">state_drawer</span></code>: This is used to change the default backend for the
-state visualization draw methods <a class="reference internal" href="stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.draw" title="qiskit.quantum_info.Statevector.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.Statevector.draw()</span></code></a>
-and <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.DensityMatrix.draw()</span></code></a>. It can be set to
-<code class="docutils literal notranslate"><span class="pre">repr</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>』, <code class="docutils literal notranslate"><span class="pre">latex</span></code>, <code class="docutils literal notranslate"><span class="pre">latex_source</span></code>, <code class="docutils literal notranslate"><span class="pre">qsphere</span></code>, <code class="docutils literal notranslate"><span class="pre">hinton</span></code>,
-or bloch <code class="docutils literal notranslate"><span class="pre">bloch</span></code> and when the <code class="docutils literal notranslate"><span class="pre">output</span></code> kwarg is not explicitly set on
-the <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> method that output
-method will be used.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">transpile_optimization_level</span></code>: This takes an integer between 0-3 and is
-used to change the default optimization level for
-<a class="reference internal" href="stubs/qiskit.compiler.transpile.html#qiskit.compiler.transpile" title="qiskit.compiler.transpile"><code class="xref py py-func docutils literal notranslate"><span class="pre">transpile()</span></code></a> and <code class="xref py py-func docutils literal notranslate"><span class="pre">execute()</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">parallel</span></code>: This option takes a boolean value (either <code class="docutils literal notranslate"><span class="pre">True</span></code> or
-<code class="docutils literal notranslate"><span class="pre">False</span></code>) and is used to configure whether
-<a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">Python multiprocessing</a>
-is enabled for operations that support running in parallel (for example
-transpilation of multiple <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></a> objects).
-The default setting in the user config file can be overriden by
-the <code class="docutils literal notranslate"><span class="pre">QISKIT_PARALLEL</span></code> environment variable.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_processes</span></code>: This option takes an integer value (&gt; 0) that is used
-to specify the maximum number of parallel processes to launch for parallel
-operations if parallel execution is enabled. The default setting in the
-user config file can be overriden by the <code class="docutils literal notranslate"><span class="pre">QISKIT_NUM_PROCS</span></code> environment
-variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circuit_drawer</span></code> ：これは、回路ドロワー <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> および <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> のデフォルトのバックエンドを変更するために使用されます。 これは、 <code class="docutils literal notranslate"><span class="pre">latex</span></code> 、 <code class="docutils literal notranslate"><span class="pre">mpl</span></code> 、 <code class="docutils literal notranslate"><span class="pre">text</span></code> または <code class="docutils literal notranslate"><span class="pre">latex_source</span></code> に設定でき、 <code class="docutils literal notranslate"><span class="pre">ouptut</span></code> kwargが明示的に設定されていない場合は、ドロワー・バックエンドが使用されます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style</span></code> ：これは、回路ドロワー <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> および <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> の <code class="docutils literal notranslate"><span class="pre">mpl</span></code> 出力バックエンドに使用されるデフォルトのスタイルシートです。 <code class="docutils literal notranslate"><span class="pre">default</span></code> または <code class="docutils literal notranslate"><span class="pre">bw</span></code> に設定できます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">circuit_mpl_style_path</span></code>: これを使用して回路ドロワー <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.draw.html#qiskit.circuit.QuantumCircuit.draw" title="qiskit.circuit.QuantumCircuit.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.circuit.QuantumCircuit.draw()</span></code></a> または <a class="reference internal" href="stubs/qiskit.visualization.circuit_drawer.html#qiskit.visualization.circuit_drawer" title="qiskit.visualization.circuit_drawer"><code class="xref py py-func docutils literal notranslate"><span class="pre">qiskit.visualization.circuit_drawer()</span></code></a> のパスを設定できます。<code class="docutils literal notranslate"><span class="pre">mpl</span></code> 出力モードの時には json スタイルシートのために使用できます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">state_drawer</span></code>: これは状態可視化の描画メソッド <a class="reference internal" href="stubs/qiskit.quantum_info.Statevector.draw.html#qiskit.quantum_info.Statevector.draw" title="qiskit.quantum_info.Statevector.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.Statevector.draw()</span></code></a> と <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.draw.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.quantum_info.DensityMatrix.draw()</span></code></a> のためのデフォルト・バックエンドを変更するために使えます。<code class="docutils literal notranslate"><span class="pre">repr</span></code>, <code class="docutils literal notranslate"><span class="pre">text</span></code>』, <code class="docutils literal notranslate"><span class="pre">latex</span></code>, <code class="docutils literal notranslate"><span class="pre">latex_source</span></code>, <code class="docutils literal notranslate"><span class="pre">qsphere</span></code>, <code class="docutils literal notranslate"><span class="pre">hinton</span></code>, または <code class="docutils literal notranslate"><span class="pre">bloch</span></code> に設定でき、<code class="docutils literal notranslate"><span class="pre">output</span></code> kwargが　 <a class="reference internal" href="stubs/qiskit.quantum_info.DensityMatrix.draw.html#qiskit.quantum_info.DensityMatrix.draw" title="qiskit.quantum_info.DensityMatrix.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> に明示的にセットされていない時に出力に使われます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">transpile_optimization_level</span></code> ：これは0〜3の整数を取り、 <a class="reference internal" href="stubs/qiskit.compiler.transpile.html#qiskit.compiler.transpile" title="qiskit.compiler.transpile"><code class="xref py py-func docutils literal notranslate"><span class="pre">transpile()</span></code></a> および <code class="xref py py-func docutils literal notranslate"><span class="pre">execute()</span></code> のデフォルトの最適化レベルを変更するために使用されます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parallel</span></code>: このオプションは (<code class="docutils literal notranslate"><span class="pre">True</span></code> または <code class="docutils literal notranslate"><span class="pre">False</span></code>) のブール値をとり、<a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">Python multiprocessing</a> が並列実行をサポートするオペレーションが有効かどうかを設定するのに使われます(例えば複数 <a class="reference internal" href="stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></a> オブジェクトのトランスパイル)。 デフォルトはユーザー構成ファイルに設定されており、<code class="docutils literal notranslate"><span class="pre">QISKIT_PARALLEL</span></code> 環境変数で上書きできます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_processes</span></code>: このオプションは整数値 (&gt; 0) をとり、並列実行が有効である時の並列プロセッサの最大数を指定します。デフォルトはユーザー構成ファイルにあり、<code class="docutils literal notranslate"><span class="pre">QISKIT_NUM_PROCS</span></code> 環境変数で上書きできます。</p></li>
 </ul>
 </div></blockquote>
 </section>
 <section id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>There are also a few environment variables that can be set to alter the default
-behavior of Qiskit.</p>
+<h2>環境変数<a class="headerlink" href="#environment-variables" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Qiskitのデフォルトの動作を変更するために設定できる環境変数もいくつかあります。</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_PARALLEL</span></code>: if this variable is set to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> it will enable
-the use of
-<a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">Python multiprocessing</a>
-to parallelize certain operations (for example transpilation over multiple
-circuits) in Qiskit Terra.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_NUM_PROCS</span></code>: Specifies the maximum number of parallel processes to
-launch for parallel operations if parallel execution is enabled. It takes an
-integer &gt; 0 as the expected value.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_IBMQ_PROVIDER_LOG_LEVEL</span></code>: Specifies the log level to use, for the
-<code class="docutils literal notranslate"><span class="pre">qiskit-ibmq-provider</span></code> modules. If an invalid level is set, the log level
-defaults to WARNING. The valid log levels are <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">INFO</span></code>,
-<code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, and <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> (case-insensitive). If the
-environment variable is not set, then the parent logger’s level is used,
-which also defaults to <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_IBMQ_PROVIDER_LOG_FILE</span></code>: Specifies the name of the log file to
-use from log messages originating from <code class="docutils literal notranslate"><span class="pre">qiskit-ibmq-provider</span></code>. If
-specified, messages will be logged to the file only. Otherwise messages will
-be logged to the standard error (usually the screen).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_AQUA_MAX_GATES_PER_JOB</span></code>: An optional parameter to set a threshold
-for splitting Aqua generated circuits up into multiple jobs submitted to a
-backend based on the number of gates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_IN_PARALLEL</span></code> ：この変数が <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> に設定されている場合、Qiskit Terra のいくつかの操作 (例えば複数回路のトランスパイル) を並列化するために <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html">Python multiprocessing</a> の使用が有効になります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_NUM_PROCS</span></code>: 並列実行が有効になっている場合、並列処理を起動するための並列プロセッサの最大数を指定します。これは整数 &gt; 0 を取ります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_IBMQ_PROVIDER_LOG_LEVEL</span></code> ： <code class="docutils literal notranslate"><span class="pre">qiskit-ibmq-provider</span></code> モジュールに使用するログレベルを指定します。 無効なレベルが設定されている場合、ログレベルはデフォルトでWARNINGになります。 有効なログレベルは、 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> 、 <code class="docutils literal notranslate"><span class="pre">INFO</span></code> 、 <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> 、 <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> および <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> （大文字と小文字を区別しない）です。 環境変数が設定されていない場合は、親ロガーのレベルが使用されます。これもデフォルトで <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> になります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_IBMQ_PROVIDER_LOG_FILE</span></code> ： <code class="docutils literal notranslate"><span class="pre">qiskit-ibmq-provider</span></code> から発信されたログメッセージから使用するログファイルの名前を指定します。 指定した場合、メッセージはファイルにのみ記録されます。 それ以外の場合、メッセージは標準エラー（通常は画面）に記録されます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QISKIT_AQUA_MAX_GATES_PER_JOB</span></code> ：ゲートの数に基づいて、Aquaで生成された回路を、バックエンドに送信される複数のジョブに分割するためのしきい値を設定するオプションのパラメーター。</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -444,7 +402,7 @@ backend based on the number of gates.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -465,7 +423,7 @@ backend based on the number of gates.</p></li>
               <ul>
 <li><a class="reference internal" href="#">ローカル構成</a><ul>
 <li><a class="reference internal" href="#user-config-file">ユーザー構成ファイル</a></li>
-<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li><a class="reference internal" href="#environment-variables">環境変数</a></li>
 </ul>
 </li>
 </ul>
@@ -531,7 +489,7 @@ backend based on the number of gates.</p></li>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -554,9 +512,11 @@ backend based on the number of gates.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,35 +1,28 @@
-﻿qiskit.aqua.circuits.ESOP
-=========================
+﻿ESOP
+====
 
 .. currentmodule:: qiskit.aqua.circuits
 
 .. autoclass:: ESOP
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ESOP.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ESOP.compute_num_ancillae
       ~ESOP.construct_circuit
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ESOP.ancillary_register
-      ~ESOP.clause_register
-      ~ESOP.num_clauses
-      ~ESOP.num_variables
-      ~ESOP.output_register
-      ~ESOP.variable_register
-   
-   
+   .. autoattribute:: ancillary_register
+   .. autoattribute:: clause_register
+   .. autoattribute:: num_clauses
+   .. autoattribute:: num_variables
+   .. autoattribute:: output_register
+   .. autoattribute:: variable_register

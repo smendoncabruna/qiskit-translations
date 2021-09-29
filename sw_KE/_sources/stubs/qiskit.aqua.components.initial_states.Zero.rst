@@ -1,29 +1,22 @@
-﻿qiskit.aqua.components.initial\_states.Zero
-===========================================
+﻿Zero
+====
 
 .. currentmodule:: qiskit.aqua.components.initial_states
 
 .. autoclass:: Zero
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Zero.__init__
-      ~Zero.construct_circuit
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~Zero.construct_circuit
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Zero.bitstr
-   
-   
+   .. autoattribute:: bitstr

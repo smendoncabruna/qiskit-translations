@@ -1,33 +1,26 @@
-﻿qiskit.circuit.QuantumRegister
-==============================
+﻿QuantumRegister
+===============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: QuantumRegister
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuantumRegister.__init__
-      ~QuantumRegister.qasm
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~QuantumRegister.qasm
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuantumRegister.instances_counter
-      ~QuantumRegister.name
-      ~QuantumRegister.name_format
-      ~QuantumRegister.prefix
-      ~QuantumRegister.size
-   
-   
+   .. autoattribute:: instances_counter
+   .. autoattribute:: name
+   .. autoattribute:: name_format
+   .. autoattribute:: prefix
+   .. autoattribute:: size

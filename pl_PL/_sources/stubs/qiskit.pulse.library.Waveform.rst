@@ -1,34 +1,27 @@
-qiskit.pulse.library.Waveform
-=============================
+Waveform
+========
 
 .. currentmodule:: qiskit.pulse.library
 
 .. autoclass:: Waveform
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Waveform.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Waveform.assign_parameters
       ~Waveform.draw
       ~Waveform.is_parameterized
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Waveform.id
-      ~Waveform.limit_amplitude
-      ~Waveform.parameters
-      ~Waveform.samples
-   
-   
+   .. autoattribute:: id
+   .. autoattribute:: limit_amplitude
+   .. autoattribute:: parameters
+   .. autoattribute:: samples

@@ -1,33 +1,26 @@
-﻿qiskit.pulse.AcquireChannel
-===========================
+﻿AcquireChannel
+==============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: AcquireChannel
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AcquireChannel.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AcquireChannel.assign
       ~AcquireChannel.is_parameterized
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AcquireChannel.index
-      ~AcquireChannel.name
-      ~AcquireChannel.parameters
-      ~AcquireChannel.prefix
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: name
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix

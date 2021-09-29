@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.operators.symplectic.clifford &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.quantum_info.operators.symplectic.clifford &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -428,7 +435,7 @@
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">()</span>
 
-<div class="viewcode-block" id="Clifford.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize an operator object.&quot;&quot;&quot;</span>
 
         <span class="c1"># Initialize from another Clifford by sharing the underlying</span>
@@ -457,7 +464,7 @@
                 <span class="p">)</span>
 
         <span class="c1"># Initialize BaseOperator</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">num_qubits</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">num_qubits</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Clifford(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
@@ -524,7 +531,7 @@
     <span class="c1"># Utility Operator methods</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="Clifford.is_unitary"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.is_unitary">[docs]</a>    <span class="k">def</span> <span class="nf">is_unitary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.is_unitary"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.is_unitary.html#qiskit.quantum_info.Clifford.is_unitary">[docs]</a>    <span class="k">def</span> <span class="nf">is_unitary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if the Clifford table is valid.&quot;&quot;&quot;</span>
         <span class="c1"># A valid Clifford is always unitary, so this function is really</span>
         <span class="c1"># checking that the underlying Stabilizer table array is a valid</span>
@@ -535,21 +542,21 @@
     <span class="c1"># BaseOperator Abstract Methods</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="Clifford.conjugate"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.conjugate">[docs]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.conjugate"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.conjugate.html#qiskit.quantum_info.Clifford.conjugate">[docs]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Clifford</span><span class="o">.</span><span class="n">_conjugate_transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Clifford.adjoint"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.adjoint">[docs]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.adjoint"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.adjoint.html#qiskit.quantum_info.Clifford.adjoint">[docs]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Clifford</span><span class="o">.</span><span class="n">_conjugate_transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Clifford.transpose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.transpose">[docs]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.transpose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.transpose.html#qiskit.quantum_info.Clifford.transpose">[docs]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Clifford</span><span class="o">.</span><span class="n">_conjugate_transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Clifford.tensor"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.tensor"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.tensor.html#qiskit.quantum_info.Clifford.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Clifford</span><span class="p">):</span>
             <span class="n">other</span> <span class="o">=</span> <span class="n">Clifford</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Clifford.expand"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.expand"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.expand.html#qiskit.quantum_info.Clifford.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Clifford</span><span class="p">):</span>
             <span class="n">other</span> <span class="o">=</span> <span class="n">Clifford</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tensor</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
@@ -565,7 +572,7 @@
         <span class="c1"># Add the padded table</span>
         <span class="k">return</span> <span class="n">Clifford</span><span class="p">(</span><span class="n">destab</span> <span class="o">+</span> <span class="n">stab</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Clifford.compose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.compose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.compose.html#qiskit.quantum_info.Clifford.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">qargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">qargs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="s2">&quot;qargs&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="c1"># If other is a QuantumCircuit we can more efficiently compose</span>
@@ -649,29 +656,29 @@
     <span class="c1"># Representation conversions</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="Clifford.to_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.to_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.to_dict.html#qiskit.quantum_info.Clifford.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return dictionary representation of Clifford object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s2">&quot;stabilizer&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">stabilizer</span><span class="o">.</span><span class="n">to_labels</span><span class="p">(),</span>
             <span class="s2">&quot;destabilizer&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">destabilizer</span><span class="o">.</span><span class="n">to_labels</span><span class="p">(),</span>
         <span class="p">}</span></div>
 
-<div class="viewcode-block" id="Clifford.from_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.from_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Clifford.from_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.from_dict.html#qiskit.quantum_info.Clifford.from_dict">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Load a Clifford from a dictionary&quot;&quot;&quot;</span>
         <span class="n">destabilizer</span> <span class="o">=</span> <span class="n">StabilizerTable</span><span class="o">.</span><span class="n">from_labels</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;destabilizer&quot;</span><span class="p">))</span>
         <span class="n">stabilizer</span> <span class="o">=</span> <span class="n">StabilizerTable</span><span class="o">.</span><span class="n">from_labels</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;stabilizer&quot;</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">Clifford</span><span class="p">(</span><span class="n">destabilizer</span> <span class="o">+</span> <span class="n">stabilizer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Clifford.to_matrix"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.to_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.to_matrix"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.to_matrix.html#qiskit.quantum_info.Clifford.to_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert operator to Numpy matrix.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_operator</span><span class="p">()</span><span class="o">.</span><span class="n">data</span></div>
 
-<div class="viewcode-block" id="Clifford.to_operator"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.to_operator">[docs]</a>    <span class="k">def</span> <span class="nf">to_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.to_operator"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.to_operator.html#qiskit.quantum_info.Clifford.to_operator">[docs]</a>    <span class="k">def</span> <span class="nf">to_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert to an Operator object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Operator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_instruction</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="Clifford.to_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.to_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">to_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.to_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.to_circuit.html#qiskit.quantum_info.Clifford.to_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">to_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a QuantumCircuit implementing the Clifford.</span>
 
 <span class="sd">        For N &lt;= 3 qubits this is based on optimal CX cost decomposition</span>
@@ -692,11 +699,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">decompose_clifford</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Clifford.to_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.to_instruction">[docs]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Clifford.to_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.to_instruction.html#qiskit.quantum_info.Clifford.to_instruction">[docs]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a Gate instruction implementing the Clifford.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_circuit</span><span class="p">()</span><span class="o">.</span><span class="n">to_gate</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Clifford.from_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.from_circuit">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Clifford.from_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.from_circuit.html#qiskit.quantum_info.Clifford.from_circuit">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_circuit</span><span class="p">(</span><span class="n">circuit</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize from a QuantumCircuit or Instruction.</span>
 
@@ -723,7 +730,7 @@
         <span class="n">_append_circuit</span><span class="p">(</span><span class="n">clifford</span><span class="p">,</span> <span class="n">circuit</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">clifford</span></div>
 
-<div class="viewcode-block" id="Clifford.from_label"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.html#qiskit.quantum_info.Clifford.from_label">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Clifford.from_label"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.Clifford.from_label.html#qiskit.quantum_info.Clifford.from_label">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_label</span><span class="p">(</span><span class="n">label</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a tensor product of single-qubit Clifford gates.</span>
 
@@ -867,7 +874,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -947,7 +954,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -970,9 +977,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

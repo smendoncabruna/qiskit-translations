@@ -1,42 +1,35 @@
-﻿qiskit.aqua.algorithms.IterativeAmplitudeEstimation
-===================================================
+﻿IterativeAmplitudeEstimation
+============================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: IterativeAmplitudeEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IterativeAmplitudeEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IterativeAmplitudeEstimation.construct_circuit
       ~IterativeAmplitudeEstimation.is_good_state
       ~IterativeAmplitudeEstimation.post_processing
       ~IterativeAmplitudeEstimation.run
       ~IterativeAmplitudeEstimation.set_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IterativeAmplitudeEstimation.a_factory
-      ~IterativeAmplitudeEstimation.backend
-      ~IterativeAmplitudeEstimation.grover_operator
-      ~IterativeAmplitudeEstimation.i_objective
-      ~IterativeAmplitudeEstimation.objective_qubits
-      ~IterativeAmplitudeEstimation.precision
-      ~IterativeAmplitudeEstimation.q_factory
-      ~IterativeAmplitudeEstimation.quantum_instance
-      ~IterativeAmplitudeEstimation.random
-      ~IterativeAmplitudeEstimation.state_preparation
-   
-   
+   .. autoattribute:: a_factory
+   .. autoattribute:: backend
+   .. autoattribute:: grover_operator
+   .. autoattribute:: i_objective
+   .. autoattribute:: objective_qubits
+   .. autoattribute:: precision
+   .. autoattribute:: q_factory
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: state_preparation

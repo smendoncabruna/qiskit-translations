@@ -1,45 +1,38 @@
-﻿qiskit.dagcircuit.DAGDepNode
-============================
+﻿DAGDepNode
+==========
 
 .. currentmodule:: qiskit.dagcircuit
 
 .. autoclass:: DAGDepNode
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DAGDepNode.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DAGDepNode.copy
       ~DAGDepNode.semantic_eq
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DAGDepNode.cargs
-      ~DAGDepNode.cindices
-      ~DAGDepNode.condition
-      ~DAGDepNode.isblocked
-      ~DAGDepNode.matchedwith
-      ~DAGDepNode.name
-      ~DAGDepNode.node_id
-      ~DAGDepNode.op
-      ~DAGDepNode.predecessors
-      ~DAGDepNode.qargs
-      ~DAGDepNode.qindices
-      ~DAGDepNode.reachable
-      ~DAGDepNode.sort_key
-      ~DAGDepNode.successors
-      ~DAGDepNode.successorstovisit
-      ~DAGDepNode.type
-   
-   
+   .. autoattribute:: cargs
+   .. autoattribute:: cindices
+   .. autoattribute:: condition
+   .. autoattribute:: isblocked
+   .. autoattribute:: matchedwith
+   .. autoattribute:: name
+   .. autoattribute:: node_id
+   .. autoattribute:: op
+   .. autoattribute:: predecessors
+   .. autoattribute:: qargs
+   .. autoattribute:: qindices
+   .. autoattribute:: reachable
+   .. autoattribute:: sort_key
+   .. autoattribute:: successors
+   .. autoattribute:: successorstovisit
+   .. autoattribute:: type

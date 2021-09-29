@@ -1,24 +1,19 @@
-﻿qiskit.opflow.converters.AbelianGrouper
-=======================================
+AbelianGrouper
+==============
 
 .. currentmodule:: qiskit.opflow.converters
 
 .. autoclass:: AbelianGrouper
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~AbelianGrouper.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AbelianGrouper.convert
       ~AbelianGrouper.group_subops
-   
-   
 
-   
-   
-   
+

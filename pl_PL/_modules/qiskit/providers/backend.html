@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.backend &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>qiskit.providers.backend &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -382,7 +389,7 @@
 
     <span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
 
-<div class="viewcode-block" id="BackendV1.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.__init__">[dokumentacja]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">configuration</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">configuration</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize a backend class</span>
 
 <span class="sd">        Args:</span>
@@ -394,6 +401,16 @@
 <span class="sd">                options.</span>
 <span class="sd">        Raises:</span>
 <span class="sd">            AttributeError: if input field not a valid options</span>
+
+<span class="sd">        ..</span>
+<span class="sd">            This next bit is necessary just because autosummary generally won&#39;t summarise private</span>
+<span class="sd">            methods; changing that behaviour would have annoying knock-on effects through all the</span>
+<span class="sd">            rest of the documentation, so instead we just hard-code the automethod directive.</span>
+
+<span class="sd">        In addition to the public abstract methods, subclasses should also implement the following</span>
+<span class="sd">        private methods:</span>
+
+<span class="sd">        .. automethod:: _default_options</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_configuration</span> <span class="o">=</span> <span class="n">configuration</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_options</span><span class="p">()</span>
@@ -402,9 +419,9 @@
             <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Options field </span><span class="si">%s</span><span class="s2"> is not valid for this backend&quot;</span> <span class="o">%</span> <span class="n">field</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="o">**</span><span class="n">fields</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="o">**</span><span class="n">fields</span><span class="p">)</span>
 
-    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BackendV1._default_options"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1._default_options">[dokumentacja]</a>    <span class="nd">@classmethod</span>
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">_default_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the default options</span>
@@ -418,9 +435,9 @@
 <span class="sd">            qiskit.providers.Options: A options object with</span>
 <span class="sd">                default values set</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
+        <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="BackendV1.set_options"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.set_options">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendV1.set_options"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.set_options.html#qiskit.providers.BackendV1.set_options">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the options fields for the backend</span>
 
 <span class="sd">        This method is used to update the options of a backend. If</span>
@@ -439,7 +456,7 @@
                 <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Options field </span><span class="si">%s</span><span class="s2"> is not valid for this &quot;</span> <span class="s2">&quot;backend&quot;</span> <span class="o">%</span> <span class="n">field</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">update_options</span><span class="p">(</span><span class="o">**</span><span class="n">fields</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="BackendV1.configuration"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.configuration">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendV1.configuration"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.configuration.html#qiskit.providers.BackendV1.configuration">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the backend configuration.</span>
 
 <span class="sd">        Returns:</span>
@@ -447,7 +464,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configuration</span></div>
 
-<div class="viewcode-block" id="BackendV1.properties"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.properties">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendV1.properties"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.properties.html#qiskit.providers.BackendV1.properties">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the backend properties.</span>
 
 <span class="sd">        Returns:</span>
@@ -456,7 +473,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="BackendV1.provider"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.provider">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">provider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendV1.provider"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.provider.html#qiskit.providers.BackendV1.provider">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">provider</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the backend Provider.</span>
 
 <span class="sd">        Returns:</span>
@@ -464,7 +481,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_provider</span></div>
 
-<div class="viewcode-block" id="BackendV1.status"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.status">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendV1.status"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.status.html#qiskit.providers.BackendV1.status">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the backend status.</span>
 
 <span class="sd">        Returns:</span>
@@ -478,7 +495,7 @@
             <span class="n">status_msg</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="BackendV1.name"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.name">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendV1.name"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.name.html#qiskit.providers.BackendV1.name">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the backend name.</span>
 
 <span class="sd">        Returns:</span>
@@ -510,7 +527,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_options</span>
 
-<div class="viewcode-block" id="BackendV1.run"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.run">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="BackendV1.run"><a class="viewcode-back" href="../../../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run">[dokumentacja]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">run_input</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Run on the backend.</span>
 
@@ -558,7 +575,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -638,7 +655,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -661,9 +678,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

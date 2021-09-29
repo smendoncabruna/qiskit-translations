@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.SetLayout
-==================================
+﻿SetLayout
+=========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: SetLayout
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SetLayout.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SetLayout.name
       ~SetLayout.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SetLayout.is_analysis_pass
-      ~SetLayout.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

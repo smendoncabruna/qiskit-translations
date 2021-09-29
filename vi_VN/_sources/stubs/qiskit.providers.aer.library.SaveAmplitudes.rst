@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveAmplitudes
-===========================================
+﻿SaveAmplitudes
+==============
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveAmplitudes
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveAmplitudes.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveAmplitudes.add_decomposition
       ~SaveAmplitudes.assemble
       ~SaveAmplitudes.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveAmplitudes.reverse_ops
       ~SaveAmplitudes.soft_compare
       ~SaveAmplitudes.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveAmplitudes.decompositions
-      ~SaveAmplitudes.definition
-      ~SaveAmplitudes.duration
-      ~SaveAmplitudes.label
-      ~SaveAmplitudes.params
-      ~SaveAmplitudes.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

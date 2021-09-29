@@ -1,38 +1,31 @@
-﻿qiskit.aqua.operators.legacy.Z2Symmetries
-=========================================
+﻿Z2Symmetries
+============
 
 .. currentmodule:: qiskit.aqua.operators.legacy
 
 .. autoclass:: Z2Symmetries
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Z2Symmetries.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Z2Symmetries.consistent_tapering
       ~Z2Symmetries.copy
       ~Z2Symmetries.find_Z2_symmetries
       ~Z2Symmetries.is_empty
       ~Z2Symmetries.taper
       ~Z2Symmetries.two_qubit_reduction
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Z2Symmetries.cliffords
-      ~Z2Symmetries.sq_list
-      ~Z2Symmetries.sq_paulis
-      ~Z2Symmetries.symmetries
-      ~Z2Symmetries.tapering_values
-   
-   
+   .. autoattribute:: cliffords
+   .. autoattribute:: sq_list
+   .. autoattribute:: sq_paulis
+   .. autoattribute:: symmetries
+   .. autoattribute:: tapering_values

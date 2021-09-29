@@ -1,23 +1,18 @@
-﻿qiskit.providers.ibmq.runtime.ResultDecoder
-===========================================
+﻿ResultDecoder
+=============
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: ResultDecoder
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ResultDecoder.__init__
-      ~ResultDecoder.decode
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~ResultDecoder.decode
+
+

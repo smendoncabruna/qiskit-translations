@@ -1,23 +1,18 @@
-﻿qiskit.aqua.circuits.StateVectorCircuit
-=======================================
+﻿StateVectorCircuit
+==================
 
 .. currentmodule:: qiskit.aqua.circuits
 
 .. autoclass:: StateVectorCircuit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~StateVectorCircuit.__init__
-      ~StateVectorCircuit.construct_circuit
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~StateVectorCircuit.construct_circuit
+
+

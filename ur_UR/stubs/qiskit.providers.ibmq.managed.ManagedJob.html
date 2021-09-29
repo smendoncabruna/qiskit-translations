@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.managed.ManagedJob &mdash; Qiskit 0.29.0 documentation</title>
+  <title>ManagedJob &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="qiskit.providers.ibmq.managed.ManagedResults" href="qiskit.providers.ibmq.managed.ManagedResults.html" />
-    <link rel="prev" title="qiskit.providers.ibmq.managed.ManagedJobSet" href="qiskit.providers.ibmq.managed.ManagedJobSet.html" /> 
+    <link rel="next" title="qiskit.providers.ibmq.managed.ManagedJob.cancel" href="qiskit.providers.ibmq.managed.ManagedJob.cancel.html" />
+    <link rel="prev" title="qiskit.providers.ibmq.managed.ManagedJobSet.update_tags" href="qiskit.providers.ibmq.managed.ManagedJobSet.update_tags.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/ibmq_managed.html">Job Manager (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.providers.ibmq.managed</span></code>)</a> &gt;</li>
         
-      <li>qiskit.providers.ibmq.managed.ManagedJob</li>
+      <li>ManagedJob</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-providers-ibmq-managed-managedjob">
-<h1>qiskit.providers.ibmq.managed.ManagedJob<a class="headerlink" href="#qiskit-providers-ibmq-managed-managedjob" title="Permalink to this headline">¶</a></h1>
+  <section id="managedjob">
+<h1>ManagedJob<a class="headerlink" href="#managedjob" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.providers.ibmq.managed.ManagedJob">
 <em class="property">class </em><code class="sig-name descname">ManagedJob</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_index</span></em>, <em class="sig-param"><span class="n">experiments_count</span></em>, <em class="sig-param"><span class="n">job</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob" title="Permalink to this definition">¶</a></dt>
-<dd><p>Job managed by the Job Manager.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Job managed by the Job Manager.</p>
 <p>ManagedJob constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -344,21 +352,6 @@
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_index</span></em>, <em class="sig-param"><span class="n">experiments_count</span></em>, <em class="sig-param"><span class="n">job</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>ManagedJob constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>start_index</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- Starting index of the experiment set.</p></li>
-<li><p><strong>experiments_count</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- Number of experiments.</p></li>
-<li><p><strong>job</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IBMQJob</span></code>]) -- Job to be managed, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if not already known.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -366,131 +359,26 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.__init__" title="qiskit.providers.ibmq.managed.ManagedJob.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(start_index, experiments_count[, job])</p></td>
-<td><p>ManagedJob constructor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.cancel" title="qiskit.providers.ibmq.managed.ManagedJob.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cancel</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.managed.ManagedJob.cancel.html#qiskit.providers.ibmq.managed.ManagedJob.cancel" title="qiskit.providers.ibmq.managed.ManagedJob.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cancel</span></code></a></p></td>
 <td><p>Attempt to cancel the job.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.error_message" title="qiskit.providers.ibmq.managed.ManagedJob.error_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">error_message</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.managed.ManagedJob.error_message.html#qiskit.providers.ibmq.managed.ManagedJob.error_message" title="qiskit.providers.ibmq.managed.ManagedJob.error_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">error_message</span></code></a></p></td>
 <td><p>Provide details about the reason of failure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.qobj" title="qiskit.providers.ibmq.managed.ManagedJob.qobj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qobj</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.managed.ManagedJob.qobj.html#qiskit.providers.ibmq.managed.ManagedJob.qobj" title="qiskit.providers.ibmq.managed.ManagedJob.qobj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qobj</span></code></a></p></td>
 <td><p>Return the Qobj for this job.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.result" title="qiskit.providers.ibmq.managed.ManagedJob.result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">result</span></code></a>([timeout, partial, refresh])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.managed.ManagedJob.result.html#qiskit.providers.ibmq.managed.ManagedJob.result" title="qiskit.providers.ibmq.managed.ManagedJob.result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">result</span></code></a></p></td>
 <td><p>Return the result of the job.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.status" title="qiskit.providers.ibmq.managed.ManagedJob.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.managed.ManagedJob.status.html#qiskit.providers.ibmq.managed.ManagedJob.status" title="qiskit.providers.ibmq.managed.ManagedJob.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span></code></a></p></td>
 <td><p>Query the server for job status.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.managed.ManagedJob.submit" title="qiskit.providers.ibmq.managed.ManagedJob.submit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">submit</span></code></a>(circuits, job_name, backend, ...[, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.managed.ManagedJob.submit.html#qiskit.providers.ibmq.managed.ManagedJob.submit" title="qiskit.providers.ibmq.managed.ManagedJob.submit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">submit</span></code></a></p></td>
 <td><p>Submit the job.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.cancel">
-<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.cancel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.cancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attempt to cancel the job.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.error_message">
-<code class="sig-name descname">error_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.error_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.error_message" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provide details about the reason of failure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An error report if the job failed or <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.qobj">
-<code class="sig-name descname">qobj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.qobj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.qobj" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the Qobj for this job.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QasmQobj</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PulseQobj</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The Qobj for this job or <code class="docutils literal notranslate"><span class="pre">None</span></code> if the Qobj could not be retrieved.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.result">
-<code class="sig-name descname">result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">partial</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">refresh</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.result"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.result" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the result of the job.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>timeout</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) -- Number of seconds to wait for job.</p></li>
-<li><p><strong>partial</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- If <code class="docutils literal notranslate"><span class="pre">True</span></code>, attempt to retrieve partial job results.</p></li>
-<li><p><strong>refresh</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- If <code class="docutils literal notranslate"><span class="pre">True</span></code>, re-query the server for the result. Otherwise
-return the cached value.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code>]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Job result or <code class="docutils literal notranslate"><span class="pre">None</span></code> if result could not be retrieved.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.ibmq.job.IBMQJobTimeoutError.html#qiskit.providers.ibmq.job.IBMQJobTimeoutError" title="qiskit.providers.ibmq.job.IBMQJobTimeoutError"><strong>IBMQJobTimeoutError</strong></a> -- If the job does not return results before a
-    specified timeout.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.status">
-<code class="sig-name descname">status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.status"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Query the server for job status.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JobStatus</span></code>]</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Current job status, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if an error occurred.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.managed.ManagedJob.submit">
-<code class="sig-name descname">submit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">circuits</span></em>, <em class="sig-param"><span class="n">job_name</span></em>, <em class="sig-param"><span class="n">backend</span></em>, <em class="sig-param"><span class="n">executor</span></em>, <em class="sig-param"><span class="n">submit_lock</span></em>, <em class="sig-param"><span class="n">job_share_level</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">run_config</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/managed/managedjob.html#ManagedJob.submit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.managed.ManagedJob.submit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Submit the job.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuits</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code>]]]) -- Circuits to run.</p></li>
-<li><p><strong>job_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- Name of the job.</p></li>
-<li><p><strong>backend</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">IBMQBackend</span></code>) -- Backend to execute the experiments on.</p></li>
-<li><p><strong>executor</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code>) -- The thread pool used to submit the job.</p></li>
-<li><p><strong>submit_lock</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">allocate_lock</span></code>) -- Lock used to synchronize job submission.</p></li>
-<li><p><strong>job_share_level</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ApiJobShareLevel</span></code>]) -- Job share level.</p></li>
-<li><p><strong>job_tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) -- Tags to be assigned to the job.</p></li>
-<li><p><strong>**run_config</strong> -- Extra arguments used to configure the run.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -503,10 +391,10 @@ return the cached value.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.providers.ibmq.managed.ManagedResults.html" class="btn btn-neutral float-right" title="qiskit.providers.ibmq.managed.ManagedResults" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.providers.ibmq.managed.ManagedJob.cancel.html" class="btn btn-neutral float-right" title="qiskit.providers.ibmq.managed.ManagedJob.cancel" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.providers.ibmq.managed.ManagedJobSet.html" class="btn btn-neutral" title="qiskit.providers.ibmq.managed.ManagedJobSet" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.providers.ibmq.managed.ManagedJobSet.update_tags.html" class="btn btn-neutral" title="qiskit.providers.ibmq.managed.ManagedJobSet.update_tags" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -520,7 +408,7 @@ return the cached value.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -539,7 +427,7 @@ return the cached value.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.providers.ibmq.managed.ManagedJob</a></li>
+<li><a class="reference internal" href="#">ManagedJob</a></li>
 </ul>
 
             </div>
@@ -603,7 +491,7 @@ return the cached value.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -626,9 +514,11 @@ return the cached value.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

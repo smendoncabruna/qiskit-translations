@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.optimizers.Optimizer
-===========================================
+﻿Optimizer
+=========
 
 .. currentmodule:: qiskit.aqua.components.optimizers
 
 .. autoclass:: Optimizer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Optimizer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Optimizer.get_support_level
       ~Optimizer.gradient_num_diff
       ~Optimizer.optimize
@@ -21,27 +20,21 @@
       ~Optimizer.set_max_evals_grouped
       ~Optimizer.set_options
       ~Optimizer.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Optimizer.bounds_support_level
-      ~Optimizer.gradient_support_level
-      ~Optimizer.initial_point_support_level
-      ~Optimizer.is_bounds_ignored
-      ~Optimizer.is_bounds_required
-      ~Optimizer.is_bounds_supported
-      ~Optimizer.is_gradient_ignored
-      ~Optimizer.is_gradient_required
-      ~Optimizer.is_gradient_supported
-      ~Optimizer.is_initial_point_ignored
-      ~Optimizer.is_initial_point_required
-      ~Optimizer.is_initial_point_supported
-      ~Optimizer.setting
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting

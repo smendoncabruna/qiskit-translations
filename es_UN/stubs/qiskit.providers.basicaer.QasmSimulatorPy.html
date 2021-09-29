@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.basicaer.QasmSimulatorPy &mdash; documentación de Qiskit - 0.29.0</title>
+  <title>QasmSimulatorPy &mdash; documentación de Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="qiskit.providers.basicaer.StatevectorSimulatorPy" href="qiskit.providers.basicaer.StatevectorSimulatorPy.html" />
+    <link rel="next" title="qiskit.providers.basicaer.QasmSimulatorPy.configuration" href="qiskit.providers.basicaer.QasmSimulatorPy.configuration.html" />
     <link rel="prev" title="BasicAer: Python-based Simulators (qiskit.providers.basicaer)" href="../apidoc/providers_basicaer.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Página de inicio de la documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Página de inicio de la Documentación</a></li>
 </ul>
 <p><span class="caption-text">Preliminares</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Referencias de la API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulador Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Experimentos Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Módulos de Aplicación Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Proveedor)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Proveedor Qiskit IBM Quantum</a></li>
 </ul>
-<p><span class="caption-text">Guía de Migración de Aplicaciones Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Guía de Migración de Qiskit Aqua</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guía de Migración de Aplicaciones Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guía de Migración de Qiskit Aqua</a></li>
 </ul>
 <p><span class="caption-text">Solución de Problemas</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/providers_basicaer.html">BasicAer: Python-based Simulators (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.providers.basicaer</span></code>)</a> &gt;</li>
         
-      <li>qiskit.providers.basicaer.QasmSimulatorPy</li>
+      <li>QasmSimulatorPy</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-providers-basicaer-qasmsimulatorpy">
-<h1>qiskit.providers.basicaer.QasmSimulatorPy<a class="headerlink" href="#qiskit-providers-basicaer-qasmsimulatorpy" title="Enlazar permanentemente con este título">¶</a></h1>
+  <section id="qasmsimulatorpy">
+<h1>QasmSimulatorPy<a class="headerlink" href="#qasmsimulatorpy" title="Enlazar permanentemente con este título">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.providers.basicaer.QasmSimulatorPy">
 <em class="property">class </em><code class="sig-name descname">QasmSimulatorPy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">configuration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">provider</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">fields</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/basicaer/qasm_simulator.html#QasmSimulatorPy"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Python implementation of a qasm simulator.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.providers.backend.BackendV1</span></code></p>
+<p>Python implementation of a qasm simulator.</p>
 <p>Initialize a backend class</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -350,23 +358,26 @@ options.</p></li>
 <dd class="field-even"><p><strong>AttributeError</strong> – if input field not a valid options</p>
 </dd>
 </dl>
+<p>In addition to the public abstract methods, subclasses should also implement the following
+private methods:</p>
 <dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">configuration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">provider</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">fields</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/basicaer/qasm_simulator.html#QasmSimulatorPy.__init__"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.__init__" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Initialize a backend class</p>
+<dt id="qiskit.providers.basicaer.QasmSimulatorPy._default_options">
+<em class="property">classmethod </em><code class="sig-name descname">_default_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/basicaer/qasm_simulator.html#QasmSimulatorPy._default_options"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy._default_options" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Return the default options</p>
+<p>This method will return a <a class="reference internal" href="qiskit.providers.Options.html#qiskit.providers.Options" title="qiskit.providers.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.providers.Options</span></code></a>
+subclass object that will be used for the default options. These
+should be the default parameters to use for the options of the
+backend.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>configuration</strong> (<a class="reference internal" href="qiskit.providers.models.BackendConfiguration.html#qiskit.providers.models.BackendConfiguration" title="qiskit.providers.models.BackendConfiguration"><em>BackendConfiguration</em></a>) – A backend configuration
-object for the backend object.</p></li>
-<li><p><strong>provider</strong> (<a class="reference internal" href="qiskit.providers.Provider.html#qiskit.providers.Provider" title="qiskit.providers.Provider"><em>qiskit.providers.Provider</em></a>) – Optionally, the provider
-object that this Backend comes from.</p></li>
-<li><p><strong>fields</strong> – kwargs for the values to use to override the default
-options.</p></li>
-</ul>
+<dt class="field-odd">Devuelve</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A options object with</dt><dd><p>default values set</p>
 </dd>
-<dt class="field-even">Muestra</dt>
-<dd class="field-even"><p><strong>AttributeError</strong> – if input field not a valid options</p>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Tipo del valor devuelto</dt>
+<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.Options.html#qiskit.providers.Options" title="qiskit.providers.Options">qiskit.providers.Options</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -378,234 +389,66 @@ options.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.__init__" title="qiskit.providers.basicaer.QasmSimulatorPy.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([configuration, provider])</p></td>
-<td><p>Initialize a backend class</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.configuration" title="qiskit.providers.basicaer.QasmSimulatorPy.configuration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configuration</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.configuration.html#qiskit.providers.basicaer.QasmSimulatorPy.configuration" title="qiskit.providers.basicaer.QasmSimulatorPy.configuration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">configuration</span></code></a></p></td>
 <td><p>Return the backend configuration.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.name" title="qiskit.providers.basicaer.QasmSimulatorPy.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.name.html#qiskit.providers.basicaer.QasmSimulatorPy.name" title="qiskit.providers.basicaer.QasmSimulatorPy.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
 <td><p>Return the backend name.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.properties" title="qiskit.providers.basicaer.QasmSimulatorPy.properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">properties</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.properties.html#qiskit.providers.basicaer.QasmSimulatorPy.properties" title="qiskit.providers.basicaer.QasmSimulatorPy.properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">properties</span></code></a></p></td>
 <td><p>Return the backend properties.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.provider" title="qiskit.providers.basicaer.QasmSimulatorPy.provider"><code class="xref py py-obj docutils literal notranslate"><span class="pre">provider</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.provider.html#qiskit.providers.basicaer.QasmSimulatorPy.provider" title="qiskit.providers.basicaer.QasmSimulatorPy.provider"><code class="xref py py-obj docutils literal notranslate"><span class="pre">provider</span></code></a></p></td>
 <td><p>Return the backend Provider.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.run" title="qiskit.providers.basicaer.QasmSimulatorPy.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>(qobj, **backend_options)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.run.html#qiskit.providers.basicaer.QasmSimulatorPy.run" title="qiskit.providers.basicaer.QasmSimulatorPy.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
 <td><p>Run qobj asynchronously.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.run_experiment" title="qiskit.providers.basicaer.QasmSimulatorPy.run_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_experiment</span></code></a>(experiment)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.run_experiment.html#qiskit.providers.basicaer.QasmSimulatorPy.run_experiment" title="qiskit.providers.basicaer.QasmSimulatorPy.run_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_experiment</span></code></a></p></td>
 <td><p>Run an experiment (circuit) and return a single experiment result.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.set_options" title="qiskit.providers.basicaer.QasmSimulatorPy.set_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_options</span></code></a>(**fields)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.set_options.html#qiskit.providers.basicaer.QasmSimulatorPy.set_options" title="qiskit.providers.basicaer.QasmSimulatorPy.set_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_options</span></code></a></p></td>
 <td><p>Set the options fields for the backend</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.status" title="qiskit.providers.basicaer.QasmSimulatorPy.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.status.html#qiskit.providers.basicaer.QasmSimulatorPy.status" title="qiskit.providers.basicaer.QasmSimulatorPy.status"><code class="xref py py-obj docutils literal notranslate"><span class="pre">status</span></code></a></p></td>
 <td><p>Return the backend status.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_CONFIGURATION</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_OPTIONS</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_QUBITS_MEMORY</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">SHOW_FINAL_STATE</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.options" title="qiskit.providers.basicaer.QasmSimulatorPy.options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">options</span></code></a></p></td>
-<td><p>Return the options for the backend</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">version</span></code></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.configuration">
-<code class="sig-name descname">configuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.configuration" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Return the backend configuration.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>the configuration for the backend.</p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.models.BackendConfiguration.html#qiskit.providers.models.BackendConfiguration" title="qiskit.providers.models.BackendConfiguration">BackendConfiguration</a></p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.providers.basicaer.QasmSimulatorPy.DEFAULT_CONFIGURATION">
+<code class="sig-name descname">DEFAULT_CONFIGURATION</code><em class="property"> = {'backend_name': 'qasm_simulator', 'backend_version': '2.1.0', 'basis_gates': ['u1', 'u2', 'u3', 'rz', 'sx', 'x', 'cx', 'id', 'unitary'], 'conditional': True, 'coupling_map': None, 'description': 'A python simulator for qasm experiments', 'gates': [{'name': 'u1', 'parameters': ['lambda'], 'qasm_def': 'gate u1(lambda) q { U(0,0,lambda) q; }'}, {'name': 'u2', 'parameters': ['phi', 'lambda'], 'qasm_def': 'gate u2(phi,lambda) q { U(pi/2,phi,lambda) q; }'}, {'name': 'u3', 'parameters': ['theta', 'phi', 'lambda'], 'qasm_def': 'gate u3(theta,phi,lambda) q { U(theta,phi,lambda) q; }'}, {'name': 'rz', 'parameters': ['phi'], 'qasm_def': 'gate rz(phi) q { U(0,0,phi) q; }'}, {'name': 'sx', 'parameters': [], 'qasm_def': 'gate sx(phi) q { U(pi/2,7*pi/2,pi/2) q; }'}, {'name': 'x', 'parameters': [], 'qasm_def': 'gate x q { U(pi,7*pi/2,pi/2) q; }'}, {'name': 'cx', 'parameters': [], 'qasm_def': 'gate cx c,t { CX c,t; }'}, {'name': 'id', 'parameters': [], 'qasm_def': 'gate id a { U(0,0,0) a; }'}, {'name': 'unitary', 'parameters': ['matrix'], 'qasm_def': 'unitary(matrix) q1, q2,...'}], 'local': True, 'max_shots': 65536, 'memory': True, 'n_qubits': 24, 'open_pulse': False, 'simulator': True, 'url': 'https://github.com/Qiskit/qiskit-terra'}</em><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.DEFAULT_CONFIGURATION" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.name">
-<code class="sig-name descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.name" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Return the backend name.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>the name of the backend.</p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.providers.basicaer.QasmSimulatorPy.DEFAULT_OPTIONS">
+<code class="sig-name descname">DEFAULT_OPTIONS</code><em class="property"> = {'chop_threshold': 1e-15, 'initial_statevector': None}</em><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.DEFAULT_OPTIONS" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
+<dt id="qiskit.providers.basicaer.QasmSimulatorPy.MAX_QUBITS_MEMORY">
+<code class="sig-name descname">MAX_QUBITS_MEMORY</code><em class="property"> = 28</em><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.MAX_QUBITS_MEMORY" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.providers.basicaer.QasmSimulatorPy.SHOW_FINAL_STATE">
+<code class="sig-name descname">SHOW_FINAL_STATE</code><em class="property"> = False</em><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.SHOW_FINAL_STATE" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt id="qiskit.providers.basicaer.QasmSimulatorPy.options">
-<em class="property">property </em><code class="sig-name descname">options</code><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.options" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-name descname">options</code><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.options" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Return the options for the backend</p>
 <p>The options of a backend are the dynamic parameters defining
-how the backend is used. These are used to control the <a class="reference internal" href="#qiskit.providers.basicaer.QasmSimulatorPy.run" title="qiskit.providers.basicaer.QasmSimulatorPy.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>
+how the backend is used. These are used to control the <a class="reference internal" href="qiskit.providers.basicaer.QasmSimulatorPy.run.html#qiskit.providers.basicaer.QasmSimulatorPy.run" title="qiskit.providers.basicaer.QasmSimulatorPy.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>
 method.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.properties">
-<code class="sig-name descname">properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.properties" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Return the backend properties.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>the configuration for the backend. If the backend
-does not support properties, it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties" title="qiskit.providers.models.BackendProperties">BackendProperties</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.provider">
-<code class="sig-name descname">provider</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.provider" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Return the backend Provider.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>the Provider responsible for the backend.</p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.Provider.html#qiskit.providers.Provider" title="qiskit.providers.Provider">Provider</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qobj</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">backend_options</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/basicaer/qasm_simulator.html#QasmSimulatorPy.run"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.run" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Run qobj asynchronously.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qobj</strong> (<a class="reference internal" href="qiskit.qobj.Qobj.html#qiskit.qobj.Qobj" title="qiskit.qobj.Qobj"><em>Qobj</em></a>) – payload of the experiment</p></li>
-<li><p><strong>backend_options</strong> (<em>dict</em>) – backend options</p></li>
-</ul>
-</dd>
-<dt class="field-even">Devuelve</dt>
-<dd class="field-even"><p>derived from BaseJob</p>
-</dd>
-<dt class="field-odd">Tipo del valor devuelto</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.providers.basicaer.BasicAerJob.html#qiskit.providers.basicaer.BasicAerJob" title="qiskit.providers.basicaer.BasicAerJob">BasicAerJob</a></p>
-</dd>
-</dl>
-<dl>
-<dt>Additional Information:</dt><dd><dl class="simple">
-<dt>backend_options: Is a dict of options for the backend. It may contain</dt><dd><ul class="simple">
-<li><p>«initial_statevector»: vector_like</p></li>
-</ul>
-</dd>
-</dl>
-<p>The «initial_statevector» option specifies a custom initial
-initial statevector for the simulator to be used instead of the all
-zero state. This size of this vector must be correct for the number
-of qubits in all experiments in the qobj.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backend_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;initial_statevector&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="n">j</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.run_experiment">
-<code class="sig-name descname">run_experiment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">experiment</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/basicaer/qasm_simulator.html#QasmSimulatorPy.run_experiment"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.run_experiment" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Run an experiment (circuit) and return a single experiment result.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><p><strong>experiment</strong> (<em>QobjExperiment</em>) – experiment from qobj experiments list</p>
-</dd>
-<dt class="field-even">Devuelve</dt>
-<dd class="field-even"><p><p>A result dictionary which looks something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span> <span class="n">of</span> <span class="n">this</span> <span class="n">experiment</span> <span class="p">(</span><span class="n">obtained</span> <span class="kn">from</span> <span class="nn">qobj.experiment</span> <span class="n">header</span><span class="p">)</span>
-<span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="n">random</span> <span class="n">seed</span> <span class="n">used</span> <span class="k">for</span> <span class="n">simulation</span>
-<span class="s2">&quot;shots&quot;</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">shots</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">simulation</span>
-<span class="s2">&quot;data&quot;</span><span class="p">:</span>
-    <span class="p">{</span>
-    <span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;0x9: 5, ...},</span>
-    <span class="s2">&quot;memory&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;0x9&#39;</span><span class="p">,</span> <span class="s1">&#39;0xF&#39;</span><span class="p">,</span> <span class="s1">&#39;0x1D&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;0x9&#39;</span><span class="p">]</span>
-    <span class="p">},</span>
-<span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="n">status</span> <span class="n">string</span> <span class="k">for</span> <span class="n">the</span> <span class="n">simulation</span>
-<span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="n">boolean</span>
-<span class="s2">&quot;time_taken&quot;</span><span class="p">:</span> <span class="n">simulation</span> <span class="n">time</span> <span class="n">of</span> <span class="n">this</span> <span class="n">single</span> <span class="n">experiment</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</p>
-</dd>
-<dt class="field-odd">Tipo del valor devuelto</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-<dt class="field-even">Muestra</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.basicaer.BasicAerError.html#qiskit.providers.basicaer.BasicAerError" title="qiskit.providers.basicaer.BasicAerError"><strong>BasicAerError</strong></a> – if an error occurred.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.set_options">
-<code class="sig-name descname">set_options</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">fields</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.set_options" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Set the options fields for the backend</p>
-<p>This method is used to update the options of a backend. If
-you need to change any of the options prior to running just
-pass in the kwarg with the new value for the options.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><p><strong>fields</strong> – The fields to update the options</p>
-</dd>
-<dt class="field-even">Muestra</dt>
-<dd class="field-even"><p><strong>AttributeError</strong> – If the field passed in is not part of the
-    options</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.basicaer.QasmSimulatorPy.status">
-<code class="sig-name descname">status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.status" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Return the backend status.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>the status of the backend.</p>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.providers.models.BackendStatus.html#qiskit.providers.models.BackendStatus" title="qiskit.providers.models.BackendStatus">BackendStatus</a></p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.providers.basicaer.QasmSimulatorPy.version">
+<code class="sig-name descname">version</code><em class="property"> = 1</em><a class="headerlink" href="#qiskit.providers.basicaer.QasmSimulatorPy.version" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -619,7 +462,7 @@ pass in the kwarg with the new value for the options.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.providers.basicaer.StatevectorSimulatorPy.html" class="btn btn-neutral float-right" title="qiskit.providers.basicaer.StatevectorSimulatorPy" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.providers.basicaer.QasmSimulatorPy.configuration.html" class="btn btn-neutral float-right" title="qiskit.providers.basicaer.QasmSimulatorPy.configuration" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/providers_basicaer.html" class="btn btn-neutral" title="BasicAer: Python-based Simulators (qiskit.providers.basicaer)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -636,7 +479,7 @@ pass in the kwarg with the new value for the options.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/08/13.
+      Actualizado por última vez en 2021/09/23.
 
     </p>
   </div>
@@ -655,7 +498,7 @@ pass in the kwarg with the new value for the options.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.providers.basicaer.QasmSimulatorPy</a></li>
+<li><a class="reference internal" href="#">QasmSimulatorPy</a></li>
 </ul>
 
             </div>
@@ -719,7 +562,7 @@ pass in the kwarg with the new value for the options.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -742,9 +585,11 @@ pass in the kwarg with the new value for the options.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,41 +1,34 @@
-﻿qiskit.algorithms.MaximumLikelihoodAmplitudeEstimationResult
-============================================================
+﻿MaximumLikelihoodAmplitudeEstimationResult
+==========================================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: MaximumLikelihoodAmplitudeEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MaximumLikelihoodAmplitudeEstimationResult.__init__
-      ~MaximumLikelihoodAmplitudeEstimationResult.combine
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~MaximumLikelihoodAmplitudeEstimationResult.combine
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MaximumLikelihoodAmplitudeEstimationResult.circuit_results
-      ~MaximumLikelihoodAmplitudeEstimationResult.confidence_interval
-      ~MaximumLikelihoodAmplitudeEstimationResult.confidence_interval_processed
-      ~MaximumLikelihoodAmplitudeEstimationResult.estimation
-      ~MaximumLikelihoodAmplitudeEstimationResult.estimation_processed
-      ~MaximumLikelihoodAmplitudeEstimationResult.evaluation_schedule
-      ~MaximumLikelihoodAmplitudeEstimationResult.fisher_information
-      ~MaximumLikelihoodAmplitudeEstimationResult.good_counts
-      ~MaximumLikelihoodAmplitudeEstimationResult.minimizer
-      ~MaximumLikelihoodAmplitudeEstimationResult.num_oracle_queries
-      ~MaximumLikelihoodAmplitudeEstimationResult.post_processing
-      ~MaximumLikelihoodAmplitudeEstimationResult.shots
-      ~MaximumLikelihoodAmplitudeEstimationResult.theta
-   
-   
+   .. autoattribute:: circuit_results
+   .. autoattribute:: confidence_interval
+   .. autoattribute:: confidence_interval_processed
+   .. autoattribute:: estimation
+   .. autoattribute:: estimation_processed
+   .. autoattribute:: evaluation_schedule
+   .. autoattribute:: fisher_information
+   .. autoattribute:: good_counts
+   .. autoattribute:: minimizer
+   .. autoattribute:: num_oracle_queries
+   .. autoattribute:: post_processing
+   .. autoattribute:: shots
+   .. autoattribute:: theta

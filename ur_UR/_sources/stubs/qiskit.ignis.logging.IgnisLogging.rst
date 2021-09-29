@@ -1,26 +1,21 @@
-﻿qiskit.ignis.logging.IgnisLogging
-=================================
+﻿IgnisLogging
+============
 
 .. currentmodule:: qiskit.ignis.logging
 
 .. autoclass:: IgnisLogging
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IgnisLogging.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IgnisLogging.default_datetime_fmt
       ~IgnisLogging.get_file_handler
       ~IgnisLogging.get_log_file
       ~IgnisLogging.get_logger
-   
-   
 
-   
-   
-   
+

@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.AmplitudeEstimationAlgorithmResult
-=========================================================
+﻿AmplitudeEstimationAlgorithmResult
+==================================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: AmplitudeEstimationAlgorithmResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AmplitudeEstimationAlgorithmResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AmplitudeEstimationAlgorithmResult.clear
       ~AmplitudeEstimationAlgorithmResult.combine
       ~AmplitudeEstimationAlgorithmResult.copy
@@ -27,18 +26,12 @@
       ~AmplitudeEstimationAlgorithmResult.setdefault
       ~AmplitudeEstimationAlgorithmResult.update
       ~AmplitudeEstimationAlgorithmResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AmplitudeEstimationAlgorithmResult.a_estimation
-      ~AmplitudeEstimationAlgorithmResult.confidence_interval
-      ~AmplitudeEstimationAlgorithmResult.estimation
-      ~AmplitudeEstimationAlgorithmResult.num_oracle_queries
-   
-   
+   .. autoattribute:: a_estimation
+   .. autoattribute:: confidence_interval
+   .. autoattribute:: estimation
+   .. autoattribute:: num_oracle_queries

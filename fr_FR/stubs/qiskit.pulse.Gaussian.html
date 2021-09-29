@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.pulse.Gaussian &mdash; Documentation Qiskit 0.29.0</title>
+  <title>Gaussian &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Rechercher" href="../search.html" />
-    <link rel="next" title="qiskit.pulse.GaussianSquare" href="qiskit.pulse.GaussianSquare.html" />
-    <link rel="prev" title="qiskit.pulse.Drag" href="qiskit.pulse.Drag.html" /> 
+    <link rel="next" title="qiskit.pulse.Gaussian.assign" href="qiskit.pulse.Gaussian.assign.html" />
+    <link rel="prev" title="qiskit.pulse.Drag.validate_parameters" href="qiskit.pulse.Drag.validate_parameters.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -233,7 +240,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/pulse.html">Pulse (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.pulse</span></code>)</a> &gt;</li>
         
-      <li>qiskit.pulse.Gaussian</li>
+      <li>Gaussian</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-pulse-gaussian">
-<h1>qiskit.pulse.Gaussian<a class="headerlink" href="#qiskit-pulse-gaussian" title="Lien permanent vers ce titre">¶</a></h1>
+  <section id="gaussian">
+<h1>Gaussian<a class="headerlink" href="#gaussian" title="Lien permanent vers ce titre">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.pulse.Gaussian">
 <em class="property">class </em><code class="sig-name descname">Gaussian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">duration</span></em>, <em class="sig-param"><span class="n">amp</span></em>, <em class="sig-param"><span class="n">sigma</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/library/parametric_pulses.html#Gaussian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.pulse.Gaussian" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>A truncated pulse envelope shaped according to the Gaussian function whose mean is centered
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.pulse.library.parametric_pulses.ParametricPulse</span></code></p>
+<p>A truncated pulse envelope shaped according to the Gaussian function whose mean is centered
 at the center of the pulse (duration / 2):</p>
 <div class="math notranslate nohighlight">
 \[f(x) = amp * exp( -(1/2) * (x - duration/2)^2 / sigma^2) )  ,  0 &lt;= x &lt; duration\]</div>
@@ -349,23 +357,6 @@ in the class docstring.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">duration</span></em>, <em class="sig-param"><span class="n">amp</span></em>, <em class="sig-param"><span class="n">sigma</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/library/parametric_pulses.html#Gaussian.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.pulse.Gaussian.__init__" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Initialize the gaussian pulse.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>duration</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>]) – Pulse length in terms of the the sampling period <cite>dt</cite>.</p></li>
-<li><p><strong>amp</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>]) – The amplitude of the Gaussian envelope.</p></li>
-<li><p><strong>sigma</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>]) – A measure of how wide or narrow the Gaussian peak is; described mathematically
-in the class docstring.</p></li>
-<li><p><strong>name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Display name for this pulse envelope.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -373,56 +364,30 @@ in the class docstring.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.__init__" title="qiskit.pulse.Gaussian.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(duration, amp, sigma[, name])</p></td>
-<td><p>Initialize the gaussian pulse.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.assign" title="qiskit.pulse.Gaussian.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a>(parameter, value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Gaussian.assign.html#qiskit.pulse.Gaussian.assign" title="qiskit.pulse.Gaussian.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a></p></td>
 <td><p>Assign one parameter to a value, which can either be numeric or another parameter expression.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.assign_parameters" title="qiskit.pulse.Gaussian.assign_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_parameters</span></code></a>(value_dict)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Gaussian.assign_parameters.html#qiskit.pulse.Gaussian.assign_parameters" title="qiskit.pulse.Gaussian.assign_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_parameters</span></code></a></p></td>
 <td><p>Return a new ParametricPulse with parameters assigned.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.draw" title="qiskit.pulse.Gaussian.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>([dt, style, filename, interp_method, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Gaussian.draw.html#qiskit.pulse.Gaussian.draw" title="qiskit.pulse.Gaussian.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a></p></td>
 <td><p>Plot the interpolated envelope of pulse.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.get_waveform" title="qiskit.pulse.Gaussian.get_waveform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_waveform</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Gaussian.get_waveform.html#qiskit.pulse.Gaussian.get_waveform" title="qiskit.pulse.Gaussian.get_waveform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_waveform</span></code></a></p></td>
 <td><p>Return a Waveform with samples filled according to the formula that the pulse represents and the parameter values it contains.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.is_parameterized" title="qiskit.pulse.Gaussian.is_parameterized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_parameterized</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.pulse.Gaussian.is_parameterized.html#qiskit.pulse.Gaussian.is_parameterized" title="qiskit.pulse.Gaussian.is_parameterized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_parameterized</span></code></a></p></td>
 <td><p>Return True iff the instruction is parameterized.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.validate_parameters" title="qiskit.pulse.Gaussian.validate_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_parameters</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.pulse.Gaussian.validate_parameters.html#qiskit.pulse.Gaussian.validate_parameters" title="qiskit.pulse.Gaussian.validate_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_parameters</span></code></a></p></td>
 <td><p>Validate parameters.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.amp" title="qiskit.pulse.Gaussian.amp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">amp</span></code></a></p></td>
-<td><p>The Gaussian amplitude.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.id" title="qiskit.pulse.Gaussian.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
-<td><p>Unique identifier for this pulse.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">limit_amplitude</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.parameters" title="qiskit.pulse.Gaussian.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a></p></td>
-<td><p>Return a dictionary containing the pulse’s parameters.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.pulse.Gaussian.sigma" title="qiskit.pulse.Gaussian.sigma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma</span></code></a></p></td>
-<td><p>The Gaussian standard deviation of the pulse width.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Gaussian.amp">
-<em class="property">property </em><code class="sig-name descname">amp</code><a class="headerlink" href="#qiskit.pulse.Gaussian.amp" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">amp</code><a class="headerlink" href="#qiskit.pulse.Gaussian.amp" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>The Gaussian amplitude.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
@@ -431,101 +396,9 @@ in the class docstring.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.assign">
-<code class="sig-name descname">assign</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameter</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Gaussian.assign" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Assign one parameter to a value, which can either be numeric or another parameter
-expression.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParametricPulse</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.assign_parameters">
-<code class="sig-name descname">assign_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Gaussian.assign_parameters" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Return a new ParametricPulse with parameters assigned.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>value_dict</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) – A mapping from Parameters to either numeric values or another
-Parameter expression.</p>
-</dd>
-<dt class="field-even">Type renvoyé</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParametricPulse</span></code></p>
-</dd>
-<dt class="field-odd">Renvoie</dt>
-<dd class="field-odd"><p>New pulse with updated parameters.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.draw">
-<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">style</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interp_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interactive</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">draw_title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">backend</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_range</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_unit</span><span class="o">=</span><span class="default_value">'dt'</span></em>, <em class="sig-param"><span class="n">show_waveform_info</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">plotter</span><span class="o">=</span><span class="default_value">'mpl2d'</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Gaussian.draw" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Plot the interpolated envelope of pulse.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>style</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – Stylesheet options. This can be dictionary or preset stylesheet classes. See
-:py:class:~`qiskit.visualization.pulse_v2.stylesheets.IQXStandard`,
-:py:class:~`qiskit.visualization.pulse_v2.stylesheets.IQXSimple`, and
-:py:class:~`qiskit.visualization.pulse_v2.stylesheets.IQXDebugging` for details of
-preset stylesheets.</p></li>
-<li><p><strong>backend</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="qiskit.providers.BaseBackend.html#qiskit.providers.BaseBackend" title="qiskit.providers.BaseBackend"><em>BaseBackend</em></a><em>]</em>) – Backend object to play the input pulse program.
-If provided, the plotter may use to make the visualization hardware aware.</p></li>
-<li><p><strong>time_range</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – Set horizontal axis limit. Tuple <code class="docutils literal notranslate"><span class="pre">(tmin,</span> <span class="pre">tmax)</span></code>.</p></li>
-<li><p><strong>time_unit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The unit of specified time range either <code class="docutils literal notranslate"><span class="pre">dt</span></code> or <code class="docutils literal notranslate"><span class="pre">ns</span></code>.
-The unit of <code class="docutils literal notranslate"><span class="pre">ns</span></code> is available only when <code class="docutils literal notranslate"><span class="pre">backend</span></code> object is provided.</p></li>
-<li><p><strong>show_waveform_info</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Show waveform annotations, i.e. name, of waveforms.
-Set <code class="docutils literal notranslate"><span class="pre">True</span></code> to show additional information about waveforms.</p></li>
-<li><p><strong>plotter</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – <p>Name of plotter API to generate an output image.
-One of following APIs should be specified:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mpl2d: Matplotlib API for 2D image generation.
-    Matplotlib API to generate 2D image. Charts are placed along y axis with
-    vertical offset. This API takes matplotlib.axes.Axes as `axis` input.
-</pre></div>
-</div>
-<p><cite>axis</cite> and <cite>style</cite> kwargs may depend on the plotter.</p>
-</p></li>
-<li><p><strong>axis</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Arbitrary object passed to the plotter. If this object is provided,
-the plotters use a given <code class="docutils literal notranslate"><span class="pre">axis</span></code> instead of internally initializing
-a figure object. This object format depends on the plotter.
-See plotter argument for details.</p></li>
-<li><p><strong>dt</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Deprecated. This argument is used by the legacy pulse drawer.</p></li>
-<li><p><strong>filename</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Deprecated. This argument is used by the legacy pulse drawer.
-To save output image, you can call <cite>.savefig</cite> method with
-returned Matplotlib Figure object.</p></li>
-<li><p><strong>interp_method</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Deprecated. This argument is used by the legacy pulse drawer.</p></li>
-<li><p><strong>scale</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Deprecated. This argument is used by the legacy pulse drawer.</p></li>
-<li><p><strong>interactive</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Deprecated. This argument is used by the legacy pulse drawer.</p></li>
-<li><p><strong>draw_title</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Deprecated. This argument is used by the legacy pulse drawer.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Visualization output data.
-The returned data type depends on the <code class="docutils literal notranslate"><span class="pre">plotter</span></code>.
-If matplotlib family is specified, this will be a <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.Figure</span></code> data.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.get_waveform">
-<code class="sig-name descname">get_waveform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/library/parametric_pulses.html#Gaussian.get_waveform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.pulse.Gaussian.get_waveform" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Return a Waveform with samples filled according to the formula that the pulse
-represents and the parameter values it contains.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Waveform</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Gaussian.id">
-<em class="property">property </em><code class="sig-name descname">id</code><a class="headerlink" href="#qiskit.pulse.Gaussian.id" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">id</code><a class="headerlink" href="#qiskit.pulse.Gaussian.id" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Unique identifier for this pulse.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
@@ -534,49 +407,28 @@ represents and the parameter values it contains.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.is_parameterized">
-<code class="sig-name descname">is_parameterized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.pulse.Gaussian.is_parameterized" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Return True iff the instruction is parameterized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.pulse.Gaussian.limit_amplitude">
+<code class="sig-name descname">limit_amplitude</code><em class="property"> = True</em><a class="headerlink" href="#qiskit.pulse.Gaussian.limit_amplitude" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Gaussian.parameters">
-<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.pulse.Gaussian.parameters" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Return a dictionary containing the pulse’s parameters.</p>
-<dl class="field-list simple">
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.pulse.Gaussian.parameters" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.pulse.Gaussian.sigma">
-<em class="property">property </em><code class="sig-name descname">sigma</code><a class="headerlink" href="#qiskit.pulse.Gaussian.sigma" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">sigma</code><a class="headerlink" href="#qiskit.pulse.Gaussian.sigma" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>The Gaussian standard deviation of the pulse width.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.pulse.Gaussian.validate_parameters">
-<code class="sig-name descname">validate_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/pulse/library/parametric_pulses.html#Gaussian.validate_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.pulse.Gaussian.validate_parameters" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Validate parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Lève</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.pulse.PulseError.html#qiskit.pulse.PulseError" title="qiskit.pulse.PulseError"><strong>PulseError</strong></a> – If the parameters passed are not valid.</p>
-</dd>
-<dt class="field-even">Type renvoyé</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -593,10 +445,10 @@ represents and the parameter values it contains.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.pulse.GaussianSquare.html" class="btn btn-neutral float-right" title="qiskit.pulse.GaussianSquare" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.pulse.Gaussian.assign.html" class="btn btn-neutral float-right" title="qiskit.pulse.Gaussian.assign" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.pulse.Drag.html" class="btn btn-neutral" title="qiskit.pulse.Drag" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.pulse.Drag.validate_parameters.html" class="btn btn-neutral" title="qiskit.pulse.Drag.validate_parameters" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -610,7 +462,7 @@ represents and the parameter values it contains.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -629,7 +481,7 @@ represents and the parameter values it contains.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.pulse.Gaussian</a></li>
+<li><a class="reference internal" href="#">Gaussian</a></li>
 </ul>
 
             </div>
@@ -693,7 +545,7 @@ represents and the parameter values it contains.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -716,9 +568,11 @@ represents and the parameter values it contains.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

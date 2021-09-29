@@ -1,34 +1,27 @@
-﻿qiskit.ignis.verification.TomographyFitter
-==========================================
+﻿TomographyFitter
+================
 
 .. currentmodule:: qiskit.ignis.verification
 
 .. autoclass:: TomographyFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TomographyFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TomographyFitter.add_data
       ~TomographyFitter.fit
       ~TomographyFitter.set_measure_basis
       ~TomographyFitter.set_preparation_basis
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TomographyFitter.data
-      ~TomographyFitter.measure_basis
-      ~TomographyFitter.preparation_basis
-   
-   
+   .. autoattribute:: data
+   .. autoattribute:: measure_basis
+   .. autoattribute:: preparation_basis

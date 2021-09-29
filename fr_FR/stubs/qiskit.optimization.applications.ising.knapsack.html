@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.applications.ising.knapsack &mdash; Documentation Qiskit 0.29.0</title>
+  <title>qiskit.optimization.applications.ising.knapsack &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -233,7 +240,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -350,114 +357,17 @@ We need to maximize sum(x[i]*v[i]) while respecting W_max &gt;= sum(x[i]*w[i])</
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.knapsack.get_operator" title="qiskit.optimization.applications.ising.knapsack.get_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code></a>(values, weights, max_weight)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code>(values, weights, max_weight)</p></td>
 <td><p>Generate Hamiltonian for the knapsack problem.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.knapsack.get_solution" title="qiskit.optimization.applications.ising.knapsack.get_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_solution</span></code></a>(x, values)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_solution</span></code>(x, values)</p></td>
 <td><p>Get the solution to the knapsack problem from the bitstring that represents to the ground state of the Hamiltonian</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.knapsack.knapsack_value_weight" title="qiskit.optimization.applications.ising.knapsack.knapsack_value_weight"><code class="xref py py-obj docutils literal notranslate"><span class="pre">knapsack_value_weight</span></code></a>(solution, values, weights)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">knapsack_value_weight</span></code>(solution, values, weights)</p></td>
 <td><p>Get the total wight and value of the items taken in the knapsack.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.knapsack.get_operator">
-<code class="sig-name descname">get_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">weights</span></em>, <em class="sig-param"><span class="n">max_weight</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/knapsack.html#get_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.knapsack.get_operator" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Generate Hamiltonian for the knapsack problem.</p>
-<p class="rubric">Notes</p>
-<p>To build the cost function for the Hamiltonian we add a term S
-that will vary with our solution. In order to make it change wit the solution
-we enhance X with a number of additional bits X” = [x_0,..x_{n-1},y_{n}..y_{n+m-1}].
-The bytes y[i] will be the binary representation of S.
-In this way the optimizer will be able to optimize S as well as X.</p>
-<p>The cost function is
-$$C(X”) = M(W_{max} - sum_{i=0}^{n-1} x_{i}w_{i} - S)^2 - sum_{i}^{n-1} x_{i}v_{i}$$
-where S = sum(2**j * y[j]), j goes from n to n+log(W_max).
-M is a number large enough to dominate the sum of values.</p>
-<p>Because S can only be positive, when W_max &gt;= sum(x[i]*w[i])
-the optimizer can find an S (or better the y[j] that compose S)
-so that it will take the first term to 0.
-This way the function is dominated by the sum of values.
-If W_max &lt; sum(x[i]*w[i]) then the first term can never be 0
-and, multiplied by a large M, will always dominate the function.</p>
-<p>The minimum value of the function will be that where the constraint is respected
-and the sum of values is maximized.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>values</strong> (<em>list of non-negative integers</em>) – a list of values</p></li>
-<li><p><strong>weights</strong> (<em>list of non-negative integers</em>) – a list of weights</p></li>
-<li><p><strong>max_weight</strong> (<em>non negative integer</em>) – the maximum weight the knapsack can carry</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>operator for the Hamiltonian
-float: a constant shift for the obj function.</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator" title="qiskit.aqua.operators.legacy.WeightedPauliOperator">WeightedPauliOperator</a></p>
-</dd>
-<dt class="field-even">Lève</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – values and weights have different lengths</p></li>
-<li><p><strong>ValueError</strong> – A value or a weight is negative</p></li>
-<li><p><strong>ValueError</strong> – All values are zero</p></li>
-<li><p><strong>ValueError</strong> – max_weight is negative</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.knapsack.get_solution">
-<code class="sig-name descname">get_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">values</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/knapsack.html#get_solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.knapsack.get_solution" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Get the solution to the knapsack problem
-from the bitstring that represents
-to the ground state of the Hamiltonian</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) – the ground state of the Hamiltonian.</p></li>
-<li><p><strong>values</strong> (<em>numpy.ndarray</em>) – the list of values</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>a bit string that has a “1” at the indexes</dt><dd><p>corresponding to values that have been taken in the knapsack.
-i.e. if the solution has a “1” at index i then
-the value values[i] has been taken in the knapsack</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.knapsack.knapsack_value_weight">
-<code class="sig-name descname">knapsack_value_weight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solution</span></em>, <em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">weights</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/knapsack.html#knapsack_value_weight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.knapsack.knapsack_value_weight" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Get the total wight and value of the items taken in the knapsack.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>solution</strong> (<em>numpy.ndarray</em>) – binary string that represents the solution to the problem.</p></li>
-<li><p><strong>values</strong> (<em>numpy.ndarray</em>) – the list of values</p></li>
-<li><p><strong>weights</strong> (<em>numpy.ndarray</em>) – the list of weights</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>the total value and weight of the items in the knapsack</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
@@ -485,7 +395,7 @@ the value values[i] has been taken in the knapsack</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -568,7 +478,7 @@ the value values[i] has been taken in the knapsack</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -591,9 +501,11 @@ the value values[i] has been taken in the knapsack</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

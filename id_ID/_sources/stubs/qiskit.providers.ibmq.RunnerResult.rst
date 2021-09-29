@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.RunnerResult
-==================================
+﻿RunnerResult
+============
 
 .. currentmodule:: qiskit.providers.ibmq
 
 .. autoclass:: RunnerResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RunnerResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RunnerResult.data
       ~RunnerResult.decode
       ~RunnerResult.from_dict
@@ -23,9 +22,5 @@
       ~RunnerResult.get_statevector
       ~RunnerResult.get_unitary
       ~RunnerResult.to_dict
-   
-   
 
-   
-   
-   
+

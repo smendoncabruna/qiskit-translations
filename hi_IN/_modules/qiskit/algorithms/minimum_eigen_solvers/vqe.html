@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.minimum_eigen_solvers.vqe &mdash; Qiskit 0.29.0 दिग्दर्शिका</title>
+  <title>qiskit.algorithms.minimum_eigen_solvers.vqe &mdash; Qiskit 0.30.0 दिग्दर्शिका</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -408,7 +415,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="VQE.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">ansatz</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">optimizer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Optimizer</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -511,7 +518,7 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">print_settings</span><span class="p">())</span>
 
         <span class="c1"># TODO remove this once the stateful methods are deleted</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ret</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ret</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">ansatz</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]:</span>
@@ -621,7 +628,7 @@
         <span class="n">ret</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-<div class="viewcode-block" id="VQE.print_settings"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.print_settings">[docs]</a>    <span class="k">def</span> <span class="nf">print_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="VQE.print_settings"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.print_settings.html#qiskit.algorithms.VQE.print_settings">[docs]</a>    <span class="k">def</span> <span class="nf">print_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Preparing the setting of VQE into a string.</span>
 
@@ -643,7 +650,7 @@
         <span class="n">ret</span> <span class="o">+=</span> <span class="s2">&quot;===============================================================</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="VQE.construct_expectation"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.construct_expectation">[docs]</a>    <span class="k">def</span> <span class="nf">construct_expectation</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.construct_expectation"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.construct_expectation.html#qiskit.algorithms.VQE.construct_expectation">[docs]</a>    <span class="k">def</span> <span class="nf">construct_expectation</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameter</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span>
@@ -696,7 +703,7 @@
 
         <span class="k">return</span> <span class="n">expect_op</span></div>
 
-<div class="viewcode-block" id="VQE.construct_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.construct_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">construct_circuit</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.construct_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.construct_circuit.html#qiskit.algorithms.VQE.construct_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">construct_circuit</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameter</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span>
@@ -726,7 +733,7 @@
 
         <span class="k">return</span> <span class="n">circuits</span></div>
 
-<div class="viewcode-block" id="VQE.supports_aux_operators"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.supports_aux_operators">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="VQE.supports_aux_operators"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.supports_aux_operators.html#qiskit.algorithms.VQE.supports_aux_operators">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">supports_aux_operators</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span></div>
 
@@ -757,7 +764,7 @@
         <span class="n">aux_operator_eigenvalues</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">aux_operator_eigenvalues</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">aux_operator_eigenvalues</span>
 
-<div class="viewcode-block" id="VQE.compute_minimum_eigenvalue"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.compute_minimum_eigenvalue">[docs]</a>    <span class="k">def</span> <span class="nf">compute_minimum_eigenvalue</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.compute_minimum_eigenvalue"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.compute_minimum_eigenvalue.html#qiskit.algorithms.VQE.compute_minimum_eigenvalue">[docs]</a>    <span class="k">def</span> <span class="nf">compute_minimum_eigenvalue</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span> <span class="n">aux_operators</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MinimumEigensolverResult</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">compute_minimum_eigenvalue</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="n">aux_operators</span><span class="p">)</span>
@@ -843,7 +850,7 @@
 
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="VQE.get_energy_evaluation"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.get_energy_evaluation">[docs]</a>    <span class="k">def</span> <span class="nf">get_energy_evaluation</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.get_energy_evaluation"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.get_energy_evaluation.html#qiskit.algorithms.VQE.get_energy_evaluation">[docs]</a>    <span class="k">def</span> <span class="nf">get_energy_evaluation</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span>
         <span class="n">return_expectation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -908,7 +915,7 @@
 
         <span class="k">return</span> <span class="n">energy_evaluation</span></div>
 
-<div class="viewcode-block" id="VQE.get_optimal_cost"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.get_optimal_cost">[docs]</a>    <span class="nd">@deprecate_function</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.get_optimal_cost"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.get_optimal_cost.html#qiskit.algorithms.VQE.get_optimal_cost">[docs]</a>    <span class="nd">@deprecate_function</span><span class="p">(</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">The VQE.get_optimal_cost method is deprecated as of Qiskit Terra 0.18.0</span>
 <span class="sd">and will be removed no sooner than 3 months after the releasedate.</span>
@@ -923,7 +930,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ret</span><span class="o">.</span><span class="n">optimal_value</span></div>
 
-<div class="viewcode-block" id="VQE.get_optimal_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.get_optimal_circuit">[docs]</a>    <span class="nd">@deprecate_function</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.get_optimal_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.get_optimal_circuit.html#qiskit.algorithms.VQE.get_optimal_circuit">[docs]</a>    <span class="nd">@deprecate_function</span><span class="p">(</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">The VQE.get_optimal_circuit method is deprecated as of Qiskit Terra</span>
 <span class="sd">0.18.0 and will be removed no sooner than 3 months after the releasedate.</span>
@@ -939,7 +946,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ansatz</span><span class="o">.</span><span class="n">assign_parameters</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ret</span><span class="o">.</span><span class="n">optimal_parameters</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="VQE.get_optimal_vector"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.html#qiskit.algorithms.VQE.get_optimal_vector">[docs]</a>    <span class="nd">@deprecate_function</span><span class="p">(</span>
+<div class="viewcode-block" id="VQE.get_optimal_vector"><a class="viewcode-back" href="../../../../stubs/qiskit.algorithms.VQE.get_optimal_vector.html#qiskit.algorithms.VQE.get_optimal_vector">[docs]</a>    <span class="nd">@deprecate_function</span><span class="p">(</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">The VQE.get_optimal_vector method is deprecated as of Qiskit Terra 0.18.0</span>
 <span class="sd">and will be removed no sooner than 3 months after the releasedate.</span>
@@ -1071,7 +1078,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      अंतिम बार सम्पादित 2021/08/13.
+      अंतिम बार सम्पादित 2021/09/23.
 
     </p>
   </div>
@@ -1152,7 +1159,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1175,9 +1182,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

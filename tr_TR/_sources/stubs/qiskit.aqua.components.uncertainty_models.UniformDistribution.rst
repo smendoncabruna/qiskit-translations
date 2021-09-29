@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.UniformDistribution
-==============================================================
+﻿UniformDistribution
+===================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: UniformDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UniformDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UniformDistribution.build
       ~UniformDistribution.build_controlled
       ~UniformDistribution.build_controlled_inverse
@@ -27,20 +26,14 @@
       ~UniformDistribution.pdf_to_probabilities
       ~UniformDistribution.required_ancillas
       ~UniformDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UniformDistribution.high
-      ~UniformDistribution.low
-      ~UniformDistribution.num_target_qubits
-      ~UniformDistribution.num_values
-      ~UniformDistribution.probabilities
-      ~UniformDistribution.values
-   
-   
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: values

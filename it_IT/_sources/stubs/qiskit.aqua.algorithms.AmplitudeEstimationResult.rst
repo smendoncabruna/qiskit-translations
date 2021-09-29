@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.AmplitudeEstimationResult
-================================================
+﻿AmplitudeEstimationResult
+=========================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: AmplitudeEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AmplitudeEstimationResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AmplitudeEstimationResult.clear
       ~AmplitudeEstimationResult.combine
       ~AmplitudeEstimationResult.copy
@@ -27,28 +26,22 @@
       ~AmplitudeEstimationResult.setdefault
       ~AmplitudeEstimationResult.update
       ~AmplitudeEstimationResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AmplitudeEstimationResult.a_estimation
-      ~AmplitudeEstimationResult.a_samples
-      ~AmplitudeEstimationResult.circuit_result
-      ~AmplitudeEstimationResult.confidence_interval
-      ~AmplitudeEstimationResult.estimation
-      ~AmplitudeEstimationResult.mapped_a_samples
-      ~AmplitudeEstimationResult.mapped_values
-      ~AmplitudeEstimationResult.max_probability
-      ~AmplitudeEstimationResult.ml_value
-      ~AmplitudeEstimationResult.mle
-      ~AmplitudeEstimationResult.num_oracle_queries
-      ~AmplitudeEstimationResult.probabilities
-      ~AmplitudeEstimationResult.shots
-      ~AmplitudeEstimationResult.y_measurements
-   
-   
+   .. autoattribute:: a_estimation
+   .. autoattribute:: a_samples
+   .. autoattribute:: circuit_result
+   .. autoattribute:: confidence_interval
+   .. autoattribute:: estimation
+   .. autoattribute:: mapped_a_samples
+   .. autoattribute:: mapped_values
+   .. autoattribute:: max_probability
+   .. autoattribute:: ml_value
+   .. autoattribute:: mle
+   .. autoattribute:: num_oracle_queries
+   .. autoattribute:: probabilities
+   .. autoattribute:: shots
+   .. autoattribute:: y_measurements

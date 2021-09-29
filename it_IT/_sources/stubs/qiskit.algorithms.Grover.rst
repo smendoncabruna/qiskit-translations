@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.Grover
-========================
+﻿Grover
+======
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: Grover
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Grover.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Grover.amplify
       ~Grover.construct_circuit
       ~Grover.optimal_num_iterations
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Grover.quantum_instance
-   
-   
+   .. autoattribute:: quantum_instance

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Grover’s Algorithm and Amplitude Amplification &mdash; Qiskit 0.29.0 documentation</title>
+  <title>Grover’s Algorithm and Amplitude Amplification &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -572,19 +579,19 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/06_grover.ipynb">tutorials/algorithms/06_grover.ipynb</a>.</p>
+<p>Ukurasa huu umezalishwa kutoka <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/06_grover.ipynb">tutorials/algorithms/06_grover.ipynb</a>.</p>
 </div>
 <section id="Grover’s-Algorithm-and-Amplitude-Amplification">
 <h1>Grover’s Algorithm and Amplitude Amplification<a class="headerlink" href="#Grover’s-Algorithm-and-Amplitude-Amplification" title="Permalink to this headline">¶</a></h1>
 <p>Grover’s algorithm is one of the most famous quantum algorithms introduced by Lov Grover in 1996 [1]. It has initially been proposed for unstructured search problems, i.e. for finding a marked element in a unstructured database. However, Grover’s algorithm is now a subroutine to several other algorithms, such as Grover Adaptive Search [2]. For the details of Grover’s algorithm, please see <a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/grover.html">Grover’s Algorithm</a> in the Qiskit textbook.</p>
 <p>Qiskit implements Grover’s algorithm in the <code class="docutils literal notranslate"><span class="pre">Grover</span></code> class. This class also includes the generalized version, Amplitude Amplification [3], and allows setting individual iterations and other meta-settings to Grover’s algorithm.</p>
-<p><strong>References:</strong></p>
+<p><strong>Marejeo:</strong></p>
 <p>[1]: L. K. Grover, A fast quantum mechanical algorithm for database search. Proceedings 28th Annual Symposium on the Theory of Computing (STOC) 1996, pp. 212-219. <a class="reference external" href="https://arxiv.org/abs/quant-ph/9605043">https://arxiv.org/abs/quant-ph/9605043</a></p>
 <p>[2]: A. Gilliam, S. Woerner, C. Gonciulea, Grover Adaptive Search for Constrained Polynomial Binary Optimization. <a class="reference external" href="https://arxiv.org/abs/1912.04088">https://arxiv.org/abs/1912.04088</a></p>
 <p>[3]: Brassard, G., Hoyer, P., Mosca, M., &amp; Tapp, A. (2000). Quantum Amplitude Amplification and Estimation. <a class="reference external" href="http://arxiv.org/abs/quant-ph/0005055">http://arxiv.org/abs/quant-ph/0005055</a></p>
 <section id="Alogaridhimu-ya-Grover">
 <h2>Alogaridhimu ya Grover<a class="headerlink" href="#Alogaridhimu-ya-Grover" title="Permalink to this headline">¶</a></h2>
-<p>Grover’s algorithm uses the Grover operator <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> to amplify the amplitudes of the good states:</p>
+<p>Alogaridhimu ya Grover hutumia opereta ya Grover <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> kukuza tambo za hali nzuri:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{Q} = \mathcal{A}\mathcal{S_0}\mathcal{A}^\dagger \mathcal{S_f}\]</div>
 <p>Here, * <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> is the initial search state for the algorithm, which is just Hadamards, <span class="math notranslate nohighlight">\(H^{\otimes n}\)</span> for the textbook Grover search, but can be more elaborate for Amplitude Amplification * <span class="math notranslate nohighlight">\(\mathcal{S_0}\)</span> is the reflection about the all 0 state</p>
@@ -751,8 +758,8 @@ Top measurement: 11
 <h2>Amplitude amplification<a class="headerlink" href="#Amplitude-amplification" title="Permalink to this headline">¶</a></h2>
 <p>Grover’s algorithm uses Hadamard gates to create the uniform superposition of all the states at the beginning of the Grover operator <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span>. If some information on the good states is available, it might be useful to not start in a uniform superposition but only initialize specific states. This, generalized, version of Grover’s algorithm is referred to <em>Amplitude Amplification</em>.</p>
 <p>In Qiskit, the initial superposition state can easily be adjusted by setting the <code class="docutils literal notranslate"><span class="pre">state_preparation</span></code> argument.</p>
-<section id="State-preparation">
-<h3>State preparation<a class="headerlink" href="#State-preparation" title="Permalink to this headline">¶</a></h3>
+<section id="Maandalizi-ya-hali-ya-kwanta">
+<h3>Maandalizi ya hali ya kwanta<a class="headerlink" href="#Maandalizi-ya-hali-ya-kwanta" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">state_preparation</span></code> argument is used to specify a quantum circuit that prepares a quantum state for the start point of the amplitude amplification. By default, a circuit with $H^{<span class="math">\otimes `n} $ is used to prepare uniform superposition (so it will be Grover’s search). The diffusion circuit of the amplitude amplification reflects ``state_preparation`</span> automatically.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -989,12 +996,12 @@ True
 </pre></div></div>
 </div>
 </section>
-<section id="The-number-of-iterations">
-<h3>The number of <code class="docutils literal notranslate"><span class="pre">iterations</span></code><a class="headerlink" href="#The-number-of-iterations" title="Permalink to this headline">¶</a></h3>
+<section id="Idadi-ya-iterations">
+<h3>Idadi ya <code class="docutils literal notranslate"><span class="pre">iterations</span></code><a class="headerlink" href="#Idadi-ya-iterations" title="Permalink to this headline">¶</a></h3>
 <p>The number of repetition of applying the Grover operator is important to obtain the correct result with Grover’s algorithm. The number of iteration can be set by the <code class="docutils literal notranslate"><span class="pre">iteration</span></code> argument of <code class="docutils literal notranslate"><span class="pre">Grover</span></code>. The following inputs are supported: * an integer to specify a single power of the Grover operator that’s applied * or a list of integers, in which all these different powers of the Grover operator are run consecutively and after each time we check if a correct solution has been found</p>
 <p>Additionally there is the <code class="docutils literal notranslate"><span class="pre">sample_from_iterations</span></code> argument. When it is <code class="docutils literal notranslate"><span class="pre">True</span></code>, instead of the specific power in <code class="docutils literal notranslate"><span class="pre">iterations</span></code>, a random integer between 0 and the value in <code class="docutils literal notranslate"><span class="pre">iteration</span></code> is used as the power Grover’s operator. This approach is useful when we don’t even know the number of solution.</p>
 <p>For more details of the algorithm using <code class="docutils literal notranslate"><span class="pre">sample_from_iterations</span></code>, see [4].</p>
-<p><strong>References:</strong></p>
+<p><strong>Marejeo:</strong></p>
 <p>[4]: Boyer et al., Tight bounds on quantum searching <a class="reference external" href="https://arxiv.org/abs/quant-ph/9605034">arxiv:quant-ph/9605034</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
@@ -1136,7 +1143,7 @@ True
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -1162,13 +1169,13 @@ True
 </ul>
 </li>
 <li><a class="reference internal" href="#Amplitude-amplification">Amplitude amplification</a><ul>
-<li><a class="reference internal" href="#State-preparation">State preparation</a></li>
+<li><a class="reference internal" href="#Maandalizi-ya-hali-ya-kwanta">Maandalizi ya hali ya kwanta</a></li>
 <li><a class="reference internal" href="#Full-flexibility">Full flexibility</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#Dive-into-other-arguments-of-Grover">Dive into other arguments of <code class="docutils literal notranslate"><span class="pre">Grover</span></code></a><ul>
 <li><a class="reference internal" href="#Specifying-good_state">Specifying <code class="docutils literal notranslate"><span class="pre">good_state</span></code></a></li>
-<li><a class="reference internal" href="#The-number-of-iterations">The number of <code class="docutils literal notranslate"><span class="pre">iterations</span></code></a></li>
+<li><a class="reference internal" href="#Idadi-ya-iterations">Idadi ya <code class="docutils literal notranslate"><span class="pre">iterations</span></code></a></li>
 <li><a class="reference internal" href="#Applying-post_processing">Applying <code class="docutils literal notranslate"><span class="pre">post_processing</span></code></a></li>
 </ul>
 </li>
@@ -1237,7 +1244,7 @@ True
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1260,9 +1267,11 @@ True
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

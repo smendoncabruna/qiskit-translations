@@ -1,24 +1,16 @@
-﻿qiskit.optimization.algorithms.IntermediateResult
-=================================================
+﻿IntermediateResult
+==================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: IntermediateResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IntermediateResult.ALL_ITERATIONS
-      ~IntermediateResult.LAST_ITERATION
-      ~IntermediateResult.NO_ITERATIONS
-   
-   
+   .. autoattribute:: ALL_ITERATIONS
+   .. autoattribute:: LAST_ITERATION
+   .. autoattribute:: NO_ITERATIONS

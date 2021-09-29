@@ -1,22 +1,10 @@
-﻿qiskit.providers.ibmq.experiment.DeviceComponent
-================================================
+﻿DeviceComponent
+===============
 
 .. currentmodule:: qiskit.providers.ibmq.experiment
 
 .. autoclass:: DeviceComponent
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~DeviceComponent.__init__
-   
-   
-
-   
-   
-   

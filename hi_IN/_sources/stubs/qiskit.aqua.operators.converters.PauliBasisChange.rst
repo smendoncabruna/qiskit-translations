@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.converters.PauliBasisChange
-=================================================
+﻿PauliBasisChange
+================
 
 .. currentmodule:: qiskit.aqua.operators.converters
 
 .. autoclass:: PauliBasisChange
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PauliBasisChange.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliBasisChange.construct_cnot_chain
       ~PauliBasisChange.convert
       ~PauliBasisChange.get_cob_circuit
@@ -24,15 +23,9 @@
       ~PauliBasisChange.operator_replacement_fn
       ~PauliBasisChange.pad_paulis_to_equal_length
       ~PauliBasisChange.statefn_replacement_fn
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PauliBasisChange.destination
-   
-   
+   .. autoattribute:: destination

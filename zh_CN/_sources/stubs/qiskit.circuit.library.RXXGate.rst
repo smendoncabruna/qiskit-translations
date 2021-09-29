@@ -1,49 +1,27 @@
-﻿qiskit.circuit.library.RXXGate
-==============================
+﻿RXXGate
+=======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: RXXGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~RXXGate.__init__
-      ~RXXGate.add_decomposition
-      ~RXXGate.assemble
-      ~RXXGate.broadcast_arguments
-      ~RXXGate.c_if
-      ~RXXGate.control
-      ~RXXGate.copy
-      ~RXXGate.inverse
-      ~RXXGate.is_parameterized
-      ~RXXGate.mirror
-      ~RXXGate.power
-      ~RXXGate.qasm
-      ~RXXGate.repeat
-      ~RXXGate.reverse_ops
-      ~RXXGate.soft_compare
-      ~RXXGate.to_matrix
-      ~RXXGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~RXXGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RXXGate.decompositions
-      ~RXXGate.definition
-      ~RXXGate.duration
-      ~RXXGate.label
-      ~RXXGate.params
-      ~RXXGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

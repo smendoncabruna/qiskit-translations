@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.NumTensorFactors
-=========================================
+﻿NumTensorFactors
+================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: NumTensorFactors
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumTensorFactors.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NumTensorFactors.name
       ~NumTensorFactors.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumTensorFactors.is_analysis_pass
-      ~NumTensorFactors.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

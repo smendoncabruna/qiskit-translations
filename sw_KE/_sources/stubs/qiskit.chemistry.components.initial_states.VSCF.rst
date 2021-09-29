@@ -1,29 +1,22 @@
-﻿qiskit.chemistry.components.initial\_states.VSCF
-================================================
+﻿VSCF
+====
 
 .. currentmodule:: qiskit.chemistry.components.initial_states
 
 .. autoclass:: VSCF
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VSCF.__init__
-      ~VSCF.construct_circuit
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~VSCF.construct_circuit
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VSCF.bitstr
-   
-   
+   .. autoattribute:: bitstr

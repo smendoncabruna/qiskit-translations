@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.algorithms.SlsqpOptimizer &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>SlsqpOptimizer &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="qiskit.optimization.algorithms.SolutionSample" href="qiskit.optimization.algorithms.SolutionSample.html" />
-    <link rel="prev" title="qiskit.optimization.algorithms.SlsqpOptimizationResult" href="qiskit.optimization.algorithms.SlsqpOptimizationResult.html" /> 
+    <link rel="next" title="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg" href="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg.html" />
+    <link rel="prev" title="SlsqpOptimizationResult" href="qiskit.optimization.algorithms.SlsqpOptimizationResult.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.optimization.algorithms.html">Optimization algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.optimization.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.optimization.algorithms.SlsqpOptimizer</li>
+      <li>SlsqpOptimizer</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-optimization-algorithms-slsqpoptimizer">
-<h1>qiskit.optimization.algorithms.SlsqpOptimizer<a class="headerlink" href="#qiskit-optimization-algorithms-slsqpoptimizer" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="slsqpoptimizer">
+<h1>SlsqpOptimizer<a class="headerlink" href="#slsqpoptimizer" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.optimization.algorithms.SlsqpOptimizer">
 <em class="property">class </em><code class="sig-name descname">SlsqpOptimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">acc</span><span class="o">=</span><span class="default_value">1e-06</span></em>, <em class="sig-param"><span class="n">iprint</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">trials</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">clip</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">full_output</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/algorithms/slsqp_optimizer.html#SlsqpOptimizer"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>The SciPy SLSQP optimizer wrapped as an Qiskit <a class="reference internal" href="qiskit.optimization.algorithms.OptimizationAlgorithm.html#qiskit.optimization.algorithms.OptimizationAlgorithm" title="qiskit.optimization.algorithms.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a>.</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.optimization.algorithms.multistart_optimizer.MultiStartOptimizer</span></code></p>
+<p>The SciPy SLSQP optimizer wrapped as an Qiskit <a class="reference internal" href="qiskit.optimization.algorithms.OptimizationAlgorithm.html#qiskit.optimization.algorithms.OptimizationAlgorithm" title="qiskit.optimization.algorithms.OptimizationAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationAlgorithm</span></code></a>.</p>
 <p>This class provides a wrapper for <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp</span></code>
 (<a class="reference external" href="https://docs.scipy.org/doc/scipy-0.13.0/reference/generated/scipy.optimize.fmin_slsqp.html">https://docs.scipy.org/doc/scipy-0.13.0/reference/generated/scipy.optimize.fmin_slsqp.html</a>)
 to be used within the optimization module.
@@ -354,7 +362,7 @@ The arguments for <code class="docutils literal notranslate"><span class="pre">f
 </div>
 <p>Initializes the SlsqpOptimizer.</p>
 <p>This initializer takes the algorithmic parameters of SLSQP and stores them for later use
-of <code class="docutils literal notranslate"><span class="pre">fmin_slsqp</span></code> when <a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.solve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">solve()</span></code></a> is invoked.
+of <code class="docutils literal notranslate"><span class="pre">fmin_slsqp</span></code> when <a class="reference internal" href="qiskit.optimization.algorithms.SlsqpOptimizer.solve.html#qiskit.optimization.algorithms.SlsqpOptimizer.solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.solve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">solve()</span></code></a> is invoked.
 This optimizer can be applied to find a (local) optimum for problems consisting of only
 continuous variables.</p>
 <dl class="field-list simple">
@@ -381,40 +389,6 @@ Otherwise, output final objective function and summary information.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.optimization.algorithms.SlsqpOptimizer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iter</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">acc</span><span class="o">=</span><span class="default_value">1e-06</span></em>, <em class="sig-param"><span class="n">iprint</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">trials</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">clip</span><span class="o">=</span><span class="default_value">100.0</span></em>, <em class="sig-param"><span class="n">full_output</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/algorithms/slsqp_optimizer.html#SlsqpOptimizer.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Initializes the SlsqpOptimizer.</p>
-<p>This initializer takes the algorithmic parameters of SLSQP and stores them for later use
-of <code class="docutils literal notranslate"><span class="pre">fmin_slsqp</span></code> when <a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.solve"><code class="xref py py-meth docutils literal notranslate"><span class="pre">solve()</span></code></a> is invoked.
-This optimizer can be applied to find a (local) optimum for problems consisting of only
-continuous variables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>iter</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The maximum number of iterations.</p></li>
-<li><p><strong>acc</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Requested accuracy.</p></li>
-<li><p><strong>iprint</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – <p>The verbosity of fmin_slsqp :</p>
-<ul>
-<li><p>iprint &lt;= 0 : Silent operation</p></li>
-<li><p>iprint == 1 : Print summary upon completion (default)</p></li>
-<li><p>iprint &gt;= 2 : Print status of each iterate and summary</p></li>
-</ul>
-</p></li>
-<li><p><strong>trials</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of trials for multi-start method. The first trial is solved with
-the initial guess of zero. If more than one trial is specified then
-initial guesses are uniformly drawn from <code class="docutils literal notranslate"><span class="pre">[lowerbound,</span> <span class="pre">upperbound]</span></code>
-with potential clipping.</p></li>
-<li><p><strong>clip</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Clipping parameter for the initial guesses in the multi-start method.
-If a variable is unbounded then the lower bound and/or upper bound are replaced
-with the <code class="docutils literal notranslate"><span class="pre">-clip</span></code> or <code class="docutils literal notranslate"><span class="pre">clip</span></code> values correspondingly for the initial guesses.</p></li>
-<li><p><strong>full_output</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, return only the minimizer of func (default).
-Otherwise, output final objective function and summary information.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -422,41 +396,24 @@ Otherwise, output final objective function and summary information.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.__init__" title="qiskit.optimization.algorithms.SlsqpOptimizer.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([iter, acc, iprint, trials, clip, …])</p></td>
-<td><p>Initializes the SlsqpOptimizer.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg" title="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_compatibility_msg</span></code></a>(problem)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg.html#qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg" title="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_compatibility_msg</span></code></a></p></td>
 <td><p>Checks whether a given problem can be solved with this optimizer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible" title="qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_compatible</span></code></a>(problem)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible.html#qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible" title="qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_compatible</span></code></a></p></td>
 <td><p>Checks whether a given problem can be solved with the optimizer implementing this method.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_start_solve</span></code></a>(minimize, problem)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve.html#qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_start_solve</span></code></a></p></td>
 <td><p>Applies a multi start method given a local optimizer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(problem)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.optimization.algorithms.SlsqpOptimizer.solve.html#qiskit.optimization.algorithms.SlsqpOptimizer.solve" title="qiskit.optimization.algorithms.SlsqpOptimizer.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a></p></td>
 <td><p>Tries to solves the given problem using the optimizer.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.clip" title="qiskit.optimization.algorithms.SlsqpOptimizer.clip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clip</span></code></a></p></td>
-<td><p>Returns the clip value for this optimizer.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.SlsqpOptimizer.trials" title="qiskit.optimization.algorithms.SlsqpOptimizer.trials"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trials</span></code></a></p></td>
-<td><p>Returns the number of trials for this optimizer.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.algorithms.SlsqpOptimizer.clip">
-<em class="property">property </em><code class="sig-name descname">clip</code><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.clip" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">clip</code><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.clip" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Returns the clip value for this optimizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -468,86 +425,9 @@ Otherwise, output final objective function and summary information.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg">
-<code class="sig-name descname">get_compatibility_msg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">problem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/algorithms/slsqp_optimizer.html#SlsqpOptimizer.get_compatibility_msg"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Checks whether a given problem can be solved with this optimizer.</p>
-<p>Checks whether the given problem is compatible, i.e., whether the problem contains only
-continuous variables, and otherwise, returns a message explaining the incompatibility.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>) – The optimization problem to check compatibility.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>Returns a string describing the incompatibility.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible">
-<code class="sig-name descname">is_compatible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.is_compatible" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Checks whether a given problem can be solved with the optimizer implementing this method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>) – The optimization problem to check compatibility.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>Returns True if the problem is compatible, False otherwise.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve">
-<code class="sig-name descname">multi_start_solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minimize</span></em>, <em class="sig-param"><span class="n">problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.multi_start_solve" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Applies a multi start method given a local optimizer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>minimize</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – A callable object that minimizes the problem specified</p></li>
-<li><p><strong>problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>) – A problem to solve</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>The result of the multi start algorithm applied to the problem.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.algorithms.SlsqpOptimizer.solve">
-<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">problem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/algorithms/slsqp_optimizer.html#SlsqpOptimizer.solve"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.solve" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Tries to solves the given problem using the optimizer.</p>
-<p>Runs the optimizer to try to solve the optimization problem.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>) – The problem to be solved.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OptimizationResult</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>The result of the optimizer applied to the problem.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.optimization.QiskitOptimizationError.html#qiskit.optimization.QiskitOptimizationError" title="qiskit.optimization.QiskitOptimizationError"><strong>QiskitOptimizationError</strong></a> – If the problem is incompatible with the optimizer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.algorithms.SlsqpOptimizer.trials">
-<em class="property">property </em><code class="sig-name descname">trials</code><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.trials" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">trials</code><a class="headerlink" href="#qiskit.optimization.algorithms.SlsqpOptimizer.trials" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Returns the number of trials for this optimizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -571,10 +451,10 @@ continuous variables, and otherwise, returns a message explaining the incompatib
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.optimization.algorithms.SolutionSample.html" class="btn btn-neutral float-right" title="qiskit.optimization.algorithms.SolutionSample" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg.html" class="btn btn-neutral float-right" title="qiskit.optimization.algorithms.SlsqpOptimizer.get_compatibility_msg" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.optimization.algorithms.SlsqpOptimizationResult.html" class="btn btn-neutral" title="qiskit.optimization.algorithms.SlsqpOptimizationResult" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.optimization.algorithms.SlsqpOptimizationResult.html" class="btn btn-neutral" title="SlsqpOptimizationResult" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -588,7 +468,7 @@ continuous variables, and otherwise, returns a message explaining the incompatib
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -607,7 +487,7 @@ continuous variables, and otherwise, returns a message explaining the incompatib
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.optimization.algorithms.SlsqpOptimizer</a></li>
+<li><a class="reference internal" href="#">SlsqpOptimizer</a></li>
 </ul>
 
             </div>
@@ -671,7 +551,7 @@ continuous variables, and otherwise, returns a message explaining the incompatib
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -694,9 +574,11 @@ continuous variables, and otherwise, returns a message explaining the incompatib
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

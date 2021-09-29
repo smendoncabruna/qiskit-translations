@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.list_ops.tensored_op &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.opflow.list_ops.tensored_op &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -353,7 +360,7 @@
 <span class="sd">    be tensored together, and therefore if they reach a point in which they can be, such as after</span>
 <span class="sd">    conversion to QuantumCircuits, they can be reduced by tensor product.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="TensoredOp.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.html#qiskit.opflow.list_ops.TensoredOp.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">oplist</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">],</span>
         <span class="n">coeff</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
@@ -365,7 +372,7 @@
 <span class="sd">            coeff: A coefficient multiplying the operator</span>
 <span class="sd">            abelian: Indicates whether the Operators in ``oplist`` are known to mutually commute.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">oplist</span><span class="p">,</span> <span class="n">combo_fn</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">reduce</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">),</span> <span class="n">coeff</span><span class="o">=</span><span class="n">coeff</span><span class="p">,</span> <span class="n">abelian</span><span class="o">=</span><span class="n">abelian</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">oplist</span><span class="p">,</span> <span class="n">combo_fn</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">reduce</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">),</span> <span class="n">coeff</span><span class="o">=</span><span class="n">coeff</span><span class="p">,</span> <span class="n">abelian</span><span class="o">=</span><span class="n">abelian</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">num_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -392,14 +399,14 @@
 
         <span class="k">return</span> <span class="n">TensoredOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">oplist</span> <span class="o">+</span> <span class="p">[</span><span class="n">I</span> <span class="o">^</span> <span class="n">num_qubits</span><span class="p">],</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TensoredOp.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.html#qiskit.opflow.list_ops.TensoredOp.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="TensoredOp.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.tensor.html#qiskit.opflow.list_ops.TensoredOp.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">TensoredOp</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">TensoredOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">oplist</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">oplist</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">TensoredOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">oplist</span> <span class="o">+</span> <span class="p">[</span><span class="n">other</span><span class="p">],</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span></div>
 
     <span class="c1"># TODO eval should partial trace the input into smaller StateFns each of size</span>
     <span class="c1">#  op.num_qubits for each op in oplist. Right now just works through matmul.</span>
-<div class="viewcode-block" id="TensoredOp.eval"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.html#qiskit.opflow.list_ops.TensoredOp.eval">[docs]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
+<div class="viewcode-block" id="TensoredOp.eval"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.eval.html#qiskit.opflow.list_ops.TensoredOp.eval">[docs]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">front</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">,</span> <span class="n">Statevector</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="nb">complex</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_empty</span><span class="p">():</span>
@@ -408,7 +415,7 @@
 
     <span class="c1"># Try collapsing list or trees of tensor products.</span>
     <span class="c1"># TODO do this smarter</span>
-<div class="viewcode-block" id="TensoredOp.reduce"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.html#qiskit.opflow.list_ops.TensoredOp.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="TensoredOp.reduce"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.reduce.html#qiskit.opflow.list_ops.TensoredOp.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="n">reduced_ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">reduce</span><span class="p">()</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">]</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_empty</span><span class="p">():</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">([],</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">abelian</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abelian</span><span class="p">)</span>
@@ -418,7 +425,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="n">reduced_ops</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TensoredOp.to_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.html#qiskit.opflow.list_ops.TensoredOp.to_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">to_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumCircuit</span><span class="p">:</span>
+<div class="viewcode-block" id="TensoredOp.to_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.TensoredOp.to_circuit.html#qiskit.opflow.list_ops.TensoredOp.to_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">to_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumCircuit</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns the quantum circuit, representing the tensored operator.</span>
 
 <span class="sd">        Returns:</span>
@@ -455,7 +462,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -535,7 +542,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -558,9 +565,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

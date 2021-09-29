@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started with Qiskit &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>Qiskit 入門 &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Getting Started with Qiskit</li>
+      <li>Qiskit 入門</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -572,12 +579,11 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits/1_getting_started_with_qiskit.ipynb">tutorials/circuits/1_getting_started_with_qiskit.ipynb</a>.</p>
+<p>このページは <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits/1_getting_started_with_qiskit.ipynb">tutorials/circuits/1_getting_started_with_qiskit.ipynb</a> から生成されました。</p>
 </div>
-<section id="Getting-Started-with-Qiskit">
-<h1>Getting Started with Qiskit<a class="headerlink" href="#Getting-Started-with-Qiskit" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Here, we provide an overview of working with Qiskit. The fundamental package of Qiskit is Terra that provides the basic building blocks necessary to program quantum computers. The fundamental unit of Qiskit is the <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_circuit">quantum circuit</a>. A basic workflow using Qiskit consists of two stages: <strong>Build</strong> and <strong>Execute</strong>. <strong>Build</strong> allows you to make different quantum circuits that represent the problem you are solving, and <strong>Execute</strong> that allows you to
-run them on different backends. After the jobs have been run, the data is collected and postprocessed depending on the desired output.</p>
+<section id="Qiskit-入門">
+<h1>Qiskit 入門<a class="headerlink" href="#Qiskit-入門" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ここでは、Qiskit での作業概要を説明します。Qiskit の基本パッケージは Terra です。これは、量子コンピューターのプログラミングに必要な、基本構成要素を提供します。Qiskit の基本単位は <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_circuit">量子回路</a> です。Qiskit を使用した基本的なワークフローは、 <strong>構築</strong> と <strong>実行</strong> の2つのステージで構成されます。 <strong>構築</strong> では、あなたが解きたい問題を表現するさまざまな量子回路を構築でき、 <strong>実行</strong> では、その量子回路をさまざまなバックエンドで実行します。ジョブが実行された後、目的とする出力に応じたデータが収集され、後処理されます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -589,11 +595,11 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<section id="Circuit-Basics">
-<h2>Circuit Basics<a class="headerlink" href="#Circuit-Basics" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<section id="Building-the-circuit">
-<h3>Building the circuit<a class="headerlink" href="#Building-the-circuit" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The basic element needed for your first program is the QuantumCircuit. We begin by creating a <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> comprised of three qubits.</p>
+<section id="回路の基本">
+<h2>回路の基本<a class="headerlink" href="#回路の基本" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="回線の構築">
+<h3>回線の構築<a class="headerlink" href="#回線の構築" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>最初のプログラムに必要な基本要素は、QuantumCircuitです。まず、3つの量子ビットで構成される <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> を作成します。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -604,12 +610,12 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<p>After you create the circuit with its registers, you can add gates (“operations”) to manipulate the registers. As you proceed through the tutorials you will find more gates and circuits; below is an example of a quantum circuit that makes a three-qubit GHZ state</p>
+<p>レジスタで回路を作成した後、レジスタを操作するためのゲート (「演算」) を追加することができます。チュートリアルを進めていくと、さらに多くのゲートと回路が見つかります。以下は3量子ビットのGHZ状態を作る量子回路の例です。</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = \left(|000\rangle+|111\rangle\right)/\sqrt{2}.\]</div>
-<p>To create such a state, we start with a three-qubit quantum register. By default, each qubit in the register is initialized to <span class="math notranslate nohighlight">\(|0\rangle\)</span>. To make the GHZ state, we apply the following gates: - A Hadamard gate <span class="math notranslate nohighlight">\(H\)</span> on qubit 0, which puts it into the superposition state <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>. - A controlled-Not operation (<span class="math notranslate nohighlight">\(C_{X}\)</span>) between qubit 0 and qubit 1. - A controlled-Not operation between qubit 0 and qubit 2.</p>
-<p>On an ideal quantum computer, the state produced by running this circuit would be the GHZ state above.</p>
-<p>In Qiskit, operations can be added to the circuit one by one, as shown below.</p>
+<p>このような状態を作成するには、3量子ビットの量子レジスターから始めます。デフォルトでは、レジスターの各量子ビットは <span class="math notranslate nohighlight">\(|0\rangle\)</span> に初期化されています。GHZ状態を作成するには、次のゲートを適用します:</p>
+<p>理想的な量子コンピューターでは、この回路を実行することによって生成される状態は、上記のGHZ状態になります。</p>
+<p>Qiskit では、以下に示すように、回路に操作を1つずつ追加することができます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -637,9 +643,9 @@ run them on different backends. After the jobs have been run, the data is collec
 </div>
 </section>
 </section>
-<section id="Visualize-Circuit">
-<h2>Visualize Circuit<a class="headerlink" href="#Visualize-Circuit" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can visualize your circuit using Qiskit <code class="docutils literal notranslate"><span class="pre">QuantumCircuit.draw()</span></code>, which plots the circuit in the form found in many textbooks.</p>
+<section id="回路の可視化">
+<h2>回路の可視化<a class="headerlink" href="#回路の可視化" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Qiskitの <code class="docutils literal notranslate"><span class="pre">QuantumCircuit.draw()</span></code> を使うことで、多くの教科書で見られるような形式に回路をプロットし、可視化することができます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -657,20 +663,20 @@ run them on different backends. After the jobs have been run, the data is collec
 <img alt="../../_images/tutorials_circuits_1_getting_started_with_qiskit_7_0.png" src="../../_images/tutorials_circuits_1_getting_started_with_qiskit_7_0.png" />
 </div>
 </div>
-<p>In this circuit, the qubits are put in order, with qubit zero at the top and qubit two at the bottom. The circuit is read left to right (meaning that gates that are applied earlier in the circuit show up further to the left).</p>
-<div class="alert alert-block alert-info"><p>When representing the state of a multi-qubit system, the tensor order used in Qiskit is different than that used in most physics textbooks. Suppose there are <span class="math notranslate nohighlight">\(n\)</span> qubits, and qubit <span class="math notranslate nohighlight">\(j\)</span> is labeled as <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit uses an ordering in which the <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> qubit is on the left side of the tensor product, so that the basis vectors are labeled as <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
-<p>For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as <span class="math notranslate nohighlight">\(|100\rangle\)</span>, whereas many physics textbooks would represent it as <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
-<p>This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) operation with qubit 0 being the control and qubit 1 being the target as</p>
+<p>この回路では、量子ビットが順番に配置されており、一番上が量子ビット0、一番下が量子ビット2です。回路は左から右に読みます (つまり、回路の初めに適用されたゲートが左側に表示されます)。</p>
+<div class="alert alert-block alert-info"><p>複数の量子ビットのシステムの状態を表現する際に Qiskit で使われるテンソル積の順番は、多くの物理の教科書で使われる順番と異なります。<span class="math notranslate nohighlight">\(n\)</span> 個の量子ビットがあり、<span class="math notranslate nohighlight">\(j\)</span> 番目の量子ビットは <span class="math notranslate nohighlight">\(Q_{j}\)</span> とラベル付けされていると仮定します。Qiskitでは、 <span class="math notranslate nohighlight">\(n\)</span> 番目の量子ビットはテンソル積の左側にあるので、基底ベクトルは、<span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span> とラベル付けされます。</p>
+<p>例えば、量子ビット0が状態0、量子ビット1が状態0、量子ビット2が状態1のとき、Qiskit　はこの状態を <span class="math notranslate nohighlight">\(|100\rangle\)</span> と表現します。一方、多くの物理の教科書では、この状態を <span class="math notranslate nohighlight">\(|001\rangle\)</span> と表現します。</p>
+<p>このラベリングの違いは、複数量子ビットの演算が行列として表現されるときの方法に影響します。例えば、Qiskit は制御 X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) 演算において量子ビット0を制御ビット、量子ビット1をターゲットビットとするとき、以下のように表現します。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_X = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\  0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\\end{pmatrix}.\end{split}\]</div>
 </div></section>
-<section id="Simulating-circuits-using-Qiskit-Aer">
-<h2>Simulating circuits using Qiskit Aer<a class="headerlink" href="#Simulating-circuits-using-Qiskit-Aer" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Qiskit Aer is our package for simulating quantum circuits. It provides many different backends for doing a simulation. There is also a basic, Python only, implementation called <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> in Terra that can be used as a drop-in replacement for <code class="docutils literal notranslate"><span class="pre">Aer</span></code> in the examples below.</p>
-<section id="Statevector-backend">
-<h3>Statevector backend<a class="headerlink" href="#Statevector-backend" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The most common backend in Qiskit Aer is the <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>. This simulator returns the quantum state, which is a complex vector of dimensions <span class="math notranslate nohighlight">\(2^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of qubits (so be careful using this as it will quickly get too large to run on your machine).</p>
-<p>To run the above circuit using the statevector simulator, first you need to import Aer and then set the backend to <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>.</p>
+<section id="Qiskit-Aer-を使った回路のシミュレーション">
+<h2>Qiskit Aer を使った回路のシミュレーション<a class="headerlink" href="#Qiskit-Aer-を使った回路のシミュレーション" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Qiskit Aer は、量子回路をシミュレーションするパッケージです。シミュレーションするためのバックエンドは複数あります。以下の例にあるように <code class="docutils literal notranslate"><span class="pre">Aer</span></code> の完全互換性部品として使うことのできるTerraの <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> と呼ばれるベーシックな Python のみの実装もあります。</p>
+<section id="状態ベクトル・バックエンド">
+<h3>状態ベクトル・バックエンド<a class="headerlink" href="#状態ベクトル・バックエンド" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Qiskit Aer における最も一般的なバックエンドは、<code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code> です。このシミュレーターは、 <span class="math notranslate nohighlight">\(2^n\)</span> 次元の複素ベクトルである量子状態を返します。ここで <span class="math notranslate nohighlight">\(n\)</span> は量子ビットの数です(ですので、ご自身のマシンで実行するには大きすぎる数にすぐ到達してしまうことに注意してください)。</p>
+<p>状態ベクトル・シミュレーターを使って、上記の回路を実行するためには、最初に Aer をインポートしてから、バックエンドを <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code> に設定する必要があります。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -684,8 +690,8 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<p>Now that we have chosen the backend, it’s time to compile and run the quantum circuit. In Qiskit we provide the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function for this. <code class="docutils literal notranslate"><span class="pre">execute</span></code> returns a <code class="docutils literal notranslate"><span class="pre">job</span></code> object that encapsulates information about the job submitted to the backend.</p>
-<div class="alert alert-block alert-info"><p>Tip: You can obtain the above parameters in Jupyter. Simply place the text cursor on a function and press Shift+Tab.</p>
+<p>バックエンドを選択したので、量子回路をコンパイルして実行します。Qiskit には、そのために <code class="docutils literal notranslate"><span class="pre">execute</span></code> 関数があります。<code class="docutils literal notranslate"><span class="pre">execute</span></code> は、バックエンドに送信されたジョブの情報をカプセル化するオブジェクトである <code class="docutils literal notranslate"><span class="pre">job</span></code> を返します。</p>
+<div class="alert alert-block alert-info"><p>ヒント：上記のパラメータは Jupyter で取得できます。関数にテキストカーソルを置いて、Shift+Tab を押すだけです。</p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -696,8 +702,8 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<p>When you run a program, a job object is made that has the following two useful methods: <code class="docutils literal notranslate"><span class="pre">job.status()</span></code> and <code class="docutils literal notranslate"><span class="pre">job.result()</span></code>, which return the status of the job and a result object, respectively.</p>
-<div class="alert alert-block alert-info"><p>Note: Jobs run asynchronously, but when the result method is called, it switches to synchronous and waits for it to finish before moving on to another task.</p>
+<p>プログラムを実行すると、二つの便利なメソッドをもったジョブ・オブジェクトが作られます： <code class="docutils literal notranslate"><span class="pre">job.status()</span></code> と <code class="docutils literal notranslate"><span class="pre">job.result()</span></code> です。これらは、ジョブのステータスと結果オブジェクトをそれぞれ返します。</p>
+<div class="alert alert-block alert-info"><p>注記：ジョブは非同期に実行されますが、result メソッドが呼び出されると同期に切り替わり、終了するのを待ってから別のタスクに進みます。</p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -707,7 +713,7 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<p>The results object contains the data and Qiskit provides the method <code class="docutils literal notranslate"><span class="pre">result.get_statevector(circ)</span></code> to return the state vector for the quantum circuit.</p>
+<p>Result オブジェクトにはデータが含まれており、Qiskit は量子回路の状態ベクトルを返す <code class="docutils literal notranslate"><span class="pre">result.get_statevector(circ)</span></code> メソッドを提供しています。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -727,8 +733,8 @@ run them on different backends. After the jobs have been run, the data is collec
  0.707+0.j]
 </pre></div></div>
 </div>
-<p>Qiskit also provides a visualization toolbox to allow you to view these results.</p>
-<p>Below, we use the visualization function to plot the real and imaginary components of the state density matrix <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<p>Qiskitは、これらの結果を見るための可視化ツールボックスも提供しています。</p>
+<p>以下のように、状態の密度行列である <span class="math notranslate nohighlight">\(\rho\)</span> の実数部と虚数部をプロットする可視化関数が使えます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -748,9 +754,9 @@ run them on different backends. After the jobs have been run, the data is collec
 </div>
 </div>
 </section>
-<section id="Unitary-backend">
-<h3>Unitary backend<a class="headerlink" href="#Unitary-backend" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Qiskit Aer also includes a <code class="docutils literal notranslate"><span class="pre">unitary_simulator</span></code> that works <em>provided all the elements in the circuit are unitary operations</em>. This backend calculates the <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span> matrix representing the gates in the quantum circuit.</p>
+<section id="ユニタリー・バックエンド">
+<h3>ユニタリー・バックエンド<a class="headerlink" href="#ユニタリー・バックエンド" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Qiskit Aer には、 <em>回路のすべての要素をユニタリー演算</em> にする <code class="docutils literal notranslate"><span class="pre">unitary_simulator</span></code> も含まれます。このバックエンドは、量子回路のゲートを表す <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span> の行列を計算します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -790,19 +796,19 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div></div>
 </div>
 </section>
-<section id="OpenQASM-backend">
-<h3>OpenQASM backend<a class="headerlink" href="#OpenQASM-backend" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The simulators above are useful because they provide information about the state output by the ideal circuit and the matrix representation of the circuit. However, a real experiment terminates by <em>measuring</em> each qubit (usually in the computational <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span> basis). Without measurement, we cannot gain information about the state. Measurements cause the quantum system to collapse into classical bits.</p>
-<p>For example, suppose we make independent measurements on each qubit of the three-qubit GHZ state</p>
+<section id="OpenQASMバックエンド">
+<h3>OpenQASMバックエンド<a class="headerlink" href="#OpenQASMバックエンド" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>上記のシミュレーターは、理想的な回路から出力される状態と、回路の行列表現に関する情報を提供してくれるため便利です。 ただし、実際の実験は、各量子ビット (通常は、計算基底 <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span>) を <em>測定</em> することで終了します。 測定なしでは、状態に関する情報を得ることができません。 測定は、量子システムに古典的なビットへの崩壊を引き起こします。</p>
+<p>例えば、3量子ビットのGHZ状態の各量子ビットを独立に測定するとしましょう。</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = (|000\rangle +|111\rangle)/\sqrt{2},\]</div>
-<p>and let <span class="math notranslate nohighlight">\(xyz\)</span> denote the bitstring that results. Recall that, under the qubit labeling used by Qiskit, <span class="math notranslate nohighlight">\(x\)</span> would correspond to the outcome on qubit 2, <span class="math notranslate nohighlight">\(y\)</span> to the outcome on qubit 1, and <span class="math notranslate nohighlight">\(z\)</span> to the outcome on qubit 0.</p>
-<div class="alert alert-block alert-info"><p>Note: This representation of the bitstring puts the most significant bit (MSB) on the left, and the least significant bit (LSB) on the right. This is the standard ordering of binary bitstrings. We order the qubits in the same way (qubit representing the MSB has index 0), which is why Qiskit uses a non-standard tensor product order.</p>
-</div><p>Recall the probability of obtaining outcome <span class="math notranslate nohighlight">\(xyz\)</span> is given by</p>
+<p><span class="math notranslate nohighlight">\(xyz\)</span> が結果のビット列を示すとしましょう。 Qiskitで使用される量子ビットのラベリング方法では、<span class="math notranslate nohighlight">\(x\)</span> は量子ビット2の結果に対応し、<span class="math notranslate nohighlight">\(y\)</span> は量子ビット1の結果に対応し、そして、 <span class="math notranslate nohighlight">\(z\)</span> は量子ビット0の結果に対応します。</p>
+<div class="alert alert-block alert-info"><p>注記：このビット文字列の表現では最上位ビット (MSB) が左側、最下位ビット (LSB) が右側に配置されます。これは、バイナリビット文字列における標準的な順序です。そのため、同じ方法で量子ビットも並べます (最上位ビットを表す量子ビットのインデックスは0です)。これが、Qiskit が非標準的なテンソル積の順序を使用する理由です。</p>
+</div><p><span class="math notranslate nohighlight">\(xyz\)</span> の結果が得られる確率は、以下のように与えられることを思い出してください。</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{Pr}(xyz) = |\langle xyz | \psi \rangle |^{2}\]</div>
-<p>and as such for the GHZ state probability of obtaining 000 or 111 are both 1/2.</p>
-<p>To simulate a circuit that includes measurement, we need to add measurements to the original circuit above, and use a different Aer backend.</p>
+<p>そして、GHZ状態の場合、000または111が得られる確率はどちらも1/2です。</p>
+<p>測定を含む回路をシミュレートするためには、上記の回路に測定を追加し、異なる Aer バックエンドを使用する必要があります。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -839,8 +845,8 @@ q_2: ──────────┤ X ├─░──╫──╫─┤M├
 c: 3/═══════════════════╩══╩══╩═
                         0  1  2 </pre></div>
 </div>
-<p>This circuit adds a classical register, and three measurements that are used to map the outcome of qubits to the classical bits.</p>
-<p>To simulate this circuit, we use the <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> in Qiskit Aer. Each run of this circuit will yield either the bitstring 000 or 111. To build up statistics about the distribution of the bitstrings (to, e.g., estimate <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span>), we need to repeat the circuit many times. The number of times the circuit is repeated can be specified in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function, via the <code class="docutils literal notranslate"><span class="pre">shots</span></code> keyword.</p>
+<p>この回路は古典レジスタと３つの測定を追加して、量子ビットの結果を古典ビットにマッピングします。</p>
+<p>この回路をシミュレートするためには、Qiskit Aerの <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> を使います。この回路を実行するたびに000または111が生成されます。ビット列の分布についての統計を取るために (例えば、<span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> を見積もるために) 、何回も回路を繰り返す必要があります。回路の繰り返し回数は <code class="docutils literal notranslate"><span class="pre">execute</span></code> 関数の <code class="docutils literal notranslate"><span class="pre">shots</span></code> キーワードで指定できます。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -859,7 +865,7 @@ c: 3/═══════════════════╩══╩══
 </pre></div>
 </div>
 </div>
-<p>Once you have a result object, you can access the counts via the function <code class="docutils literal notranslate"><span class="pre">get_counts(circuit)</span></code>. This gives you the <em>aggregated</em> binary outcomes of the circuit you submitted.</p>
+<p>result オブジェクトを取得できたら、<code class="docutils literal notranslate"><span class="pre">get_counts(circuit)</span></code> 関数を使用して回数を取得することができます。これにより、送信した回路の <em>集計</em> されたバイナリ結果が得られます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -878,7 +884,7 @@ c: 3/═══════════════════╩══╩══
 {&#39;111&#39;: 514, &#39;000&#39;: 510}
 </pre></div></div>
 </div>
-<p>Approximately 50 percent of the time, the output bitstring is 000. Qiskit also provides a function <code class="docutils literal notranslate"><span class="pre">plot_histogram</span></code>, which allows you to view the outcomes.</p>
+<p>約50％の出力ビット文字列は000です。Qiskit は、結果を表示できる関数 <code class="docutils literal notranslate"><span class="pre">plot_histogram</span></code> も提供します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -897,7 +903,7 @@ c: 3/═══════════════════╩══╩══
 <img alt="../../_images/tutorials_circuits_1_getting_started_with_qiskit_32_0.png" src="../../_images/tutorials_circuits_1_getting_started_with_qiskit_32_0.png" />
 </div>
 </div>
-<p>The estimated outcome probabilities <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{Pr}(111)\)</span> are computed by taking the aggregate counts and dividing by the number of shots (times the circuit was repeated). Try changing the <code class="docutils literal notranslate"><span class="pre">shots</span></code> keyword in the <code class="docutils literal notranslate"><span class="pre">execute</span></code> function and see how the estimated probabilities change.</p>
+<p>推定された結果の確率 <span class="math notranslate nohighlight">\(\mathrm{Pr}(000)\)</span> と <span class="math notranslate nohighlight">\(\mathrm{Pr}(111)\)</span> は、カウントを集計し、ショット数 (回路が繰り返された回数) で割ることによって計算されます。 <code class="docutils literal notranslate"><span class="pre">execute</span></code> 関数の <code class="docutils literal notranslate"><span class="pre">shots</span></code> キーワードを変更してみて、推定される確率がどのように変化するかを確認してください。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
@@ -951,7 +957,7 @@ c: 3/═══════════════════╩══╩══
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -970,16 +976,16 @@ c: 3/═══════════════════╩══╩══
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Getting Started with Qiskit</a><ul>
-<li><a class="reference internal" href="#Circuit-Basics">Circuit Basics</a><ul>
-<li><a class="reference internal" href="#Building-the-circuit">Building the circuit</a></li>
+<li><a class="reference internal" href="#">Qiskit 入門</a><ul>
+<li><a class="reference internal" href="#回路の基本">回路の基本</a><ul>
+<li><a class="reference internal" href="#回線の構築">回線の構築</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Visualize-Circuit">Visualize Circuit</a></li>
-<li><a class="reference internal" href="#Simulating-circuits-using-Qiskit-Aer">Simulating circuits using Qiskit Aer</a><ul>
-<li><a class="reference internal" href="#Statevector-backend">Statevector backend</a></li>
-<li><a class="reference internal" href="#Unitary-backend">Unitary backend</a></li>
-<li><a class="reference internal" href="#OpenQASM-backend">OpenQASM backend</a></li>
+<li><a class="reference internal" href="#回路の可視化">回路の可視化</a></li>
+<li><a class="reference internal" href="#Qiskit-Aer-を使った回路のシミュレーション">Qiskit Aer を使った回路のシミュレーション</a><ul>
+<li><a class="reference internal" href="#状態ベクトル・バックエンド">状態ベクトル・バックエンド</a></li>
+<li><a class="reference internal" href="#ユニタリー・バックエンド">ユニタリー・バックエンド</a></li>
+<li><a class="reference internal" href="#OpenQASMバックエンド">OpenQASMバックエンド</a></li>
 </ul>
 </li>
 </ul>
@@ -1047,7 +1053,7 @@ c: 3/═══════════════════╩══╩══
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1070,9 +1076,11 @@ c: 3/═══════════════════╩══╩══
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

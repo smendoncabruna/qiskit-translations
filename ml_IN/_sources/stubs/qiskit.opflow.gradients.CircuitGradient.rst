@@ -1,23 +1,18 @@
-﻿qiskit.opflow.gradients.CircuitGradient
-=======================================
+CircuitGradient
+===============
 
 .. currentmodule:: qiskit.opflow.gradients
 
 .. autoclass:: CircuitGradient
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~CircuitGradient.__init__
-      ~CircuitGradient.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~CircuitGradient.convert
+
+

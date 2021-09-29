@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.PhaseEstimationScale
-======================================
+﻿PhaseEstimationScale
+====================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: PhaseEstimationScale
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PhaseEstimationScale.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PhaseEstimationScale.from_pauli_sum
       ~PhaseEstimationScale.scale_phase
       ~PhaseEstimationScale.scale_phases
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PhaseEstimationScale.scale
-   
-   
+   .. autoattribute:: scale

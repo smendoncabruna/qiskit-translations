@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.chemistry.core.chemistry_operator &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>qiskit.chemistry.core.chemistry_operator &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -365,15 +372,15 @@
     <span class="n">INFO_TWO_QUBIT_REDUCTION</span> <span class="o">=</span> <span class="s1">&#39;two_qubit_reduction&#39;</span>
     <span class="n">INFO_Z2SYMMETRIES</span> <span class="o">=</span> <span class="s1">&#39;z2symmetries&#39;</span>
 
-<div class="viewcode-block" id="ChemistryOperator.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.ChemistryOperator.html#qiskit.chemistry.core.ChemistryOperator.__init__">[ドキュメント]</a>    <span class="nd">@abstractmethod</span>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The ChemistryOperator is deprecated as of Qiskit Aqua 0.8.0 and will be &#39;</span>
                       <span class="s1">&#39;removed no earlier than 3 months after the release date. Instead, the &#39;</span>
                       <span class="s1">&#39;FermionicTransformation can be used to transform QMolecules and construct &#39;</span>
                       <span class="s1">&#39;ground state result objects.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_molecule_info</span> <span class="o">=</span> <span class="p">{}</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_molecule_info</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="ChemistryOperator.run"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.ChemistryOperator.html#qiskit.chemistry.core.ChemistryOperator.run">[ドキュメント]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="ChemistryOperator.run"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.ChemistryOperator.run.html#qiskit.chemistry.core.ChemistryOperator.run">[ドキュメント]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qmolecule</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert the qmolecule, according to the ChemistryOperator, into an Operator</span>
@@ -387,7 +394,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="ChemistryOperator.process_algorithm_result"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.ChemistryOperator.html#qiskit.chemistry.core.ChemistryOperator.process_algorithm_result">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">process_algorithm_result</span><span class="p">(</span>
+<div class="viewcode-block" id="ChemistryOperator.process_algorithm_result"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.ChemistryOperator.process_algorithm_result.html#qiskit.chemistry.core.ChemistryOperator.process_algorithm_result">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">process_algorithm_result</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">algo_result</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span>
                                      <span class="n">MinimumEigensolverResult</span><span class="p">,</span>
                                      <span class="n">EigensolverResult</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">dict</span><span class="p">],</span>
@@ -433,12 +440,12 @@
 <span class="sd">    Energies are in Hartree and dipole moments in A.U unless otherwise stated.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MolecularChemistryResult.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.MolecularChemistryResult.html#qiskit.chemistry.core.MolecularChemistryResult.__init__">[ドキュメント]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_dict</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_dict</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">a_dict</span><span class="p">)</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The qiskit.chemistry.chemistry_operator.MolecularChemistryResult object is &#39;</span>
                       <span class="s1">&#39;deprecated as of 0.8.0 and will be removed no sooner than 3 months after the&#39;</span>
                       <span class="s1">&#39; release. You should use qiskit.chemistry.algorithms.ground_state_solvers.&#39;</span>
-                      <span class="s1">&#39;FermionicGroundStateResult instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
+                      <span class="s1">&#39;FermionicGroundStateResult instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">algorithm_result</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AlgorithmResult</span><span class="p">:</span>
@@ -488,13 +495,13 @@
 <span class="sd">    Energies are in Hartree and dipole moments in A.U unless otherwise stated.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MolecularGroundStateResult.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.MolecularGroundStateResult.html#qiskit.chemistry.core.MolecularGroundStateResult.__init__">[ドキュメント]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_dict</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_dict</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">a_dict</span><span class="p">)</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The qiskit.chemistry.chemistry_operator.MolecularGroundStateResult object &#39;</span>
                       <span class="s1">&#39;is deprecated as of 0.8.0 and will be removed no sooner than 3 months after &#39;</span>
                       <span class="s1">&#39;the release. You should use qiskit.chemistry.algorithms.&#39;</span>
                       <span class="s1">&#39;ground_state_solvers.FermionicGroundStateResult instead.&#39;</span><span class="p">,</span>
-                      <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
+                      <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">energy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
@@ -542,7 +549,7 @@
     <span class="c1"># Dipole moment results. Note dipole moments of tuples of X, Y and Z components. Chemistry</span>
     <span class="c1"># drivers either support dipole integrals or not. Note that when using Z2 symmetries of</span>
 
-<div class="viewcode-block" id="MolecularGroundStateResult.has_dipole"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.MolecularGroundStateResult.html#qiskit.chemistry.core.MolecularGroundStateResult.has_dipole">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">has_dipole</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="MolecularGroundStateResult.has_dipole"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.MolecularGroundStateResult.has_dipole.html#qiskit.chemistry.core.MolecularGroundStateResult.has_dipole">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">has_dipole</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot; Returns whether dipole moment is present in result or not &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nuclear_dipole_moment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">electronic_dipole_moment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
@@ -630,7 +637,7 @@
     <span class="c1"># Other measured operators. If these are not evaluated then None will be returned</span>
     <span class="c1"># instead of any measured value.</span>
 
-<div class="viewcode-block" id="MolecularGroundStateResult.has_observables"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.MolecularGroundStateResult.html#qiskit.chemistry.core.MolecularGroundStateResult.has_observables">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">has_observables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="MolecularGroundStateResult.has_observables"><a class="viewcode-back" href="../../../../stubs/qiskit.chemistry.core.MolecularGroundStateResult.has_observables.html#qiskit.chemistry.core.MolecularGroundStateResult.has_observables">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">has_observables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Returns whether result has aux op observables such as spin, num particles &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_angular_momentum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> \
             <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_particles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> \
@@ -794,7 +801,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -874,7 +881,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -897,9 +904,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

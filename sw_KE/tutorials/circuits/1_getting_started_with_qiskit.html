@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started with Qiskit &mdash; Qiskit 0.29.0 documentation</title>
+  <title>Kuanzia na Qiskit &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Getting Started with Qiskit</li>
+      <li>Kuanzia na Qiskit</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -572,12 +579,11 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits/1_getting_started_with_qiskit.ipynb">tutorials/circuits/1_getting_started_with_qiskit.ipynb</a>.</p>
+<p>Ukurasa huu umezalishwa kutoka <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits/1_getting_started_with_qiskit.ipynb">tutorials/circuits/1_getting_started_with_qiskit.ipynb</a>.</p>
 </div>
-<section id="Getting-Started-with-Qiskit">
-<h1>Getting Started with Qiskit<a class="headerlink" href="#Getting-Started-with-Qiskit" title="Permalink to this headline">¶</a></h1>
-<p>Here, we provide an overview of working with Qiskit. The fundamental package of Qiskit is Terra that provides the basic building blocks necessary to program quantum computers. The fundamental unit of Qiskit is the <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_circuit">quantum circuit</a>. A basic workflow using Qiskit consists of two stages: <strong>Build</strong> and <strong>Execute</strong>. <strong>Build</strong> allows you to make different quantum circuits that represent the problem you are solving, and <strong>Execute</strong> that allows you to
-run them on different backends. After the jobs have been run, the data is collected and postprocessed depending on the desired output.</p>
+<section id="Kuanzia-na-Qiskit">
+<h1>Kuanzia na Qiskit<a class="headerlink" href="#Kuanzia-na-Qiskit" title="Permalink to this headline">¶</a></h1>
+<p>Hapa, tunatoa muhtasari wa kufanya kazi na Qiskit. Kifurushi cha kimsingi cha Qiskit ni Terra ambacho hutoa misingi inayohitajika kujenga programu za tarakilishi za kwanta. Kitengo cha msingi cha Qiskit ni <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_circuit">saketi ya kwanta</a>. Mtiririko wa kazi wa kimsingi wa kutumia Qiskit una hatua mbili: <strong>Jenga</strong> na <strong>Tekeleza</strong>. <strong>Jenga</strong> hukuruhusu kutengeneza saketi tofauti za kwanta ambazo zinawakilisha shida unayotatua, na <strong>Tekeleza</strong> hukuruhusu kuziendesha katika backends tofauti. Baada ya kazi hizo kuendeshwa, data hukusanywa na kusindikwa kulingana na pato linalotamaniwa.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -589,11 +595,11 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<section id="Circuit-Basics">
-<h2>Circuit Basics<a class="headerlink" href="#Circuit-Basics" title="Permalink to this headline">¶</a></h2>
-<section id="Building-the-circuit">
-<h3>Building the circuit<a class="headerlink" href="#Building-the-circuit" title="Permalink to this headline">¶</a></h3>
-<p>The basic element needed for your first program is the QuantumCircuit. We begin by creating a <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> comprised of three qubits.</p>
+<section id="Misingi-ya-Saketi">
+<h2>Misingi ya Saketi<a class="headerlink" href="#Misingi-ya-Saketi" title="Permalink to this headline">¶</a></h2>
+<section id="Kujenga-saketi">
+<h3>Kujenga saketi<a class="headerlink" href="#Kujenga-saketi" title="Permalink to this headline">¶</a></h3>
+<p>Kipengee cha kimsingi kinachohitajika katika programu yako ya kwanza ni QuantumCircuit. Tunaaza kwa kuunda <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> inayojumuisha qubits tatu.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -604,12 +610,12 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div>
 </div>
 </div>
-<p>After you create the circuit with its registers, you can add gates (“operations”) to manipulate the registers. As you proceed through the tutorials you will find more gates and circuits; below is an example of a quantum circuit that makes a three-qubit GHZ state</p>
+<p>Baada ya kuunda saketi pamoja na rejesta zake, unaweza kuongeza malango (“operesheni”) ili kuendesha rejesta. Unapoendelea kupitia mafunzo utapata malango na saketi zaidi; chini ni mfano wa saketi ya kwanta ambayo huunda hali ya GHZ yenye qubit tatu</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rangle = \left(|000\rangle+|111\rangle\right)/\sqrt{2}.\]</div>
-<p>To create such a state, we start with a three-qubit quantum register. By default, each qubit in the register is initialized to <span class="math notranslate nohighlight">\(|0\rangle\)</span>. To make the GHZ state, we apply the following gates: - A Hadamard gate <span class="math notranslate nohighlight">\(H\)</span> on qubit 0, which puts it into the superposition state <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>. - A controlled-Not operation (<span class="math notranslate nohighlight">\(C_{X}\)</span>) between qubit 0 and qubit 1. - A controlled-Not operation between qubit 0 and qubit 2.</p>
-<p>On an ideal quantum computer, the state produced by running this circuit would be the GHZ state above.</p>
-<p>In Qiskit, operations can be added to the circuit one by one, as shown below.</p>
+<p>Ili kuunda hali kama hiyo, tunaanza na rejesta ya kwanta yenye qubit tatu. Kwa kaida, kila qubit katika rejesta huanzilishwa kama <span class="math notranslate nohighlight">\(|0\rangle\)</span>. Ili kuunda hali ya GHZ, tunatumia malango yafuatayo: - Lango la Hadamard <span class="math notranslate nohighlight">\(H\)</span> kwenye qubit 0, ambayo inaiweka katika hali ya superposition <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>. - Operesheni ya controlled-Not (<span class="math notranslate nohighlight">\(C_{X}\)</span>) kati ya qubit 0 na qubit 1. - Operesheni ya controlled-Not kati ya qubit 0 na qubit 2.</p>
+<p>Kwenye kompyuta bora ya kwanta, hali inayozalishwa kwa kuendesha saketi hii itakuwa hali ya GHZ hapo juu.</p>
+<p>Katika Qiskit, operesheni zinaweza kuongezwa katika saketi moja baada ya nyingine, kama invyoonyeshwa hapa chini.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -637,9 +643,9 @@ run them on different backends. After the jobs have been run, the data is collec
 </div>
 </section>
 </section>
-<section id="Visualize-Circuit">
-<h2>Visualize Circuit<a class="headerlink" href="#Visualize-Circuit" title="Permalink to this headline">¶</a></h2>
-<p>You can visualize your circuit using Qiskit <code class="docutils literal notranslate"><span class="pre">QuantumCircuit.draw()</span></code>, which plots the circuit in the form found in many textbooks.</p>
+<section id="Jenga-Taswira-ya-Saketi">
+<h2>Jenga Taswira ya Saketi<a class="headerlink" href="#Jenga-Taswira-ya-Saketi" title="Permalink to this headline">¶</a></h2>
+<p>Unaweza kujenga taswira ya saketi kwa kutumia <code class="docutils literal notranslate"><span class="pre">QuantumCircuit.draw()</span></code>, ambayo inaunda saketi katika miundo inayopatikana katika vitabu vingi vya kiada.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -657,18 +663,18 @@ run them on different backends. After the jobs have been run, the data is collec
 <img alt="../../_images/tutorials_circuits_1_getting_started_with_qiskit_7_0.png" src="../../_images/tutorials_circuits_1_getting_started_with_qiskit_7_0.png" />
 </div>
 </div>
-<p>In this circuit, the qubits are put in order, with qubit zero at the top and qubit two at the bottom. The circuit is read left to right (meaning that gates that are applied earlier in the circuit show up further to the left).</p>
-<div class="alert alert-block alert-info"><p>When representing the state of a multi-qubit system, the tensor order used in Qiskit is different than that used in most physics textbooks. Suppose there are <span class="math notranslate nohighlight">\(n\)</span> qubits, and qubit <span class="math notranslate nohighlight">\(j\)</span> is labeled as <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit uses an ordering in which the <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> qubit is on the left side of the tensor product, so that the basis vectors are labeled as <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
-<p>For example, if qubit zero is in state 0, qubit 1 is in state 0, and qubit 2 is in state 1, Qiskit would represent this state as <span class="math notranslate nohighlight">\(|100\rangle\)</span>, whereas many physics textbooks would represent it as <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
-<p>This difference in labeling affects the way multi-qubit operations are represented as matrices. For example, Qiskit represents a controlled-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) operation with qubit 0 being the control and qubit 1 being the target as</p>
+<p>Katika saketi hii, qubits zimeorodheshwa kwa mpangilio hivi kwamba qubit sifuri iko juu na qubit mbili iko chini. Saketi inasomwa kushoto kwenda kulia (ikimaanisha kuwa malango yanayotumiwa mapema kwenye saketi hujitokeza mbali zaidi katika upande wa kushoto).</p>
+<div class="alert alert-block alert-info"><p>Wakati wa kuwakilisha hali ya mfumo wenye qubit nyingi, utaratibu wa tensor unaotumika katika Qiskit ni tofauti na ambayo hutumika katika vitabu vingi vya fizikia. Tuseme kuna qubits <span class="math notranslate nohighlight">\(n\)</span>, na qubit <span class="math notranslate nohighlight">\(j\)</span> imendikwa kama <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit inatumia utaratibu pale ambapo qubit ya <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> iko upande wa kushoto wa tensor product, ili vekta za basis ziandikwe kama <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
+<p>Kwa mfano, ikiwa qubit ya sufuri iko katika hali ya 0, qubit 1 iko katika hali ya 0 na qubit 2 iko katika hali ya 1, Qiskit ingewakilisha hali hii kama <span class="math notranslate nohighlight">\(|100\rangle\)</span>, wakati vitabu vingi vya fizikia vitawakilisha kama <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
+<p>Tofauti hii katika kuweka lebo huathiri jinsi operesheni zinazohusu qubit nyingi zinavyowakilishwa kama matrices. Kwa mfano, Qiskit inawakilisha operesheni ya controlled-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) wakati qubit 0 ikiwa udhibiti na qubit 1 ikiwa lengo kama</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_X = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\  0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\\end{pmatrix}.\end{split}\]</div>
 </div></section>
-<section id="Simulating-circuits-using-Qiskit-Aer">
-<h2>Simulating circuits using Qiskit Aer<a class="headerlink" href="#Simulating-circuits-using-Qiskit-Aer" title="Permalink to this headline">¶</a></h2>
-<p>Qiskit Aer is our package for simulating quantum circuits. It provides many different backends for doing a simulation. There is also a basic, Python only, implementation called <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> in Terra that can be used as a drop-in replacement for <code class="docutils literal notranslate"><span class="pre">Aer</span></code> in the examples below.</p>
-<section id="Statevector-backend">
-<h3>Statevector backend<a class="headerlink" href="#Statevector-backend" title="Permalink to this headline">¶</a></h3>
+<section id="Uigaji-wa-saketi-kutumia-Qiskit-Aer">
+<h2>Uigaji wa saketi kutumia Qiskit Aer<a class="headerlink" href="#Uigaji-wa-saketi-kutumia-Qiskit-Aer" title="Permalink to this headline">¶</a></h2>
+<p>Qiskit Aer ndicho kifurushi chetu cha uigaji wa saketi za kwanta. Huwa inatupa backends tofauti tofauti za kufanyia uigaji. Pia kuna utekelezaji wa kimsingi wa Python pekee uitwao <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> katika Terra ambao unaweza kutumiwa kama mbadala wa <code class="docutils literal notranslate"><span class="pre">Aer</span></code> katika mifano hapo chini.</p>
+<section id="Backend-ya-statevector">
+<h3>Backend ya statevector<a class="headerlink" href="#Backend-ya-statevector" title="Permalink to this headline">¶</a></h3>
 <p>The most common backend in Qiskit Aer is the <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>. This simulator returns the quantum state, which is a complex vector of dimensions <span class="math notranslate nohighlight">\(2^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of qubits (so be careful using this as it will quickly get too large to run on your machine).</p>
 <p>To run the above circuit using the statevector simulator, first you need to import Aer and then set the backend to <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code>.</p>
 <div class="nbinput nblast docutils container">
@@ -748,8 +754,8 @@ run them on different backends. After the jobs have been run, the data is collec
 </div>
 </div>
 </section>
-<section id="Unitary-backend">
-<h3>Unitary backend<a class="headerlink" href="#Unitary-backend" title="Permalink to this headline">¶</a></h3>
+<section id="Backend-ya-umoja">
+<h3>Backend ya umoja<a class="headerlink" href="#Backend-ya-umoja" title="Permalink to this headline">¶</a></h3>
 <p>Qiskit Aer also includes a <code class="docutils literal notranslate"><span class="pre">unitary_simulator</span></code> that works <em>provided all the elements in the circuit are unitary operations</em>. This backend calculates the <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span> matrix representing the gates in the quantum circuit.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -790,8 +796,8 @@ run them on different backends. After the jobs have been run, the data is collec
 </pre></div></div>
 </div>
 </section>
-<section id="OpenQASM-backend">
-<h3>OpenQASM backend<a class="headerlink" href="#OpenQASM-backend" title="Permalink to this headline">¶</a></h3>
+<section id="Backend-ya-OpenQASM">
+<h3>Backend ya OpenQASM<a class="headerlink" href="#Backend-ya-OpenQASM" title="Permalink to this headline">¶</a></h3>
 <p>The simulators above are useful because they provide information about the state output by the ideal circuit and the matrix representation of the circuit. However, a real experiment terminates by <em>measuring</em> each qubit (usually in the computational <span class="math notranslate nohighlight">\(|0\rangle, |1\rangle\)</span> basis). Without measurement, we cannot gain information about the state. Measurements cause the quantum system to collapse into classical bits.</p>
 <p>For example, suppose we make independent measurements on each qubit of the three-qubit GHZ state</p>
 <div class="math notranslate nohighlight">
@@ -951,7 +957,7 @@ c: 3/═══════════════════╩══╩══
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -970,16 +976,16 @@ c: 3/═══════════════════╩══╩══
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Getting Started with Qiskit</a><ul>
-<li><a class="reference internal" href="#Circuit-Basics">Circuit Basics</a><ul>
-<li><a class="reference internal" href="#Building-the-circuit">Building the circuit</a></li>
+<li><a class="reference internal" href="#">Kuanzia na Qiskit</a><ul>
+<li><a class="reference internal" href="#Misingi-ya-Saketi">Misingi ya Saketi</a><ul>
+<li><a class="reference internal" href="#Kujenga-saketi">Kujenga saketi</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Visualize-Circuit">Visualize Circuit</a></li>
-<li><a class="reference internal" href="#Simulating-circuits-using-Qiskit-Aer">Simulating circuits using Qiskit Aer</a><ul>
-<li><a class="reference internal" href="#Statevector-backend">Statevector backend</a></li>
-<li><a class="reference internal" href="#Unitary-backend">Unitary backend</a></li>
-<li><a class="reference internal" href="#OpenQASM-backend">OpenQASM backend</a></li>
+<li><a class="reference internal" href="#Jenga-Taswira-ya-Saketi">Jenga Taswira ya Saketi</a></li>
+<li><a class="reference internal" href="#Uigaji-wa-saketi-kutumia-Qiskit-Aer">Uigaji wa saketi kutumia Qiskit Aer</a><ul>
+<li><a class="reference internal" href="#Backend-ya-statevector">Backend ya statevector</a></li>
+<li><a class="reference internal" href="#Backend-ya-umoja">Backend ya umoja</a></li>
+<li><a class="reference internal" href="#Backend-ya-OpenQASM">Backend ya OpenQASM</a></li>
 </ul>
 </li>
 </ul>
@@ -1047,7 +1053,7 @@ c: 3/═══════════════════╩══╩══
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1070,9 +1076,11 @@ c: 3/═══════════════════╩══╩══
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

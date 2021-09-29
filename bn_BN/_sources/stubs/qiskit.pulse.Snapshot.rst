@@ -1,19 +1,18 @@
-﻿qiskit.pulse.Snapshot
-=====================
+﻿Snapshot
+========
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: Snapshot
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Snapshot.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Snapshot.append
       ~Snapshot.assign_parameters
       ~Snapshot.ch_duration
@@ -24,26 +23,20 @@
       ~Snapshot.insert
       ~Snapshot.is_parameterized
       ~Snapshot.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Snapshot.channel
-      ~Snapshot.channels
-      ~Snapshot.duration
-      ~Snapshot.id
-      ~Snapshot.instructions
-      ~Snapshot.label
-      ~Snapshot.name
-      ~Snapshot.operands
-      ~Snapshot.parameters
-      ~Snapshot.start_time
-      ~Snapshot.stop_time
-      ~Snapshot.type
-   
-   
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time
+   .. autoattribute:: type

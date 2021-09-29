@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.legacy.LegacyBaseOperator
-===============================================
+﻿LegacyBaseOperator
+==================
 
 .. currentmodule:: qiskit.aqua.operators.legacy
 
 .. autoclass:: LegacyBaseOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LegacyBaseOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LegacyBaseOperator.chop
       ~LegacyBaseOperator.construct_evaluation_circuit
       ~LegacyBaseOperator.evaluate_with_result
@@ -21,18 +20,12 @@
       ~LegacyBaseOperator.is_empty
       ~LegacyBaseOperator.print_details
       ~LegacyBaseOperator.to_opflow
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LegacyBaseOperator.basis
-      ~LegacyBaseOperator.name
-      ~LegacyBaseOperator.num_qubits
-      ~LegacyBaseOperator.z2_symmetries
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: name
+   .. autoattribute:: num_qubits
+   .. autoattribute:: z2_symmetries

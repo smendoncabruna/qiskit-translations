@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Guide de migration Qiskit Aqua &mdash; Documentation Qiskit 0.29.0</title>
+  <title>Guide de migration Qiskit Aqua &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -64,7 +63,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -94,7 +93,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -171,6 +172,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -223,7 +230,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -232,7 +239,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -240,15 +247,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -615,8 +622,10 @@ classical_reference = numpy_based.compute_minimum_eigenvalue(operator)
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/Users/manoel/projects/Quantum/qiskit-aqua/qiskit/aqua/components/optimizers/optimizer.py:50: DeprecationWarning: The package qiskit.aqua.components.optimizers is deprecated. It was moved/refactored to qiskit.algorithms.optimizers (pip install qiskit-terra). For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
-  &#39;qiskit.algorithms.optimizers&#39;, &#39;qiskit-terra&#39;)
+/Users/manoel/projects/Quantum/qiskit-aqua/qiskit/aqua/__init__.py:86: DeprecationWarning: The package qiskit.aqua is deprecated. It was moved/refactored to qiskit-terra For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
+  warn_package(&#39;aqua&#39;, &#39;qiskit-terra&#39;)
+/Users/manoel/projects/Quantum/qiskit-aqua/qiskit/aqua/components/optimizers/optimizer.py:49: DeprecationWarning: The package qiskit.aqua.components.optimizers is deprecated. It was moved/refactored to qiskit.algorithms.optimizers (pip install qiskit-terra). For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
+  warn_package(&#39;aqua.components.optimizers&#39;,
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -886,7 +895,7 @@ Top measurement: 01
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Top measurement: 11
+Top measurement: 01
 </pre></div></div>
 </div>
 <p>Le <code class="docutils literal notranslate"><span class="pre">qiskit.aqua.components.oracles.TruthTableOracle</span></code> n’est pas encore re-implémenté, mais il peut être facilement réalisé avec le module <code class="docutils literal notranslate"><span class="pre">qiskit.circuit.classicalfunction</span></code>, voir pour cela les tutoriels sur l’algorithme de Grover.</p>
@@ -997,7 +1006,7 @@ Target probability: 0.25
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Grid-based estimate: 0.1464466
-Improved continuous estimate: 0.2499999956539467
+Improved continuous estimate: 0.2499999956526605
 </pre></div></div>
 </div>
 <p><strong>Maintenant :</strong></p>
@@ -1250,7 +1259,7 @@ Estimate: 0.2500081904035319
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(-0.999999996802599+0j)
+(-0.9999999971946394+0j)
 </pre></div></div>
 </div>
 <p><strong>Maintenant :</strong></p>
@@ -1277,7 +1286,7 @@ Estimate: 0.2500081904035319
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.9999999976790017
+(-0.9999995645308767+0j)
 </pre></div></div>
 </div>
 <p>Notez que <code class="docutils literal notranslate"><span class="pre">qiskit.aqua.components.variational_forms</span></code> est entièrement déprécié en faveur des objets de circuit. La plupart des formes variationnelles ont déjà été portées vers la bibliothèque de circuits dans les versions précédentes et à présent <code class="docutils literal notranslate"><span class="pre">UCCSD</span></code> fait également partie de la bibliothèque de circuits de Qiskit Nature :</p>
@@ -1313,7 +1322,7 @@ Estimate: 0.2500081904035319
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">qiskit_nature.mappers.second_quantization</span> <span class="kn">import</span> <span class="n">JordanWignerMapper</span>
-<span class="kn">from</span> <span class="nn">qiskit_nature.operators.second_quantization.qubit_converter</span> <span class="kn">import</span> <span class="n">QubitConverter</span>
+<span class="kn">from</span> <span class="nn">qiskit_nature.converters.second_quantization.qubit_converter</span> <span class="kn">import</span> <span class="n">QubitConverter</span>
 <span class="kn">from</span> <span class="nn">qiskit_nature.circuit.library</span> <span class="kn">import</span> <span class="n">UCCSD</span>
 
 <span class="n">qubit_converter</span> <span class="o">=</span> <span class="n">QubitConverter</span><span class="p">(</span><span class="n">JordanWignerMapper</span><span class="p">())</span>
@@ -1358,7 +1367,7 @@ Estimate: 0.2500081904035319
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(-0.999999982019625+0j)
+(-0.9999999808672868+0j)
 </pre></div></div>
 </div>
 <p><strong>Maintenant :</strong></p>
@@ -1384,7 +1393,7 @@ Estimate: 0.2500081904035319
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.9999999768364134
+(-0.9999999752264653+0j)
 </pre></div></div>
 </div>
 <p>** Autres exemples : **</p>
@@ -1693,7 +1702,7 @@ Factors: [3]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[ 0.66575607-5.39389682e-15j -0.38561455+4.35672537e-15j]
+[ 0.66575607+4.96430258e-13j -0.38561455-2.84524449e-13j]
 </pre></div></div>
 </div>
 <p><strong>Maintenant :</strong></p>
@@ -1740,7 +1749,7 @@ Factors: [3]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[1.125, 0.375]
+[1.125, 0.37499999999999994]
 </pre></div></div>
 </div>
 <p><strong>Maintenant :</strong></p>
@@ -1992,7 +2001,7 @@ Factors: [3]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(-0.6536436208636107+5.551115123125783e-17j)
+(-0.6536436208636113+0j)
 </pre></div></div>
 </div>
 <p><strong>Maintenant.</strong></p>
@@ -2032,7 +2041,7 @@ Factors: [3]
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(-0.653643620863615+0j)
+(-0.6536436208636165+0j)
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -2070,7 +2079,7 @@ Factors: [3]
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -2225,7 +2234,7 @@ Factors: [3]
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -2248,9 +2257,11 @@ Factors: [3]
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

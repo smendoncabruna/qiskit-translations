@@ -1,24 +1,19 @@
-﻿qiskit.algorithms.Eigensolver
-=============================
+﻿Eigensolver
+===========
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: Eigensolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Eigensolver.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Eigensolver.compute_eigenvalues
       ~Eigensolver.supports_aux_operators
-   
-   
 
-   
-   
-   
+

@@ -1,29 +1,15 @@
-﻿qiskit.circuit.Qubit
-====================
+﻿Qubit
+=====
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Qubit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~Qubit.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Qubit.index
-      ~Qubit.register
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: register

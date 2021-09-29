@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.operators.legacy.weighted_pauli_operator &mdash; Qiskit 0.29.0 belgelendirmesi</title>
+  <title>qiskit.aqua.operators.legacy.weighted_pauli_operator &mdash; Qiskit 0.30.0 belgelendirmesi</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Belgeleme ana sayfası</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Ön Bölümler</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Kaynakları</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simülatör (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Deneyleri (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Uygulama Modülleri (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Sağlayıcı)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hata Giderme</span></p>
 <ul>
@@ -362,7 +369,7 @@
 <div class="viewcode-block" id="WeightedPauliOperator"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator">[belgeler]</a><span class="k">class</span> <span class="nc">WeightedPauliOperator</span><span class="p">(</span><span class="n">LegacyBaseOperator</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Weighted Pauli Operator &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="WeightedPauliOperator.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.__init__">[belgeler]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">paulis</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">Pauli</span><span class="p">]]],</span>
                  <span class="n">basis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">object</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                  <span class="n">z2_symmetries</span><span class="p">:</span> <span class="s1">&#39;Z2Symmetries&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -389,9 +396,9 @@
             <span class="p">[(</span><span class="n">pauli</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pauli</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">paulis</span><span class="p">)]</span> <span class="k">if</span> <span class="n">basis</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">basis</span>
         <span class="c1"># combine the paulis and remove those with zero weight</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_atol</span> <span class="o">=</span> <span class="n">atol</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_atol</span> <span class="o">=</span> <span class="n">atol</span>
 
-<div class="viewcode-block" id="WeightedPauliOperator.from_list"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.from_list">[belgeler]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="WeightedPauliOperator.from_list"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.from_list.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.from_list">[belgeler]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_list</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">paulis</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a WeightedPauliOperator via a pair of list.</span>
@@ -415,7 +422,7 @@
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">paulis</span><span class="o">=</span><span class="p">[[</span><span class="n">w</span><span class="p">,</span> <span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">paulis</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span></div>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="WeightedPauliOperator.to_opflow"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.to_opflow">[belgeler]</a>    <span class="k">def</span> <span class="nf">to_opflow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reverse_endianness</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.to_opflow"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.to_opflow.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.to_opflow">[belgeler]</a>    <span class="k">def</span> <span class="nf">to_opflow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reverse_endianness</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; to op flow &quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=import-outside-toplevel</span>
         <span class="kn">from</span> <span class="nn">qiskit.aqua.operators</span> <span class="kn">import</span> <span class="n">PrimitiveOp</span>
@@ -526,7 +533,7 @@
                 <span class="n">ret_op</span><span class="o">.</span><span class="n">_paulis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_pauli</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret_op</span>
 
-<div class="viewcode-block" id="WeightedPauliOperator.add"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.add">[belgeler]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.add"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.add.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.add">[belgeler]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform self + other.</span>
 
@@ -540,7 +547,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_or_sub</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">op_add</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.sub"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.sub">[belgeler]</a>    <span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.sub"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.sub.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.sub">[belgeler]</a>    <span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform self - other.</span>
 
@@ -593,7 +600,7 @@
             <span class="n">ret</span><span class="o">.</span><span class="n">_paulis</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ret</span><span class="o">.</span><span class="n">_paulis</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">scaling_factor</span><span class="p">,</span> <span class="n">ret</span><span class="o">.</span><span class="n">_paulis</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-<div class="viewcode-block" id="WeightedPauliOperator.multiply"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.multiply">[belgeler]</a>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.multiply"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.multiply.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.multiply">[belgeler]</a>    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform self * other, and the phases are tracked.</span>
 
@@ -641,7 +648,7 @@
                                                                   <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-<div class="viewcode-block" id="WeightedPauliOperator.print_details"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.print_details">[belgeler]</a>    <span class="k">def</span> <span class="nf">print_details</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.print_details"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.print_details.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.print_details">[belgeler]</a>    <span class="k">def</span> <span class="nf">print_details</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print out the operator in details.</span>
 
@@ -656,11 +663,11 @@
 
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.copy"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.copy">[belgeler]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.copy"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.copy.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.copy">[belgeler]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Get a copy of self &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.simplify"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.simplify">[belgeler]</a>    <span class="k">def</span> <span class="nf">simplify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.simplify"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.simplify.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.simplify">[belgeler]</a>    <span class="k">def</span> <span class="nf">simplify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the paulis whose bases are identical and the pauli with zero coefficient</span>
 <span class="sd">        would be removed.</span>
@@ -721,7 +728,7 @@
         <span class="n">op</span><span class="o">.</span><span class="n">chop</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">op</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.rounding"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.rounding">[belgeler]</a>    <span class="k">def</span> <span class="nf">rounding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.rounding"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.rounding.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.rounding">[belgeler]</a>    <span class="k">def</span> <span class="nf">rounding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Rounding the weight.</span>
 
@@ -738,7 +745,7 @@
 
         <span class="k">return</span> <span class="n">op</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.chop"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.chop">[belgeler]</a>    <span class="k">def</span> <span class="nf">chop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.chop"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.chop.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.chop">[belgeler]</a>    <span class="k">def</span> <span class="nf">chop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Eliminate the real and imagine part of weight in each pauli by `threshold`.</span>
 <span class="sd">        If pauli&#39;s weight is less then `threshold` in both real and imaginary parts,</span>
@@ -800,15 +807,15 @@
         <span class="n">op</span><span class="o">.</span><span class="n">_basis</span> <span class="o">=</span> <span class="n">new_basis</span>
         <span class="k">return</span> <span class="n">op</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.commute_with"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.commute_with">[belgeler]</a>    <span class="k">def</span> <span class="nf">commute_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.commute_with"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.commute_with.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.commute_with">[belgeler]</a>    <span class="k">def</span> <span class="nf">commute_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Commutes with &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">check_commutativity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.anticommute_with"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.anticommute_with">[belgeler]</a>    <span class="k">def</span> <span class="nf">anticommute_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.anticommute_with"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.anticommute_with.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.anticommute_with">[belgeler]</a>    <span class="k">def</span> <span class="nf">anticommute_with</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Anti commutes with &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">check_commutativity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">anti</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.is_empty"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.is_empty">[belgeler]</a>    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.is_empty"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.is_empty.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.is_empty">[belgeler]</a>    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check Operator is empty or not.</span>
 
@@ -822,7 +829,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.from_file"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.from_file">[belgeler]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="WeightedPauliOperator.from_file"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.from_file.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.from_file">[belgeler]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">before_04</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load paulis in a file to construct an Operator.</span>
@@ -834,10 +841,10 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            WeightedPauliOperator: the loaded operator.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="n">before_04</span><span class="o">=</span><span class="n">before_04</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.to_file"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.to_file">[belgeler]</a>    <span class="k">def</span> <span class="nf">to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.to_file"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.to_file.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.to_file">[belgeler]</a>    <span class="k">def</span> <span class="nf">to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save operator to a file in pauli representation.</span>
 
@@ -845,10 +852,10 @@
 <span class="sd">            file_name (str): path to the file</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
             <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">file</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.from_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.from_dict">[belgeler]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="WeightedPauliOperator.from_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.from_dict.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.from_dict">[belgeler]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">before_04</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load paulis from a dictionary to construct an Operator. The dictionary must</span>
@@ -903,7 +910,7 @@
 
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">paulis</span><span class="o">=</span><span class="n">paulis</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.to_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.to_dict">[belgeler]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.to_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.to_dict.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.to_dict">[belgeler]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save operator to a dict in pauli representation.</span>
 
@@ -924,7 +931,7 @@
 
         <span class="k">return</span> <span class="n">ret_dict</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.evaluate_with_statevector"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluate_with_statevector">[belgeler]</a>    <span class="k">def</span> <span class="nf">evaluate_with_statevector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantum_state</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.evaluate_with_statevector"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluate_with_statevector.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluate_with_statevector">[belgeler]</a>    <span class="k">def</span> <span class="nf">evaluate_with_statevector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantum_state</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            quantum_state (numpy.ndarray): a quantum state.</span>
@@ -945,7 +952,7 @@
         <span class="k">return</span> <span class="n">avg</span><span class="p">,</span> <span class="mf">0.0</span></div>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="WeightedPauliOperator.construct_evaluation_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.construct_evaluation_circuit">[belgeler]</a>    <span class="k">def</span> <span class="nf">construct_evaluation_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wave_function</span><span class="p">,</span> <span class="n">statevector_mode</span><span class="p">,</span>
+<div class="viewcode-block" id="WeightedPauliOperator.construct_evaluation_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.construct_evaluation_circuit.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.construct_evaluation_circuit">[belgeler]</a>    <span class="k">def</span> <span class="nf">construct_evaluation_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wave_function</span><span class="p">,</span> <span class="n">statevector_mode</span><span class="p">,</span>
                                      <span class="n">qr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_simulator_snapshot_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                      <span class="n">circuit_name_prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
@@ -1026,7 +1033,7 @@
 
         <span class="k">return</span> <span class="n">circuits</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.evaluation_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluation_instruction">[belgeler]</a>    <span class="k">def</span> <span class="nf">evaluation_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statevector_mode</span><span class="p">,</span> <span class="n">use_simulator_snapshot_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="WeightedPauliOperator.evaluation_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluation_instruction.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluation_instruction">[belgeler]</a>    <span class="k">def</span> <span class="nf">evaluation_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statevector_mode</span><span class="p">,</span> <span class="n">use_simulator_snapshot_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            statevector_mode (bool): will it be run on statevector simulator or not</span>
@@ -1076,7 +1083,7 @@
         <span class="k">return</span> <span class="n">instructions</span></div>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="WeightedPauliOperator.evaluate_with_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluate_with_result">[belgeler]</a>    <span class="k">def</span> <span class="nf">evaluate_with_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">statevector_mode</span><span class="p">,</span> <span class="n">use_simulator_snapshot_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<div class="viewcode-block" id="WeightedPauliOperator.evaluate_with_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluate_with_result.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evaluate_with_result">[belgeler]</a>    <span class="k">def</span> <span class="nf">evaluate_with_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">statevector_mode</span><span class="p">,</span> <span class="n">use_simulator_snapshot_mode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                              <span class="n">circuit_name_prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method can be only used with the circuits generated by the</span>
@@ -1159,7 +1166,7 @@
 
         <span class="k">return</span> <span class="n">avg</span><span class="p">,</span> <span class="n">variance</span>
 
-<div class="viewcode-block" id="WeightedPauliOperator.reorder_paulis"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.reorder_paulis">[belgeler]</a>    <span class="k">def</span> <span class="nf">reorder_paulis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">Pauli</span><span class="p">]]]:</span>
+<div class="viewcode-block" id="WeightedPauliOperator.reorder_paulis"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.reorder_paulis.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.reorder_paulis">[belgeler]</a>    <span class="k">def</span> <span class="nf">reorder_paulis</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">Pauli</span><span class="p">]]]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reorder the paulis based on the basis and return the reordered paulis.</span>
 
@@ -1188,7 +1195,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_paulis</span></div>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="WeightedPauliOperator.evolve"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evolve">[belgeler]</a>    <span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_in</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">evo_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_time_slices</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">quantum_registers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="WeightedPauliOperator.evolve"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.evolve.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evolve">[belgeler]</a>    <span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_in</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">evo_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_time_slices</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">quantum_registers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">expansion_mode</span><span class="o">=</span><span class="s1">&#39;trotter&#39;</span><span class="p">,</span> <span class="n">expansion_order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Carry out the eoh evolution for the operator under supplied specifications.</span>
@@ -1234,7 +1241,7 @@
         <span class="n">qc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">instruction</span><span class="p">,</span> <span class="n">quantum_registers</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">qc</span></div>
 
-<div class="viewcode-block" id="WeightedPauliOperator.evolve_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evolve_instruction">[belgeler]</a>    <span class="k">def</span> <span class="nf">evolve_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evo_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_time_slices</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<div class="viewcode-block" id="WeightedPauliOperator.evolve_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.WeightedPauliOperator.evolve_instruction.html#qiskit.aqua.operators.legacy.WeightedPauliOperator.evolve_instruction">[belgeler]</a>    <span class="k">def</span> <span class="nf">evolve_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evo_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_time_slices</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                            <span class="n">expansion_mode</span><span class="o">=</span><span class="s1">&#39;trotter&#39;</span><span class="p">,</span> <span class="n">expansion_order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Carry out the eoh evolution for the operator under supplied specifications.</span>
@@ -1286,7 +1293,7 @@
 <div class="viewcode-block" id="Z2Symmetries"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries">[belgeler]</a><span class="k">class</span> <span class="nc">Z2Symmetries</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot; Z2 Symmetries &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Z2Symmetries.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.__init__">[belgeler]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symmetries</span><span class="p">,</span> <span class="n">sq_paulis</span><span class="p">,</span> <span class="n">sq_list</span><span class="p">,</span> <span class="n">tapering_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symmetries</span><span class="p">,</span> <span class="n">sq_paulis</span><span class="p">,</span> <span class="n">sq_list</span><span class="p">,</span> <span class="n">tapering_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            symmetries (list[Pauli]): the list of Pauli objects representing the Z_2 symmetries</span>
@@ -1315,7 +1322,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_symmetries</span> <span class="o">=</span> <span class="n">symmetries</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sq_paulis</span> <span class="o">=</span> <span class="n">sq_paulis</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sq_list</span> <span class="o">=</span> <span class="n">sq_list</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_tapering_values</span> <span class="o">=</span> <span class="n">tapering_values</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tapering_values</span> <span class="o">=</span> <span class="n">tapering_values</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">symmetries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1381,7 +1388,7 @@
         <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-<div class="viewcode-block" id="Z2Symmetries.copy"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.copy">[belgeler]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Z2Symmetries&#39;</span><span class="p">:</span>
+<div class="viewcode-block" id="Z2Symmetries.copy"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.copy.html#qiskit.aqua.operators.legacy.Z2Symmetries.copy">[belgeler]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Z2Symmetries&#39;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get a copy of self.</span>
 
@@ -1390,7 +1397,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Z2Symmetries.is_empty"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.is_empty">[belgeler]</a>    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Z2Symmetries.is_empty"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.is_empty.html#qiskit.aqua.operators.legacy.Z2Symmetries.is_empty">[belgeler]</a>    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Check the z2_symmetries is empty or not.</span>
 
@@ -1402,7 +1409,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="Z2Symmetries.find_Z2_symmetries"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.find_Z2_symmetries">[belgeler]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Z2Symmetries.find_Z2_symmetries"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.find_Z2_symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.find_Z2_symmetries">[belgeler]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">find_Z2_symmetries</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">operator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Z2Symmetries&#39;</span><span class="p">:</span>  <span class="c1"># pylint: disable=invalid-name</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Finds Z2 Pauli-type symmetries of an Operator.</span>
@@ -1500,7 +1507,7 @@
 
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">pauli_symmetries</span><span class="p">,</span> <span class="n">sq_paulis</span><span class="p">,</span> <span class="n">sq_list</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Z2Symmetries.taper"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.taper">[belgeler]</a>    <span class="k">def</span> <span class="nf">taper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">tapering_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Z2Symmetries.taper"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.taper.html#qiskit.aqua.operators.legacy.Z2Symmetries.taper">[belgeler]</a>    <span class="k">def</span> <span class="nf">taper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">tapering_values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Taper an operator based on the z2_symmetries info and sector defined by `tapering_values`.</span>
 <span class="sd">        The `tapering_values` will be stored into the resulted operator for a record.</span>
@@ -1558,7 +1565,7 @@
 
         <span class="k">return</span> <span class="n">tapered_ops</span></div>
 
-<div class="viewcode-block" id="Z2Symmetries.two_qubit_reduction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.two_qubit_reduction">[belgeler]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Z2Symmetries.two_qubit_reduction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.two_qubit_reduction.html#qiskit.aqua.operators.legacy.Z2Symmetries.two_qubit_reduction">[belgeler]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">two_qubit_reduction</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="n">num_particles</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Eliminates the central and last qubit in a list of Pauli that has</span>
@@ -1616,7 +1623,7 @@
         <span class="n">z2_symmetries</span> <span class="o">=</span> <span class="n">Z2Symmetries</span><span class="p">(</span><span class="n">symmetries</span><span class="p">,</span> <span class="n">sq_paulis</span><span class="p">,</span> <span class="n">sq_list</span><span class="p">,</span> <span class="n">tapering_values</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">z2_symmetries</span><span class="o">.</span><span class="n">taper</span><span class="p">(</span><span class="n">operator</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Z2Symmetries.consistent_tapering"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.html#qiskit.aqua.operators.legacy.Z2Symmetries.consistent_tapering">[belgeler]</a>    <span class="k">def</span> <span class="nf">consistent_tapering</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">):</span>
+<div class="viewcode-block" id="Z2Symmetries.consistent_tapering"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.legacy.Z2Symmetries.consistent_tapering.html#qiskit.aqua.operators.legacy.Z2Symmetries.consistent_tapering">[belgeler]</a>    <span class="k">def</span> <span class="nf">consistent_tapering</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Tapering the `operator` with the same manner of how this tapered operator</span>
 <span class="sd">        is created. i.e., using the same Cliffords and tapering values.</span>
@@ -1656,7 +1663,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Son güncelleme: 2021/08/13.
+      Son güncelleme: 2021/09/23.
 
     </p>
   </div>
@@ -1736,7 +1743,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1759,9 +1766,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

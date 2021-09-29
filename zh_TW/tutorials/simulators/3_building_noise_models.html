@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>建構雜訊模型 &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>建構雜訊模型 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -578,7 +585,7 @@ div.rendered_html tbody tr:hover {
 <h1>建構雜訊模型<a class="headerlink" href="#建構雜訊模型" title="本標題的永久連結">¶</a></h1>
 <section id="簡介">
 <h2>簡介<a class="headerlink" href="#簡介" title="本標題的永久連結">¶</a></h2>
-<p>此筆記本介紹如何使用 Qiskit Aer <code class="docutils literal notranslate"><span class="pre">雜訊</span></code> 模組，以建立用於具有雜訊模擬的自訂雜訊模型。</p>
+<p>此筆記本介紹如何使用 Qiskit Aer <code class="docutils literal notranslate"><span class="pre">noise</span></code> 模組，以建立用於具有雜訊模擬的自訂雜訊模型。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -600,23 +607,23 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </section>
-<section id="Qiskit-Aer-噪音模組">
-<h2>Qiskit Aer 噪音模組<a class="headerlink" href="#Qiskit-Aer-噪音模組" title="本標題的永久連結">¶</a></h2>
-<p>The Qiskit Aer <code class="docutils literal notranslate"><span class="pre">noise</span></code> module contains Python classes to build customized noise models for simulation. There are three key classes:</p>
+<section id="Qiskit-Aer-雜訊模組">
+<h2>Qiskit Aer 雜訊模組<a class="headerlink" href="#Qiskit-Aer-雜訊模組" title="本標題的永久連結">¶</a></h2>
+<p>Qiskit Aer <code class="docutils literal notranslate"><span class="pre">雜訊</span> <span class="pre">(noise)</span></code> 模組包含用於建立用於模擬的自訂雜訊模型的Python類別。 有三種主要類別：</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NoiseModel</span></code> 類別是用來儲存具有雜訊模擬的雜訊模型。</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">QuantumError</span></code> class which describes CPTP gate errors. These can be applied:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">`QuantumError</span></code> 類別用於描述 CPTP 閘誤差。 可套用以下項目：</p>
 <ul class="simple">
-<li><p>After <em>gate</em> or <em>reset</em> instructions</p></li>
-<li><p>Before <em>measure</em> instructions.</p></li>
+<li><p>在 <em>閘 (gate)</em> 或 * 重設 (reset)* 指令之後</p></li>
+<li><p>在 <em>測量 (measure)</em> 指令之前。</p></li>
 </ul>
 </li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">ReadoutError</span></code> class which describes classical readout errors.</p></li>
+<li><p>描述古典讀取誤差的 <code class="docutils literal notranslate"><span class="pre">ReadoutError</span></code> 類別 。</p></li>
 </ol>
 </section>
 <section id="量子誤差">
 <h2>量子誤差<a class="headerlink" href="#量子誤差" title="本標題的永久連結">¶</a></h2>
-<p>Rather than deal with the <code class="docutils literal notranslate"><span class="pre">QuantumError</span></code> object directly, many helper functions exist to automatically generate a specific type of parameterized quantum error. These are contained in the <code class="docutils literal notranslate"><span class="pre">noise</span></code> module and include functions for many common errors types used in quantum computing research. The function names and the type of error they return are:</p>
+<p>與其直接處理 <code class="docutils literal notranslate"><span class="pre">QuantumError</span></code> 物件，其實有許多輔助函數可以用來自動產生特定類型的參數化量子誤差。 這些都包含在 「雜訊 (noise)」 模組中，這模組中包括許多用於量子計算研究的常見誤差類型的函數。 函數名稱及傳回的誤差類型為：</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -629,31 +636,31 @@ div.rendered_html tbody tr:hover {
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kraus_error</span></code></p></td>
-<td><p>a general n-qubit CPTP error channel given as a list of Kraus matrices <span class="math notranslate nohighlight">\([K_0, ...]\)</span>.</p></td>
+<td><p>廣泛型的 n 量子位元 CPTP 誤差通道，以 Kraus 矩陣 <span class="math notranslate nohighlight">\([K_0, ...]\)</span> 的清單呈現</p></td>
 </tr>
 <tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">``</span></a>mixed_unitary_error ``</p></td>
 <td><p>an n-qubit mixed unitary error given as a list of unitary matrices and probabilities <span class="math notranslate nohighlight">\([(U_0, p_0),...]\)</span>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">coherent_unitary_error</span></code></p></td>
-<td><p>an n-qubit coherent unitary error given as a single unitary matrix <span class="math notranslate nohighlight">\(U\)</span>.</p></td>
+<td><p>n 量子位元的相干么正誤差，以一個么正矩陣 <span class="math notranslate nohighlight">\(U\)</span> 呈現。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pauli_error</span></code></p></td>
-<td><p>an n-qubit Pauli error channel (mixed unitary) given as a list of Pauli’s and probabilities <span class="math notranslate nohighlight">\([(P_0, p_0),...]\)</span></p></td>
+<td><p>n 量子位元的泡利誤差通道 (混和么正)，以一個泡利矩陣和機率 <span class="math notranslate nohighlight">\([(P_0, p_0),...]\)</span> 的清單呈現。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">depolarizing_error</span></code></p></td>
-<td><p>an n-qubit depolarizing error channel parameterized by a depolarization probability <span class="math notranslate nohighlight">\(p\)</span>.</p></td>
+<td><p>被去極化機率 <span class="math notranslate nohighlight">\(p\)</span> 參數化的 n 量子位元去極化誤差通道</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reset_error</span></code></p></td>
-<td><p>a single-qubit reset error parameterized by a probabilities <span class="math notranslate nohighlight">\(p_0, p_1\)</span> of resetting to the <span class="math notranslate nohighlight">\(|0\rangle\)</span>, <span class="math notranslate nohighlight">\(|1\rangle\)</span> state.</p></td>
+<td><p>被重新設定至 <span class="math notranslate nohighlight">\(|0\rangle\)</span>, <span class="math notranslate nohighlight">\(|1\rangle\)</span> 狀態的去極化機率 <span class="math notranslate nohighlight">\(p_0, p_1\)</span> 參數化的單量子位元重設誤差。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">thermal_relaxation_error</span></code></p></td>
-<td><p>a single qubit thermal relaxation channel parameterized by relaxation time constants <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(T_2\)</span>, gate time <span class="math notranslate nohighlight">\(t\)</span>, and excited state thermal population <span class="math notranslate nohighlight">\(p_1\)</span>.</p></td>
+<td><p>一個被弛緩時間常數 <span class="math notranslate nohighlight">\(T_1\)</span>、 <span class="math notranslate nohighlight">\(T_2\)</span> 、閘時間 <span class="math notranslate nohighlight">\(t\)</span>，以及激發態熱分佈數量 :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>p_1 參數化的單量子位元的熱弛緩通道。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">phase_amplitude_damping_error</span></code></p></td>
-<td><p>A single-qubit generalized combined phase and amplitude damping error channel given by an amplitude damping parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, a phase damping parameter <span class="math notranslate nohighlight">\(\gamma\)</span>, and an excited state thermal population <span class="math notranslate nohighlight">\(p_1\)</span>.</p></td>
+<td><p>一個以振幅阻尼參數 <span class="math notranslate nohighlight">\(\lambda\)</span>、相位阻尼參數 <span class="math notranslate nohighlight">\(\gamma\)</span>，和激發態熱分佈數量 <span class="math notranslate nohighlight">\(p_1\)</span> 表示的單量子位元廣義化的組合相位和振幅阻尼誤差通道。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">amplitude_damping_error</span></code></p></td>
-<td><p>A single-qubit generalized amplitude damping error channel given by an amplitude damping parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, and an excited state thermal population <span class="math notranslate nohighlight">\(p_1\)</span>.</p></td>
+<td><p>一個由振幅阻尼參數 <span class="math notranslate nohighlight">\(\lambda\)</span> 和激發態熱分佈數量 <span class="math notranslate nohighlight">\(p_1\)</span> 表示的單量子位元廣義化的振幅阻尼誤差通道。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">phase_damping_error</span></code></p></td>
 <td><p>一個由相位阻尼參數 <span class="math notranslate nohighlight">\(\gamma\)</span> 表示的單量子位元相位阻尼誤差通道。</p></td>
@@ -662,16 +669,16 @@ div.rendered_html tbody tr:hover {
 </table>
 <section id="結合量子誤差">
 <h3>結合量子誤差<a class="headerlink" href="#結合量子誤差" title="本標題的永久連結">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">QuantumError</span></code> instances can be combined by using composition, tensor product, and tensor expansion (reversed order tensor product) to produce new <code class="docutils literal notranslate"><span class="pre">QuantumErrors</span></code> as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">QuantumError</span></code> 實例可使用組合、張量積和張量展開（反序張量積）組合產生新的 <code class="docutils literal notranslate"><span class="pre">QuantumErrors</span></code> ，如下所示：</p>
 <ul class="simple">
-<li><p>Composition: <span class="math notranslate nohighlight">\(\cal{E}(\rho)=\cal{E_2}(\cal{E_1}(\rho))\)</span> as <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">=</span> <span class="pre">error1.compose(error2)</span></code></p></li>
-<li><p>Tensor product: <span class="math notranslate nohighlight">\(\cal{E}(\rho) =(\cal{E_1}\otimes\cal{E_2})(\rho)\)</span> as <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">error1.tensor(error2)</span></code></p></li>
-<li><p>Expand product: <span class="math notranslate nohighlight">\(\cal{E}(\rho) =(\cal{E_2}\otimes\cal{E_1})(\rho)\)</span> as <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">error1.expand(error2)</span></code></p></li>
+<li><p>張量積： <span class="math notranslate nohighlight">\(\cal{E}（\rho） =（\cal{E_1}\otimes\cal{E_2}）（\rho）\)</span> 如同 <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">error1.tensor（error2）</span></code></p></li>
+<li><p>張量積： <span class="math notranslate nohighlight">\(\cal{E}(\rho) =(\cal{E_1}\otimes\cal{E_2})(\rho)\)</span>，程式碼為 <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">error1.tensor(error2)</span></code></p></li>
+<li><p>展開乘積： <span class="math notranslate nohighlight">\(\cal{E}(\rho) =(\cal{E_2}\otimes\cal{E_1})(\rho)\)</span> ，程式碼為 <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">error1.expand(error2)</span></code></p></li>
 </ul>
 </section>
 <section id="範例">
 <h3>範例<a class="headerlink" href="#範例" title="本標題的永久連結">¶</a></h3>
-<p>For example to construct a 5% single-qubit Bit-flip error:</p>
+<p>例如，若要建構 5% 的單量子位元翻轉誤差：</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -830,12 +837,12 @@ True
 </pre></div></div>
 </div>
 </section>
-<section id="Readout-Error">
-<h3>Readout Error<a class="headerlink" href="#Readout-Error" title="本標題的永久連結">¶</a></h3>
-<p>Classical readout errors are specified by a list of assignment probabilities vectors <span class="math notranslate nohighlight">\(P(A|B)\)</span>:</p>
+<section id="讀取誤差">
+<h3>讀取誤差<a class="headerlink" href="#讀取誤差" title="本標題的永久連結">¶</a></h3>
+<p>古典讀取誤差由一個指派機率向量 <span class="math notranslate nohighlight">\(P(A|B)\)</span> 的清單給出：</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(A\)</span> is the <em>recorded</em> classical bit value</p></li>
-<li><p><span class="math notranslate nohighlight">\(B\)</span> is the <em>true</em> bit value returned from the measurement</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> 是其 <em>被記錄的</em> 古典位元值</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> 是測量傳回的 <em>真實的</em> 位元值</p></li>
 </ul>
 <p>例如，對於 1 量子位元: $ P(A|B) = [P(A|0), P(A|1)]$。</p>
 <div class="nbinput docutils container">
@@ -861,7 +868,7 @@ ReadoutError([[0.95 0.05]
  [0.1  0.9 ]])
 </pre></div></div>
 </div>
-<p>Readout errors may also be combined using <code class="docutils literal notranslate"><span class="pre">compose</span></code>, <code class="docutils literal notranslate"><span class="pre">tensor</span></code> and <code class="docutils literal notranslate"><span class="pre">expand</span></code> like with quantum errors.</p>
+<p>如同處理量子誤差一樣，通過使用 <code class="docutils literal notranslate"><span class="pre">compose</span></code>、<code class="docutils literal notranslate"><span class="pre">tensor</span></code>，以及 <code class="docutils literal notranslate"><span class="pre">expand</span></code>，我們也可以組合讀取誤差。</p>
 </section>
 </section>
 <section id="新增誤差至雜訊模型">
@@ -870,12 +877,12 @@ ReadoutError([[0.95 0.05]
 <ol class="arabic simple">
 <li><p>全量子位元的量子誤差</p></li>
 <li><p>特定量子位元的量子誤差</p></li>
-<li><p>Non-local quantum error</p></li>
+<li><p>非侷域性量子誤差</p></li>
 </ol>
 <section id="全量子位元的量子誤差">
 <h3>全量子位元的量子誤差<a class="headerlink" href="#全量子位元的量子誤差" title="本標題的永久連結">¶</a></h3>
 <p>這會對任何有指令的地方套用相同的誤差，不管作用在哪一個量子位元上。</p>
-<p>It is added as <code class="docutils literal notranslate"><span class="pre">noise_model.add_all_qubit_quantum_error(error,</span> <span class="pre">instructions)</span></code>:</p>
+<p>可用 <a href="#id1"><span class="problematic" id="id2">``</span></a>noise_model.add_all_qubit_quantum_error(error, instructions)``將它加入程式:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -907,8 +914,8 @@ NoiseModel:
 </section>
 <section id="特定量子位元的量子誤差">
 <h3>特定量子位元的量子誤差<a class="headerlink" href="#特定量子位元的量子誤差" title="本標題的永久連結">¶</a></h3>
-<p>This applies the error to any occurrence of an instruction acting on a specified list of qubits. Note that the order of the qubit matters: For a 2-qubit gate an error applied to qubits [0, 1] is different to one applied to qubits [1, 0] for example.</p>
-<p>It is added as <code class="docutils literal notranslate"><span class="pre">noise_model.add_quantum_error(error,</span> <span class="pre">instructions,</span> <span class="pre">qubits)</span></code>:</p>
+<p>這會將誤差套用至每個在指定的量子位元清單上執行的指令發生的當下。 請注意， 量子位元的排序很重要：對於一個二量子位元閘 ，套用至量子位元 [0, 1] 的誤差，與套用至量子位元 [1, 0] 的誤差不同。</p>
+<p>可用 <a href="#id1"><span class="problematic" id="id2">``</span></a>noise_model.add_quantum_error(error, instructions, qubits)``將它加入程式:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -939,10 +946,10 @@ NoiseModel:
 </pre></div></div>
 </div>
 </section>
-<section id="Non-local-qubit-quantum-error">
-<h3>Non-local qubit quantum error<a class="headerlink" href="#Non-local-qubit-quantum-error" title="本標題的永久連結">¶</a></h3>
-<p>This applies an error to a specific set of noise qubits after any occurrence of an instruction acting on a specific of gate qubits.</p>
-<p>It is added as <code class="docutils literal notranslate"><span class="pre">noise_model.add_nonlocal_quantum_error(error,</span> <span class="pre">instructions,</span> <span class="pre">instr_qubits,</span> <span class="pre">error_qubits)</span></code>:</p>
+<section id="非本端量子位元量子誤差">
+<h3>非本端量子位元量子誤差<a class="headerlink" href="#非本端量子位元量子誤差" title="本標題的永久連結">¶</a></h3>
+<p>在一個指令作用在一個特定的閘量子位元後，這會將誤差套用至一組特定的雜訊量子位元。</p>
+<p>可用 <a href="#id1"><span class="problematic" id="id2">``</span></a>noise_model.add_nonlocal_quantum_error(error, instructions, instr_qubits, error_qubits)``將它加入程式:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -975,7 +982,7 @@ NoiseModel:
 </section>
 <section id="使用雜訊模型執行雜訊模擬">
 <h3>使用雜訊模型執行雜訊模擬<a class="headerlink" href="#使用雜訊模型執行雜訊模擬" title="本標題的永久連結">¶</a></h3>
-<p>The command <code class="docutils literal notranslate"><span class="pre">AerSimulator(noise_model=noise_model)</span></code> returns a simulator configured to the given noise model. In addition to setting the simulator’s noise model, it also overrides the simulator’s basis gates, according to the gates of the noise model.</p>
+<p>指令 <code class="docutils literal notranslate"><span class="pre">AerSimulator（noise_model=noise_model）</span></code> 會傳回配置給給定雜訊模型的模擬器。 除了設定模擬器的雜訊模型之外，根據雜訊模型的閘門，它也會置換模擬器的基礎閘門。</p>
 </section>
 </section>
 <section id="雜訊模型範例">
@@ -1043,12 +1050,12 @@ meas: 4/════════════════════════
 </section>
 <section id="雜訊範例-1：基本位元翻轉誤差雜訊模型">
 <h2>雜訊範例 1：基本位元翻轉誤差雜訊模型<a class="headerlink" href="#雜訊範例-1：基本位元翻轉誤差雜訊模型" title="本標題的永久連結">¶</a></h2>
-<p>Lets consider a simple toy noise model example common in quantum information theory research:</p>
+<p>讓我們考慮一個在量子信息理論研究中常見的簡單玩具雜訊模型示例：</p>
 <ul class="simple">
-<li><p>When applying a single qubit gate, flip the state of the qubit with probability <code class="docutils literal notranslate"><span class="pre">p_gate1</span></code>.</p></li>
+<li><p>套用單一量子位元閘時， 其量子位元的狀態被翻轉的機率為 <code class="docutils literal notranslate"><span class="pre">p_gatew1</span></code>。</p></li>
 <li><p>當套用二量子位元閘時，將單一量子位元誤差套用至每一個量子位元。</p></li>
-<li><p>When resetting a qubit reset to 1 instead of 0 with probability <code class="docutils literal notranslate"><span class="pre">p_reset</span></code>.</p></li>
-<li><p>When measuring a qubit, flip the state of the qubit with probability <code class="docutils literal notranslate"><span class="pre">p_meas</span></code>.</p></li>
+<li><p>當重設量子位元為 1 而非 0 時，發生機率為 `` p_reset``。</p></li>
+<li><p>套用單一量子門時，將位元的狀態翻轉為機率為 <a href="#id1"><span class="problematic" id="id2">``</span></a>p_gatew1``的狀態。</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -1122,7 +1129,7 @@ NoiseModel:
 </section>
 <section id="範例-2：-T1/T2-熱弛緩">
 <h2>範例 2： T1/T2 熱弛緩<a class="headerlink" href="#範例-2：-T1/T2-熱弛緩" title="本標題的永久連結">¶</a></h2>
-<p>Now consider a more realistic error model based on thermal relaxation with the qubit environment: * Each qubit is parameterized by a thermal relaxation time constant <span class="math notranslate nohighlight">\(T_1\)</span> and a dephasing time constant <span class="math notranslate nohighlight">\(T_2\)</span>. * Note that we must have <span class="math notranslate nohighlight">\(T_2 \le 2 T_1\)</span>. * Error rates on instructions are determined by gate times and qubit <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(T_2\)</span> values.</p>
+<p>現在，請根據與位元環境的熱放鬆來考量更真實的錯誤模型： * 每一個位元都是由熱放鬆時間常數 <span class="math notranslate nohighlight">\(T_1\)</span> 和解除階段時間常數 <span class="math notranslate nohighlight">\(T_2\)</span>。 * 請注意，我們必須具有 <span class="math notranslate nohighlight">\(T_2 \le 2 T_1\)</span>。 * 指示的錯誤率是由閘時間及位元 <span class="math notranslate nohighlight">\(T_1\)</span>， <span class="math notranslate nohighlight">\(T_2\)</span> 值決定。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -1269,7 +1276,7 @@ NoiseModel:
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1290,18 +1297,18 @@ NoiseModel:
               <ul>
 <li><a class="reference internal" href="#">建構雜訊模型</a><ul>
 <li><a class="reference internal" href="#簡介">簡介</a></li>
-<li><a class="reference internal" href="#Qiskit-Aer-噪音模組">Qiskit Aer 噪音模組</a></li>
+<li><a class="reference internal" href="#Qiskit-Aer-雜訊模組">Qiskit Aer 雜訊模組</a></li>
 <li><a class="reference internal" href="#量子誤差">量子誤差</a><ul>
 <li><a class="reference internal" href="#結合量子誤差">結合量子誤差</a></li>
 <li><a class="reference internal" href="#範例">範例</a></li>
 <li><a class="reference internal" href="#與-QuantumChannel-運算子之間的相互轉換">與 QuantumChannel 運算子之間的相互轉換</a></li>
-<li><a class="reference internal" href="#Readout-Error">Readout Error</a></li>
+<li><a class="reference internal" href="#讀取誤差">讀取誤差</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#新增誤差至雜訊模型">新增誤差至雜訊模型</a><ul>
 <li><a class="reference internal" href="#全量子位元的量子誤差">全量子位元的量子誤差</a></li>
 <li><a class="reference internal" href="#特定量子位元的量子誤差">特定量子位元的量子誤差</a></li>
-<li><a class="reference internal" href="#Non-local-qubit-quantum-error">Non-local qubit quantum error</a></li>
+<li><a class="reference internal" href="#非本端量子位元量子誤差">非本端量子位元量子誤差</a></li>
 <li><a class="reference internal" href="#使用雜訊模型執行雜訊模擬">使用雜訊模型執行雜訊模擬</a></li>
 </ul>
 </li>
@@ -1383,7 +1390,7 @@ NoiseModel:
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1406,9 +1413,11 @@ NoiseModel:
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.operators.legacy.PauliGraph &mdash; Qiskit 0.29.0 documentation</title>
+  <title>PauliGraph &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடல்" href="../search.html" />
-    <link rel="next" title="qiskit.aqua.operators.legacy.Z2Symmetries" href="qiskit.aqua.operators.legacy.Z2Symmetries.html" />
+    <link rel="next" title="Z2Symmetries" href="qiskit.aqua.operators.legacy.Z2Symmetries.html" />
     <link rel="prev" title="qiskit.aqua.operators.legacy.check_commutativity" href="qiskit.aqua.operators.legacy.check_commutativity.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">ஆவண முகப்புப்பக்கம்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">முன்னணி</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API குறிப்புகள்</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit சிமுலேட்டர் (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit சோதனைகள் (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit பயன்பாட்டு பகுதிகள் (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM குவாண்டம் (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">பழுது கண்டறிதல்</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.operators.legacy.html">Legacy Operators (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.operators.legacy</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.operators.legacy.PauliGraph</li>
+      <li>PauliGraph</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,45 +339,17 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-operators-legacy-pauligraph">
-<h1>qiskit.aqua.operators.legacy.PauliGraph<a class="headerlink" href="#qiskit-aqua-operators-legacy-pauligraph" title="Permalink to this headline">¶</a></h1>
+  <section id="pauligraph">
+<h1>PauliGraph<a class="headerlink" href="#pauligraph" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.operators.legacy.PauliGraph">
 <em class="property">class </em><code class="sig-name descname">PauliGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">paulis</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'largest-degree'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/operators/legacy/pauli_graph.html#PauliGraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.operators.legacy.PauliGraph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pauli Graph.</p>
-<dl class="py method">
-<dt id="qiskit.aqua.operators.legacy.PauliGraph.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">paulis</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'largest-degree'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/operators/legacy/pauli_graph.html#PauliGraph.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.operators.legacy.PauliGraph.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.operators.legacy.PauliGraph.__init__" title="qiskit.aqua.operators.legacy.PauliGraph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(paulis[, mode])</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-</tbody>
-</table>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Pauli Graph.</p>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.operators.legacy.PauliGraph.grouped_paulis" title="qiskit.aqua.operators.legacy.PauliGraph.grouped_paulis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grouped_paulis</span></code></a></p></td>
-<td><p>Getter of grouped Pauli list.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.operators.legacy.PauliGraph.grouped_paulis">
-<em class="property">property </em><code class="sig-name descname">grouped_paulis</code><a class="headerlink" href="#qiskit.aqua.operators.legacy.PauliGraph.grouped_paulis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">grouped_paulis</code><a class="headerlink" href="#qiskit.aqua.operators.legacy.PauliGraph.grouped_paulis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Getter of grouped Pauli list.</p>
 </dd></dl>
 
@@ -386,7 +365,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.aqua.operators.legacy.Z2Symmetries.html" class="btn btn-neutral float-right" title="qiskit.aqua.operators.legacy.Z2Symmetries" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.operators.legacy.Z2Symmetries.html" class="btn btn-neutral float-right" title="Z2Symmetries" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="qiskit.aqua.operators.legacy.check_commutativity.html" class="btn btn-neutral" title="qiskit.aqua.operators.legacy.check_commutativity" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -403,7 +382,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -422,7 +401,7 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.operators.legacy.PauliGraph</a></li>
+<li><a class="reference internal" href="#">PauliGraph</a></li>
 </ul>
 
             </div>
@@ -486,7 +465,7 @@
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -509,9 +488,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

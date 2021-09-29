@@ -1,19 +1,18 @@
-﻿qiskit.optimization.QuadraticProgram
-====================================
+﻿QuadraticProgram
+================
 
 .. currentmodule:: qiskit.optimization
 
 .. autoclass:: QuadraticProgram
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuadraticProgram.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuadraticProgram.binary_var
       ~QuadraticProgram.binary_var_dict
       ~QuadraticProgram.binary_var_list
@@ -51,23 +50,17 @@
       ~QuadraticProgram.to_docplex
       ~QuadraticProgram.to_ising
       ~QuadraticProgram.write_to_lp_file
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuadraticProgram.linear_constraints
-      ~QuadraticProgram.linear_constraints_index
-      ~QuadraticProgram.name
-      ~QuadraticProgram.objective
-      ~QuadraticProgram.quadratic_constraints
-      ~QuadraticProgram.quadratic_constraints_index
-      ~QuadraticProgram.status
-      ~QuadraticProgram.variables
-      ~QuadraticProgram.variables_index
-   
-   
+   .. autoattribute:: linear_constraints
+   .. autoattribute:: linear_constraints_index
+   .. autoattribute:: name
+   .. autoattribute:: objective
+   .. autoattribute:: quadratic_constraints
+   .. autoattribute:: quadratic_constraints_index
+   .. autoattribute:: status
+   .. autoattribute:: variables
+   .. autoattribute:: variables_index

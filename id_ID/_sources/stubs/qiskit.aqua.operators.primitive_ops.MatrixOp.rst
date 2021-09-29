@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.primitive\_ops.MatrixOp
-=============================================
+﻿MatrixOp
+========
 
 .. currentmodule:: qiskit.aqua.operators.primitive_ops
 
 .. autoclass:: MatrixOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MatrixOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MatrixOp.add
       ~MatrixOp.adjoint
       ~MatrixOp.assign_parameters
@@ -38,20 +37,14 @@
       ~MatrixOp.to_matrix
       ~MatrixOp.to_matrix_op
       ~MatrixOp.to_pauli_op
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MatrixOp.ENABLE_DEPRECATION
-      ~MatrixOp.INDENTATION
-      ~MatrixOp.coeff
-      ~MatrixOp.num_qubits
-      ~MatrixOp.parameters
-      ~MatrixOp.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

@@ -1,23 +1,18 @@
-﻿qiskit.opflow.expectations.ExpectationFactory
-=============================================
+ExpectationFactory
+==================
 
 .. currentmodule:: qiskit.opflow.expectations
 
 .. autoclass:: ExpectationFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~ExpectationFactory.__init__
-      ~ExpectationFactory.build
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~ExpectationFactory.build
+
+

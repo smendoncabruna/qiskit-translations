@@ -1,24 +1,16 @@
-﻿qiskit.chemistry.drivers.InitialGuess
-=====================================
+﻿InitialGuess
+============
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: InitialGuess
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~InitialGuess.ATOM
-      ~InitialGuess.HCORE
-      ~InitialGuess.MINAO
-   
-   
+   .. autoattribute:: ATOM
+   .. autoattribute:: HCORE
+   .. autoattribute:: MINAO

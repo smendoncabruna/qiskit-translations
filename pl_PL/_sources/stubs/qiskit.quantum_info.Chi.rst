@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Chi
-========================
+﻿Chi
+===
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Chi
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Chi.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Chi.adjoint
       ~Chi.compose
       ~Chi.conjugate
@@ -32,21 +31,15 @@
       ~Chi.to_instruction
       ~Chi.to_operator
       ~Chi.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Chi.atol
-      ~Chi.data
-      ~Chi.dim
-      ~Chi.num_qubits
-      ~Chi.qargs
-      ~Chi.rtol
-      ~Chi.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

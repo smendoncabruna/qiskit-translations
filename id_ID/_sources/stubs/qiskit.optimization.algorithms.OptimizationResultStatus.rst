@@ -1,24 +1,16 @@
-﻿qiskit.optimization.algorithms.OptimizationResultStatus
-=======================================================
+﻿OptimizationResultStatus
+========================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: OptimizationResultStatus
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OptimizationResultStatus.FAILURE
-      ~OptimizationResultStatus.INFEASIBLE
-      ~OptimizationResultStatus.SUCCESS
-   
-   
+   .. autoattribute:: FAILURE
+   .. autoattribute:: INFEASIBLE
+   .. autoattribute:: SUCCESS

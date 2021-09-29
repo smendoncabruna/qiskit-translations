@@ -1,40 +1,26 @@
-﻿qiskit.optimization.algorithms.GroverOptimizationResult
-=======================================================
+﻿GroverOptimizationResult
+========================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: GroverOptimizationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~GroverOptimizationResult.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GroverOptimizationResult.fval
-      ~GroverOptimizationResult.intermediate_fval
-      ~GroverOptimizationResult.n_input_qubits
-      ~GroverOptimizationResult.n_output_qubits
-      ~GroverOptimizationResult.operation_counts
-      ~GroverOptimizationResult.raw_results
-      ~GroverOptimizationResult.samples
-      ~GroverOptimizationResult.status
-      ~GroverOptimizationResult.threshold
-      ~GroverOptimizationResult.variable_names
-      ~GroverOptimizationResult.variables
-      ~GroverOptimizationResult.variables_dict
-      ~GroverOptimizationResult.x
-   
-   
+   .. autoattribute:: fval
+   .. autoattribute:: intermediate_fval
+   .. autoattribute:: n_input_qubits
+   .. autoattribute:: n_output_qubits
+   .. autoattribute:: operation_counts
+   .. autoattribute:: raw_results
+   .. autoattribute:: samples
+   .. autoattribute:: status
+   .. autoattribute:: threshold
+   .. autoattribute:: variable_names
+   .. autoattribute:: variables
+   .. autoattribute:: variables_dict
+   .. autoattribute:: x

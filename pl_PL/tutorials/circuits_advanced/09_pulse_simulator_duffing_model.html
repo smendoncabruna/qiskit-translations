@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit Aer: Pulse simulation of two qubits using a Duffing oscillator model &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>Qiskit Aer: Pulse simulation of two qubits using a Duffing oscillator model &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -660,6 +667,7 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="kn">import</span> <span class="nn">qiskit.pulse</span> <span class="k">as</span> <span class="nn">pulse</span>
 <span class="kn">from</span> <span class="nn">qiskit.pulse.library</span> <span class="kn">import</span> <span class="n">Gaussian</span><span class="p">,</span> <span class="n">GaussianSquare</span>
 <span class="kn">from</span> <span class="nn">qiskit.compiler</span> <span class="kn">import</span> <span class="n">assemble</span>
+<span class="kn">import</span> <span class="nn">qiskit.ignis</span>
 
 <span class="kn">from</span> <span class="nn">qiskit.ignis.characterization.calibrations</span> <span class="kn">import</span> <span class="n">rabi_schedules</span><span class="p">,</span> <span class="n">RabiFitter</span>
 </pre></div>
@@ -683,7 +691,7 @@ div.rendered_html tbody tr:hover {
 <section id="3.-Duffing-oscillator-system-model">
 <h2>3. Duffing oscillator system model<a class="headerlink" href="#3.-Duffing-oscillator-system-model" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>An object representing a model for a collection of Duffing oscillators can be constructed using the <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> function. Here we construct a <span class="math notranslate nohighlight">\(2\)</span> Duffing oscillator model with cutoff dimension <span class="math notranslate nohighlight">\(3\)</span>.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -714,6 +722,15 @@ div.rendered_html tbody tr:hover {
                                        <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/providers/aer/pulse/system_models/string_model_parser/string_model_parser.py:280: DeprecationWarning: Using the `__mul__` operator `A * B` as shorthand for `A.dot(B)` is deprecated as of version 0.17.0 and will be  removed no earlier than 3 months after the release date. As an alternative, use the compose operator `B &amp; A` in place of `A * B` as a replacement.
+  stack.append(op1 * op2)
+</pre></div></div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">duffing_system_model</span></code> returns a <code class="docutils literal notranslate"><span class="pre">PulseSystemModel</span></code> object, which is a general object for storing model information required for simulation with the <code class="docutils literal notranslate"><span class="pre">PulseSimulator</span></code>.</p>
 </section>
@@ -802,7 +819,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># instantiate the pulse simulator</span>
-<span class="n">backend_sim</span> <span class="o">=</span> <span class="n">PulseSimulator</span><span class="p">()</span>
+<span class="n">backend_sim</span> <span class="o">=</span> <span class="n">PulseSimulator</span><span class="p">(</span><span class="n">system_model</span><span class="o">=</span><span class="n">two_qubit_model</span><span class="p">)</span>
 
 <span class="c1"># compute frequencies from the Hamiltonian</span>
 <span class="n">qubit_lo_freq</span> <span class="o">=</span> <span class="n">two_qubit_model</span><span class="o">.</span><span class="n">hamiltonian</span><span class="o">.</span><span class="n">get_qubit_lo_from_drift</span><span class="p">()</span>
@@ -817,15 +834,24 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>Run the simulation using the simulator backend.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># run the simulation</span>
-<span class="n">rabi_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">rabi_qobj</span><span class="p">,</span> <span class="n">two_qubit_model</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="n">rabi_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">rabi_qobj</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/providers/aer/pulse/system_models/string_model_parser/operator_generators.py:154: DeprecationWarning: Using the `__matmul__` operator `A @ B` as shorthand for `A.compose(B)` is deprecated as of version 0.17.0 and will be  removed no earlier than 3 months after the release date. Use the `A &amp; B` instead.
+  proj_op += estate @ estate.adjoint()
+</pre></div></div>
 </div>
 </section>
 <section id="4.3-Fit-and-plot-the-data">
@@ -853,8 +879,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Pi Amp: 0.310790
-Pi Amp: 0.313279
+Pi Amp: 0.612110
+Pi Amp: 0.611280
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1116,7 +1142,7 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">,</span> <span class="n">two_qubit_model</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="n">plot_cr_pop_data</span><span class="p">(</span><span class="n">drive_idx</span><span class="p">,</span> <span class="n">target_idx</span><span class="p">,</span> <span class="n">sim_result</span><span class="p">)</span>
 </pre></div>
@@ -1141,11 +1167,20 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/visualization/bloch.py:397: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+  self.axes = Axes3D(self.fig, azim=self.view[0], elev=self.view[1])
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_0.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_0.png" />
+<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_1.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_38_1.png" />
 </div>
 </div>
 </section>
@@ -1181,7 +1216,7 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">,</span> <span class="n">two_qubit_model</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span></span><span class="n">sim_result</span> <span class="o">=</span> <span class="n">backend_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cr_rabi_qobj</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="n">plot_cr_pop_data</span><span class="p">(</span><span class="n">drive_idx</span><span class="p">,</span> <span class="n">target_idx</span><span class="p">,</span> <span class="n">sim_result</span><span class="p">)</span>
 </pre></div>
@@ -1206,11 +1241,20 @@ Pi Amp: 0.313279
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/visualization/bloch.py:397: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+  self.axes = Axes3D(self.fig, azim=self.view[0], elev=self.view[1])
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_0.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_0.png" />
+<img alt="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_1.png" src="../../_images/tutorials_circuits_advanced_09_pulse_simulator_duffing_model_43_1.png" />
 </div>
 </div>
 <p>Here we see that qubit 0 takes a <em>different</em> trajectory on the Bloch sphere when qubit 1 is in the excited state. This is what enables controlled operations between two qubits.</p>
@@ -1228,24 +1272,24 @@ Pi Amp: 0.313279
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/tmp/qiskit_release/lib/python3.9/site-packages/qiskit/aqua/__init__.py:86: DeprecationWarning: The package qiskit.aqua is deprecated. It was moved/refactored to qiskit-terra For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
+  warn_package(&#39;aqua&#39;, &#39;qiskit-terra&#39;)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
 <div class="output_area rendered_html docutils container">
-<h3>Version Information</h3><table><tr><th>Qiskit Software</th><th>Version</th></tr><tr><td>Qiskit</td><td>0.19.6</td></tr><tr><td>Terra</td><td>0.14.2</td></tr><tr><td>Aer</td><td>0.5.2</td></tr><tr><td>Ignis</td><td>0.3.3</td></tr><tr><td>Aqua</td><td>0.7.3</td></tr><tr><td>IBM Q Provider</td><td>0.7.2</td></tr><tr><th>System information</th></tr><tr><td>Python</td><td>3.8.5 (default, Jul 27 2020, 08:42:51)
-[GCC 10.1.0]</td></tr><tr><td>OS</td><td>Linux</td></tr><tr><td>CPUs</td><td>32</td></tr><tr><td>Memory (Gb)</td><td>125.72603988647461</td></tr><tr><td colspan='2'>Sun Aug 09 12:28:03 2020 EDT</td></tr></table></div>
+<h3>Version Information</h3><table><tr><th>Qiskit Software</th><th>Version</th></tr><tr><td><code>qiskit-terra</code></td><td>0.18.2</td></tr><tr><td><code>qiskit-aer</code></td><td>0.8.2</td></tr><tr><td><code>qiskit-ignis</code></td><td>0.6.0</td></tr><tr><td><code>qiskit-ibmq-provider</code></td><td>0.16.0</td></tr><tr><td><code>qiskit-aqua</code></td><td>0.9.5</td></tr><tr><td><code>qiskit</code></td><td>0.29.1</td></tr><tr><td><code>qiskit-nature</code></td><td>0.2.1</td></tr><tr><td><code>qiskit-finance</code></td><td>0.2.1</td></tr><tr><td><code>qiskit-optimization</code></td><td>0.2.2</td></tr><tr><td><code>qiskit-machine-learning</code></td><td>0.2.1</td></tr><tr><th>System information</th></tr><tr><td>Python</td><td>3.9.6 (default, Jun 30 2021, 10:22:16)
+[GCC 11.1.0]</td></tr><tr><td>OS</td><td>Linux</td></tr><tr><td>CPUs</td><td>32</td></tr><tr><td>Memory (Gb)</td><td>125.65557479858398</td></tr><tr><td colspan='2'>Thu Sep 16 07:39:30 2021 EDT</td></tr></table></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2020.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
+<div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
 </section>
 </section>
@@ -1268,7 +1312,7 @@ Pi Amp: 0.313279
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -1377,7 +1421,7 @@ Pi Amp: 0.313279
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1400,9 +1444,11 @@ Pi Amp: 0.313279
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

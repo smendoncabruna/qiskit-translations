@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.UnivariateDistribution
-=================================================================
+﻿UnivariateDistribution
+======================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: UnivariateDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnivariateDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnivariateDistribution.build
       ~UnivariateDistribution.build_controlled
       ~UnivariateDistribution.build_controlled_inverse
@@ -27,20 +26,14 @@
       ~UnivariateDistribution.pdf_to_probabilities
       ~UnivariateDistribution.required_ancillas
       ~UnivariateDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnivariateDistribution.high
-      ~UnivariateDistribution.low
-      ~UnivariateDistribution.num_target_qubits
-      ~UnivariateDistribution.num_values
-      ~UnivariateDistribution.probabilities
-      ~UnivariateDistribution.values
-   
-   
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: values

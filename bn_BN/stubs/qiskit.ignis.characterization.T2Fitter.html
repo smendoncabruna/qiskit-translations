@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.characterization.T2Fitter &mdash; Qiskit 0.29.0 documentation</title>
+  <title>T2Fitter &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="ইনডেক্স" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="qiskit.ignis.characterization.T2StarFitter" href="qiskit.ignis.characterization.T2StarFitter.html" />
-    <link rel="prev" title="qiskit.ignis.characterization.T1Fitter" href="qiskit.ignis.characterization.T1Fitter.html" /> 
+    <link rel="next" title="qiskit.ignis.characterization.T2Fitter.add_data" href="qiskit.ignis.characterization.T2Fitter.add_data.html" />
+    <link rel="prev" title="qiskit.ignis.characterization.T1Fitter.time_err" href="qiskit.ignis.characterization.T1Fitter.time_err.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,15 +231,15 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">নথির কেন্দ্রস্থল</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">ফ্রন্টম্যাটার</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../qc_intro.html">Quantum computing in a nutshell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intro_tutorial1.html">Introduction to Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qc_intro.html">এক নজরে কোয়ান্টাম কম্পিউটিং</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_tutorial1.html">Qiskit পরিচিতি</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Local Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">লোকাল কনফিগারেশন</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 </ul>
 <p><span class="caption-text">গ্রন্থাগারসমূহ</span></p>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (টেরা)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit সিমুলেটর (এয়ার)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit পরীক্ষণ (এক্সপেরিমেন্ট) (ইগ্নিস)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit অ্যাপ্লিকেশন মডিউলসমূহ (অ্যাকোয়া)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM কোয়ান্টাম পরিষেবা সরবরাহকারী</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit অ্যাপ্লিকেশন (অ্যাকোয়া) স্থানান্তর (মাইগ্রেশন) নির্দেশিকা</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit অ্যাপ্লিকেশন (অ্যাকোয়া) স্থানান্তর (মাইগ্রেশন) নির্দেশিকা</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">সমস্যার সমাধান</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/characterization.html">Characterization (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.ignis.characterization</span></code>)</a> &gt;</li>
         
-      <li>qiskit.ignis.characterization.T2Fitter</li>
+      <li>T2Fitter</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-ignis-characterization-t2fitter">
-<h1>qiskit.ignis.characterization.T2Fitter<a class="headerlink" href="#qiskit-ignis-characterization-t2fitter" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+  <section id="t2fitter">
+<h1>T2Fitter<a class="headerlink" href="#t2fitter" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.ignis.characterization.T2Fitter">
 <em class="property">class </em><code class="sig-name descname">T2Fitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backend_result</span></em>, <em class="sig-param"><span class="n">xdata</span></em>, <em class="sig-param"><span class="n">qubits</span></em>, <em class="sig-param"><span class="n">fit_p0</span></em>, <em class="sig-param"><span class="n">fit_bounds</span></em>, <em class="sig-param"><span class="n">circbasename</span><span class="o">=</span><span class="default_value">'t2'</span></em>, <em class="sig-param"><span class="n">time_unit</span><span class="o">=</span><span class="default_value">'micro-seconds'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/coherence/fitters.html#T2Fitter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Estimate T<sub>2</sub>, based on experiments outcomes.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.ignis.characterization.fitters.BaseCoherenceFitter</span></code></p>
+<p>Estimate T<sub>2</sub>, based on experiments outcomes.</p>
 <p>The experiments were created by <cite>t2_circuits</cite>, and executed on the device.</p>
 <p>The probabilities of measuring 0 is assumed to be of the form</p>
 <div class="math notranslate nohighlight">
@@ -355,12 +363,6 @@ The second tuple is the upper bounds.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.T2Fitter.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backend_result</span></em>, <em class="sig-param"><span class="n">xdata</span></em>, <em class="sig-param"><span class="n">qubits</span></em>, <em class="sig-param"><span class="n">fit_p0</span></em>, <em class="sig-param"><span class="n">fit_bounds</span></em>, <em class="sig-param"><span class="n">circbasename</span><span class="o">=</span><span class="default_value">'t2'</span></em>, <em class="sig-param"><span class="n">time_unit</span><span class="o">=</span><span class="default_value">'micro-seconds'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/coherence/fitters.html#T2Fitter.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.__init__" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -368,80 +370,27 @@ The second tuple is the upper bounds.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.__init__" title="qiskit.ignis.characterization.T2Fitter.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(backend_result, xdata, qubits, ...)</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.add_data" title="qiskit.ignis.characterization.T2Fitter.add_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_data</span></code></a>(results[, recalc, refit])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.characterization.T2Fitter.add_data.html#qiskit.ignis.characterization.T2Fitter.add_data" title="qiskit.ignis.characterization.T2Fitter.add_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_data</span></code></a></p></td>
 <td><p>Add new execution results to previous execution results</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.fit_data" title="qiskit.ignis.characterization.T2Fitter.fit_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_data</span></code></a>([qid, p0, bounds, series])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.characterization.T2Fitter.fit_data.html#qiskit.ignis.characterization.T2Fitter.fit_data" title="qiskit.ignis.characterization.T2Fitter.fit_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_data</span></code></a></p></td>
 <td><p>Fit the curve.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.plot" title="qiskit.ignis.characterization.T2Fitter.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(qind[, series, ax, show_plot])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.characterization.T2Fitter.plot.html#qiskit.ignis.characterization.T2Fitter.plot" title="qiskit.ignis.characterization.T2Fitter.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p></td>
 <td><p>Plot coherence data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.time" title="qiskit.ignis.characterization.T2Fitter.time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time</span></code></a>([qid, series])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.characterization.T2Fitter.time.html#qiskit.ignis.characterization.T2Fitter.time" title="qiskit.ignis.characterization.T2Fitter.time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time</span></code></a></p></td>
 <td><p>Return the characteristic time for the given qubit and series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.time_err" title="qiskit.ignis.characterization.T2Fitter.time_err"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_err</span></code></a>([qid, series])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.characterization.T2Fitter.time_err.html#qiskit.ignis.characterization.T2Fitter.time_err" title="qiskit.ignis.characterization.T2Fitter.time_err"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_err</span></code></a></p></td>
 <td><p>Return the error of characteristic time for the given qubit and series</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.backend_result" title="qiskit.ignis.characterization.T2Fitter.backend_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend_result</span></code></a></p></td>
-<td><p>Return the execution results</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.description" title="qiskit.ignis.characterization.T2Fitter.description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">description</span></code></a></p></td>
-<td><p>Return the fitter's purpose, e.g.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.fit_fun" title="qiskit.ignis.characterization.T2Fitter.fit_fun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_fun</span></code></a></p></td>
-<td><p>Return the function used in the fit, e.g.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.measured_qubits" title="qiskit.ignis.characterization.T2Fitter.measured_qubits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">measured_qubits</span></code></a></p></td>
-<td><p>Return the indices of the qubits to be characterized</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.params" title="qiskit.ignis.characterization.T2Fitter.params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code></a></p></td>
-<td><p>Return the fit function parameters that were calculated by curve_fit</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.params_err" title="qiskit.ignis.characterization.T2Fitter.params_err"><code class="xref py py-obj docutils literal notranslate"><span class="pre">params_err</span></code></a></p></td>
-<td><p>Return the error of the fit function parameters</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.series" title="qiskit.ignis.characterization.T2Fitter.series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">series</span></code></a></p></td>
-<td><p>Return the list of series for the data</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.xdata" title="qiskit.ignis.characterization.T2Fitter.xdata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xdata</span></code></a></p></td>
-<td><p>Return the data points on the x-axis, the independenet parameter which is fit against</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.characterization.T2Fitter.ydata" title="qiskit.ignis.characterization.T2Fitter.ydata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ydata</span></code></a></p></td>
-<td><p>Return the data points on the y-axis</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.T2Fitter.add_data">
-<code class="sig-name descname">add_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">results</span></em>, <em class="sig-param"><span class="n">recalc</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">refit</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.add_data" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Add new execution results to previous execution results</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>results</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code>]]) -- new execution results</p></li>
-<li><p><strong>recalc</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- whether tp recalculate the data</p></li>
-<li><p><strong>refit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- whether to refit the data</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.backend_result">
-<em class="property">property </em><code class="sig-name descname">backend_result</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.backend_result" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">backend_result</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.backend_result" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the execution results</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -450,9 +399,9 @@ The second tuple is the upper bounds.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.description">
-<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.description" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">description</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.description" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the fitter's purpose, e.g. 'T1'</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -461,26 +410,9 @@ The second tuple is the upper bounds.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.T2Fitter.fit_data">
-<code class="sig-name descname">fit_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qid</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">p0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bounds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.fit_data" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Fit the curve.</p>
-<p>Compute self._params and self._params_err</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- qubit for fitting. If -1 fit for all the qubits</p></li>
-<li><p><strong>p0</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) -- initial guess, equivalent to <cite>p0</cite> in <cite>scipy.optimize</cite></p></li>
-<li><p><strong>bounds</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]]) -- bounds, equivalent to <cite>bounds</cite> in <cite>scipy.optimize</cite></p></li>
-<li><p><strong>series</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) -- series to fit (if None fit all)</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.fit_fun">
-<em class="property">property </em><code class="sig-name descname">fit_fun</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.fit_fun" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">fit_fun</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.fit_fun" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the function used in the fit,
 e.g. BaseFitter._exp_fit_fun</p>
 <dl class="field-list simple">
@@ -490,9 +422,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.measured_qubits">
-<em class="property">property </em><code class="sig-name descname">measured_qubits</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.measured_qubits" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">measured_qubits</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.measured_qubits" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the indices of the qubits to be characterized</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -501,9 +433,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.params">
-<em class="property">property </em><code class="sig-name descname">params</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.params" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">params</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.params" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the fit function parameters that were calculated by curve_fit</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -512,9 +444,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.params_err">
-<em class="property">property </em><code class="sig-name descname">params_err</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.params_err" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">params_err</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.params_err" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the error of the fit function parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -523,34 +455,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.T2Fitter.plot">
-<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qind</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">'0'</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/characterization/coherence/fitters.html#T2Fitter.plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.plot" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Plot coherence data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qind</strong> -- qubit index to plot</p></li>
-<li><p><strong>series</strong> -- which series to plot (if list then plot multiple)</p></li>
-<li><p><strong>ax</strong> -- plot axes</p></li>
-<li><p><strong>show_plot</strong> -- whether to call plt.show()</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্নস</dt>
-<dd class="field-even"><p>The axes object</p>
-</dd>
-<dt class="field-odd">রিটার্ন টাইপ</dt>
-<dd class="field-odd"><p>Axes</p>
-</dd>
-<dt class="field-even">রেইজেস</dt>
-<dd class="field-even"><p><strong>ImportError</strong> -- if matplotlib is not installed</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.series">
-<em class="property">property </em><code class="sig-name descname">series</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.series" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">series</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.series" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the list of series for the data</p>
 <dl class="field-list simple">
 <dt class="field-odd">রিটার্ন টাইপ</dt>
@@ -559,49 +466,9 @@ e.g. BaseFitter._exp_fit_fun</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.T2Fitter.time">
-<code class="sig-name descname">time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qid</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">'0'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.time" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Return the characteristic time for the given qubit and series</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the qubit index (or all qubits if -1)</p></li>
-<li><p><strong>series</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- the series to get</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]</p>
-</dd>
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>The characteristic time of the qubit, or all qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.characterization.T2Fitter.time_err">
-<code class="sig-name descname">time_err</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qid</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">series</span><span class="o">=</span><span class="default_value">'0'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.time_err" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
-<dd><p>Return the error of characteristic time for the given qubit and series</p>
-<dl class="field-list simple">
-<dt class="field-odd">প্যারামিটার</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>qid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the qubit index (or all qubits if -1)</p></li>
-<li><p><strong>series</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- the series to get</p></li>
-</ul>
-</dd>
-<dt class="field-even">রিটার্ন টাইপ</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]</p>
-</dd>
-<dt class="field-odd">রিটার্নস</dt>
-<dd class="field-odd"><p>The error of the characteristic time of the qubit, or all qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.xdata">
-<em class="property">property </em><code class="sig-name descname">xdata</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.xdata" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">xdata</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.xdata" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the data points on the x-axis, the independenet
 parameter which is fit against</p>
 <dl class="field-list simple">
@@ -611,9 +478,9 @@ parameter which is fit against</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.ignis.characterization.T2Fitter.ydata">
-<em class="property">property </em><code class="sig-name descname">ydata</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.ydata" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
+<code class="sig-name descname">ydata</code><a class="headerlink" href="#qiskit.ignis.characterization.T2Fitter.ydata" title="এই সংজ্ঞার পার্মালিঙ্ক">¶</a></dt>
 <dd><p>Return the data points on the y-axis</p>
 <p>The data points are returning in the form of a list of dictionaries:</p>
 <blockquote>
@@ -650,10 +517,10 @@ of qubit i for a circuit that lasts xdata[j].</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.ignis.characterization.T2StarFitter.html" class="btn btn-neutral float-right" title="qiskit.ignis.characterization.T2StarFitter" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.ignis.characterization.T2Fitter.add_data.html" class="btn btn-neutral float-right" title="qiskit.ignis.characterization.T2Fitter.add_data" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.ignis.characterization.T1Fitter.html" class="btn btn-neutral" title="qiskit.ignis.characterization.T1Fitter" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.ignis.characterization.T1Fitter.time_err.html" class="btn btn-neutral" title="qiskit.ignis.characterization.T1Fitter.time_err" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -667,7 +534,7 @@ of qubit i for a circuit that lasts xdata[j].</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      2021/08/13 সর্বশেষ পরিবর্তন করা হয়েছে।
+      2021/09/23 সর্বশেষ পরিবর্তন করা হয়েছে।
 
     </p>
   </div>
@@ -686,7 +553,7 @@ of qubit i for a circuit that lasts xdata[j].</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.ignis.characterization.T2Fitter</a></li>
+<li><a class="reference internal" href="#">T2Fitter</a></li>
 </ul>
 
             </div>
@@ -750,7 +617,7 @@ of qubit i for a circuit that lasts xdata[j].</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -773,9 +640,11 @@ of qubit i for a circuit that lasts xdata[j].</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

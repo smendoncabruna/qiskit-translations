@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.NumPyEigensolver
-==================================
+﻿NumPyEigensolver
+================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: NumPyEigensolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyEigensolver.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NumPyEigensolver.compute_eigenvalues
       ~NumPyEigensolver.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumPyEigensolver.filter_criterion
-      ~NumPyEigensolver.k
-   
-   
+   .. autoattribute:: filter_criterion
+   .. autoattribute:: k

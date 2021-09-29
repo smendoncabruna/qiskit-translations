@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.Shor
-======================
+﻿Shor
+====
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: Shor
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Shor.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Shor.construct_circuit
       ~Shor.factor
       ~Shor.modinv
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Shor.quantum_instance
-   
-   
+   .. autoattribute:: quantum_instance

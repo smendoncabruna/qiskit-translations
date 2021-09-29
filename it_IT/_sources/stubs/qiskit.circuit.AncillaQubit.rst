@@ -1,29 +1,15 @@
-﻿qiskit.circuit.AncillaQubit
-===========================
+﻿AncillaQubit
+============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: AncillaQubit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~AncillaQubit.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AncillaQubit.index
-      ~AncillaQubit.register
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: register

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>랜덤화된 벤치마킹 &mdash; Qiskit 0.29.0 문서</title>
+  <title>랜덤화된 벤치마킹 &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -579,7 +586,7 @@ div.rendered_html tbody tr:hover {
 <section id="소개">
 <h2>소개<a class="headerlink" href="#소개" title="제목 주소">¶</a></h2>
 <p><strong>랜덤화된 벤치마크 (RB)</strong> 는 초기 상태로 큐비트를 리턴해야 하는 랜덤 클리포드 게이트의 시퀀스를 실행함으로써 평균 게이트 성능을 측정하기 위한 잘 알려진 기술이다. Qiskit Ignis는 1개 및 2개의 큐비트 Clifford 게이트 서열을 동시에 생성하는 툴을 갖는다.</p>
-<p>이 노트북은 <code class="docutils literal notranslate"><span class="pre">ignis.verification.randomized_benchmarking</span></code> 모듈을 사용하는 방법에 대한 예제를 제공한. 이 특정한 예는 1-qubit RB와 동시에 2-qubit 무작위화된 벤치마킹 을 실행하는 방법을 나타낸다. RB 신뢰도를 예측하기 위해 일부 도우미 기능을 사용하는 방법에 대한 예도 있다.</p>
+<p>이 노트북은 <code class="docutils literal notranslate"><span class="pre">ignis.verification.randomized_benchmarking</span></code> 모듈을 사용하는 방법에 대한 예를 제공 한다. 제공되는 예시는 1큐비트 RB(무작위 벤치마킹)와 동시에 2큐비트 RB를 실행하는 방법을 보여준다. RB 정확도를 예측하기 위해 일부 추가 기능을 사용하는 방법에 대한 예시도 제공한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -603,16 +610,16 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="1)-RB-Run의-파라미터를-선택한다.">
 <h2>1) RB Run의 파라미터를 선택한다.<a class="headerlink" href="#1)-RB-Run의-파라미터를-선택한다." title="제목 주소">¶</a></h2>
-<p>First, we need to choose the following parameters:</p>
+<p>먼저 다음의 매개 변수를 선택해야 한다.</p>
 <ul class="simple">
-<li><p><strong>nseeds:</strong> The number of seeds. For each seed you will get a separate list of output circuits in rb_circs.</p></li>
-<li><p><strong>length_vector:</strong> The length vector of Clifford lengths. Must be in ascending order. RB sequences of increasing length grow on top of the previous sequences.</p></li>
-<li><p><strong>rb_pattern:</strong> A list of the form [[i,j],[k],…] which will make simultaneous RB sequences where Qi,Qj are a 2-qubit RB sequence and Qk is a 1-qubit sequence, etc. The number of qubits is the sum of the entries. For ‘regular’ RB the qubit_pattern is just [[0]],[[0,1]].</p></li>
-<li><p><strong>length_multiplier:</strong> 이 배열이면 각 rb_sequence를 곱셈기로 스케일링한다.</p></li>
-<li><p><strong>seed_offset:</strong> What to start the seeds at (e.g. if we want to add more seeds later).</p></li>
-<li><p><strong>align_cliffs:</strong> If true adds a barrier across all qubits in rb_pattern after each set of cliffords.</p></li>
+<li><p><strong>n시드(nseeds)</strong> 시드의 개수. 각 시드에 따른 분리된 출력 회로 목록을 rb_circs에서 가져온다.</p></li>
+<li><p><strong>length_vector:</strong> Clifford 길이의 길이 벡터. 오름차순이어야 한다. 길이가 증가하는 RB 서열은 이전 서열의 위에서부터 생성된다.</p></li>
+<li><p><strong>rb_pattern:</strong> Qi, Qj가 2-큐비트 RB 시퀀스이고 Qk가 1-큐비트 시퀀스인 동시 RB 시퀀스의 목록으로 [[i, j], [k],…] 형태의 list. 큐비트의 수는 항목들의 합계이다. ‘정규‘ RB의 경우, qubit_pattern은 [[0]], [[0, 1]] 이다.</p></li>
+<li><p><strong>length_multiplier:</strong> 이 값이 배열이면 각 rb_sequence를 곱셈기로 스케일링한다.</p></li>
+<li><p><strong>seed_offset:</strong> (예: 나중에 더 많은 시드를 추가하고자 하는 경우) 시드를 시작하는 것.</p></li>
+<li><p><strong>align_cliffs:</strong> true이면 각각의 cliffords의 집합 뒤에 rb_pattern의 모든 큐비트에 걸쳐 barrier를 추가한다.</p></li>
 </ul>
-<p>이 예제에서는 3개의 큐비트가 (Q0, Q1, Q2) 있다. 2Q RB (큐비트 Q0, Q2) 와 1Q RB (큐비트 Q1) 가 동시에 실행하고 있는데, 여기서, 1 Q 클리퍼드 게이트가 2배 더 많다.</p>
+<p>이 예제에서는 3개의 큐비트(Q0, Q1, Q2)를 사용한다. 2Q RB (큐비트 Q0, Q2) 와 1Q RB (큐비트 Q1)를 동시에 실행하며, 여기서, 1Q 클리포드 게이트가 2배 더 많다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -635,11 +642,11 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="2)-RB-서열을-생성한다.">
 <h2>2) RB 서열을 생성한다.<a class="headerlink" href="#2)-RB-서열을-생성한다." title="제목 주소">¶</a></h2>
-<p>We generate RB sequences. We start with a small example (so it doesn’t take too long to run).</p>
-<p>In order to generate the RB sequences <strong>rb_circs</strong>, which is a list of lists of quantum circuits, we run the function <code class="docutils literal notranslate"><span class="pre">rb.randomized_benchmarking_seq</span></code>.</p>
+<p>RB 서열을 생성한다. 작은 예제로 시작할 것이기때문에 실행에 시간이 많이 걸리지는 않을 것이다.</p>
+<p>양자 회로 목록들의 목록인 RB 시퀀스 <strong>rb_circs</strong> 를 생성하기 위해 <code class="docutils literal notranslate"><span class="pre">rb.randomized_benchmarking_seq</span></code> 를 실행한다.</p>
 <p>이 함수는 다음을 리턴한다.</p>
 <ul class="simple">
-<li><p><strong>rb_circs:</strong> A list of lists of circuits for the rb sequences (separate list for each seed).</p></li>
+<li><p><strong>rb_circs:</strong> rb 시퀀스에 대한 회로 목록의 목록 (각 시드 별로 생성된 리스트).</p></li>
 <li><p><strong>xdata:</strong> Clifford 길이 (mulitplier 가있다면 포함되어 있음).</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
@@ -656,7 +663,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>예를 들어 첫 번째 RB 시퀀스에 해당하는 회로를 출력한다.</p>
+<p>예를 들어 다음과 같이 첫 번째 RB 시퀀스에 해당하는 회로를 출력한다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -702,7 +709,7 @@ qr_2: |0&gt;┤ H ├┤ S ├┤ X ├┤ H ├┤ S ├───────�
 </section>
 <section id="1회로의-유니터리(unitary)-를-보면">
 <h2>1회로의 유니터리(unitary) 를 보면<a class="headerlink" href="#1회로의-유니터리(unitary)-를-보면" title="제목 주소">¶</a></h2>
-<p>각각의 RB 회로를 나타내는 유니체는 (글로벌 페이즈와 함께) 아이덴티티가 되어야 하며, 그 이유는, 우리가 계산된 반전 게이트를 포함하는 랜덤 Clifford 요소들을 곱하기 때문이다. Aer 단일 시뮬레이터를 사용하여 이를 시뮬레이션한다.</p>
+<p>각각의 RB 회로를 나타내는 유니테리는 (global phase와 함께) Identity가 되어야 하며, 그 이유는, 우리가 계산된 반전 게이트를 포함하는 랜덤 클리포드 요소들을 곱하기 때문이다. Aer 유니테리 시뮬레이터를 사용하여 이를 시뮬레이션한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -746,7 +753,7 @@ qr_2: |0&gt;┤ H ├┤ S ├┤ X ├┤ H ├┤ S ├───────�
 </section>
 <section id="노이즈-모델-정의하기">
 <h2>노이즈 모델 정의하기<a class="headerlink" href="#노이즈-모델-정의하기" title="제목 주소">¶</a></h2>
-<p>우리는 시뮬레이터에 대한 잡음 모델을 정의한다. 감쇠를 시뮬레이션하기 위해, CNOT과 U 게이트에 편광 에러 확률을 추가한다.</p>
+<p>우리는 시뮬레이터에 대한 잡음 모델을 정의한다. 감쇠를 시뮬레이션하기 위해, CNOT과 U 게이트에 편극소거(depolarizing) 에러 확률을 추가한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -806,15 +813,15 @@ Finished Simulating
 </pre></div></div>
 </div>
 </section>
-<section id="4)-RB-결과를-채우고-게이트-충실도-계산">
-<h2>4) RB 결과를 채우고 게이트 충실도 계산<a class="headerlink" href="#4)-RB-결과를-채우고-게이트-충실도-계산" title="제목 주소">¶</a></h2>
-<section id="생존-확률에-대한-통계-가져오기">
-<h3>생존 확률에 대한 통계 가져오기<a class="headerlink" href="#생존-확률에-대한-통계-가져오기" title="제목 주소">¶</a></h3>
-<p>The results in <strong>result_list</strong> should fit to an exponentially decaying function <span class="math notranslate nohighlight">\(A \cdot \alpha ^ m + B\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the Clifford length.</p>
-<p>From <span class="math notranslate nohighlight">\(\alpha\)</span> we can calculate the <strong>Error per Clifford (EPC)</strong>:</p>
+<section id="4)-RB-결과-근사와-게이트-충실도-계산">
+<h2>4) RB 결과 근사와 게이트 충실도 계산<a class="headerlink" href="#4)-RB-결과-근사와-게이트-충실도-계산" title="제목 주소">¶</a></h2>
+<section id="Survival-Probabilities에-대한-통계-얻기">
+<h3>Survival Probabilities에 대한 통계 얻기<a class="headerlink" href="#Survival-Probabilities에-대한-통계-얻기" title="제목 주소">¶</a></h3>
+<p><strong>result_list</strong> 의 결과는 지수적 감쇠 함수 <span class="math notranslate nohighlight">\(A \cdot \alpha ^ m + B\)</span> 에 맞아 떨어져야 하며, 여기서 <span class="math notranslate nohighlight">\(m\)</span> 은 클리포드 (Clifford) 길이이다.</p>
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> 를 사용해, <strong>Error per Clifford (EPC)</strong> 를 계산한다.</p>
 <div class="math notranslate nohighlight">
 \[EPC = \frac{2^n-1}{2^n} (1-\alpha)\]</div>
-<p>(여기서 :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>n=nQ`는 큐비트의 수이다).</p>
+<p>(여기서 :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>n=nQ`는 큐비트의 수).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -826,8 +833,8 @@ Finished Simulating
 </div>
 </div>
 </section>
-<section id="1시드-후-그래프">
-<h3>1시드 후 그래프<a class="headerlink" href="#1시드-후-그래프" title="제목 주소">¶</a></h3>
+<section id="1-시드-후-그래프">
+<h3>1 시드 후 그래프<a class="headerlink" href="#1-시드-후-그래프" title="제목 주소">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -857,9 +864,9 @@ Finished Simulating
 </div>
 </div>
 </section>
-<section id="나머지-시드로-그래프하기">
-<h3>나머지 시드로 그래프하기<a class="headerlink" href="#나머지-시드로-그래프하기" title="제목 주소">¶</a></h3>
-<p>The plot is being updated after each seed.</p>
+<section id="나머지-시드들을-사용한-그래프">
+<h3>나머지 시드들을 사용한 그래프<a class="headerlink" href="#나머지-시드들을-사용한-그래프" title="제목 주소">¶</a></h3>
+<p>각 시드가 실행될 때마다 그래프가 업데이트 되고 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -901,8 +908,8 @@ Finished Simulating
 </div>
 </div>
 </section>
-<section id="데이터에-추가로-샷-추가하기">
-<h3>데이터에 추가로 샷 추가하기<a class="headerlink" href="#데이터에-추가로-샷-추가하기" title="제목 주소">¶</a></h3>
+<section id="데이터에-샷-추가하기">
+<h3>데이터에 샷 추가하기<a class="headerlink" href="#데이터에-샷-추가하기" title="제목 주소">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -973,10 +980,10 @@ Finished Simulating
 </div>
 </div>
 </section>
-<section id="예측된-게이트-피델리티">
-<h3>예측된 게이트 피델리티<a class="headerlink" href="#예측된-게이트-피델리티" title="제목 주소">¶</a></h3>
-<p>From the known depolarizing errors on the simulation we can predict the <strong>fidelity</strong>. First we need to count the number of <strong>gates per Clifford</strong>.</p>
-<p>The function <strong>gates_per_clifford</strong> takes a list of transpiled RB circuits and outputs the number of basis gates in each circuit.</p>
+<section id="예측된-게이트-정확도">
+<h3>예측된 게이트 정확도<a class="headerlink" href="#예측된-게이트-정확도" title="제목 주소">¶</a></h3>
+<p>시뮬레이션을 통해 알게된 편극 소거(depolarizing) 오류를 사용해 <strong>정확도 (fidelity)</strong> 를 예측할 수 있다. 먼저 <strong>gates per Clifford</strong> 를 센다.</p>
+<p><strong>gates_per_clifford</strong> 함수는 전송된 RB 회로들의 리스트를 취하고, 각각의 회로들의 기저 게이트들의 수를 출력한다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1002,8 +1009,8 @@ Number of u3 gates per Clifford: 0.490109
 Number of cx gates per Clifford: 1.526739
 </pre></div></div>
 </div>
-<p>The function <strong>calculate_2q_epc</strong> gives measured errors in the basis gates that were used to construct the Clifford. It assumes that the error in the underlying gates is depolarizing. It outputs the error per a 2-qubit Clifford.</p>
-<p>The input to this function is: - <strong>gate_per_cliff:</strong> dictionary of gate per Clifford. - <strong>epg_2q:</strong> EPG estimated by error model. - <strong>qubit_pair:</strong> index of two qubits to calculate EPC. - <strong>list_epgs_1q:</strong> list of single qubit EPGs of qubit listed in <code class="docutils literal notranslate"><span class="pre">qubit_pair</span></code>. - <strong>two_qubit_name:</strong> name of two qubit gate in <code class="docutils literal notranslate"><span class="pre">basis</span> <span class="pre">gates</span></code> (default is <code class="docutils literal notranslate"><span class="pre">cx</span></code>).</p>
+<p><strong>calculate_2q_epc</strong> 함수는 클리포드를 구성하는 데 사용된 기본 게이트에서 측정된 오류를 제공한다. 사용된 게이트의 오류가 편극 소거(depolarizing) 에 의한 것으로 가정한다. 이 함수는 2-큐비트 클리포드 (Clifford) 의 에러를 출력한다.</p>
+<p>이 함수에 대한 입력은 - <strong>gate_per_cliff:</strong> 클리퍼드 당 게이트의 사전 - <strong>epg_2q:</strong> 오류 모델에 의해 추정된 EPG. - <strong>qubit_pair:</strong> EPC를 계산하기 위한 2큐비트의 인덱스. - <strong>list_epgs_1q:</strong> <code class="docutils literal notranslate"><span class="pre">qubit_pair</span></code> 에 나열된 단일 큐비트 EPG의 목록. - <strong>two_qubit_name:</strong>  <code class="docutils literal notranslate"><span class="pre">basis</span> <span class="pre">gates</span></code> 에 있는 2큐비트 게이트의 이름 (기본값은 <code class="docutils literal notranslate"><span class="pre">cx</span></code>).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -1033,10 +1040,10 @@ Predicted 2Q Error per Clifford: 1.591172e-02
 </div>
 </section>
 </section>
-<section id="T1,-T2-오류로-RB-시퀀스-실행하기">
-<h2>T1, T2 오류로 RB 시퀀스 실행하기<a class="headerlink" href="#T1,-T2-오류로-RB-시퀀스-실행하기" title="제목 주소">¶</a></h2>
+<section id="T1,-T2-오류와-함께-RB-시퀀스-실행하기">
+<h2>T1, T2 오류와 함께 RB 시퀀스 실행하기<a class="headerlink" href="#T1,-T2-오류와-함께-RB-시퀀스-실행하기" title="제목 주소">¶</a></h2>
 <p>이제 2-큐비트 Clifford만 포함하는 RB 시퀀스를 선택한다.</p>
-<p>이전과 같이 이러한 시퀀스를 실행하지만, T1/T2열적 완화 오류로 확장된 노이즈 모델을 사용하여 지수적으로 구성된 곡선을 적합하게 한다.</p>
+<p>T1/T2 열적 완화 오류(thermal relaxation error)를 포함해 확장된 노이즈 모델을 사용해 이전과 같이 시퀀스를 실행하고 지수적으로 감소하는 곡선에 맞춰본다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -1128,7 +1135,7 @@ Finished Simulating
 <img alt="../../_images/tutorials_noise_4_randomized_benchmarking_34_0.png" src="../../_images/tutorials_noise_4_randomized_benchmarking_34_0.png" />
 </div>
 </div>
-<p>We count again the number of <strong>gates per Clifford</strong> as before, and calculate the <strong>two-qubit Clifford gate error</strong>, using the predicted primitive gate errors from the coherence limit.</p>
+<p>이전과 같이 <strong>gates per Clifford</strong> 의 수를 다시 세고 결맞음 한계를 사용해 예측된 기본 게이트 오류를 사용하여 <strong>two-qubit Clifford gate error</strong> 를 계산한다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -1235,7 +1242,7 @@ Predicted 2Q Error per Clifford: 1.313111e-02
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -1261,15 +1268,15 @@ Predicted 2Q Error per Clifford: 1.313111e-02
 <li><a class="reference internal" href="#1회로의-유니터리(unitary)-를-보면">1회로의 유니터리(unitary) 를 보면</a></li>
 <li><a class="reference internal" href="#노이즈-모델-정의하기">노이즈 모델 정의하기</a></li>
 <li><a class="reference internal" href="#3)-Aer-시뮬레이터에서-RB-시퀀스-실행하기">3) Aer 시뮬레이터에서 RB 시퀀스 실행하기</a></li>
-<li><a class="reference internal" href="#4)-RB-결과를-채우고-게이트-충실도-계산">4) RB 결과를 채우고 게이트 충실도 계산</a><ul>
-<li><a class="reference internal" href="#생존-확률에-대한-통계-가져오기">생존 확률에 대한 통계 가져오기</a></li>
-<li><a class="reference internal" href="#1시드-후-그래프">1시드 후 그래프</a></li>
-<li><a class="reference internal" href="#나머지-시드로-그래프하기">나머지 시드로 그래프하기</a></li>
-<li><a class="reference internal" href="#데이터에-추가로-샷-추가하기">데이터에 추가로 샷 추가하기</a></li>
-<li><a class="reference internal" href="#예측된-게이트-피델리티">예측된 게이트 피델리티</a></li>
+<li><a class="reference internal" href="#4)-RB-결과-근사와-게이트-충실도-계산">4) RB 결과 근사와 게이트 충실도 계산</a><ul>
+<li><a class="reference internal" href="#Survival-Probabilities에-대한-통계-얻기">Survival Probabilities에 대한 통계 얻기</a></li>
+<li><a class="reference internal" href="#1-시드-후-그래프">1 시드 후 그래프</a></li>
+<li><a class="reference internal" href="#나머지-시드들을-사용한-그래프">나머지 시드들을 사용한 그래프</a></li>
+<li><a class="reference internal" href="#데이터에-샷-추가하기">데이터에 샷 추가하기</a></li>
+<li><a class="reference internal" href="#예측된-게이트-정확도">예측된 게이트 정확도</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#T1,-T2-오류로-RB-시퀀스-실행하기">T1, T2 오류로 RB 시퀀스 실행하기</a></li>
+<li><a class="reference internal" href="#T1,-T2-오류와-함께-RB-시퀀스-실행하기">T1, T2 오류와 함께 RB 시퀀스 실행하기</a></li>
 </ul>
 </li>
 </ul>
@@ -1335,7 +1342,7 @@ Predicted 2Q Error per Clifford: 1.313111e-02
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1358,9 +1365,11 @@ Predicted 2Q Error per Clifford: 1.313111e-02
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

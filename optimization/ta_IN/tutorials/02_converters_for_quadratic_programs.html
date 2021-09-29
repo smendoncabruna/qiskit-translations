@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Converters for Quadratic Programs &mdash; Qiskit Optimization 0.2.2 documentation</title>
+  <title>Quadratic நிரல்களுக்கான மாற்றிகள் &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -35,9 +35,9 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Minimum Eigen Optimizer" href="03_minimum_eigen_optimizer.html" />
+    <link rel="index" title="அட்டவணை" href="../genindex.html" />
+    <link rel="search" title="தேடு" href="../search.html" />
+    <link rel="next" title="குறைந்தபட்ச ஈகன் ஆப்டிமைசர்" href="03_minimum_eigen_optimizer.html" />
     <link rel="prev" title="இருபடி திட்டங்கள்" href="01_quadratic_program.html" /> 
 
   
@@ -95,7 +95,7 @@
   <div class="rst-other-versions">
     
     <dl>
-      <dt>Languages</dt>
+      <dt>மொழிகள்</dt>
       
         <dd><a class="version" href="/documentation/optimization/tutorials/02_converters_for_quadratic_programs.html">English</a></dd>
       
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -156,10 +156,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API Reference</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">தொடங்குதல்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_optimization.html">API குறிப்பு</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">பயிற்சிகள்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">வெளியீட்டு குறிப்புகள்</a></li>
 </ul>
 
             
@@ -200,9 +200,9 @@
       </li>
 
         
-          <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
+          <li><a href="index.html">மேம்படுத்தல் பயிற்சிகள்</a> &gt;</li>
         
-      <li>Converters for Quadratic Programs</li>
+      <li>Quadratic நிரல்களுக்கான மாற்றிகள்</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,20 +482,18 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/02_converters_for_quadratic_programs.ipynb">docs/tutorials/02_converters_for_quadratic_programs.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <cite>docs/tutorials/02_converters_for_quadratic_programs.ipynb</cite> இதிலிருந்து உருவாக்கப்பட்டது __.</p>
 </div>
-<div class="section" id="Converters-for-Quadratic-Programs">
-<h1>Converters for Quadratic Programs<a class="headerlink" href="#Converters-for-Quadratic-Programs" title="Permalink to this headline">¶</a></h1>
-<p>Optimization problems in Qiskit’s optimization module are represented with the <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> class, which is generic and powerful representation for optimization problems. In general, optimization algorithms are defined for a certain formulation of a quadratic program and we need to convert our problem to the right type.</p>
-<p>For instance, Qiskit provides several optimization algorithms that can handle Quadratic Unconstrained Binary Optimization (QUBO) problems. These are mapped to Ising Hamiltonians, for which Qiskit uses the <code class="docutils literal notranslate"><span class="pre">qiskit.aqua.operators</span></code> module, and then their ground state is approximated. For this optimization commonly known algorithms such as VQE or QAOA can be used as underlying routine. See the following tutorial about the <a class="reference internal" href="03_minimum_eigen_optimizer.html"><span class="doc">Minimum Eigen Optimizer</span></a> for more
-detail. Note that also other algorithms exist that work differently, such as the <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code>.</p>
-<p>To map a problem to the correct input format, the optimization module of Qiskit offers a variety of converters. In this tutorial we’re providing an overview on this functionality. Currently, Qiskit contains the following converters. - <code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code>: converts inequality constraints into equality constraints with additional slack variables. - <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code>: converts integer variables into binary variables and corresponding coefficients. - <code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code>: convert
-equality constraints into additional terms of the object function. - <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToQubo</span></code>: a wrapper for <code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code>, <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code>, and <code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code> for convenience.</p>
-<div class="section" id="InequalityToEquality">
-<h2>InequalityToEquality<a class="headerlink" href="#InequalityToEquality" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">InequalityToEqualityConverter</span></code> converts inequality constraints into equality constraints with additional slack variables to remove inequality constraints from <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. The upper bounds and the lower bounds of slack variables will be calculated from the difference between the left sides and the right sides of constraints. Signs of slack variables depend on symbols in constraints such as <span class="math notranslate nohighlight">\(\leq\)</span> and <span class="math notranslate nohighlight">\(\geq\)</span>.</p>
-<p>The following is an example of a maximization problem with two inequality constraints. Variable <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are binary variables and variable <span class="math notranslate nohighlight">\(z\)</span> is an integer variable.</p>
-<p>With <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>, an optimization model of the problem is written as follows.</p>
+<div class="section" id="Quadratic-நிரல்களுக்கான-மாற்றிகள்">
+<h1>Quadratic நிரல்களுக்கான மாற்றிகள்<a class="headerlink" href="#Quadratic-நிரல்களுக்கான-மாற்றிகள்" title="Permalink to this headline">¶</a></h1>
+<p>Qiskit-ன் optimization தொகுதியில் உள்ள optimization சிக்கல்கள் &quot;QuadraticProgram&quot; வர்க்கத்துடன் குறிப்பிடப்படுகின்றன, இது optimization சிக்கல்ககளுக்கு பொதுவான மற்றும் சக்திவாய்ந்த பிரதிநிதித்துவம் ஆகும். பொதுவாக, optimization வழிமுறை ஒரு quadratic நிரலின் ஒரு குறிப்பிட்ட வடிவமைப்பிற்கு வரையறுக்கப்படுகிறது, மேலும் நமது பிரச்சனையை சரியான வகைக்கு மாற்ற வேண்டும்.</p>
+<p>உதாரணமாக, Quadratic Unconstrained Binary Optimization (QUBO) சிக்கல்களைக் கையாளக்கூடிய பல தேர்வுமுறை வழிமுறைகளை Qiskit வழங்குகிறது. இவை ஐசிங் ஹாமில்டோனியன்களுக்கு வரைபடமாக்கப்பட்டன, இதற்காக கிஸ்கிட் பயன்படுத்துகிறது <code class="docutils literal notranslate"><span class="pre">qiskit.aqua.operators</span></code> தொகுதி, பின்னர் அவற்றின் நில நிலை தோராயமாக உள்ளது. இந்த தேர்வுமுறைக்கு பொதுவாக அறியப்பட்ட வழிமுறைகளான VQE அல்லது QAOA போன்றவை வழக்கமான நடைமுறையாகப் பயன்படுத்தப்படலாம். <a class="reference internal" href="03_minimum_eigen_optimizer.html"><span class="doc">Minimum Eigen Optimizer</span></a> பற்றிய மேலும் விவரங்களுக்கு பின்வரும் டுடோரியலைப் பார்க்கவும். <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> போன்ற மற்ற வழிமுறைகள், வித்தியாசமாக வேலை செய்கின்றன.</p>
+<p>சிக்கலை சரியான உள்ளீட்டு வடிவமைப்பிற்கு வரைபடமாக்க, Qiskit இன் தேர்வுமுறை தொகுதி பல்வேறு மாற்றிகளை வழங்குகிறது. இந்த டுடோரியலில் இந்த செயல்பாடு குறித்த ஒரு கண்ணோட்டத்தை வழங்குகிறோம். தற்போது, Qiskit ல் பின்வரும் மாற்றிகள் உள்ளன. -<code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code>: சமத்துவமின்மை தடைகளை கூடுதல் மந்தமான மாறிகள் கொண்ட சமத்துவ கட்டுப்பாடுகளாக மாற்றுகிறது. -<code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code>: முழு எண் மாறிகளை பைனரி மாறிகள் மற்றும் தொடர்புடைய குணகங்களாக மாற்றுகிறது. -<code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code>: சமத்துவக் கட்டுப்பாடுகளை பொருள் செயல்பாட்டின் கூடுதல் சொற்களாக மாற்றவும். -<code class="docutils literal notranslate"><span class="pre">QuadraticProgramToQubo</span></code>: <code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code> க்கு ஒரு போர்த்தி ஆகவும், <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code>, மற்றும் <code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code> வசதிக்காக.</p>
+<div class="section" id="இன்இகுவாலிட்டிடுஇகுவாலிட்டி">
+<h2>இன்இகுவாலிட்டிடுஇகுவாலிட்டி<a class="headerlink" href="#இன்இகுவாலிட்டிடுஇகுவாலிட்டி" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> இதிலிருந்து <code class="docutils literal notranslate"><span class="pre">InequalityToEqualityConverter</span></code> சமத்துவமின்மை தடைகளை கூடுதல் மந்தமான மாறிகள் கொண்ட சமத்துவ தடைகளாக மாற்றுகிறது.இடது பக்கங்களுக்கும் கட்டுப்பாடுகளின் வலது பக்கங்களுக்கும் இடையிலான வேறுபாட்டிலிருந்து மேல் எல்லைகள் மற்றும் மந்தமான மாறிகளின் கீழ் எல்லைகள் கணக்கிடப்படும். மந்தமான மாறிகளின் அறிகுறிகள் <span class="math notranslate nohighlight">\(\leq\)</span>geq` போன்ற கட்டுப்பாடுகளில் உள்ள குறியீடுகளைப் பொறுத்தது.</p>
+<p>இரண்டு சமத்துவமின்மை தடைகளுடன் கூடிய அதிகபட்ச சிக்கலுக்கு பின்வருவது ஒரு எடுத்துக்காட்டு. மாறி:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>x`மற்றும்:math:<a href="#id3"><span class="problematic" id="id4">`</span></a>y`பைனரி மாறிகள் மற்றும் மாறி :math:<a href="#id5"><span class="problematic" id="id6">`</span></a>z`ஒரு முழு எண் மாறி.</p>
+<p><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> உடன், சிக்கலின் தேர்வுமுறை மாதிரி பின்வருமாறு எழுதப்பட்டுள்ளது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -551,7 +549,7 @@ End
 
 </pre></div></div>
 </div>
-<p>Call <code class="docutils literal notranslate"><span class="pre">convert</span></code> method of <code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code> to convert.</p>
+<p>அழைப்பு``convert``முறை <a href="#id1"><span class="problematic" id="id2">``</span></a>InequalityToEquality``மாற்று.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -603,14 +601,13 @@ End
 
 </pre></div></div>
 </div>
-<p>After converting, the formulation of the problem looks like as the follows. As we can see, the inequality constraints are replaced with equality constraints with additional integer slack variables, <span class="math notranslate nohighlight">\(xyz\_leg\text{&#64;}int\_slack\)</span> and <span class="math notranslate nohighlight">\(xyz\_geq\text{&#64;}int\_slack\)</span>.</p>
-<p>Let us explain how the conversion works. For example, the lower bound of the left side of the first constraint is <span class="math notranslate nohighlight">\(0\)</span> which is the case of <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, and <span class="math notranslate nohighlight">\(z=0\)</span>. Thus, the upperbound of the additional integer variable must be <span class="math notranslate nohighlight">\(5\)</span> to be able to satisfy even the case of <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, and <span class="math notranslate nohighlight">\(z=0\)</span>. Note that we cut off the part after the decimal point in the converted formulation since the left side of the first constraint in the original formulation
-can be only integer values. For the second constraint, basically we apply the same approach. However, the symbol in the second constraint is <span class="math notranslate nohighlight">\(\geq\)</span>, so we add minus before <span class="math notranslate nohighlight">\(xyz\_geq\text{&#64;}int\_slack\)</span> to be able to satisfy even the case of <span class="math notranslate nohighlight">\(x=1, y=1\)</span>, and <span class="math notranslate nohighlight">\(z=7\)</span>.</p>
+<p>மாற்றிய பின், சிக்கலின் உருவாக்கம் பின்வருமாறு தெரிகிறது. நாம் பார்க்க முடியும் என, சமத்துவமின்மை கட்டுப்பாடுகள் கூடுதல் முழுநிலை மந்தமான மாறிகள் கொண்ட சமத்துவ கட்டுப்பாடுகளுடன் மாற்றப்படுகின்றன, <span class="math notranslate nohighlight">\(xyz\_leg\text{&#64;}int\_slack\)</span> மற்றும் <span class="math notranslate nohighlight">\(xyz\_geq\text{&#64;}int\_slack\)</span>.</p>
+<p>மாற்றம் எவ்வாறு செயல்படுகிறது என்பதை விளக்குவோம். உதாரணமாக, முதல் தடையின் இடது பக்கத்தின் கீழ் எல்லை <span class="math notranslate nohighlight">\(0\)</span> இது வழக்கு <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, and <span class="math notranslate nohighlight">\(z=0\)</span>. எனவே, கூடுதல் முழு எண் மாறியின் மேல் பகுதி இருக்க வேண்டும் <span class="math notranslate nohighlight">\(5\)</span> வழக்கு கூட திருப்தி செய்ய முடியும் <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, and <span class="math notranslate nohighlight">\(z=0\)</span>. மாற்றியமைக்கப்பட்ட சூத்திரத்தில் தசமப் புள்ளிக்குப் பிறகு பகுதியை துண்டிக்கிறோம் என்பதை கவனத்தில் கொள்ளவும். இரண்டாவது தடைக்கு, அடிப்படையில் நாங்கள் அதே அணுகுமுறையைப் பயன்படுத்துகிறோம். இருப்பினும், இரண்டாவது தடையில் உள்ள சின்னம் <span class="math notranslate nohighlight">\(\geq\)</span>, அதனால் நாம் முன்பு மைனஸ் சேர்க்கிறோம் <span class="math notranslate nohighlight">\(xyz\_geq\text{&#64;}int\_slack\)</span> ஆனது <span class="math notranslate nohighlight">\(x=1, y=1\)</span>, and <span class="math notranslate nohighlight">\(z=7\)</span> வழக்கைக் கூட திருப்தி செய்ய முடியும் .</p>
 </div>
 <div class="section" id="IntegerToBinary">
 <h2>IntegerToBinary<a class="headerlink" href="#IntegerToBinary" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code> converts integer variables into binary variables and coefficients to remove integer variables from <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. For converting, bounded-coefficient encoding proposed in <a class="reference external" href="https://arxiv.org/abs/1706.01945">arxiv:1706.01945</a> (Eq. (5)) is used. For more detail of the encoding method, please see the paper.</p>
-<p>We use the output of <code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code> as starting point. Variable <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are binary variables, while the variable <span class="math notranslate nohighlight">\(z\)</span> and the slack variables <span class="math notranslate nohighlight">\(xyz\_leq\text{&#64;}int\_slack\)</span> and <span class="math notranslate nohighlight">\(xyz\_geq\text{&#64;}int\_slack\)</span> are integer variables. We print the problem again for reference.</p>
+<p><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> லிருந்து <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code> ஆனது முழு எண் மாறிகளை பைனரி மாறிகள் மற்றும் குணகங்களாக மாற்றுகிறது. மாற்றுவதற்கு, வரம்புக்குட்பட்ட-குணக குறியாக்கம் <a href="#id1"><span class="problematic" id="id2">`</span></a>arxiv:1706.01945 &lt;https://arxiv.org/abs/1706.01945&gt;`__ல் முன்மொழியப்பட்டது (Eq. (5)) பயன்படுத்தப்பட்டுள்ளது. குறியீட்டு முறையின் கூடுதல் விவரங்களுக்கு, தயவுசெய்து காகிதத்தைப் பார்க்கவும்.</p>
+<p>நாம் <a href="#id1"><span class="problematic" id="id2">``</span></a>InequalityToEquality``இன் தொடக்க புள்ளியாக வெளியீட்டைப் பயன்படுத்துகிறோம். மாறி <span class="math notranslate nohighlight">\(x\)</span> மற்றும் <span class="math notranslate nohighlight">\(y\)</span> பைனரி மாறிகள், அதே நேரத்தில் மாறி:math:<cite>z</cite> மற்றும் மந்தமான மாறிகள் <span class="math notranslate nohighlight">\(xyz\_leq\text{&#64;}int\_slack\)</span> முழு எண் மாறிகள். நாம் குறிப்புக்காக சிக்கலை மீண்டும் அச்சிடுகிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -651,7 +648,7 @@ End
 
 </pre></div></div>
 </div>
-<p>Call <code class="docutils literal notranslate"><span class="pre">convert</span></code> method of <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code> to convert.</p>
+<p>மாற்றத்திற்கு <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code> ன் உடைய <code class="docutils literal notranslate"><span class="pre">convert</span></code> என்ற முறையை அழைக்கவும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -709,12 +706,12 @@ End
 
 </pre></div></div>
 </div>
-<p>After converting, integer variables <span class="math notranslate nohighlight">\(z\)</span> is replaced with three binary variables <span class="math notranslate nohighlight">\(z\text{&#64;}0\)</span>, <span class="math notranslate nohighlight">\(z\text{&#64;}1\)</span> and <span class="math notranslate nohighlight">\(z\text{&#64;}2\)</span> with coefficients 1, 2 and 4, respectively as the above. The slack variables <span class="math notranslate nohighlight">\(xyz\_leq\text{&#64;}int\_slack\)</span> and <span class="math notranslate nohighlight">\(xyz\_geq\text{&#64;}int\_slack\)</span> that were introduced by <code class="docutils literal notranslate"><span class="pre">InequalityToEquality</span></code> are also both replaced with three binary variables with coefficients 1, 2, 2, and 1, 2, 3, respectively.</p>
+<p>மாற்றிய பின், முழு எண் மாறிகள் <span class="math notranslate nohighlight">\(z\)</span>, :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>ztext{&#64;}1`மற்றும் :math:<a href="#id3"><span class="problematic" id="id4">`</span></a>ztext{&#64;}2`மேலே உள்ளபடி முறையே 1, 2 மற்றும் 4 குணகங்களுடன். மந்தமான மாறிகள் :math:<a href="#id5"><span class="problematic" id="id6">`</span></a><a class="reference external" href="mailto:xyz_leqtext{&#37;&#52;&#48;}int">xyz_leqtext{<span>&#64;</span>}int</a>_slack`மற்றும் :math:<a href="#id7"><span class="problematic" id="id8">`</span></a><a class="reference external" href="mailto:xyz_geqtext{&#37;&#52;&#48;}int">xyz_geqtext{<span>&#64;</span>}int</a>_slack`அறிமுகப்படுத்தப்பட்டது``InequalityToEquality``இவை இரண்டும் முறையே 1, 2, 2 மற்றும் 1, 2, 3 ஆகிய குணகங்களுடன் மூன்று பைனரி மாறிகள் மூலம் மாற்றப்படுகின்றன.</p>
 <p>Note: Essentially the coefficients mean that the sum of these binary variables with coefficients can be the sum of a subset of <span class="math notranslate nohighlight">\(\{1, 2, 4\}\)</span>, <span class="math notranslate nohighlight">\(\{1, 2, 2\}\)</span>, and <span class="math notranslate nohighlight">\(\{1, 2, 3\}\)</span> to represent that acceptable values <span class="math notranslate nohighlight">\(\{0, \ldots, 7\}\)</span>, <span class="math notranslate nohighlight">\(\{0, \ldots, 5\}\)</span>, and <span class="math notranslate nohighlight">\(\{0, \ldots, 6\}\)</span>, which respects the lower bound and the upper bound of original integer variables correctly.</p>
 <p><code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code> also provides <code class="docutils literal notranslate"><span class="pre">interpret</span></code> method that is the functionality to translate a given binary result back to the original integer representation.</p>
 </div>
-<div class="section" id="LinearEqualityToPenalty">
-<h2>LinearEqualityToPenalty<a class="headerlink" href="#LinearEqualityToPenalty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="லீனியர்-எக்வாலிட்டி-டோபெனால்டி">
+<h2>லீனியர் எக்வாலிட்டி டோபெனால்டி<a class="headerlink" href="#லீனியர்-எக்வாலிட்டி-டோபெனால்டி" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code> converts linear equality constraints into additional quadratic penalty terms of the objective function to map <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> to an unconstrained form. An input to the converter has to be a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> with only linear equality constraints. Those equality constraints, e.g. <span class="math notranslate nohighlight">\(\sum_i a_i x_i = b\)</span> where <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are numbers and <span class="math notranslate nohighlight">\(x_i\)</span> is a variable, will be added to the objective function in the form of
 <span class="math notranslate nohighlight">\(M(b - \sum_i a_i x_i)^2\)</span> where <span class="math notranslate nohighlight">\(M\)</span> is a large number as penalty factor. By default <span class="math notranslate nohighlight">\(M= 1e5\)</span>. The sign of the term depends on whether the problem type is a maximization or minimization.</p>
 <p>We use the output of <code class="docutils literal notranslate"><span class="pre">IntegerToBinary</span></code> as starting point, where all variables are binary variables and all inequality constraints have been mapped to equality constraints. We print the problem again for reference.</p>
@@ -764,7 +761,7 @@ End
 
 </pre></div></div>
 </div>
-<p>Call <code class="docutils literal notranslate"><span class="pre">convert</span></code> method of <code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code> to convert.</p>
+<p>மாற்றத்திற்கு <code class="docutils literal notranslate"><span class="pre">LinearEqualityToPenalty</span></code> ன் உடைய <code class="docutils literal notranslate"><span class="pre">convert</span></code> என்ற முறையை அழைக்கவும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -845,7 +842,7 @@ End
 </pre></div></div>
 </div>
 <p>After converting, the equality constraints are added to the objective function as additional terms with the default penalty factor <span class="math notranslate nohighlight">\(M=1e5\)</span>. The resulting problem is now a QUBO and compatible with many quantum optimization algorithms such as VQE, QAOA and so on.</p>
-<p>This gives the same result as before.</p>
+<p>இது முந்தையதைப் போன்ற முடிவைக் கொடுக்கும்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -890,7 +887,7 @@ End
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="03_minimum_eigen_optimizer.html" class="btn btn-neutral float-right" title="Minimum Eigen Optimizer" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="03_minimum_eigen_optimizer.html" class="btn btn-neutral float-right" title="குறைந்தபட்ச ஈகன் ஆப்டிமைசர்" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="01_quadratic_program.html" class="btn btn-neutral" title="இருபடி திட்டங்கள்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -925,10 +922,10 @@ End
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Converters for Quadratic Programs</a><ul>
-<li><a class="reference internal" href="#InequalityToEquality">InequalityToEquality</a></li>
+<li><a class="reference internal" href="#">Quadratic நிரல்களுக்கான மாற்றிகள்</a><ul>
+<li><a class="reference internal" href="#இன்இகுவாலிட்டிடுஇகுவாலிட்டி">இன்இகுவாலிட்டிடுஇகுவாலிட்டி</a></li>
 <li><a class="reference internal" href="#IntegerToBinary">IntegerToBinary</a></li>
-<li><a class="reference internal" href="#LinearEqualityToPenalty">LinearEqualityToPenalty</a></li>
+<li><a class="reference internal" href="#லீனியர்-எக்வாலிட்டி-டோபெனால்டி">லீனியர் எக்வாலிட்டி டோபெனால்டி</a></li>
 </ul>
 </li>
 </ul>

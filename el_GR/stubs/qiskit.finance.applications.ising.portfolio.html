@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.finance.applications.ising.portfolio &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>qiskit.finance.applications.ising.portfolio &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -342,68 +349,23 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio.get_operator" title="qiskit.finance.applications.ising.portfolio.get_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code></a>(mu, sigma, q, budget, penalty)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code>(mu, sigma, q, budget, penalty)</p></td>
 <td><p>get qubit op</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio.portfolio_expected_value" title="qiskit.finance.applications.ising.portfolio.portfolio_expected_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">portfolio_expected_value</span></code></a>(x, mu)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">portfolio_expected_value</span></code>(x, mu)</p></td>
 <td><p>returns portfolio expected value</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio.portfolio_value" title="qiskit.finance.applications.ising.portfolio.portfolio_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">portfolio_value</span></code></a>(x, mu, sigma, q, budget, penalty)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">portfolio_value</span></code>(x, mu, sigma, q, budget, penalty)</p></td>
 <td><p>returns portfolio value</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio.portfolio_variance" title="qiskit.finance.applications.ising.portfolio.portfolio_variance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">portfolio_variance</span></code></a>(x, sigma)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">portfolio_variance</span></code>(x, sigma)</p></td>
 <td><p>returns portfolio variance</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio.random_model" title="qiskit.finance.applications.ising.portfolio.random_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_model</span></code></a>(n[, seed])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_model</span></code>(n[, seed])</p></td>
 <td><p>Generate random model (mu, sigma) for portfolio optimization problem.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio.get_operator">
-<code class="sig-name descname">get_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">sigma</span></em>, <em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">budget</span></em>, <em class="sig-param"><span class="n">penalty</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio.html#get_operator"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio.get_operator" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>get qubit op</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio.portfolio_expected_value">
-<code class="sig-name descname">portfolio_expected_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mu</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio.html#portfolio_expected_value"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio.portfolio_expected_value" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>returns portfolio expected value</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio.portfolio_value">
-<code class="sig-name descname">portfolio_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">sigma</span></em>, <em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">budget</span></em>, <em class="sig-param"><span class="n">penalty</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio.html#portfolio_value"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio.portfolio_value" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>returns portfolio value</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio.portfolio_variance">
-<code class="sig-name descname">portfolio_variance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">sigma</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio.html#portfolio_variance"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio.portfolio_variance" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>returns portfolio variance</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio.random_model">
-<code class="sig-name descname">random_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio.html#random_model"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio.random_model" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Generate random model (mu, sigma) for portfolio optimization problem.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n</strong> (<em>int</em>) – number of assets.</p></li>
-<li><p><strong>seed</strong> (<em>int</em><em> or </em><em>None</em>) – random seed - if None, will not initialize.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>expected return vector
-numpy.ndarray: covariance matrix</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p>numpy.narray</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
@@ -431,7 +393,7 @@ numpy.ndarray: covariance matrix</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -514,7 +476,7 @@ numpy.ndarray: covariance matrix</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -537,9 +499,11 @@ numpy.ndarray: covariance matrix</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

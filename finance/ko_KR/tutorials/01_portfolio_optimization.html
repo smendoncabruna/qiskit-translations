@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>포트폴리오 최적화 &mdash; Qiskit Finance 0.2.0 문서</title>
+  <title>포트폴리오 최적화 &mdash; Qiskit Finance 0.2.1 문서</title>
   
 
   
@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="색인" href="../genindex.html" />
     <link rel="search" title="검색" href="../search.html" />
-    <link rel="next" title="포트폴리오 다양화" href="02_portfolio_diversification.html" />
+    <link rel="next" title="포트폴리오 다각화" href="02_portfolio_diversification.html" />
     <link rel="prev" title="양자 진폭 추정" href="00_amplitude_estimation.html" /> 
 
   
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -490,22 +490,22 @@ div.rendered_html tbody tr:hover {
 <h1>포트폴리오 최적화<a class="headerlink" href="#포트폴리오-최적화" title="이 표제에 대한 퍼머링크">¶</a></h1>
 <div class="section" id="소개">
 <h2>소개<a class="headerlink" href="#소개" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>이 학습서는 <span class="math notranslate nohighlight">\(n\)</span> 자산에 대한 평균 분산 포트폴리오 최적화 문제점을 해결하는 방법을 보인다.</p>
+<p>이 학습서는 <span class="math notranslate nohighlight">\(n\)</span> 개의 자산들에 대한 평균-분산 포트폴리오 최적화 문제를 해결하는 방법을 보여준다.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \min_{x \in \{0, 1\}^n}  q x^T \Sigma x - \mu^T x\\
 \text{subject to: } 1^T x = B
 \end{aligned}\end{split}\]</div>
-<p>where we use the following notation:</p>
+<p>여기서 다음과 같은 표기법을 사용한다:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x \in \{0, 1\}^n\)</span> denotes the vector of binary decision variables, which indicate which assets to pick (<span class="math notranslate nohighlight">\(x[i] = 1\)</span>) and which not to pick (<span class="math notranslate nohighlight">\(x[i] = 0\)</span>),</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mu \in \mathbb{R}^n\)</span> defines the expected returns for the assets,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\Sigma \in \mathbb{R}^{n \times n}\)</span> specifies the covariances between the assets,</p></li>
-<li><p><span class="math notranslate nohighlight">\(q &gt; 0\)</span> controls the risk appetite of the decision maker,</p></li>
-<li><p>and <span class="math notranslate nohighlight">\(B\)</span> denotes the budget, i.e. the number of assets to be selected out of <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \{0, 1\}^n\)</span> 은 어떤 자산을 선택하거나 (<span class="math notranslate nohighlight">\(x[i] = 1\)</span>) 선택하지 않는 (<span class="math notranslate nohighlight">\(x[i] = 0\)</span>) 것을 나타내는 이진 의사 결정 변수의 벡터를 표기한다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu \in \mathbb{R}^n\)</span> 은 자산들의 예상 수익을 정의한다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Sigma \in \mathbb{R}^{n \times n}\)</span> 는 자산들 사이의 공분산(covariance)을 나타낸다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(q &gt; 0\)</span> 은 의사 결정자의 리스크 선호를 제어한다.</p></li>
+<li><p>그리고 <span class="math notranslate nohighlight">\(B\)</span> 는 예산, 즉 <span class="math notranslate nohighlight">\(n\)</span> 중에서 선택할 수 있는 자산의 수를 의미한다.</p></li>
 </ul>
-<p>We assume the following simplifications: - all assets have the same price (normalized to 1), - the full budget <span class="math notranslate nohighlight">\(B\)</span> has to be spent, i.e. one has to select exactly <span class="math notranslate nohighlight">\(B\)</span> assets.</p>
-<p>The equality constraint <span class="math notranslate nohighlight">\(1^T x = B\)</span> is mapped to a penalty term <span class="math notranslate nohighlight">\((1^T x - B)^2\)</span> which is scaled by a parameter and subtracted from the objective function. The resulting problem can be mapped to a Hamiltonian whose ground state corresponds to the optimal solution. This notebook shows how to use the Variational Quantum Eigensolver (VQE) or the Quantum Approximate Optimization Algorithm (QAOA) to find the optimal solution for a given set of parameters.</p>
+<p>다음과 같은 단순화를 가정한다: - 모든 자산은 동일한 가격을 가지고 있다 (1로 정규화됨), - 전체 예산 <span class="math notranslate nohighlight">\(B\)</span> 를 소비해야 한다. 즉, 정확히 <span class="math notranslate nohighlight">\(B\)</span> 개의 자산을 선택해야 한다.</p>
+<p>주어진 등식 <span class="math notranslate nohighlight">\(1^T x = B\)</span> 는 매개변수에 의해 스케일링되고 목적 함수로부터 차감되는 페널티 항 <span class="math notranslate nohighlight">\((1^T x - B)^2\)</span> 에 매핑된다. 여기서 도출되는 문제는 바닥 상태가 최적의 해에 해당하는 해밀토니안에 매핑될 수 있다. 이 지침서는 VQE (Variational Quantum Eigensolver) 또는 QAOA (Quantum Approximate Optimization Algorithm)를 사용하여 지정된 매개변수 집합에 대한 최적의 솔루션을 찾는 방법을 보여준다.</p>
 <p>이 문제에 대해 실제 양자 하드웨어에서 행한 실험들은 다음의 논문에서 발표되었다: <a class="reference external" href="https://arxiv.org/abs/1907.04769">Improving Variational Quantum Optimization using CVaR. Barkoutsos et al. 2019.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -528,15 +528,15 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="[Optional]-Setup-token-to-run-the-experiment-on-a-real-device">
-<h3>[Optional] Setup token to run the experiment on a real device<a class="headerlink" href="#[Optional]-Setup-token-to-run-the-experiment-on-a-real-device" title="이 표제에 대한 퍼머링크">¶</a></h3>
-<p>If you would like to run the experiment on a real device, you need to setup your account first.</p>
-<p>Note: If you do not store your token yet, use <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> to store it first.</p>
+<div class="section" id="[Optional]-실제-장치에서-실험을-실행하기-위한-토큰-설정">
+<h3>[Optional] 실제 장치에서 실험을 실행하기 위한 토큰 설정<a class="headerlink" href="#[Optional]-실제-장치에서-실험을-실행하기-위한-토큰-설정" title="이 표제에 대한 퍼머링크">¶</a></h3>
+<p>실제 장치에서 실험을 실행하려면 먼저 계정을 설정해야 한다.</p>
+<p>참고: 아직 토큰을 저장하지 않은 경우 <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> 을 사용하여 저장한다.</p>
 </div>
 </div>
-<div class="section" id="Define-problem-instance">
-<h2>Define problem instance<a class="headerlink" href="#Define-problem-instance" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>Here an Operator instance is created for our Hamiltonian. In this case the paulis are from an Ising Hamiltonian translated from the portfolio problem. We use a random portfolio problem for this notebook. It is straight-forward to extend this to using real financial data as illustrated here: <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a></p>
+<div class="section" id="문제-인스턴스-정의">
+<h2>문제 인스턴스 정의<a class="headerlink" href="#문제-인스턴스-정의" title="이 표제에 대한 퍼머링크">¶</a></h2>
+<p>여기에 해밀토니안에 대한 Operator 인스턴스가 생성되었다. 이 경우, Pauli들은 포트폴리오 문제에 해당하는 이징 해밀토니안(Ising Hamiltonian)에서부터 나왔다. 이 노트북에선 무작위 포트폴리오를 사용한다. 실제 재무 데이터를 사용하여 이를 확장하는 것은 <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a> 에서 볼수 있다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -620,7 +620,7 @@ Binaries
 End
 </pre></div></div>
 </div>
-<p>We define some utility methods to print the results in a nice format.</p>
+<p>결과를 적절한 형태로 보여주고자 몇 가지 유용한 메서드를 정의한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -653,10 +653,10 @@ End
 </div>
 </div>
 </div>
-<div class="section" id="NumPyMinimumEigensolver-(as-a-classical-reference)">
-<h2>NumPyMinimumEigensolver (as a classical reference)<a class="headerlink" href="#NumPyMinimumEigensolver-(as-a-classical-reference)" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>Lets solve the problem. First classically…</p>
-<p>We can now use the Operator we built above without regard to the specifics of how it was created. We set the algorithm for the NumPyMinimumEigensolver so we can have a classical reference. The problem is set for ‘ising’. Backend is not required since this is computed classically not using quantum computation. The result is returned as a dictionary.</p>
+<div class="section" id="NumPyMinimumEigensolver-(고전적-참고치로서)">
+<h2>NumPyMinimumEigensolver (고전적 참고치로서)<a class="headerlink" href="#NumPyMinimumEigensolver-(고전적-참고치로서)" title="이 표제에 대한 퍼머링크">¶</a></h2>
+<p>문제를 풀어보자. 먼저 고전적으로…</p>
+<p>어떻게 만들어졌는지와는 상관 없이 위에서 구축한 Operator를 사용할 수 있다. NumPyMinimumEigensolver에 대한 알고리즘을 설정하여 고전적 참고치를 얻을 수 있다. 문제는 ‘ising’으로 정해져 있다. 이것은 양자 연산을 사용하지 않고 고전적으로 계산되기 때문에 백엔드가 필요하지 않다. 결과는 사전 타입으로 반환된다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -700,10 +700,10 @@ selection       value           probability
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Solution-using-VQE">
-<h2>Solution using VQE<a class="headerlink" href="#Solution-using-VQE" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>We can now use the Variational Quantum Eigensolver (VQE) to solve the problem. We will specify the optimizer and variational form to be used.</p>
-<p>Note: You can switch to different backends by providing the name of backend.</p>
+<div class="section" id="VQE를-사용한-해">
+<h2>VQE를 사용한 해<a class="headerlink" href="#VQE를-사용한-해" title="이 표제에 대한 퍼머링크">¶</a></h2>
+<p>이제 VQE를 사용하여 문제를 푼다. 사용할 최적자 및 변분 형태를 지정한다.</p>
+<p>참고: 백엔드의 이름을 설정하여 다른 백엔드로 전환할 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -754,9 +754,9 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<div class="section" id="Solution-using-QAOA">
-<h3>Solution using QAOA<a class="headerlink" href="#Solution-using-QAOA" title="이 표제에 대한 퍼머링크">¶</a></h3>
-<p>We also show here a result using the Quantum Approximate Optimization Algorithm (QAOA). This is another variational algorithm and it uses an internal variational form that is created based on the problem.</p>
+<div class="section" id="QAOA를-사용한-해">
+<h3>QAOA를 사용한 해<a class="headerlink" href="#QAOA를-사용한-해" title="이 표제에 대한 퍼머링크">¶</a></h3>
+<p>QAOA를 사용한 결과 또한 보여 준다. 이는 다른 변분 알고리즘이며 문제를 기반으로 만들어지는 내부 변분 형태를 사용한다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -849,7 +849,7 @@ selection       value           probability
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="02_portfolio_diversification.html" class="btn btn-neutral float-right" title="포트폴리오 다양화" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="02_portfolio_diversification.html" class="btn btn-neutral float-right" title="포트폴리오 다각화" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="00_amplitude_estimation.html" class="btn btn-neutral" title="양자 진폭 추정" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -886,13 +886,13 @@ selection       value           probability
               <ul>
 <li><a class="reference internal" href="#">포트폴리오 최적화</a><ul>
 <li><a class="reference internal" href="#소개">소개</a><ul>
-<li><a class="reference internal" href="#[Optional]-Setup-token-to-run-the-experiment-on-a-real-device">[Optional] Setup token to run the experiment on a real device</a></li>
+<li><a class="reference internal" href="#[Optional]-실제-장치에서-실험을-실행하기-위한-토큰-설정">[Optional] 실제 장치에서 실험을 실행하기 위한 토큰 설정</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Define-problem-instance">Define problem instance</a></li>
-<li><a class="reference internal" href="#NumPyMinimumEigensolver-(as-a-classical-reference)">NumPyMinimumEigensolver (as a classical reference)</a></li>
-<li><a class="reference internal" href="#Solution-using-VQE">Solution using VQE</a><ul>
-<li><a class="reference internal" href="#Solution-using-QAOA">Solution using QAOA</a></li>
+<li><a class="reference internal" href="#문제-인스턴스-정의">문제 인스턴스 정의</a></li>
+<li><a class="reference internal" href="#NumPyMinimumEigensolver-(고전적-참고치로서)">NumPyMinimumEigensolver (고전적 참고치로서)</a></li>
+<li><a class="reference internal" href="#VQE를-사용한-해">VQE를 사용한 해</a><ul>
+<li><a class="reference internal" href="#QAOA를-사용한-해">QAOA를 사용한 해</a></li>
 </ul>
 </li>
 </ul>

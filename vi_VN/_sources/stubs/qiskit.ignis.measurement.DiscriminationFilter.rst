@@ -1,25 +1,20 @@
-﻿qiskit.ignis.measurement.DiscriminationFilter
-=============================================
+﻿DiscriminationFilter
+====================
 
 .. currentmodule:: qiskit.ignis.measurement
 
 .. autoclass:: DiscriminationFilter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DiscriminationFilter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DiscriminationFilter.apply
       ~DiscriminationFilter.count
       ~DiscriminationFilter.get_base
-   
-   
 
-   
-   
-   
+

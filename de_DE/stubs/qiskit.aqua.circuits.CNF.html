@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.circuits.CNF &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>CNF &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="qiskit.aqua.circuits.DNF" href="qiskit.aqua.circuits.DNF.html" />
+    <link rel="next" title="qiskit.aqua.circuits.CNF.compute_num_ancillae" href="qiskit.aqua.circuits.CNF.compute_num_ancillae.html" />
     <link rel="prev" title="Circuits (qiskit.aqua.circuits)" href="../apidoc/qiskit.aqua.circuits.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.circuits.html">Circuits (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.circuits</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.circuits.CNF</li>
+      <li>CNF</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-circuits-cnf">
-<h1>qiskit.aqua.circuits.CNF<a class="headerlink" href="#qiskit-aqua-circuits-cnf" title="Link zu dieser Überschrift">¶</a></h1>
+  <section id="cnf">
+<h1>CNF<a class="headerlink" href="#cnf" title="Link zu dieser Überschrift">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.circuits.CNF">
 <em class="property">class </em><code class="sig-name descname">CNF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em>, <em class="sig-param"><span class="n">num_vars</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/circuits/boolean_logical_circuits.html#CNF"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.aqua.circuits.CNF" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Class for constructing circuits for Conjunctive Normal Forms</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.circuits.boolean_logical_circuits.BooleanLogicNormalForm</span></code></p>
+<p>Class for constructing circuits for Conjunctive Normal Forms</p>
 <p>Constructor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameter</dt>
@@ -348,23 +356,6 @@
 <dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – invalid input</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.circuits.CNF.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em>, <em class="sig-param"><span class="n">num_vars</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.circuits.CNF.__init__" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ast</strong> (<em>tuple</em>) – The logic expression as an Abstract Syntax Tree (AST) tuple</p></li>
-<li><p><strong>num_vars</strong> (<em>int</em>) – Number of boolean variables</p></li>
-</ul>
-</dd>
-<dt class="field-even">Verursacht</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – invalid input</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -372,113 +363,48 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.__init__" title="qiskit.aqua.circuits.CNF.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(ast[, num_vars])</p></td>
-<td><p>Constructor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.compute_num_ancillae" title="qiskit.aqua.circuits.CNF.compute_num_ancillae"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_num_ancillae</span></code></a>([mct_mode])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.circuits.CNF.compute_num_ancillae.html#qiskit.aqua.circuits.CNF.compute_num_ancillae" title="qiskit.aqua.circuits.CNF.compute_num_ancillae"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_num_ancillae</span></code></a></p></td>
 <td><p>returns the number of ancillary qubits needed</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.construct_circuit" title="qiskit.aqua.circuits.CNF.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>([circuit, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.circuits.CNF.construct_circuit.html#qiskit.aqua.circuits.CNF.construct_circuit" title="qiskit.aqua.circuits.CNF.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct circuit.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.ancillary_register" title="qiskit.aqua.circuits.CNF.ancillary_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ancillary_register</span></code></a></p></td>
-<td><p>returns ancillary register</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.clause_register" title="qiskit.aqua.circuits.CNF.clause_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clause_register</span></code></a></p></td>
-<td><p>returns clause register</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.num_clauses" title="qiskit.aqua.circuits.CNF.num_clauses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_clauses</span></code></a></p></td>
-<td><p>returns num clauses</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.num_variables" title="qiskit.aqua.circuits.CNF.num_variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_variables</span></code></a></p></td>
-<td><p>return num variables</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.output_register" title="qiskit.aqua.circuits.CNF.output_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_register</span></code></a></p></td>
-<td><p>returns output register</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.circuits.CNF.variable_register" title="qiskit.aqua.circuits.CNF.variable_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variable_register</span></code></a></p></td>
-<td><p>returns variable register</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.circuits.CNF.ancillary_register">
-<em class="property">property </em><code class="sig-name descname">ancillary_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.ancillary_register" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">ancillary_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.ancillary_register" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>returns ancillary register</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.circuits.CNF.clause_register">
-<em class="property">property </em><code class="sig-name descname">clause_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.clause_register" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">clause_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.clause_register" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>returns clause register</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.aqua.circuits.CNF.compute_num_ancillae">
-<code class="sig-name descname">compute_num_ancillae</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mct_mode</span><span class="o">=</span><span class="default_value">'basic'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.circuits.CNF.compute_num_ancillae" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>returns the number of ancillary qubits needed</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.circuits.CNF.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">circuit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">variable_register</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">clause_register</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_register</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ancillary_register</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mct_mode</span><span class="o">=</span><span class="default_value">'basic'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/circuits/boolean_logical_circuits.html#CNF.construct_circuit"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.aqua.circuits.CNF.construct_circuit" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Construct circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> (<a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><em>QuantumCircuit</em></a>) – The optional circuit to extend from</p></li>
-<li><p><strong>variable_register</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) – The optional quantum register
-to use for problem variables</p></li>
-<li><p><strong>clause_register</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) – The optional quantum register
-to use for problem clauses</p></li>
-<li><p><strong>output_register</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) – The optional quantum register
-to use for holding the output</p></li>
-<li><p><strong>ancillary_register</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) – The optional quantum register to use as ancilla</p></li>
-<li><p><strong>mct_mode</strong> (<em>str</em>) – The mode to use for building Multiple-Control Toffoli</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>quantum circuit.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-<dt class="field-even">Verursacht</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – invalid input</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.circuits.CNF.num_clauses">
-<em class="property">property </em><code class="sig-name descname">num_clauses</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.num_clauses" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">num_clauses</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.num_clauses" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>returns num clauses</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.circuits.CNF.num_variables">
-<em class="property">property </em><code class="sig-name descname">num_variables</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.num_variables" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">num_variables</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.num_variables" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>return num variables</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.circuits.CNF.output_register">
-<em class="property">property </em><code class="sig-name descname">output_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.output_register" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">output_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.output_register" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>returns output register</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.circuits.CNF.variable_register">
-<em class="property">property </em><code class="sig-name descname">variable_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.variable_register" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">variable_register</code><a class="headerlink" href="#qiskit.aqua.circuits.CNF.variable_register" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>returns variable register</p>
 </dd></dl>
 
@@ -494,7 +420,7 @@ to use for holding the output</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.aqua.circuits.DNF.html" class="btn btn-neutral float-right" title="qiskit.aqua.circuits.DNF" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.circuits.CNF.compute_num_ancillae.html" class="btn btn-neutral float-right" title="qiskit.aqua.circuits.CNF.compute_num_ancillae" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/qiskit.aqua.circuits.html" class="btn btn-neutral" title="Circuits (qiskit.aqua.circuits)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -511,7 +437,7 @@ to use for holding the output</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -530,7 +456,7 @@ to use for holding the output</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.circuits.CNF</a></li>
+<li><a class="reference internal" href="#">CNF</a></li>
 </ul>
 
             </div>
@@ -594,7 +520,7 @@ to use for holding the output</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -617,9 +543,11 @@ to use for holding the output</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

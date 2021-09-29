@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.IterativeAmplitudeEstimation &mdash; Qiskit 0.29.0 documentation</title>
+  <title>IterativeAmplitudeEstimation &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="qiskit.algorithms.IterativeAmplitudeEstimationResult" href="qiskit.algorithms.IterativeAmplitudeEstimationResult.html" />
-    <link rel="prev" title="qiskit.algorithms.FasterAmplitudeEstimationResult" href="qiskit.algorithms.FasterAmplitudeEstimationResult.html" /> 
+    <link rel="next" title="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit" href="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit.html" />
+    <link rel="prev" title="qiskit.algorithms.FasterAmplitudeEstimationResult.combine" href="qiskit.algorithms.FasterAmplitudeEstimationResult.combine.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.IterativeAmplitudeEstimation</li>
+      <li>IterativeAmplitudeEstimation</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-iterativeamplitudeestimation">
-<h1>qiskit.algorithms.IterativeAmplitudeEstimation<a class="headerlink" href="#qiskit-algorithms-iterativeamplitudeestimation" title="Permalink to this headline">¶</a></h1>
+  <section id="iterativeamplitudeestimation">
+<h1>IterativeAmplitudeEstimation<a class="headerlink" href="#iterativeamplitudeestimation" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.IterativeAmplitudeEstimation">
 <em class="property">class </em><code class="sig-name descname">IterativeAmplitudeEstimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epsilon_target</span></em>, <em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">confint_method</span><span class="o">=</span><span class="default_value">'beta'</span></em>, <em class="sig-param"><span class="n">min_ratio</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/iae.html#IterativeAmplitudeEstimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Iterative Amplitude Estimation algorithm.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.algorithms.amplitude_estimators.amplitude_estimator.AmplitudeEstimator</span></code></p>
+<p>The Iterative Amplitude Estimation algorithm.</p>
 <p>This class implements the Iterative Quantum Amplitude Estimation (IQAE) algorithm, proposed
 in [1]. The output of the algorithm is an estimate that,
 with at least probability <span class="math notranslate nohighlight">\(1 - \alpha\)</span>, differs by epsilon to the target value, where
@@ -374,35 +382,6 @@ Clopper-Pearson intervals (default)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.algorithms.IterativeAmplitudeEstimation.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">epsilon_target</span></em>, <em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">confint_method</span><span class="o">=</span><span class="default_value">'beta'</span></em>, <em class="sig-param"><span class="n">min_ratio</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/iae.html#IterativeAmplitudeEstimation.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>The output of the algorithm is an estimate for the amplitude <cite>a</cite>, that with at least
-probability 1 - alpha has an error of epsilon. The number of A operator calls scales
-linearly in 1/epsilon (up to a logarithmic factor).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>epsilon_target</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) -- Target precision for estimation target <cite>a</cite>, has values between 0 and 0.5</p></li>
-<li><p><strong>alpha</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) -- Confidence level, the target probability is 1 - alpha, has values between 0 and 1</p></li>
-<li><p><strong>confint_method</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- Statistical method used to estimate the confidence intervals in
-each iteration, can be 'chernoff' for the Chernoff intervals or 'beta' for the
-Clopper-Pearson intervals (default)</p></li>
-<li><p><strong>min_ratio</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) -- Minimal q-ratio (<span class="math notranslate nohighlight">\(K_{i+1} / K_i\)</span>) for FindNextK</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- Quantum Instance or Backend</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.algorithms.AlgorithmError.html#qiskit.algorithms.AlgorithmError" title="qiskit.algorithms.AlgorithmError"><strong>AlgorithmError</strong></a> -- if the method to compute the confidence intervals is not supported</p></li>
-<li><p><strong>ValueError</strong> -- If the target epsilon is not in (0, 0.5]</p></li>
-<li><p><strong>ValueError</strong> -- If alpha is not in (0, 1)</p></li>
-<li><p><strong>ValueError</strong> -- If confint_method is not supported</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -410,59 +389,18 @@ Clopper-Pearson intervals (default)</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.IterativeAmplitudeEstimation.__init__" title="qiskit.algorithms.IterativeAmplitudeEstimation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(epsilon_target, alpha[, ...])</p></td>
-<td><p>The output of the algorithm is an estimate for the amplitude <cite>a</cite>, that with at least probability 1 - alpha has an error of epsilon.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit" title="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(estimation_problem[, k, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit.html#qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit" title="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the circuit <span class="math notranslate nohighlight">\(\mathcal{Q}^k \mathcal{A} |0\rangle\)</span>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.IterativeAmplitudeEstimation.estimate" title="qiskit.algorithms.IterativeAmplitudeEstimation.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a>(estimation_problem)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.IterativeAmplitudeEstimation.estimate.html#qiskit.algorithms.IterativeAmplitudeEstimation.estimate" title="qiskit.algorithms.IterativeAmplitudeEstimation.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a></p></td>
 <td><p>Run the amplitude estimation algorithm.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.IterativeAmplitudeEstimation.epsilon_target" title="qiskit.algorithms.IterativeAmplitudeEstimation.epsilon_target"><code class="xref py py-obj docutils literal notranslate"><span class="pre">epsilon_target</span></code></a></p></td>
-<td><p>Returns the target precision <code class="docutils literal notranslate"><span class="pre">epsilon_target</span></code> of the algorithm.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.IterativeAmplitudeEstimation.quantum_instance" title="qiskit.algorithms.IterativeAmplitudeEstimation.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
-<td><p>Get the quantum instance.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">estimation_problem</span></em>, <em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">measurement</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/iae.html#IterativeAmplitudeEstimation.construct_circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct the circuit <span class="math notranslate nohighlight">\(\mathcal{Q}^k \mathcal{A} |0\rangle\)</span>.</p>
-<p>The A operator is the unitary specifying the QAE problem and Q the associated Grover
-operator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>estimation_problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">EstimationProblem</span></code>) -- The estimation problem for which to construct the QAE circuit.</p></li>
-<li><p><strong>k</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The power of the Q operator.</p></li>
-<li><p><strong>measurement</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- Boolean flag to indicate if measurements should be included in the
-circuits.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The circuit implementing <span class="math notranslate nohighlight">\(\mathcal{Q}^k \mathcal{A} |0\rangle\)</span>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.IterativeAmplitudeEstimation.epsilon_target">
-<em class="property">property </em><code class="sig-name descname">epsilon_target</code><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.epsilon_target" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">epsilon_target</code><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.epsilon_target" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the target precision <code class="docutils literal notranslate"><span class="pre">epsilon_target</span></code> of the algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -474,24 +412,9 @@ circuits.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.algorithms.IterativeAmplitudeEstimation.estimate">
-<code class="sig-name descname">estimate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">estimation_problem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/iae.html#IterativeAmplitudeEstimation.estimate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.estimate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the amplitude estimation algorithm.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>estimation_problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">EstimationProblem</span></code>) -- An <code class="docutils literal notranslate"><span class="pre">EstimationProblem</span></code> containing all problem-relevant information
-such as the state preparation and the objective qubits.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">IterativeAmplitudeEstimationResult</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.IterativeAmplitudeEstimation.quantum_instance">
-<em class="property">property </em><code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.quantum_instance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.algorithms.IterativeAmplitudeEstimation.quantum_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the quantum instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -515,10 +438,10 @@ such as the state preparation and the objective qubits.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.algorithms.IterativeAmplitudeEstimationResult.html" class="btn btn-neutral float-right" title="qiskit.algorithms.IterativeAmplitudeEstimationResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.algorithms.IterativeAmplitudeEstimation.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.FasterAmplitudeEstimationResult.html" class="btn btn-neutral" title="qiskit.algorithms.FasterAmplitudeEstimationResult" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.FasterAmplitudeEstimationResult.combine.html" class="btn btn-neutral" title="qiskit.algorithms.FasterAmplitudeEstimationResult.combine" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -532,7 +455,7 @@ such as the state preparation and the objective qubits.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -551,7 +474,7 @@ such as the state preparation and the objective qubits.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.IterativeAmplitudeEstimation</a></li>
+<li><a class="reference internal" href="#">IterativeAmplitudeEstimation</a></li>
 </ul>
 
             </div>
@@ -615,7 +538,7 @@ such as the state preparation and the objective qubits.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -638,9 +561,11 @@ such as the state preparation and the objective qubits.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

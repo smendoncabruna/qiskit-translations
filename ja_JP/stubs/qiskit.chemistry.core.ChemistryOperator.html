@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.chemistry.core.ChemistryOperator &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>ChemistryOperator &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="qiskit.chemistry.core.MolecularChemistryResult" href="qiskit.chemistry.core.MolecularChemistryResult.html" />
+    <link rel="next" title="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result" href="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result.html" />
     <link rel="prev" title="Chemistry Core (qiskit.chemistry.core)" href="../apidoc/qiskit.chemistry.core.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.chemistry.core.html">Chemistry Core (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.chemistry.core</span></code>)</a> &gt;</li>
         
-      <li>qiskit.chemistry.core.ChemistryOperator</li>
+      <li>ChemistryOperator</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,18 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-chemistry-core-chemistryoperator">
-<h1>qiskit.chemistry.core.ChemistryOperator<a class="headerlink" href="#qiskit-chemistry-core-chemistryoperator" title="このヘッドラインへのパーマリンク">¶</a></h1>
+  <section id="chemistryoperator">
+<h1>ChemistryOperator<a class="headerlink" href="#chemistryoperator" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.chemistry.core.ChemistryOperator">
 <em class="property">class </em><code class="sig-name descname">ChemistryOperator</code><a class="reference internal" href="../_modules/qiskit/chemistry/core/chemistry_operator.html#ChemistryOperator"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Base class for ChemistryOperator.</p>
-<dl class="py method">
-<dt id="qiskit.chemistry.core.ChemistryOperator.__init__">
-<em class="property">abstract </em><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/core/chemistry_operator.html#ChemistryOperator.__init__"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.__init__" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for ChemistryOperator.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -349,82 +351,39 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.core.ChemistryOperator.__init__" title="qiskit.chemistry.core.ChemistryOperator.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.core.ChemistryOperator.process_algorithm_result" title="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_algorithm_result</span></code></a>(algo_result)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result.html#qiskit.chemistry.core.ChemistryOperator.process_algorithm_result" title="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_algorithm_result</span></code></a></p></td>
 <td><p>Takes the algorithm result and processes it as required, e.g.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.core.ChemistryOperator.run" title="qiskit.chemistry.core.ChemistryOperator.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>(qmolecule)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.chemistry.core.ChemistryOperator.run.html#qiskit.chemistry.core.ChemistryOperator.run" title="qiskit.chemistry.core.ChemistryOperator.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
 <td><p>Convert the qmolecule, according to the ChemistryOperator, into an Operator that can be given to a QuantumAlgorithm</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">INFO_NUM_ORBITALS</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">INFO_NUM_PARTICLES</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">INFO_TWO_QUBIT_REDUCTION</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">INFO_Z2SYMMETRIES</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.core.ChemistryOperator.molecule_info" title="qiskit.chemistry.core.ChemistryOperator.molecule_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">molecule_info</span></code></a></p></td>
-<td><p>returns molecule info</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
+<dt id="qiskit.chemistry.core.ChemistryOperator.INFO_NUM_ORBITALS">
+<code class="sig-name descname">INFO_NUM_ORBITALS</code><em class="property"> = 'num_orbitals'</em><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.INFO_NUM_ORBITALS" title="この定義へのパーマリンク">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.chemistry.core.ChemistryOperator.INFO_NUM_PARTICLES">
+<code class="sig-name descname">INFO_NUM_PARTICLES</code><em class="property"> = 'num_particles'</em><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.INFO_NUM_PARTICLES" title="この定義へのパーマリンク">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.chemistry.core.ChemistryOperator.INFO_TWO_QUBIT_REDUCTION">
+<code class="sig-name descname">INFO_TWO_QUBIT_REDUCTION</code><em class="property"> = 'two_qubit_reduction'</em><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.INFO_TWO_QUBIT_REDUCTION" title="この定義へのパーマリンク">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="qiskit.chemistry.core.ChemistryOperator.INFO_Z2SYMMETRIES">
+<code class="sig-name descname">INFO_Z2SYMMETRIES</code><em class="property"> = 'z2symmetries'</em><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.INFO_Z2SYMMETRIES" title="この定義へのパーマリンク">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt id="qiskit.chemistry.core.ChemistryOperator.molecule_info">
-<em class="property">property </em><code class="sig-name descname">molecule_info</code><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.molecule_info" title="この定義へのパーマリンク">¶</a></dt>
+<code class="sig-name descname">molecule_info</code><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.molecule_info" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>returns molecule info</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result">
-<code class="sig-name descname">process_algorithm_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">algo_result</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/core/chemistry_operator.html#ChemistryOperator.process_algorithm_result"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.process_algorithm_result" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Takes the algorithm result and processes it as required, e.g. by
-combination of any parts that were classically computed, for the
-final result.</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
-<dd class="field-odd"><p><strong>algo_result</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolverResult</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">EigensolverResult</span></code>]) – Result from algorithm</p>
-</dd>
-<dt class="field-even">戻り値の型</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">MolecularGroundStateResult</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MolecularExcitedStatesResult</span></code>]</p>
-</dd>
-<dt class="field-odd">戻り値</dt>
-<dd class="field-odd"><p>Final chemistry result computed from the algorithm result</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.chemistry.core.ChemistryOperator.run">
-<em class="property">abstract </em><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qmolecule</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/core/chemistry_operator.html#ChemistryOperator.run"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#qiskit.chemistry.core.ChemistryOperator.run" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Convert the qmolecule, according to the ChemistryOperator, into an Operator
-that can be given to a QuantumAlgorithm</p>
-<dl class="field-list simple">
-<dt class="field-odd">パラメータ</dt>
-<dd class="field-odd"><p><strong>qmolecule</strong> (<a class="reference internal" href="qiskit.chemistry.QMolecule.html#qiskit.chemistry.QMolecule" title="qiskit.chemistry.QMolecule"><em>QMolecule</em></a>) – from a chemistry driver</p>
-</dd>
-<dt class="field-even">戻り値</dt>
-<dd class="field-even"><p>(qubit_op, aux_ops)</p>
-</dd>
-<dt class="field-odd">戻り値の型</dt>
-<dd class="field-odd"><p>Tuple</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -439,7 +398,7 @@ that can be given to a QuantumAlgorithm</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.chemistry.core.MolecularChemistryResult.html" class="btn btn-neutral float-right" title="qiskit.chemistry.core.MolecularChemistryResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result.html" class="btn btn-neutral float-right" title="qiskit.chemistry.core.ChemistryOperator.process_algorithm_result" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/qiskit.chemistry.core.html" class="btn btn-neutral" title="Chemistry Core (qiskit.chemistry.core)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -456,7 +415,7 @@ that can be given to a QuantumAlgorithm</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -475,7 +434,7 @@ that can be given to a QuantumAlgorithm</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.chemistry.core.ChemistryOperator</a></li>
+<li><a class="reference internal" href="#">ChemistryOperator</a></li>
 </ul>
 
             </div>
@@ -539,7 +498,7 @@ that can be given to a QuantumAlgorithm</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -562,9 +521,11 @@ that can be given to a QuantumAlgorithm</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

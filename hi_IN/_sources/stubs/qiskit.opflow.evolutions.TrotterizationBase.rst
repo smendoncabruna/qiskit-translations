@@ -1,29 +1,22 @@
-﻿qiskit.opflow.evolutions.TrotterizationBase
-===========================================
+TrotterizationBase
+==================
 
 .. currentmodule:: qiskit.opflow.evolutions
 
 .. autoclass:: TrotterizationBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~TrotterizationBase.__init__
-      ~TrotterizationBase.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~TrotterizationBase.convert
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TrotterizationBase.reps
-   
-   
+   .. autoattribute:: reps

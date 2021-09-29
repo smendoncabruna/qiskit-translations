@@ -1,31 +1,24 @@
-﻿qiskit.chemistry.algorithms.NumPyMinimumEigensolverFactory
-==========================================================
+﻿NumPyMinimumEigensolverFactory
+==============================
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: NumPyMinimumEigensolverFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyMinimumEigensolverFactory.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NumPyMinimumEigensolverFactory.get_solver
       ~NumPyMinimumEigensolverFactory.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumPyMinimumEigensolverFactory.filter_criterion
-      ~NumPyMinimumEigensolverFactory.use_default_filter_criterion
-   
-   
+   .. autoattribute:: filter_criterion
+   .. autoattribute:: use_default_filter_criterion

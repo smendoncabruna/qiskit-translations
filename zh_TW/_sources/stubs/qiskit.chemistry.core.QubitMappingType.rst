@@ -1,24 +1,16 @@
-﻿qiskit.chemistry.core.QubitMappingType
-======================================
+﻿QubitMappingType
+================
 
 .. currentmodule:: qiskit.chemistry.core
 
 .. autoclass:: QubitMappingType
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QubitMappingType.BRAVYI_KITAEV
-      ~QubitMappingType.JORDAN_WIGNER
-      ~QubitMappingType.PARITY
-   
-   
+   .. autoattribute:: BRAVYI_KITAEV
+   .. autoattribute:: JORDAN_WIGNER
+   .. autoattribute:: PARITY

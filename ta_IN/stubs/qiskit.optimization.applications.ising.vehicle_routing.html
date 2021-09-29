@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.applications.ising.vehicle_routing &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.optimization.applications.ising.vehicle_routing &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">ஆவண முகப்புப்பக்கம்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">முன்னணி</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API குறிப்புகள்</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit சிமுலேட்டர் (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit சோதனைகள் (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit பயன்பாட்டு பகுதிகள் (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM குவாண்டம் (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">பழுது கண்டறிதல்</span></p>
 <ul>
@@ -344,120 +351,20 @@ checking its objective function value).</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vehicle_routing.get_operator" title="qiskit.optimization.applications.ising.vehicle_routing.get_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code></a>(instance, n, K)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code>(instance, n, K)</p></td>
 <td><p>Converts an instance of a vehicle routing problem into a list of Paulis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_cost" title="qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_cost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vehiclerouting_cost</span></code></a>(instance, n, K, x_sol)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vehiclerouting_cost</span></code>(instance, n, K, x_sol)</p></td>
 <td><p>Computes the cost of a solution to an instance of a vehicle routing problem.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_matrices" title="qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_matrices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vehiclerouting_matrices</span></code></a>(instance, n, K)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vehiclerouting_matrices</span></code>(instance, n, K)</p></td>
 <td><p>Constructs auxiliary matrices from a vehicle routing instance,</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_solution" title="qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vehiclerouting_solution</span></code></a>(instance, n, K, ...)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_vehiclerouting_solution</span></code>(instance, n, K, ...)</p></td>
 <td><p>Tries to obtain a feasible solution (in vector form) of an instance</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vehicle_routing.get_operator">
-<code class="sig-name descname">get_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">K</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vehicle_routing.html#get_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vehicle_routing.get_operator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts an instance of a vehicle routing problem into a list of Paulis.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instance</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) -- a customers-to-customers distance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of customers.</p></li>
-<li><p><strong>K</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of vehicles available.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedPauliOperator</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>operator for the Hamiltonian.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_cost">
-<code class="sig-name descname">get_vehiclerouting_cost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">K</span></em>, <em class="sig-param"><span class="n">x_sol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vehicle_routing.html#get_vehiclerouting_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_cost" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes the cost of a solution to an instance of a vehicle routing problem.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instance</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) -- a customers-to-customers distance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of customers.</p></li>
-<li><p><strong>K</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of vehicles available.</p></li>
-<li><p><strong>x_sol</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) -- a solution, i.e., a path, in its binary representation.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>objective function value.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_matrices">
-<code class="sig-name descname">get_vehiclerouting_matrices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">K</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vehicle_routing.html#get_vehiclerouting_matrices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_matrices" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Constructs auxiliary matrices from a vehicle routing instance,</dt><dd><p>which represent the encoding into a binary quadratic program.
-This is used in the construction of the qubit ops and computation
-of the solution cost.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instance</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) -- a customers-to-customers distance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of customers.</p></li>
-<li><p><strong>K</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of vehicles available.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a matrix defining the interactions between variables.
-a matrix defining the contribution from the individual variables.
-the constant offset.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_solution">
-<code class="sig-name descname">get_vehiclerouting_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">K</span></em>, <em class="sig-param"><span class="n">result</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vehicle_routing.html#get_vehiclerouting_solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vehicle_routing.get_vehiclerouting_solution" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Tries to obtain a feasible solution (in vector form) of an instance</dt><dd><p>of vehicle routing from the results dictionary.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>instance</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) -- a customers-to-customers distance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of customers.</p></li>
-<li><p><strong>K</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- the number of vehicles available.</p></li>
-<li><p><strong>result</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolverResult</span></code>) -- a result obtained by QAOA.run or VQE.run.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a solution, i.e., a path, in its binary representation.</p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>#TODO: support statevector simulation, results should be a statevector or counts format, not</dt><dd><p>a result from algorithm run</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
@@ -485,7 +392,7 @@ the constant offset.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -568,7 +475,7 @@ the constant offset.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -591,9 +498,11 @@ the constant offset.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

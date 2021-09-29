@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.state\_fns.VectorStateFn
-==============================================
+﻿VectorStateFn
+=============
 
 .. currentmodule:: qiskit.aqua.operators.state_fns
 
 .. autoclass:: VectorStateFn
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VectorStateFn.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~VectorStateFn.add
       ~VectorStateFn.adjoint
       ~VectorStateFn.assign_parameters
@@ -37,21 +36,15 @@
       ~VectorStateFn.to_matrix
       ~VectorStateFn.to_matrix_op
       ~VectorStateFn.traverse
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VectorStateFn.ENABLE_DEPRECATION
-      ~VectorStateFn.INDENTATION
-      ~VectorStateFn.coeff
-      ~VectorStateFn.is_measurement
-      ~VectorStateFn.num_qubits
-      ~VectorStateFn.parameters
-      ~VectorStateFn.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: is_measurement
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

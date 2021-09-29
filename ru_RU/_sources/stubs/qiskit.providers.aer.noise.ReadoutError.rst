@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.noise.ReadoutError
-=======================================
+﻿ReadoutError
+============
 
 .. currentmodule:: qiskit.providers.aer.noise
 
 .. autoclass:: ReadoutError
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ReadoutError.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ReadoutError.compose
       ~ReadoutError.copy
       ~ReadoutError.dot
@@ -25,18 +24,12 @@
       ~ReadoutError.tensor
       ~ReadoutError.to_dict
       ~ReadoutError.to_instruction
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ReadoutError.atol
-      ~ReadoutError.number_of_qubits
-      ~ReadoutError.probabilities
-      ~ReadoutError.rtol
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: number_of_qubits
+   .. autoattribute:: probabilities
+   .. autoattribute:: rtol

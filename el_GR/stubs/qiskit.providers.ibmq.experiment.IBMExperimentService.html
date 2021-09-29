@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.experiment.IBMExperimentService &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>IBMExperimentService &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="qiskit.providers.ibmq.experiment.ResultQuality" href="qiskit.providers.ibmq.experiment.ResultQuality.html" />
+    <link rel="next" title="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result" href="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result.html" />
     <link rel="prev" title="Experiment (qiskit.providers.ibmq.experiment)" href="../apidoc/ibmq_experiment.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/ibmq_experiment.html">Experiment (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.providers.ibmq.experiment</span></code>)</a> &gt;</li>
         
-      <li>qiskit.providers.ibmq.experiment.IBMExperimentService</li>
+      <li>IBMExperimentService</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-providers-ibmq-experiment-ibmexperimentservice">
-<h1>qiskit.providers.ibmq.experiment.IBMExperimentService<a class="headerlink" href="#qiskit-providers-ibmq-experiment-ibmexperimentservice" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="ibmexperimentservice">
+<h1>IBMExperimentService<a class="headerlink" href="#ibmexperimentservice" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.providers.ibmq.experiment.IBMExperimentService">
 <em class="property">class </em><code class="sig-name descname">IBMExperimentService</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">provider</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Provides experiment related services.</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides experiment related services.</p>
 <p>This class is the main interface to invoke IBM Quantum
 experiment service, which allows you to create, delete, update, query, and
 retrieve experiments, experiment figures, and analysis results. The
@@ -377,17 +385,6 @@ instance of this class, and the main syntax for using the service is
 <dd class="field-odd"><p><strong>provider</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">AccountProvider</span></code>) – IBM Quantum Experience account provider.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">provider</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>IBMExperimentService constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>provider</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">AccountProvider</span></code>) – IBM Quantum Experience account provider.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -395,563 +392,63 @@ instance of this class, and the main syntax for using the service is
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.__init__" title="qiskit.providers.ibmq.experiment.IBMExperimentService.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(provider)</p></td>
-<td><p>IBMExperimentService constructor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">analysis_result</span></code></a>(result_id[, json_decoder])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">analysis_result</span></code></a></p></td>
 <td><p>Retrieve a previously stored experiment.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results" title="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">analysis_results</span></code></a>([limit, json_decoder, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results.html#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results" title="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">analysis_results</span></code></a></p></td>
 <td><p>Retrieve all analysis results, with optional filtering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.backends" title="qiskit.providers.ibmq.experiment.IBMExperimentService.backends"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backends</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.backends.html#qiskit.providers.ibmq.experiment.IBMExperimentService.backends" title="qiskit.providers.ibmq.experiment.IBMExperimentService.backends"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backends</span></code></a></p></td>
 <td><p>Return a list of backends that can be used for experiments.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_analysis_result</span></code></a>(experiment_id, …[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_analysis_result</span></code></a></p></td>
 <td><p>Create a new analysis result in the database.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_experiment</span></code></a>(experiment_type, backend_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_experiment</span></code></a></p></td>
 <td><p>Create a new experiment in the database.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_figure</span></code></a>(experiment_id, figure[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_figure</span></code></a></p></td>
 <td><p>Store a new figure in the database.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_analysis_result</span></code></a>(result_id)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_analysis_result</span></code></a></p></td>
 <td><p>Delete an analysis result.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_experiment</span></code></a>(experiment_id)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_experiment</span></code></a></p></td>
 <td><p>Delete an experiment.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_figure</span></code></a>(experiment_id, figure_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_figure</span></code></a></p></td>
 <td><p>Delete an experiment plot.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.device_components" title="qiskit.providers.ibmq.experiment.IBMExperimentService.device_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">device_components</span></code></a>([backend_name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.device_components.html#qiskit.providers.ibmq.experiment.IBMExperimentService.device_components" title="qiskit.providers.ibmq.experiment.IBMExperimentService.device_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">device_components</span></code></a></p></td>
 <td><p>Return the device components.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">experiment</span></code></a>(experiment_id[, json_decoder])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">experiment</span></code></a></p></td>
 <td><p>Retrieve a previously stored experiment.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.experiments" title="qiskit.providers.ibmq.experiment.IBMExperimentService.experiments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">experiments</span></code></a>([limit, json_decoder, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.experiments.html#qiskit.providers.ibmq.experiment.IBMExperimentService.experiments" title="qiskit.providers.ibmq.experiment.IBMExperimentService.experiments"><code class="xref py py-obj docutils literal notranslate"><span class="pre">experiments</span></code></a></p></td>
 <td><p>Retrieve all experiments, with optional filtering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">figure</span></code></a>(experiment_id, figure_name[, file_name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">figure</span></code></a></p></td>
 <td><p>Retrieve an existing figure.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences" title="qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_preferences</span></code></a>([auto_save])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences.html#qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences" title="qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_preferences</span></code></a></p></td>
 <td><p>Stores experiment preferences on disk.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_analysis_result</span></code></a>(result_id[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result" title="qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_analysis_result</span></code></a></p></td>
 <td><p>Update an existing analysis result.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_experiment</span></code></a>(experiment_id[, metadata, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment" title="qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_experiment</span></code></a></p></td>
 <td><p>Update an existing experiment.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_figure</span></code></a>(experiment_id, figure, figure_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure" title="qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_figure</span></code></a></p></td>
 <td><p>Update an existing figure.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.preferences" title="qiskit.providers.ibmq.experiment.IBMExperimentService.preferences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">preferences</span></code></a></p></td>
-<td><p>Return saved experiment preferences.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result">
-<code class="sig-name descname">analysis_result</code><span class="sig-paren">(</span><em class="sig-param">result_id</em>, <em class="sig-param">json_decoder=&lt;class 'json.decoder.JSONDecoder'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.analysis_result"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Retrieve a previously stored experiment.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>result_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Analysis result ID.</p></li>
-<li><p><strong>json_decoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code>]) – Custom JSON decoder to use to decode the retrieved analysis result.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>Retrieved analysis result.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound"><strong>IBMExperimentEntryNotFound</strong></a> – If the analysis result does not exist.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results">
-<code class="sig-name descname">analysis_results</code><span class="sig-paren">(</span><em class="sig-param">limit=10</em>, <em class="sig-param">json_decoder=&lt;class 'json.decoder.JSONDecoder'&gt;</em>, <em class="sig-param">device_components=None</em>, <em class="sig-param">device_components_operator=None</em>, <em class="sig-param">experiment_id=None</em>, <em class="sig-param">result_type=None</em>, <em class="sig-param">result_type_operator=None</em>, <em class="sig-param">backend_name=None</em>, <em class="sig-param">quality=None</em>, <em class="sig-param">verified=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">tags_operator='OR'</em>, <em class="sig-param">sort_by=None</em>, <em class="sig-param">**filters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.analysis_results"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Retrieve all analysis results, with optional filtering.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>limit</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Number of analysis results to retrieve.</p></li>
-<li><p><strong>json_decoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code>]) – Custom JSON decoder to use to decode the retrieved analysis results.</p></li>
-<li><p><strong>device_components</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DeviceComponent</span></code>]]]) – Filter by device components.</p></li>
-<li><p><strong>device_components_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – <p>Operator used when filtering by device components.
-Valid values are <code class="docutils literal notranslate"><span class="pre">None</span></code> and «contains»:</p>
-<blockquote>
-<div><ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, an analysis result’s device components must match
-exactly for it to be included.</p></li>
-<li><p>If «contains» is specified, an analysis result’s device components
-must contain at least the values specified by the <cite>device_components</cite>
-filter.</p></li>
-</ul>
-</div></blockquote>
-</p></li>
-<li><p><strong>experiment_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Experiment ID used for filtering.</p></li>
-<li><p><strong>result_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Analysis result type used for filtering.</p></li>
-<li><p><strong>result_type_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – <p>Operator used when filtering by result type.
-Valid values are <code class="docutils literal notranslate"><span class="pre">None</span></code> and «like»:</p>
-<ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> is specified, an analysis result’s type value must
-match exactly for it to be included.</p></li>
-<li><p>If «like» is specified, an analysis result’s type value must
-contain the value specified by <cite>result_type</cite>. For example,
-<code class="docutils literal notranslate"><span class="pre">result_type=&quot;foo&quot;,</span> <span class="pre">result_type_operator=&quot;like&quot;</span></code> will match
-both <code class="docutils literal notranslate"><span class="pre">foo1</span></code> and <code class="docutils literal notranslate"><span class="pre">1foo</span></code>.</p></li>
-</ul>
-</p></li>
-<li><p><strong>backend_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Backend name used for filtering.</p></li>
-<li><p><strong>quality</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ResultQuality</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">ResultQuality</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Quality value used for filtering. If a list is given, analysis results
-whose quality value is in the list will be included.</p></li>
-<li><p><strong>verified</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Indicates whether this result has been verified..</p></li>
-<li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Filter by tags assigned to analysis results. This can be used
-with <cite>tags_operator</cite> for granular filtering.</p></li>
-<li><p><strong>tags_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – <p>Logical operator to use when filtering by tags. Valid
-values are «AND» and «OR»:</p>
-<blockquote>
-<div><ul>
-<li><p>If «AND» is specified, then an analysis result must have all of the tags
-specified in <cite>tags</cite> to be included.</p></li>
-<li><p>If «OR» is specified, then an analysis result only needs to have any
-of the tags specified in <cite>tags</cite> to be included.</p></li>
-</ul>
-</div></blockquote>
-</p></li>
-<li><p><strong>sort_by</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Specifies how the output should be sorted. This can be a single sorting
-option or a list of options. Each option should contain a sort key
-and a direction. Valid sort keys are «creation_datetime», «device_components»,
-and «result_type». Valid directions are «asc» for ascending or «desc» for
-descending.
-For example, <code class="docutils literal notranslate"><span class="pre">sort_by=[&quot;result_type:</span> <span class="pre">asc&quot;,</span> <span class="pre">&quot;creation_datetime:desc&quot;]</span></code> will
-return an output list that is first sorted by result type in
-ascending order, then by creation datetime by descending order.
-By default, analysis results are sorted by <code class="docutils literal notranslate"><span class="pre">creation_datetime</span></code>
-descending and <code class="docutils literal notranslate"><span class="pre">result_id</span></code> ascending.</p></li>
-<li><p><strong>**filters</strong> – Additional filtering keywords that are not supported and will be ignored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A list of analysis results. Each analysis result is a dictionary
-containing the retrieved analysis result.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If an invalid parameter value is specified.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.backends">
-<code class="sig-name descname">backends</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.backends"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.backends" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return a list of backends that can be used for experiments.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]</p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>A list of backends.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result">
-<code class="sig-name descname">create_analysis_result</code><span class="sig-paren">(</span><em class="sig-param">experiment_id</em>, <em class="sig-param">result_data</em>, <em class="sig-param">result_type</em>, <em class="sig-param">device_components=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">quality=&lt;ResultQuality.UNKNOWN: 'UNKNOWN'&gt;</em>, <em class="sig-param">verified=False</em>, <em class="sig-param">result_id=None</em>, <em class="sig-param">chisq=None</em>, <em class="sig-param">json_encoder=&lt;class 'json.encoder.JSONEncoder'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.create_analysis_result"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Create a new analysis result in the database.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – ID of the experiment this result is for.</p></li>
-<li><p><strong>result_data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>) – Result data to be stored.</p></li>
-<li><p><strong>result_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Analysis result type.</p></li>
-<li><p><strong>device_components</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DeviceComponent</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DeviceComponent</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Target device components, such as qubits.</p></li>
-<li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Tags to be associated with the analysis result.</p></li>
-<li><p><strong>quality</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ResultQuality</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Quality of this analysis.</p></li>
-<li><p><strong>verified</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether the result quality has been verified.</p></li>
-<li><p><strong>result_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Analysis result ID. It must be in the <code class="docutils literal notranslate"><span class="pre">uuid4</span></code> format.
-One will be generated if not supplied.</p></li>
-<li><p><strong>chisq</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – chi^2 decimal value of the fit.</p></li>
-<li><p><strong>json_encoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code>]) – Custom JSON encoder to use to encode the analysis result.</p></li>
-<li><p><strong>kwargs</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Additional analysis result attributes that are not supported
-and will be ignored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>Analysis result ID.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryExists.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryExists" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryExists"><strong>IBMExperimentEntryExists</strong></a> – If the analysis result already exits.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment">
-<code class="sig-name descname">create_experiment</code><span class="sig-paren">(</span><em class="sig-param">experiment_type</em>, <em class="sig-param">backend_name</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">experiment_id=None</em>, <em class="sig-param">job_ids=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">notes=None</em>, <em class="sig-param">share_level=None</em>, <em class="sig-param">start_datetime=None</em>, <em class="sig-param">json_encoder=&lt;class 'json.encoder.JSONEncoder'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.create_experiment"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Create a new experiment in the database.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_type</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment type.</p></li>
-<li><p><strong>backend_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the backend the experiment ran on.</p></li>
-<li><p><strong>metadata</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – Experiment metadata.</p></li>
-<li><p><strong>experiment_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Experiment ID. It must be in the <code class="docutils literal notranslate"><span class="pre">uuid4</span></code> format.
-One will be generated if not supplied.</p></li>
-<li><p><strong>job_ids</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – IDs of experiment jobs.</p></li>
-<li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Tags to be associated with the experiment.</p></li>
-<li><p><strong>notes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Freeform notes about the experiment.</p></li>
-<li><p><strong>share_level</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentShareLevel</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – <p>The level at which the experiment is shared. This determines who can
-view the experiment (but not update it). This defaults to «private»
-for new experiments. Possible values include:</p>
-<ul>
-<li><p>private: The experiment is only visible to its owner (default)</p></li>
-<li><p>project: The experiment is shared within its project</p></li>
-<li><p>group: The experiment is shared within its group</p></li>
-<li><p>hub: The experiment is shared within its hub</p></li>
-<li><p>public: The experiment is shared publicly regardless of provider</p></li>
-</ul>
-</p></li>
-<li><p><strong>start_datetime</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Timestamp when the experiment started, in local time zone.</p></li>
-<li><p><strong>json_encoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code>]) – Custom JSON encoder to use to encode the experiment.</p></li>
-<li><p><strong>kwargs</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Additional experiment attributes that are not supported and will be ignored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>Experiment ID.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryExists.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryExists" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryExists"><strong>IBMExperimentEntryExists</strong></a> – If the experiment already exits.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure">
-<code class="sig-name descname">create_figure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">experiment_id</span></em>, <em class="sig-param"><span class="n">figure</span></em>, <em class="sig-param"><span class="n">figure_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sync_upload</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.create_figure"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Store a new figure in the database.</p>
-<div class="admonition note">
-<p class="admonition-title">Σημείωση</p>
-<p>Currently only SVG figures are supported.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – ID of the experiment this figure is for.</p></li>
-<li><p><strong>figure</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Name of the figure file or figure data to store.</p></li>
-<li><p><strong>figure_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the figure. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the figure file name, if
-given, or a generated name is used.</p></li>
-<li><p><strong>sync_upload</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be uploaded synchronously.
-Otherwise the upload will be asynchronous.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A tuple of the name and size of the saved figure.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryExists.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryExists" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryExists"><strong>IBMExperimentEntryExists</strong></a> – If the figure already exits.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result">
-<code class="sig-name descname">delete_analysis_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.delete_analysis_result"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Delete an analysis result.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>result_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Analysis result ID.</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Σημείωση</p>
-<p>This method prompts for confirmation and requires a response before proceeding.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><strong>IBMQApiError</strong> – If the request to the server failed.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment">
-<code class="sig-name descname">delete_experiment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">experiment_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.delete_experiment"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Delete an experiment.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment ID.</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Σημείωση</p>
-<p>This method prompts for confirmation and requires a response before proceeding.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><strong>IBMQApiError</strong> – If the request to the server failed.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure">
-<code class="sig-name descname">delete_figure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">experiment_id</span></em>, <em class="sig-param"><span class="n">figure_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.delete_figure"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Delete an experiment plot.</p>
-<div class="admonition note">
-<p class="admonition-title">Σημείωση</p>
-<p>This method prompts for confirmation and requires a response before proceeding.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment ID.</p></li>
-<li><p><strong>figure_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the figure.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><strong>IBMQApiError</strong> – If the request to the server failed.</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.device_components">
-<code class="sig-name descname">device_components</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backend_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.device_components"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.device_components" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return the device components.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>backend_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the backend whose components are to be retrieved.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A list of device components if <cite>backend_name</cite> is specified. Otherwise
-a dictionary whose keys are backend names the values
-are lists of device components for the backends.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><strong>IBMQApiError</strong> – If the request to the server failed.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.experiment">
-<code class="sig-name descname">experiment</code><span class="sig-paren">(</span><em class="sig-param">experiment_id</em>, <em class="sig-param">json_decoder=&lt;class 'json.decoder.JSONDecoder'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.experiment"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.experiment" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Retrieve a previously stored experiment.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment ID.</p></li>
-<li><p><strong>json_decoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code>]) – Custom JSON decoder to use to decode the retrieved experiment.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>Retrieved experiment data.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound"><strong>IBMExperimentEntryNotFound</strong></a> – If the experiment does not exist.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.experiments">
-<code class="sig-name descname">experiments</code><span class="sig-paren">(</span><em class="sig-param">limit=10</em>, <em class="sig-param">json_decoder=&lt;class 'json.decoder.JSONDecoder'&gt;</em>, <em class="sig-param">device_components=None</em>, <em class="sig-param">device_components_operator=None</em>, <em class="sig-param">experiment_type=None</em>, <em class="sig-param">experiment_type_operator=None</em>, <em class="sig-param">backend_name=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">tags_operator='OR'</em>, <em class="sig-param">start_datetime_after=None</em>, <em class="sig-param">start_datetime_before=None</em>, <em class="sig-param">hub=None</em>, <em class="sig-param">group=None</em>, <em class="sig-param">project=None</em>, <em class="sig-param">exclude_public=False</em>, <em class="sig-param">public_only=False</em>, <em class="sig-param">exclude_mine=False</em>, <em class="sig-param">mine_only=False</em>, <em class="sig-param">sort_by=None</em>, <em class="sig-param">**filters</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.experiments"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.experiments" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Retrieve all experiments, with optional filtering.</p>
-<p>By default, results returned are as inclusive as possible. For example,
-if you don’t specify any filters, all experiments visible to you
-are returned. This includes your own experiments as well as
-those shared with you, from all providers you have access to
-(not just from the provider you used to invoke this experiment service).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>limit</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Number of experiments to retrieve. <code class="docutils literal notranslate"><span class="pre">None</span></code> indicates no limit.</p></li>
-<li><p><strong>json_decoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONDecoder</span></code>]) – Custom JSON decoder to use to decode the retrieved experiments.</p></li>
-<li><p><strong>device_components</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DeviceComponent</span></code>]]]) – Filter by device components.</p></li>
-<li><p><strong>device_components_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – <p>Operator used when filtering by device components.
-Valid values are <code class="docutils literal notranslate"><span class="pre">None</span></code> and «contains»:</p>
-<blockquote>
-<div><ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, an analysis result’s device components must match
-exactly for it to be included.</p></li>
-<li><p>If «contains» is specified, an analysis result’s device components
-must contain at least the values specified by the <cite>device_components</cite>
-filter.</p></li>
-</ul>
-</div></blockquote>
-</p></li>
-<li><p><strong>experiment_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Experiment type used for filtering.</p></li>
-<li><p><strong>experiment_type_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – <p>Operator used when filtering by experiment type.
-Valid values are <code class="docutils literal notranslate"><span class="pre">None</span></code> and «like»:</p>
-<ul>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> is specified, an experiment’s type value must
-match exactly for it to be included.</p></li>
-<li><p>If «like» is specified, an experiment’s type value must
-contain the value specified by <cite>experiment_type</cite>. For example,
-<code class="docutils literal notranslate"><span class="pre">experiment_type=&quot;foo&quot;,</span> <span class="pre">experiment_type_operator=&quot;like&quot;</span></code> will match
-both <code class="docutils literal notranslate"><span class="pre">foo1</span></code> and <code class="docutils literal notranslate"><span class="pre">1foo</span></code>.</p></li>
-</ul>
-</p></li>
-<li><p><strong>backend_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Backend name used for filtering.</p></li>
-<li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Filter by tags assigned to experiments.</p></li>
-<li><p><strong>tags_operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – <p>Logical operator to use when filtering by job tags. Valid
-values are «AND» and «OR»:</p>
-<blockquote>
-<div><ul>
-<li><p>If «AND» is specified, then an experiment must have all of the tags
-specified in <cite>tags</cite> to be included.</p></li>
-<li><p>If «OR» is specified, then an experiment only needs to have any
-of the tags specified in <cite>tags</cite> to be included.</p></li>
-</ul>
-</div></blockquote>
-</p></li>
-<li><p><strong>start_datetime_after</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>]) – Filter by the given start timestamp, in local time.
-This is used to find experiments whose start date/time is after
-(greater than or equal to) this local timestamp.</p></li>
-<li><p><strong>start_datetime_before</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>]) – Filter by the given start timestamp, in local time.
-This is used to find experiments whose start date/time is before
-(less than or equal to) this local timestamp.</p></li>
-<li><p><strong>hub</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Filter by hub.</p></li>
-<li><p><strong>group</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Filter by hub and group. <cite>hub</cite> must also be specified if <cite>group</cite> is.</p></li>
-<li><p><strong>project</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Filter by hub, group, and project. <cite>hub</cite> and <cite>group</cite> must also be
-specified if <cite>project</cite> is.</p></li>
-<li><p><strong>exclude_public</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, experiments with <code class="docutils literal notranslate"><span class="pre">share_level=public</span></code>
-(that is, experiments visible to all users) will not be returned.
-Cannot be <code class="docutils literal notranslate"><span class="pre">True</span></code> if <cite>public_only</cite> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><strong>public_only</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, only experiments with <code class="docutils literal notranslate"><span class="pre">share_level=public</span></code>
-(that is, experiments visible to all users) will be returned.
-Cannot be <code class="docutils literal notranslate"><span class="pre">True</span></code> if <cite>exclude_public</cite> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><strong>exclude_mine</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, experiments where I am the owner will not be returned.
-Cannot be <code class="docutils literal notranslate"><span class="pre">True</span></code> if <cite>mine_only</cite> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><strong>mine_only</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, only experiments where I am the owner will be returned.
-Cannot be <code class="docutils literal notranslate"><span class="pre">True</span></code> if <cite>exclude_mine</cite> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><strong>sort_by</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Specifies how the output should be sorted. This can be a single sorting
-option or a list of options. Each option should contain a sort key
-and a direction, separated by a semicolon. Valid sort keys are
-«start_datetime» and «experiment_type».
-Valid directions are «asc» for ascending or «desc» for descending.
-For example, <code class="docutils literal notranslate"><span class="pre">sort_by=[&quot;experiment_type:asc&quot;,</span> <span class="pre">&quot;start_datetime:desc&quot;]</span></code> will
-return an output list that is first sorted by experiment type in
-ascending order, then by start datetime by descending order.
-By default, experiments are sorted by <code class="docutils literal notranslate"><span class="pre">start_datetime</span></code>
-descending and <code class="docutils literal notranslate"><span class="pre">experiment_id</span></code> ascending.</p></li>
-<li><p><strong>**filters</strong> – Additional filtering keywords that are not supported and will be ignored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A list of experiments. Each experiment is a dictionary containing the
-retrieved experiment data.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – If an invalid parameter value is specified.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.figure">
-<code class="sig-name descname">figure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">experiment_id</span></em>, <em class="sig-param"><span class="n">figure_name</span></em>, <em class="sig-param"><span class="n">file_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.figure"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.figure" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Retrieve an existing figure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment ID.</p></li>
-<li><p><strong>figure_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the figure.</p></li>
-<li><p><strong>file_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Name of the local file to save the figure to. If <code class="docutils literal notranslate"><span class="pre">None</span></code>,
-the content of the figure is returned instead.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>The size of the figure if <cite>file_name</cite> is specified. Otherwise the
-content of the figure in bytes.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound"><strong>IBMExperimentEntryNotFound</strong></a> – If the figure does not exist.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.preferences">
-<em class="property">property </em><code class="sig-name descname">preferences</code><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.preferences" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">preferences</code><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.preferences" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Return saved experiment preferences.</p>
 <div class="admonition note">
 <p class="admonition-title">Σημείωση</p>
@@ -969,127 +466,6 @@ such as <code class="docutils literal notranslate"><span class="pre">qiskit-expe
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences">
-<code class="sig-name descname">save_preferences</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">auto_save</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.save_preferences"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Stores experiment preferences on disk.</p>
-<div class="admonition note">
-<p class="admonition-title">Σημείωση</p>
-<p>These are preferences passed to the applications that use this service
-and have no effect on the service itself.</p>
-<p>For example, if <code class="docutils literal notranslate"><span class="pre">auto_save</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, it tells the application,
-such as <code class="docutils literal notranslate"><span class="pre">qiskit-experiments</span></code>, that you prefer changes to be
-automatically saved. It is up to the application to implement the preferences.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>auto_save</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Automatically save the experiment.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result">
-<code class="sig-name descname">update_analysis_result</code><span class="sig-paren">(</span><em class="sig-param">result_id</em>, <em class="sig-param">result_data=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">quality=None</em>, <em class="sig-param">verified=None</em>, <em class="sig-param">chisq=None</em>, <em class="sig-param">json_encoder=&lt;class 'json.encoder.JSONEncoder'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.update_analysis_result"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Update an existing analysis result.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>result_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Analysis result ID.</p></li>
-<li><p><strong>result_data</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – Result data to be stored.</p></li>
-<li><p><strong>quality</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ResultQuality</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Quality of this analysis.</p></li>
-<li><p><strong>verified</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Whether the result quality has been verified.</p></li>
-<li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Tags to be associated with the analysis result.</p></li>
-<li><p><strong>chisq</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – chi^2 decimal value of the fit.</p></li>
-<li><p><strong>json_encoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code>]) – Custom JSON encoder to use to encode the analysis result.</p></li>
-<li><p><strong>kwargs</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Additional analysis result attributes that are not supported
-and will be ignored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound"><strong>IBMExperimentEntryNotFound</strong></a> – If the analysis result does not exist.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment">
-<code class="sig-name descname">update_experiment</code><span class="sig-paren">(</span><em class="sig-param">experiment_id</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">job_ids=None</em>, <em class="sig-param">notes=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">share_level=None</em>, <em class="sig-param">end_datetime=None</em>, <em class="sig-param">json_encoder=&lt;class 'json.encoder.JSONEncoder'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.update_experiment"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Update an existing experiment.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment ID.</p></li>
-<li><p><strong>metadata</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – Experiment metadata.</p></li>
-<li><p><strong>job_ids</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – IDs of experiment jobs.</p></li>
-<li><p><strong>notes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Freeform notes about the experiment.</p></li>
-<li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Tags to be associated with the experiment.</p></li>
-<li><p><strong>share_level</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentShareLevel</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – <p>The level at which the experiment is shared. This determines who can
-view the experiment (but not update it). This defaults to «private»
-for new experiments. Possible values include:</p>
-<ul>
-<li><p>private: The experiment is only visible to its owner (default)</p></li>
-<li><p>project: The experiment is shared within its project</p></li>
-<li><p>group: The experiment is shared within its group</p></li>
-<li><p>hub: The experiment is shared within its hub</p></li>
-<li><p>public: The experiment is shared publicly regardless of provider</p></li>
-</ul>
-</p></li>
-<li><p><strong>end_datetime</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Timestamp for when the experiment ended, in local time.</p></li>
-<li><p><strong>json_encoder</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code>]) – Custom JSON encoder to use to encode the experiment.</p></li>
-<li><p><strong>kwargs</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Additional experiment attributes that are not supported and will be ignored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound"><strong>IBMExperimentEntryNotFound</strong></a> – If the experiment does not exist.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure">
-<code class="sig-name descname">update_figure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">experiment_id</span></em>, <em class="sig-param"><span class="n">figure</span></em>, <em class="sig-param"><span class="n">figure_name</span></em>, <em class="sig-param"><span class="n">sync_upload</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.update_figure"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Update an existing figure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>experiment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Experiment ID.</p></li>
-<li><p><strong>figure</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>]) – Name of the figure file or figure data to store.</p></li>
-<li><p><strong>figure_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Name of the figure.</p></li>
-<li><p><strong>sync_upload</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the plot will be uploaded synchronously.
-Otherwise the upload will be asynchronous.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A tuple of the name and size of the saved figure.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound.html#qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound" title="qiskit.providers.ibmq.experiment.IBMExperimentEntryNotFound"><strong>IBMExperimentEntryNotFound</strong></a> – If the figure does not exist.</p></li>
-<li><p><strong>IBMQApiError</strong> – If the request to the server failed.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -1102,7 +478,7 @@ Otherwise the upload will be asynchronous.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.providers.ibmq.experiment.ResultQuality.html" class="btn btn-neutral float-right" title="qiskit.providers.ibmq.experiment.ResultQuality" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result.html" class="btn btn-neutral float-right" title="qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/ibmq_experiment.html" class="btn btn-neutral" title="Experiment (qiskit.providers.ibmq.experiment)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1119,7 +495,7 @@ Otherwise the upload will be asynchronous.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -1138,7 +514,7 @@ Otherwise the upload will be asynchronous.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.providers.ibmq.experiment.IBMExperimentService</a></li>
+<li><a class="reference internal" href="#">IBMExperimentService</a></li>
 </ul>
 
             </div>
@@ -1202,7 +578,7 @@ Otherwise the upload will be asynchronous.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1225,9 +601,11 @@ Otherwise the upload will be asynchronous.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

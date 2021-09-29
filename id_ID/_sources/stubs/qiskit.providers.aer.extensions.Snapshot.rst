@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.extensions.Snapshot
-========================================
+﻿Snapshot
+========
 
 .. currentmodule:: qiskit.providers.aer.extensions
 
 .. autoclass:: Snapshot
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Snapshot.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Snapshot.add_decomposition
       ~Snapshot.assemble
       ~Snapshot.broadcast_arguments
@@ -28,21 +27,15 @@
       ~Snapshot.reverse_ops
       ~Snapshot.soft_compare
       ~Snapshot.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Snapshot.decompositions
-      ~Snapshot.definition
-      ~Snapshot.duration
-      ~Snapshot.label
-      ~Snapshot.params
-      ~Snapshot.snapshot_type
-      ~Snapshot.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: snapshot_type
+   .. autoattribute:: unit

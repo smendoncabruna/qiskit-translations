@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.extensions.SnapshotProbabilities
-=====================================================
+﻿SnapshotProbabilities
+=====================
 
 .. currentmodule:: qiskit.providers.aer.extensions
 
 .. autoclass:: SnapshotProbabilities
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SnapshotProbabilities.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SnapshotProbabilities.add_decomposition
       ~SnapshotProbabilities.assemble
       ~SnapshotProbabilities.broadcast_arguments
@@ -28,21 +27,15 @@
       ~SnapshotProbabilities.reverse_ops
       ~SnapshotProbabilities.soft_compare
       ~SnapshotProbabilities.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SnapshotProbabilities.decompositions
-      ~SnapshotProbabilities.definition
-      ~SnapshotProbabilities.duration
-      ~SnapshotProbabilities.label
-      ~SnapshotProbabilities.params
-      ~SnapshotProbabilities.snapshot_type
-      ~SnapshotProbabilities.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: snapshot_type
+   .. autoattribute:: unit

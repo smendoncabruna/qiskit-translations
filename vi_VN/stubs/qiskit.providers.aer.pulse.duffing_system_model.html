@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.pulse.duffing_system_model &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>qiskit.providers.aer.pulse.duffing_system_model &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -42,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Tìm Kiếm" href="../search.html" />
     <link rel="next" title="Utilities (qiskit.providers.aer.utils)" href="../apidoc/aer_utils.html" />
-    <link rel="prev" title="qiskit.providers.aer.pulse.PulseSystemModel" href="qiskit.providers.aer.pulse.PulseSystemModel.html" /> 
+    <link rel="prev" title="qiskit.providers.aer.pulse.PulseSystemModel.from_config" href="qiskit.providers.aer.pulse.PulseSystemModel.from_config.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -364,7 +371,7 @@ results in the Hamiltonian term:</p>
 <p>Finally, the returned <a class="reference internal" href="qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel" title="qiskit.providers.aer.pulse.PulseSystemModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseSystemModel</span></code></a> is setup for performing cross-resonance
 drives between coupled qubits. The index for the <code class="xref py py-class docutils literal notranslate"><span class="pre">ControlChannel</span></code> corresponding
 to a particular cross-resonance drive channel is retreived by calling
-<a class="reference internal" href="qiskit.providers.aer.pulse.PulseSystemModel.html#qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index" title="qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PulseSystemModel.control_channel_index()</span></code></a> with the tuple <code class="docutils literal notranslate"><span class="pre">(drive_idx,</span> <span class="pre">target_idx)</span></code>,
+<a class="reference internal" href="qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index.html#qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index" title="qiskit.providers.aer.pulse.PulseSystemModel.control_channel_index"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PulseSystemModel.control_channel_index()</span></code></a> with the tuple <code class="docutils literal notranslate"><span class="pre">(drive_idx,</span> <span class="pre">target_idx)</span></code>,
 where <code class="docutils literal notranslate"><span class="pre">drive_idx</span></code> is the index of the oscillator being driven, and <code class="docutils literal notranslate"><span class="pre">target_idx</span></code> is
 the target oscillator (see example below).</p>
 <p>Note: In this model, all frequencies are in frequency units (as opposed to radial).</p>
@@ -436,7 +443,7 @@ the coupling strengths in frequency units.</p></li>
         <a href="../apidoc/aer_utils.html" class="btn btn-neutral float-right" title="Utilities (qiskit.providers.aer.utils)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.providers.aer.pulse.PulseSystemModel.html" class="btn btn-neutral" title="qiskit.providers.aer.pulse.PulseSystemModel" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.providers.aer.pulse.PulseSystemModel.from_config.html" class="btn btn-neutral" title="qiskit.providers.aer.pulse.PulseSystemModel.from_config" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -450,7 +457,7 @@ the coupling strengths in frequency units.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -533,7 +540,7 @@ the coupling strengths in frequency units.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -556,9 +563,11 @@ the coupling strengths in frequency units.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

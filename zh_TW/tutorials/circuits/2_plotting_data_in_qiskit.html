@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit 視覺化 &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>Qiskit 視覺化 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -641,9 +648,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="繪製直方圖函數的可調參數">
 <h3>繪製直方圖函數的可調參數<a class="headerlink" href="#繪製直方圖函數的可調參數" title="本標題的永久連結">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code> has a few options to adjust the output graph. The first option is the <code class="docutils literal notranslate"><span class="pre">legend</span></code> kwarg. This is used to provide a label for the executions. It takes a list of strings use to label each execution’s results. This is mostly useful when plotting multiple execution results in the same histogram. The <code class="docutils literal notranslate"><span class="pre">sort</span></code> kwarg is used to adjust the order the bars in the histogram are rendered. It can be set to either ascending order with <code class="docutils literal notranslate"><span class="pre">asc</span></code> or descending order with <code class="docutils literal notranslate"><span class="pre">desc</span></code>. The
-<code class="docutils literal notranslate"><span class="pre">number_to_keep</span></code> kwarg takes an integer for the number of terms to show, the rest are grouped together in a single bar called rest. You can adjust the color of the bars with the <code class="docutils literal notranslate"><span class="pre">color</span></code> kwarg which either takes a string or a list of strings for the colors to use for the bars for each execution. You can adjust whether labels are printed above the bars or not with the <code class="docutils literal notranslate"><span class="pre">bar_labels</span></code> kwarg. The last option available is the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> kwarg which takes a tuple of the size in inches to make the
-output figure.</p>
+<p><code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code> 有幾個選項可調整輸出圖片。第一個選項是 <code class="docutils literal notranslate"><span class="pre">legend</span></code>，可用來為執行結果添加標籤。它的輸入是一系列用於標示每個執行結果的字串。它在同一個直方圖中繪製多個執行結果時十分好用。<code class="docutils literal notranslate"><span class="pre">sort</span></code> 可用來調整直方圖中的長條的呈現順序。它可以用 <code class="docutils literal notranslate"><span class="pre">asc</span></code> 設為升序或 <code class="docutils literal notranslate"><span class="pre">desc</span></code> 降序。<code class="docutils literal notranslate"><span class="pre">number_to_keep</span></code> 可輸入一個整數表示需要顯示的項目數量。其餘的則會在一個稱為 rest 的單一條欄中集中顯示。您可以使用 <code class="docutils literal notranslate"><span class="pre">color</span></code> 來調整長條的顏色。它需要輸入一個或一組字串，以用於設置每一個執行結果的長條顔色。 您可以用 <code class="docutils literal notranslate"><span class="pre">bar_labels</span></code> 選擇標籤是否顯示在長條上方。最後一個可以設置選項是 <code class="docutils literal notranslate"><span class="pre">figsize</span></code>。它需要輸入一個以英寸為單位的元組作爲圖片尺寸，來製作輸出圖。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -687,8 +692,7 @@ output figure.</p>
 </section>
 <section id="使用-plot_histogram()-的輸出">
 <h3>使用 plot_histogram() 的輸出<a class="headerlink" href="#使用-plot_histogram()-的輸出" title="本標題的永久連結">¶</a></h3>
-<p>When using the plot_histogram() function it returns a <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> for the rendered visualization. Jupyter notebooks understand this return type and render it for us in this tutorial, but when running outside of Jupyter you do not have this feature automatically. However, the <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> class natively has methods to both display and save the visualization. You can call <code class="docutils literal notranslate"><span class="pre">.show()</span></code> on the returned object from <code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code> to open the image in a new window (assuming
-your configured matplotlib backend is interactive). Or alternatively you can call <code class="docutils literal notranslate"><span class="pre">.savefig('out.png')</span></code> to save the figure to <code class="docutils literal notranslate"><span class="pre">out.png</span></code>. The <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method takes a path so you can adjust the location and filename where you’re saving the output.</p>
+<p>當使用 plot_histogram() 函數時，它會返回一個 <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> 來呈現視覺化。Jupyter notebooks 知道該返回類型，並在本教程中為我們所用。但在 Jupyter 之外執行時，您無法自動擁有此功能。不過，<code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> 類擁有原生的視覺化顯示與存儲方法。您可以使用 <code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code> 返回對象中的 <code class="docutils literal notranslate"><span class="pre">.show()</span></code> ，以在新視窗中開啟圖片（假設您配置的 matplotlib 後端是可互動的）。或者，您也可以使用 <code class="docutils literal notranslate"><span class="pre">.savefig('out.png')</span></code>，將圖片儲存至 <code class="docutils literal notranslate"><span class="pre">out.png</span></code>。<code class="docutils literal notranslate"><span class="pre">savefig()</span></code> 方法需要輸入一個路徑，因此您可以自定義存儲地址與文檔名。</p>
 </section>
 </section>
 <section id="繪製狀態">
@@ -924,8 +928,7 @@ plot_bloch_multivector(quantum_state)
 </section>
 <section id="使用量子態繪圖函數的輸出">
 <h3>使用量子態繪圖函數的輸出<a class="headerlink" href="#使用量子態繪圖函數的輸出" title="本標題的永久連結">¶</a></h3>
-<p>When using any of the state plotting functions it returns a <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> for the rendered visualization. Jupyter notebooks understand this return type and render it for us in this tutorial, but when running outside of Jupyter you do not have this feature automatically. However, the <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> class natively has methods to both display and save the visualization. You can call <code class="docutils literal notranslate"><span class="pre">.show()</span></code> on the returned object to open the image in a new window (assuming your configured
-matplotlib backend is interactive). Or alternatively you can call <code class="docutils literal notranslate"><span class="pre">.savefig('out.png')</span></code> to save the figure to <code class="docutils literal notranslate"><span class="pre">out.png</span></code> in the current working directory. The <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method takes a path so you can adjust the location and filename where you’re saving the output.</p>
+<p>當使用任何量子態繪圖函數時，它會返回一個 <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> 來呈現視覺化。Jupyter notebooks 知道該返回類型，並在本教程中為我們所用。但在 Jupyter 之外執行時，您無法自動擁有此功能。不過，<code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> 類擁有原生的視覺化顯示與存儲方法。您可以使用 <code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code> 返回對象中的 <code class="docutils literal notranslate"><span class="pre">.show()</span></code> ，以在新視窗中開啟圖片（假設您配置的 matplotlib 後端是可互動的）。或者，您也可以使用 <code class="docutils literal notranslate"><span class="pre">.savefig('out.png')</span></code>，將圖片儲存至 <code class="docutils literal notranslate"><span class="pre">out.png</span></code>。<code class="docutils literal notranslate"><span class="pre">savefig()</span></code> 方法需要輸入一個路徑，因此您可以自定義存儲地址與文檔名。</p>
 </section>
 </section>
 <section id="繪製-Bloch-向量圖">
@@ -984,8 +987,7 @@ matplotlib backend is interactive). Or alternatively you can call <code class="d
 </section>
 <section id="調整-plot_bloch_vector()-的輸出">
 <h3>調整 plot_bloch_vector() 的輸出<a class="headerlink" href="#調整-plot_bloch_vector()-的輸出" title="本標題的永久連結">¶</a></h3>
-<p>When using the <code class="docutils literal notranslate"><span class="pre">plot_bloch_vector</span></code> function it returns a <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> for the rendered visualization. Jupyter notebooks understand this return type and render it for us in this tutorial, but when running outside of Jupyter you do not have this feature automatically. However, the <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> class natively has methods to both display and save the visualization. You can call <code class="docutils literal notranslate"><span class="pre">.show()</span></code> on the returned object to open the image in a new window (assuming your configured
-matplotlib backend is interactive). Or alternatively you can call <code class="docutils literal notranslate"><span class="pre">.savefig('out.png')</span></code> to save the figure to <code class="docutils literal notranslate"><span class="pre">out.png</span></code> in the current working directory. The <code class="docutils literal notranslate"><span class="pre">savefig()</span></code> method takes a path so you can adjust the location and filename where you’re saving the output.</p>
+<p>當使用 <code class="docutils literal notranslate"><span class="pre">plot_bloch_vector</span></code> 函數時，它會返回一個 <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> 來呈現視覺化。Jupyter notebooks 知道該返回類型，並在本教程中為我們所用。但在 Jupyter 之外執行時，您無法自動擁有此功能。不過，<code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> 類擁有原生的視覺化顯示與存儲方法。您可以使用 <code class="docutils literal notranslate"><span class="pre">plot_histogram()</span></code> 返回對象中的 <code class="docutils literal notranslate"><span class="pre">.show()</span></code> ，以在新視窗中開啟圖片（假設您配置的 matplotlib 後端是可互動的）。或者，您也可以使用 <code class="docutils literal notranslate"><span class="pre">.savefig('out.png')</span></code>，將圖片儲存至 <code class="docutils literal notranslate"><span class="pre">out.png</span></code>。<code class="docutils literal notranslate"><span class="pre">savefig()</span></code> 方法需要輸入一個路徑，因此您可以自定義存儲地址與文檔名。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
@@ -1041,7 +1043,7 @@ matplotlib backend is interactive). Or alternatively you can call <code class="d
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1142,7 +1144,7 @@ matplotlib backend is interactive). Or alternatively you can call <code class="d
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1165,9 +1167,11 @@ matplotlib backend is interactive). Or alternatively you can call <code class="d
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

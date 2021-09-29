@@ -1,59 +1,39 @@
-﻿qiskit.opflow.primitive\_ops.MatrixOp
-=====================================
+MatrixOp
+========
 
 .. currentmodule:: qiskit.opflow.primitive_ops
 
 .. autoclass:: MatrixOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~MatrixOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MatrixOp.add
       ~MatrixOp.adjoint
-      ~MatrixOp.assign_parameters
-      ~MatrixOp.bind_parameters
       ~MatrixOp.compose
-      ~MatrixOp.copy
       ~MatrixOp.equals
       ~MatrixOp.eval
       ~MatrixOp.exp_i
-      ~MatrixOp.log_i
-      ~MatrixOp.mul
-      ~MatrixOp.neg
       ~MatrixOp.permute
-      ~MatrixOp.power
       ~MatrixOp.primitive_strings
-      ~MatrixOp.reduce
       ~MatrixOp.tensor
-      ~MatrixOp.tensorpower
-      ~MatrixOp.to_circuit
-      ~MatrixOp.to_circuit_op
       ~MatrixOp.to_instruction
       ~MatrixOp.to_matrix
       ~MatrixOp.to_matrix_op
-      ~MatrixOp.to_pauli_op
-      ~MatrixOp.to_spmatrix
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MatrixOp.INDENTATION
-      ~MatrixOp.coeff
-      ~MatrixOp.instance_id
-      ~MatrixOp.num_qubits
-      ~MatrixOp.parameters
-      ~MatrixOp.primitive
-      ~MatrixOp.settings
-   
-   
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: instance_id
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive
+   .. autoattribute:: settings

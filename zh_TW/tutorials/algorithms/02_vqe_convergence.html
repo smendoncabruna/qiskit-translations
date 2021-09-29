@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Monitoring VQE convergence &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>觀察 VQE 收斂 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Monitoring VQE convergence</li>
+      <li>觀察 VQE 收斂</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -572,13 +579,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/02_vqe_convergence.ipynb">tutorials/algorithms/02_vqe_convergence.ipynb</a>.</p>
+<p>此頁面是從 <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/02_vqe_convergence.ipynb">tutorials/algorithms/02_vqe_convergence.ipynb</a> 所產生的。</p>
 </div>
-<section id="Monitoring-VQE-convergence">
-<h1>Monitoring VQE convergence<a class="headerlink" href="#Monitoring-VQE-convergence" title="本標題的永久連結">¶</a></h1>
-<p>Variational algorithms in Qiskit, like <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html">VQE</a> and <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.QAOA.html">QAOA</a>, provide the option for a user to give a callback method that can be used to monitor optimization progress as the algorithm runs and converges to the minimum. The callback is invoked for each functional evaluation by the optimizer and provides the current optimizer value, evaluation count, current
-optimizer parameters etc. Note that, depending on the specific optimizer this may not be each iteration (step) of the optimizer, so for example if the optimizer is calling the cost function to compute a finite difference based gradient this will be visible via the callback.</p>
-<p>This notebook demonstrates using Qiskit’s VQE algorithm to plot graphs of the convergence path to ground state energy with a selected set of optimizers.</p>
+<section id="觀察-VQE-收斂">
+<h1>觀察 VQE 收斂<a class="headerlink" href="#觀察-VQE-收斂" title="本標題的永久連結">¶</a></h1>
+<p>Qiskit 中的變分演算法(如 <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html">VQE</a> 和 <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.QAOA.html">QAOA</a>)提供了一個選項給使用者，可用來監視最佳化進度的回呼方法，隨著演算法運算並收斂到其最小值。優化器會呼叫每一個功能評估的回呼，並提供現行優化器的數值、評估計數、現行優化器參數等。請注意，視特定優化器而定，這可能不是優化器的每一個反覆運算(步驟)，例如，如果優化器呼叫成本函數來計算有限差異型的梯度，則會透過回呼來顯示此值。</p>
+<p>此筆記本示範使用 Qiskit 的 VQE 演算法，以選定的一組優化器來針對基態收斂的情形作圖。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -596,7 +602,7 @@ optimizer parameters etc. Note that, depending on the specific optimizer this ma
 </pre></div>
 </div>
 </div>
-<p>First we create a qubit operator for VQE. Here we will use the same operator as used in the algorithms introduction, which was originally computed by Qiskit Nature for an H2 molecule.</p>
+<p>首先，我們會建立 VQE 的量子位元算子。在這裡，我們將使用演算法簡介中使用的相同算子，這原本是 Qiskit Nature 為了計算 H2 分子的算子。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -610,7 +616,7 @@ optimizer parameters etc. Note that, depending on the specific optimizer this ma
 </pre></div>
 </div>
 </div>
-<p>We will show the callback usage below over a set of optimizers for comparison. The minimum energy of the H2 Hamiltonian can be found quite easily so we are able to set maxiters to a small value</p>
+<p>我們將展示如何在一組優化器中使用回呼法以進行比較。這可以讓我們很容易地找到 H2 Hamiltonian 的最小能量，故能夠將 maxiters 設定為一個小數值</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -671,7 +677,7 @@ Optimization complete
 <img alt="../../_images/tutorials_algorithms_02_vqe_convergence_7_0.png" src="../../_images/tutorials_algorithms_02_vqe_convergence_7_0.png" />
 </div>
 </div>
-<p>Finally since the above problem is still easily tractable classically we can use NumPyMinimumEigensolver to compute a reference value for the solution. We can now plot the difference from the resultant exact solution as the energy converges with VQE towards the minimum value which should be that exact classical solution.</p>
+<p>最後，由於上述問題仍很容易被追蹤，因此我們可以使用 NumPyMinimumEigensover 來計算解決方案的參照值。我們現在可以根據產生的精確解決方案來繪製不同的解決方案，因為能量會與 VQE 轉換成最小的值，而這應該是精確的古典解決方案。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -715,9 +721,9 @@ Reference value: -1.85728
 <img alt="../../_images/tutorials_algorithms_02_vqe_convergence_10_0.png" src="../../_images/tutorials_algorithms_02_vqe_convergence_10_0.png" />
 </div>
 </div>
-<section id="Using-Gradient-framework">
-<h2>Using Gradient framework<a class="headerlink" href="#Using-Gradient-framework" title="本標題的永久連結">¶</a></h2>
-<p>Qiskit now has a Gradient framework as part of the Opflow capability. With the gradient computed for the optimizer we now see just the optimization steps themselves.</p>
+<section id="使用-Gradient-架構">
+<h2>使用 Gradient 架構<a class="headerlink" href="#使用-Gradient-架構" title="本標題的永久連結">¶</a></h2>
+<p>Qiskit 現在有一個 Gradient 架構，作為 Opflow 功能的一部分。由於優化器的梯度已經計算好，我們現在只會看到最佳化步驟本身。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -774,8 +780,8 @@ Value using Gradient: -1.85728
 </div>
 </div>
 </section>
-<section id="Monitoring-via-the-logging">
-<h2>Monitoring via the logging<a class="headerlink" href="#Monitoring-via-the-logging" title="本標題的永久連結">¶</a></h2>
+<section id="透過登錄表來監測">
+<h2>透過登錄表來監測<a class="headerlink" href="#透過登錄表來監測" title="本標題的永久連結">¶</a></h2>
 <p>Much of the code is instrumented with <a class="reference external" href="https://docs.python.org/3/library/logging.html">Python logging</a> statements. The logging is configurable to adjust level of logging etc. Here we set the logging level to <code class="docutils literal notranslate"><span class="pre">INFO</span></code></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -842,7 +848,7 @@ Value using Gradient: -1.85728
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -861,9 +867,9 @@ Value using Gradient: -1.85728
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Monitoring VQE convergence</a><ul>
-<li><a class="reference internal" href="#Using-Gradient-framework">Using Gradient framework</a></li>
-<li><a class="reference internal" href="#Monitoring-via-the-logging">Monitoring via the logging</a></li>
+<li><a class="reference internal" href="#">觀察 VQE 收斂</a><ul>
+<li><a class="reference internal" href="#使用-Gradient-架構">使用 Gradient 架構</a></li>
+<li><a class="reference internal" href="#透過登錄表來監測">透過登錄表來監測</a></li>
 </ul>
 </li>
 </ul>
@@ -930,7 +936,7 @@ Value using Gradient: -1.85728
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -953,9 +959,11 @@ Value using Gradient: -1.85728
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

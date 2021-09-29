@@ -1,19 +1,18 @@
-﻿qiskit.finance.components.uncertainty\_problems.EuropeanCallDelta
-=================================================================
+﻿EuropeanCallDelta
+=================
 
 .. currentmodule:: qiskit.finance.components.uncertainty_problems
 
 .. autoclass:: EuropeanCallDelta
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EuropeanCallDelta.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EuropeanCallDelta.build
       ~EuropeanCallDelta.build_controlled
       ~EuropeanCallDelta.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~EuropeanCallDelta.required_ancillas
       ~EuropeanCallDelta.required_ancillas_controlled
       ~EuropeanCallDelta.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EuropeanCallDelta.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

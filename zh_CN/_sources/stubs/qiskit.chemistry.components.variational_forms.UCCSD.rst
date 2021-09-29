@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.components.variational\_forms.UCCSD
-====================================================
+﻿UCCSD
+=====
 
 .. currentmodule:: qiskit.chemistry.components.variational_forms
 
 .. autoclass:: UCCSD
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UCCSD.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UCCSD.compute_excitation_lists
       ~UCCSD.compute_excitation_lists_singlet
       ~UCCSD.construct_circuit
@@ -26,23 +25,17 @@
       ~UCCSD.push_hopping_operator
       ~UCCSD.same_ao_double_excitation_block_spin
       ~UCCSD.validate_entangler_map
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UCCSD.double_excitations
-      ~UCCSD.excitation_pool
-      ~UCCSD.num_parameters
-      ~UCCSD.num_qubits
-      ~UCCSD.parameter_bounds
-      ~UCCSD.preferred_init_points
-      ~UCCSD.setting
-      ~UCCSD.single_excitations
-      ~UCCSD.support_parameterized_circuit
-   
-   
+   .. autoattribute:: double_excitations
+   .. autoattribute:: excitation_pool
+   .. autoattribute:: num_parameters
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameter_bounds
+   .. autoattribute:: preferred_init_points
+   .. autoattribute:: setting
+   .. autoattribute:: single_excitations
+   .. autoattribute:: support_parameterized_circuit

@@ -1,26 +1,21 @@
-﻿qiskit.aqua.components.multiclass\_extensions.AllPairs
-======================================================
+﻿AllPairs
+========
 
 .. currentmodule:: qiskit.aqua.components.multiclass_extensions
 
 .. autoclass:: AllPairs
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AllPairs.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AllPairs.predict
       ~AllPairs.set_estimator
       ~AllPairs.test
       ~AllPairs.train
-   
-   
 
-   
-   
-   
+

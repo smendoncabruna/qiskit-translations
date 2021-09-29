@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_problems.UnivariatePiecewiseLinearObjective
-===============================================================================
+﻿UnivariatePiecewiseLinearObjective
+==================================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_problems
 
 .. autoclass:: UnivariatePiecewiseLinearObjective
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnivariatePiecewiseLinearObjective.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnivariatePiecewiseLinearObjective.build
       ~UnivariatePiecewiseLinearObjective.build_controlled
       ~UnivariatePiecewiseLinearObjective.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~UnivariatePiecewiseLinearObjective.required_ancillas
       ~UnivariatePiecewiseLinearObjective.required_ancillas_controlled
       ~UnivariatePiecewiseLinearObjective.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnivariatePiecewiseLinearObjective.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

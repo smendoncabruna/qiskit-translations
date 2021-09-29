@@ -1,24 +1,19 @@
-﻿qiskit.providers.models.UchannelLO
-==================================
+﻿UchannelLO
+==========
 
 .. currentmodule:: qiskit.providers.models
 
 .. autoclass:: UchannelLO
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UchannelLO.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UchannelLO.from_dict
       ~UchannelLO.to_dict
-   
-   
 
-   
-   
-   
+

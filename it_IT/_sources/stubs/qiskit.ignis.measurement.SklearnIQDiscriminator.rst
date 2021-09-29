@@ -1,19 +1,18 @@
-﻿qiskit.ignis.measurement.SklearnIQDiscriminator
-===============================================
+﻿SklearnIQDiscriminator
+======================
 
 .. currentmodule:: qiskit.ignis.measurement
 
 .. autoclass:: SklearnIQDiscriminator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SklearnIQDiscriminator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SklearnIQDiscriminator.add_data
       ~SklearnIQDiscriminator.discriminate
       ~SklearnIQDiscriminator.fit
@@ -23,17 +22,11 @@
       ~SklearnIQDiscriminator.is_calibration
       ~SklearnIQDiscriminator.plot
       ~SklearnIQDiscriminator.plot_xdata
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SklearnIQDiscriminator.expected_states
-      ~SklearnIQDiscriminator.fitted
-      ~SklearnIQDiscriminator.schedules
-   
-   
+   .. autoattribute:: expected_states
+   .. autoattribute:: fitted
+   .. autoattribute:: schedules

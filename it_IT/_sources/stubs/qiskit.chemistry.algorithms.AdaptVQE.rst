@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.algorithms.AdaptVQE
-====================================
+﻿AdaptVQE
+========
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: AdaptVQE
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AdaptVQE.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AdaptVQE.evaluate_operators
       ~AdaptVQE.returns_groundstate
       ~AdaptVQE.solve
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AdaptVQE.solver
-      ~AdaptVQE.transformation
-   
-   
+   .. autoattribute:: solver
+   .. autoattribute:: transformation

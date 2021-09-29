@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.quantum_instance &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.aqua.quantum_instance &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -382,7 +389,7 @@
                         <span class="s2">&quot;max_parallel_experiments&quot;</span><span class="p">,</span> <span class="s2">&quot;statevector_parallel_threshold&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;statevector_hpc_gate_opt&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">_BACKEND_OPTIONS_QASM_ONLY</span>
 
-<div class="viewcode-block" id="QuantumInstance.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">backend</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Backend</span><span class="p">,</span> <span class="n">BaseBackend</span><span class="p">],</span>
                  <span class="c1"># run config</span>
                  <span class="n">shots</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">,</span>
@@ -549,7 +556,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_circuit_summary</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_job_callback</span> <span class="o">=</span> <span class="n">job_callback</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_time_taken</span> <span class="o">=</span> <span class="mf">0.</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Overload string.</span>
@@ -568,7 +575,7 @@
 
         <span class="k">return</span> <span class="n">info</span>
 
-<div class="viewcode-block" id="QuantumInstance.transpile"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.transpile">[docs]</a>    <span class="k">def</span> <span class="nf">transpile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="QuantumInstance.transpile"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.transpile.html#qiskit.aqua.QuantumInstance.transpile">[docs]</a>    <span class="k">def</span> <span class="nf">transpile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                   <span class="n">circuits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A wrapper to transpile circuits to allow algorithm access the transpiled circuits.</span>
@@ -596,12 +603,12 @@
 
         <span class="k">return</span> <span class="n">transpiled_circuits</span></div>
 
-<div class="viewcode-block" id="QuantumInstance.assemble"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.assemble">[docs]</a>    <span class="k">def</span> <span class="nf">assemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="QuantumInstance.assemble"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.assemble.html#qiskit.aqua.QuantumInstance.assemble">[docs]</a>    <span class="k">def</span> <span class="nf">assemble</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">circuits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Qobj</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot; assemble circuits &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">compiler</span><span class="o">.</span><span class="n">assemble</span><span class="p">(</span><span class="n">circuits</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_run_config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="QuantumInstance.execute"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.execute">[docs]</a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="QuantumInstance.execute"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.execute.html#qiskit.aqua.QuantumInstance.execute">[docs]</a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                 <span class="n">circuits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]],</span>
                 <span class="n">had_transpiled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -740,7 +747,7 @@
 
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="QuantumInstance.set_config"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.set_config">[docs]</a>    <span class="k">def</span> <span class="nf">set_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumInstance.set_config"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.set_config.html#qiskit.aqua.QuantumInstance.set_config">[docs]</a>    <span class="k">def</span> <span class="nf">set_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set configurations for the quantum instance.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">QuantumInstance</span><span class="o">.</span><span class="n">_RUN_CONFIG</span><span class="p">:</span>
@@ -780,7 +787,7 @@
         <span class="sd">&quot;&quot;&quot;Accumulated time taken for execution.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time_taken</span>
 
-<div class="viewcode-block" id="QuantumInstance.reset_execution_results"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.reset_execution_results">[docs]</a>    <span class="k">def</span> <span class="nf">reset_execution_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="QuantumInstance.reset_execution_results"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.reset_execution_results.html#qiskit.aqua.QuantumInstance.reset_execution_results">[docs]</a>    <span class="k">def</span> <span class="nf">reset_execution_results</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot; Reset execution results &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_time_taken</span> <span class="o">=</span> <span class="mf">0.</span></div>
 
@@ -889,7 +896,7 @@
         <span class="sd">&quot;&quot;&quot; sets skip qobj validation flag &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_skip_qobj_validation</span> <span class="o">=</span> <span class="n">new_value</span>
 
-<div class="viewcode-block" id="QuantumInstance.maybe_refresh_cals_matrix"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.maybe_refresh_cals_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">maybe_refresh_cals_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="QuantumInstance.maybe_refresh_cals_matrix"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.maybe_refresh_cals_matrix.html#qiskit.aqua.QuantumInstance.maybe_refresh_cals_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">maybe_refresh_cals_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                                   <span class="n">timestamp</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the time difference from the query of last time.</span>
@@ -909,7 +916,7 @@
 
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="QuantumInstance.cals_matrix"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance.cals_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">cals_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="QuantumInstance.cals_matrix"><a class="viewcode-back" href="../../../stubs/qiskit.aqua.QuantumInstance.cals_matrix.html#qiskit.aqua.QuantumInstance.cals_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">cals_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                     <span class="n">qubit_index</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> \
             <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -951,7 +958,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -1031,7 +1038,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1054,9 +1061,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

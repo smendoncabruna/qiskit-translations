@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Kraus
-==========================
+﻿Kraus
+=====
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Kraus
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Kraus.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Kraus.adjoint
       ~Kraus.compose
       ~Kraus.conjugate
@@ -32,21 +31,15 @@
       ~Kraus.to_instruction
       ~Kraus.to_operator
       ~Kraus.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Kraus.atol
-      ~Kraus.data
-      ~Kraus.dim
-      ~Kraus.num_qubits
-      ~Kraus.qargs
-      ~Kraus.rtol
-      ~Kraus.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

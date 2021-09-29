@@ -1,28 +1,23 @@
-﻿qiskit.quantum\_info.Quaternion
-===============================
+﻿Quaternion
+==========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Quaternion
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Quaternion.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Quaternion.from_axis_rotation
       ~Quaternion.from_euler
       ~Quaternion.norm
       ~Quaternion.normalize
       ~Quaternion.to_matrix
       ~Quaternion.to_zyz
-   
-   
 
-   
-   
-   
+

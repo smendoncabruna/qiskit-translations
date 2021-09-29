@@ -1,26 +1,21 @@
-﻿qiskit.aqua.components.multiclass\_extensions.OneAgainstRest
-============================================================
+﻿OneAgainstRest
+==============
 
 .. currentmodule:: qiskit.aqua.components.multiclass_extensions
 
 .. autoclass:: OneAgainstRest
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~OneAgainstRest.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~OneAgainstRest.predict
       ~OneAgainstRest.set_estimator
       ~OneAgainstRest.test
       ~OneAgainstRest.train
-   
-   
 
-   
-   
-   
+

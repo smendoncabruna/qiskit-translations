@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.DAGFixedPoint
-======================================
+﻿DAGFixedPoint
+=============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: DAGFixedPoint
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DAGFixedPoint.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DAGFixedPoint.name
       ~DAGFixedPoint.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DAGFixedPoint.is_analysis_pass
-      ~DAGFixedPoint.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

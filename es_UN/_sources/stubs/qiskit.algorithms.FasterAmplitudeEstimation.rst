@@ -1,30 +1,23 @@
-﻿qiskit.algorithms.FasterAmplitudeEstimation
-===========================================
+﻿FasterAmplitudeEstimation
+=========================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: FasterAmplitudeEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FasterAmplitudeEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FasterAmplitudeEstimation.construct_circuit
       ~FasterAmplitudeEstimation.estimate
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FasterAmplitudeEstimation.quantum_instance
-   
-   
+   .. autoattribute:: quantum_instance

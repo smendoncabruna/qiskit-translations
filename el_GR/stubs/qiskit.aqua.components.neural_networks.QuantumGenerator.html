@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.neural_networks.QuantumGenerator &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>QuantumGenerator &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="Optimizers (qiskit.aqua.components.optimizers)" href="../apidoc/qiskit.aqua.components.optimizers.html" />
-    <link rel="prev" title="qiskit.aqua.components.neural_networks.PyTorchDiscriminator" href="qiskit.aqua.components.neural_networks.PyTorchDiscriminator.html" /> 
+    <link rel="next" title="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit" href="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit.html" />
+    <link rel="prev" title="qiskit.aqua.components.neural_networks.PyTorchDiscriminator.train" href="qiskit.aqua.components.neural_networks.PyTorchDiscriminator.train.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.components.neural_networks.html">Neural Networks (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.components.neural_networks</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.components.neural_networks.QuantumGenerator</li>
+      <li>QuantumGenerator</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,12 +339,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-components-neural-networks-quantumgenerator">
-<h1>qiskit.aqua.components.neural_networks.QuantumGenerator<a class="headerlink" href="#qiskit-aqua-components-neural-networks-quantumgenerator" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="quantumgenerator">
+<h1>QuantumGenerator<a class="headerlink" href="#quantumgenerator" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.components.neural_networks.QuantumGenerator">
 <em class="property">class </em><code class="sig-name descname">QuantumGenerator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bounds</span></em>, <em class="sig-param"><span class="n">num_qubits</span></em>, <em class="sig-param"><span class="n">generator_circuit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">init_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gradient_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">snapshot_dir</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Quantum Generator.</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.components.neural_networks.generative_network.GenerativeNetwork</span></code></p>
+<p>Quantum Generator.</p>
 <p>The quantum generator is a parametrized quantum circuit which can be trained with the
 <a class="reference internal" href="qiskit.aqua.algorithms.QGAN.html#qiskit.aqua.algorithms.QGAN" title="qiskit.aqua.algorithms.QGAN"><code class="xref py py-class docutils literal notranslate"><span class="pre">QGAN</span></code></a> algorithm
 to generate a quantum state which approximates the probability
@@ -369,35 +377,6 @@ update step to the given directory</p></li>
 <dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – Set multivariate variational distribution to represent multivariate data</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bounds</span></em>, <em class="sig-param"><span class="n">num_qubits</span></em>, <em class="sig-param"><span class="n">generator_circuit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">init_params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">optimizer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gradient_function</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">snapshot_dir</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>bounds</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – k min/max data values [[min_1,max_1],…,[min_k,max_k]],
-given input data dim k</p></li>
-<li><p><strong>num_qubits</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]) – k numbers of qubits to determine representation resolution,
-i.e. n qubits enable the representation of 2**n values [n_1,…, n_k]</p></li>
-<li><p><strong>generator_circuit</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">UnivariateVariationalDistribution</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MultivariateVariationalDistribution</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – a UnivariateVariationalDistribution for univariate data,
-a MultivariateVariationalDistribution for multivariate data,
-or a QuantumCircuit implementing the generator.</p></li>
-<li><p><strong>init_params</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – 1D numpy array or list, Initialization for
-the generator’s parameters.</p></li>
-<li><p><strong>optimizer</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code>]) – optimizer to be used for the training of the generator</p></li>
-<li><p><strong>gradient_function</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Gradient</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – A Gradient object, or a function returning partial
-derivatives of the loss function w.r.t. the generator variational
-params.</p></li>
-<li><p><strong>snapshot_dir</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – str or None, if not None save the optimizer’s parameter after every
-update step to the given directory</p></li>
-</ul>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – Set multivariate variational distribution to represent multivariate data</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -405,75 +384,30 @@ update step to the given directory</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.__init__" title="qiskit.aqua.components.neural_networks.QuantumGenerator.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(bounds, num_qubits[, …])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type bounds</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit" title="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>([params])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit.html#qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit" title="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct generator circuit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.get_output" title="qiskit.aqua.components.neural_networks.QuantumGenerator.get_output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_output</span></code></a>(quantum_instance[, params, shots])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.neural_networks.QuantumGenerator.get_output.html#qiskit.aqua.components.neural_networks.QuantumGenerator.get_output" title="qiskit.aqua.components.neural_networks.QuantumGenerator.get_output"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_output</span></code></a></p></td>
 <td><p>Get classical data samples from the generator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.loss" title="qiskit.aqua.components.neural_networks.QuantumGenerator.loss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loss</span></code></a>(x, weights)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.neural_networks.QuantumGenerator.loss.html#qiskit.aqua.components.neural_networks.QuantumGenerator.loss" title="qiskit.aqua.components.neural_networks.QuantumGenerator.loss"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loss</span></code></a></p></td>
 <td><p>Loss function for training the generator’s parameters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator" title="qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_discriminator</span></code></a>(discriminator)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator.html#qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator" title="qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_discriminator</span></code></a></p></td>
 <td><p>Set discriminator network.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed" title="qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_seed</span></code></a>(seed)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed.html#qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed" title="qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_seed</span></code></a></p></td>
 <td><p>Set seed.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.train" title="qiskit.aqua.components.neural_networks.QuantumGenerator.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a>([quantum_instance, shots])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.neural_networks.QuantumGenerator.train.html#qiskit.aqua.components.neural_networks.QuantumGenerator.train" title="qiskit.aqua.components.neural_networks.QuantumGenerator.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train</span></code></a></p></td>
 <td><p>Perform one training step w.r.t to the generator’s parameters</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.discriminator" title="qiskit.aqua.components.neural_networks.QuantumGenerator.discriminator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">discriminator</span></code></a></p></td>
-<td><p>Get discriminator.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.optimizer" title="qiskit.aqua.components.neural_networks.QuantumGenerator.optimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optimizer</span></code></a></p></td>
-<td><p>Get optimizer.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.parameter_values" title="qiskit.aqua.components.neural_networks.QuantumGenerator.parameter_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameter_values</span></code></a></p></td>
-<td><p>Get parameter values from the quantum generator</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.seed" title="qiskit.aqua.components.neural_networks.QuantumGenerator.seed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code></a></p></td>
-<td><p>Get seed.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.construct_circuit"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Construct generator circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>params</strong> (<em>list | dict</em>) – parameters which should be used to run the generator.</p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>construct the quantum circuit and return as gate</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.Instruction.html#qiskit.circuit.Instruction" title="qiskit.circuit.Instruction">Instruction</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.discriminator">
-<em class="property">property </em><code class="sig-name descname">discriminator</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.discriminator" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">discriminator</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.discriminator" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Get discriminator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -482,57 +416,9 @@ update step to the given directory</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.get_output">
-<code class="sig-name descname">get_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantum_instance</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shots</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.get_output"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.get_output" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Get classical data samples from the generator.
-Running the quantum generator circuit results in a quantum state.
-To train this generator with a classical discriminator, we need to sample classical outputs
-by measuring the quantum state and mapping them to feature space defined by the training
-data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>quantum_instance</strong> (<a class="reference internal" href="qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance" title="qiskit.aqua.QuantumInstance"><em>QuantumInstance</em></a>) – Quantum Instance, used to run the generator
-circuit.</p></li>
-<li><p><strong>params</strong> (<em>numpy.ndarray</em>) – array or None, parameters which should
-be used to run the generator, if None use self._params</p></li>
-<li><p><strong>shots</strong> (<em>int</em>) – if not None use a number of shots that is different from the
-number set in quantum_instance</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>generated samples, array: sample occurrence in percentage</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.loss">
-<code class="sig-name descname">loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">weights</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.loss"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.loss" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Loss function for training the generator’s parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) – sample label (equivalent to discriminator output)</p></li>
-<li><p><strong>weights</strong> (<em>numpy.ndarray</em>) – probability for measuring the sample</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>loss function</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.optimizer">
-<em class="property">property </em><code class="sig-name descname">optimizer</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.optimizer" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">optimizer</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.optimizer" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Get optimizer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -541,9 +427,9 @@ number set in quantum_instance</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.parameter_values">
-<em class="property">property </em><code class="sig-name descname">parameter_values</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.parameter_values" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">parameter_values</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.parameter_values" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Get parameter values from the quantum generator</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -555,62 +441,13 @@ number set in quantum_instance</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.seed">
-<em class="property">property </em><code class="sig-name descname">seed</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.seed" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">seed</code><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.seed" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Get seed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator">
-<code class="sig-name descname">set_discriminator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">discriminator</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.set_discriminator"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.set_discriminator" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Set discriminator network.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>discriminator</strong> (<a class="reference internal" href="qiskit.aqua.components.neural_networks.DiscriminativeNetwork.html#qiskit.aqua.components.neural_networks.DiscriminativeNetwork" title="qiskit.aqua.components.neural_networks.DiscriminativeNetwork"><em>DiscriminativeNetwork</em></a>) – Discriminator used to
-compute the loss function.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed">
-<code class="sig-name descname">set_seed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seed</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.set_seed"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.set_seed" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Set seed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>seed</strong> (<em>int</em>) – seed</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.neural_networks.QuantumGenerator.train">
-<code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shots</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/neural_networks/quantum_generator.html#QuantumGenerator.train"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.components.neural_networks.QuantumGenerator.train" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Perform one training step w.r.t to the generator’s parameters</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>quantum_instance</strong> (<a class="reference internal" href="qiskit.aqua.QuantumInstance.html#qiskit.aqua.QuantumInstance" title="qiskit.aqua.QuantumInstance"><em>QuantumInstance</em></a>) – used to run the generator circuit.</p></li>
-<li><p><strong>shots</strong> (<em>int</em>) – Number of shots for hardware or qasm execution.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>generator loss(float) and updated parameters (array).</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -627,10 +464,10 @@ compute the loss function.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.aqua.components.optimizers.html" class="btn btn-neutral float-right" title="Optimizers (qiskit.aqua.components.optimizers)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.neural_networks.QuantumGenerator.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.components.neural_networks.PyTorchDiscriminator.html" class="btn btn-neutral" title="qiskit.aqua.components.neural_networks.PyTorchDiscriminator" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.components.neural_networks.PyTorchDiscriminator.train.html" class="btn btn-neutral" title="qiskit.aqua.components.neural_networks.PyTorchDiscriminator.train" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -644,7 +481,7 @@ compute the loss function.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -663,7 +500,7 @@ compute the loss function.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.components.neural_networks.QuantumGenerator</a></li>
+<li><a class="reference internal" href="#">QuantumGenerator</a></li>
 </ul>
 
             </div>
@@ -727,7 +564,7 @@ compute the loss function.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -750,9 +587,11 @@ compute the loss function.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

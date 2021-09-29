@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveDensityMatrix
-==============================================
+﻿SaveDensityMatrix
+=================
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveDensityMatrix
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveDensityMatrix.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveDensityMatrix.add_decomposition
       ~SaveDensityMatrix.assemble
       ~SaveDensityMatrix.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveDensityMatrix.reverse_ops
       ~SaveDensityMatrix.soft_compare
       ~SaveDensityMatrix.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveDensityMatrix.decompositions
-      ~SaveDensityMatrix.definition
-      ~SaveDensityMatrix.duration
-      ~SaveDensityMatrix.label
-      ~SaveDensityMatrix.params
-      ~SaveDensityMatrix.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

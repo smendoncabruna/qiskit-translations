@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Đóng góp cho Qiskit &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>Đóng góp cho Qiskit &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -326,11 +333,9 @@
               
   <section id="contributing-to-qiskit">
 <h1>Đóng góp cho Qiskit<a class="headerlink" href="#contributing-to-qiskit" title="Permalink to this headline">¶</a></h1>
-<p>Qiskit is an open-source project committed to bringing quantum computing to
-people of all backgrounds. This page describes how you can join the Qiskit
-community in this goal.</p>
+<p>Qiskit là một dự án mã nguồn mở cam kết đưa điện toán lượng tử tới với mọi người không phân biệt nền tảng kiến thức. Trang này trình bày cách bạn có thể tham gia cộng đồng Qiskit dựa trên mục tiêu đó.</p>
 <section id="where-things-are">
-<span id="id1"></span><h2>Where Things Are<a class="headerlink" href="#where-things-are" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Cách mọi thứ được sắp xếp<a class="headerlink" href="#where-things-are" title="Permalink to this headline">¶</a></h2>
 <p>Code cho Qiskit được lưu trữ trong <a class="reference external" href="https://github.com/Qiskit">Qiskit GitHub organization</a>, bạn có thể tìm thấy các dự án riêng lẻ đã tạo nên Qiskit, bao gồm</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-terra">Qiskit Terra</a></p></li>
@@ -385,30 +390,18 @@ community in this goal.</p>
 </tr>
 </tbody>
 </table>
-<p>If you have an idea for a new feature, please open an <strong>Enhancement</strong> issue in
-the appropriate element's issue tracker.
-Opening an issue starts a discussion with the team about your idea, how it
-fits in with the project, how it can be implemented, etc.</p>
+<p>Nếu bạn có ý tưởng cho một tính năng mới, hãy mở một phiếu <strong>Enhancement</strong> mới trong mục theo dõi tương ứng. Mở một phiếu mới sẽ bắt đầu một cuộc thảo luận với các thành viên trong nhóm về ý tưởng của bạn, nó tương thích như thế nào với cả dự án, làm thế nào để thực hiện,v...v...</p>
 </section>
 <section id="contributing-code">
 <h2>Đóng góp Code<a class="headerlink" href="#contributing-code" title="Permalink to this headline">¶</a></h2>
 <section id="style-guide">
 <h3>Hướng dẫn Style<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h3>
-<p>To enforce a consistent code style in the project, we use <a class="reference external" href="https://www.pylint.org">Pylint</a> and <a class="reference external" href="https://pycodestyle.readthedocs.io/en/latest/">pycodesytle</a> to verify that code
-contributions conform to and respect the project's style guide. To verify that
-your changes conform to the style guide, run: <code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-elint</span></code></p>
+<p>Để tuân theo một code style thống nhất cho dự án, chúng tôi sử dụng <a class="reference external" href="https://www.pylint.org">Pylint</a> và <a class="reference external" href="https://pycodestyle.readthedocs.io/en/latest/">pycodesytle</a> để xác minh xem liệu đóng góp của bạn có tôn trọng và phù hợp với hướng dẫn về style của dự án không. Để kiểm tra lại xem các thay đổi của mình có phù hợp với hướng dẫn, chạy: <code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-elint</span></code></p>
 </section>
 <section id="contributor-license-agreement">
-<h3>Contributor License Agreement<a class="headerlink" href="#contributor-license-agreement" title="Permalink to this headline">¶</a></h3>
-<p>Before you can submit any code, all contributors must sign a
-contributor license agreement (CLA). By signing a CLA, you're attesting
-that you are the author of the contribution, and that you're freely
-contributing it under the terms of the Apache-2.0 license.</p>
-<p>When you contribute to the Qiskit project with a new pull request,
-a bot will evaluate whether you have signed the CLA. If required, the
-bot will comment on the pull request, including a link to accept the
-agreement. The <a class="reference external" href="https://qiskit.org/license/qiskit-cla.pdf">individual CLA</a>
-document is available for review as a PDF.</p>
+<h3>Thỏa thuận đóng góp dành cho cộng tác viên (CLA)<a class="headerlink" href="#contributor-license-agreement" title="Permalink to this headline">¶</a></h3>
+<p>Trước khi bạn có thể đệ trình code, TẤT CẢ các người đóng góp phải kí thỏa thuận đóng góp dành cho cộng tác viên (CLA). Khi kí CLA, bạn chứng thực rằng bạn là tác giả của đóng góp, và bạn có thể tự do đóng góp chúng theo các điều khoản giấy phép Apache-2.0.</p>
+<p>Khi bạn đóng góp vào dự án Qiskit với một pull request mới, một con bot sẽ kiểm tra xem bạn đã kí CLA chưa. Nếu bạn chưa kí và được yêu cầu, con bot sẽ bình luận ở trong pull request của bạn, kèm theo đường dẫn để kí thỏa thuận. Bản 'CLA cá nhân&lt;<a class="reference external" href="https://qiskit.org/license/qiskit-cla.pdf">https://qiskit.org/license/qiskit-cla.pdf</a>&gt;' có thể xem dưới dạng pdf.</p>
 <div class="admonition note">
 <p class="admonition-title">Ghi chú</p>
 <p>If your contribution is part of your employment or your contribution
@@ -419,8 +412,7 @@ email it to us at &lt;<a class="reference external" href="mailto:qiskit&#37;&#52
 </section>
 <section id="pull-requests">
 <h3>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this headline">¶</a></h3>
-<p>We use <a class="reference external" href="https://help.github.com/articles/about-pull-requests">GitHub pull requests</a> to accept
-contributions.</p>
+<p>Chúng tôi sử dụng GitHub pull requests &lt;<a class="reference external" href="https://help.github.com/articles/about-pull-requests">https://help.github.com/articles/about-pull-requests</a>&gt;`__ để chấp nhận các sự đóng góp.</p>
 <p>While not required, opening a new issue about the bug you're fixing or the
 feature you're working on before you open a pull request is an important step
 in starting a discussion with the community about your work. The issue gives us
@@ -438,7 +430,7 @@ not merge the commit until it is finished. You or a reviewer can remove the
 [WIP] tag when the code is ready to be fully reviewed for merging.</p>
 </section>
 <section id="code-review">
-<h3>Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h3>
+<h3>Đánh giá Code<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h3>
 <p>Code review is done in the open and is open to anyone. While only maintainers have
 access to merge commits, community feedback on pull requests is extremely valuable.
 It is also a good mechanism to learn about the code base. You can
@@ -682,7 +674,7 @@ porting.</p>
 drawn from Qiskit code comments in the <a class="reference external" href="https://alistapart.com/article/the-ten-essentials-for-good-api-documentation/">style of API documentation</a>.</p>
 <p>The documentation is built from the master branch of <a class="reference external" href="https://github.com/Qiskit/qiskit/tree/master/docs">Qiskit/qiskit/docs</a> using <a class="reference external" href="http://www.sphinx-doc.org/en/master/">Sphinx</a>. The majority of documentation, under
 <a class="reference external" href="https://qiskit.org/documentation/apidoc/qiskit.html">API Reference</a>, is
-drawn from code comments in the repositories listed in <a class="reference internal" href="#where-things-are"><span class="std std-ref">Where Things Are</span></a>.</p>
+drawn from code comments in the repositories listed in <a class="reference internal" href="#where-things-are"><span class="std std-ref">Cách mọi thứ được sắp xếp</span></a>.</p>
 <section id="documentation-structure">
 <h3>Documentation Structure<a class="headerlink" href="#documentation-structure" title="Permalink to this headline">¶</a></h3>
 <p>The way documentation is structured in Qiskit is to push as much of the actual
@@ -940,13 +932,13 @@ conda activate QiskitDevenv
 <p>Installing from source requires that you have a C++ compiler on your system that supports
 C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="cc3a5e43-4671-4e70-a5cf-2372b26f910c" name="a55f8d09-069f-4c10-b859-3f114ceec809" type="radio">
-</input><label class="tabbed-label" for="cc3a5e43-4671-4e70-a5cf-2372b26f910c">
+<input checked="checked" id="15564b75-777c-413e-90ef-b8299f330fee" name="2c19876a-f638-4f45-98a9-8f635f1c58fc" type="radio">
+</input><label class="tabbed-label" for="15564b75-777c-413e-90ef-b8299f330fee">
 Trình biên dịch cho Linux</label><div class="tabbed-content docutils">
 <p>On most Linux platforms, the necessary GCC compiler is already installed.</p>
 </div>
-<input id="55604c10-9c50-449e-a570-ef9ee382ad2c" name="a55f8d09-069f-4c10-b859-3f114ceec809" type="radio">
-</input><label class="tabbed-label" for="55604c10-9c50-449e-a570-ef9ee382ad2c">
+<input id="0ba2f00d-e424-4444-a77b-34d344c90c2d" name="2c19876a-f638-4f45-98a9-8f635f1c58fc" type="radio">
+</input><label class="tabbed-label" for="0ba2f00d-e424-4444-a77b-34d344c90c2d">
 Trình biên dịch cho macOS</label><div class="tabbed-content docutils">
 <p>If you use macOS, you can install the Clang compiler by installing XCode.
 Check if you have XCode and Clang installed by opening a terminal window and entering the
@@ -959,8 +951,8 @@ following.</p>
 </pre></div>
 </div>
 </div>
-<input id="90474e1b-c148-4458-ac75-cac734427648" name="a55f8d09-069f-4c10-b859-3f114ceec809" type="radio">
-</input><label class="tabbed-label" for="90474e1b-c148-4458-ac75-cac734427648">
+<input id="5b4a5384-5ce8-4715-bdac-5c45c39ca2ef" name="2c19876a-f638-4f45-98a9-8f635f1c58fc" type="radio">
+</input><label class="tabbed-label" for="5b4a5384-5ce8-4715-bdac-5c45c39ca2ef">
 Trình biên dịch cho Windows</label><div class="tabbed-content docutils">
 <p>On Windows, it is easiest to install the Visual C++ compiler from the
 <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>.
@@ -1044,8 +1036,8 @@ using. Since Aer is a compiled C++ program with a Python interface, there are
 non-Python dependencies for building the Aer binary which can't be installed
 universally depending on operating system.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0c3abb60-6456-4417-8afd-3e696a278358" name="5472e468-daa8-4474-8f2b-034faf6f5f60" type="radio">
-</input><label class="tabbed-label" for="0c3abb60-6456-4417-8afd-3e696a278358">
+<input checked="checked" id="6907a106-f824-4034-8e82-509b53d74a58" name="9db04bdd-6bcd-4259-977d-ef3590579d0f" type="radio">
+</input><label class="tabbed-label" for="6907a106-f824-4034-8e82-509b53d74a58">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Install compiler requirements.</p>
@@ -1073,8 +1065,8 @@ install using:</p>
 </li>
 </ol>
 </div>
-<input id="95280685-cf2a-465c-9c9b-e0b52f1d13b7" name="5472e468-daa8-4474-8f2b-034faf6f5f60" type="radio">
-</input><label class="tabbed-label" for="95280685-cf2a-465c-9c9b-e0b52f1d13b7">
+<input id="ac048192-980e-4118-bb56-f1fcc4736f1a" name="9db04bdd-6bcd-4259-977d-ef3590579d0f" type="radio">
+</input><label class="tabbed-label" for="ac048192-980e-4118-bb56-f1fcc4736f1a">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Install dependencies.</p>
@@ -1097,8 +1089,8 @@ is the default choice.</p>
 </li>
 </ol>
 </div>
-<input id="40df9782-78fa-47f4-8dc2-bd61d40d0456" name="5472e468-daa8-4474-8f2b-034faf6f5f60" type="radio">
-</input><label class="tabbed-label" for="40df9782-78fa-47f4-8dc2-bd61d40d0456">
+<input id="67a4caea-cb1b-4d78-ab92-9c29ed0d5a80" name="9db04bdd-6bcd-4259-977d-ef3590579d0f" type="radio">
+</input><label class="tabbed-label" for="67a4caea-cb1b-4d78-ab92-9c29ed0d5a80">
 Windows</label><div class="tabbed-content docutils">
 <p>On Windows you need to use <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a>
 or <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> to install all the
@@ -1464,7 +1456,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -1484,14 +1476,14 @@ multiple elements more transparent.</p>
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Đóng góp cho Qiskit</a><ul>
-<li><a class="reference internal" href="#where-things-are">Where Things Are</a></li>
+<li><a class="reference internal" href="#where-things-are">Cách mọi thứ được sắp xếp</a></li>
 <li><a class="reference internal" href="#getting-started">Bắt đầu</a></li>
 <li><a class="reference internal" href="#reporting-bugs-and-requesting-enhancements">Báo cáo bugs và Đề xuất cải tiến</a></li>
 <li><a class="reference internal" href="#contributing-code">Đóng góp Code</a><ul>
 <li><a class="reference internal" href="#style-guide">Hướng dẫn Style</a></li>
-<li><a class="reference internal" href="#contributor-license-agreement">Contributor License Agreement</a></li>
+<li><a class="reference internal" href="#contributor-license-agreement">Thỏa thuận đóng góp dành cho cộng tác viên (CLA)</a></li>
 <li><a class="reference internal" href="#pull-requests">Pull Requests</a></li>
-<li><a class="reference internal" href="#code-review">Code Review</a></li>
+<li><a class="reference internal" href="#code-review">Đánh giá Code</a></li>
 <li><a class="reference internal" href="#commit-messages">Commit Messages</a></li>
 <li><a class="reference internal" href="#documenting-your-code">Documenting Your Code</a></li>
 <li><a class="reference internal" href="#good-first-contributions">Good First Contributions</a></li>
@@ -1604,7 +1596,7 @@ multiple elements more transparent.</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1627,9 +1619,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

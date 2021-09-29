@@ -1,19 +1,18 @@
-﻿qiskit.circuit.QuantumCircuit
-=============================
+﻿QuantumCircuit
+==============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: QuantumCircuit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuantumCircuit.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuantumCircuit.add_bits
       ~QuantumCircuit.add_calibration
       ~QuantumCircuit.add_register
@@ -158,30 +157,24 @@
       ~QuantumCircuit.x
       ~QuantumCircuit.y
       ~QuantumCircuit.z
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuantumCircuit.ancillas
-      ~QuantumCircuit.calibrations
-      ~QuantumCircuit.clbits
-      ~QuantumCircuit.data
-      ~QuantumCircuit.extension_lib
-      ~QuantumCircuit.global_phase
-      ~QuantumCircuit.header
-      ~QuantumCircuit.instances
-      ~QuantumCircuit.metadata
-      ~QuantumCircuit.num_ancillas
-      ~QuantumCircuit.num_clbits
-      ~QuantumCircuit.num_parameters
-      ~QuantumCircuit.num_qubits
-      ~QuantumCircuit.parameters
-      ~QuantumCircuit.prefix
-      ~QuantumCircuit.qubits
-   
-   
+   .. autoattribute:: ancillas
+   .. autoattribute:: calibrations
+   .. autoattribute:: clbits
+   .. autoattribute:: data
+   .. autoattribute:: extension_lib
+   .. autoattribute:: global_phase
+   .. autoattribute:: header
+   .. autoattribute:: instances
+   .. autoattribute:: metadata
+   .. autoattribute:: num_ancillas
+   .. autoattribute:: num_clbits
+   .. autoattribute:: num_parameters
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix
+   .. autoattribute:: qubits

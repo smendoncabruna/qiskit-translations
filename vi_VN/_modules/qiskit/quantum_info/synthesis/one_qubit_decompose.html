@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.synthesis.one_qubit_decompose &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>qiskit.quantum_info.synthesis.one_qubit_decompose &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -438,7 +445,7 @@
 <span class="sd">            :math:`R\left(\theta+\pi,\frac{\pi}{2}-\lambda\right)`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="OneQubitEulerDecomposer.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.OneQubitEulerDecomposer.html#qiskit.quantum_info.OneQubitEulerDecomposer.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s2">&quot;U3&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s2">&quot;U3&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize decomposer</span>
 
 <span class="sd">        Supported bases are: &#39;U&#39;, &#39;PSX&#39;, &#39;ZSXX&#39;, &#39;ZSX&#39;, &#39;U321&#39;, &#39;U3&#39;, &#39;U1X&#39;, &#39;RR&#39;, &#39;ZYZ&#39;, &#39;ZXZ&#39;,</span>
@@ -450,7 +457,7 @@
 <span class="sd">        Raises:</span>
 <span class="sd">            QiskitError: If input basis is not recognized.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="n">basis</span>  <span class="c1"># sets: self._basis, self._params, self._circuit</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="n">basis</span>  <span class="c1"># sets: self._basis, self._params, self._circuit</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unitary</span><span class="p">,</span> <span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">DEFAULT_ATOL</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Decompose single qubit gate into a circuit.</span>
@@ -517,7 +524,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_basis</span> <span class="o">=</span> <span class="n">basis</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span> <span class="o">=</span> <span class="n">basis_methods</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_basis</span><span class="p">]</span>
 
-<div class="viewcode-block" id="OneQubitEulerDecomposer.angles"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.OneQubitEulerDecomposer.html#qiskit.quantum_info.OneQubitEulerDecomposer.angles">[docs]</a>    <span class="k">def</span> <span class="nf">angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unitary</span><span class="p">):</span>
+<div class="viewcode-block" id="OneQubitEulerDecomposer.angles"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.OneQubitEulerDecomposer.angles.html#qiskit.quantum_info.OneQubitEulerDecomposer.angles">[docs]</a>    <span class="k">def</span> <span class="nf">angles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unitary</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the Euler angles for input array.</span>
 
 <span class="sd">        Args:</span>
@@ -529,7 +536,7 @@
         <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span><span class="p">(</span><span class="n">unitary</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">lam</span></div>
 
-<div class="viewcode-block" id="OneQubitEulerDecomposer.angles_and_phase"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.OneQubitEulerDecomposer.html#qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase">[docs]</a>    <span class="k">def</span> <span class="nf">angles_and_phase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unitary</span><span class="p">):</span>
+<div class="viewcode-block" id="OneQubitEulerDecomposer.angles_and_phase"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase.html#qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase">[docs]</a>    <span class="k">def</span> <span class="nf">angles_and_phase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unitary</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the Euler angles and phase for input array.</span>
 
 <span class="sd">        Args:</span>
@@ -944,7 +951,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -1024,7 +1031,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1047,9 +1054,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.UnrollCustomDefinitions
-================================================
+﻿UnrollCustomDefinitions
+=======================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: UnrollCustomDefinitions
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnrollCustomDefinitions.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnrollCustomDefinitions.name
       ~UnrollCustomDefinitions.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnrollCustomDefinitions.is_analysis_pass
-      ~UnrollCustomDefinitions.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

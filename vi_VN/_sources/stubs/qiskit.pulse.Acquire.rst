@@ -1,19 +1,18 @@
-﻿qiskit.pulse.Acquire
-====================
+﻿Acquire
+=======
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: Acquire
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Acquire.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Acquire.append
       ~Acquire.assign_parameters
       ~Acquire.ch_duration
@@ -24,29 +23,23 @@
       ~Acquire.insert
       ~Acquire.is_parameterized
       ~Acquire.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Acquire.acquire
-      ~Acquire.channel
-      ~Acquire.channels
-      ~Acquire.discriminator
-      ~Acquire.duration
-      ~Acquire.id
-      ~Acquire.instructions
-      ~Acquire.kernel
-      ~Acquire.mem_slot
-      ~Acquire.name
-      ~Acquire.operands
-      ~Acquire.parameters
-      ~Acquire.reg_slot
-      ~Acquire.start_time
-      ~Acquire.stop_time
-   
-   
+   .. autoattribute:: acquire
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: discriminator
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: kernel
+   .. autoattribute:: mem_slot
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: reg_slot
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Credit Risk Analysis &mdash; documentación de Qiskit Finance - 0.2.0</title>
+  <title>Análisis de Riesgo Crediticio &mdash; documentación de Qiskit Finance - 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Option Pricing with qGANs" href="10_qgan_option_pricing.html" />
-    <link rel="prev" title="Pricing Fixed-Income Assets" href="08_fixed_income_pricing.html" /> 
+    <link rel="next" title="Fijación de Precios de Opciones con qGANs" href="10_qgan_option_pricing.html" />
+    <link rel="prev" title="Fijación de Precios de Activos de Renta Fija" href="08_fixed_income_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Credit Risk Analysis</li>
+      <li>Análisis de Riesgo Crediticio</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -486,8 +486,8 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a>.</p>
 </div>
-<div class="section" id="Credit-Risk-Analysis">
-<h1>Credit Risk Analysis<a class="headerlink" href="#Credit-Risk-Analysis" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="Análisis-de-Riesgo-Crediticio">
+<h1>Análisis de Riesgo Crediticio<a class="headerlink" href="#Análisis-de-Riesgo-Crediticio" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Este tutorial muestra cómo se pueden utilizar los algoritmos cuánticos para el análisis de riesgo crediticio. Más precisamente, cómo se puede utilizar la Estimación de Amplitud Cuántica (Quantum Amplitude Estimation, QAE) para estimar medidas de riesgo con una aceleración cuadrática sobre la simulación clásica de Monte Carlo. El tutorial se basa en los siguientes artículos:</p>
@@ -539,7 +539,7 @@ div.rendered_html tbody tr:hover {
 <p>con nivel de confianza <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>, y</p>
 <div class="math notranslate nohighlight">
 \[\text{CVaR}_{\alpha}(L) = \mathbb{E}[ L \mid L \geq \text{VaR}_{\alpha}(L) ].\]</div>
-<p>For more details on the considered model, see, e.g., <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
+<p>Para obtener más detalles sobre el modelo considerado, consulta, por ejemplo, <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
 <p>El problema está definido por los siguientes parámetros: - número de qubits usados para representar <span class="math notranslate nohighlight">\(Z\)</span>, denotado por <span class="math notranslate nohighlight">\(n_z\)</span> - valor de truncamiento para <span class="math notranslate nohighlight">\(Z\)</span>, denotado por <span class="math notranslate nohighlight">\(z_{\text{max}}\)</span>, es decir, se supone que Z toma <span class="math notranslate nohighlight">\(2^{n_z}\)</span> valores equidistantes en <span class="math notranslate nohighlight">\(\{-z_{max}, ..., +z_{max}\}\)</span> - las probabilidades predeterminadas base para cada activo <span class="math notranslate nohighlight">\(p_0^k \in (0, 1)\)</span>, <span class="math notranslate nohighlight">\(k=1, ..., K\)</span> - sensibilidades de las probabilidades predeterminadas con respecto a <span class="math notranslate nohighlight">\(Z\)</span>, denotadas por <span class="math notranslate nohighlight">\(\rho_k \in [0, 1)\)</span> - pérdida dado el incumplimiento para el activo <span class="math notranslate nohighlight">\(k\)</span>, denotada por <span class="math notranslate nohighlight">\(\lambda_k\)</span> - nivel de confianza para VaR / CVaR <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -1482,10 +1482,10 @@ Estimated CVaR: 3.3836
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="Option Pricing with qGANs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="Fijación de Precios de Opciones con qGANs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Pricing Fixed-Income Assets" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Fijación de Precios de Activos de Renta Fija" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1517,7 +1517,7 @@ Estimated CVaR: 3.3836
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Credit Risk Analysis</a><ul>
+<li><a class="reference internal" href="#">Análisis de Riesgo Crediticio</a><ul>
 <li><a class="reference internal" href="#Introducción">Introducción</a></li>
 <li><a class="reference internal" href="#Definición-del-Problema">Definición del Problema</a></li>
 <li><a class="reference internal" href="#Modelo-de-Incertidumbre">Modelo de Incertidumbre</a></li>

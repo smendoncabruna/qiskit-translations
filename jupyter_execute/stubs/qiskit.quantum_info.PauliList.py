@@ -37,39 +37,3 @@ print("Integer: ", repr(pauli_list[1]))
 print("List: ", repr(pauli_list[[0, 2]]))
 print("Slice: ", repr(pauli_list[0:2]))
 
-
-# In[3]:
-
-
-from numpy.random import shuffle
-from qiskit.quantum_info.operators import PauliList
-
-# 2-qubit labels
-labels = ['II', 'IX', 'IY', 'IZ', 'XI', 'XX', 'XY', 'XZ',
-          'YI', 'YX', 'YY', 'YZ', 'ZI', 'ZX', 'ZY', 'ZZ']
-# Shuffle Labels
-shuffle(labels)
-pt = PauliList(labels)
-print('Initial Ordering')
-print(pt)
-
-# Lexicographic Ordering
-srt = pt.sort()
-print('Lexicographically sorted')
-print(srt)
-
-# Weight Ordering
-srt = pt.sort(weight=True)
-print('Weight sorted')
-print(srt)
-
-
-# In[4]:
-
-
-from qiskit.quantum_info.operators import PauliList
-
-pt = PauliList(['X', 'Y', '-X', 'I', 'I', 'Z', 'X', 'iZ'])
-unique = pt.unique()
-print(unique)
-

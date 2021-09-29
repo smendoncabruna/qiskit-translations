@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.OperatorBase &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>OperatorBase &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="Primitive Operators (qiskit.opflow.primitive_ops)" href="../apidoc/qiskit.opflow.primitive_ops.html" />
+    <link rel="next" title="qiskit.opflow.OperatorBase.add" href="qiskit.opflow.OperatorBase.add.html" />
     <link rel="prev" title="Operators (qiskit.opflow)" href="../apidoc/opflow.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/opflow.html">Operators (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow</span></code>)</a> &gt;</li>
         
-      <li>qiskit.opflow.OperatorBase</li>
+      <li>OperatorBase</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,290 +335,93 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-opflow-operatorbase">
-<h1>qiskit.opflow.OperatorBase<a class="headerlink" href="#qiskit-opflow-operatorbase" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="operatorbase">
+<h1>OperatorBase<a class="headerlink" href="#operatorbase" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.opflow.OperatorBase">
 <em class="property">class </em><code class="sig-name descname">OperatorBase</code><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>A base class for all Operators: PrimitiveOps, StateFns, ListOps, etc. Operators are
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.opflow.mixins.star_algebra.StarAlgebraMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.opflow.mixins.tensor.TensorMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>A base class for all Operators: PrimitiveOps, StateFns, ListOps, etc. Operators are
 defined as functions which take one complex binary function to another. These complex binary
 functions are represented by StateFns, which are themselves a special class of Operators
 taking only the <code class="docutils literal notranslate"><span class="pre">Zero</span></code> StateFn to the complex binary function they represent.</p>
 <p>Operators can be used to construct complicated functions and computation, and serve as the
 building blocks for algorithms.</p>
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
-<p class="rubric">Methods</p>
+<p class="rubric">Methods Defined Here</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.__init__" title="qiskit.opflow.OperatorBase.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.add" title="qiskit.opflow.OperatorBase.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.add.html#qiskit.opflow.OperatorBase.add" title="qiskit.opflow.OperatorBase.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a></p></td>
 <td><p>Return Operator addition of self and other, overloaded by <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.adjoint" title="qiskit.opflow.OperatorBase.adjoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjoint</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.adjoint.html#qiskit.opflow.OperatorBase.adjoint" title="qiskit.opflow.OperatorBase.adjoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjoint</span></code></a></p></td>
 <td><p>Return a new Operator equal to the Operator’s adjoint (conjugate transpose), overloaded by <code class="docutils literal notranslate"><span class="pre">~</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.assign_parameters" title="qiskit.opflow.OperatorBase.assign_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_parameters</span></code></a>(param_dict)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.assign_parameters.html#qiskit.opflow.OperatorBase.assign_parameters" title="qiskit.opflow.OperatorBase.assign_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign_parameters</span></code></a></p></td>
 <td><p>Binds scalar values to any Terra <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> in the coefficients or primitives of the Operator, or substitutes one <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> for another.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.bind_parameters" title="qiskit.opflow.OperatorBase.bind_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind_parameters</span></code></a>(param_dict)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.bind_parameters.html#qiskit.opflow.OperatorBase.bind_parameters" title="qiskit.opflow.OperatorBase.bind_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind_parameters</span></code></a></p></td>
 <td><p>Same as assign_parameters, but maintained for consistency with QuantumCircuit in Terra (which has both assign_parameters and bind_parameters).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.compose" title="qiskit.opflow.OperatorBase.compose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compose</span></code></a>(other[, permutation, front])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.compose.html#qiskit.opflow.OperatorBase.compose" title="qiskit.opflow.OperatorBase.compose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compose</span></code></a></p></td>
 <td><p>Return Operator Composition between self and other (linear algebra-style: A&#64;B(x) = A(B(x))), overloaded by <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.copy" title="qiskit.opflow.OperatorBase.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.copy.html#qiskit.opflow.OperatorBase.copy" title="qiskit.opflow.OperatorBase.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a></p></td>
 <td><p>Return a deep copy of the Operator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.equals" title="qiskit.opflow.OperatorBase.equals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equals</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.equals.html#qiskit.opflow.OperatorBase.equals" title="qiskit.opflow.OperatorBase.equals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equals</span></code></a></p></td>
 <td><p>Evaluate Equality between Operators, overloaded by <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.eval" title="qiskit.opflow.OperatorBase.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a>([front])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.eval.html#qiskit.opflow.OperatorBase.eval" title="qiskit.opflow.OperatorBase.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a></p></td>
 <td><p>Evaluate the Operator’s underlying function, either on a binary string or another Operator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.mul" title="qiskit.opflow.OperatorBase.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a>(scalar)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.mul.html#qiskit.opflow.OperatorBase.mul" title="qiskit.opflow.OperatorBase.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a></p></td>
 <td><p>Returns the scalar multiplication of the Operator, overloaded by <code class="docutils literal notranslate"><span class="pre">*</span></code>, including support for Terra’s <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>, which can be bound to values later (via <code class="docutils literal notranslate"><span class="pre">bind_parameters</span></code>).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.neg" title="qiskit.opflow.OperatorBase.neg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neg</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.neg.html#qiskit.opflow.OperatorBase.neg" title="qiskit.opflow.OperatorBase.neg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neg</span></code></a></p></td>
 <td><p>Return the Operator’s negation, effectively just multiplying by -1.0, overloaded by <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.permute" title="qiskit.opflow.OperatorBase.permute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permute</span></code></a>(permutation)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.permute.html#qiskit.opflow.OperatorBase.permute" title="qiskit.opflow.OperatorBase.permute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permute</span></code></a></p></td>
 <td><p>Permutes the qubits of the operator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.power" title="qiskit.opflow.OperatorBase.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(exponent)</p></td>
-<td><p>Return Operator composed with self multiple times, overloaded by <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.primitive_strings" title="qiskit.opflow.OperatorBase.primitive_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">primitive_strings</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.primitive_strings.html#qiskit.opflow.OperatorBase.primitive_strings" title="qiskit.opflow.OperatorBase.primitive_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">primitive_strings</span></code></a></p></td>
 <td><p>Return a set of strings describing the primitives contained in the Operator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.reduce" title="qiskit.opflow.OperatorBase.reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduce</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.reduce.html#qiskit.opflow.OperatorBase.reduce" title="qiskit.opflow.OperatorBase.reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reduce</span></code></a></p></td>
 <td><p>Try collapsing the Operator structure, usually after some type of conversion, e.g.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.tensor" title="qiskit.opflow.OperatorBase.tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor</span></code></a>(other)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.tensor.html#qiskit.opflow.OperatorBase.tensor" title="qiskit.opflow.OperatorBase.tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor</span></code></a></p></td>
 <td><p>Return tensor product between self and other, overloaded by <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.tensorpower" title="qiskit.opflow.OperatorBase.tensorpower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorpower</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.tensorpower.html#qiskit.opflow.OperatorBase.tensorpower" title="qiskit.opflow.OperatorBase.tensorpower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorpower</span></code></a></p></td>
 <td><p>Return tensor product with self multiple times, overloaded by <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.to_circuit_op" title="qiskit.opflow.OperatorBase.to_circuit_op"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_circuit_op</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.to_circuit_op.html#qiskit.opflow.OperatorBase.to_circuit_op" title="qiskit.opflow.OperatorBase.to_circuit_op"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_circuit_op</span></code></a></p></td>
 <td><p>Returns a <code class="docutils literal notranslate"><span class="pre">CircuitOp</span></code> equivalent to this Operator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.to_matrix" title="qiskit.opflow.OperatorBase.to_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_matrix</span></code></a>([massive])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.to_matrix.html#qiskit.opflow.OperatorBase.to_matrix" title="qiskit.opflow.OperatorBase.to_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_matrix</span></code></a></p></td>
 <td><p>Return NumPy representation of the Operator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.to_matrix_op" title="qiskit.opflow.OperatorBase.to_matrix_op"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_matrix_op</span></code></a>([massive])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.to_matrix_op.html#qiskit.opflow.OperatorBase.to_matrix_op" title="qiskit.opflow.OperatorBase.to_matrix_op"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_matrix_op</span></code></a></p></td>
 <td><p>Returns a <code class="docutils literal notranslate"><span class="pre">MatrixOp</span></code> equivalent to this Operator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.to_spmatrix" title="qiskit.opflow.OperatorBase.to_spmatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_spmatrix</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.opflow.OperatorBase.to_spmatrix.html#qiskit.opflow.OperatorBase.to_spmatrix" title="qiskit.opflow.OperatorBase.to_spmatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_spmatrix</span></code></a></p></td>
 <td><p>Return SciPy sparse matrix representation of the Operator.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">INDENTATION</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.instance_id" title="qiskit.opflow.OperatorBase.instance_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instance_id</span></code></a></p></td>
-<td><p>Return the unique instance id.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.num_qubits" title="qiskit.opflow.OperatorBase.num_qubits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_qubits</span></code></a></p></td>
-<td><p>The number of qubits over which the Operator is defined.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.parameters" title="qiskit.opflow.OperatorBase.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a></p></td>
-<td><p>Return a set of Parameter objects contained in the Operator.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.opflow.OperatorBase.settings" title="qiskit.opflow.OperatorBase.settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">settings</span></code></a></p></td>
-<td><p>Return settings of this object in a dictionary.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.add">
-<em class="property">abstract </em><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.add"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.add" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return Operator addition of self and other, overloaded by <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>other</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) – An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> with the same number of qubits as self, and in the same
-“Operator”, “State function”, or “Measurement” category as self (i.e. the same type
-of underlying function).</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to the sum of self and other.</p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.opflow.OperatorBase.INDENTATION">
+<code class="sig-name descname">INDENTATION</code><em class="property"> = '  '</em><a class="headerlink" href="#qiskit.opflow.OperatorBase.INDENTATION" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.adjoint">
-<em class="property">abstract </em><code class="sig-name descname">adjoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.adjoint"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.adjoint" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return a new Operator equal to the Operator’s adjoint (conjugate transpose),
-overloaded by <code class="docutils literal notranslate"><span class="pre">~</span></code>. For StateFns, this also turns the StateFn into a measurement.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to the adjoint of self.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.assign_parameters">
-<em class="property">abstract </em><code class="sig-name descname">assign_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">param_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.assign_parameters"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.assign_parameters" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Binds scalar values to any Terra <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> in the coefficients or primitives of
-the Operator, or substitutes one <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> for another. This method differs from
-Terra’s <code class="docutils literal notranslate"><span class="pre">assign_parameters</span></code> in that it also supports lists of values to assign for a
-give <code class="docutils literal notranslate"><span class="pre">Parameter</span></code>, in which case self will be copied for each parameterization in the
-binding list(s), and all the copies will be returned in an <code class="docutils literal notranslate"><span class="pre">OpList</span></code>. If lists of
-parameterizations are used, every <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> in the param_dict must have the same
-length list of parameterizations.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>param_dict</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>]]]]) – The dictionary of <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> to replace, and values or lists of
-values by which to replace them.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>The <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> with the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> in self replaced by the
-values or <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> in param_dict. If param_dict contains parameterization lists,
-this <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> is an <code class="docutils literal notranslate"><span class="pre">OpList</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.bind_parameters">
-<code class="sig-name descname">bind_parameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">param_dict</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.bind_parameters"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.bind_parameters" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Same as assign_parameters, but maintained for consistency with QuantumCircuit in
-Terra (which has both assign_parameters and bind_parameters).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.compose">
-<em class="property">abstract </em><code class="sig-name descname">compose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">permutation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">front</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.compose"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.compose" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return Operator Composition between self and other (linear algebra-style:
-A&#64;B(x) = A(B(x))), overloaded by <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
-<p>Note: You must be conscious of Quantum Circuit vs. Linear Algebra ordering
-conventions. Meaning, X.compose(Y)
-produces an X∘Y on qubit 0, but would produce a QuantumCircuit which looks like</p>
-<blockquote>
-<div><p>-[Y]-[X]-</p>
-</div></blockquote>
-<p>Because Terra prints circuits with the initial state at the left side of the circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>other</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) – The <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> with which to compose self.</p></li>
-<li><p><strong>permutation</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – <code class="docutils literal notranslate"><span class="pre">List[int]</span></code> which defines permutation on other operator.</p></li>
-<li><p><strong>front</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If front==True, return <code class="docutils literal notranslate"><span class="pre">other.compose(self)</span></code>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to the function composition of self and other.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.copy"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.copy" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return a deep copy of the Operator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.equals">
-<em class="property">abstract </em><code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.equals"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.equals" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Evaluate Equality between Operators, overloaded by <code class="docutils literal notranslate"><span class="pre">==</span></code>. Only returns True if self and
-other are of the same representation (e.g. a DictStateFn and CircuitStateFn will never be
-equal, even if their vector representations are equal), their underlying primitives are
-equal (this means for ListOps, OperatorStateFns, or EvolvedOps the equality is evaluated
-recursively downwards), and their coefficients are equal.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>other</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) – The <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> to compare to self.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A bool equal to the equality of self and other.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.eval">
-<em class="property">abstract </em><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">front</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.eval"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.eval" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Evaluate the Operator’s underlying function, either on a binary string or another Operator.
-A square binary Operator can be defined as a function taking a binary function to another
-binary function. This method returns the value of that function for a given StateFn or
-binary string. For example, <code class="docutils literal notranslate"><span class="pre">op.eval('0110').eval('1110')</span></code> can be seen as querying the
-Operator’s matrix representation by row 6 and column 14, and will return the complex
-value at those «indices.» Similarly for a StateFn, <code class="docutils literal notranslate"><span class="pre">op.eval('1011')</span></code> will return the
-complex value at row 11 of the vector representation of the StateFn, as all StateFns are
-defined to be evaluated from Zero implicitly (i.e. it is as if <code class="docutils literal notranslate"><span class="pre">.eval('0000')</span></code> is already
-called implicitly to always «indexing» from column 0).</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">front</span></code> is None, the matrix-representation of the operator is returned.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>front</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Statevector</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The bitstring, dict of bitstrings (with values being coefficients), or
-StateFn to evaluated by the Operator’s underlying function, or None.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>The output of the Operator’s evaluation function. If self is a <code class="docutils literal notranslate"><span class="pre">StateFn</span></code>, the result
-is a float or complex. If self is an Operator (<code class="docutils literal notranslate"><span class="pre">PrimitiveOp,</span> <span class="pre">ComposedOp,</span> <span class="pre">SummedOp,</span>
-<span class="pre">EvolvedOp,</span></code> etc.), the result is a StateFn.
-If <code class="docutils literal notranslate"><span class="pre">front</span></code> is None, the matrix-representation of the operator is returned, which
-is a <code class="docutils literal notranslate"><span class="pre">MatrixOp</span></code> for the operators and a <code class="docutils literal notranslate"><span class="pre">VectorStateFn</span></code> for state-functions.
-If either self or front contain proper
-<code class="docutils literal notranslate"><span class="pre">ListOps</span></code> (not ListOp subclasses), the result is an n-dimensional list of complex
-or StateFn results, resulting from the recursive evaluation by each OperatorBase
-in the ListOps.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.opflow.OperatorBase.instance_id">
-<em class="property">property </em><code class="sig-name descname">instance_id</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.instance_id" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">instance_id</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.instance_id" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Return the unique instance id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -620,44 +430,9 @@ in the ListOps.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.mul">
-<em class="property">abstract </em><code class="sig-name descname">mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scalar</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.mul"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.mul" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns the scalar multiplication of the Operator, overloaded by <code class="docutils literal notranslate"><span class="pre">*</span></code>, including
-support for Terra’s <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>, which can be bound to values later (via
-<code class="docutils literal notranslate"><span class="pre">bind_parameters</span></code>).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>scalar</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">complex</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterExpression</span></code>]) – The real or complex scalar by which to multiply the Operator,
-or the <code class="docutils literal notranslate"><span class="pre">ParameterExpression</span></code> to serve as a placeholder for a scalar factor.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to product of self and scalar.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.neg">
-<code class="sig-name descname">neg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.neg"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.neg" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return the Operator’s negation, effectively just multiplying by -1.0,
-overloaded by <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to the negation of self.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.opflow.OperatorBase.num_qubits">
-<em class="property">abstract property </em><code class="sig-name descname">num_qubits</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.num_qubits" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">num_qubits</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.num_qubits" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>The number of qubits over which the Operator is defined. If
 <code class="docutils literal notranslate"><span class="pre">op.num_qubits</span> <span class="pre">==</span> <span class="pre">5</span></code>, then <code class="docutils literal notranslate"><span class="pre">op.eval('1'</span> <span class="pre">*</span> <span class="pre">5)</span></code> will be valid, but
 <code class="docutils literal notranslate"><span class="pre">op.eval('11')</span></code> will not.</p>
@@ -671,72 +446,15 @@ overloaded by <code class="docutils literal notranslate"><span class="pre">-</sp
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.opflow.OperatorBase.parameters">
-<em class="property">abstract property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.parameters" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">parameters</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.parameters" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Return a set of Parameter objects contained in the Operator.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.permute">
-<em class="property">abstract </em><code class="sig-name descname">permute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">permutation</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.permute"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.permute" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Permutes the qubits of the operator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>permutation</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – A list defining where each qubit should be permuted. The qubit at index
-j should be permuted to position permutation[j].</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A new OperatorBase containing the permuted operator.</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.opflow.OpflowError.html#qiskit.opflow.OpflowError" title="qiskit.opflow.OpflowError"><strong>OpflowError</strong></a> – if indices do not define a new index for each qubit.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.power">
-<code class="sig-name descname">power</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exponent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.opflow.OperatorBase.power" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return Operator composed with self multiple times, overloaded by <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.primitive_strings">
-<em class="property">abstract </em><code class="sig-name descname">primitive_strings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.primitive_strings"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.primitive_strings" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return a set of strings describing the primitives contained in the Operator. For
-example, <code class="docutils literal notranslate"><span class="pre">{'QuantumCircuit',</span> <span class="pre">'Pauli'}</span></code>. For hierarchical Operators, such as <code class="docutils literal notranslate"><span class="pre">ListOps</span></code>,
-this can help illuminate the primitives represented in the various recursive levels,
-and therefore which conversions can be applied.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Set</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>A set of strings describing the primitives contained within the Operator.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.reduce">
-<em class="property">abstract </em><code class="sig-name descname">reduce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.reduce"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.reduce" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Try collapsing the Operator structure, usually after some type of conversion,
-e.g. trying to add Operators in a SummedOp or delete needless IGates in a CircuitOp.
-If no reduction is available, just returns self.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>The reduced <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.opflow.OperatorBase.settings">
-<em class="property">abstract property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.settings" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">settings</code><a class="headerlink" href="#qiskit.opflow.OperatorBase.settings" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Return settings of this object in a dictionary.</p>
 <p>You can, for example, use this <code class="docutils literal notranslate"><span class="pre">settings</span></code> dictionary to serialize the
 object in JSON format, if the JSON encoder you use supports all types in
@@ -747,103 +465,6 @@ the dictionary.</p>
 </dd>
 <dt class="field-even">Επιστρέφει</dt>
 <dd class="field-even"><p>Object settings in a dictionary.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.tensor">
-<em class="property">abstract </em><code class="sig-name descname">tensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.tensor"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.tensor" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return tensor product between self and other, overloaded by <code class="docutils literal notranslate"><span class="pre">^</span></code>.
-Note: You must be conscious of Qiskit’s big-endian bit printing convention.
-Meaning, X.tensor(Y) produces an X on qubit 0 and an Y on qubit 1, or X⨂Y,
-but would produce a QuantumCircuit which looks like</p>
-<blockquote>
-<div><p>-[Y]-
--[X]-</p>
-</div></blockquote>
-<p>Because Terra prints circuits and results with qubit 0 at the end of the string
-or circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>other</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>) – The <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> to tensor product with self.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to the tensor product of self and other.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.tensorpower">
-<em class="property">abstract </em><code class="sig-name descname">tensorpower</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.tensorpower"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.tensorpower" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return tensor product with self multiple times, overloaded by <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>other</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The int number of times to tensor product self with itself via <code class="docutils literal notranslate"><span class="pre">tensorpower</span></code>.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>An <code class="docutils literal notranslate"><span class="pre">OperatorBase</span></code> equivalent to the tensorpower of self by other.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.to_circuit_op">
-<em class="property">abstract </em><code class="sig-name descname">to_circuit_op</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.to_circuit_op"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.to_circuit_op" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">CircuitOp</span></code> equivalent to this Operator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.to_matrix">
-<em class="property">abstract </em><code class="sig-name descname">to_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">massive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.to_matrix"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.to_matrix" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return NumPy representation of the Operator. Represents the evaluation of
-the Operator’s underlying function on every combination of basis binary strings.
-Warn if more than 16 qubits to force having to set <code class="docutils literal notranslate"><span class="pre">massive=True</span></code> if such a
-large vector is desired.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>The NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> equivalent to this Operator.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.to_matrix_op">
-<em class="property">abstract </em><code class="sig-name descname">to_matrix_op</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">massive</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.to_matrix_op"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.to_matrix_op" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns a <code class="docutils literal notranslate"><span class="pre">MatrixOp</span></code> equivalent to this Operator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.opflow.OperatorBase.to_spmatrix">
-<code class="sig-name descname">to_spmatrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/opflow/operator_base.html#OperatorBase.to_spmatrix"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.opflow.OperatorBase.to_spmatrix" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return SciPy sparse matrix representation of the Operator. Represents the evaluation of
-the Operator’s underlying function on every combination of basis binary strings.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">spmatrix</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>The SciPy <code class="docutils literal notranslate"><span class="pre">spmatrix</span></code> equivalent to this Operator.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -860,7 +481,7 @@ the Operator’s underlying function on every combination of basis binary string
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.opflow.primitive_ops.html" class="btn btn-neutral float-right" title="Primitive Operators (qiskit.opflow.primitive_ops)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.opflow.OperatorBase.add.html" class="btn btn-neutral float-right" title="qiskit.opflow.OperatorBase.add" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/opflow.html" class="btn btn-neutral" title="Operators (qiskit.opflow)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -877,7 +498,7 @@ the Operator’s underlying function on every combination of basis binary string
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -896,7 +517,7 @@ the Operator’s underlying function on every combination of basis binary string
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.opflow.OperatorBase</a></li>
+<li><a class="reference internal" href="#">OperatorBase</a></li>
 </ul>
 
             </div>
@@ -960,7 +581,7 @@ the Operator’s underlying function on every combination of basis binary string
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -983,9 +604,11 @@ the Operator’s underlying function on every combination of basis binary string
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

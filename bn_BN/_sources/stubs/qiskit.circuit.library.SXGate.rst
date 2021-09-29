@@ -1,49 +1,28 @@
-﻿qiskit.circuit.library.SXGate
-=============================
+﻿SXGate
+======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: SXGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~SXGate.__init__
-      ~SXGate.add_decomposition
-      ~SXGate.assemble
-      ~SXGate.broadcast_arguments
-      ~SXGate.c_if
-      ~SXGate.control
-      ~SXGate.copy
-      ~SXGate.inverse
-      ~SXGate.is_parameterized
-      ~SXGate.mirror
-      ~SXGate.power
-      ~SXGate.qasm
-      ~SXGate.repeat
-      ~SXGate.reverse_ops
-      ~SXGate.soft_compare
-      ~SXGate.to_matrix
-      ~SXGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~SXGate.control
+      ~SXGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SXGate.decompositions
-      ~SXGate.definition
-      ~SXGate.duration
-      ~SXGate.label
-      ~SXGate.params
-      ~SXGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

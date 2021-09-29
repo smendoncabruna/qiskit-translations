@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.algorithms.IQPE &mdash; Dokumentasi Qiskit 0.29.0</title>
+  <title>IQPE &mdash; Dokumentasi Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Indeks" href="../genindex.html" />
     <link rel="search" title="Pencarian" href="../search.html" />
-    <link rel="next" title="qiskit.aqua.algorithms.NumPyMinimumEigensolver" href="qiskit.aqua.algorithms.NumPyMinimumEigensolver.html" />
-    <link rel="prev" title="qiskit.aqua.algorithms.ClassicalCPLEX" href="qiskit.aqua.algorithms.ClassicalCPLEX.html" /> 
+    <link rel="next" title="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue" href="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue.html" />
+    <link rel="prev" title="qiskit.aqua.algorithms.ClassicalCPLEX.run" href="qiskit.aqua.algorithms.ClassicalCPLEX.run.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.algorithms.IQPE</li>
+      <li>IQPE</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-algorithms-iqpe">
-<h1>qiskit.aqua.algorithms.IQPE<a class="headerlink" href="#qiskit-aqua-algorithms-iqpe" title="Link permanen untuk headline ini">¶</a></h1>
+  <section id="iqpe">
+<h1>IQPE<a class="headerlink" href="#iqpe" title="Link permanen untuk headline ini">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.algorithms.IQPE">
 <em class="property">class </em><code class="sig-name descname">IQPE</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">state_in</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_time_slices</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num_iterations</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">expansion_mode</span><span class="o">=</span><span class="default_value">'suzuki'</span></em>, <em class="sig-param"><span class="n">expansion_order</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">shallow_circuit_concat</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/minimum_eigen_solvers/iqpe.html#IQPE"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>The Iterative Quantum Phase Estimation algorithm.</p>
+<dd><p>Basis: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.algorithms.quantum_algorithm.QuantumAlgorithm</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.algorithms.minimum_eigen_solvers.minimum_eigen_solver.MinimumEigensolver</span></code></p>
+<p>The Iterative Quantum Phase Estimation algorithm.</p>
 <p>IQPE, as its name suggests, iteratively computes the phase so as to require fewer qubits.
 It has the same set of parameters as <a class="reference internal" href="qiskit.aqua.algorithms.QPE.html#qiskit.aqua.algorithms.QPE" title="qiskit.aqua.algorithms.QPE"><code class="xref py py-class docutils literal notranslate"><span class="pre">QPE</span></code></a>, except for the number of
 ancillary qubits <em>num_ancillae</em>, being replaced by <em>num_iterations</em> and that
@@ -360,26 +368,6 @@ of evolution slices. By default this is False.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.IQPE.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">state_in</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_time_slices</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num_iterations</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">expansion_mode</span><span class="o">=</span><span class="default_value">'suzuki'</span></em>, <em class="sig-param"><span class="n">expansion_order</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">shallow_circuit_concat</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/minimum_eigen_solvers/iqpe.html#IQPE.__init__"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.__init__" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- The hamiltonian Operator</p></li>
-<li><p><strong>state_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">InitialState</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- An InitialState component representing an initial quantum state.</p></li>
-<li><p><strong>num_time_slices</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The number of time slices, has a minimum value of 1.</p></li>
-<li><p><strong>num_iterations</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The number of iterations, has a minimum value of 1.</p></li>
-<li><p><strong>expansion_mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- The expansion mode ('trotter'|'suzuki')</p></li>
-<li><p><strong>expansion_order</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The suzuki expansion order, has a min. value of 1.</p></li>
-<li><p><strong>shallow_circuit_concat</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- Set True to use shallow (cheap) mode for circuit concatenation
-of evolution slices. By default this is False.</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- Quantum Instance or Backend</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -387,58 +375,27 @@ of evolution slices. By default this is False.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.__init__" title="qiskit.aqua.algorithms.IQPE.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([operator, state_in, ...])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type operator</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue" title="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_minimum_eigenvalue</span></code></a>([operator, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue.html#qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue" title="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_minimum_eigenvalue</span></code></a></p></td>
 <td><p>Computes minimum eigenvalue.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.construct_circuit" title="qiskit.aqua.algorithms.IQPE.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>([k, omega, measurement])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.IQPE.construct_circuit.html#qiskit.aqua.algorithms.IQPE.construct_circuit" title="qiskit.aqua.algorithms.IQPE.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the kth iteration Quantum Phase Estimation circuit.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.run" title="qiskit.aqua.algorithms.IQPE.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>([quantum_instance])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.IQPE.run.html#qiskit.aqua.algorithms.IQPE.run" title="qiskit.aqua.algorithms.IQPE.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
 <td><p>Execute the algorithm with selected backend.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.set_backend" title="qiskit.aqua.algorithms.IQPE.set_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_backend</span></code></a>(backend, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.IQPE.set_backend.html#qiskit.aqua.algorithms.IQPE.set_backend" title="qiskit.aqua.algorithms.IQPE.set_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_backend</span></code></a></p></td>
 <td><p>Sets backend with configuration.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.supports_aux_operators" title="qiskit.aqua.algorithms.IQPE.supports_aux_operators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supports_aux_operators</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.IQPE.supports_aux_operators.html#qiskit.aqua.algorithms.IQPE.supports_aux_operators" title="qiskit.aqua.algorithms.IQPE.supports_aux_operators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supports_aux_operators</span></code></a></p></td>
 <td><p>Whether computing the expectation value of auxiliary operators is supported.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.aux_operators" title="qiskit.aqua.algorithms.IQPE.aux_operators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aux_operators</span></code></a></p></td>
-<td><p>Returns aux operators</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.backend" title="qiskit.aqua.algorithms.IQPE.backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend</span></code></a></p></td>
-<td><p>Returns backend.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.operator" title="qiskit.aqua.algorithms.IQPE.operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operator</span></code></a></p></td>
-<td><p>Returns operator</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.quantum_instance" title="qiskit.aqua.algorithms.IQPE.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
-<td><p>Returns quantum instance.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.IQPE.random" title="qiskit.aqua.algorithms.IQPE.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a></p></td>
-<td><p>Return a numpy random.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.IQPE.aux_operators">
-<em class="property">property </em><code class="sig-name descname">aux_operators</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.aux_operators" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">aux_operators</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.aux_operators" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>Returns aux operators</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -447,9 +404,9 @@ of evolution slices. By default this is False.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.IQPE.backend">
-<em class="property">property </em><code class="sig-name descname">backend</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.backend" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">backend</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.backend" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>Returns backend.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -458,55 +415,9 @@ of evolution slices. By default this is False.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue">
-<code class="sig-name descname">compute_minimum_eigenvalue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aux_operators</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/minimum_eigen_solvers/iqpe.html#IQPE.compute_minimum_eigenvalue"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Computes minimum eigenvalue. Operator and aux_operators can be supplied here and
-if not None will override any already set into algorithm so it can be reused with
-different operators. While an operator is required by algorithms, aux_operators
-are optional. To 'remove' a previous aux_operators array use an empty list here.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>operator</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- If not None replaces operator in algorithm</p></li>
-<li><p><strong>aux_operators</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">OperatorBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>]]]) -- If not None replaces aux_operators in algorithm</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolverResult</span></code></p>
-</dd>
-<dt class="field-odd">Kembali</dt>
-<dd class="field-odd"><p>MinimumEigensolverResult</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.IQPE.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">omega</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">measurement</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/minimum_eigen_solvers/iqpe.html#IQPE.construct_circuit"><span class="viewcode-link">[sumber]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.construct_circuit" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Construct the kth iteration Quantum Phase Estimation circuit.</p>
-<p>For details of parameters, please see Fig. 2 in <a class="reference external" href="https://arxiv.org/pdf/quant-ph/0610214.pdf">https://arxiv.org/pdf/quant-ph/0610214.pdf</a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>k</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) -- the iteration idx.</p></li>
-<li><p><strong>omega</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) -- the feedback angle.</p></li>
-<li><p><strong>measurement</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- Boolean flag to indicate if measurement should
-be included in the circuit.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Kembali</dt>
-<dd class="field-even"><p>the quantum circuit per iteration</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.IQPE.operator">
-<em class="property">property </em><code class="sig-name descname">operator</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.operator" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">operator</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.operator" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>Returns operator</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -515,9 +426,9 @@ be included in the circuit.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.IQPE.quantum_instance">
-<em class="property">property </em><code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.quantum_instance" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.quantum_instance" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>Returns quantum instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -526,61 +437,10 @@ be included in the circuit.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.IQPE.random">
-<em class="property">property </em><code class="sig-name descname">random</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.random" title="Link permanen untuk definisi ini">¶</a></dt>
+<code class="sig-name descname">random</code><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.random" title="Link permanen untuk definisi ini">¶</a></dt>
 <dd><p>Return a numpy random.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.IQPE.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.run" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Execute the algorithm with selected backend.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- the experimental setting.</p></li>
-<li><p><strong>kwargs</strong> (<em>dict</em>) -- kwargs</p></li>
-</ul>
-</dd>
-<dt class="field-even">Kembali</dt>
-<dd class="field-even"><p>results of an algorithm.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> -- If a quantum instance or backend has not been provided</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.IQPE.set_backend">
-<code class="sig-name descname">set_backend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backend</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.set_backend" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Sets backend with configuration.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.IQPE.supports_aux_operators">
-<em class="property">classmethod </em><code class="sig-name descname">supports_aux_operators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.algorithms.IQPE.supports_aux_operators" title="Link permanen untuk definisi ini">¶</a></dt>
-<dd><p>Whether computing the expectation value of auxiliary operators is supported.</p>
-<p>If the minimum eigensolver computes an eigenstate of the main operator then it
-can compute the expectation value of the aux_operators for that state. Otherwise
-they will be ignored.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-even">Kembali</dt>
-<dd class="field-even"><p>True if aux_operator expectations can be evaluated, False otherwise</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -595,10 +455,10 @@ they will be ignored.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.aqua.algorithms.NumPyMinimumEigensolver.html" class="btn btn-neutral float-right" title="qiskit.aqua.algorithms.NumPyMinimumEigensolver" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue.html" class="btn btn-neutral float-right" title="qiskit.aqua.algorithms.IQPE.compute_minimum_eigenvalue" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.algorithms.ClassicalCPLEX.html" class="btn btn-neutral" title="qiskit.aqua.algorithms.ClassicalCPLEX" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.algorithms.ClassicalCPLEX.run.html" class="btn btn-neutral" title="qiskit.aqua.algorithms.ClassicalCPLEX.run" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -612,7 +472,7 @@ they will be ignored.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Terakhir diperbarui pada 2021/08/13.
+      Terakhir diperbarui pada 2021/09/23.
 
     </p>
   </div>
@@ -631,7 +491,7 @@ they will be ignored.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.algorithms.IQPE</a></li>
+<li><a class="reference internal" href="#">IQPE</a></li>
 </ul>
 
             </div>
@@ -695,7 +555,7 @@ they will be ignored.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -718,9 +578,11 @@ they will be ignored.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

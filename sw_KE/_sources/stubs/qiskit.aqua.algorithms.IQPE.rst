@@ -1,37 +1,30 @@
-﻿qiskit.aqua.algorithms.IQPE
-===========================
+﻿IQPE
+====
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: IQPE
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IQPE.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IQPE.compute_minimum_eigenvalue
       ~IQPE.construct_circuit
       ~IQPE.run
       ~IQPE.set_backend
       ~IQPE.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IQPE.aux_operators
-      ~IQPE.backend
-      ~IQPE.operator
-      ~IQPE.quantum_instance
-      ~IQPE.random
-   
-   
+   .. autoattribute:: aux_operators
+   .. autoattribute:: backend
+   .. autoattribute:: operator
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random

@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.optimizers.COBYLA
-========================================
+﻿COBYLA
+======
 
 .. currentmodule:: qiskit.aqua.components.optimizers
 
 .. autoclass:: COBYLA
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~COBYLA.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~COBYLA.get_support_level
       ~COBYLA.gradient_num_diff
       ~COBYLA.optimize
@@ -21,27 +20,21 @@
       ~COBYLA.set_max_evals_grouped
       ~COBYLA.set_options
       ~COBYLA.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~COBYLA.bounds_support_level
-      ~COBYLA.gradient_support_level
-      ~COBYLA.initial_point_support_level
-      ~COBYLA.is_bounds_ignored
-      ~COBYLA.is_bounds_required
-      ~COBYLA.is_bounds_supported
-      ~COBYLA.is_gradient_ignored
-      ~COBYLA.is_gradient_required
-      ~COBYLA.is_gradient_supported
-      ~COBYLA.is_initial_point_ignored
-      ~COBYLA.is_initial_point_required
-      ~COBYLA.is_initial_point_supported
-      ~COBYLA.setting
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting

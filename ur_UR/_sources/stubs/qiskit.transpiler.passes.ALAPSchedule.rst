@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.ALAPSchedule
-=====================================
+﻿ALAPSchedule
+============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: ALAPSchedule
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ALAPSchedule.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ALAPSchedule.name
       ~ALAPSchedule.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ALAPSchedule.is_analysis_pass
-      ~ALAPSchedule.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

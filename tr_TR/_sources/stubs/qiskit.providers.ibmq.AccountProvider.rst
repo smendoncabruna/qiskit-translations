@@ -1,38 +1,31 @@
-﻿qiskit.providers.ibmq.AccountProvider
-=====================================
+﻿AccountProvider
+===============
 
 .. currentmodule:: qiskit.providers.ibmq
 
 .. autoclass:: AccountProvider
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AccountProvider.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AccountProvider.backends
       ~AccountProvider.get_backend
       ~AccountProvider.has_service
       ~AccountProvider.run_circuits
       ~AccountProvider.service
       ~AccountProvider.services
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AccountProvider.backend
-      ~AccountProvider.experiment
-      ~AccountProvider.random
-      ~AccountProvider.runtime
-      ~AccountProvider.version
-   
-   
+   .. autoattribute:: backend
+   .. autoattribute:: experiment
+   .. autoattribute:: random
+   .. autoattribute:: runtime
+   .. autoattribute:: version

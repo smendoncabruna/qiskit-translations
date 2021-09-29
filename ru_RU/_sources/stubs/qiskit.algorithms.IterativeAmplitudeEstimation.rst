@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.IterativeAmplitudeEstimation
-==============================================
+﻿IterativeAmplitudeEstimation
+============================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: IterativeAmplitudeEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IterativeAmplitudeEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IterativeAmplitudeEstimation.construct_circuit
       ~IterativeAmplitudeEstimation.estimate
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IterativeAmplitudeEstimation.epsilon_target
-      ~IterativeAmplitudeEstimation.quantum_instance
-   
-   
+   .. autoattribute:: epsilon_target
+   .. autoattribute:: quantum_instance

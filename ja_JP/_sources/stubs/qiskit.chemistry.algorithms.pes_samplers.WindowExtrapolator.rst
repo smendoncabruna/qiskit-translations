@@ -1,31 +1,24 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.WindowExtrapolator
-============================================================
+﻿WindowExtrapolator
+==================
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: WindowExtrapolator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~WindowExtrapolator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~WindowExtrapolator.extrapolate
       ~WindowExtrapolator.factory
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~WindowExtrapolator.extrapolator
-      ~WindowExtrapolator.window
-   
-   
+   .. autoattribute:: extrapolator
+   .. autoattribute:: window

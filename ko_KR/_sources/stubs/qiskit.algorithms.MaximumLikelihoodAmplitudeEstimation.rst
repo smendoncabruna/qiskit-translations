@@ -1,32 +1,25 @@
-﻿qiskit.algorithms.MaximumLikelihoodAmplitudeEstimation
-======================================================
+﻿MaximumLikelihoodAmplitudeEstimation
+====================================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: MaximumLikelihoodAmplitudeEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MaximumLikelihoodAmplitudeEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MaximumLikelihoodAmplitudeEstimation.compute_confidence_interval
       ~MaximumLikelihoodAmplitudeEstimation.compute_mle
       ~MaximumLikelihoodAmplitudeEstimation.construct_circuits
       ~MaximumLikelihoodAmplitudeEstimation.estimate
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MaximumLikelihoodAmplitudeEstimation.quantum_instance
-   
-   
+   .. autoattribute:: quantum_instance

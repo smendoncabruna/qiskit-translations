@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Option Pricing with qGANs &mdash; documentación de Qiskit Finance - 0.2.0</title>
+  <title>Fijación de Precios de Opciones con qGANs &mdash; documentación de Qiskit Finance - 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Loading and Processing Stock-Market Time-Series Data" href="11_time_series.html" />
-    <link rel="prev" title="Credit Risk Analysis" href="09_credit_risk_analysis.html" /> 
+    <link rel="next" title="Carga y Procesamiento de Datos de Series de Tiempo del Mercado de Valores" href="11_time_series.html" />
+    <link rel="prev" title="Análisis de Riesgo Crediticio" href="09_credit_risk_analysis.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Option Pricing with qGANs</li>
+      <li>Fijación de Precios de Opciones con qGANs</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -486,12 +486,11 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/10_qgan_option_pricing.ipynb">docs/tutorials/10_qgan_option_pricing.ipynb</a>.</p>
 </div>
-<div class="section" id="Option-Pricing-with-qGANs">
-<h1>Option Pricing with qGANs<a class="headerlink" href="#Option-Pricing-with-qGANs" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="Fijación-de-Precios-de-Opciones-con-qGANs">
+<h1>Fijación de Precios de Opciones con qGANs<a class="headerlink" href="#Fijación-de-Precios-de-Opciones-con-qGANs" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>In this notebook, we discuss how a Quantum Machine Learning Algorithm, namely a quantum Generative Adversarial Network (qGAN), can facilitate the pricing of a European call option. More specifically, a qGAN can be trained such that a quantum circuit models the spot price of an asset underlying a European call option. The resulting model can then be integrated into a Quantum Amplitude Estimation based algorithm to evaluate the expected payoff - see <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option
-Pricing</span></a>. For further details on learning and loading random distributions by training a qGAN please refer to <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
+<p>En este cuaderno, discutimos cómo un Algoritmo Cuántico de Machine Learning, es decir, una Red Generativa Antagónica cuántica (quantum Generative Adversarial Network, qGAN), puede facilitar la fijación de precios de una opción de compra europea. Más específicamente, una qGAN se puede entrenar de manera que un circuito cuántico modele el precio al contado de un activo subyacente a una opción de compra europea. El modelo resultante se puede integrar en un algoritmo basado en Estimación de Amplitud Cuántica para evaluar la rentabilidad esperada; consulta <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">Fijación de Precios de Opciones de Compra Europeas</span></a>. Para obtener más detalles sobre el aprendizaje y la carga de distribuciones aleatorias mediante el entrenamiento de una qGAN, consulta <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -748,10 +747,10 @@ Confidence interval:    [0.9965, 1.0455]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="11_time_series.html" class="btn btn-neutral float-right" title="Loading and Processing Stock-Market Time-Series Data" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="11_time_series.html" class="btn btn-neutral float-right" title="Carga y Procesamiento de Datos de Series de Tiempo del Mercado de Valores" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="09_credit_risk_analysis.html" class="btn btn-neutral" title="Credit Risk Analysis" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="09_credit_risk_analysis.html" class="btn btn-neutral" title="Análisis de Riesgo Crediticio" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -783,7 +782,7 @@ Confidence interval:    [0.9965, 1.0455]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Option Pricing with qGANs</a><ul>
+<li><a class="reference internal" href="#">Fijación de Precios de Opciones con qGANs</a><ul>
 <li><a class="reference internal" href="#Introducción">Introducción</a><ul>
 <li><a class="reference internal" href="#Modelo-de-Incertidumbre">Modelo de Incertidumbre</a></li>
 <li><a class="reference internal" href="#Evaluar-el-Rendimiento-Esperado">Evaluar el Rendimiento Esperado</a></li>

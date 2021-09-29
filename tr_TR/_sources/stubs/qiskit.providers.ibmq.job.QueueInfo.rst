@@ -1,30 +1,23 @@
-﻿qiskit.providers.ibmq.job.QueueInfo
-===================================
+﻿QueueInfo
+=========
 
 .. currentmodule:: qiskit.providers.ibmq.job
 
 .. autoclass:: QueueInfo
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QueueInfo.__init__
-      ~QueueInfo.format
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~QueueInfo.format
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QueueInfo.estimated_complete_time
-      ~QueueInfo.estimated_start_time
-   
-   
+   .. autoattribute:: estimated_complete_time
+   .. autoattribute:: estimated_start_time

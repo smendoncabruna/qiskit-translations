@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.PTM
-========================
+﻿PTM
+===
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: PTM
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PTM.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PTM.adjoint
       ~PTM.compose
       ~PTM.conjugate
@@ -32,21 +31,15 @@
       ~PTM.to_instruction
       ~PTM.to_operator
       ~PTM.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PTM.atol
-      ~PTM.data
-      ~PTM.dim
-      ~PTM.num_qubits
-      ~PTM.qargs
-      ~PTM.rtol
-      ~PTM.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

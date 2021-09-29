@@ -1,28 +1,23 @@
-﻿qiskit.providers.ibmq.managed.ManagedJob
-========================================
+﻿ManagedJob
+==========
 
 .. currentmodule:: qiskit.providers.ibmq.managed
 
 .. autoclass:: ManagedJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ManagedJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ManagedJob.cancel
       ~ManagedJob.error_message
       ~ManagedJob.qobj
       ~ManagedJob.result
       ~ManagedJob.status
       ~ManagedJob.submit
-   
-   
 
-   
-   
-   
+

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.circuit.library.raw_feature_vector &mdash; Tài liệu Qiskit Machine Learning 0.2.0</title>
+  <title>qiskit_machine_learning.circuit.library.raw_feature_vector &mdash; Tài liệu Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/circuit/library/raw_feature_vector.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/circuit/library/raw_feature_vector.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/circuit/library/raw_feature_vector.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/circuit/library/raw_feature_vector.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/circuit/library/raw_feature_vector.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/circuit/library/raw_feature_vector.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -261,7 +267,7 @@
 
 <span class="sd">&quot;&quot;&quot;The raw feature vector circuit.&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">qiskit.exceptions</span> <span class="kn">import</span> <span class="n">QiskitError</span>
 <span class="kn">from</span> <span class="nn">qiskit.circuit</span> <span class="kn">import</span> <span class="n">QuantumRegister</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ParameterVector</span><span class="p">,</span> <span class="n">Instruction</span>
@@ -276,7 +282,11 @@
 <span class="sd">    placeholder instruction that can only be synthesized/defined when all parameters are bound.</span>
 
 <span class="sd">    In ML, this circuit can be used to load the training data into qubit amplitudes. It does not</span>
-<span class="sd">    apply an kernel transformation. (Therefore, it is a &quot;raw&quot; feature vector.)</span>
+<span class="sd">    apply an kernel transformation (therefore, it is a &quot;raw&quot; feature vector).</span>
+
+<span class="sd">    Since initialization is implemented via a ``QuantumCircuit.initialize()`` call, this circuit</span>
+<span class="sd">    can&#39;t be used with gradient based optimizers, one can see a warning that gradients can&#39;t be</span>
+<span class="sd">    computed.</span>
 
 <span class="sd">    Examples:</span>
 
@@ -314,15 +324,14 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature_dimension</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
-<span class="sd">            feature_dimension: The feature dimension and number of qubits.</span>
+<span class="sd">            feature_dimension: The feature dimension from which the number of</span>
+<span class="sd">                                qubits is inferred as ``n_qubits = log2(feature_dim)``</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ordered_parameters</span> <span class="o">=</span> <span class="n">ParameterVector</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">feature_dimension</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">feature_dimension</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">feature_dimension</span> <span class="o">=</span> <span class="n">feature_dimension</span>
 
     <span class="k">def</span> <span class="nf">_build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -352,7 +361,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            The number of qubits.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">num_qubits</span>
 
     <span class="nd">@num_qubits</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">num_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -361,11 +370,12 @@
 <span class="sd">        Args:</span>
 <span class="sd">            The new number of qubits.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="o">!=</span> <span class="n">num_qubits</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">!=</span> <span class="n">num_qubits</span><span class="p">:</span>
             <span class="c1"># invalidate the circuit</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="o">=</span> <span class="n">num_qubits</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add_register</span><span class="p">(</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span> <span class="s2">&quot;q&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qregs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumRegister</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="n">num_qubits</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">num_qubits</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">qregs</span> <span class="o">=</span> <span class="p">[</span><span class="n">QuantumRegister</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;q&quot;</span><span class="p">)]</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">feature_dimension</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -390,13 +400,9 @@
         <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">)</span> <span class="o">!=</span> <span class="n">num_qubits</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;feature_dimension must be a power of 2!&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">num_qubits</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num_qubits</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="o">=</span> <span class="kc">None</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_qubits</span><span class="p">)</span></div>
 
 
 <span class="k">class</span> <span class="nc">ParameterizedInitialize</span><span class="p">(</span><span class="n">Instruction</span><span class="p">):</span>

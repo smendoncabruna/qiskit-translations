@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.primitive\_ops.PauliOp
-============================================
+﻿PauliOp
+=======
 
 .. currentmodule:: qiskit.aqua.operators.primitive_ops
 
 .. autoclass:: PauliOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PauliOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliOp.add
       ~PauliOp.adjoint
       ~PauliOp.assign_parameters
@@ -40,20 +39,14 @@
       ~PauliOp.to_matrix_op
       ~PauliOp.to_pauli_op
       ~PauliOp.to_spmatrix
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PauliOp.ENABLE_DEPRECATION
-      ~PauliOp.INDENTATION
-      ~PauliOp.coeff
-      ~PauliOp.num_qubits
-      ~PauliOp.parameters
-      ~PauliOp.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: coeff
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

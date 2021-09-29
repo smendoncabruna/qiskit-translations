@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.oracles.CustomCircuitOracle &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>CustomCircuitOracle &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Spis treści" href="../genindex.html" />
     <link rel="search" title="Wyszukiwanie" href="../search.html" />
-    <link rel="next" title="Reciprocals (qiskit.aqua.components.reciprocals)" href="../apidoc/qiskit.aqua.components.reciprocals.html" />
-    <link rel="prev" title="qiskit.aqua.components.oracles.TruthTableOracle" href="qiskit.aqua.components.oracles.TruthTableOracle.html" /> 
+    <link rel="next" title="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit" href="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit.html" />
+    <link rel="prev" title="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically" href="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.components.oracles.html">Oracles (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.components.oracles</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.components.oracles.CustomCircuitOracle</li>
+      <li>CustomCircuitOracle</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,12 +339,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-components-oracles-customcircuitoracle">
-<h1>qiskit.aqua.components.oracles.CustomCircuitOracle<a class="headerlink" href="#qiskit-aqua-components-oracles-customcircuitoracle" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+  <section id="customcircuitoracle">
+<h1>CustomCircuitOracle<a class="headerlink" href="#customcircuitoracle" title="Stały odnośnik do tego nagłówka">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.components.oracles.CustomCircuitOracle">
 <em class="property">class </em><code class="sig-name descname">CustomCircuitOracle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_register</span></em>, <em class="sig-param"><span class="n">output_register</span></em>, <em class="sig-param"><span class="n">circuit</span></em>, <em class="sig-param"><span class="n">ancillary_register</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">evaluate_classically_callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/oracles/custom_circuit_oracle.html#CustomCircuitOracle"><span class="viewcode-link">[źródło]</span></a><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>The Custom Circuit-based Quantum Oracle.</p>
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.components.oracles.oracle.Oracle</span></code></p>
+<p>The Custom Circuit-based Quantum Oracle.</p>
 <p>A helper class to, in essence, «wrap» a user-supplied quantum circuit such that it becomes
 of type <a class="reference internal" href="qiskit.aqua.components.oracles.Oracle.html#qiskit.aqua.components.oracles.Oracle" title="qiskit.aqua.components.oracles.Oracle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Oracle</span></code></a> and hence can be used by algorithms taking an oracle as input.</p>
 <p>This class is provided for easy creation of oracles using custom circuits.
@@ -356,8 +364,8 @@ of the <em>binary</em> function encoded by the oracle, and the List[int] should 
 different representation of the input variable assignment, which should be equivalent to
 the bitstring or a quantum measurement.</p>
 <p>Examples of existing implementations, for reference, can be found in other oracles such as
-<a class="reference internal" href="qiskit.aqua.components.oracles.TruthTableOracle.html#qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically" title="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TruthTableOracle.evaluate_classically()</span></code></a> and
-<a class="reference internal" href="qiskit.aqua.components.oracles.LogicalExpressionOracle.html#qiskit.aqua.components.oracles.LogicalExpressionOracle.evaluate_classically" title="qiskit.aqua.components.oracles.LogicalExpressionOracle.evaluate_classically"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LogicalExpressionOracle.evaluate_classically()</span></code></a>.</p>
+<a class="reference internal" href="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically.html#qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically" title="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TruthTableOracle.evaluate_classically()</span></code></a> and
+<a class="reference internal" href="qiskit.aqua.components.oracles.LogicalExpressionOracle.evaluate_classically.html#qiskit.aqua.components.oracles.LogicalExpressionOracle.evaluate_classically" title="qiskit.aqua.components.oracles.LogicalExpressionOracle.evaluate_classically"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LogicalExpressionOracle.evaluate_classically()</span></code></a>.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parametry</dt>
@@ -374,26 +382,6 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
 <dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – Invalid input</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variable_register</span></em>, <em class="sig-param"><span class="n">output_register</span></em>, <em class="sig-param"><span class="n">circuit</span></em>, <em class="sig-param"><span class="n">ancillary_register</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">evaluate_classically_callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/oracles/custom_circuit_oracle.html#CustomCircuitOracle.__init__"><span class="viewcode-link">[źródło]</span></a><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.__init__" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parametry</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>variable_register</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumRegister</span></code>) – The register holding variable qubit(s) for the oracle function</p></li>
-<li><p><strong>output_register</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumRegister</span></code>) – The register holding output qubit(s) for the oracle function</p></li>
-<li><p><strong>circuit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>) – The quantum circuit corresponding to the intended oracle function</p></li>
-<li><p><strong>ancillary_register</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumRegister</span></code>]) – The register holding ancillary qubit(s)</p></li>
-<li><p><strong>evaluate_classically_callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]]) – The classical callback function for evaluating the
-oracle, for example, to use with <a class="reference internal" href="qiskit.aqua.algorithms.Grover.html#qiskit.aqua.algorithms.Grover" title="qiskit.aqua.algorithms.Grover"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grover</span></code></a>’s search</p></li>
-</ul>
-</dd>
-<dt class="field-even">Wyrzuca</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – Invalid input</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -401,76 +389,31 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.__init__" title="qiskit.aqua.components.oracles.CustomCircuitOracle.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(variable_register, output_register, …)</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type variable_register</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumRegister</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit" title="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit.html#qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit" title="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the oracle circuit.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.ancillary_register" title="qiskit.aqua.components.oracles.CustomCircuitOracle.ancillary_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ancillary_register</span></code></a></p></td>
-<td><p>returns ancillary register</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.circuit" title="qiskit.aqua.components.oracles.CustomCircuitOracle.circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circuit</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.output_register" title="qiskit.aqua.components.oracles.CustomCircuitOracle.output_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_register</span></code></a></p></td>
-<td><p>returns output register</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.variable_register" title="qiskit.aqua.components.oracles.CustomCircuitOracle.variable_register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variable_register</span></code></a></p></td>
-<td><p>returns variable register</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.ancillary_register">
-<em class="property">property </em><code class="sig-name descname">ancillary_register</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.ancillary_register" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>returns ancillary register</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.circuit">
-<em class="property">property </em><code class="sig-name descname">circuit</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.circuit" title="Stały odnośnik do tej definicji">¶</a></dt>
+<code class="sig-name descname">ancillary_register</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.ancillary_register" title="Stały odnośnik do tej definicji">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/oracles/custom_circuit_oracle.html#CustomCircuitOracle.construct_circuit"><span class="viewcode-link">[źródło]</span></a><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>Construct the oracle circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Zwraca</dt>
-<dd class="field-odd"><p>A quantum circuit for the oracle.</p>
-</dd>
-<dt class="field-even">Typ zwracany</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-</dl>
-</dd></dl>
+<dl class="py attribute">
+<dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.circuit">
+<code class="sig-name descname">circuit</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.circuit" title="Stały odnośnik do tej definicji">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.output_register">
-<em class="property">property </em><code class="sig-name descname">output_register</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.output_register" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>returns output register</p>
-</dd></dl>
+<code class="sig-name descname">output_register</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.output_register" title="Stały odnośnik do tej definicji">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.oracles.CustomCircuitOracle.variable_register">
-<em class="property">property </em><code class="sig-name descname">variable_register</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.variable_register" title="Stały odnośnik do tej definicji">¶</a></dt>
-<dd><p>returns variable register</p>
-</dd></dl>
+<code class="sig-name descname">variable_register</code><a class="headerlink" href="#qiskit.aqua.components.oracles.CustomCircuitOracle.variable_register" title="Stały odnośnik do tej definicji">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -484,10 +427,10 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.aqua.components.reciprocals.html" class="btn btn-neutral float-right" title="Reciprocals (qiskit.aqua.components.reciprocals)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.oracles.CustomCircuitOracle.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.components.oracles.TruthTableOracle.html" class="btn btn-neutral" title="qiskit.aqua.components.oracles.TruthTableOracle" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically.html" class="btn btn-neutral" title="qiskit.aqua.components.oracles.TruthTableOracle.evaluate_classically" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -501,7 +444,7 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -520,7 +463,7 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.components.oracles.CustomCircuitOracle</a></li>
+<li><a class="reference internal" href="#">CustomCircuitOracle</a></li>
 </ul>
 
             </div>
@@ -584,7 +527,7 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -607,9 +550,11 @@ oracle, for example, to use with <a class="reference internal" href="qiskit.aqua
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

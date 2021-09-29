@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Redes Neurais Quânticas &mdash; Documentação Qiskit Machine Learning 0.2.0</title>
+  <title>Redes Neurais Quânticas &mdash; Documentação Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/tutorials/01_neural_networks.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/tutorials/01_neural_networks.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/tutorials/01_neural_networks.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/tutorials/01_neural_networks.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/tutorials/01_neural_networks.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/tutorials/01_neural_networks.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -502,7 +508,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
 </div>
 <div class="section" id="Redes-Neurais-Quânticas">
 <h1>Redes Neurais Quânticas<a class="headerlink" href="#Redes-Neurais-Quânticas" title="Link permanente para este título">¶</a></h1>
@@ -549,12 +555,12 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="1.-NeuralNetwork">
 <h2>1. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code><a class="headerlink" href="#1.-NeuralNetwork" title="Link permanente para este título">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> represents the interface for all neural networks available in Qiskit Machine Learning. It exposes a forward and a backward pass taking the data samples and trainable weights as input. A <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> does not contain any training capabilities, these are pushed to the actual algorithms / applications. Thus, a <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> also does not store the values for trainable weights. In the following, different implementations of this interfaces are introduced.</p>
-<p>Suppose a <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> called <code class="docutils literal notranslate"><span class="pre">nn</span></code>. Then, the <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> pass takes either flat inputs for the data and weights of size <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code>, respectively. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> supports batching of inputs and returns batches of output of the corresponding shape.</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> representa a interface para toda a rede neural disponível no Qiskit Machine Learning. Ele expõe um passe para frente e um para trás tomando as amostras de dados e pesos treináveis como input. O <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> não contém nenhuma capacidade de treino, estes são destinados aos algoritmos/aplicações. Assim, um <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> também não armazena os valores para os pesos treináveis. A seguir, diferentes implementações dessas interfaces serão introduzidas.</p>
+<p>Suponha um <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> chamado <code class="docutils literal notranslate"><span class="pre">nn</span></code>. Então, o <code class="docutils literal notranslate"><span class="pre">nn.forward(input,</span> <span class="pre">weights)</span></code> passa a receber inputs planos para os dados e pesos de tamanho <code class="docutils literal notranslate"><span class="pre">nn.num_inputs</span></code> e <code class="docutils literal notranslate"><span class="pre">nn.num_weights</span></code>, respectivamente. <code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code> suporta lotes de inputs e retorna com lotes de outputs da forma correspondente.</p>
 </div>
 <div class="section" id="2.-OpflowQNN">
 <h2>2. <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code><a class="headerlink" href="#2.-OpflowQNN" title="Link permanente para este título">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> takes a (parametrized) operator from Qiskit and leverages Qiskit’s gradient framework to provide the backward pass. Such an operator can for instance be an expected value of a quantum mechanical observable with respect to a parametrized quantum state. The Parameters can be used to load classical data as well as represent trainable weights. The <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> also allows lists of operators and more complex structures to construct more complex QNNs.</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> recebe um operador (parametrizado) do Qiskit e alavanca o framework gradiente do Qiskit para fornecer o passe para trás. Tal operador pode por exemplo ser um valor esperado de um quantum mecânico observável com respeito a um estado quantum parametrizado. Os parâmetros podem ser usados para carregar dados clássicos e também para representar pesos treináveis. O <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> também permite lista de operadores e estruturas mais complexas para construir QNNs mais complexos.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -706,7 +712,7 @@ array([[0.81422018],
         [[0.0008565]]]))
 </pre></div></div>
 </div>
-<p>Combining multiple observables in a <code class="docutils literal notranslate"><span class="pre">ListOp</span></code> also allows to create more complex QNNs</p>
+<p>Combinando múltiplos observáveis em uma <code class="docutils literal notranslate"><span class="pre">ListOp</span></code> também permite criar QNNs mais complexos</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -761,7 +767,7 @@ array([[0.81422018, 0.81422018]])
 </div>
 <div class="section" id="3.-TwoLayerQNN">
 <h2>3. <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code><a class="headerlink" href="#3.-TwoLayerQNN" title="Link permanente para este título">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> is a special <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> on <span class="math notranslate nohighlight">\(n\)</span> qubits that consists of first a feature map to insert data and second an ansatz that is trained. The default observable is <span class="math notranslate nohighlight">\(Z^{\otimes n}\)</span>, i.e., parity.</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> é um <code class="docutils literal notranslate"><span class="pre">OpflowQNN</span></code> especial em <span class="math notranslate nohighlight">\(n\)</span>, ou seja, paridade.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -905,11 +911,9 @@ array([[0.28520667]])
 </div>
 <div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Link permanente para este título">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> is based on a (parametrized) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. This can take input as well as weight parameters and produces samples from the measurement. The samples can either be interpreted as probabilities of measuring the integer index corresponding to a bitstring or directly as a batch of binary output. In the case of probabilities, gradients can be estimated efficiently and the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> provides a backward pass as well. In case of samples, differentiation is not possible and
-the backward pass returns <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
-<p>Further, the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> allows to specify an <code class="docutils literal notranslate"><span class="pre">interpret</span></code> function to post-process the samples. This is expected to take a measured integer (from a bitstring) and map it to a new index, i.e. non-negative integer. In this case, the output shape needs to be provided and the probabilities are aggregated accordingly.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> can be configured to return sparse as well as dense probability vectors. If no <code class="docutils literal notranslate"><span class="pre">interpret</span></code> function is used, the dimension of the probability vector scales exponentially with the number of qubits and a sparse recommendation is usually recommended. In case of an <code class="docutils literal notranslate"><span class="pre">interpret</span></code> function it depends on the expected outcome. If, for instance, an index is mapped to the parity of the corresponding bitstring, i.e., to 0 or 1, a dense output makes sense and the result will be a
-probability vector of length 2.</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> é baseado em um (parametrizado) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. Isto pode receber parâmetros de entrada bem como de peso e produzir amostras a partir da medição. As amostras podem ser interpretadas como probabilidades de medir o índice inteiro correspondendo a um bitstring ou diretamente como um lute de saída binário. No caso de probabilidades, gradientes podem ser estimados eficientemente e o <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> provê também um passe para trás. No caso de amostras, diferenciação não é possível e o passe para trás retorna <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
+<p>Avançando, o <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> permite especificar uma função <code class="docutils literal notranslate"><span class="pre">interpret</span></code> para pós-processar as amostras. É esperado que pegue a medição de um inteiro (de uma bitstring) e mapeie isto para um novo índice, ou seja, inteiro não negativo. Neste caso, o formato da saída precisa ser especificado e as probabilidades são agregadas em conformidade.</p>
+<p>Um <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> pode ser configurado para retornar vetores de probabilidade esparsos, bem como densos. Se nenhuma função <code class="docutils literal notranslate"><span class="pre">interpret</span></code> for utilizada, a dimensão do vetor de probabilidade aumenta exponencialmente com o número de qubits e uma recomendação esparsa é geralmente recomendada. No caso de uma função <code class="docutils literal notranslate"><span class="pre">interpret</span></code> depende do resultado esperado. Se, por exemplo, um índice for mapeado para a paridade da bitstring correspondente, ou seja, para 0 ou 1, uma saída densa faz sentido e o resultado será um vetor de probabilidade de tamanho 2.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>

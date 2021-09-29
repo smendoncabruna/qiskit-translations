@@ -1,33 +1,26 @@
-﻿qiskit.algorithms.EstimationProblem
-===================================
+﻿EstimationProblem
+=================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: EstimationProblem
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EstimationProblem.__init__
-      ~EstimationProblem.rescale
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~EstimationProblem.rescale
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EstimationProblem.grover_operator
-      ~EstimationProblem.is_good_state
-      ~EstimationProblem.objective_qubits
-      ~EstimationProblem.post_processing
-      ~EstimationProblem.state_preparation
-   
-   
+   .. autoattribute:: grover_operator
+   .. autoattribute:: is_good_state
+   .. autoattribute:: objective_qubits
+   .. autoattribute:: post_processing
+   .. autoattribute:: state_preparation

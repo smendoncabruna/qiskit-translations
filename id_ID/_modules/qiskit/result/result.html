@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.result.result &mdash; Dokumentasi Qiskit 0.29.0</title>
+  <title>qiskit.result.result &mdash; Dokumentasi Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -364,7 +371,7 @@
 
     <span class="n">_metadata</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="Result.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">backend_name</span><span class="p">,</span>
         <span class="n">backend_version</span><span class="p">,</span>
@@ -390,7 +397,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
         <span class="k">if</span> <span class="n">header</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="n">header</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="p">(</span>
@@ -420,7 +427,7 @@
         <span class="n">out</span> <span class="o">+=</span> <span class="s2">&quot;)&quot;</span>
         <span class="k">return</span> <span class="n">out</span>
 
-<div class="viewcode-block" id="Result.to_dict"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Result.to_dict"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.to_dict.html#qiskit.providers.ibmq.Result.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a dictionary format representation of the Result</span>
 
 <span class="sd">        Returns:</span>
@@ -449,7 +456,7 @@
         <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not defined&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
 
-<div class="viewcode-block" id="Result.from_dict"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Result.from_dict"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.from_dict.html#qiskit.providers.ibmq.Result.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a new ExperimentResultData object from a dictionary.</span>
 
@@ -468,7 +475,7 @@
             <span class="n">in_data</span><span class="p">[</span><span class="s2">&quot;header&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">QobjHeader</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">in_data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">in_data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Result.data"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.data">[docs]</a>    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Result.data"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.data.html#qiskit.providers.ibmq.Result.data">[docs]</a>    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the raw data for an experiment.</span>
 
 <span class="sd">        Note this data will be a single classical and quantum register and in a</span>
@@ -521,7 +528,7 @@
         <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">QiskitError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No data for experiment &quot;</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span></div>
 
-<div class="viewcode-block" id="Result.get_memory"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.get_memory">[docs]</a>    <span class="k">def</span> <span class="nf">get_memory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Result.get_memory"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.get_memory.html#qiskit.providers.ibmq.Result.get_memory">[docs]</a>    <span class="k">def</span> <span class="nf">get_memory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the sequence of memory states (readouts) for each shot</span>
 <span class="sd">        The data from the experiment is a list of format</span>
 <span class="sd">        [&#39;00000&#39;, &#39;01000&#39;, &#39;10100&#39;, &#39;10100&#39;, &#39;11101&#39;, &#39;11100&#39;, &#39;00101&#39;, ..., &#39;01010&#39;]</span>
@@ -532,7 +539,7 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            List[str] or np.ndarray: Either the list of each outcome, formatted according to</span>
-<span class="sd">                registers in circuit or a complex numpy np.ndarray with shape:</span>
+<span class="sd">            registers in circuit or a complex numpy np.ndarray with shape:</span>
 
 <span class="sd">                ============  =============  =====</span>
 <span class="sd">                `meas_level`  `meas_return`  shape</span>
@@ -575,7 +582,7 @@
                 <span class="s2">&quot;or a measurement level 0/1 job.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">experiment</span><span class="p">))</span>
             <span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span></div>
 
-<div class="viewcode-block" id="Result.get_counts"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.get_counts">[docs]</a>    <span class="k">def</span> <span class="nf">get_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Result.get_counts"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.get_counts.html#qiskit.providers.ibmq.Result.get_counts">[docs]</a>    <span class="k">def</span> <span class="nf">get_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the histogram data of an experiment.</span>
 
 <span class="sd">        Args:</span>
@@ -583,11 +590,11 @@
 <span class="sd">                experiment, as specified by ``data([experiment])``.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            dict[str:int] or list[dict[str:int]]: a dictionary or a list of</span>
-<span class="sd">                dictionaries. A dictionary has the counts for each qubit with</span>
-<span class="sd">                the keys containing a string in binary format and separated</span>
-<span class="sd">                according to the registers in circuit (e.g. ``0100 1110``).</span>
-<span class="sd">                The string is little-endian (cr[0] on the right hand side).</span>
+<span class="sd">            dict[str, int] or list[dict[str, int]]: a dictionary or a list of</span>
+<span class="sd">            dictionaries. A dictionary has the counts for each qubit with</span>
+<span class="sd">            the keys containing a string in binary format and separated</span>
+<span class="sd">            according to the registers in circuit (e.g. ``0100 1110``).</span>
+<span class="sd">            The string is little-endian (cr[0] on the right hand side).</span>
 
 <span class="sd">        Raises:</span>
 <span class="sd">            QiskitError: if there are no counts for the experiment.</span>
@@ -627,7 +634,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">dict_list</span></div>
 
-<div class="viewcode-block" id="Result.get_statevector"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.get_statevector">[docs]</a>    <span class="k">def</span> <span class="nf">get_statevector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Result.get_statevector"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.get_statevector.html#qiskit.providers.ibmq.Result.get_statevector">[docs]</a>    <span class="k">def</span> <span class="nf">get_statevector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the final statevector of an experiment.</span>
 
 <span class="sd">        Args:</span>
@@ -649,7 +656,7 @@
         <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">QiskitError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No statevector for experiment &quot;</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">experiment</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span></div>
 
-<div class="viewcode-block" id="Result.get_unitary"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.html#qiskit.providers.ibmq.Result.get_unitary">[docs]</a>    <span class="k">def</span> <span class="nf">get_unitary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Result.get_unitary"><a class="viewcode-back" href="../../../stubs/qiskit.result.Result.get_unitary.html#qiskit.providers.ibmq.Result.get_unitary">[docs]</a>    <span class="k">def</span> <span class="nf">get_unitary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the final unitary of an experiment.</span>
 
 <span class="sd">        Args:</span>
@@ -746,7 +753,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Terakhir diperbarui pada 2021/08/13.
+      Terakhir diperbarui pada 2021/09/23.
 
     </p>
   </div>
@@ -826,7 +833,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -849,9 +856,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

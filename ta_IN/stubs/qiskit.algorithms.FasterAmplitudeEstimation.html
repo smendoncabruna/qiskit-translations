@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.FasterAmplitudeEstimation &mdash; Qiskit 0.29.0 documentation</title>
+  <title>FasterAmplitudeEstimation &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடல்" href="../search.html" />
-    <link rel="next" title="qiskit.algorithms.FasterAmplitudeEstimationResult" href="qiskit.algorithms.FasterAmplitudeEstimationResult.html" />
-    <link rel="prev" title="qiskit.algorithms.EstimationProblem" href="qiskit.algorithms.EstimationProblem.html" /> 
+    <link rel="next" title="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit" href="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit.html" />
+    <link rel="prev" title="qiskit.algorithms.EstimationProblem.rescale" href="qiskit.algorithms.EstimationProblem.rescale.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">ஆவண முகப்புப்பக்கம்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">முன்னணி</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API குறிப்புகள்</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit சிமுலேட்டர் (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit சோதனைகள் (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit பயன்பாட்டு பகுதிகள் (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM குவாண்டம் (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">பழுது கண்டறிதல்</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.FasterAmplitudeEstimation</li>
+      <li>FasterAmplitudeEstimation</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-fasteramplitudeestimation">
-<h1>qiskit.algorithms.FasterAmplitudeEstimation<a class="headerlink" href="#qiskit-algorithms-fasteramplitudeestimation" title="Permalink to this headline">¶</a></h1>
+  <section id="fasteramplitudeestimation">
+<h1>FasterAmplitudeEstimation<a class="headerlink" href="#fasteramplitudeestimation" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.FasterAmplitudeEstimation">
 <em class="property">class </em><code class="sig-name descname">FasterAmplitudeEstimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span></em>, <em class="sig-param"><span class="n">maxiter</span></em>, <em class="sig-param"><span class="n">rescale</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/fae.html#FasterAmplitudeEstimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.FasterAmplitudeEstimation" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Faster Amplitude Estimation algorithm.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.algorithms.amplitude_estimators.amplitude_estimator.AmplitudeEstimator</span></code></p>
+<p>The Faster Amplitude Estimation algorithm.</p>
 <p>The Faster Amplitude Estimation (FAE) [1] algorithm is a variant of Quantum Amplitude
 Estimation (QAE), where the Quantum Phase Estimation (QPE) by an iterative Grover search,
 similar to [2].</p>
@@ -363,26 +371,6 @@ qubits, as the originally proposed QAE [3] and thus the resulting circuits are l
 <p>This algorithm overwrites the number of shots set in the <code class="docutils literal notranslate"><span class="pre">quantum_instance</span></code>
 argument, but will reset them to the initial number after running.</p>
 </div>
-<dl class="py method">
-<dt id="qiskit.algorithms.FasterAmplitudeEstimation.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span></em>, <em class="sig-param"><span class="n">maxiter</span></em>, <em class="sig-param"><span class="n">rescale</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/fae.html#FasterAmplitudeEstimation.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.FasterAmplitudeEstimation.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>delta</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) -- The probability that the true value is outside of the final confidence interval.</p></li>
-<li><p><strong>maxiter</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The number of iterations, the maximal power of Q is <cite>2 ** (maxiter - 1)</cite>.</p></li>
-<li><p><strong>rescale</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- Whether to rescale the problem passed to <cite>estimate</cite>.</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) -- The quantum instance or backend to run the circuits.</p></li>
-</ul>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This algorithm overwrites the number of shots set in the <code class="docutils literal notranslate"><span class="pre">quantum_instance</span></code>
-argument, but will reset them to the initial number after running.</p>
-</div>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -390,76 +378,18 @@ argument, but will reset them to the initial number after running.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.FasterAmplitudeEstimation.__init__" title="qiskit.algorithms.FasterAmplitudeEstimation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(delta, maxiter[, rescale, ...])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type delta</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit" title="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(estimation_problem, k[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit.html#qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit" title="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the circuit <span class="math notranslate nohighlight">\(Q^k X |0\rangle&gt;\)</span>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.FasterAmplitudeEstimation.estimate" title="qiskit.algorithms.FasterAmplitudeEstimation.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a>(estimation_problem)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.FasterAmplitudeEstimation.estimate.html#qiskit.algorithms.FasterAmplitudeEstimation.estimate" title="qiskit.algorithms.FasterAmplitudeEstimation.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a></p></td>
 <td><p>Run the amplitude estimation algorithm.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.FasterAmplitudeEstimation.quantum_instance" title="qiskit.algorithms.FasterAmplitudeEstimation.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
-<td><p>Get the quantum instance.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">estimation_problem</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">measurement</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/fae.html#FasterAmplitudeEstimation.construct_circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct the circuit <span class="math notranslate nohighlight">\(Q^k X |0\rangle&gt;\)</span>.</p>
-<p>The A operator is the unitary specifying the QAE problem and Q the associated Grover
-operator.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>estimation_problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">EstimationProblem</span></code>) -- The estimation problem for which to construct the circuit.</p></li>
-<li><p><strong>k</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The power of the Q operator.</p></li>
-<li><p><strong>measurement</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- Boolean flag to indicate if measurements should be included in the
-circuits.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The circuit <span class="math notranslate nohighlight">\(Q^k X |0\rangle\)</span>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.FasterAmplitudeEstimation.estimate">
-<code class="sig-name descname">estimate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">estimation_problem</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/amplitude_estimators/fae.html#FasterAmplitudeEstimation.estimate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.algorithms.FasterAmplitudeEstimation.estimate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the amplitude estimation algorithm.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>estimation_problem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">EstimationProblem</span></code>) -- An <code class="docutils literal notranslate"><span class="pre">EstimationProblem</span></code> containing all problem-relevant information
-such as the state preparation and the objective qubits.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FasterAmplitudeEstimationResult</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.algorithms.FasterAmplitudeEstimation.quantum_instance">
-<em class="property">property </em><code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.algorithms.FasterAmplitudeEstimation.quantum_instance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.algorithms.FasterAmplitudeEstimation.quantum_instance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the quantum instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -483,10 +413,10 @@ such as the state preparation and the objective qubits.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.algorithms.FasterAmplitudeEstimationResult.html" class="btn btn-neutral float-right" title="qiskit.algorithms.FasterAmplitudeEstimationResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.algorithms.FasterAmplitudeEstimation.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.EstimationProblem.html" class="btn btn-neutral" title="qiskit.algorithms.EstimationProblem" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.EstimationProblem.rescale.html" class="btn btn-neutral" title="qiskit.algorithms.EstimationProblem.rescale" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -500,7 +430,7 @@ such as the state preparation and the objective qubits.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -519,7 +449,7 @@ such as the state preparation and the objective qubits.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.FasterAmplitudeEstimation</a></li>
+<li><a class="reference internal" href="#">FasterAmplitudeEstimation</a></li>
 </ul>
 
             </div>
@@ -583,7 +513,7 @@ such as the state preparation and the objective qubits.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -606,9 +536,11 @@ such as the state preparation and the objective qubits.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

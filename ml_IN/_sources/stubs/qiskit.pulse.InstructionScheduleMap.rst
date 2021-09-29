@@ -1,19 +1,18 @@
-﻿qiskit.pulse.InstructionScheduleMap
-===================================
+﻿InstructionScheduleMap
+======================
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: InstructionScheduleMap
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~InstructionScheduleMap.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~InstructionScheduleMap.add
       ~InstructionScheduleMap.assert_has
       ~InstructionScheduleMap.get
@@ -23,15 +22,9 @@
       ~InstructionScheduleMap.qubit_instructions
       ~InstructionScheduleMap.qubits_with_instruction
       ~InstructionScheduleMap.remove
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~InstructionScheduleMap.instructions
-   
-   
+   .. autoattribute:: instructions

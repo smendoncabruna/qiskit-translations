@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.algorithms.VQEAdapt
-====================================
+﻿VQEAdapt
+========
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: VQEAdapt
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VQEAdapt.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~VQEAdapt.cleanup_parameterized_circuits
       ~VQEAdapt.find_minimum
       ~VQEAdapt.get_optimal_circuit
@@ -23,21 +22,15 @@
       ~VQEAdapt.get_probabilities_for_counts
       ~VQEAdapt.run
       ~VQEAdapt.set_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VQEAdapt.backend
-      ~VQEAdapt.initial_point
-      ~VQEAdapt.optimal_params
-      ~VQEAdapt.optimizer
-      ~VQEAdapt.quantum_instance
-      ~VQEAdapt.random
-      ~VQEAdapt.var_form
-   
-   
+   .. autoattribute:: backend
+   .. autoattribute:: initial_point
+   .. autoattribute:: optimal_params
+   .. autoattribute:: optimizer
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: var_form

@@ -1,23 +1,18 @@
-﻿qiskit.chemistry.algorithms.EigensolverFactory
-==============================================
+﻿EigensolverFactory
+==================
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: EigensolverFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EigensolverFactory.__init__
-      ~EigensolverFactory.get_solver
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~EigensolverFactory.get_solver
+
+

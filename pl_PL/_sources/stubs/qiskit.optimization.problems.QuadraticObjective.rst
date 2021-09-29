@@ -1,34 +1,27 @@
-﻿qiskit.optimization.problems.QuadraticObjective
-===============================================
+﻿QuadraticObjective
+==================
 
 .. currentmodule:: qiskit.optimization.problems
 
 .. autoclass:: QuadraticObjective
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuadraticObjective.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuadraticObjective.evaluate
       ~QuadraticObjective.evaluate_gradient
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuadraticObjective.constant
-      ~QuadraticObjective.linear
-      ~QuadraticObjective.quadratic
-      ~QuadraticObjective.quadratic_program
-      ~QuadraticObjective.sense
-   
-   
+   .. autoattribute:: constant
+   .. autoattribute:: linear
+   .. autoattribute:: quadratic
+   .. autoattribute:: quadratic_program
+   .. autoattribute:: sense

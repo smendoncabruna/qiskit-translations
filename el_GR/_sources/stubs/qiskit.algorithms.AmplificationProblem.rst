@@ -1,33 +1,19 @@
-﻿qiskit.algorithms.AmplificationProblem
-======================================
+﻿AmplificationProblem
+====================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: AmplificationProblem
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~AmplificationProblem.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AmplificationProblem.grover_operator
-      ~AmplificationProblem.is_good_state
-      ~AmplificationProblem.objective_qubits
-      ~AmplificationProblem.oracle
-      ~AmplificationProblem.post_processing
-      ~AmplificationProblem.state_preparation
-   
-   
+   .. autoattribute:: grover_operator
+   .. autoattribute:: is_good_state
+   .. autoattribute:: objective_qubits
+   .. autoattribute:: oracle
+   .. autoattribute:: post_processing
+   .. autoattribute:: state_preparation

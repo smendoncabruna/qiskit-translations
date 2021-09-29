@@ -1,40 +1,33 @@
-﻿qiskit.qasm.OpenQASMLexer
-=========================
+﻿OpenQASMLexer
+=============
 
 .. currentmodule:: qiskit.qasm
 
 .. autoclass:: OpenQASMLexer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~OpenQASMLexer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~OpenQASMLexer.add_filter
       ~OpenQASMLexer.analyse_text
       ~OpenQASMLexer.get_tokens
       ~OpenQASMLexer.get_tokens_unprocessed
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OpenQASMLexer.alias_filenames
-      ~OpenQASMLexer.aliases
-      ~OpenQASMLexer.filenames
-      ~OpenQASMLexer.flags
-      ~OpenQASMLexer.gates
-      ~OpenQASMLexer.mimetypes
-      ~OpenQASMLexer.name
-      ~OpenQASMLexer.priority
-      ~OpenQASMLexer.tokens
-   
-   
+   .. autoattribute:: alias_filenames
+   .. autoattribute:: aliases
+   .. autoattribute:: filenames
+   .. autoattribute:: flags
+   .. autoattribute:: gates
+   .. autoattribute:: mimetypes
+   .. autoattribute:: name
+   .. autoattribute:: priority
+   .. autoattribute:: tokens

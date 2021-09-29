@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.algorithms.IntermediateResult &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>IntermediateResult &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Tárgymutató" href="../genindex.html" />
     <link rel="search" title="Keresés" href="../search.html" />
-    <link rel="next" title="qiskit.optimization.algorithms.MinimumEigenOptimizationResult" href="qiskit.optimization.algorithms.MinimumEigenOptimizationResult.html" />
-    <link rel="prev" title="qiskit.optimization.algorithms.GroverOptimizer" href="qiskit.optimization.algorithms.GroverOptimizer.html" /> 
+    <link rel="next" title="MinimumEigenOptimizationResult" href="qiskit.optimization.algorithms.MinimumEigenOptimizationResult.html" />
+    <link rel="prev" title="qiskit.optimization.algorithms.GroverOptimizer.solve" href="qiskit.optimization.algorithms.GroverOptimizer.solve.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.optimization.algorithms.html">Optimization algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.optimization.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.optimization.algorithms.IntermediateResult</li>
+      <li>IntermediateResult</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,38 +337,16 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-optimization-algorithms-intermediateresult">
-<h1>qiskit.optimization.algorithms.IntermediateResult<a class="headerlink" href="#qiskit-optimization-algorithms-intermediateresult" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+  <section id="intermediateresult">
+<h1>IntermediateResult<a class="headerlink" href="#intermediateresult" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.optimization.algorithms.IntermediateResult">
 <em class="property">class </em><code class="sig-name descname">IntermediateResult</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/algorithms/recursive_minimum_eigen_optimizer.html#IntermediateResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.algorithms.IntermediateResult" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Defines whether the intermediate results of
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Defines whether the intermediate results of
 <a class="reference internal" href="qiskit.optimization.algorithms.RecursiveMinimumEigenOptimizer.html#qiskit.optimization.algorithms.RecursiveMinimumEigenOptimizer" title="qiskit.optimization.algorithms.RecursiveMinimumEigenOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code></a>
 at each iteration should be stored and returned to the end user.</p>
-<dl class="py method">
-<dt id="qiskit.optimization.algorithms.IntermediateResult.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.optimization.algorithms.IntermediateResult.__init__" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.IntermediateResult.ALL_ITERATIONS" title="qiskit.optimization.algorithms.IntermediateResult.ALL_ITERATIONS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALL_ITERATIONS</span></code></a></p></td>
-<td><p>All intermediate results are stored.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.IntermediateResult.LAST_ITERATION" title="qiskit.optimization.algorithms.IntermediateResult.LAST_ITERATION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LAST_ITERATION</span></code></a></p></td>
-<td><p>Only results from the last iteration are stored.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.algorithms.IntermediateResult.NO_ITERATIONS" title="qiskit.optimization.algorithms.IntermediateResult.NO_ITERATIONS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NO_ITERATIONS</span></code></a></p></td>
-<td><p>No intermediate results are stored.</p></td>
-</tr>
-</tbody>
-</table>
 <dl class="py attribute">
 <dt id="qiskit.optimization.algorithms.IntermediateResult.ALL_ITERATIONS">
 <code class="sig-name descname">ALL_ITERATIONS</code><em class="property"> = 2</em><a class="headerlink" href="#qiskit.optimization.algorithms.IntermediateResult.ALL_ITERATIONS" title="Hivatkozás erre a definícióra">¶</a></dt>
@@ -392,10 +377,10 @@ at each iteration should be stored and returned to the end user.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.optimization.algorithms.MinimumEigenOptimizationResult.html" class="btn btn-neutral float-right" title="qiskit.optimization.algorithms.MinimumEigenOptimizationResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.optimization.algorithms.MinimumEigenOptimizationResult.html" class="btn btn-neutral float-right" title="MinimumEigenOptimizationResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.optimization.algorithms.GroverOptimizer.html" class="btn btn-neutral" title="qiskit.optimization.algorithms.GroverOptimizer" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.optimization.algorithms.GroverOptimizer.solve.html" class="btn btn-neutral" title="qiskit.optimization.algorithms.GroverOptimizer.solve" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -409,7 +394,7 @@ at each iteration should be stored and returned to the end user.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -428,7 +413,7 @@ at each iteration should be stored and returned to the end user.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.optimization.algorithms.IntermediateResult</a></li>
+<li><a class="reference internal" href="#">IntermediateResult</a></li>
 </ul>
 
             </div>
@@ -492,7 +477,7 @@ at each iteration should be stored and returned to the end user.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -515,9 +500,11 @@ at each iteration should be stored and returned to the end user.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

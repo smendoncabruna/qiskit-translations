@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>量子斷層掃描 &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>量子斷層掃描 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -582,7 +589,7 @@ div.rendered_html tbody tr:hover {
 <ol class="arabic simple">
 <li><p><strong>量子態斷層掃描</strong>：給定一個狀態準備電路，此電路把一個系統準備在一個量子態，重建對在系統中獲得的對應實際狀態的密度矩陣 <span class="math notranslate nohighlight">\(\rho\)</span> 之描述。</p></li>
 <li><p><strong>量子過程斷層掃描(Quantum process tomography)</strong>: 給定一個電路，重新建構對該量子通道 <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> 的描述，此描述形容該電路的運算子作用在該系統時的情形。</p></li>
-<li><p><strong>Quantum gate set tomography</strong>: Performs process tomography on a set of gates in a self-consistent manner, meaning quantum noises on gates used by the tomography process itself is also taken into account.</p></li>
+<li><p><strong>量子閘集斷層掃描(Quantum gate set tomography)</strong>：以自洽的方式對一組閘進行過程斷層掃描 (process tomography) ，這意味著斷層掃描過程本身所使用的閘的量子雜訊也會被考慮進去。</p></li>
 </ol>
 <p>這個筆記本提供範例說明如何使用 <code class="docutils literal notranslate"><span class="pre">ignis.verification.tomography</span></code> 模組。</p>
 <div class="nbinput nblast docutils container">
@@ -686,7 +693,7 @@ q1_5: ─────┤ X ├
            └───┘
 </pre></div></div>
 </div>
-<p>Here we are going to generate and run the state tomography circuits. By only passing in the 2 registers we want to measure the state tomography will only run on that reduced <span class="math notranslate nohighlight">\(2^2\)</span> Hilbert space. However, if we pass the whole register in the state tomography module will try and fit the full <span class="math notranslate nohighlight">\(2^6\)</span> space.</p>
+<p>在這裡，我們將生成並運行一個狀態斷層掃描電路。 如果我們只把我們想要測量的兩個暫存器傳遞進去，該狀態斷層掃描只會在縮減的 <span class="math notranslate nohighlight">\(2^2\)</span> Hilbert 空間上執行。然而，如果我們把全部的暫存器傳遞進去，則該狀態斷層掃描模組會試著擬合其完整的 <span class="math notranslate nohighlight">\(2^6\)</span> Hilbert 空間。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -715,7 +722,7 @@ q1_5: ─────┤ X ├
 Time taken: 0.3742101192474365
 </pre></div></div>
 </div>
-<p>The fitter will output a density matrix ordered according to how we passed in the registers to <code class="docutils literal notranslate"><span class="pre">state_tomography_circuits</span></code>.</p>
+<p>擬合器會輸出一個密度矩陣，此密度矩陣會根據我們把暫存器傳遞至``state_tomography_circuits`` 的方式被排序。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -738,8 +745,8 @@ State Fidelity: F = 0.99796
 </pre></div></div>
 </div>
 </section>
-<section id="Repeat-the-Example-with-Measurement-Noise">
-<h3>Repeat the Example with Measurement Noise<a class="headerlink" href="#Repeat-the-Example-with-Measurement-Noise" title="本標題的永久連結">¶</a></h3>
+<section id="重複測量雜訊的範例">
+<h3>重複測量雜訊的範例<a class="headerlink" href="#重複測量雜訊的範例" title="本標題的永久連結">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -1044,8 +1051,8 @@ State fidelity: F = 0.99430
 </section>
 <section id="2-量子位元條件式斷層掃描">
 <h2>2 量子位元條件式斷層掃描<a class="headerlink" href="#2-量子位元條件式斷層掃描" title="本標題的永久連結">¶</a></h2>
-<p>In this example, we have a three-qubit system where one of the qubits will be an ancilla for performing state tomography, i.e. only perform tomography when the third qubit is in the state “1”. The circuit is setup in such a way that after conditional tomography we will get a Bell state on the first two qubits.</p>
-<p>First make a 3Q GHZ state with no classical measurements.</p>
+<p>在這個例子中，我們有一個 3 量子位元系統，其中一個量子位元會是一個用來執行狀態斷層掃描的輔助量子位元，也就是說僅當第三個量子位元處於狀態 “1” 時才執行斷層掃描。 該電路的設置使得前 2 個量子位元在條件斷層掃描後處於 Bell 態。</p>
+<p>在沒有古典測量的情況下，先做一個三量子位元 GHZ 狀態。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -1076,7 +1083,7 @@ q11_2: ──────────┤ X ├┤ H ├
                  └───┘└───┘
 </pre></div></div>
 </div>
-<p>Here we are going to generate and run the state tomography circuits. Only pass the registers we want to perform state tomography on. The code will generate a new classical register for only those measurements.</p>
+<p>在這裡，我們將生成並運行狀態斷層掃描電路。 我們只傳遞我們想進行狀態斷層掃描的暫存器。 此代碼只會為那些測量產生新的古典暫存器。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -1103,7 +1110,7 @@ c10: 2/════════════════════════�
                                     0  1
 </pre></div></div>
 </div>
-<p>Now make a copy of this circuit (we will need it for the fitter) and make a new circuit with an ancilla measurement attached (this is what will be run):</p>
+<p>現在製作這個電路的副本（我們會需要把此電路給擬合器使用），並製作有輔助測量的新電路（這就是將會被執行的電路）：</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1129,7 +1136,7 @@ c10: 2/════════════════════════�
 </pre></div>
 </div>
 </div>
-<p>Before sending the results to the state tomography fitter we must strip the register for the Q2 measurement and only keep the results when that register is 1.</p>
+<p>在將結果傳送到狀態斷層掃描擬合器之前，我們必須將 Q2 測量的暫存器清理，並且只在該暫存器為 1 時保留結果。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -1196,7 +1203,7 @@ array([[ 0.502+0.j   ,  0.   +0.001j,  0.004+0.001j, -0.498-0.006j],
 <section id="1-量子位元閘集斷層掃描範例">
 <h2>1 量子位元閘集斷層掃描範例<a class="headerlink" href="#1-量子位元閘集斷層掃描範例" title="本標題的永久連結">¶</a></h2>
 <p>The main difference between gate set tomography and process tomography is that in gate set tomography, the input consists of a gate set basis: A set of gates that are both used in the initialization/measurement phase of the tomography, and are being reconstructed.</p>
-<p>Qiskit supplies a default gateset basis; in order to use this gateset basis in order to reconstruct another gate, this gate should be added to the basis. We use the following method to simplify the process:</p>
+<p>Qiskit 提供預設的閘集基底；為了使用此閘集基底以重建另一個閘，該閘應該被加入此基底。 我們使用以下方法來簡化程序：</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1224,8 +1231,8 @@ array([[ 0.502+0.j   ,  0.   +0.001j,  0.004+0.001j, -0.498-0.006j],
 </pre></div>
 </div>
 </div>
-<section id="Noiseless-1-qubit-gate-set-tomography">
-<h3>Noiseless 1-qubit gate set tomography<a class="headerlink" href="#Noiseless-1-qubit-gate-set-tomography" title="本標題的永久連結">¶</a></h3>
+<section id="無雜訊的-1-量子位元閘集斷層掃描">
+<h3>無雜訊的 1 量子位元閘集斷層掃描<a class="headerlink" href="#無雜訊的-1-量子位元閘集斷層掃描" title="本標題的永久連結">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -1303,7 +1310,7 @@ Average gate fidelity: F = 1.00084
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1326,7 +1333,7 @@ Average gate fidelity: F = 1.00084
 <li><a class="reference internal" href="#簡介">簡介</a></li>
 <li><a class="reference internal" href="#初始範例">初始範例</a><ul>
 <li><a class="reference internal" href="#二量子位元狀態斷層掃描範例">二量子位元狀態斷層掃描範例</a></li>
-<li><a class="reference internal" href="#Repeat-the-Example-with-Measurement-Noise">Repeat the Example with Measurement Noise</a></li>
+<li><a class="reference internal" href="#重複測量雜訊的範例">重複測量雜訊的範例</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#單量子位元過程斷層掃描範例">單量子位元過程斷層掃描範例</a></li>
@@ -1339,7 +1346,7 @@ Average gate fidelity: F = 1.00084
 </li>
 <li><a class="reference internal" href="#閘集斷層掃描">閘集斷層掃描</a><ul>
 <li><a class="reference internal" href="#1-量子位元閘集斷層掃描範例">1 量子位元閘集斷層掃描範例</a><ul>
-<li><a class="reference internal" href="#Noiseless-1-qubit-gate-set-tomography">Noiseless 1-qubit gate set tomography</a></li>
+<li><a class="reference internal" href="#無雜訊的-1-量子位元閘集斷層掃描">無雜訊的 1 量子位元閘集斷層掃描</a></li>
 </ul>
 </li>
 </ul>
@@ -1408,7 +1415,7 @@ Average gate fidelity: F = 1.00084
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1431,9 +1438,11 @@ Average gate fidelity: F = 1.00084
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,44 +1,37 @@
-﻿qiskit.algorithms.IterativeAmplitudeEstimationResult
-====================================================
+﻿IterativeAmplitudeEstimationResult
+==================================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: IterativeAmplitudeEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IterativeAmplitudeEstimationResult.__init__
-      ~IterativeAmplitudeEstimationResult.combine
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~IterativeAmplitudeEstimationResult.combine
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IterativeAmplitudeEstimationResult.alpha
-      ~IterativeAmplitudeEstimationResult.circuit_results
-      ~IterativeAmplitudeEstimationResult.confidence_interval
-      ~IterativeAmplitudeEstimationResult.confidence_interval_processed
-      ~IterativeAmplitudeEstimationResult.epsilon_estimated
-      ~IterativeAmplitudeEstimationResult.epsilon_estimated_processed
-      ~IterativeAmplitudeEstimationResult.epsilon_target
-      ~IterativeAmplitudeEstimationResult.estimate_intervals
-      ~IterativeAmplitudeEstimationResult.estimation
-      ~IterativeAmplitudeEstimationResult.estimation_processed
-      ~IterativeAmplitudeEstimationResult.num_oracle_queries
-      ~IterativeAmplitudeEstimationResult.post_processing
-      ~IterativeAmplitudeEstimationResult.powers
-      ~IterativeAmplitudeEstimationResult.ratios
-      ~IterativeAmplitudeEstimationResult.shots
-      ~IterativeAmplitudeEstimationResult.theta_intervals
-   
-   
+   .. autoattribute:: alpha
+   .. autoattribute:: circuit_results
+   .. autoattribute:: confidence_interval
+   .. autoattribute:: confidence_interval_processed
+   .. autoattribute:: epsilon_estimated
+   .. autoattribute:: epsilon_estimated_processed
+   .. autoattribute:: epsilon_target
+   .. autoattribute:: estimate_intervals
+   .. autoattribute:: estimation
+   .. autoattribute:: estimation_processed
+   .. autoattribute:: num_oracle_queries
+   .. autoattribute:: post_processing
+   .. autoattribute:: powers
+   .. autoattribute:: ratios
+   .. autoattribute:: shots
+   .. autoattribute:: theta_intervals

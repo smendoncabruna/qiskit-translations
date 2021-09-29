@@ -1,19 +1,18 @@
-﻿qiskit.dagcircuit.DAGCircuit
-============================
+﻿DAGCircuit
+==========
 
 .. currentmodule:: qiskit.dagcircuit
 
 .. autoclass:: DAGCircuit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DAGCircuit.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DAGCircuit.add_calibration
       ~DAGCircuit.add_clbits
       ~DAGCircuit.add_creg
@@ -76,18 +75,12 @@
       ~DAGCircuit.twoQ_gates
       ~DAGCircuit.two_qubit_ops
       ~DAGCircuit.width
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DAGCircuit.calibrations
-      ~DAGCircuit.global_phase
-      ~DAGCircuit.node_counter
-      ~DAGCircuit.wires
-   
-   
+   .. autoattribute:: calibrations
+   .. autoattribute:: global_phase
+   .. autoattribute:: node_counter
+   .. autoattribute:: wires

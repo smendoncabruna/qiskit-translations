@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Stinespring
-================================
+﻿Stinespring
+===========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Stinespring
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Stinespring.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Stinespring.adjoint
       ~Stinespring.compose
       ~Stinespring.conjugate
@@ -32,21 +31,15 @@
       ~Stinespring.to_instruction
       ~Stinespring.to_operator
       ~Stinespring.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Stinespring.atol
-      ~Stinespring.data
-      ~Stinespring.dim
-      ~Stinespring.num_qubits
-      ~Stinespring.qargs
-      ~Stinespring.rtol
-      ~Stinespring.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

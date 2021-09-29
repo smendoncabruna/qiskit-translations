@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.connectors.torch_connector &mdash; Qiskit Machine Learning 0.2.0 文档</title>
+  <title>qiskit_machine_learning.connectors.torch_connector &mdash; Qiskit Machine Learning 0.2.1 文档</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/connectors/torch_connector.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/connectors/torch_connector.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/connectors/torch_connector.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/connectors/torch_connector.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/connectors/torch_connector.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/connectors/torch_connector.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -473,9 +479,18 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_neural_network</span> <span class="o">=</span> <span class="n">neural_network</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">_sparse</span> <span class="o">=</span> <span class="n">sparse</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_weights</span> <span class="o">=</span> <span class="n">TorchParam</span><span class="p">(</span><span class="n">Tensor</span><span class="p">(</span><span class="n">neural_network</span><span class="o">.</span><span class="n">num_weights</span><span class="p">))</span>
+
+        <span class="n">weight_param</span> <span class="o">=</span> <span class="n">TorchParam</span><span class="p">(</span><span class="n">Tensor</span><span class="p">(</span><span class="n">neural_network</span><span class="o">.</span><span class="n">num_weights</span><span class="p">))</span>
+        <span class="c1"># Register param. in graph following PyTorch naming convention</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register_parameter</span><span class="p">(</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">weight_param</span><span class="p">)</span>
+        <span class="c1"># If `weight_param` is assigned to `self._weights` after registration,</span>
+        <span class="c1"># it will not be re-registered, and we can keep the private var. name</span>
+        <span class="c1"># &quot;_weights&quot; for compatibility. The alternative, doing:</span>
+        <span class="c1"># `self._weights = TorchParam(Tensor(neural_network.num_weights))`</span>
+        <span class="c1"># would register the parameter with the name &quot;_weights&quot;.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_weights</span> <span class="o">=</span> <span class="n">weight_param</span>
+
         <span class="k">if</span> <span class="n">initial_weights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_weights</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">uniform_</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>

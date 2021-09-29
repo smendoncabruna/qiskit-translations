@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.eigs.Eigenvalues &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>Eigenvalues &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Tárgymutató" href="../genindex.html" />
     <link rel="search" title="Keresés" href="../search.html" />
-    <link rel="next" title="qiskit.aqua.components.eigs.EigsQPE" href="qiskit.aqua.components.eigs.EigsQPE.html" />
+    <link rel="next" title="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit" href="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit.html" />
     <link rel="prev" title="Eigenvalues (qiskit.aqua.components.eigs)" href="../apidoc/qiskit.aqua.components.eigs.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.components.eigs.html">Eigenvalues (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.components.eigs</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.components.eigs.Eigenvalues</li>
+      <li>Eigenvalues</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,20 +339,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-components-eigs-eigenvalues">
-<h1>qiskit.aqua.components.eigs.Eigenvalues<a class="headerlink" href="#qiskit-aqua-components-eigs-eigenvalues" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+  <section id="eigenvalues">
+<h1>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.components.eigs.Eigenvalues">
 <em class="property">class </em><code class="sig-name descname">Eigenvalues</code><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs.html#Eigenvalues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.Eigenvalues" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Base class for eigenvalue estimation.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for eigenvalue estimation.</p>
 <p>This method should initialize the module and
 use an exception if a component of the module is not available.</p>
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.Eigenvalues.__init__">
-<em class="property">abstract </em><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs.html#Eigenvalues.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.Eigenvalues.__init__" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -353,89 +355,20 @@ use an exception if a component of the module is not available.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.Eigenvalues.__init__" title="qiskit.aqua.components.eigs.Eigenvalues.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p>Initialize self.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.Eigenvalues.construct_circuit" title="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(mode[, register])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit.html#qiskit.aqua.components.eigs.Eigenvalues.construct_circuit" title="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the eigenvalue estimation quantum circuit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.Eigenvalues.construct_inverse" title="qiskit.aqua.components.eigs.Eigenvalues.construct_inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_inverse</span></code></a>(mode, circuit)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.Eigenvalues.construct_inverse.html#qiskit.aqua.components.eigs.Eigenvalues.construct_inverse" title="qiskit.aqua.components.eigs.Eigenvalues.construct_inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_inverse</span></code></a></p></td>
 <td><p>Construct the inverse eigenvalue estimation quantum circuit.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes" title="qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_register_sizes</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes.html#qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes" title="qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_register_sizes</span></code></a></p></td>
 <td><p>get register sizes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.eigs.Eigenvalues.get_scaling" title="qiskit.aqua.components.eigs.Eigenvalues.get_scaling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scaling</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.eigs.Eigenvalues.get_scaling.html#qiskit.aqua.components.eigs.Eigenvalues.get_scaling" title="qiskit.aqua.components.eigs.Eigenvalues.get_scaling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scaling</span></code></a></p></td>
 <td><p>get scaling</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit">
-<em class="property">abstract </em><code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">register</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs.html#Eigenvalues.construct_circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.Eigenvalues.construct_circuit" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Construct the eigenvalue estimation quantum circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mode</strong> (<em>str</em>) – «matrix» or «circuit»</p></li>
-<li><p><strong>register</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) – register for circuit construction
-where eigenvalues will be stored.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Visszatérési érték</dt>
-<dd class="field-even"><p>object for the eigenvalue estimation circuit.</p>
-</dd>
-<dt class="field-odd">Visszatérés típusa</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-<dt class="field-even">Kivétel</dt>
-<dd class="field-even"><p><strong>NotImplementedError</strong> – not implemented</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.Eigenvalues.construct_inverse">
-<code class="sig-name descname">construct_inverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span></em>, <em class="sig-param"><span class="n">circuit</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs.html#Eigenvalues.construct_inverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.Eigenvalues.construct_inverse" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>Construct the inverse eigenvalue estimation quantum circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paraméterek</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>mode</strong> (<em>str</em>) – construction mode, «matrix» not supported</p></li>
-<li><p><strong>circuit</strong> (<a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><em>QuantumCircuit</em></a>) – the quantum circuit to invert</p></li>
-</ul>
-</dd>
-<dt class="field-even">Visszatérési érték</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>object for of the inverted eigenvalue estimation</dt><dd><p>circuit.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Visszatérés típusa</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-<dt class="field-even">Kivétel</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>NotImplementedError</strong> – not implemented for matrix mode</p></li>
-<li><p><strong>ValueError</strong> – Circuit was not constructed beforehand</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes">
-<em class="property">abstract </em><code class="sig-name descname">get_register_sizes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs.html#Eigenvalues.get_register_sizes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.Eigenvalues.get_register_sizes" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>get register sizes</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.eigs.Eigenvalues.get_scaling">
-<em class="property">abstract </em><code class="sig-name descname">get_scaling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/eigs/eigs.html#Eigenvalues.get_scaling"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.eigs.Eigenvalues.get_scaling" title="Hivatkozás erre a definícióra">¶</a></dt>
-<dd><p>get scaling</p>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -448,7 +381,7 @@ where eigenvalues will be stored.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.aqua.components.eigs.EigsQPE.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.eigs.EigsQPE" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.eigs.Eigenvalues.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/qiskit.aqua.components.eigs.html" class="btn btn-neutral" title="Eigenvalues (qiskit.aqua.components.eigs)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -465,7 +398,7 @@ where eigenvalues will be stored.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -484,7 +417,7 @@ where eigenvalues will be stored.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.components.eigs.Eigenvalues</a></li>
+<li><a class="reference internal" href="#">Eigenvalues</a></li>
 </ul>
 
             </div>
@@ -548,7 +481,7 @@ where eigenvalues will be stored.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -571,9 +504,11 @@ where eigenvalues will be stored.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

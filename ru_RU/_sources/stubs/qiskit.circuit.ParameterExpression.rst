@@ -1,19 +1,18 @@
-﻿qiskit.circuit.ParameterExpression
-==================================
+﻿ParameterExpression
+===================
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: ParameterExpression
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ParameterExpression.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ParameterExpression.arccos
       ~ParameterExpression.arcsin
       ~ParameterExpression.arctan
@@ -28,15 +27,9 @@
       ~ParameterExpression.sin
       ~ParameterExpression.subs
       ~ParameterExpression.tan
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ParameterExpression.parameters
-   
-   
+   .. autoattribute:: parameters

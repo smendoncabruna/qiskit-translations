@@ -1,19 +1,18 @@
-﻿qiskit.finance.data\_providers.YahooDataProvider
-================================================
+﻿YahooDataProvider
+=================
 
 .. currentmodule:: qiskit.finance.data_providers
 
 .. autoclass:: YahooDataProvider
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~YahooDataProvider.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~YahooDataProvider.get_coordinates
       ~YahooDataProvider.get_covariance_matrix
       ~YahooDataProvider.get_mean_vector
@@ -21,9 +20,5 @@
       ~YahooDataProvider.get_period_return_mean_vector
       ~YahooDataProvider.get_similarity_matrix
       ~YahooDataProvider.run
-   
-   
 
-   
-   
-   
+

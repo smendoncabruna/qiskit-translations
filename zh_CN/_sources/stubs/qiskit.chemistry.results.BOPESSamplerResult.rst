@@ -1,31 +1,24 @@
-﻿qiskit.chemistry.results.BOPESSamplerResult
-===========================================
+﻿BOPESSamplerResult
+==================
 
 .. currentmodule:: qiskit.chemistry.results
 
 .. autoclass:: BOPESSamplerResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BOPESSamplerResult.__init__
-      ~BOPESSamplerResult.point_results
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~BOPESSamplerResult.point_results
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BOPESSamplerResult.energies
-      ~BOPESSamplerResult.points
-      ~BOPESSamplerResult.raw_results
-   
-   
+   .. autoattribute:: energies
+   .. autoattribute:: points
+   .. autoattribute:: raw_results

@@ -1,49 +1,28 @@
-﻿qiskit.circuit.library.YGate
-============================
+﻿YGate
+=====
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: YGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~YGate.__init__
-      ~YGate.add_decomposition
-      ~YGate.assemble
-      ~YGate.broadcast_arguments
-      ~YGate.c_if
-      ~YGate.control
-      ~YGate.copy
-      ~YGate.inverse
-      ~YGate.is_parameterized
-      ~YGate.mirror
-      ~YGate.power
-      ~YGate.qasm
-      ~YGate.repeat
-      ~YGate.reverse_ops
-      ~YGate.soft_compare
-      ~YGate.to_matrix
-      ~YGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~YGate.control
+      ~YGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~YGate.decompositions
-      ~YGate.definition
-      ~YGate.duration
-      ~YGate.label
-      ~YGate.params
-      ~YGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

@@ -1,23 +1,18 @@
-﻿qiskit.algorithms.HamiltonianPhaseEstimation
-============================================
+﻿HamiltonianPhaseEstimation
+==========================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: HamiltonianPhaseEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HamiltonianPhaseEstimation.__init__
-      ~HamiltonianPhaseEstimation.estimate
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~HamiltonianPhaseEstimation.estimate
+
+

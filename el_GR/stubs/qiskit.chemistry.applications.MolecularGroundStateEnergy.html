@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.chemistry.applications.MolecularGroundStateEnergy &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>MolecularGroundStateEnergy &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="Chemistry Components (qiskit.chemistry.components)" href="../apidoc/qiskit.chemistry.components.html" />
+    <link rel="next" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" href="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy.html" />
     <link rel="prev" title="Chemistry Applications (qiskit.chemistry.applications)" href="../apidoc/qiskit.chemistry.applications.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.chemistry.applications.html">Chemistry Applications (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.chemistry.applications</span></code>)</a> &gt;</li>
         
-      <li>qiskit.chemistry.applications.MolecularGroundStateEnergy</li>
+      <li>MolecularGroundStateEnergy</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,18 +337,19 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-chemistry-applications-moleculargroundstateenergy">
-<h1>qiskit.chemistry.applications.MolecularGroundStateEnergy<a class="headerlink" href="#qiskit-chemistry-applications-moleculargroundstateenergy" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="moleculargroundstateenergy">
+<h1>MolecularGroundStateEnergy<a class="headerlink" href="#moleculargroundstateenergy" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.chemistry.applications.MolecularGroundStateEnergy">
 <em class="property">class </em><code class="sig-name descname">MolecularGroundStateEnergy</code><span class="sig-paren">(</span><em class="sig-param">driver</em>, <em class="sig-param">solver=None</em>, <em class="sig-param">transformation=&lt;TransformationType.FULL: 'full'&gt;</em>, <em class="sig-param">qubit_mapping=&lt;QubitMappingType.PARITY: 'parity'&gt;</em>, <em class="sig-param">two_qubit_reduction=True</em>, <em class="sig-param">freeze_core=False</em>, <em class="sig-param">orbital_reduction=None</em>, <em class="sig-param">z2symmetry_reduction=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/applications/molecular_ground_state_energy.html#MolecularGroundStateEnergy"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Molecular ground state energy chemistry application</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Molecular ground state energy chemistry application</p>
 <dl class="field-list simple">
 <dt class="field-odd">Παράμετροι</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>driver</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">FermionicDriver</span></code>) – Chemistry driver</p></li>
 <li><p><strong>solver</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code>]) – An Aqua MinimumEigensolver. This can be provided on the constructor or
-via the solver property, or via the callback on <a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_energy()</span></code></a></p></li>
+via the solver property, or via the callback on <a class="reference internal" href="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy.html#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_energy()</span></code></a></p></li>
 <li><p><strong>transformation</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TransformationType</span></code>) – full or particle_hole</p></li>
 <li><p><strong>qubit_mapping</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QubitMappingType</span></code>) – jordan_wigner, parity or bravyi_kitaev</p></li>
 <li><p><strong>two_qubit_reduction</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether two qubit reduction should be used,
@@ -359,34 +367,6 @@ processing behind this class.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.chemistry.applications.MolecularGroundStateEnergy.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">driver</em>, <em class="sig-param">solver=None</em>, <em class="sig-param">transformation=&lt;TransformationType.FULL: 'full'&gt;</em>, <em class="sig-param">qubit_mapping=&lt;QubitMappingType.PARITY: 'parity'&gt;</em>, <em class="sig-param">two_qubit_reduction=True</em>, <em class="sig-param">freeze_core=False</em>, <em class="sig-param">orbital_reduction=None</em>, <em class="sig-param">z2symmetry_reduction=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/applications/molecular_ground_state_energy.html#MolecularGroundStateEnergy.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>driver</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">FermionicDriver</span></code>) – Chemistry driver</p></li>
-<li><p><strong>solver</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code>]) – An Aqua MinimumEigensolver. This can be provided on the constructor or
-via the solver property, or via the callback on <a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_energy()</span></code></a></p></li>
-<li><p><strong>transformation</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TransformationType</span></code>) – full or particle_hole</p></li>
-<li><p><strong>qubit_mapping</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QubitMappingType</span></code>) – jordan_wigner, parity or bravyi_kitaev</p></li>
-<li><p><strong>two_qubit_reduction</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether two qubit reduction should be used,
-when parity mapping only</p></li>
-<li><p><strong>freeze_core</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to freeze core orbitals when possible</p></li>
-<li><p><strong>orbital_reduction</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – Orbital list to be frozen or removed</p></li>
-<li><p><strong>z2symmetry_reduction</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – If z2 symmetry reduction should be applied to the qubit operators
-that are computed. Setting “auto” will
-use an automatic computation of the correct sector. If from other experiments, with
-the z2symmetry logic, the sector is known, then the tapering values of that sector
-can be provided (a list of int of values -1, and 1). The default is None
-meaning no symmetry reduction is done.
-See also <a class="reference internal" href="qiskit.chemistry.core.Hamiltonian.html#qiskit.chemistry.core.Hamiltonian" title="qiskit.chemistry.core.Hamiltonian"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hamiltonian</span></code></a> which has the core
-processing behind this class.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -394,66 +374,18 @@ processing behind this class.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.__init__" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(driver[, solver, transformation, …])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type driver</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FermionicDriver</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_energy</span></code></a>([callback])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy.html#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_energy</span></code></a></p></td>
 <td><p>Compute the ground state energy of the molecule that was supplied via the driver</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_solver</span></code></a>(quantum_instance)</p></td>
-<td><p>Get the default solver callback that can be used with <a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_energy()</span></code></a> :type quantum_instance: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>] :param quantum_instance: A Backend/Quantum Instance for the solver to run on</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver.html#qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_solver</span></code></a></p></td>
+<td><p>Get the default solver callback that can be used with <a class="reference internal" href="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy.html#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_energy()</span></code></a> :type quantum_instance: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>] :param quantum_instance: A Backend/Quantum Instance for the solver to run on</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.driver" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.driver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">driver</span></code></a></p></td>
-<td><p>Returns chemistry driver</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.solver" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.solver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solver</span></code></a></p></td>
-<td><p>Returns minimum eigen solver</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy">
-<code class="sig-name descname">compute_energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/applications/molecular_ground_state_energy.html#MolecularGroundStateEnergy.compute_energy"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Compute the ground state energy of the molecule that was supplied via the driver</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><p><strong>callback</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Z2Symmetries</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code>]]) – If not None will be called with the following values
-num_particles, num_orbitals, qubit_mapping, two_qubit_reduction, z2_symmetries
-in that order. This information can then be used to setup chemistry
-specific component(s) that are needed by the chosen MinimumEigensolver.
-The MinimumEigensolver can then be built and returned from this callback
-for use as the solver here.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MolecularGroundStateResult</span></code></p>
-</dd>
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>A molecular ground state result</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.chemistry.QiskitChemistryError.html#qiskit.chemistry.QiskitChemistryError" title="qiskit.chemistry.QiskitChemistryError"><strong>QiskitChemistryError</strong></a> – If no MinimumEigensolver was given and no callback is being
-    used that could supply one instead.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.chemistry.applications.MolecularGroundStateEnergy.driver">
-<em class="property">property </em><code class="sig-name descname">driver</code><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.driver" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">driver</code><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.driver" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Returns chemistry driver</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -462,25 +394,9 @@ for use as the solver here.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver">
-<em class="property">static </em><code class="sig-name descname">get_default_solver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantum_instance</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/chemistry/applications/molecular_ground_state_energy.html#MolecularGroundStateEnergy.get_default_solver"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.get_default_solver" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Get the default solver callback that can be used with <a class="reference internal" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">compute_energy()</span></code></a>
-:type quantum_instance: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>]
-:param quantum_instance: A Backend/Quantum Instance for the solver to run on</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Z2Symmetries</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code>]]</p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>Default solver callback</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.chemistry.applications.MolecularGroundStateEnergy.solver">
-<em class="property">property </em><code class="sig-name descname">solver</code><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.solver" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">solver</code><a class="headerlink" href="#qiskit.chemistry.applications.MolecularGroundStateEnergy.solver" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Returns minimum eigen solver</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -501,7 +417,7 @@ for use as the solver here.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.chemistry.components.html" class="btn btn-neutral float-right" title="Chemistry Components (qiskit.chemistry.components)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy.html" class="btn btn-neutral float-right" title="qiskit.chemistry.applications.MolecularGroundStateEnergy.compute_energy" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/qiskit.chemistry.applications.html" class="btn btn-neutral" title="Chemistry Applications (qiskit.chemistry.applications)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -518,7 +434,7 @@ for use as the solver here.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -537,7 +453,7 @@ for use as the solver here.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.chemistry.applications.MolecularGroundStateEnergy</a></li>
+<li><a class="reference internal" href="#">MolecularGroundStateEnergy</a></li>
 </ul>
 
             </div>
@@ -601,7 +517,7 @@ for use as the solver here.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -624,9 +540,11 @@ for use as the solver here.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

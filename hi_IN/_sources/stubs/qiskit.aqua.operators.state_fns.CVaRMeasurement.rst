@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.state\_fns.CVaRMeasurement
-================================================
+﻿CVaRMeasurement
+===============
 
 .. currentmodule:: qiskit.aqua.operators.state_fns
 
 .. autoclass:: CVaRMeasurement
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CVaRMeasurement.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CVaRMeasurement.add
       ~CVaRMeasurement.adjoint
       ~CVaRMeasurement.assign_parameters
@@ -39,22 +38,16 @@
       ~CVaRMeasurement.to_matrix
       ~CVaRMeasurement.to_matrix_op
       ~CVaRMeasurement.traverse
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CVaRMeasurement.ENABLE_DEPRECATION
-      ~CVaRMeasurement.INDENTATION
-      ~CVaRMeasurement.alpha
-      ~CVaRMeasurement.coeff
-      ~CVaRMeasurement.is_measurement
-      ~CVaRMeasurement.num_qubits
-      ~CVaRMeasurement.parameters
-      ~CVaRMeasurement.primitive
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: alpha
+   .. autoattribute:: coeff
+   .. autoattribute:: is_measurement
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters
+   .. autoattribute:: primitive

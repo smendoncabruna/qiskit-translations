@@ -1,25 +1,20 @@
-﻿qiskit.algorithms.PhaseEstimation
-=================================
+﻿PhaseEstimation
+===============
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: PhaseEstimation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PhaseEstimation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PhaseEstimation.construct_circuit
       ~PhaseEstimation.estimate
       ~PhaseEstimation.estimate_from_pe_circuit
-   
-   
 
-   
-   
-   
+

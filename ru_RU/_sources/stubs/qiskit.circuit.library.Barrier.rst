@@ -1,46 +1,29 @@
-﻿qiskit.circuit.library.Barrier
-==============================
+﻿Barrier
+=======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: Barrier
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~Barrier.__init__
-      ~Barrier.add_decomposition
-      ~Barrier.assemble
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Barrier.broadcast_arguments
       ~Barrier.c_if
-      ~Barrier.copy
       ~Barrier.inverse
-      ~Barrier.is_parameterized
-      ~Barrier.mirror
-      ~Barrier.qasm
-      ~Barrier.repeat
-      ~Barrier.reverse_ops
-      ~Barrier.soft_compare
-      ~Barrier.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Barrier.decompositions
-      ~Barrier.definition
-      ~Barrier.duration
-      ~Barrier.label
-      ~Barrier.params
-      ~Barrier.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

@@ -1,24 +1,19 @@
-﻿qiskit.qobj.QasmQobjConfig
-==========================
+﻿QasmQobjConfig
+==============
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: QasmQobjConfig
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QasmQobjConfig.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QasmQobjConfig.from_dict
       ~QasmQobjConfig.to_dict
-   
-   
 
-   
-   
-   
+

@@ -1,23 +1,18 @@
-﻿qiskit.aqua.operators.gradients.CircuitQFI
-==========================================
+﻿CircuitQFI
+==========
 
 .. currentmodule:: qiskit.aqua.operators.gradients
 
 .. autoclass:: CircuitQFI
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CircuitQFI.__init__
-      ~CircuitQFI.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~CircuitQFI.convert
+
+

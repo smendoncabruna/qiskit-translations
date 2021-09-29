@@ -1,34 +1,20 @@
-﻿qiskit.qasm.QasmTerminalStyle
-=============================
+﻿QasmTerminalStyle
+=================
 
 .. currentmodule:: qiskit.qasm
 
 .. autoclass:: QasmTerminalStyle
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~QasmTerminalStyle.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QasmTerminalStyle.background_color
-      ~QasmTerminalStyle.highlight_color
-      ~QasmTerminalStyle.line_number_background_color
-      ~QasmTerminalStyle.line_number_color
-      ~QasmTerminalStyle.line_number_special_background_color
-      ~QasmTerminalStyle.line_number_special_color
-      ~QasmTerminalStyle.styles
-   
-   
+   .. autoattribute:: background_color
+   .. autoattribute:: highlight_color
+   .. autoattribute:: line_number_background_color
+   .. autoattribute:: line_number_color
+   .. autoattribute:: line_number_special_background_color
+   .. autoattribute:: line_number_special_color
+   .. autoattribute:: styles

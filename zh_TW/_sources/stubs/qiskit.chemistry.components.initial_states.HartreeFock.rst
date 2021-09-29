@@ -1,29 +1,22 @@
-﻿qiskit.chemistry.components.initial\_states.HartreeFock
-=======================================================
+﻿HartreeFock
+===========
 
 .. currentmodule:: qiskit.chemistry.components.initial_states
 
 .. autoclass:: HartreeFock
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HartreeFock.__init__
-      ~HartreeFock.construct_circuit
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~HartreeFock.construct_circuit
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HartreeFock.bitstr
-   
-   
+   .. autoattribute:: bitstr

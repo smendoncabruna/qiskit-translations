@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.optimizers.IMFIL
-=======================================
+﻿IMFIL
+=====
 
 .. currentmodule:: qiskit.aqua.components.optimizers
 
 .. autoclass:: IMFIL
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IMFIL.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IMFIL.get_support_level
       ~IMFIL.gradient_num_diff
       ~IMFIL.optimize
@@ -21,27 +20,21 @@
       ~IMFIL.set_max_evals_grouped
       ~IMFIL.set_options
       ~IMFIL.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IMFIL.bounds_support_level
-      ~IMFIL.gradient_support_level
-      ~IMFIL.initial_point_support_level
-      ~IMFIL.is_bounds_ignored
-      ~IMFIL.is_bounds_required
-      ~IMFIL.is_bounds_supported
-      ~IMFIL.is_gradient_ignored
-      ~IMFIL.is_gradient_required
-      ~IMFIL.is_gradient_supported
-      ~IMFIL.is_initial_point_ignored
-      ~IMFIL.is_initial_point_required
-      ~IMFIL.is_initial_point_supported
-      ~IMFIL.setting
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting

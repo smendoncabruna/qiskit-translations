@@ -1,23 +1,18 @@
-﻿qiskit.algorithms.LinearSolver
-==============================
+﻿LinearSolver
+============
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: LinearSolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LinearSolver.__init__
-      ~LinearSolver.solve
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~LinearSolver.solve
+
+

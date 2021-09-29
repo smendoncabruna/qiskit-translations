@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.QSVM
-===========================
+﻿QSVM
+====
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: QSVM
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QSVM.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QSVM.construct_circuit
       ~QSVM.construct_kernel_matrix
       ~QSVM.get_kernel_matrix
@@ -27,19 +26,13 @@
       ~QSVM.setup_training_data
       ~QSVM.test
       ~QSVM.train
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QSVM.BATCH_SIZE
-      ~QSVM.backend
-      ~QSVM.quantum_instance
-      ~QSVM.random
-      ~QSVM.ret
-   
-   
+   .. autoattribute:: BATCH_SIZE
+   .. autoattribute:: backend
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: ret

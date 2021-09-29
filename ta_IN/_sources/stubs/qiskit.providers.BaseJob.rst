@@ -1,19 +1,18 @@
-﻿qiskit.providers.BaseJob
-========================
+﻿BaseJob
+=======
 
 .. currentmodule:: qiskit.providers
 
 .. autoclass:: BaseJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BaseJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BaseJob.backend
       ~BaseJob.cancel
       ~BaseJob.cancelled
@@ -25,9 +24,5 @@
       ~BaseJob.status
       ~BaseJob.submit
       ~BaseJob.wait_for_final_state
-   
-   
 
-   
-   
-   
+

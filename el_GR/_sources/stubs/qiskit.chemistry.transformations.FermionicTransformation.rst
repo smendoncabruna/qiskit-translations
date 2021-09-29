@@ -1,35 +1,28 @@
-﻿qiskit.chemistry.transformations.FermionicTransformation
-========================================================
+﻿FermionicTransformation
+=======================
 
 .. currentmodule:: qiskit.chemistry.transformations
 
 .. autoclass:: FermionicTransformation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FermionicTransformation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FermionicTransformation.build_hopping_operators
       ~FermionicTransformation.get_default_filter_criterion
       ~FermionicTransformation.interpret
       ~FermionicTransformation.transform
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FermionicTransformation.commutation_rule
-      ~FermionicTransformation.molecule_info
-      ~FermionicTransformation.qubit_mapping
-      ~FermionicTransformation.untapered_qubit_op
-   
-   
+   .. autoattribute:: commutation_rule
+   .. autoattribute:: molecule_info
+   .. autoattribute:: qubit_mapping
+   .. autoattribute:: untapered_qubit_op

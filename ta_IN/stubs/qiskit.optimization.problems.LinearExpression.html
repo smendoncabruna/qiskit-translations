@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.problems.LinearExpression &mdash; Qiskit 0.29.0 documentation</title>
+  <title>LinearExpression &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடல்" href="../search.html" />
-    <link rel="next" title="qiskit.optimization.problems.LinearConstraint" href="qiskit.optimization.problems.LinearConstraint.html" />
-    <link rel="prev" title="qiskit.optimization.problems.Constraint" href="qiskit.optimization.problems.Constraint.html" /> 
+    <link rel="next" title="qiskit.optimization.problems.LinearExpression.evaluate" href="qiskit.optimization.problems.LinearExpression.evaluate.html" />
+    <link rel="prev" title="qiskit.optimization.problems.Constraint.evaluate" href="qiskit.optimization.problems.Constraint.evaluate.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">ஆவண முகப்புப்பக்கம்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">முன்னணி</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API குறிப்புகள்</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit சிமுலேட்டர் (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit சோதனைகள் (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit பயன்பாட்டு பகுதிகள் (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM குவாண்டம் (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">பழுது கண்டறிதல்</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.optimization.problems.html">Optimization problems (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.optimization.problems</span></code>)</a> &gt;</li>
         
-      <li>qiskit.optimization.problems.LinearExpression</li>
+      <li>LinearExpression</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-optimization-problems-linearexpression">
-<h1>qiskit.optimization.problems.LinearExpression<a class="headerlink" href="#qiskit-optimization-problems-linearexpression" title="Permalink to this headline">¶</a></h1>
+  <section id="linearexpression">
+<h1>LinearExpression<a class="headerlink" href="#linearexpression" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.optimization.problems.LinearExpression">
 <em class="property">class </em><code class="sig-name descname">LinearExpression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quadratic_program</span></em>, <em class="sig-param"><span class="n">coefficients</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/linear_expression.html#LinearExpression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression" title="Permalink to this definition">¶</a></dt>
-<dd><p>Representation of a linear expression by its coefficients.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.optimization.problems.quadratic_program_element.QuadraticProgramElement</span></code></p>
+<p>Representation of a linear expression by its coefficients.</p>
 <p>Creates a new linear expression.</p>
 <p>The linear expression can be defined via an array, a list, a sparse matrix, or a dictionary
 that uses variable names or indices as keys and stores the values internally as a
@@ -348,23 +356,6 @@ dok_matrix.</p>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.optimization.problems.LinearExpression.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quadratic_program</span></em>, <em class="sig-param"><span class="n">coefficients</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/linear_expression.html#LinearExpression.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new linear expression.</p>
-<p>The linear expression can be defined via an array, a list, a sparse matrix, or a dictionary
-that uses variable names or indices as keys and stores the values internally as a
-dok_matrix.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>quadratic_program</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) -- The parent QuadraticProgram.</p></li>
-<li><p><strong>coefficients</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">spmatrix</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) -- The (sparse) representation of the coefficients.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -372,41 +363,24 @@ dok_matrix.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.__init__" title="qiskit.optimization.problems.LinearExpression.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(quadratic_program, coefficients)</p></td>
-<td><p>Creates a new linear expression.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.evaluate" title="qiskit.optimization.problems.LinearExpression.evaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.optimization.problems.LinearExpression.evaluate.html#qiskit.optimization.problems.LinearExpression.evaluate" title="qiskit.optimization.problems.LinearExpression.evaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate</span></code></a></p></td>
 <td><p>Evaluate the linear expression for given variables.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.evaluate_gradient" title="qiskit.optimization.problems.LinearExpression.evaluate_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate_gradient</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.optimization.problems.LinearExpression.evaluate_gradient.html#qiskit.optimization.problems.LinearExpression.evaluate_gradient" title="qiskit.optimization.problems.LinearExpression.evaluate_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate_gradient</span></code></a></p></td>
 <td><p>Evaluate the gradient of the linear expression for given variables.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.to_array" title="qiskit.optimization.problems.LinearExpression.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.optimization.problems.LinearExpression.to_array.html#qiskit.optimization.problems.LinearExpression.to_array" title="qiskit.optimization.problems.LinearExpression.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a></p></td>
 <td><p>Returns the coefficients of the linear expression as array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.to_dict" title="qiskit.optimization.problems.LinearExpression.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>([use_name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.optimization.problems.LinearExpression.to_dict.html#qiskit.optimization.problems.LinearExpression.to_dict" title="qiskit.optimization.problems.LinearExpression.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a></p></td>
 <td><p>Returns the coefficients of the linear expression as dictionary, either using variable names or indices as keys.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.coefficients" title="qiskit.optimization.problems.LinearExpression.coefficients"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coefficients</span></code></a></p></td>
-<td><p>Returns the coefficients of the linear expression.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.problems.LinearExpression.quadratic_program" title="qiskit.optimization.problems.LinearExpression.quadratic_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quadratic_program</span></code></a></p></td>
-<td><p>Returns the parent QuadraticProgram.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.problems.LinearExpression.coefficients">
-<em class="property">property </em><code class="sig-name descname">coefficients</code><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.coefficients" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">coefficients</code><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.coefficients" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the coefficients of the linear expression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -418,43 +392,9 @@ dok_matrix.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.optimization.problems.LinearExpression.evaluate">
-<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/linear_expression.html#LinearExpression.evaluate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.evaluate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the linear expression for given variables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) -- The values of the variables to be evaluated.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The value of the linear expression given the variable values.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.problems.LinearExpression.evaluate_gradient">
-<code class="sig-name descname">evaluate_gradient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/linear_expression.html#LinearExpression.evaluate_gradient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.evaluate_gradient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate the gradient of the linear expression for given variables.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]) -- The values of the variables to be evaluated.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The value of the gradient of the linear expression given the variable values.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.problems.LinearExpression.quadratic_program">
-<em class="property">property </em><code class="sig-name descname">quadratic_program</code><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.quadratic_program" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">quadratic_program</code><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.quadratic_program" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the parent QuadraticProgram.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -462,38 +402,6 @@ dok_matrix.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The parent QuadraticProgram.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.problems.LinearExpression.to_array">
-<code class="sig-name descname">to_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/linear_expression.html#LinearExpression.to_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.to_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the coefficients of the linear expression as array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An array with the coefficients corresponding to the linear expression.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.problems.LinearExpression.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">use_name</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/linear_expression.html#LinearExpression.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.LinearExpression.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the coefficients of the linear expression as dictionary, either using variable
-names or indices as keys.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>use_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) -- Determines whether to use index or names to refer to variables.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>An dictionary with the coefficients corresponding to the linear expression.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -510,10 +418,10 @@ names or indices as keys.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.optimization.problems.LinearConstraint.html" class="btn btn-neutral float-right" title="qiskit.optimization.problems.LinearConstraint" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.optimization.problems.LinearExpression.evaluate.html" class="btn btn-neutral float-right" title="qiskit.optimization.problems.LinearExpression.evaluate" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.optimization.problems.Constraint.html" class="btn btn-neutral" title="qiskit.optimization.problems.Constraint" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.optimization.problems.Constraint.evaluate.html" class="btn btn-neutral" title="qiskit.optimization.problems.Constraint.evaluate" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -527,7 +435,7 @@ names or indices as keys.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -546,7 +454,7 @@ names or indices as keys.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.optimization.problems.LinearExpression</a></li>
+<li><a class="reference internal" href="#">LinearExpression</a></li>
 </ul>
 
             </div>
@@ -610,7 +518,7 @@ names or indices as keys.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -633,9 +541,11 @@ names or indices as keys.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

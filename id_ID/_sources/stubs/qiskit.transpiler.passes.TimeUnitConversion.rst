@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.TimeUnitConversion
-===========================================
+﻿TimeUnitConversion
+==================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: TimeUnitConversion
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TimeUnitConversion.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TimeUnitConversion.name
       ~TimeUnitConversion.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TimeUnitConversion.is_analysis_pass
-      ~TimeUnitConversion.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

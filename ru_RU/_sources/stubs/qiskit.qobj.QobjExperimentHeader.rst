@@ -1,24 +1,19 @@
-﻿qiskit.qobj.QobjExperimentHeader
-================================
+﻿QobjExperimentHeader
+====================
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: QobjExperimentHeader
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QobjExperimentHeader.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QobjExperimentHeader.from_dict
       ~QobjExperimentHeader.to_dict
-   
-   
 
-   
-   
-   
+

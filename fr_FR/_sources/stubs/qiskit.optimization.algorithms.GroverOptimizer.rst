@@ -1,31 +1,24 @@
-﻿qiskit.optimization.algorithms.GroverOptimizer
-==============================================
+﻿GroverOptimizer
+===============
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: GroverOptimizer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GroverOptimizer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~GroverOptimizer.get_compatibility_msg
       ~GroverOptimizer.is_compatible
       ~GroverOptimizer.solve
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GroverOptimizer.quantum_instance
-   
-   
+   .. autoattribute:: quantum_instance

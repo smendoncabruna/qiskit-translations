@@ -1,23 +1,18 @@
-﻿qiskit.aqua.operators.evolutions.EvolutionFactory
-=================================================
+﻿EvolutionFactory
+================
 
 .. currentmodule:: qiskit.aqua.operators.evolutions
 
 .. autoclass:: EvolutionFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EvolutionFactory.__init__
-      ~EvolutionFactory.build
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~EvolutionFactory.build
+
+

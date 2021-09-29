@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.HHLResult
-================================
+﻿HHLResult
+=========
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: HHLResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HHLResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~HHLResult.clear
       ~HHLResult.combine
       ~HHLResult.copy
@@ -27,20 +26,14 @@
       ~HHLResult.setdefault
       ~HHLResult.update
       ~HHLResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HHLResult.circuit_info
-      ~HHLResult.matrix
-      ~HHLResult.output
-      ~HHLResult.probability_result
-      ~HHLResult.solution
-      ~HHLResult.vector
-   
-   
+   .. autoattribute:: circuit_info
+   .. autoattribute:: matrix
+   .. autoattribute:: output
+   .. autoattribute:: probability_result
+   .. autoattribute:: solution
+   .. autoattribute:: vector

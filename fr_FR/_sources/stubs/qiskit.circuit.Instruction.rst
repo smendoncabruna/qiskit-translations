@@ -1,19 +1,18 @@
-﻿qiskit.circuit.Instruction
-==========================
+﻿Instruction
+===========
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Instruction
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Instruction.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Instruction.add_decomposition
       ~Instruction.assemble
       ~Instruction.broadcast_arguments
@@ -27,20 +26,14 @@
       ~Instruction.reverse_ops
       ~Instruction.soft_compare
       ~Instruction.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Instruction.decompositions
-      ~Instruction.definition
-      ~Instruction.duration
-      ~Instruction.label
-      ~Instruction.params
-      ~Instruction.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

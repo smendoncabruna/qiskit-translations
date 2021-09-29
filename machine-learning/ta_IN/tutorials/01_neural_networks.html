@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>குவாண்டம் நியூரல் நெட்வொர்க்குகள் &mdash; Qiskit Machine Learning 0.2.0 documentation</title>
+  <title>குவாண்டம் நியூரல் நெட்வொர்க்குகள் &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
   
 
   
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/tutorials/01_neural_networks.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/tutorials/01_neural_networks.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/tutorials/01_neural_networks.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/tutorials/01_neural_networks.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/tutorials/01_neural_networks.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/tutorials/01_neural_networks.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -502,7 +508,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/01_neural_networks.ipynb">docs/tutorials/01_neural_networks.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
 <div class="section" id="குவாண்டம்-நியூரல்-நெட்வொர்க்குகள்">
 <h1>குவாண்டம் நியூரல் நெட்வொர்க்குகள்<a class="headerlink" href="#குவாண்டம்-நியூரல்-நெட்வொர்க்குகள்" title="Permalink to this headline">¶</a></h1>
@@ -906,7 +912,7 @@ array([[0.28520667]])
 <div class="section" id="4.-CircuitQNN">
 <h2>4. <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code><a class="headerlink" href="#4.-CircuitQNN" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> என்பது ஒரு (அளவுருவாக்கப்பட்ட) <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> ஐ அடிப்படையாகக் கொண்டது. இது உள்ளீடு மற்றும் எடை அளவுருக்களை எடுத்து அளவீட்டிலிருந்து மாதிரிகளை உருவாக்குகிறது. மாதிரிகள் ஒரு பிட்ஸ்ட்ரிங்கிற்கு ஒத்த முழு எண் குறியீட்டை அளவிடுவதற்கான நிகழ்தகவுகள் அல்லது நேரடியாக பைனரி வெளியீட்டின் தொகுப்பாக விளக்கப்படலாம். நிகழ்தகவுகளின் விஷயத்தில், சாய்வுகளை திறமையாக மதிப்பிடலாம் மற்றும் <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> பின்தங்கிய பாஸையும் வழங்குகிறது. மாதிரிகள் விஷயத்தில், வேறுபாடு சாத்தியமில்லை மற்றும் பின்தங்கிய பாஸ் <code class="docutils literal notranslate"><span class="pre">(None,</span> <span class="pre">None)</span></code>.</p>
-<p>Further, the <code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> allows to specify an <code class="docutils literal notranslate"><span class="pre">interpret</span></code> function to post-process the samples. This is expected to take a measured integer (from a bitstring) and map it to a new index, i.e. non-negative integer. In this case, the output shape needs to be provided and the probabilities are aggregated accordingly.</p>
+<p>மேலும், <code class="docutils literal notranslate"><span class="pre">CircuitQN</span></code> மாதிரிகளை பிந்தைய செயலாக்க <code class="docutils literal notranslate"><span class="pre">interpret</span></code> செயல்பாட்டைக் குறிப்பிட அனுமதிக்கிறது. இது அளவிடப்பட்ட முழு எண்ணை (bitstring-ல் இருந்து) எடுத்து புதிய அட்டவணைக்கு ஒப்பிடப்படுகிறது என்று எதிர்பார்க்கப்படுகிறது, அதாவது எதிர்மறை அல்லாத முழு எண். இந்த வழக்கில், வெளியீட்டு வடிவத்தை வழங்க வேண்டும் மற்றும் அதற்கேற்ப நிகழ்தகவு திரட்டப்படுகிறது.</p>
 <p><code class="docutils literal notranslate"><span class="pre">CircuitQNN</span></code> ஐ சிதறல் மற்றும் அடர்த்தியான நிகழ்தகவு திசையன்களைத் தரும்படி கட்டமைக்க முடியும். <code class="docutils literal notranslate"><span class="pre">interpret</span></code> செயல்பாடு எதுவும் பயன்படுத்தப்படாவிட்டால், நிகழ்தகவு திசையன் அளவீடுகளின் அளவு பரிமாணங்களின் எண்ணிக்கையுடன் அதிவேகமாக அளவிடப்படுகிறது மற்றும் ஒரு சிதறிய பரிந்துரை பொதுவாக பரிந்துரைக்கப்படுகிறது. <code class="docutils literal notranslate"><span class="pre">interpret</span></code> செயல்பாட்டின் போது அது எதிர்பார்த்த முடிவைப் பொறுத்தது. உதாரணமாக, ஒரு குறியீட்டு தொடர்புடைய பிட்ஸ்ட்ரிங்கின் சமநிலையுடன் பொருத்தப்பட்டால், அதாவது, 0 அல்லது 1 க்கு, அடர்த்தியான வெளியீடு அர்த்தமுள்ளதாக இருக்கும், இதன் விளைவாக நீளம் 2 இன் நிகழ்தகவு திசையன் இருக்கும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.circuit.qpy_serialization &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>qiskit.circuit.qpy_serialization &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -374,6 +381,19 @@
 <span class="sd">   load</span>
 <span class="sd">   dump</span>
 
+<span class="sd">QPY Compatibility</span>
+<span class="sd">-----------------</span>
+
+<span class="sd">The QPY format is designed to be backwards compatible moving forward. This means</span>
+<span class="sd">you should be able to load a QPY with any newer Qiskit version than the one</span>
+<span class="sd">that generated it. However, loading a QPY file with an older Qiskit version is</span>
+<span class="sd">not supported and may not work.</span>
+
+<span class="sd">For example, if you generated a QPY file using qiskit-terra 0.18.1 you could</span>
+<span class="sd">load that QPY file with qiskit-terra 0.19.0 and a hypothetical qiskit-terra</span>
+<span class="sd">0.29.0. However, loading that QPY file with 0.18.0 is not supported and may not</span>
+<span class="sd">work.</span>
+
 <span class="sd">QPY Format</span>
 <span class="sd">==========</span>
 
@@ -383,15 +403,15 @@
 
 <span class="sd">A QPY file (or memory object) always starts with the following 7</span>
 <span class="sd">byte UTF8 string: ``QISKIT`` which is immediately followed by the overall</span>
-<span class="sd">file header. The contents of thie file header as defined as a C struct are:</span>
+<span class="sd">file header. The contents of the file header as defined as a C struct are:</span>
 
 <span class="sd">.. code-block:: c</span>
 
 <span class="sd">    struct {</span>
-<span class="sd">        unsigned char qpy_version;</span>
-<span class="sd">        unsigned char qiskit_major_version;</span>
-<span class="sd">        unsigned char qiskit_minor_version;</span>
-<span class="sd">        unsigned char qiskit_patch_version;</span>
+<span class="sd">        uint8_t qpy_version;</span>
+<span class="sd">        uint8_t qiskit_major_version;</span>
+<span class="sd">        uint8_t qiskit_minor_version;</span>
+<span class="sd">        uint8_t qiskit_patch_version;</span>
 <span class="sd">        uint64_t num_circuits;</span>
 <span class="sd">    }</span>
 
@@ -415,7 +435,7 @@
 <span class="sd">.. code-block:: c</span>
 
 <span class="sd">    struct {</span>
-<span class="sd">        unit16_t name_size;</span>
+<span class="sd">        uint16_t name_size;</span>
 <span class="sd">        double global_phase;</span>
 <span class="sd">        uint32_t num_qubits;</span>
 <span class="sd">        uint32_t num_clbits;</span>
@@ -449,7 +469,7 @@
 <span class="sd">        char type;</span>
 <span class="sd">        _Bool standalone;</span>
 <span class="sd">        uint32_t size;</span>
-<span class="sd">        unit16_t name_size;</span>
+<span class="sd">        uint16_t name_size;</span>
 <span class="sd">    }</span>
 
 <span class="sd">``type`` can be ``&#39;q&#39;`` or ``&#39;c&#39;``.</span>
@@ -480,8 +500,7 @@
 <span class="sd">CUSTOM_DEFINITIONS</span>
 <span class="sd">------------------</span>
 
-<span class="sd">If the circuit contains custom defitions for any of the instruction in the circuit.</span>
-<span class="sd">this section</span>
+<span class="sd">This section specifies custom definitions for any of the instructions in the circuit.</span>
 
 <span class="sd">CUSTOM_DEFINITION_HEADER contents are defined as:</span>
 
@@ -500,7 +519,7 @@
 <span class="sd">        uint16_t name_size;</span>
 <span class="sd">        char type;</span>
 <span class="sd">        _Bool custom_definition;</span>
-<span class="sd">        uint64_t size</span>
+<span class="sd">        uint64_t size;</span>
 <span class="sd">    }</span>
 
 <span class="sd">Immediately following the CUSTOM_INSTRUCTION struct is the utf8 encoded name</span>
@@ -508,7 +527,7 @@
 
 <span class="sd">If ``custom_definition`` is ``True`` that means that the immediately following</span>
 <span class="sd">``size`` bytes contains a QPY circuit data which can be used for the custom</span>
-<span class="sd">definition of that gate. If ``custom_definition`` is ``False`` than the</span>
+<span class="sd">definition of that gate. If ``custom_definition`` is ``False`` then the</span>
 <span class="sd">instruction can be considered opaque (ie no definition).</span>
 
 <span class="sd">INSTRUCTIONS</span>
@@ -524,9 +543,9 @@
 <span class="sd">        uint16_t num_parameters;</span>
 <span class="sd">        uint32_t num_qargs;</span>
 <span class="sd">        uint32_t num_cargs;</span>
-<span class="sd">        _Bool has_conditionl</span>
-<span class="sd">        uint16_t conditonal_reg_name_size;</span>
-<span class="sd">        long long conditional_value;</span>
+<span class="sd">        _Bool has_conditional;</span>
+<span class="sd">        uint16_t conditional_reg_name_size;</span>
+<span class="sd">        int64_t conditional_value;</span>
 <span class="sd">    }</span>
 
 <span class="sd">This metadata object is immediately followed by ``name_size`` bytes of utf8 bytes</span>
@@ -535,7 +554,7 @@
 <span class="sd">instruction name. Following the ``name`` bytes there are ``label_size`` bytes of</span>
 <span class="sd">utf8 data for the label if one was set on the instruction. Following the label</span>
 <span class="sd">bytes if ``has_conditional`` is ``True`` then there are</span>
-<span class="sd">``conditonal_reg_name_size`` bytes of utf8 data for the name of the condtional</span>
+<span class="sd">``conditional_reg_name_size`` bytes of utf8 data for the name of the conditional</span>
 <span class="sd">register name. In case of single classical bit conditions the register name</span>
 <span class="sd">utf8 data will be prefixed with a null character &quot;\\x00&quot; and then a utf8 string</span>
 <span class="sd">integer representing the classical bit index in the circuit that the condition</span>
@@ -552,7 +571,7 @@
 
 <span class="sd">    struct {</span>
 <span class="sd">        char type;</span>
-<span class="sd">        unisgned int index;</span>
+<span class="sd">        uint32_t index;</span>
 <span class="sd">    }</span>
 
 <span class="sd">``type`` can be ``&#39;q&#39;`` or ``&#39;c&#39;``.</span>
@@ -577,7 +596,7 @@
 <span class="sd">``&#39;p&#39;`` defines a :class:`~qiskit.circuit.Parameter` object  which is</span>
 <span class="sd">represented by a PARAM struct (see below), ``e`` defines a</span>
 <span class="sd">:class:`~qiskit.circuit.ParameterExpression` object (that&#39;s not a</span>
-<span class="sd">:class:`~qiskit.circuit.Paramter`) which is represented by a PARAM_EXPR struct</span>
+<span class="sd">:class:`~qiskit.circuit.Parameter`) which is represented by a PARAM_EXPR struct</span>
 <span class="sd">(see below), and ``&#39;n&#39;`` represents an object from numpy (either an ``ndarray``</span>
 <span class="sd">or a numpy type) which means the data is .npy format [#f2]_ data.</span>
 
@@ -611,8 +630,8 @@
 <span class="sd">.. code-block:: c</span>
 
 <span class="sd">    struct {</span>
-<span class="sd">        uint64_t map_elements,</span>
-<span class="sd">        uint64_t expr_size,</span>
+<span class="sd">        uint64_t map_elements;</span>
+<span class="sd">        uint64_t expr_size;</span>
 <span class="sd">    }</span>
 
 <span class="sd">Immediately following the header is ``expr_size`` bytes of utf8 data containing</span>
@@ -1490,7 +1509,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -1570,7 +1589,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1593,9 +1612,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

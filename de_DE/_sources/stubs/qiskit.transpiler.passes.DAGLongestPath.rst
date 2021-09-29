@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.DAGLongestPath
-=======================================
+﻿DAGLongestPath
+==============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: DAGLongestPath
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DAGLongestPath.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DAGLongestPath.name
       ~DAGLongestPath.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DAGLongestPath.is_analysis_pass
-      ~DAGLongestPath.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

@@ -1,35 +1,28 @@
-﻿qiskit.aqua.circuits.DNF
-========================
+﻿DNF
+===
 
 .. currentmodule:: qiskit.aqua.circuits
 
 .. autoclass:: DNF
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DNF.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DNF.compute_num_ancillae
       ~DNF.construct_circuit
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DNF.ancillary_register
-      ~DNF.clause_register
-      ~DNF.num_clauses
-      ~DNF.num_variables
-      ~DNF.output_register
-      ~DNF.variable_register
-   
-   
+   .. autoattribute:: ancillary_register
+   .. autoattribute:: clause_register
+   .. autoattribute:: num_clauses
+   .. autoattribute:: num_variables
+   .. autoattribute:: output_register
+   .. autoattribute:: variable_register

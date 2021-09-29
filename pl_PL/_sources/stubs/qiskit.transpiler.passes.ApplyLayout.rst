@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.ApplyLayout
-====================================
+﻿ApplyLayout
+===========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: ApplyLayout
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ApplyLayout.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ApplyLayout.name
       ~ApplyLayout.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ApplyLayout.is_analysis_pass
-      ~ApplyLayout.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

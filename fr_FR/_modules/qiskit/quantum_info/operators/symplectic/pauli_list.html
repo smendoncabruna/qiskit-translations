@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.operators.symplectic.pauli_list &mdash; Documentation Qiskit 0.29.0</title>
+  <title>qiskit.quantum_info.operators.symplectic.pauli_list &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -230,7 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -419,7 +426,7 @@
     <span class="c1"># Set the max number of qubits * paulis before string truncation</span>
     <span class="n">__truncate__</span> <span class="o">=</span> <span class="mi">2000</span>
 
-<div class="viewcode-block" id="PauliList.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize the PauliList.</span>
 
 <span class="sd">        Args:</span>
@@ -446,7 +453,7 @@
             <span class="n">base_z</span><span class="p">,</span> <span class="n">base_x</span><span class="p">,</span> <span class="n">base_phase</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_paulis</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
         <span class="c1"># Initialize BasePauli</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">base_z</span><span class="p">,</span> <span class="n">base_x</span><span class="p">,</span> <span class="n">base_phase</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">base_z</span><span class="p">,</span> <span class="n">base_x</span><span class="p">,</span> <span class="n">base_phase</span><span class="p">)</span>
 
     <span class="c1"># ---------------------------------------------------------------------</span>
     <span class="c1"># Representation conversions</span>
@@ -530,7 +537,7 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<div class="viewcode-block" id="PauliList.equiv"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.equiv">[docs]</a>    <span class="k">def</span> <span class="nf">equiv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.equiv"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.equiv.html#qiskit.quantum_info.PauliList.equiv">[docs]</a>    <span class="k">def</span> <span class="nf">equiv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Entrywise comparison of Pauli equivalence up to global phase.</span>
 
 <span class="sd">        Args:</span>
@@ -647,7 +654,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_phase</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">value</span><span class="o">.</span><span class="n">_phase</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_phase</span> <span class="o">%=</span> <span class="mi">4</span>
 
-<div class="viewcode-block" id="PauliList.delete"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">qubit</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.delete"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.delete.html#qiskit.quantum_info.PauliList.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">qubit</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy with Pauli rows deleted from table.</span>
 
 <span class="sd">        When deleting qubits the qubit index is the same as the</span>
@@ -693,7 +700,7 @@
         <span class="c1"># ZX phase convention</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="o">.</span><span class="n">from_symplectic</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliList.insert"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">qubit</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.insert"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.insert.html#qiskit.quantum_info.PauliList.insert">[docs]</a>    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">qubit</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Insert Pauli&#39;s into the table.</span>
 
 <span class="sd">        When inserting qubits the qubit index is the same as the</span>
@@ -760,7 +767,7 @@
 
         <span class="k">return</span> <span class="n">PauliList</span><span class="o">.</span><span class="n">from_symplectic</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">phase</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliList.argsort"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.argsort">[docs]</a>    <span class="k">def</span> <span class="nf">argsort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.argsort"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.argsort.html#qiskit.quantum_info.PauliList.argsort">[docs]</a>    <span class="k">def</span> <span class="nf">argsort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return indices for sorting the rows of the table.</span>
 
 <span class="sd">        The default sort method is lexicographic sorting by qubit number.</span>
@@ -823,7 +830,7 @@
             <span class="n">indices</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[</span><span class="n">phases</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span><span class="p">)]</span>
         <span class="k">return</span> <span class="n">indices</span></div>
 
-<div class="viewcode-block" id="PauliList.sort"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.sort"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.sort.html#qiskit.quantum_info.PauliList.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sort the rows of the table.</span>
 
 <span class="sd">        The default sort method is lexicographic sorting by qubit number.</span>
@@ -869,7 +876,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="PauliList.unique"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.unique">[docs]</a>    <span class="k">def</span> <span class="nf">unique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.unique"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.unique.html#qiskit.quantum_info.PauliList.unique">[docs]</a>    <span class="k">def</span> <span class="nf">unique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return unique Paulis from the table.</span>
 
 <span class="sd">        **Example**</span>
@@ -935,7 +942,7 @@
     <span class="c1"># BaseOperator methods</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="PauliList.tensor"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.tensor"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.tensor.html#qiskit.quantum_info.PauliList.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product with each Pauli in the list.</span>
 
 <span class="sd">        Args:</span>
@@ -958,7 +965,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">other</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="PauliList.expand"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.expand"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.expand.html#qiskit.quantum_info.PauliList.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the expand product of each Pauli in the list.</span>
 
 <span class="sd">        Args:</span>
@@ -981,7 +988,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">other</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="PauliList.compose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.compose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.compose.html#qiskit.quantum_info.PauliList.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the composition self∘other for each Pauli in the list.</span>
 
 <span class="sd">        Args:</span>
@@ -1011,7 +1018,7 @@
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="n">qargs</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="n">front</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="n">inplace</span><span class="p">))</span></div>
 
     <span class="c1"># pylint: disable=arguments-differ</span>
-<div class="viewcode-block" id="PauliList.dot"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.dot"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.dot.html#qiskit.quantum_info.PauliList.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the composition other∘self for each Pauli in the list.</span>
 
 <span class="sd">        Args:</span>
@@ -1084,19 +1091,19 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_multiply</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
 
-<div class="viewcode-block" id="PauliList.conjugate"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.conjugate">[docs]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.conjugate"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.conjugate.html#qiskit.quantum_info.PauliList.conjugate">[docs]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the conjugate of each Pauli in the list.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="PauliList.transpose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.transpose">[docs]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.transpose"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.transpose.html#qiskit.quantum_info.PauliList.transpose">[docs]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the transpose of each Pauli in the list.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="PauliList.adjoint"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.adjoint">[docs]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.adjoint"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.adjoint.html#qiskit.quantum_info.PauliList.adjoint">[docs]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the adjoint of each Pauli in the list.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">adjoint</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="PauliList.inverse"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.inverse">[docs]</a>    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.inverse"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.inverse.html#qiskit.quantum_info.PauliList.inverse">[docs]</a>    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the inverse of each Pauli in the list.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">adjoint</span><span class="p">())</span></div>
 
@@ -1104,7 +1111,7 @@
     <span class="c1"># Utility methods</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="PauliList.commutes"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.commutes">[docs]</a>    <span class="k">def</span> <span class="nf">commutes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.commutes"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.commutes.html#qiskit.quantum_info.PauliList.commutes">[docs]</a>    <span class="k">def</span> <span class="nf">commutes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True for each Pauli that commutes with other.</span>
 
 <span class="sd">        Args:</span>
@@ -1120,7 +1127,7 @@
             <span class="n">other</span> <span class="o">=</span> <span class="n">PauliList</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">commutes</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="n">qargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliList.anticommutes"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.anticommutes">[docs]</a>    <span class="k">def</span> <span class="nf">anticommutes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.anticommutes"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.anticommutes.html#qiskit.quantum_info.PauliList.anticommutes">[docs]</a>    <span class="k">def</span> <span class="nf">anticommutes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if other Pauli that anticommutes with other.</span>
 
 <span class="sd">        Args:</span>
@@ -1132,7 +1139,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">commutes</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="n">qargs</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="PauliList.commutes_with_all"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.commutes_with_all">[docs]</a>    <span class="k">def</span> <span class="nf">commutes_with_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.commutes_with_all"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.commutes_with_all.html#qiskit.quantum_info.PauliList.commutes_with_all">[docs]</a>    <span class="k">def</span> <span class="nf">commutes_with_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return indexes of rows that commute other.</span>
 
 <span class="sd">        If other is a multi-row Pauli list the returned vector indexes rows</span>
@@ -1147,7 +1154,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_commutes_with_all</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliList.anticommutes_with_all"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.anticommutes_with_all">[docs]</a>    <span class="k">def</span> <span class="nf">anticommutes_with_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.anticommutes_with_all"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.anticommutes_with_all.html#qiskit.quantum_info.PauliList.anticommutes_with_all">[docs]</a>    <span class="k">def</span> <span class="nf">anticommutes_with_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return indexes of rows that commute other.</span>
 
 <span class="sd">        If other is a multi-row Pauli list the returned vector indexes rows</span>
@@ -1186,7 +1193,7 @@
             <span class="n">inds</span> <span class="o">=</span> <span class="n">inds</span><span class="p">[</span><span class="n">new_inds</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">inds</span>
 
-<div class="viewcode-block" id="PauliList.evolve"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.evolve">[docs]</a>    <span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.evolve"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.evolve.html#qiskit.quantum_info.PauliList.evolve">[docs]</a>    <span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Evolve the Pauli by a Clifford.</span>
 
 <span class="sd">        This returns the Pauli :math:`P^\prime = C.P.C^\dagger`.</span>
@@ -1213,7 +1220,7 @@
 
         <span class="k">return</span> <span class="n">PauliList</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">evolve</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="n">qargs</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="PauliList.to_labels"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.to_labels">[docs]</a>    <span class="k">def</span> <span class="nf">to_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.to_labels"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.to_labels.html#qiskit.quantum_info.PauliList.to_labels">[docs]</a>    <span class="k">def</span> <span class="nf">to_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Convert a PauliList to a list Pauli string labels.</span>
 
 <span class="sd">        For large PauliLists converting using the ``array=True``</span>
@@ -1261,7 +1268,7 @@
             <span class="k">return</span> <span class="n">ret</span>
         <span class="k">return</span> <span class="n">ret</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="PauliList.to_matrix"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.to_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.to_matrix"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.to_matrix.html#qiskit.quantum_info.PauliList.to_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Convert to a list or array of Pauli matrices.</span>
 
 <span class="sd">        For large PauliLists converting using the ``array=True``</span>
@@ -1315,7 +1322,7 @@
     <span class="c1"># Custom Iterators</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="PauliList.label_iter"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.label_iter">[docs]</a>    <span class="k">def</span> <span class="nf">label_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.label_iter"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.label_iter.html#qiskit.quantum_info.PauliList.label_iter">[docs]</a>    <span class="k">def</span> <span class="nf">label_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a label representation iterator.</span>
 
 <span class="sd">        This is a lazy iterator that converts each row into the string</span>
@@ -1337,7 +1344,7 @@
 
         <span class="k">return</span> <span class="n">LabelIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PauliList.matrix_iter"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.matrix_iter">[docs]</a>    <span class="k">def</span> <span class="nf">matrix_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PauliList.matrix_iter"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.matrix_iter.html#qiskit.quantum_info.PauliList.matrix_iter">[docs]</a>    <span class="k">def</span> <span class="nf">matrix_iter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a matrix representation iterator.</span>
 
 <span class="sd">        This is a lazy iterator that converts each row into the Pauli matrix</span>
@@ -1370,7 +1377,7 @@
     <span class="c1"># Class methods</span>
     <span class="c1"># ---------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="PauliList.from_symplectic"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.html#qiskit.quantum_info.PauliList.from_symplectic">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="PauliList.from_symplectic"><a class="viewcode-back" href="../../../../../stubs/qiskit.quantum_info.PauliList.from_symplectic.html#qiskit.quantum_info.PauliList.from_symplectic">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_symplectic</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Construct a PauliList from a symplectic data.</span>
 
@@ -1401,7 +1408,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -1481,7 +1488,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1504,9 +1511,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

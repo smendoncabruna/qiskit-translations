@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.managed.managedjobset &mdash; Qiskit 0.29.0 documentazione</title>
+  <title>qiskit.providers.ibmq.managed.managedjobset &mdash; Qiskit 0.30.0 documentazione</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Homepage della documentazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Prefazione</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Riferimenti API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guida alla migrazione delle applicazioni Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Guida alla migrazione delle applicazioni Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Risoluzione Dei Problemi</span></p>
 <ul>
@@ -379,7 +386,7 @@
     <span class="n">_id_prefix</span> <span class="o">=</span> <span class="s2">&quot;ibmq_jobset_&quot;</span>
     <span class="n">_id_suffix</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
 
-<div class="viewcode-block" id="ManagedJobSet.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.__init__">[documenti]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">short_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -401,9 +408,9 @@
 
         <span class="c1"># Used for caching</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_managed_results</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[ManagedResults]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_error_msg</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[str]</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_error_msg</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[str]</span>
 
-<div class="viewcode-block" id="ManagedJobSet.run"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.run">[documenti]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedJobSet.run"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.run.html#qiskit.providers.ibmq.managed.ManagedJobSet.run">[documenti]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_list</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Schedule</span><span class="p">]]],</span>
             <span class="n">backend</span><span class="p">:</span> <span class="n">IBMQBackend</span><span class="p">,</span>
@@ -453,7 +460,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mjob</span><span class="p">)</span>
             <span class="n">exp_index</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">experiments</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.retrieve_jobs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.retrieve_jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">retrieve_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">AccountProvider</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedJobSet.retrieve_jobs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.retrieve_jobs.html#qiskit.providers.ibmq.managed.ManagedJobSet.retrieve_jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">retrieve_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">AccountProvider</span><span class="p">,</span> <span class="n">refresh</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Retrieve previously submitted jobs in this set.</span>
 
 <span class="sd">        Args:</span>
@@ -522,7 +529,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mjob</span><span class="p">)</span>
             <span class="n">experiment_index</span> <span class="o">=</span> <span class="n">mjob</span><span class="o">.</span><span class="n">end_index</span> <span class="o">+</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.statuses"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.statuses">[documenti]</a>    <span class="k">def</span> <span class="nf">statuses</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">JobStatus</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]:</span>
+<div class="viewcode-block" id="ManagedJobSet.statuses"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.statuses.html#qiskit.providers.ibmq.managed.ManagedJobSet.statuses">[documenti]</a>    <span class="k">def</span> <span class="nf">statuses</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">JobStatus</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Return the status of each job in this set.</span>
 
 <span class="sd">        Returns:</span>
@@ -531,7 +538,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">mjob</span><span class="o">.</span><span class="n">status</span><span class="p">()</span> <span class="k">for</span> <span class="n">mjob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.report"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.report">[documenti]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detailed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedJobSet.report"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.report.html#qiskit.providers.ibmq.managed.ManagedJobSet.report">[documenti]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detailed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a report on current job statuses.</span>
 
 <span class="sd">        Args:</span>
@@ -554,7 +561,7 @@
 
         <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.results"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.results">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.results"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.results.html#qiskit.providers.ibmq.managed.ManagedJobSet.results">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">results</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -640,7 +647,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_results</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.error_messages"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.error_messages">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.error_messages"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.error_messages.html#qiskit.providers.ibmq.managed.ManagedJobSet.error_messages">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">error_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Provide details about job failures.</span>
 
@@ -666,13 +673,13 @@
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.cancel"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.cancel">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.cancel"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.cancel.html#qiskit.providers.ibmq.managed.ManagedJobSet.cancel">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Cancel all jobs in this job set.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">mjob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span><span class="p">:</span>
             <span class="n">mjob</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.jobs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.jobs">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.jobs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.jobs.html#qiskit.providers.ibmq.managed.ManagedJobSet.jobs">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">IBMQJob</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Return jobs in this job set.</span>
 
@@ -683,7 +690,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">mjob</span><span class="o">.</span><span class="n">job</span> <span class="k">for</span> <span class="n">mjob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.job"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.job">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.job"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.job.html#qiskit.providers.ibmq.managed.ManagedJobSet.job">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">job</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
@@ -727,7 +734,7 @@
         <span class="k">raise</span> <span class="n">IBMQJobManagerJobNotFound</span><span class="p">(</span>
             <span class="s1">&#39;Unable to find the job for experiment </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">experiment</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.qobjs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.qobjs">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.qobjs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.qobjs.html#qiskit.providers.ibmq.managed.ManagedJobSet.qobjs">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">qobjs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QasmQobj</span><span class="p">,</span> <span class="n">PulseQobj</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Return the Qobjs for the jobs in this set.</span>
 
@@ -737,7 +744,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">mjob</span><span class="o">.</span><span class="n">qobj</span><span class="p">()</span> <span class="k">for</span> <span class="n">mjob</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.name"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.name">[documenti]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedJobSet.name"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.name.html#qiskit.providers.ibmq.managed.ManagedJobSet.name">[documenti]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the name of this job set.</span>
 
 <span class="sd">        Returns:</span>
@@ -745,7 +752,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.update_name"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.update_name">[documenti]</a>    <span class="nd">@requires_submit</span>
+<div class="viewcode-block" id="ManagedJobSet.update_name"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.update_name.html#qiskit.providers.ibmq.managed.ManagedJobSet.update_name">[documenti]</a>    <span class="nd">@requires_submit</span>
     <span class="k">def</span> <span class="nf">update_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Update the name of this job set.</span>
 
@@ -773,7 +780,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.job_set_id"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.job_set_id">[documenti]</a>    <span class="k">def</span> <span class="nf">job_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedJobSet.job_set_id"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.job_set_id.html#qiskit.providers.ibmq.managed.ManagedJobSet.job_set_id">[documenti]</a>    <span class="k">def</span> <span class="nf">job_set_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the ID of this job set.</span>
 
 <span class="sd">        Returns:</span>
@@ -783,7 +790,7 @@
         <span class="c1"># full ID is used for another job.</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.managed_jobs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.managed_jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">managed_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ManagedJob</span><span class="p">]:</span>
+<div class="viewcode-block" id="ManagedJobSet.managed_jobs"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.managed_jobs.html#qiskit.providers.ibmq.managed.ManagedJobSet.managed_jobs">[documenti]</a>    <span class="k">def</span> <span class="nf">managed_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ManagedJob</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the managed jobs in this set.</span>
 
 <span class="sd">        Returns:</span>
@@ -791,7 +798,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_managed_jobs</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.tags"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.tags">[documenti]</a>    <span class="k">def</span> <span class="nf">tags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="ManagedJobSet.tags"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.tags.html#qiskit.providers.ibmq.managed.ManagedJobSet.tags">[documenti]</a>    <span class="k">def</span> <span class="nf">tags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the tags assigned to this job set.</span>
 
 <span class="sd">        Returns:</span>
@@ -799,7 +806,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tags</span></div>
 
-<div class="viewcode-block" id="ManagedJobSet.update_tags"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.html#qiskit.providers.ibmq.managed.ManagedJobSet.update_tags">[documenti]</a>    <span class="k">def</span> <span class="nf">update_tags</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedJobSet.update_tags"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJobSet.update_tags.html#qiskit.providers.ibmq.managed.ManagedJobSet.update_tags">[documenti]</a>    <span class="k">def</span> <span class="nf">update_tags</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">replacement_tags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">additional_tags</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -899,7 +906,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ultimo aggiornamento 2021/08/13.
+      Ultimo aggiornamento 2021/09/23.
 
     </p>
   </div>
@@ -979,7 +986,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1002,9 +1009,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

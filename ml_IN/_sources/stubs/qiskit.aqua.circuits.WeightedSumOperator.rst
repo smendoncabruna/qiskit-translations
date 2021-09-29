@@ -1,19 +1,18 @@
-﻿qiskit.aqua.circuits.WeightedSumOperator
-========================================
+﻿WeightedSumOperator
+===================
 
 .. currentmodule:: qiskit.aqua.circuits
 
 .. autoclass:: WeightedSumOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~WeightedSumOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~WeightedSumOperator.build
       ~WeightedSumOperator.build_controlled
       ~WeightedSumOperator.build_controlled_inverse
@@ -27,19 +26,13 @@
       ~WeightedSumOperator.get_required_sum_qubits
       ~WeightedSumOperator.required_ancillas
       ~WeightedSumOperator.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~WeightedSumOperator.num_carry_qubits
-      ~WeightedSumOperator.num_state_qubits
-      ~WeightedSumOperator.num_sum_qubits
-      ~WeightedSumOperator.num_target_qubits
-      ~WeightedSumOperator.weights
-   
-   
+   .. autoattribute:: num_carry_qubits
+   .. autoattribute:: num_state_qubits
+   .. autoattribute:: num_sum_qubits
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: weights

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.CNOTDihedral &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>CNOTDihedral &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="qiskit.quantum_info.PauliList" href="qiskit.quantum_info.PauliList.html" />
-    <link rel="prev" title="qiskit.quantum_info.SparsePauliOp" href="qiskit.quantum_info.SparsePauliOp.html" /> 
+    <link rel="next" title="qiskit.quantum_info.CNOTDihedral.adjoint" href="qiskit.quantum_info.CNOTDihedral.adjoint.html" />
+    <link rel="prev" title="qiskit.quantum_info.SparsePauliOp.transpose" href="qiskit.quantum_info.SparsePauliOp.transpose.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/quantum_info.html">Quantum Information (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.quantum_info</span></code>)</a> &gt;</li>
         
-      <li>qiskit.quantum_info.CNOTDihedral</li>
+      <li>CNOTDihedral</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-quantum-info-cnotdihedral">
-<h1>qiskit.quantum_info.CNOTDihedral<a class="headerlink" href="#qiskit-quantum-info-cnotdihedral" title="Link zu dieser Überschrift">¶</a></h1>
+  <section id="cnotdihedral">
+<h1>CNOTDihedral<a class="headerlink" href="#cnotdihedral" title="Link zu dieser Überschrift">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.quantum_info.CNOTDihedral">
 <em class="property">class </em><code class="sig-name descname">CNOTDihedral</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_qubits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>An N-qubit operator from the CNOT-Dihedral group.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.quantum_info.operators.base_operator.BaseOperator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.quantum_info.operators.mixins.adjoint.AdjointMixin</span></code></p>
+<p>An N-qubit operator from the CNOT-Dihedral group.</p>
 <blockquote>
 <div><p>The CNOT-Dihedral group is generated by the quantum gates,
 <a class="reference internal" href="qiskit.circuit.library.CXGate.html#qiskit.circuit.library.CXGate" title="qiskit.circuit.library.CXGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">CXGate</span></code></a>, <a class="reference internal" href="qiskit.circuit.library.TGate.html#qiskit.circuit.library.TGate" title="qiskit.circuit.library.TGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">TGate</span></code></a>,
@@ -385,13 +393,13 @@ following gates: <a class="reference internal" href="qiskit.circuit.library.IGat
 <a class="reference internal" href="qiskit.circuit.library.CXGate.html#qiskit.circuit.library.CXGate" title="qiskit.circuit.library.CXGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">CXGate</span></code></a>, <a class="reference internal" href="qiskit.circuit.library.CZGate.html#qiskit.circuit.library.CZGate" title="qiskit.circuit.library.CZGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">CZGate</span></code></a>,
 <a class="reference internal" href="qiskit.circuit.library.SwapGate.html#qiskit.circuit.library.SwapGate" title="qiskit.circuit.library.SwapGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">SwapGate</span></code></a>.
 They can be converted back into a <a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></a>,
-or <a class="reference internal" href="qiskit.circuit.Gate.html#qiskit.circuit.Gate" title="qiskit.circuit.Gate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gate</span></code></a> object using the <a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.to_circuit" title="qiskit.quantum_info.CNOTDihedral.to_circuit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_circuit()</span></code></a>
+or <a class="reference internal" href="qiskit.circuit.Gate.html#qiskit.circuit.Gate" title="qiskit.circuit.Gate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gate</span></code></a> object using the <a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.to_circuit.html#qiskit.quantum_info.CNOTDihedral.to_circuit" title="qiskit.quantum_info.CNOTDihedral.to_circuit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_circuit()</span></code></a>
 or <code class="xref py py-meth docutils literal notranslate"><span class="pre">to_instruction()</span></code> methods respectively. Note that this
 decomposition is not necessarily optimal in terms of number of gates
 if the number of qubits is more than two.</p>
 <p>CNOTDihedral operators can also be converted to
 <a class="reference internal" href="qiskit.quantum_info.Operator.html#qiskit.quantum_info.Operator" title="qiskit.quantum_info.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Operator</span></code></a> objects using the
-<a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.to_operator" title="qiskit.quantum_info.CNOTDihedral.to_operator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_operator()</span></code></a> method. This is done via decomposing to a circuit,
+<a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.to_operator.html#qiskit.quantum_info.CNOTDihedral.to_operator" title="qiskit.quantum_info.CNOTDihedral.to_operator"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_operator()</span></code></a> method. This is done via decomposing to a circuit,
 and then simulating the circuit as a unitary operator.</p>
 <dl class="simple">
 <dt>References:</dt><dd><ol class="arabic simple">
@@ -420,27 +428,6 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_qubits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.__init__"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.__init__" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Initialize a CNOTDihedral operator object.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral"><em>CNOTDihedral</em></a><em> or </em><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><em>QuantumCircuit</em></a><em> or </em><a class="reference internal" href="qiskit.circuit.Instruction.html#qiskit.circuit.Instruction" title="qiskit.circuit.Instruction"><em>Instruction</em></a>) – Optional, operator to initialize.</p></li>
-<li><p><strong>num_qubits</strong> (<em>int</em>) – Optional, initialize an empty CNOTDihedral operator.</p></li>
-<li><p><strong>validate</strong> (<em>bool</em>) – if True, validates the CNOTDihedral element.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Verursacht</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>QiskitError</strong> – if the type is invalid.</p></li>
-<li><p><strong>QiskitError</strong> – if validate=True and the CNOTDihedral element is invalid.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -448,333 +435,79 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.__init__" title="qiskit.quantum_info.CNOTDihedral.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([data, num_qubits, validate])</p></td>
-<td><p>Initialize a CNOTDihedral operator object.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.adjoint" title="qiskit.quantum_info.CNOTDihedral.adjoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjoint</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.adjoint.html#qiskit.quantum_info.CNOTDihedral.adjoint" title="qiskit.quantum_info.CNOTDihedral.adjoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjoint</span></code></a></p></td>
 <td><p>Return the adjoint of the Operator.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.compose" title="qiskit.quantum_info.CNOTDihedral.compose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compose</span></code></a>(other[, qargs, front])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.compose.html#qiskit.quantum_info.CNOTDihedral.compose" title="qiskit.quantum_info.CNOTDihedral.compose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compose</span></code></a></p></td>
 <td><p>Return the operator composition with another CNOTDihedral.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.conjugate" title="qiskit.quantum_info.CNOTDihedral.conjugate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.conjugate.html#qiskit.quantum_info.CNOTDihedral.conjugate" title="qiskit.quantum_info.CNOTDihedral.conjugate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></a></p></td>
 <td><p>Return the conjugate of the CNOTDihedral.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.copy" title="qiskit.quantum_info.CNOTDihedral.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.copy.html#qiskit.quantum_info.CNOTDihedral.copy" title="qiskit.quantum_info.CNOTDihedral.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a></p></td>
 <td><p>Make a deep copy of current operator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.dot" title="qiskit.quantum_info.CNOTDihedral.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>(other[, qargs])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.dot.html#qiskit.quantum_info.CNOTDihedral.dot" title="qiskit.quantum_info.CNOTDihedral.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a></p></td>
 <td><p>Return the right multiplied operator self * other.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.expand" title="qiskit.quantum_info.CNOTDihedral.expand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand</span></code></a>(other)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.expand.html#qiskit.quantum_info.CNOTDihedral.expand" title="qiskit.quantum_info.CNOTDihedral.expand"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand</span></code></a></p></td>
 <td><p>Return the reverse-order tensor product with another CNOTDihedral.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.input_dims" title="qiskit.quantum_info.CNOTDihedral.input_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_dims</span></code></a>([qargs])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.input_dims.html#qiskit.quantum_info.CNOTDihedral.input_dims" title="qiskit.quantum_info.CNOTDihedral.input_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_dims</span></code></a></p></td>
 <td><p>Return tuple of input dimension for specified subsystems.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.output_dims" title="qiskit.quantum_info.CNOTDihedral.output_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_dims</span></code></a>([qargs])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.output_dims.html#qiskit.quantum_info.CNOTDihedral.output_dims" title="qiskit.quantum_info.CNOTDihedral.output_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_dims</span></code></a></p></td>
 <td><p>Return tuple of output dimension for specified subsystems.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.power" title="qiskit.quantum_info.CNOTDihedral.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a>(n)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.power.html#qiskit.quantum_info.CNOTDihedral.power" title="qiskit.quantum_info.CNOTDihedral.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a></p></td>
 <td><p>Return the compose of a operator with itself n times.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.reshape" title="qiskit.quantum_info.CNOTDihedral.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape</span></code></a>([input_dims, output_dims, num_qubits])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.reshape.html#qiskit.quantum_info.CNOTDihedral.reshape" title="qiskit.quantum_info.CNOTDihedral.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape</span></code></a></p></td>
 <td><p>Return a shallow copy with reshaped input and output subsystem dimensions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.tensor" title="qiskit.quantum_info.CNOTDihedral.tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.tensor.html#qiskit.quantum_info.CNOTDihedral.tensor" title="qiskit.quantum_info.CNOTDihedral.tensor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor</span></code></a></p></td>
 <td><p>Return the tensor product with another CNOTDihedral.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.to_circuit" title="qiskit.quantum_info.CNOTDihedral.to_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_circuit</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.to_circuit.html#qiskit.quantum_info.CNOTDihedral.to_circuit" title="qiskit.quantum_info.CNOTDihedral.to_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_circuit</span></code></a></p></td>
 <td><p>Return a QuantumCircuit implementing the CNOT-Dihedral element.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.to_instruction" title="qiskit.quantum_info.CNOTDihedral.to_instruction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_instruction</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.to_instruction.html#qiskit.quantum_info.CNOTDihedral.to_instruction" title="qiskit.quantum_info.CNOTDihedral.to_instruction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_instruction</span></code></a></p></td>
 <td><p>Return a Gate instruction implementing the CNOTDihedral object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.to_matrix" title="qiskit.quantum_info.CNOTDihedral.to_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_matrix</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.to_matrix.html#qiskit.quantum_info.CNOTDihedral.to_matrix" title="qiskit.quantum_info.CNOTDihedral.to_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_matrix</span></code></a></p></td>
 <td><p>Convert operator to Numpy matrix.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.to_operator" title="qiskit.quantum_info.CNOTDihedral.to_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_operator</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.to_operator.html#qiskit.quantum_info.CNOTDihedral.to_operator" title="qiskit.quantum_info.CNOTDihedral.to_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_operator</span></code></a></p></td>
 <td><p>Convert to an Operator object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.transpose" title="qiskit.quantum_info.CNOTDihedral.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.CNOTDihedral.transpose.html#qiskit.quantum_info.CNOTDihedral.transpose" title="qiskit.quantum_info.CNOTDihedral.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a></p></td>
 <td><p>Return the transpose of the CNOTDihedral.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.dim" title="qiskit.quantum_info.CNOTDihedral.dim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dim</span></code></a></p></td>
-<td><p>Return tuple (input_shape, output_shape).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.num_qubits" title="qiskit.quantum_info.CNOTDihedral.num_qubits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_qubits</span></code></a></p></td>
-<td><p>Return the number of qubits if a N-qubit operator or None otherwise.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.qargs" title="qiskit.quantum_info.CNOTDihedral.qargs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qargs</span></code></a></p></td>
-<td><p>Return the qargs for the operator.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.settings" title="qiskit.quantum_info.CNOTDihedral.settings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">settings</span></code></a></p></td>
-<td><p>Return operator settings.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.adjoint">
-<code class="sig-name descname">adjoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.adjoint"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.adjoint" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the adjoint of the Operator.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.compose">
-<code class="sig-name descname">compose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">qargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">front</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.compose"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.compose" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the operator composition with another CNOTDihedral.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>other</strong> (<a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral"><em>CNOTDihedral</em></a>) – a CNOTDihedral object.</p></li>
-<li><p><strong>qargs</strong> (<em>list</em><em> or </em><em>None</em>) – Optional, a list of subsystem positions to
-apply other on. If None apply on all
-subsystems (default: None).</p></li>
-<li><p><strong>front</strong> (<em>bool</em>) – If True compose using right operator multiplication,
-instead of left multiplication [default: False].</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>The composed CNOTDihedral.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral">CNOTDihedral</a></p>
-</dd>
-<dt class="field-even">Verursacht</dt>
-<dd class="field-even"><p><strong>QiskitError</strong> – if other cannot be converted to an operator, or has
-    incompatible dimensions for specified subsystems.</p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Bemerkung</p>
-<p>Composition (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) by default is defined as <cite>left</cite> matrix multiplication for
-matrix operators, while <a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.dot" title="qiskit.quantum_info.CNOTDihedral.dot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dot()</span></code></a> is defined as <cite>right</cite> matrix
-multiplication. That is that <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&amp;</span> <span class="pre">B</span> <span class="pre">==</span> <span class="pre">A.compose(B)</span></code> is equivalent to
-<code class="docutils literal notranslate"><span class="pre">B.dot(A)</span></code> when <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are of the same type.</p>
-<p>Setting the <code class="docutils literal notranslate"><span class="pre">front=True</span></code> kwarg changes this to <cite>right</cite> matrix
-multiplication and is equivalent to the <a class="reference internal" href="#qiskit.quantum_info.CNOTDihedral.dot" title="qiskit.quantum_info.CNOTDihedral.dot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dot()</span></code></a> method
-<code class="docutils literal notranslate"><span class="pre">A.dot(B)</span> <span class="pre">==</span> <span class="pre">A.compose(B,</span> <span class="pre">front=True)</span></code>.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.conjugate">
-<code class="sig-name descname">conjugate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.conjugate"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.conjugate" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the conjugate of the CNOTDihedral.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.copy" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Make a deep copy of current operator.</p>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.quantum_info.CNOTDihedral.dim">
-<em class="property">property </em><code class="sig-name descname">dim</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.dim" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">dim</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.dim" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>Return tuple (input_shape, output_shape).</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.dot">
-<code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">qargs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.dot" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the right multiplied operator self * other.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>other</strong> (<a class="reference internal" href="qiskit.quantum_info.Operator.html#qiskit.quantum_info.Operator" title="qiskit.quantum_info.Operator"><em>Operator</em></a>) – an operator object.</p></li>
-<li><p><strong>qargs</strong> (<em>list</em><em> or </em><em>None</em>) – Optional, a list of subsystem positions to
-apply other on. If None apply on all
-subsystems (default: None).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>The right matrix multiplied Operator.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.quantum_info.Operator.html#qiskit.quantum_info.Operator" title="qiskit.quantum_info.Operator">Operator</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.expand">
-<code class="sig-name descname">expand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.expand"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.expand" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the reverse-order tensor product with another CNOTDihedral.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral"><em>CNOTDihedral</em></a>) – a CNOTDihedral object.</p>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>the tensor product <span class="math notranslate nohighlight">\(b \otimes a\)</span>, where <span class="math notranslate nohighlight">\(a\)</span></dt><dd><p>is the current CNOTDihedral, and <span class="math notranslate nohighlight">\(b\)</span> is the other CNOTDihedral.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral">CNOTDihedral</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.input_dims">
-<code class="sig-name descname">input_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qargs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.input_dims" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return tuple of input dimension for specified subsystems.</p>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.quantum_info.CNOTDihedral.num_qubits">
-<em class="property">property </em><code class="sig-name descname">num_qubits</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.num_qubits" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">num_qubits</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.num_qubits" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>Return the number of qubits if a N-qubit operator or None otherwise.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.output_dims">
-<code class="sig-name descname">output_dims</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">qargs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.output_dims" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return tuple of output dimension for specified subsystems.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.power">
-<code class="sig-name descname">power</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.power" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the compose of a operator with itself n times.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – the number of times to compose with self (n&gt;0).</p>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>the n-times composed operator.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.quantum_info.Pauli.html#qiskit.quantum_info.Pauli" title="qiskit.quantum_info.Pauli">Pauli</a></p>
-</dd>
-<dt class="field-even">Verursacht</dt>
-<dd class="field-even"><p><strong>QiskitError</strong> – if the input and output dimensions of the operator
-    are not equal, or the power is not a positive integer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.quantum_info.CNOTDihedral.qargs">
-<em class="property">property </em><code class="sig-name descname">qargs</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.qargs" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">qargs</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.qargs" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>Return the qargs for the operator.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.reshape">
-<code class="sig-name descname">reshape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_dims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_dims</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_qubits</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.reshape" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return a shallow copy with reshaped input and output subsystem dimensions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>input_dims</strong> (<em>None</em><em> or </em><em>tuple</em>) – new subsystem input dimensions.
-If None the original input dims will be preserved [Default: None].</p></li>
-<li><p><strong>output_dims</strong> (<em>None</em><em> or </em><em>tuple</em>) – new subsystem output dimensions.
-If None the original output dims will be preserved [Default: None].</p></li>
-<li><p><strong>num_qubits</strong> (<em>None</em><em> or </em><em>int</em>) – reshape to an N-qubit operator [Default: None].</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>returns self with reshaped input and output dimensions.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p>BaseOperator</p>
-</dd>
-<dt class="field-even">Verursacht</dt>
-<dd class="field-even"><p><strong>QiskitError</strong> – if combined size of all subsystem input dimension or
-    subsystem output dimensions is not constant.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.quantum_info.CNOTDihedral.settings">
-<em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.settings" title="Link zu dieser Definition">¶</a></dt>
+<code class="sig-name descname">settings</code><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.settings" title="Link zu dieser Definition">¶</a></dt>
 <dd><p>Return operator settings.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.tensor">
-<code class="sig-name descname">tensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.tensor"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.tensor" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the tensor product with another CNOTDihedral.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral"><em>CNOTDihedral</em></a>) – a CNOTDihedral object.</p>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>the tensor product <span class="math notranslate nohighlight">\(a \otimes b\)</span>, where <span class="math notranslate nohighlight">\(a\)</span></dt><dd><p>is the current CNOTDihedral, and <span class="math notranslate nohighlight">\(b\)</span> is the other CNOTDihedral.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.ignis.verification.CNOTDihedral.html#qiskit.ignis.verification.CNOTDihedral" title="qiskit.ignis.verification.CNOTDihedral">CNOTDihedral</a></p>
-</dd>
-</dl>
-<div class="admonition note">
-<p class="admonition-title">Bemerkung</p>
-<p>The tensor product can be obtained using the <code class="docutils literal notranslate"><span class="pre">^</span></code> binary operator.
-Hence <code class="docutils literal notranslate"><span class="pre">a.tensor(b)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">^</span> <span class="pre">b</span></code>.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.to_circuit">
-<code class="sig-name descname">to_circuit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.to_circuit"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.to_circuit" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return a QuantumCircuit implementing the CNOT-Dihedral element.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Rückgabe</dt>
-<dd class="field-odd"><p>a circuit implementation of the CNOTDihedral object.</p>
-</dd>
-<dt class="field-even">Rückgabetyp</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<ol class="arabic simple">
-<li><p>Shelly Garion and Andrew W. Cross, <em>Synthesis of CNOT-Dihedral circuits
-with optimal number of two qubit gates</em>, <a class="reference external" href="https://quantum-journal.org/papers/q-2020-12-07-369/">Quantum 4(369), 2020</a></p></li>
-<li><p>Andrew W. Cross, Easwar Magesan, Lev S. Bishop, John A. Smolin and Jay M. Gambetta,
-<em>Scalable randomised benchmarking of non-Clifford gates</em>,
-npj Quantum Inf 2, 16012 (2016).</p></li>
-</ol>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.to_instruction">
-<code class="sig-name descname">to_instruction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.to_instruction"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.to_instruction" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return a Gate instruction implementing the CNOTDihedral object.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.to_matrix">
-<code class="sig-name descname">to_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.to_matrix"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.to_matrix" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Convert operator to Numpy matrix.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.to_operator">
-<code class="sig-name descname">to_operator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.to_operator"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.to_operator" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Convert to an Operator object.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.CNOTDihedral.transpose">
-<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/operators/dihedral/dihedral.html#CNOTDihedral.transpose"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.quantum_info.CNOTDihedral.transpose" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Return the transpose of the CNOTDihedral.</p>
 </dd></dl>
 
 </dd></dl>
@@ -789,10 +522,10 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.quantum_info.PauliList.html" class="btn btn-neutral float-right" title="qiskit.quantum_info.PauliList" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.quantum_info.CNOTDihedral.adjoint.html" class="btn btn-neutral float-right" title="qiskit.quantum_info.CNOTDihedral.adjoint" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.quantum_info.SparsePauliOp.html" class="btn btn-neutral" title="qiskit.quantum_info.SparsePauliOp" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.quantum_info.SparsePauliOp.transpose.html" class="btn btn-neutral" title="qiskit.quantum_info.SparsePauliOp.transpose" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -806,7 +539,7 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -825,7 +558,7 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.quantum_info.CNOTDihedral</a></li>
+<li><a class="reference internal" href="#">CNOTDihedral</a></li>
 </ul>
 
             </div>
@@ -889,7 +622,7 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -912,9 +645,11 @@ npj Quantum Inf 2, 16012 (2016).</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

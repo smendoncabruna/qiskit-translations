@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.algorithms.PhaseEstimation &mdash; documentación de Qiskit - 0.29.0</title>
+  <title>PhaseEstimation &mdash; documentación de Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="qiskit.algorithms.PhaseEstimationResult" href="qiskit.algorithms.PhaseEstimationResult.html" />
-    <link rel="prev" title="qiskit.algorithms.PhaseEstimationScale" href="qiskit.algorithms.PhaseEstimationScale.html" /> 
+    <link rel="next" title="qiskit.algorithms.PhaseEstimation.construct_circuit" href="qiskit.algorithms.PhaseEstimation.construct_circuit.html" />
+    <link rel="prev" title="qiskit.algorithms.PhaseEstimationScale.scale_phases" href="qiskit.algorithms.PhaseEstimationScale.scale_phases.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Página de inicio de la documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Página de inicio de la Documentación</a></li>
 </ul>
 <p><span class="caption-text">Preliminares</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Referencias de la API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulador Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Experimentos Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Módulos de Aplicación Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Proveedor)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Proveedor Qiskit IBM Quantum</a></li>
 </ul>
-<p><span class="caption-text">Guía de Migración de Aplicaciones Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Guía de Migración de Qiskit Aqua</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guía de Migración de Aplicaciones Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guía de Migración de Qiskit Aqua</a></li>
 </ul>
 <p><span class="caption-text">Solución de Problemas</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.algorithms.PhaseEstimation</li>
+      <li>PhaseEstimation</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-algorithms-phaseestimation">
-<h1>qiskit.algorithms.PhaseEstimation<a class="headerlink" href="#qiskit-algorithms-phaseestimation" title="Enlazar permanentemente con este título">¶</a></h1>
+  <section id="phaseestimation">
+<h1>PhaseEstimation<a class="headerlink" href="#phaseestimation" title="Enlazar permanentemente con este título">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.algorithms.PhaseEstimation">
 <em class="property">class </em><code class="sig-name descname">PhaseEstimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_evaluation_qubits</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation.html#PhaseEstimation"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimation" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Run the Quantum Phase Estimation (QPE) algorithm.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.algorithms.phase_estimators.phase_estimator.PhaseEstimator</span></code></p>
+<p>Run the Quantum Phase Estimation (QPE) algorithm.</p>
 <p>This runs QPE with a multi-qubit register for reading the phases [1]
 of input states.</p>
 <p>The algorithm takes as input a unitary <span class="math notranslate nohighlight">\(U\)</span> and a state <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>,
@@ -375,24 +383,10 @@ Cambridge University Press, New York, NY, USA.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_evaluation_qubits</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of qubits used in estimating the phase. The phase will
 be estimated as a binary string with this many bits.</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The quantum instance on which the circuit will be run.</p></li>
+<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The quantum instance on which the circuit will be run.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimation.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num_evaluation_qubits</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation.html#PhaseEstimation.__init__"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimation.__init__" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>num_evaluation_qubits</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The number of qubits used in estimating the phase. The phase will
-be estimated as a binary string with this many bits.</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – The quantum instance on which the circuit will be run.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -400,82 +394,17 @@ be estimated as a binary string with this many bits.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimation.__init__" title="qiskit.algorithms.PhaseEstimation.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(num_evaluation_qubits[, …])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type num_evaluation_qubits</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimation.construct_circuit" title="qiskit.algorithms.PhaseEstimation.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(unitary[, state_preparation])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.PhaseEstimation.construct_circuit.html#qiskit.algorithms.PhaseEstimation.construct_circuit" title="qiskit.algorithms.PhaseEstimation.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Return the circuit to be executed to estimate phases.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimation.estimate" title="qiskit.algorithms.PhaseEstimation.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a>([unitary, state_preparation, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.algorithms.PhaseEstimation.estimate.html#qiskit.algorithms.PhaseEstimation.estimate" title="qiskit.algorithms.PhaseEstimation.estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate</span></code></a></p></td>
 <td><p>Build a phase estimation circuit and run the corresponding algorithm.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit" title="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate_from_pe_circuit</span></code></a>(pe_circuit, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit.html#qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit" title="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimate_from_pe_circuit</span></code></a></p></td>
 <td><p>Run the the phase estimation algorithm on a phase estimation circuit</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimation.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">unitary</span></em>, <em class="sig-param"><span class="n">state_preparation</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation.html#PhaseEstimation.construct_circuit"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimation.construct_circuit" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Return the circuit to be executed to estimate phases.</p>
-<p>This circuit includes as sub-circuits the core phase estimation circuit,
-with the addition of the state-preparation circuit and possibly measurement instructions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Tipo del valor devuelto</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimation.estimate">
-<code class="sig-name descname">estimate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">unitary</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">state_preparation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pe_circuit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">num_unitary_qubits</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation.html#PhaseEstimation.estimate"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimation.estimate" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Build a phase estimation circuit and run the corresponding algorithm.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>unitary</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]) – The circuit representing the unitary operator whose eigenvalues (via phase)
-will be measured.</p></li>
-<li><p><strong>state_preparation</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]) – The circuit that prepares the state whose eigenphase will be
-measured.  If this parameter is omitted, no preparation circuit
-will be run and input state will be the all-zero state in the
-computational basis.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">PhaseEstimationResult</span></code></p>
-</dd>
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>An instance of qiskit.algorithms.phase_estimator_result.PhaseEstimationResult.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit">
-<code class="sig-name descname">estimate_from_pe_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pe_circuit</span></em>, <em class="sig-param"><span class="n">num_unitary_qubits</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/algorithms/phase_estimators/phase_estimation.html#PhaseEstimation.estimate_from_pe_circuit"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.algorithms.PhaseEstimation.estimate_from_pe_circuit" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Run the the phase estimation algorithm on a phase estimation circuit</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parámetros</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>pe_circuit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>) – The phase estimation circuit.</p></li>
-<li><p><strong>num_unitary_qubits</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Must agree with the number of qubits in the unitary in <cite>pe_circuit</cite>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Tipo del valor devuelto</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">PhaseEstimationResult</span></code></p>
-</dd>
-<dt class="field-odd">Devuelve</dt>
-<dd class="field-odd"><p>An instance of qiskit.algorithms.phase_estimator_result.PhaseEstimationResult.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -488,10 +417,10 @@ computational basis.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.algorithms.PhaseEstimationResult.html" class="btn btn-neutral float-right" title="qiskit.algorithms.PhaseEstimationResult" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.algorithms.PhaseEstimation.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.algorithms.PhaseEstimation.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.algorithms.PhaseEstimationScale.html" class="btn btn-neutral" title="qiskit.algorithms.PhaseEstimationScale" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.algorithms.PhaseEstimationScale.scale_phases.html" class="btn btn-neutral" title="qiskit.algorithms.PhaseEstimationScale.scale_phases" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -505,7 +434,7 @@ computational basis.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/08/13.
+      Actualizado por última vez en 2021/09/23.
 
     </p>
   </div>
@@ -524,7 +453,7 @@ computational basis.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.algorithms.PhaseEstimation</a></li>
+<li><a class="reference internal" href="#">PhaseEstimation</a></li>
 </ul>
 
             </div>
@@ -588,7 +517,7 @@ computational basis.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -611,9 +540,11 @@ computational basis.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

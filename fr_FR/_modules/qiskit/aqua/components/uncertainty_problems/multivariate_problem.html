@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.uncertainty_problems.multivariate_problem &mdash; Documentation Qiskit 0.29.0</title>
+  <title>qiskit.aqua.components.uncertainty_problems.multivariate_problem &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -230,7 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -350,7 +357,7 @@
 <span class="sd">    Multivariate Uncertainty Problem.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MultivariateProblem.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">uncertainty_model</span><span class="p">:</span> <span class="n">MultivariateDistribution</span><span class="p">,</span>
                  <span class="n">aggregation_function</span><span class="p">:</span> <span class="n">CircuitFactory</span><span class="p">,</span>
                  <span class="n">univariate_objective</span><span class="p">:</span> <span class="n">UnivariatePiecewiseLinearObjective</span><span class="p">,</span>
@@ -381,15 +388,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_uncertainty_model</span> <span class="o">=</span> <span class="n">uncertainty_model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_aggregation_function</span> <span class="o">=</span> <span class="n">aggregation_function</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_univariate_objective</span> <span class="o">=</span> <span class="n">univariate_objective</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_conditions</span> <span class="o">=</span> <span class="n">conditions</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_conditions</span> <span class="o">=</span> <span class="n">conditions</span>
 
-<div class="viewcode-block" id="MultivariateProblem.value_to_estimation"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.value_to_estimation">[docs]</a>    <span class="k">def</span> <span class="nf">value_to_estimation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="MultivariateProblem.value_to_estimation"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.value_to_estimation.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.value_to_estimation">[docs]</a>    <span class="k">def</span> <span class="nf">value_to_estimation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_univariate_objective</span><span class="p">,</span> <span class="s1">&#39;value_to_estimation&#39;</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_univariate_objective</span><span class="o">.</span><span class="n">value_to_estimation</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="MultivariateProblem.required_ancillas"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.required_ancillas">[docs]</a>    <span class="k">def</span> <span class="nf">required_ancillas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="MultivariateProblem.required_ancillas"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.required_ancillas.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.required_ancillas">[docs]</a>    <span class="k">def</span> <span class="nf">required_ancillas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="n">num_condition_ancillas</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">num_condition_target_ancillas</span> <span class="o">=</span> <span class="mi">0</span>
@@ -415,7 +422,7 @@
 
         <span class="k">return</span> <span class="n">num_ancillas</span></div>
 
-<div class="viewcode-block" id="MultivariateProblem.build"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">q_ancillas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultivariateProblem.build"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_problems.MultivariateProblem.build.html#qiskit.aqua.components.uncertainty_problems.MultivariateProblem.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">q_ancillas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># apply uncertainty model (can use all ancillas and returns all clean)</span>
         <span class="n">q_state</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">i_state</span><span class="p">]</span>
@@ -587,7 +594,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -667,7 +674,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -690,9 +697,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

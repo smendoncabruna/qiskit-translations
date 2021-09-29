@@ -1,39 +1,32 @@
-﻿qiskit.providers.ibmq.runtime.RuntimeProgram
-============================================
+﻿RuntimeProgram
+==============
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: RuntimeProgram
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RuntimeProgram.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RuntimeProgram.parameters
       ~RuntimeProgram.to_dict
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RuntimeProgram.backend_requirements
-      ~RuntimeProgram.creation_date
-      ~RuntimeProgram.description
-      ~RuntimeProgram.interim_results
-      ~RuntimeProgram.is_public
-      ~RuntimeProgram.max_execution_time
-      ~RuntimeProgram.name
-      ~RuntimeProgram.program_id
-      ~RuntimeProgram.return_values
-      ~RuntimeProgram.version
-   
-   
+   .. autoattribute:: backend_requirements
+   .. autoattribute:: creation_date
+   .. autoattribute:: description
+   .. autoattribute:: interim_results
+   .. autoattribute:: is_public
+   .. autoattribute:: max_execution_time
+   .. autoattribute:: name
+   .. autoattribute:: program_id
+   .. autoattribute:: return_values
+   .. autoattribute:: version

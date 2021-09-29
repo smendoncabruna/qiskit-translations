@@ -1,24 +1,19 @@
-﻿qiskit.algorithms.MinimumEigensolver
-====================================
+﻿MinimumEigensolver
+==================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: MinimumEigensolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MinimumEigensolver.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MinimumEigensolver.compute_minimum_eigenvalue
       ~MinimumEigensolver.supports_aux_operators
-   
-   
 
-   
-   
-   
+

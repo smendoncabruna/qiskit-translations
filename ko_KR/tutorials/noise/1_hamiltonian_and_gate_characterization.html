@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>해밀토니안과 게이트 정의 &mdash; Qiskit 0.29.0 문서</title>
+  <title>해밀토니안과 게이트 정의 &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -955,7 +962,7 @@ Angle error between X and Y: 0.096159 rads
 </section>
 <section id="CX-게이트의-진폭-에러-특성">
 <h2>CX 게이트의 진폭 에러 특성<a class="headerlink" href="#CX-게이트의-진폭-에러-특성" title="제목 주소">¶</a></h2>
-<p>This looks for a rotation error in the CX gate, i.e. if the gate is actually <span class="math notranslate nohighlight">\(CR_x(\pi/2+\delta)\)</span> measure <span class="math notranslate nohighlight">\(\delta\)</span>. This is very similar to the single qubit amplitude error calibration except we need to specify a control qubit (which is set to be in state <span class="math notranslate nohighlight">\(|1\rangle\)</span>) and the rotation is <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>이는 CX 게이트에서의 회전 에러를 찾는 것, 즉 게이트가 실제로 <span class="math notranslate nohighlight">\(CR_x(\pi/2+\delta)\)</span> 인 경우에, <span class="math notranslate nohighlight">\(\delta\)</span> 를 측정한다. 이는 제어 비트 (상태 <span class="math notranslate nohighlight">\(|1\rangle\)</span> 로 설정됨) 를 지정할 필요가 없고, 회전이 <span class="math notranslate nohighlight">\(\pi\)</span> 인 것을 제외하고는, 단일 큐비트 진폭 에러 교정과 매우 유사하다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1069,7 +1076,7 @@ Rotation Error on CX: 0.149493 rads
 </section>
 <section id="CX-게이트의-각도-에러-특성">
 <h2>CX 게이트의 각도 에러 특성<a class="headerlink" href="#CX-게이트의-각도-에러-특성" title="제목 주소">¶</a></h2>
-<p>Measure the angle error <span class="math notranslate nohighlight">\(\theta\)</span> in the CX gate, i.e. <span class="math notranslate nohighlight">\(CR_{\cos(\theta)X+\sin(\theta)Y}(\pi/2)\)</span> with respect to the angle of the single qubit gates.</p>
+<p>CX 게이트에서 각도 에러 <span class="math notranslate nohighlight">\(\theta\)</span>, 즉 <span class="math notranslate nohighlight">\(CR_{\cos(\theta)X+\sin(\theta)Y}(\pi/2)\)</span> 를 단일 큐비트 게이트의 각도에 대해 측정한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1230,7 +1237,7 @@ Rotation Error on CX: 0.099402 rads
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -1320,7 +1327,7 @@ Rotation Error on CX: 0.099402 rads
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1343,9 +1350,11 @@ Rotation Error on CX: 0.099402 rads
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

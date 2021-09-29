@@ -1,24 +1,19 @@
-﻿qiskit.aqua.operators.expectations.CVaRExpectation
-==================================================
+﻿CVaRExpectation
+===============
 
 .. currentmodule:: qiskit.aqua.operators.expectations
 
 .. autoclass:: CVaRExpectation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CVaRExpectation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CVaRExpectation.compute_variance
       ~CVaRExpectation.convert
-   
-   
 
-   
-   
-   
+

@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.noise.QuantumError
-=======================================
+﻿QuantumError
+============
 
 .. currentmodule:: qiskit.providers.aer.noise
 
 .. autoclass:: QuantumError
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuantumError.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuantumError.compose
       ~QuantumError.copy
       ~QuantumError.dot
@@ -27,20 +26,14 @@
       ~QuantumError.to_dict
       ~QuantumError.to_instruction
       ~QuantumError.to_quantumchannel
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuantumError.atol
-      ~QuantumError.circuits
-      ~QuantumError.number_of_qubits
-      ~QuantumError.probabilities
-      ~QuantumError.rtol
-      ~QuantumError.size
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: circuits
+   .. autoattribute:: number_of_qubits
+   .. autoattribute:: probabilities
+   .. autoattribute:: rtol
+   .. autoattribute:: size

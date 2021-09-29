@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveStatevector
-============================================
+﻿SaveStatevector
+===============
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveStatevector
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveStatevector.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveStatevector.add_decomposition
       ~SaveStatevector.assemble
       ~SaveStatevector.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveStatevector.reverse_ops
       ~SaveStatevector.soft_compare
       ~SaveStatevector.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveStatevector.decompositions
-      ~SaveStatevector.definition
-      ~SaveStatevector.duration
-      ~SaveStatevector.label
-      ~SaveStatevector.params
-      ~SaveStatevector.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.transpiler.passmanager &mdash; Qiskit 0.29.0 - dokumentacja</title>
+  <title>qiskit.transpiler.passmanager &mdash; Qiskit 0.30.0 - dokumentacja</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -349,7 +356,7 @@
 <div class="viewcode-block" id="PassManager"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager">[dokumentacja]</a><span class="k">class</span> <span class="nc">PassManager</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Manager for a set of Passes and their scheduling during transpilation.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PassManager.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.__init__">[dokumentacja]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">passes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BasePass</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">BasePass</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">max_iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">passes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BasePass</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">BasePass</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">max_iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize an empty `PassManager` object (with no passes scheduled).</span>
 
 <span class="sd">        Args:</span>
@@ -365,9 +372,9 @@
         <span class="k">if</span> <span class="n">passes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">passes</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">max_iteration</span> <span class="o">=</span> <span class="n">max_iteration</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">property_set</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">property_set</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="PassManager.append"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.append">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
+<div class="viewcode-block" id="PassManager.append"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.append.html#qiskit.transpiler.PassManager.append">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">passes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BasePass</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">BasePass</span><span class="p">]],</span>
         <span class="n">max_iteration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -399,7 +406,7 @@
         <span class="n">passes</span> <span class="o">=</span> <span class="n">PassManager</span><span class="o">.</span><span class="n">_normalize_passes</span><span class="p">(</span><span class="n">passes</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pass_sets</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;passes&quot;</span><span class="p">:</span> <span class="n">passes</span><span class="p">,</span> <span class="s2">&quot;flow_controllers&quot;</span><span class="p">:</span> <span class="n">flow_controller_conditions</span><span class="p">})</span></div>
 
-<div class="viewcode-block" id="PassManager.replace"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.replace">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
+<div class="viewcode-block" id="PassManager.replace"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.replace.html#qiskit.transpiler.PassManager.replace">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
         <span class="n">passes</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BasePass</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">BasePass</span><span class="p">]],</span>
@@ -436,7 +443,7 @@
         <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">TranspilerError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index to replace </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> does not exists&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span></div>
 
-<div class="viewcode-block" id="PassManager.remove"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.remove">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="PassManager.remove"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.remove.html#qiskit.transpiler.PassManager.remove">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Removes a particular pass in the scheduler.</span>
 
 <span class="sd">        Args:</span>
@@ -493,7 +500,7 @@
                 <span class="k">raise</span> <span class="n">TranspilerError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not a pass instance&quot;</span> <span class="o">%</span> <span class="n">pass_</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">passes</span>
 
-<div class="viewcode-block" id="PassManager.run"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.run">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
+<div class="viewcode-block" id="PassManager.run"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.run.html#qiskit.transpiler.PassManager.run">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">circuits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">]],</span>
         <span class="n">output_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -595,7 +602,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">property_set</span> <span class="o">=</span> <span class="n">running_passmanager</span><span class="o">.</span><span class="n">property_set</span>
         <span class="k">return</span> <span class="n">result</span>
 
-<div class="viewcode-block" id="PassManager.draw"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.draw">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="PassManager.draw"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.draw.html#qiskit.transpiler.PassManager.draw">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Draw the pass manager.</span>
 
 <span class="sd">        This function needs `pydot &lt;https://github.com/erocarrera/pydot&gt;`__, which in turn needs</span>
@@ -619,7 +626,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">pass_manager_drawer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="n">raw</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PassManager.passes"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.html#qiskit.transpiler.PassManager.passes">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">passes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">BasePass</span><span class="p">]]:</span>
+<div class="viewcode-block" id="PassManager.passes"><a class="viewcode-back" href="../../../stubs/qiskit.transpiler.PassManager.passes.html#qiskit.transpiler.PassManager.passes">[dokumentacja]</a>    <span class="k">def</span> <span class="nf">passes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">BasePass</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Return a list structure of the appended passes and its options.</span>
 
 <span class="sd">        Returns:</span>
@@ -651,7 +658,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Ostatnia modyfikacja 2021/08/13.
+      Ostatnia modyfikacja 2021/09/23.
 
     </p>
   </div>
@@ -731,7 +738,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -754,9 +761,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

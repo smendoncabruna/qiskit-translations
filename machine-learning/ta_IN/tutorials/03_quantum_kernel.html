@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>குவாண்டம் கர்னல் இயந்திர வழி கற்றல் &mdash; Qiskit Machine Learning 0.2.0 documentation</title>
+  <title>குவாண்டம் கர்னல் இயந்திர வழி கற்றல் &mdash; Qiskit Machine Learning 0.2.1 documentation</title>
   
 
   
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/tutorials/03_quantum_kernel.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/tutorials/03_quantum_kernel.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/tutorials/03_quantum_kernel.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/tutorials/03_quantum_kernel.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/tutorials/03_quantum_kernel.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/tutorials/03_quantum_kernel.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -502,7 +508,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
 <div class="section" id="குவாண்டம்-கர்னல்-இயந்திர-வழி-கற்றல்">
 <h1>குவாண்டம் கர்னல் இயந்திர வழி கற்றல்<a class="headerlink" href="#குவாண்டம்-கர்னல்-இயந்திர-வழி-கற்றல்" title="Permalink to this headline">¶</a></h1>
@@ -533,8 +539,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Classification">
-<h2>Classification<a class="headerlink" href="#Classification" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="வகைப்படுத்துதல்">
+<h2>வகைப்படுத்துதல்<a class="headerlink" href="#வகைப்படுத்துதல்" title="Permalink to this headline">¶</a></h2>
 <p>எங்கள் வகைப்பாடு எடுத்துக்காட்டுக்கு, <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">குவாண்டம் மேம்படுத்தப்பட்ட அம்ச இடைவெளிகளுடன் கற்றல் மேற்பார்வை</a>, மற்றும் <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">ஆதரவு திசையன் இயந்திரம்</a> வகைப்பாடு (<code class="docutils literal notranslate"><span class="pre">svc</span></code>) வழிமுறை ஆகியவற்றைக் கொண்டு விவரிக்கப்பட்டுள்ளபடி <em>ad hoc dataset</em> ஐ பயன்படுத்துவோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -670,7 +676,7 @@ Precomputed kernel classification test score: 1.0
 <span class="n">qsvc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
 <span class="n">qsvc_score</span> <span class="o">=</span> <span class="n">qsvc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;QSVC classification test score: </span><span class="si">{</span><span class="n">adhoc_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;QSVC classification test score: </span><span class="si">{</span><span class="n">qsvc_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +748,7 @@ QSVC classification test score: 1.0
 </div>
 </div>
 <p>ஸ்கிக்கிட்-லர் ஸ்பெக்ட்ரல் க்ளஸ்டரிங் அல்காரிதம் ஒரு [தனிப்பயன் கர்னலை] இரண்டு வழிகளில் வரையறுக்க அனுமதிக்கிறது: கர்னலை அழைக்கக்கூடிய செயல்பாடாக வழங்குவதன் மூலம் அல்லது கர்னல் மேட்ரிக்ஸை முன்கூட்டியே கணக்கிடுவதன் மூலம். Qiskit-டில் குவாண்டம் கர்னல் வகுப்பைப் பயன்படுத்தி, பிந்தையதை மட்டுமே பயன்படுத்த முடியும்.</p>
-<p>The following code precomputes and plots the kernel matrices before providing it to the scikit-learn spectral clustering algorithm, and scoring the labels using normalized mutual information, since we a priori know the class labels.</p>
+<p>பின்வரும் குறியீடு கர்னல் மெட்ரிக்ஸை சிக்ஸ்கிட்-லர்ன் ஸ்பெக்ட்ரல் clustering வழிமுறைகளுக்கு வழங்குவதற்கு முன் அளிக்கிறது, மற்றும் இயல்பான பரஸ்பர தகவலைப் பயன்படுத்தி அடையாளக் குறியீட்டுகளை அடித்தல்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -783,7 +789,7 @@ Clustering score: 0.7287008798015754
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html">Agglomerative clustering</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html">Support vector regression</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html">Ridge regression</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/gaussian_process.html">Gaussian process regression</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/gaussian_process.html">காசியன் செயல்முறை பின்னடைவு</a></p></li>
 <li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.KernelPCA.html">Principal component analysis</a></p></li>
 </ul>
 <div class="nbinput docutils container">
@@ -856,7 +862,7 @@ Clustering score: 0.7287008798015754
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">குவாண்டம் கர்னல் இயந்திர வழி கற்றல்</a><ul>
-<li><a class="reference internal" href="#Classification">Classification</a></li>
+<li><a class="reference internal" href="#வகைப்படுத்துதல்">வகைப்படுத்துதல்</a></li>
 <li><a class="reference internal" href="#கிளஸ்டரிங்">கிளஸ்டரிங்</a></li>
 </ul>
 </li>

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.applications.ising.vertex_cover &mdash; Qiskit 0.29.0 문서</title>
+  <title>qiskit.optimization.applications.ising.vertex_cover &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -343,7 +350,7 @@ Deal with Gset format. See <a class="reference external" href="https://web.stanf
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vertex_cover.check_full_edge_coverage" title="qiskit.optimization.applications.ising.vertex_cover.check_full_edge_coverage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_full_edge_coverage</span></code></a>(x, w)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_full_edge_coverage</span></code>(x, w)</p></td>
 <td><p><dl class="field-list simple">
 <dt class="field-odd">param x</dt>
 <dd class="field-odd"><p>binary string as numpy array.</p>
@@ -351,77 +358,14 @@ Deal with Gset format. See <a class="reference external" href="https://web.stanf
 </dl>
 </p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vertex_cover.get_graph_solution" title="qiskit.optimization.applications.ising.vertex_cover.get_graph_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_graph_solution</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_graph_solution</span></code>(x)</p></td>
 <td><p>Get graph solution from binary string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.vertex_cover.get_operator" title="qiskit.optimization.applications.ising.vertex_cover.get_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code></a>(weight_matrix)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code>(weight_matrix)</p></td>
 <td><p>Generate Hamiltonian for the vertex cover :param weight_matrix: adjacency matrix.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vertex_cover.check_full_edge_coverage">
-<code class="sig-name descname">check_full_edge_coverage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vertex_cover.html#check_full_edge_coverage"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vertex_cover.check_full_edge_coverage" title="정의 주소">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">매개변수</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) – binary string as numpy array.</p></li>
-<li><p><strong>w</strong> (<em>numpy.ndarray</em>) – adjacency matrix.</p></li>
-</ul>
-</dd>
-<dt class="field-even">반환값</dt>
-<dd class="field-even"><p>value of the cut.</p>
-</dd>
-<dt class="field-odd">반환 형식</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vertex_cover.get_graph_solution">
-<code class="sig-name descname">get_graph_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vertex_cover.html#get_graph_solution"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vertex_cover.get_graph_solution" title="정의 주소">¶</a></dt>
-<dd><p>Get graph solution from binary string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">매개변수</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>numpy.ndarray</em>) – binary string as numpy array.</p>
-</dd>
-<dt class="field-even">반환값</dt>
-<dd class="field-even"><p>graph solution as binary numpy array.</p>
-</dd>
-<dt class="field-odd">반환 형식</dt>
-<dd class="field-odd"><p>numpy.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.vertex_cover.get_operator">
-<code class="sig-name descname">get_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weight_matrix</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/vertex_cover.html#get_operator"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.vertex_cover.get_operator" title="정의 주소">¶</a></dt>
-<dd><p>Generate Hamiltonian for the vertex cover
-:param weight_matrix: adjacency matrix.
-:type weight_matrix: numpy.ndarray</p>
-<dl class="field-list simple">
-<dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p>operator for the Hamiltonian and a
-constant shift for the obj function.</p>
-</dd>
-<dt class="field-even">반환 형식</dt>
-<dd class="field-even"><p>tuple(<a class="reference internal" href="qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator" title="qiskit.aqua.operators.legacy.WeightedPauliOperator">WeightedPauliOperator</a>, float)</p>
-</dd>
-</dl>
-<p>Goals:
-1 color some vertices as red such that every edge is connected to some red vertex
-2 minimize the vertices to be colored as red</p>
-<p>Hamiltonian:
-H = A * H_A + H_B
-H_A = sum_{(i,j)in E}{(1-Xi)(1-Xj)}
-H_B = sum_{i}{Zi}</p>
-<p>H_A is to achieve goal 1 while H_b is to achieve goal 2.
-H_A is hard constraint so we place a huge penality on it. A=5.
-Note Xi = (Zi+1)/2</p>
-</dd></dl>
-
 </section>
 
 
@@ -449,7 +393,7 @@ Note Xi = (Zi+1)/2</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -532,7 +476,7 @@ Note Xi = (Zi+1)/2</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -555,9 +499,11 @@ Note Xi = (Zi+1)/2</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

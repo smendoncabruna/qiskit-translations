@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveUnitary
-========================================
+﻿SaveUnitary
+===========
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveUnitary
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveUnitary.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveUnitary.add_decomposition
       ~SaveUnitary.assemble
       ~SaveUnitary.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveUnitary.reverse_ops
       ~SaveUnitary.soft_compare
       ~SaveUnitary.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveUnitary.decompositions
-      ~SaveUnitary.definition
-      ~SaveUnitary.duration
-      ~SaveUnitary.label
-      ~SaveUnitary.params
-      ~SaveUnitary.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

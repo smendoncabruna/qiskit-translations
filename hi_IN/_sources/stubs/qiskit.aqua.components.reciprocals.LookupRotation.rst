@@ -1,24 +1,19 @@
-﻿qiskit.aqua.components.reciprocals.LookupRotation
-=================================================
+﻿LookupRotation
+==============
 
 .. currentmodule:: qiskit.aqua.components.reciprocals
 
 .. autoclass:: LookupRotation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LookupRotation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LookupRotation.construct_circuit
       ~LookupRotation.sv_to_resvec
-   
-   
 
-   
-   
-   
+

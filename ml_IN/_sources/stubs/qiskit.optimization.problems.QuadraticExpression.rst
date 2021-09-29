@@ -1,33 +1,26 @@
-﻿qiskit.optimization.problems.QuadraticExpression
-================================================
+﻿QuadraticExpression
+===================
 
 .. currentmodule:: qiskit.optimization.problems
 
 .. autoclass:: QuadraticExpression
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuadraticExpression.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuadraticExpression.evaluate
       ~QuadraticExpression.evaluate_gradient
       ~QuadraticExpression.to_array
       ~QuadraticExpression.to_dict
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuadraticExpression.coefficients
-      ~QuadraticExpression.quadratic_program
-   
-   
+   .. autoattribute:: coefficients
+   .. autoattribute:: quadratic_program

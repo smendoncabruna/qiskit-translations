@@ -1,19 +1,18 @@
-﻿qiskit.providers.models.BackendProperties
-=========================================
+﻿BackendProperties
+=================
 
 .. currentmodule:: qiskit.providers.models
 
 .. autoclass:: BackendProperties
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BackendProperties.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BackendProperties.faulty_gates
       ~BackendProperties.faulty_qubits
       ~BackendProperties.frequency
@@ -29,9 +28,5 @@
       ~BackendProperties.t1
       ~BackendProperties.t2
       ~BackendProperties.to_dict
-   
-   
 
-   
-   
-   
+

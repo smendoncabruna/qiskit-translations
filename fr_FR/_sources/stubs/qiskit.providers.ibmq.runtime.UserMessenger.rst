@@ -1,23 +1,18 @@
-﻿qiskit.providers.ibmq.runtime.UserMessenger
-===========================================
+﻿UserMessenger
+=============
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: UserMessenger
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UserMessenger.__init__
-      ~UserMessenger.publish
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~UserMessenger.publish
+
+

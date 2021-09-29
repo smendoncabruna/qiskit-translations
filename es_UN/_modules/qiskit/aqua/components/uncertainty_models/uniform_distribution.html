@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.uncertainty_models.uniform_distribution &mdash; documentación de Qiskit - 0.29.0</title>
+  <title>qiskit.aqua.components.uncertainty_models.uniform_distribution &mdash; documentación de Qiskit - 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Página de inicio de la documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Página de inicio de la Documentación</a></li>
 </ul>
 <p><span class="caption-text">Preliminares</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Referencias de la API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Simulador Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Experimentos Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Módulos de Aplicación Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Proveedor)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Proveedor Qiskit IBM Quantum</a></li>
 </ul>
-<p><span class="caption-text">Guía de Migración de Aplicaciones Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Guía de Migración de Qiskit Aqua</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Guía de Migración de Aplicaciones Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Guía de Migración de Qiskit Aqua</a></li>
 </ul>
 <p><span class="caption-text">Solución de Problemas</span></p>
 <ul>
@@ -348,7 +355,7 @@
 <span class="sd">    distribution, as well as the lower bound and upper bound of the considered interval.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="UniformDistribution.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.__init__">[documentos]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">num_target_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                  <span class="n">low</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                  <span class="n">high</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -362,19 +369,19 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">validate_min</span><span class="p">(</span><span class="s1">&#39;num_target_qubits&#39;</span><span class="p">,</span> <span class="n">num_target_qubits</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">num_target_qubits</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">num_target_qubits</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">num_target_qubits</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">num_target_qubits</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_replacement</span><span class="p">():</span>
         <span class="k">return</span> <span class="s1">&#39;qiskit.circuit.library.UniformDistribution&#39;</span>
 
-<div class="viewcode-block" id="UniformDistribution.required_ancillas"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.required_ancillas">[documentos]</a>    <span class="k">def</span> <span class="nf">required_ancillas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UniformDistribution.required_ancillas"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.required_ancillas.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.required_ancillas">[documentos]</a>    <span class="k">def</span> <span class="nf">required_ancillas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="UniformDistribution.required_ancillas_controlled"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.required_ancillas_controlled">[documentos]</a>    <span class="k">def</span> <span class="nf">required_ancillas_controlled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UniformDistribution.required_ancillas_controlled"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.required_ancillas_controlled.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.required_ancillas_controlled">[documentos]</a>    <span class="k">def</span> <span class="nf">required_ancillas_controlled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="UniformDistribution.build"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.build">[documentos]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">q_ancillas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="UniformDistribution.build"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.uncertainty_models.UniformDistribution.build.html#qiskit.aqua.components.uncertainty_models.UniformDistribution.build">[documentos]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">q_ancillas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;i_state&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_target_qubits</span><span class="p">):</span>
                 <span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
@@ -398,7 +405,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/08/13.
+      Actualizado por última vez en 2021/09/23.
 
     </p>
   </div>
@@ -478,7 +485,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -501,9 +508,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.problems.Variable &mdash; Qiskit 0.29.0 documentation</title>
+  <title>Variable &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடல்" href="../search.html" />
-    <link rel="next" title="Qiskit IBM Quantum Provider API Reference" href="../apidoc/ibmq-provider.html" />
-    <link rel="prev" title="qiskit.optimization.problems.QuadraticProgramElement" href="qiskit.optimization.problems.QuadraticProgramElement.html" /> 
+    <link rel="next" title="qiskit.optimization.problems.Variable.as_tuple" href="qiskit.optimization.problems.Variable.as_tuple.html" />
+    <link rel="prev" title="QuadraticProgramElement" href="qiskit.optimization.problems.QuadraticProgramElement.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">ஆவண முகப்புப்பக்கம்</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">முன்னணி</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API குறிப்புகள்</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit சிமுலேட்டர் (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit சோதனைகள் (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit பயன்பாட்டு பகுதிகள் (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM குவாண்டம் (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit செயலிகள் (Aqua) இடம்பெயர்வு வழிகாட்டி</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">பழுது கண்டறிதல்</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.optimization.problems.html">Optimization problems (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.optimization.problems</span></code>)</a> &gt;</li>
         
-      <li>qiskit.optimization.problems.Variable</li>
+      <li>Variable</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-optimization-problems-variable">
-<h1>qiskit.optimization.problems.Variable<a class="headerlink" href="#qiskit-optimization-problems-variable" title="Permalink to this headline">¶</a></h1>
+  <section id="variable">
+<h1>Variable<a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.optimization.problems.Variable">
 <em class="property">class </em><code class="sig-name descname">Variable</code><span class="sig-paren">(</span><em class="sig-param">quadratic_program</em>, <em class="sig-param">name</em>, <em class="sig-param">lowerbound=0</em>, <em class="sig-param">upperbound=1e+20</em>, <em class="sig-param">vartype=&lt;VarType.CONTINUOUS: 0&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/variable.html#Variable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.Variable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Representation of a variable.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.optimization.problems.quadratic_program_element.QuadraticProgramElement</span></code></p>
+<p>Representation of a variable.</p>
 <p>Creates a new Variable.</p>
 <p>The variables is exposed by the top-level <cite>QuadraticProgram</cite> class
 in <cite>QuadraticProgram.variables</cite>.  This constructor is not meant to be used
@@ -354,29 +362,6 @@ externally.</p>
 <dd class="field-even"><p><a class="reference internal" href="qiskit.optimization.QiskitOptimizationError.html#qiskit.optimization.QiskitOptimizationError" title="qiskit.optimization.QiskitOptimizationError"><strong>QiskitOptimizationError</strong></a> -- if lowerbound is greater than upperbound.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.optimization.problems.Variable.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">quadratic_program</em>, <em class="sig-param">name</em>, <em class="sig-param">lowerbound=0</em>, <em class="sig-param">upperbound=1e+20</em>, <em class="sig-param">vartype=&lt;VarType.CONTINUOUS: 0&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/variable.html#Variable.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.Variable.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new Variable.</p>
-<p>The variables is exposed by the top-level <cite>QuadraticProgram</cite> class
-in <cite>QuadraticProgram.variables</cite>.  This constructor is not meant to be used
-externally.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>quadratic_program</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) -- The parent QuadraticProgram.</p></li>
-<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) -- The variable name.</p></li>
-<li><p><strong>lowerbound</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) -- The variable lowerbound.</p></li>
-<li><p><strong>upperbound</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) -- The variable upperbound.</p></li>
-<li><p><strong>vartype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">VarType</span></code>) -- The variable type.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.optimization.QiskitOptimizationError.html#qiskit.optimization.QiskitOptimizationError" title="qiskit.optimization.QiskitOptimizationError"><strong>QiskitOptimizationError</strong></a> -- if lowerbound is greater than upperbound.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -384,62 +369,15 @@ externally.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.__init__" title="qiskit.optimization.problems.Variable.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(quadratic_program, name[, ...])</p></td>
-<td><p>Creates a new Variable.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.as_tuple" title="qiskit.optimization.problems.Variable.as_tuple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_tuple</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.optimization.problems.Variable.as_tuple.html#qiskit.optimization.problems.Variable.as_tuple" title="qiskit.optimization.problems.Variable.as_tuple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_tuple</span></code></a></p></td>
 <td><p>Returns a tuple corresponding to this variable.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.lowerbound" title="qiskit.optimization.problems.Variable.lowerbound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lowerbound</span></code></a></p></td>
-<td><p>Returns the lowerbound of the variable.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.name" title="qiskit.optimization.problems.Variable.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
-<td><p>Returns the name of the variable.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.quadratic_program" title="qiskit.optimization.problems.Variable.quadratic_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quadratic_program</span></code></a></p></td>
-<td><p>Returns the parent QuadraticProgram.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.upperbound" title="qiskit.optimization.problems.Variable.upperbound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upperbound</span></code></a></p></td>
-<td><p>Returns the upperbound of the variable.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.problems.Variable.vartype" title="qiskit.optimization.problems.Variable.vartype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vartype</span></code></a></p></td>
-<td><p>Returns the type of the variable.</p></td>
-</tr>
-</tbody>
-</table>
 <dl class="py attribute">
-<dt id="qiskit.optimization.problems.Variable.Type">
-<code class="sig-name descname">Type</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.Type" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">VarType</span></code></p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.problems.Variable.as_tuple">
-<code class="sig-name descname">as_tuple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/problems/variable.html#Variable.as_tuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.problems.Variable.as_tuple" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a tuple corresponding to this variable.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">VarType</span></code>]</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A tuple corresponding to this variable consisting of name, lowerbound, upperbound and
-variable type.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="qiskit.optimization.problems.Variable.lowerbound">
-<em class="property">property </em><code class="sig-name descname">lowerbound</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.lowerbound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lowerbound</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.lowerbound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the lowerbound of the variable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -451,9 +389,9 @@ variable type.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.problems.Variable.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the variable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -465,9 +403,9 @@ variable type.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.problems.Variable.quadratic_program">
-<em class="property">property </em><code class="sig-name descname">quadratic_program</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.quadratic_program" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">quadratic_program</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.quadratic_program" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the parent QuadraticProgram.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -479,9 +417,9 @@ variable type.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.problems.Variable.upperbound">
-<em class="property">property </em><code class="sig-name descname">upperbound</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.upperbound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">upperbound</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.upperbound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the upperbound of the variable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -493,9 +431,9 @@ variable type.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.optimization.problems.Variable.vartype">
-<em class="property">property </em><code class="sig-name descname">vartype</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.vartype" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">vartype</code><a class="headerlink" href="#qiskit.optimization.problems.Variable.vartype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the type of the variable.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -519,10 +457,10 @@ variable type.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/ibmq-provider.html" class="btn btn-neutral float-right" title="Qiskit IBM Quantum Provider API Reference" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.optimization.problems.Variable.as_tuple.html" class="btn btn-neutral float-right" title="qiskit.optimization.problems.Variable.as_tuple" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.optimization.problems.QuadraticProgramElement.html" class="btn btn-neutral" title="qiskit.optimization.problems.QuadraticProgramElement" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.optimization.problems.QuadraticProgramElement.html" class="btn btn-neutral" title="QuadraticProgramElement" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -536,7 +474,7 @@ variable type.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -555,7 +493,7 @@ variable type.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.optimization.problems.Variable</a></li>
+<li><a class="reference internal" href="#">Variable</a></li>
 </ul>
 
             </div>
@@ -619,7 +557,7 @@ variable type.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -642,9 +580,11 @@ variable type.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

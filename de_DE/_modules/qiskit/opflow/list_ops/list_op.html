@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.list_ops.list_op &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>qiskit.opflow.list_ops.list_op &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -375,7 +382,7 @@
 <span class="sd">    multiple dimensional lists.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="ListOp.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.__init__">[Doku]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">oplist</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">],</span>
         <span class="n">combo_fn</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -400,7 +407,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_combo_fn</span> <span class="o">=</span> <span class="n">combo_fn</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span> <span class="o">=</span> <span class="n">coeff</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_abelian</span> <span class="o">=</span> <span class="n">abelian</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_grad_combo_fn</span> <span class="o">=</span> <span class="n">grad_combo_fn</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_grad_combo_fn</span> <span class="o">=</span> <span class="n">grad_combo_fn</span>
 
     <span class="k">def</span> <span class="nf">_check_input_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oplist</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">oplist</span><span class="p">):</span>
@@ -444,7 +451,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_oplist</span>
 
-<div class="viewcode-block" id="ListOp.default_combo_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.default_combo_fn">[Doku]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ListOp.default_combo_fn"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.default_combo_fn.html#qiskit.opflow.list_ops.ListOp.default_combo_fn">[Doku]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">default_combo_fn</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;ListOp default combo function i.e. lambda x: x&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">x</span></div>
@@ -497,7 +504,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span>
 
-<div class="viewcode-block" id="ListOp.primitive_strings"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.primitive_strings">[Doku]</a>    <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="ListOp.primitive_strings"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.primitive_strings.html#qiskit.opflow.list_ops.ListOp.primitive_strings">[Doku]</a>    <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">union</span><span class="p">,</span> <span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">primitive_strings</span><span class="p">()</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">])</span></div>
 
     <span class="nd">@property</span>
@@ -507,7 +514,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Operators in ListOp have differing numbers of qubits.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">num_qubits0</span>
 
-<div class="viewcode-block" id="ListOp.add"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.add">[Doku]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.add"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.add.html#qiskit.opflow.list_ops.ListOp.add">[Doku]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
 
@@ -517,7 +524,7 @@
 
         <span class="k">return</span> <span class="n">SummedOp</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="ListOp.adjoint"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.adjoint">[Doku]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.adjoint"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.adjoint.html#qiskit.opflow.list_ops.ListOp.adjoint">[Doku]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
         <span class="c1"># TODO do this lazily? Basically rebuilds the entire tree, and ops and adjoints almost</span>
         <span class="c1">#  always come in pairs, so an AdjointOp holding a reference could save copying.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">ListOp</span><span class="p">:</span>
@@ -528,7 +535,7 @@
             <span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">adjoint</span><span class="p">()</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">],</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(),</span> <span class="n">abelian</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abelian</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.traverse"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.traverse">[Doku]</a>    <span class="k">def</span> <span class="nf">traverse</span><span class="p">(</span>
+<div class="viewcode-block" id="ListOp.traverse"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.traverse.html#qiskit.opflow.list_ops.ListOp.traverse">[Doku]</a>    <span class="k">def</span> <span class="nf">traverse</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">convert_fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">coeff</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Apply the convert_fn to each node in the oplist.</span>
@@ -550,7 +557,7 @@
             <span class="p">[</span><span class="n">convert_fn</span><span class="p">(</span><span class="n">op</span><span class="p">)</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">],</span> <span class="n">coeff</span><span class="o">=</span><span class="n">coeff</span><span class="p">,</span> <span class="n">abelian</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abelian</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.equals"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.equals">[Doku]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.equals"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.equals.html#qiskit.opflow.list_ops.ListOp.equals">[Doku]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">oplist</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="c1"># Note, ordering matters here (i.e. different list orders will return False)</span>
@@ -562,7 +569,7 @@
     <span class="c1"># isinstance(scalar, np.number) - this started happening when we added __get_item__().</span>
     <span class="n">__array_priority__</span> <span class="o">=</span> <span class="mi">10000</span>
 
-<div class="viewcode-block" id="ListOp.mul"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.mul">[Doku]</a>    <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.mul"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.mul.html#qiskit.opflow.list_ops.ListOp.mul">[Doku]</a>    <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Operators can only be scalar multiplied by float or complex, not &quot;</span>
@@ -572,14 +579,14 @@
             <span class="k">return</span> <span class="n">ListOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">(</span><span class="n">coeff</span><span class="o">=</span><span class="n">scalar</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">scalar</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">abelian</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abelian</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.tensor">[Doku]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.tensor.html#qiskit.opflow.list_ops.ListOp.tensor">[Doku]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="c1"># Avoid circular dependency</span>
         <span class="c1"># pylint: disable=cyclic-import</span>
         <span class="kn">from</span> <span class="nn">.tensored_op</span> <span class="kn">import</span> <span class="n">TensoredOp</span>
 
         <span class="k">return</span> <span class="n">TensoredOp</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="ListOp.tensorpower"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.tensorpower">[Doku]</a>    <span class="k">def</span> <span class="nf">tensorpower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<div class="viewcode-block" id="ListOp.tensorpower"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.tensorpower.html#qiskit.opflow.list_ops.ListOp.tensorpower">[Doku]</a>    <span class="k">def</span> <span class="nf">tensorpower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="c1"># Hack to make op1^(op2^0) work as intended.</span>
         <span class="k">if</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">1</span>
@@ -598,7 +605,7 @@
         <span class="p">]</span>
         <span class="k">return</span> <span class="n">ListOp</span><span class="p">(</span><span class="n">oplist</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">())</span>
 
-<div class="viewcode-block" id="ListOp.permute"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.permute">[Doku]</a>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.permute"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.permute.html#qiskit.opflow.list_ops.ListOp.permute">[Doku]</a>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;OperatorBase&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Permute the qubits of the operator.</span>
 
 <span class="sd">        Args:</span>
@@ -641,7 +648,7 @@
 
         <span class="k">return</span> <span class="n">CircuitOp</span><span class="p">(</span><span class="n">qc</span><span class="o">.</span><span class="n">reverse_ops</span><span class="p">())</span> <span class="o">@</span> <span class="n">new_self</span> <span class="o">@</span> <span class="n">CircuitOp</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.compose"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.compose">[Doku]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span>
+<div class="viewcode-block" id="ListOp.compose"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.compose.html#qiskit.opflow.list_ops.ListOp.compose">[Doku]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
 
@@ -656,7 +663,7 @@
 
         <span class="k">return</span> <span class="n">ComposedOp</span><span class="p">([</span><span class="n">new_self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="ListOp.power"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.power">[Doku]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.power"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.power.html#qiskit.opflow.list_ops.ListOp.power">[Doku]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exponent</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">exponent</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;power can only take positive int arguments&quot;</span><span class="p">)</span>
 
@@ -666,7 +673,7 @@
 
         <span class="k">return</span> <span class="n">ComposedOp</span><span class="p">([</span><span class="bp">self</span><span class="p">]</span> <span class="o">*</span> <span class="n">exponent</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.to_matrix"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.to_matrix">[Doku]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.to_matrix"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.to_matrix.html#qiskit.opflow.list_ops.ListOp.to_matrix">[Doku]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="n">OperatorBase</span><span class="o">.</span><span class="n">_check_massive</span><span class="p">(</span><span class="s2">&quot;to_matrix&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">massive</span><span class="p">)</span>
 
         <span class="c1"># Combination function must be able to handle classical values.</span>
@@ -684,7 +691,7 @@
             <span class="n">mat</span> <span class="o">=</span> <span class="p">[</span><span class="n">mat</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.to_spmatrix"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.to_spmatrix">[Doku]</a>    <span class="k">def</span> <span class="nf">to_spmatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">spmatrix</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">spmatrix</span><span class="p">]]:</span>
+<div class="viewcode-block" id="ListOp.to_spmatrix"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.to_spmatrix.html#qiskit.opflow.list_ops.ListOp.to_spmatrix">[Doku]</a>    <span class="k">def</span> <span class="nf">to_spmatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">spmatrix</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">spmatrix</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Returns SciPy sparse matrix representation of the Operator.</span>
 
 <span class="sd">        Returns:</span>
@@ -695,7 +702,7 @@
         <span class="c1"># pylint: disable=not-callable</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combo_fn</span><span class="p">([</span><span class="n">op</span><span class="o">.</span><span class="n">to_spmatrix</span><span class="p">()</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">])</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span></div>
 
-<div class="viewcode-block" id="ListOp.eval"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.eval">[Doku]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
+<div class="viewcode-block" id="ListOp.eval"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.eval.html#qiskit.opflow.list_ops.ListOp.eval">[Doku]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">front</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
             <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">complex</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">,</span> <span class="n">Statevector</span><span class="p">]</span>
@@ -776,7 +783,7 @@
                 <span class="k">return</span> <span class="n">multiplied</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="ListOp.exp_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.exp_i">[Doku]</a>    <span class="k">def</span> <span class="nf">exp_i</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.exp_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.exp_i.html#qiskit.opflow.list_ops.ListOp.exp_i">[Doku]</a>    <span class="k">def</span> <span class="nf">exp_i</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return an ``OperatorBase`` equivalent to an exponentiation of self * -i, e^(-i*op).&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=unidiomatic-typecheck</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">ListOp</span><span class="p">:</span>
@@ -789,7 +796,7 @@
 
         <span class="k">return</span> <span class="n">EvolvedOp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.log_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.log_i">[Doku]</a>    <span class="k">def</span> <span class="nf">log_i</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.log_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.log_i.html#qiskit.opflow.list_ops.ListOp.log_i">[Doku]</a>    <span class="k">def</span> <span class="nf">log_i</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a ``MatrixOp`` equivalent to log(H)/-i for this operator H. This</span>
 <span class="sd">        function is the effective inverse of exp_i, equivalent to finding the Hermitian</span>
 <span class="sd">        Operator which produces self when exponentiated. For proper ListOps, applies ``log_i``</span>
@@ -828,7 +835,7 @@
             <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">params</span>
 
-<div class="viewcode-block" id="ListOp.assign_parameters"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.assign_parameters">[Doku]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.assign_parameters"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.assign_parameters.html#qiskit.opflow.list_ops.ListOp.assign_parameters">[Doku]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="n">param_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">):</span>
             <span class="n">unrolled_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unroll_param_dict</span><span class="p">(</span><span class="n">param_dict</span><span class="p">)</span>
@@ -839,13 +846,13 @@
                 <span class="n">param_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">binds</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">assign_parameters</span><span class="p">(</span><span class="n">param_dict</span><span class="p">),</span> <span class="n">coeff</span><span class="o">=</span><span class="n">param_value</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.reduce"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.reduce">[Doku]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.reduce"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.reduce.html#qiskit.opflow.list_ops.ListOp.reduce">[Doku]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="n">reduced_ops</span> <span class="o">=</span> <span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">reduce</span><span class="p">()</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">oplist</span><span class="p">]</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">ListOp</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">ListOp</span><span class="p">(</span><span class="n">reduced_ops</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_state</span><span class="p">())</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">reduced_ops</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">abelian</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abelian</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.to_matrix_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.to_matrix_op">[Doku]</a>    <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.to_matrix_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.to_matrix_op.html#qiskit.opflow.list_ops.ListOp.to_matrix_op">[Doku]</a>    <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an equivalent Operator composed of only NumPy-based primitives, such as</span>
 <span class="sd">        ``MatrixOp`` and ``VectorStateFn``.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="n">ListOp</span><span class="p">:</span>
@@ -864,7 +871,7 @@
             <span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ListOp.to_circuit_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.to_circuit_op">[Doku]</a>    <span class="k">def</span> <span class="nf">to_circuit_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.to_circuit_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.to_circuit_op.html#qiskit.opflow.list_ops.ListOp.to_circuit_op">[Doku]</a>    <span class="k">def</span> <span class="nf">to_circuit_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an equivalent Operator composed of only QuantumCircuit-based primitives,</span>
 <span class="sd">        such as ``CircuitOp`` and ``CircuitStateFn``.&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=cyclic-import</span>
@@ -887,7 +894,7 @@
             <span class="n">abelian</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abelian</span><span class="p">,</span>
         <span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="ListOp.to_pauli_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.html#qiskit.opflow.list_ops.ListOp.to_pauli_op">[Doku]</a>    <span class="k">def</span> <span class="nf">to_pauli_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="ListOp.to_pauli_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.list_ops.ListOp.to_pauli_op.html#qiskit.opflow.list_ops.ListOp.to_pauli_op">[Doku]</a>    <span class="k">def</span> <span class="nf">to_pauli_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ListOp&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an equivalent Operator composed of only Pauli-based primitives,</span>
 <span class="sd">        such as ``PauliOp``.&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=cyclic-import</span>
@@ -969,7 +976,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -1049,7 +1056,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1072,9 +1079,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

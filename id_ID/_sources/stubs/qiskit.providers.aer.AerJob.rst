@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.AerJob
-===========================
+﻿AerJob
+======
 
 .. currentmodule:: qiskit.providers.aer
 
 .. autoclass:: AerJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AerJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AerJob.backend
       ~AerJob.cancel
       ~AerJob.cancelled
@@ -26,15 +25,9 @@
       ~AerJob.status
       ~AerJob.submit
       ~AerJob.wait_for_final_state
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AerJob.version
-   
-   
+   .. autoattribute:: version

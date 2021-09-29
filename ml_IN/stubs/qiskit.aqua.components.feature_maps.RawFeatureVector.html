@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.feature_maps.RawFeatureVector &mdash; Qiskit 0.29.0 documentation</title>
+  <title>RawFeatureVector &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Initial States (qiskit.aqua.components.initial_states)" href="../apidoc/qiskit.aqua.components.initial_states.html" />
-    <link rel="prev" title="qiskit.aqua.components.feature_maps.FeatureMap" href="qiskit.aqua.components.feature_maps.FeatureMap.html" /> 
+    <link rel="next" title="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit" href="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit.html" />
+    <link rel="prev" title="qiskit.aqua.components.feature_maps.FeatureMap.validate_entangler_map" href="qiskit.aqua.components.feature_maps.FeatureMap.validate_entangler_map.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -302,7 +309,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.components.feature_maps.html">Feature Maps (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.components.feature_maps</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.components.feature_maps.RawFeatureVector</li>
+      <li>RawFeatureVector</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -332,12 +339,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-components-feature-maps-rawfeaturevector">
-<h1>qiskit.aqua.components.feature_maps.RawFeatureVector<a class="headerlink" href="#qiskit-aqua-components-feature-maps-rawfeaturevector" title="Permalink to this headline">¶</a></h1>
+  <section id="rawfeaturevector">
+<h1>RawFeatureVector<a class="headerlink" href="#rawfeaturevector" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.components.feature_maps.RawFeatureVector">
 <em class="property">class </em><code class="sig-name descname">RawFeatureVector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_dimension</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/feature_maps/raw_feature_vector.html#RawFeatureVector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Raw Feature Vector feature map.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.components.feature_maps.feature_map.FeatureMap</span></code></p>
+<p>Raw Feature Vector feature map.</p>
 <p>The Raw Feature Vector can be directly used as a feature map, where the raw feature vectors
 will be automatically padded with ending 0s as necessary, to make sure vector length
 is a power of 2, and normalized such that it can be treated and used
@@ -347,16 +355,6 @@ as an initial quantum state vector.</p>
 <dd class="field-odd"><p><strong>feature_dimension</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The feature dimension, has a minimum value of 1.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_dimension</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/feature_maps/raw_feature_vector.html#RawFeatureVector.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>feature_dimension</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) -- The feature dimension, has a minimum value of 1.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -364,99 +362,34 @@ as an initial quantum state vector.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.__init__" title="qiskit.aqua.components.feature_maps.RawFeatureVector.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([feature_dimension])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type feature_dimension</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit" title="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>(x[, qr, inverse])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit.html#qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit" title="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the second order expansion based on given data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map" title="qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entangler_map</span></code></a>(map_type, num_qubits)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map.html#qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map" title="qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entangler_map</span></code></a></p></td>
 <td><p>get entangle map</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map" title="qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_entangler_map</span></code></a>(entangler_map, num_qubits)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map.html#qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map" title="qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_entangler_map</span></code></a></p></td>
 <td><p>validate entangler map</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.feature_dimension" title="qiskit.aqua.components.feature_maps.RawFeatureVector.feature_dimension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">feature_dimension</span></code></a></p></td>
-<td><p>returns feature dimension</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.num_qubits" title="qiskit.aqua.components.feature_maps.RawFeatureVector.num_qubits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_qubits</span></code></a></p></td>
-<td><p>returns number of qubits</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.support_parameterized_circuit" title="qiskit.aqua.components.feature_maps.RawFeatureVector.support_parameterized_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">support_parameterized_circuit</span></code></a></p></td>
-<td><p>returns whether or not the sub-class support parameterized circuit</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">qr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">inverse</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/components/feature_maps/raw_feature_vector.html#RawFeatureVector.construct_circuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct the second order expansion based on given data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) -- 1-D to-be-encoded data.</p></li>
-<li><p><strong>qr</strong> (<a class="reference internal" href="qiskit.circuit.QuantumRegister.html#qiskit.circuit.QuantumRegister" title="qiskit.circuit.QuantumRegister"><em>QuantumRegister</em></a>) -- the QuantumRegister object for the circuit, if None,
-generate new registers with name q.</p></li>
-<li><p><strong>inverse</strong> (<em>bool</em>) -- inverse</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a quantum circuit transform data x.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>TypeError</strong> -- invalid input</p></li>
-<li><p><strong>ValueError</strong> -- invalid input</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.feature_dimension">
-<em class="property">property </em><code class="sig-name descname">feature_dimension</code><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.feature_dimension" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">feature_dimension</code><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.feature_dimension" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns feature dimension</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map">
-<em class="property">static </em><code class="sig-name descname">get_entangler_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map_type</span></em>, <em class="sig-param"><span class="n">num_qubits</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.get_entangler_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>get entangle map</p>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.num_qubits">
-<em class="property">property </em><code class="sig-name descname">num_qubits</code><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.num_qubits" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">num_qubits</code><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.num_qubits" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns number of qubits</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.support_parameterized_circuit">
-<em class="property">property </em><code class="sig-name descname">support_parameterized_circuit</code><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.support_parameterized_circuit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">support_parameterized_circuit</code><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.support_parameterized_circuit" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns whether or not the sub-class support parameterized circuit</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map">
-<em class="property">static </em><code class="sig-name descname">validate_entangler_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">entangler_map</span></em>, <em class="sig-param"><span class="n">num_qubits</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.components.feature_maps.RawFeatureVector.validate_entangler_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>validate entangler map</p>
 </dd></dl>
 
 </dd></dl>
@@ -471,10 +404,10 @@ generate new registers with name q.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../apidoc/qiskit.aqua.components.initial_states.html" class="btn btn-neutral float-right" title="Initial States (qiskit.aqua.components.initial_states)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.aqua.components.feature_maps.RawFeatureVector.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.components.feature_maps.FeatureMap.html" class="btn btn-neutral" title="qiskit.aqua.components.feature_maps.FeatureMap" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.components.feature_maps.FeatureMap.validate_entangler_map.html" class="btn btn-neutral" title="qiskit.aqua.components.feature_maps.FeatureMap.validate_entangler_map" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -488,7 +421,7 @@ generate new registers with name q.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -507,7 +440,7 @@ generate new registers with name q.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.components.feature_maps.RawFeatureVector</a></li>
+<li><a class="reference internal" href="#">RawFeatureVector</a></li>
 </ul>
 
             </div>
@@ -571,7 +504,7 @@ generate new registers with name q.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -594,9 +527,11 @@ generate new registers with name q.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

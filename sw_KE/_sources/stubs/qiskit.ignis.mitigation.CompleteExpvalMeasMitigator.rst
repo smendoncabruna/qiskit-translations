@@ -1,19 +1,18 @@
-﻿qiskit.ignis.mitigation.CompleteExpvalMeasMitigator
-===================================================
+﻿CompleteExpvalMeasMitigator
+===========================
 
 .. currentmodule:: qiskit.ignis.mitigation
 
 .. autoclass:: CompleteExpvalMeasMitigator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CompleteExpvalMeasMitigator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CompleteExpvalMeasMitigator.assignment_fidelity
       ~CompleteExpvalMeasMitigator.assignment_matrix
       ~CompleteExpvalMeasMitigator.expectation_value
@@ -23,9 +22,5 @@
       ~CompleteExpvalMeasMitigator.plot_mitigation_matrix
       ~CompleteExpvalMeasMitigator.required_shots
       ~CompleteExpvalMeasMitigator.stddev_upper_bound
-   
-   
 
-   
-   
-   
+

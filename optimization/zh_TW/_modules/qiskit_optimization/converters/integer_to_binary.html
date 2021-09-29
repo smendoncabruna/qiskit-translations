@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_optimization.converters.integer_to_binary &mdash; Qiskit Optimization 0.2.2 說明文件</title>
+  <title>qiskit_optimization.converters.integer_to_binary &mdash; Qiskit Optimization 0.2.3 說明文件</title>
   
 
   
@@ -125,7 +125,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -330,7 +330,7 @@
         <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">lowerbound</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">upperbound</span><span class="p">:</span> <span class="nb">float</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
         <span class="n">var_range</span> <span class="o">=</span> <span class="n">upperbound</span> <span class="o">-</span> <span class="n">lowerbound</span>
-        <span class="n">power</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">var_range</span><span class="p">))</span>
+        <span class="n">power</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">var_range</span><span class="p">))</span> <span class="k">if</span> <span class="n">var_range</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
         <span class="n">bounded_coef</span> <span class="o">=</span> <span class="n">var_range</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">power</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
         <span class="n">coeffs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">power</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">bounded_coef</span><span class="p">]</span>
@@ -378,9 +378,9 @@
                         <span class="n">quadratic</span><span class="p">[</span><span class="n">z_x</span><span class="p">,</span> <span class="n">z_y</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">coeff_x</span> <span class="o">*</span> <span class="n">coeff_y</span>
 
                 <span class="k">for</span> <span class="n">z_x</span><span class="p">,</span> <span class="n">coeff_x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conv</span><span class="p">[</span><span class="n">x</span><span class="p">]:</span>
-                    <span class="n">linear</span><span class="p">[</span><span class="n">z_x</span><span class="p">]</span> <span class="o">=</span> <span class="n">linear</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">z_x</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">y</span><span class="o">.</span><span class="n">lowerbound</span>
+                    <span class="n">linear</span><span class="p">[</span><span class="n">z_x</span><span class="p">]</span> <span class="o">=</span> <span class="n">linear</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">z_x</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">coeff_x</span> <span class="o">*</span> <span class="n">y</span><span class="o">.</span><span class="n">lowerbound</span>
                 <span class="k">for</span> <span class="n">z_y</span><span class="p">,</span> <span class="n">coeff_y</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_conv</span><span class="p">[</span><span class="n">y</span><span class="p">]:</span>
-                    <span class="n">linear</span><span class="p">[</span><span class="n">z_y</span><span class="p">]</span> <span class="o">=</span> <span class="n">linear</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">z_y</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">lowerbound</span>
+                    <span class="n">linear</span><span class="p">[</span><span class="n">z_y</span><span class="p">]</span> <span class="o">=</span> <span class="n">linear</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">z_y</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">coeff_y</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">lowerbound</span>
 
                 <span class="n">constant</span> <span class="o">+=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">x</span><span class="o">.</span><span class="n">lowerbound</span> <span class="o">*</span> <span class="n">y</span><span class="o">.</span><span class="n">lowerbound</span>
 

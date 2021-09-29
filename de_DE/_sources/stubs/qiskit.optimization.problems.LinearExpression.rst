@@ -1,33 +1,26 @@
-﻿qiskit.optimization.problems.LinearExpression
-=============================================
+﻿LinearExpression
+================
 
 .. currentmodule:: qiskit.optimization.problems
 
 .. autoclass:: LinearExpression
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LinearExpression.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LinearExpression.evaluate
       ~LinearExpression.evaluate_gradient
       ~LinearExpression.to_array
       ~LinearExpression.to_dict
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LinearExpression.coefficients
-      ~LinearExpression.quadratic_program
-   
-   
+   .. autoattribute:: coefficients
+   .. autoattribute:: quadratic_program

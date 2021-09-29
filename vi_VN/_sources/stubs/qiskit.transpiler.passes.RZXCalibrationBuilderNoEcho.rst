@@ -1,34 +1,27 @@
-﻿qiskit.transpiler.passes.RZXCalibrationBuilderNoEcho
-====================================================
+﻿RZXCalibrationBuilderNoEcho
+===========================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: RZXCalibrationBuilderNoEcho
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RZXCalibrationBuilderNoEcho.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RZXCalibrationBuilderNoEcho.get_calibration
       ~RZXCalibrationBuilderNoEcho.name
       ~RZXCalibrationBuilderNoEcho.rescale_cr_inst
       ~RZXCalibrationBuilderNoEcho.run
       ~RZXCalibrationBuilderNoEcho.supported
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RZXCalibrationBuilderNoEcho.is_analysis_pass
-      ~RZXCalibrationBuilderNoEcho.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

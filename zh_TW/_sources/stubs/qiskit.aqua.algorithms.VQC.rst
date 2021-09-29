@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.VQC
-==========================
+﻿VQC
+===
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: VQC
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VQC.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~VQC.batch_data
       ~VQC.cleanup_parameterized_circuits
       ~VQC.construct_circuit
@@ -31,28 +30,22 @@
       ~VQC.set_backend
       ~VQC.test
       ~VQC.train
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VQC.backend
-      ~VQC.class_to_label
-      ~VQC.datapoints
-      ~VQC.feature_map
-      ~VQC.initial_point
-      ~VQC.label_to_class
-      ~VQC.optimal_params
-      ~VQC.optimizer
-      ~VQC.quantum_instance
-      ~VQC.random
-      ~VQC.ret
-      ~VQC.test_dataset
-      ~VQC.training_dataset
-      ~VQC.var_form
-   
-   
+   .. autoattribute:: backend
+   .. autoattribute:: class_to_label
+   .. autoattribute:: datapoints
+   .. autoattribute:: feature_map
+   .. autoattribute:: initial_point
+   .. autoattribute:: label_to_class
+   .. autoattribute:: optimal_params
+   .. autoattribute:: optimizer
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random
+   .. autoattribute:: ret
+   .. autoattribute:: test_dataset
+   .. autoattribute:: training_dataset
+   .. autoattribute:: var_form

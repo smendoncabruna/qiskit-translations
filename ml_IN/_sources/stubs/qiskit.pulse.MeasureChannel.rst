@@ -1,33 +1,26 @@
-﻿qiskit.pulse.MeasureChannel
-===========================
+﻿MeasureChannel
+==============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: MeasureChannel
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MeasureChannel.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MeasureChannel.assign
       ~MeasureChannel.is_parameterized
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MeasureChannel.index
-      ~MeasureChannel.name
-      ~MeasureChannel.parameters
-      ~MeasureChannel.prefix
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: name
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix

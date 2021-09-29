@@ -1,24 +1,19 @@
-﻿qiskit.opflow.expectations.PauliExpectation
-===========================================
+PauliExpectation
+================
 
 .. currentmodule:: qiskit.opflow.expectations
 
 .. autoclass:: PauliExpectation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~PauliExpectation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliExpectation.compute_variance
       ~PauliExpectation.convert
-   
-   
 
-   
-   
-   
+

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing European Put Options &mdash; Documentação Qiskit Finance 0.2.0</title>
+  <title>Precificando Put Options Europeias &mdash; Documentação Qiskit Finance 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Pricing Bull Spreads" href="05_bull_spread_pricing.html" />
-    <link rel="prev" title="Pricing European Call Options" href="03_european_call_option_pricing.html" /> 
+    <link rel="next" title="Precificando Bull Spreads" href="05_bull_spread_pricing.html" />
+    <link rel="prev" title="Precificando Call Options Europeias" href="03_european_call_option_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -202,9 +202,9 @@
       </li>
 
         
-          <li><a href="index.html">Finance Tutorials</a> &gt;</li>
+          <li><a href="index.html">Tutoriais de Finanças</a> &gt;</li>
         
-      <li>Pricing European Put Options</li>
+      <li>Precificando Put Options Europeias</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,10 +484,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/04_european_put_option_pricing.ipynb">docs/tutorials/04_european_put_option_pricing.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/04_european_put_option_pricing.ipynb">docs/tutorials/04_european_put_option_pricing.ipynb</a>.</p>
 </div>
-<div class="section" id="Pricing-European-Put-Options">
-<h1>Pricing European Put Options<a class="headerlink" href="#Pricing-European-Put-Options" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="Precificando-Put-Options-Europeias">
+<h1>Precificando Put Options Europeias<a class="headerlink" href="#Precificando-Put-Options-Europeias" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Suponha uma opção put européia com preço de exercício <span class="math notranslate nohighlight">\(K\)</span> e um ativo subjacente cujo preço, à vista, no vencimento <span class="math notranslate nohighlight">\(S_T\)</span> segue uma determinada distribuição aleatória. A função payoff correspondente é definida como:</p>
@@ -608,7 +608,7 @@ div.rendered_html tbody tr:hover {
 \[\big|x\rangle \big|0\rangle \mapsto \big|x\rangle \left( \cos(a*x+b) \big|0\rangle + \sin(a*x+b) \big|1\rangle \right),\]</div>
 <p>usando rotações Y controladas.</p>
 <p>Eventualmente, estamos interessados na probabilidade de medir <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> no último qubit, o que corresponde a <span class="math notranslate nohighlight">\(\sin^2(a*x+b)\)</span>. Juntamente com a aproximação, acima, isto permite aproximar os valores de interesse. Quanto menor o <span class="math notranslate nohighlight">\(c_\text{approx}\)</span> escolhido, melhor a aproximação. No entanto, uma vez que estamos estimando uma propriedade escalonada por <span class="math notranslate nohighlight">\(c_\text{approx}\)</span> em seguida, o número de qubits de avaliação <span class="math notranslate nohighlight">\(m\)</span> precisa ser ajustado de acordo.</p>
-<p>For more details on the approximation, we refer to: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>Para mais detalhes sobre a aproximação, nos referimos a: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -863,10 +863,10 @@ Confidence interval:    [-0.8216, -0.8186]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="05_bull_spread_pricing.html" class="btn btn-neutral float-right" title="Pricing Bull Spreads" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="05_bull_spread_pricing.html" class="btn btn-neutral float-right" title="Precificando Bull Spreads" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="03_european_call_option_pricing.html" class="btn btn-neutral" title="Pricing European Call Options" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="03_european_call_option_pricing.html" class="btn btn-neutral" title="Precificando Call Options Europeias" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -898,7 +898,7 @@ Confidence interval:    [-0.8216, -0.8186]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing European Put Options</a><ul>
+<li><a class="reference internal" href="#">Precificando Put Options Europeias</a><ul>
 <li><a class="reference internal" href="#Introdução">Introdução</a></li>
 <li><a class="reference internal" href="#Modelo-de-incerteza">Modelo de incerteza</a></li>
 <li><a class="reference internal" href="#Função-Payoff">Função Payoff</a></li>

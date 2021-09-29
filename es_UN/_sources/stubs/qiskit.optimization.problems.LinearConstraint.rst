@@ -1,33 +1,26 @@
-﻿qiskit.optimization.problems.LinearConstraint
-=============================================
+﻿LinearConstraint
+================
 
 .. currentmodule:: qiskit.optimization.problems
 
 .. autoclass:: LinearConstraint
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LinearConstraint.__init__
-      ~LinearConstraint.evaluate
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~LinearConstraint.evaluate
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LinearConstraint.linear
-      ~LinearConstraint.name
-      ~LinearConstraint.quadratic_program
-      ~LinearConstraint.rhs
-      ~LinearConstraint.sense
-   
-   
+   .. autoattribute:: linear
+   .. autoattribute:: name
+   .. autoattribute:: quadratic_program
+   .. autoattribute:: rhs
+   .. autoattribute:: sense

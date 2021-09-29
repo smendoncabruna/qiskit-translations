@@ -1,30 +1,23 @@
-﻿qiskit.providers.aer.AerProvider
-================================
+﻿AerProvider
+===========
 
 .. currentmodule:: qiskit.providers.aer
 
 .. autoclass:: AerProvider
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AerProvider.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AerProvider.backends
       ~AerProvider.get_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AerProvider.version
-   
-   
+   .. autoattribute:: version

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.finance.data_providers.WikipediaDataProvider &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>WikipediaDataProvider &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="qiskit.finance.data_providers.YahooDataProvider" href="qiskit.finance.data_providers.YahooDataProvider.html" />
-    <link rel="prev" title="qiskit.finance.data_providers.ExchangeDataProvider" href="qiskit.finance.data_providers.ExchangeDataProvider.html" /> 
+    <link rel="next" title="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates" href="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates.html" />
+    <link rel="prev" title="qiskit.finance.data_providers.ExchangeDataProvider.run" href="qiskit.finance.data_providers.ExchangeDataProvider.run.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.finance.data_providers.html">Data Providers (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.finance.data_providers</span></code>)</a> &gt;</li>
         
-      <li>qiskit.finance.data_providers.WikipediaDataProvider</li>
+      <li>WikipediaDataProvider</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-finance-data-providers-wikipediadataprovider">
-<h1>qiskit.finance.data_providers.WikipediaDataProvider<a class="headerlink" href="#qiskit-finance-data-providers-wikipediadataprovider" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="wikipediadataprovider">
+<h1>WikipediaDataProvider<a class="headerlink" href="#wikipediadataprovider" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.finance.data_providers.WikipediaDataProvider">
 <em class="property">class </em><code class="sig-name descname">WikipediaDataProvider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tickers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">datetime.datetime(2016, 1, 1, 0, 0)</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">datetime.datetime(2016, 1, 30, 0, 0)</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/data_providers/wikipedia_data_provider.html#WikipediaDataProvider"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Wikipedia data provider.</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.finance.data_providers._base_data_provider.BaseDataProvider</span></code></p>
+<p>Wikipedia data provider.</p>
 <p>Please see:
 <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/finance/11_time_series.ipynb">https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/finance/11_time_series.ipynb</a>
 for instructions on use.</p>
@@ -354,26 +362,6 @@ for instructions on use.</p>
 </dd>
 </dl>
 </div></blockquote>
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tickers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">datetime.datetime(2016, 1, 1, 0, 0)</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">datetime.datetime(2016, 1, 30, 0, 0)</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/data_providers/wikipedia_data_provider.html#WikipediaDataProvider.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Initializer
-:type token: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]
-:param token: quandl access token, which is not needed, strictly speaking
-:type tickers: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]
-:param tickers: tickers
-:type start: <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>
-:param start: start time
-:type end: <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>
-:param end: end time</p>
-<blockquote>
-<div><dl class="simple">
-<dt>Raises:</dt><dd><p>MissingOptionalLibraryError: Quandl not installed</p>
-</dd>
-</dl>
-</div></blockquote>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -381,140 +369,29 @@ for instructions on use.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.__init__" title="qiskit.finance.data_providers.WikipediaDataProvider.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([token, tickers, start, end])</p></td>
-<td><p>Initializer :type token: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>] :param token: quandl access token, which is not needed, strictly speaking :type tickers: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>] :param tickers: tickers :type start: <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> :param start: start time :type end: <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> :param end: end time</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates" title="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_coordinates</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates.html#qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates" title="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_coordinates</span></code></a></p></td>
 <td><p>Returns random coordinates for visualisation purposes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix" title="qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_covariance_matrix</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix.html#qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix" title="qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_covariance_matrix</span></code></a></p></td>
 <td><p>Returns the covariance matrix.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector" title="qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mean_vector</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector.html#qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector" title="qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mean_vector</span></code></a></p></td>
 <td><p>Returns a vector containing the mean value of each asset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix" title="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_period_return_covariance_matrix</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix.html#qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix" title="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_period_return_covariance_matrix</span></code></a></p></td>
 <td><p>Returns a vector containing the mean value of each asset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector" title="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_period_return_mean_vector</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector.html#qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector" title="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_period_return_mean_vector</span></code></a></p></td>
 <td><p>Returns a vector containing the mean value of each asset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix" title="qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_similarity_matrix</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix.html#qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix" title="qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_similarity_matrix</span></code></a></p></td>
 <td><p>Returns time-series similarity matrix computed using dynamic time warping.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.data_providers.WikipediaDataProvider.run" title="qiskit.finance.data_providers.WikipediaDataProvider.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.finance.data_providers.WikipediaDataProvider.run.html#qiskit.finance.data_providers.WikipediaDataProvider.run" title="qiskit.finance.data_providers.WikipediaDataProvider.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
 <td><p>Loads data, thus enabling get_similarity_matrix and get_covariance_matrix methods in the base class.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates">
-<code class="sig-name descname">get_coordinates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns random coordinates for visualisation purposes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix">
-<code class="sig-name descname">get_covariance_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_covariance_matrix" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns the covariance matrix.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>an asset-to-asset covariance matrix.</p>
-</dd>
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.finance.QiskitFinanceError.html#qiskit.finance.QiskitFinanceError" title="qiskit.finance.QiskitFinanceError"><strong>QiskitFinanceError</strong></a> – no data loaded</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector">
-<code class="sig-name descname">get_mean_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_mean_vector" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns a vector containing the mean value of each asset.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>a per-asset mean vector.</p>
-</dd>
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.finance.QiskitFinanceError.html#qiskit.finance.QiskitFinanceError" title="qiskit.finance.QiskitFinanceError"><strong>QiskitFinanceError</strong></a> – no data loaded</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix">
-<code class="sig-name descname">get_period_return_covariance_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_covariance_matrix" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns a vector containing the mean value of each asset.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>a per-asset mean vector.</p>
-</dd>
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.finance.QiskitFinanceError.html#qiskit.finance.QiskitFinanceError" title="qiskit.finance.QiskitFinanceError"><strong>QiskitFinanceError</strong></a> – no data loaded</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector">
-<code class="sig-name descname">get_period_return_mean_vector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_period_return_mean_vector" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns a vector containing the mean value of each asset.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>a per-asset mean vector.</p>
-</dd>
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.finance.QiskitFinanceError.html#qiskit.finance.QiskitFinanceError" title="qiskit.finance.QiskitFinanceError"><strong>QiskitFinanceError</strong></a> – no data loaded</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix">
-<code class="sig-name descname">get_similarity_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.get_similarity_matrix" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns time-series similarity matrix computed using dynamic time warping.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>an asset-to-asset similarity matrix.</p>
-</dd>
-<dt class="field-odd">Προκαλεί</dt>
-<dd class="field-odd"><p><a class="reference internal" href="qiskit.finance.QiskitFinanceError.html#qiskit.finance.QiskitFinanceError" title="qiskit.finance.QiskitFinanceError"><strong>QiskitFinanceError</strong></a> – no data loaded</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.finance.data_providers.WikipediaDataProvider.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/data_providers/wikipedia_data_provider.html#WikipediaDataProvider.run"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.finance.data_providers.WikipediaDataProvider.run" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Loads data, thus enabling get_similarity_matrix and
-get_covariance_matrix methods in the base class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -527,10 +404,10 @@ get_covariance_matrix methods in the base class.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.finance.data_providers.YahooDataProvider.html" class="btn btn-neutral float-right" title="qiskit.finance.data_providers.YahooDataProvider" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates.html" class="btn btn-neutral float-right" title="qiskit.finance.data_providers.WikipediaDataProvider.get_coordinates" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.finance.data_providers.ExchangeDataProvider.html" class="btn btn-neutral" title="qiskit.finance.data_providers.ExchangeDataProvider" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.finance.data_providers.ExchangeDataProvider.run.html" class="btn btn-neutral" title="qiskit.finance.data_providers.ExchangeDataProvider.run" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -544,7 +421,7 @@ get_covariance_matrix methods in the base class.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -563,7 +440,7 @@ get_covariance_matrix methods in the base class.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.finance.data_providers.WikipediaDataProvider</a></li>
+<li><a class="reference internal" href="#">WikipediaDataProvider</a></li>
 </ul>
 
             </div>
@@ -627,7 +504,7 @@ get_covariance_matrix methods in the base class.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -650,9 +527,11 @@ get_covariance_matrix methods in the base class.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

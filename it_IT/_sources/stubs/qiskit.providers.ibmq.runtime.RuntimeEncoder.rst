@@ -1,32 +1,25 @@
-﻿qiskit.providers.ibmq.runtime.RuntimeEncoder
-============================================
+﻿RuntimeEncoder
+==============
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: RuntimeEncoder
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RuntimeEncoder.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RuntimeEncoder.default
       ~RuntimeEncoder.encode
       ~RuntimeEncoder.iterencode
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RuntimeEncoder.item_separator
-      ~RuntimeEncoder.key_separator
-   
-   
+   .. autoattribute:: item_separator
+   .. autoattribute:: key_separator

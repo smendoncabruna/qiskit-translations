@@ -1,27 +1,22 @@
-﻿qiskit.ignis.verification.RepetitionCode
-========================================
+﻿RepetitionCode
+==============
 
 .. currentmodule:: qiskit.ignis.verification
 
 .. autoclass:: RepetitionCode
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RepetitionCode.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RepetitionCode.get_circuit_list
       ~RepetitionCode.process_results
       ~RepetitionCode.readout
       ~RepetitionCode.syndrome_measurement
       ~RepetitionCode.x
-   
-   
 
-   
-   
-   
+

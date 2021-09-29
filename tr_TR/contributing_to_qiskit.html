@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit’e katkıda bulunmak &mdash; Qiskit 0.29.0 belgelendirmesi</title>
+  <title>Qiskit’e katkıda bulunmak &mdash; Qiskit 0.30.0 belgelendirmesi</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Belgeleme ana sayfası</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Ön Bölümler</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Kaynakları</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Simülatör (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Deneyleri (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Uygulama Modülleri (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Sağlayıcı)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hata Giderme</span></p>
 <ul>
@@ -699,13 +706,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>Kaynaktan Terra Kurulumu<a class="headerlink" href="#installing-terra-from-source" title="Bu başlık için kalıcı bağlantı">¶</a></h3>
 <p>Bu kaynaktan kurulum yapılabilmesi için sisteminiz C++11’i destekleyen bir C++ derleyicisi olması gerekmektedir.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="cbd04900-c9f9-4fe5-8490-76afecc12719" name="8d0fc64c-c5cc-4e40-a039-b06ee5712e62" type="radio">
-</input><label class="tabbed-label" for="cbd04900-c9f9-4fe5-8490-76afecc12719">
+<input checked="checked" id="02f0488b-2abe-47b5-8185-375d8bb90e78" name="751c732b-98fe-4126-af9b-e475c1a8d240" type="radio">
+</input><label class="tabbed-label" for="02f0488b-2abe-47b5-8185-375d8bb90e78">
 Linux Derleyicisi</label><div class="tabbed-content docutils">
 <p>Çoğu Linux platformunda gerekli GCC derleyicisi zaten kuruludur.</p>
 </div>
-<input id="9d5748c9-99f5-4635-a9fd-eebf87280c91" name="8d0fc64c-c5cc-4e40-a039-b06ee5712e62" type="radio">
-</input><label class="tabbed-label" for="9d5748c9-99f5-4635-a9fd-eebf87280c91">
+<input id="c464cf37-ee0f-4264-b658-af2de1db469d" name="751c732b-98fe-4126-af9b-e475c1a8d240" type="radio">
+</input><label class="tabbed-label" for="c464cf37-ee0f-4264-b658-af2de1db469d">
 macOS için derleyici</label><div class="tabbed-content docutils">
 <p>MacOS kullanıyorsanız, XCode kurarak Clang derleyicisini kurabilirsiniz. Bir uçbirim penceresi açarak XCode ve Clang in kurulu olup olmadığını denetlemek için aşağıdakini giriniz.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -716,8 +723,8 @@ macOS için derleyici</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="83213354-701e-424e-9f2e-e4f1e567aa18" name="8d0fc64c-c5cc-4e40-a039-b06ee5712e62" type="radio">
-</input><label class="tabbed-label" for="83213354-701e-424e-9f2e-e4f1e567aa18">
+<input id="80851d9a-4fc8-413c-8bd7-2b996ca17a84" name="751c732b-98fe-4126-af9b-e475c1a8d240" type="radio">
+</input><label class="tabbed-label" for="80851d9a-4fc8-413c-8bd7-2b996ca17a84">
 Windows için derleyici</label><div class="tabbed-content docutils">
 <p>Windows’ta, Visual C++ derleyicisini <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Visual Studio 2017 için Derleme Araçları</a>. Bunun yerine C++ derleyicisini yükleme seçeneklerini belirlediğinizden emin olarak Visual Studio sürüm 2015 veya 2017’yi yükleyebilirsiniz.</p>
 </div>
@@ -785,8 +792,8 @@ Windows için derleyici</label><div class="tabbed-content docutils">
 </ol>
 <p>Bundan sonra, Aer’i yükleme adımları kullandığınız işletim sistemine bağlıdır. Aer, Python arabirimine sahip derlenmiş bir C++ programı olduğundan, işletim sistemine bağlı olarak evrensel olarak yüklenemeyen Aer ikili dosyasını oluşturmak için Python olmayan bağımlılıklar vardır.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="64186b36-6d31-44e1-b025-59819947bfe8" name="016a9d44-cd52-4f2b-bf0f-bc682bfe37d6" type="radio">
-</input><label class="tabbed-label" for="64186b36-6d31-44e1-b025-59819947bfe8">
+<input checked="checked" id="ce167845-0481-48d8-9fb6-abbecc1e591d" name="7f0d3bff-ae4e-4fa1-9872-9027daa51820" type="radio">
+</input><label class="tabbed-label" for="ce167845-0481-48d8-9fb6-abbecc1e591d">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Derleyici gereksinimlerini yükleyin.</p>
@@ -812,8 +819,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="22da3ac9-3d39-4780-ab3d-85e9cc34ac21" name="016a9d44-cd52-4f2b-bf0f-bc682bfe37d6" type="radio">
-</input><label class="tabbed-label" for="22da3ac9-3d39-4780-ab3d-85e9cc34ac21">
+<input id="9dfad6ed-e399-46a6-85ab-68e27cefc565" name="7f0d3bff-ae4e-4fa1-9872-9027daa51820" type="radio">
+</input><label class="tabbed-label" for="9dfad6ed-e399-46a6-85ab-68e27cefc565">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Bağımlılıkları kurun.</p>
@@ -833,8 +840,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="ee9a8ca4-d88c-455a-88ce-27aea428e945" name="016a9d44-cd52-4f2b-bf0f-bc682bfe37d6" type="radio">
-</input><label class="tabbed-label" for="ee9a8ca4-d88c-455a-88ce-27aea428e945">
+<input id="44d8b433-7913-48b9-9b85-9fdb96dac1f9" name="7f0d3bff-ae4e-4fa1-9872-9027daa51820" type="radio">
+</input><label class="tabbed-label" for="44d8b433-7913-48b9-9b85-9fdb96dac1f9">
 Windows</label><div class="tabbed-content docutils">
 <p>Windows’ta tüm bağımlılıkları yüklemek için <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> veya <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> kullamanız gerekir.</p>
 <ol class="arabic" start="3">
@@ -1160,7 +1167,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Son güncelleme: 2021/08/13.
+      Son güncelleme: 2021/09/23.
 
     </p>
   </div>
@@ -1300,7 +1307,7 @@ multiple elements more transparent.</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1323,9 +1330,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

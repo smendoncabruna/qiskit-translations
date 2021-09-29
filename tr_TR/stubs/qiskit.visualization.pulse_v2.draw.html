@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.visualization.pulse_v2.draw &mdash; Qiskit 0.29.0 belgelendirmesi</title>
+  <title>qiskit.visualization.pulse_v2.draw &mdash; Qiskit 0.30.0 belgelendirmesi</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Dizin" href="../genindex.html" />
     <link rel="search" title="Ara" href="../search.html" />
-    <link rel="next" title="qiskit.visualization.pulse_v2.IQXStandard" href="qiskit.visualization.pulse_v2.IQXStandard.html" />
+    <link rel="next" title="IQXStandard" href="qiskit.visualization.pulse_v2.IQXStandard.html" />
     <link rel="prev" title="qiskit.visualization.pass_manager_drawer" href="qiskit.visualization.pass_manager_drawer.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Belgeleme ana sayfası</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Ön Bölümler</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API Kaynakları</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simülatör (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Deneyleri (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Uygulama Modülleri (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Sağlayıcı)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hata Giderme</span></p>
 <ul>
@@ -350,7 +357,7 @@ may use to make the visualization hardware aware.</p></li>
 <li><p><strong>time_range</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – Set horizontal axis limit. Tuple <code class="docutils literal notranslate"><span class="pre">(tmin,</span> <span class="pre">tmax)</span></code>.</p></li>
 <li><p><strong>time_unit</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The unit of specified time range either <code class="docutils literal notranslate"><span class="pre">dt</span></code> or <code class="docutils literal notranslate"><span class="pre">ns</span></code>.
 The unit of <code class="docutils literal notranslate"><span class="pre">ns</span></code> is available only when <code class="docutils literal notranslate"><span class="pre">backend</span></code> object is provided.</p></li>
-<li><p><strong>disable_channels</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="qiskit.pulse.channels.html#qiskit.pulse.channels.Channel" title="qiskit.pulse.channels.Channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a>]]) – A control property to show specific pulse channel.
+<li><p><strong>disable_channels</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code>]]) – A control property to show specific pulse channel.
 Pulse channel instances provided as a list is not shown in the output image.</p></li>
 <li><p><strong>show_snapshot</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Show snapshot instructions.</p></li>
 <li><p><strong>show_framechange</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Show frame change instructions. The frame change represents
@@ -614,7 +621,6 @@ stylesheet.</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/qiskit.visualization.pulse_v2.draw_0_0.png" src="../_images/qiskit.visualization.pulse_v2.draw_0_0.png" />
-<img alt="../_images/qiskit.visualization.pulse_v2.draw_0_1.png" src="../_images/qiskit.visualization.pulse_v2.draw_0_1.png" />
 </div>
 </div>
 <p>Drawing with the stylesheet suited for publication.</p>
@@ -637,7 +643,6 @@ stylesheet.</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/qiskit.visualization.pulse_v2.draw_1_0.png" src="../_images/qiskit.visualization.pulse_v2.draw_1_0.png" />
-<img alt="../_images/qiskit.visualization.pulse_v2.draw_1_1.png" src="../_images/qiskit.visualization.pulse_v2.draw_1_1.png" />
 </div>
 </div>
 <p>Drawing with the stylesheet suited for program debugging.</p>
@@ -660,7 +665,6 @@ stylesheet.</p>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/qiskit.visualization.pulse_v2.draw_2_0.png" src="../_images/qiskit.visualization.pulse_v2.draw_2_0.png" />
-<img alt="../_images/qiskit.visualization.pulse_v2.draw_2_1.png" src="../_images/qiskit.visualization.pulse_v2.draw_2_1.png" />
 </div>
 </div>
 <p>You can partially customize a preset stylesheet when initializing it.</p>
@@ -698,7 +702,7 @@ without modifying the codebase.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.visualization.pulse_v2.IQXStandard.html" class="btn btn-neutral float-right" title="qiskit.visualization.pulse_v2.IQXStandard" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.visualization.pulse_v2.IQXStandard.html" class="btn btn-neutral float-right" title="IQXStandard" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="qiskit.visualization.pass_manager_drawer.html" class="btn btn-neutral" title="qiskit.visualization.pass_manager_drawer" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -715,7 +719,7 @@ without modifying the codebase.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Son güncelleme: 2021/08/13.
+      Son güncelleme: 2021/09/23.
 
     </p>
   </div>
@@ -798,7 +802,7 @@ without modifying the codebase.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -821,9 +825,11 @@ without modifying the codebase.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

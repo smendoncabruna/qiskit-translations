@@ -1,29 +1,15 @@
-﻿qiskit.circuit.Clbit
-====================
+﻿Clbit
+=====
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Clbit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~Clbit.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Clbit.index
-      ~Clbit.register
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: register

@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.extensions.SnapshotDensityMatrix
-=====================================================
+﻿SnapshotDensityMatrix
+=====================
 
 .. currentmodule:: qiskit.providers.aer.extensions
 
 .. autoclass:: SnapshotDensityMatrix
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SnapshotDensityMatrix.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SnapshotDensityMatrix.add_decomposition
       ~SnapshotDensityMatrix.assemble
       ~SnapshotDensityMatrix.broadcast_arguments
@@ -28,21 +27,15 @@
       ~SnapshotDensityMatrix.reverse_ops
       ~SnapshotDensityMatrix.soft_compare
       ~SnapshotDensityMatrix.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SnapshotDensityMatrix.decompositions
-      ~SnapshotDensityMatrix.definition
-      ~SnapshotDensityMatrix.duration
-      ~SnapshotDensityMatrix.label
-      ~SnapshotDensityMatrix.params
-      ~SnapshotDensityMatrix.snapshot_type
-      ~SnapshotDensityMatrix.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: snapshot_type
+   .. autoattribute:: unit

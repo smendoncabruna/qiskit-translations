@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.noise.noise_model &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.providers.aer.noise.noise_model &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -337,6 +344,7 @@
 
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
 
 <span class="kn">from</span> <span class="nn">qiskit.circuit</span> <span class="kn">import</span> <span class="n">Instruction</span>
 <span class="kn">from</span> <span class="nn">qiskit.providers</span> <span class="kn">import</span> <span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span>
@@ -400,7 +408,7 @@
 
 <span class="sd">        # Add errors to noise model</span>
 <span class="sd">        noise_model = noise.NoiseModel()</span>
-<span class="sd">        noise_model.add_all_qubit_quantum_error(error_1, [&#39;u1&#39;, &#39;u2&#39;, &#39;u3&#39;])</span>
+<span class="sd">        noise_model.add_all_qubit_quantum_error(error_1, [&#39;rz&#39;, &#39;sx&#39;, &#39;x&#39;])</span>
 <span class="sd">        noise_model.add_all_qubit_quantum_error(error_2, [&#39;cx&#39;])</span>
 <span class="sd">        print(noise_model)</span>
 
@@ -415,18 +423,18 @@
     <span class="c1"># Checks for standard 1-3 qubit instructions</span>
     <span class="n">_1qubit_instructions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span>
         <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;u2&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="s1">&#39;ry&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">])</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">])</span>
     <span class="n">_2qubit_instructions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span>
-        <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2&#39;</span><span class="p">,</span> <span class="s1">&#39;cu3&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2&#39;</span><span class="p">,</span> <span class="s1">&#39;cu3&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span>
         <span class="s1">&#39;ryy&#39;</span><span class="p">,</span> <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">])</span>
     <span class="n">_3qubit_instructions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;cswap&#39;</span><span class="p">])</span>
 
-<div class="viewcode-block" id="NoiseModel.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis_gates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basis_gates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize an empty noise model.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            basis_gates (list[str] or None): Specify an initial basis_gates</span>
-<span class="sd">                for the noise model. If None a default value of [&#39;id&#39;, &#39;u3&#39;, &#39;cx&#39;]</span>
+<span class="sd">                for the noise model. If None a default value of [&#39;id&#39;, &#39;rz&#39;, &#39;sx&#39;, &#39;cx&#39;]</span>
 <span class="sd">                is used (Default: None).</span>
 
 <span class="sd">        Additional Information:</span>
@@ -440,10 +448,10 @@
 <span class="sd">        or the :meth:`add_basis_gates` method.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">basis_gates</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="c1"># Default basis gates is id, u3, cx so that all standard</span>
-            <span class="c1"># non-identity instructions can be unrolled to u3, cx,</span>
-            <span class="c1"># and identities won&#39;t be unrolled to u3.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_basis_gates</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">])</span>
+            <span class="c1"># Default basis gates is id, rz, sx, cx so that all standard</span>
+            <span class="c1"># non-identity instructions can be unrolled to rz, sx, cx,</span>
+            <span class="c1"># and identities won&#39;t be unrolled</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_basis_gates</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_basis_gates</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
                 <span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_instruction_names_labels</span><span class="p">(</span><span class="n">basis_gates</span><span class="p">))</span>
@@ -474,7 +482,7 @@
         <span class="c1"># Local readout errors are stored as:</span>
         <span class="c1"># dict(str: ReadoutError)</span>
         <span class="c1"># where the dict keys are the gate qubits.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_local_readout_errors</span> <span class="o">=</span> <span class="p">{}</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_local_readout_errors</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">basis_gates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -492,7 +500,7 @@
         <span class="sd">&quot;&quot;&quot;Return the set of noisy qubits for this noise model.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_noise_qubits</span><span class="p">)</span>
 
-<div class="viewcode-block" id="NoiseModel.from_backend"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.from_backend">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="NoiseModel.from_backend"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.from_backend.html#qiskit.providers.aer.noise.NoiseModel.from_backend">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_backend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span>
                      <span class="n">gate_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                      <span class="n">readout_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -625,7 +633,7 @@
             <span class="n">noise_model</span><span class="o">.</span><span class="n">add_quantum_error</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="n">warnings</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">noise_model</span></div>
 
-<div class="viewcode-block" id="NoiseModel.is_ideal"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.is_ideal">[docs]</a>    <span class="k">def</span> <span class="nf">is_ideal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.is_ideal"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.is_ideal.html#qiskit.providers.aer.noise.NoiseModel.is_ideal">[docs]</a>    <span class="k">def</span> <span class="nf">is_ideal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if the noise model has no noise terms.&quot;&quot;&quot;</span>
         <span class="c1"># Get default errors</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_quantum_errors</span><span class="p">:</span>
@@ -719,11 +727,11 @@
         <span class="c1"># If we made it here they are equal</span>
         <span class="k">return</span> <span class="kc">True</span>
 
-<div class="viewcode-block" id="NoiseModel.reset"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.reset"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.reset.html#qiskit.providers.aer.noise.NoiseModel.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reset the noise model.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="NoiseModel.add_basis_gates"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.add_basis_gates">[docs]</a>    <span class="k">def</span> <span class="nf">add_basis_gates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.add_basis_gates"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.add_basis_gates.html#qiskit.providers.aer.noise.NoiseModel.add_basis_gates">[docs]</a>    <span class="k">def</span> <span class="nf">add_basis_gates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add additional gates to the noise model basis_gates.</span>
 
 <span class="sd">        This should be used to add any gates that are identified by a</span>
@@ -747,7 +755,7 @@
                     <span class="s2">&quot;Warning: Adding a gate </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> to basis_gates which is &quot;</span>
                     <span class="s2">&quot;not in QasmSimulator basis_gates.&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="NoiseModel.add_all_qubit_quantum_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.add_all_qubit_quantum_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_all_qubit_quantum_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.add_all_qubit_quantum_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.add_all_qubit_quantum_error.html#qiskit.providers.aer.noise.NoiseModel.add_all_qubit_quantum_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_all_qubit_quantum_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a quantum error to the noise model that applies to all qubits.</span>
 
@@ -801,7 +809,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_noise_instructions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_basis_gates</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="NoiseModel.add_quantum_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.add_quantum_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_quantum_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.add_quantum_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.add_quantum_error.html#qiskit.providers.aer.noise.NoiseModel.add_quantum_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_quantum_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a quantum error to the noise model.</span>
 
@@ -875,14 +883,21 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_noise_instructions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_basis_gates</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="NoiseModel.add_nonlocal_quantum_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.add_nonlocal_quantum_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_nonlocal_quantum_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="NoiseModel.add_nonlocal_quantum_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.add_nonlocal_quantum_error.html#qiskit.providers.aer.noise.NoiseModel.add_nonlocal_quantum_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_nonlocal_quantum_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                                    <span class="n">error</span><span class="p">,</span>
                                    <span class="n">instructions</span><span class="p">,</span>
                                    <span class="n">qubits</span><span class="p">,</span>
                                    <span class="n">noise_qubits</span><span class="p">,</span>
                                    <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Add a non-local quantum error to the noise model.</span>
+<span class="sd">        Add a non-local quantum error to the noise model (DEPRECATED).</span>
+
+<span class="sd">        .. deprecated:: 0.9.0</span>
+
+<span class="sd">            Adding nonlocal noise to a noise model is deprecated and will</span>
+<span class="sd">            be removed no earlier than 3 months from the qiskit-aer 0.9.0</span>
+<span class="sd">            release date. To add non-local noise to a circuit you should</span>
+<span class="sd">            write a custom qiskit transpiler pass.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            error (QuantumError): the quantum error object.</span>
@@ -902,6 +917,12 @@
 <span class="sd">        Additional Information:</span>
 <span class="sd">            If the error object is ideal it will not be added to the model.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Adding nonlocal noise to a noise model is deprecated as of&#39;</span>
+             <span class="s1">&#39; qiskit-aer 0.9.0 and will be removed no earlier than 3&#39;</span>
+             <span class="s1">&#39; months from that release date. To add non-local noise to&#39;</span>
+             <span class="s1">&#39; a circuit you should write a custom qiskit transpiler pass.&#39;</span><span class="p">,</span>
+             <span class="ne">DeprecationWarning</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">noise_qubits</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="n">NoiseError</span><span class="p">(</span><span class="s2">&quot;Noise qubits must be a list of integers.&quot;</span><span class="p">)</span>
         <span class="c1"># Error checking</span>
@@ -948,7 +969,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_noise_instructions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_basis_gates</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="NoiseModel.add_all_qubit_readout_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.add_all_qubit_readout_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_all_qubit_readout_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.add_all_qubit_readout_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.add_all_qubit_readout_error.html#qiskit.providers.aer.noise.NoiseModel.add_all_qubit_readout_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_all_qubit_readout_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a single-qubit readout error that applies measure on all qubits.</span>
 
@@ -997,7 +1018,7 @@
                     <span class="s2">&quot;as specific readout errors already exist.&quot;</span><span class="p">,</span> <span class="n">local_qubits</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_noise_instructions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;measure&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="NoiseModel.add_readout_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.add_readout_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_readout_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.add_readout_error"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.add_readout_error.html#qiskit.providers.aer.noise.NoiseModel.add_readout_error">[docs]</a>    <span class="k">def</span> <span class="nf">add_readout_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">warnings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a readout error to the noise model.</span>
 
@@ -1055,7 +1076,7 @@
                     <span class="s2">&quot;all-qubit readout error for these qubits.&quot;</span><span class="p">,</span> <span class="n">qubits</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_noise_instructions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;measure&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="NoiseModel.to_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializable</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="NoiseModel.to_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.to_dict.html#qiskit.providers.aer.noise.NoiseModel.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializable</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the noise model as a dictionary.</span>
 
@@ -1111,7 +1132,7 @@
 
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="NoiseModel.from_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.html#qiskit.providers.aer.noise.NoiseModel.from_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="NoiseModel.from_dict"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.noise.NoiseModel.from_dict.html#qiskit.providers.aer.noise.NoiseModel.from_dict">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">noise_dict</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load NoiseModel from a dictionary.</span>
@@ -1320,7 +1341,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -1400,7 +1421,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1423,9 +1444,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

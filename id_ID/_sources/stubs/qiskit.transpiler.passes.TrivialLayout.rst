@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.TrivialLayout
-======================================
+﻿TrivialLayout
+=============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: TrivialLayout
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TrivialLayout.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TrivialLayout.name
       ~TrivialLayout.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TrivialLayout.is_analysis_pass
-      ~TrivialLayout.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.CommutationAnalysis
-============================================
+﻿CommutationAnalysis
+===================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CommutationAnalysis
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CommutationAnalysis.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CommutationAnalysis.name
       ~CommutationAnalysis.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CommutationAnalysis.is_analysis_pass
-      ~CommutationAnalysis.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

@@ -1,39 +1,25 @@
-﻿qiskit.optimization.algorithms.SlsqpOptimizationResult
-======================================================
+﻿SlsqpOptimizationResult
+=======================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: SlsqpOptimizationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~SlsqpOptimizationResult.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SlsqpOptimizationResult.fval
-      ~SlsqpOptimizationResult.fx
-      ~SlsqpOptimizationResult.imode
-      ~SlsqpOptimizationResult.its
-      ~SlsqpOptimizationResult.raw_results
-      ~SlsqpOptimizationResult.samples
-      ~SlsqpOptimizationResult.smode
-      ~SlsqpOptimizationResult.status
-      ~SlsqpOptimizationResult.variable_names
-      ~SlsqpOptimizationResult.variables
-      ~SlsqpOptimizationResult.variables_dict
-      ~SlsqpOptimizationResult.x
-   
-   
+   .. autoattribute:: fval
+   .. autoattribute:: fx
+   .. autoattribute:: imode
+   .. autoattribute:: its
+   .. autoattribute:: raw_results
+   .. autoattribute:: samples
+   .. autoattribute:: smode
+   .. autoattribute:: status
+   .. autoattribute:: variable_names
+   .. autoattribute:: variables
+   .. autoattribute:: variables_dict
+   .. autoattribute:: x

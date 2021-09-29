@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.CNOTDihedral
-=================================
+﻿CNOTDihedral
+============
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: CNOTDihedral
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CNOTDihedral.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CNOTDihedral.adjoint
       ~CNOTDihedral.compose
       ~CNOTDihedral.conjugate
@@ -30,18 +29,12 @@
       ~CNOTDihedral.to_matrix
       ~CNOTDihedral.to_operator
       ~CNOTDihedral.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CNOTDihedral.dim
-      ~CNOTDihedral.num_qubits
-      ~CNOTDihedral.qargs
-      ~CNOTDihedral.settings
-   
-   
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: settings

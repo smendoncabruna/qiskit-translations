@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.extensions.SnapshotStatevector
-===================================================
+﻿SnapshotStatevector
+===================
 
 .. currentmodule:: qiskit.providers.aer.extensions
 
 .. autoclass:: SnapshotStatevector
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SnapshotStatevector.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SnapshotStatevector.add_decomposition
       ~SnapshotStatevector.assemble
       ~SnapshotStatevector.broadcast_arguments
@@ -28,21 +27,15 @@
       ~SnapshotStatevector.reverse_ops
       ~SnapshotStatevector.soft_compare
       ~SnapshotStatevector.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SnapshotStatevector.decompositions
-      ~SnapshotStatevector.definition
-      ~SnapshotStatevector.duration
-      ~SnapshotStatevector.label
-      ~SnapshotStatevector.params
-      ~SnapshotStatevector.snapshot_type
-      ~SnapshotStatevector.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: snapshot_type
+   .. autoattribute:: unit

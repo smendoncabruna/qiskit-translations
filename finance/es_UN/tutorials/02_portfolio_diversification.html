@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Portfolio Diversification &mdash; documentación de Qiskit Finance - 0.2.0</title>
+  <title>Diversificación de Cartera &mdash; documentación de Qiskit Finance - 0.2.1</title>
   
 
   
@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Pricing European Call Options" href="03_european_call_option_pricing.html" />
+    <link rel="next" title="Fijación de Precios de Opciones de Compra Europeas" href="03_european_call_option_pricing.html" />
     <link rel="prev" title="Optimización de Cartera" href="01_portfolio_optimization.html" /> 
 
   
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Portfolio Diversification</li>
+      <li>Diversificación de Cartera</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -486,8 +486,8 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/02_portfolio_diversification.ipynb">docs/tutorials/02_portfolio_diversification.ipynb</a>.</p>
 </div>
-<div class="section" id="Portfolio-Diversification">
-<h1>Portfolio Diversification<a class="headerlink" href="#Portfolio-Diversification" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="Diversificación-de-Cartera">
+<h1>Diversificación de Cartera<a class="headerlink" href="#Diversificación-de-Cartera" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En la gestión de activos, existen en general dos enfoques: gestión de inversiones activa y pasiva. Dentro de la gestión de inversiones pasivas, existen fondos de seguimiento de índices y existen enfoques basados ​​en la diversificación de cartera, que tienen como objetivo representar una cartera con una gran cantidad de activos por una menor cantidad de acciones representativas. Este cuaderno ilustra un problema de diversificación de cartera, que recientemente se ha popularizado por dos razones: 1. Hace posible imitar el rendimiento de un índice (o un conjunto de activos igualmente grande) con un presupuesto limitado, con costos de transacción limitados. Es decir: el seguimiento de índices tradicional puede comprar todos los activos del índice, idealmente con las mismas ponderaciones que en el índice. Esto puede resultar impráctico por varias razones: el total de incluso un solo lote de ronda por activo puede ascender a más que los activos bajo gestión, la gran escala del problema de seguimiento de índices con restricciones de integralidad puede dificultar el problema de optimización, y los costos de transacción del reequilibrio frecuente para ajustar las posiciones a las ponderaciones del índice pueden hacer que el enfoque sea costoso. Por lo tanto, un enfoque popular es seleccionar una cartera de <span class="math notranslate nohighlight">\(q\)</span> activos que representen el mercado con <span class="math notranslate nohighlight">\(n\)</span> activos, donde <span class="math notranslate nohighlight">\(q\)</span> es significativamente menor que <span class="math notranslate nohighlight">\(n\)</span>, pero donde la cartera replica el comportamiento del mercado subyacente. Determinar cómo agrupar los activos en <span class="math notranslate nohighlight">\(q\)</span> conjuntos y cómo determinar cuáles <span class="math notranslate nohighlight">\(q\)</span> activos deben representar los <span class="math notranslate nohighlight">\(q\)</span> conjuntos equivale a resolver un problema de optimización a gran escala. A continuación, describimos el modelo matemático para el problema de la diversificación de cartera tal como se presentó en [Cornuejols &amp; Tutuncu, 2006] 2. permite medidas de similitud entre series de tiempo más allá de la matriz de covarianza. Ten en cuenta que, tradicionalmente, la teoría de cartera moderna considera la matriz de covarianza como una medida de similitud entre los activos. Sin embargo, como tal, la matriz de covarianza es imperfecta. Considera, por ejemplo, una empresa que cotiza tanto en Londres como en Nueva York. Aunque ambos listados deberían ser muy similares, solo se superpondrán partes de la serie temporal de los precios de los dos listados, debido a la superposición parcial de las horas de apertura de los mercados. En lugar de la covarianza, se puede considerar, por ejemplo, la deformación dinámica temporal de [Berndt y Clifford, 1994] como una medida de similitud entre dos series de tiempo, lo que permite el hecho de que durante algunos períodos de tiempo, los datos son capturados por solo una serie de tiempo, mientras que para otras, ambas series de tiempo exhiben la similitud debido a la evolución paralela del precio de la acción.</p>
@@ -618,7 +618,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Next, we download price data for two stocks and compute their pair-wise similarity matrix (<a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">dynamic time warping</a> distance normalized to (0,1] by taking the reciprocal). If this fails, e.g., due to you being offline or exceeding the daily limit for accesses to the stock-market data, we consider a constant matrix instead.</p>
+<p>A continuación, descargamos los datos de precios de dos acciones y calculamos su matriz de similitud por pares (<a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">deformación dinámica temporal</a> distancia normalizada a (0,1] al tomar el recíproco). Si esto falla, por ejemplo, debido a que está fuera de línea o excede el límite diario de acceso a los datos del mercado de valores, consideramos una matriz constante en su lugar.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -1062,7 +1062,7 @@ VQE does not produce the same solution as the exact eigensolver, but that is to 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="03_european_call_option_pricing.html" class="btn btn-neutral float-right" title="Pricing European Call Options" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="03_european_call_option_pricing.html" class="btn btn-neutral float-right" title="Fijación de Precios de Opciones de Compra Europeas" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="01_portfolio_optimization.html" class="btn btn-neutral" title="Optimización de Cartera" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -1097,7 +1097,7 @@ VQE does not produce the same solution as the exact eigensolver, but that is to 
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Portfolio Diversification</a><ul>
+<li><a class="reference internal" href="#">Diversificación de Cartera</a><ul>
 <li><a class="reference internal" href="#Introducción">Introducción</a></li>
 <li><a class="reference internal" href="#El-Modelo">El Modelo</a></li>
 <li><a class="reference internal" href="#Un-Enfoque-Híbrido">Un Enfoque Híbrido</a><ul>

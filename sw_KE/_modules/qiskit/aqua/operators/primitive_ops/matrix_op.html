@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.operators.primitive_ops.matrix_op &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.aqua.operators.primitive_ops.matrix_op &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Ukurasa mkuu wa Nyaraka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Jambo la Mbele</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Kumbukumbu za API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Mtambo wa Kuiga wa Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Majaribio ya Utafiti wa Kisayansi ya Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Moduli za Programu-tumizi za Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Mwongozo wa Uhamiaji wa Programu-tumizi za Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Kutafuta Suluhu</span></p>
 <ul>
@@ -361,7 +368,7 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="MatrixOp.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">primitive</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">spmatrix</span><span class="p">,</span> <span class="n">Operator</span><span class="p">],</span>
                  <span class="n">coeff</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -389,16 +396,16 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">primitive</span><span class="o">.</span><span class="n">input_dims</span><span class="p">()</span> <span class="o">==</span> <span class="n">primitive</span><span class="o">.</span><span class="n">output_dims</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot handle non-square matrices yet.&#39;</span><span class="p">)</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">primitive</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">coeff</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">primitive</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">coeff</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MatrixOp.primitive_strings"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.primitive_strings">[docs]</a>    <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="MatrixOp.primitive_strings"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.primitive_strings.html#qiskit.aqua.operators.primitive_ops.MatrixOp.primitive_strings">[docs]</a>    <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;Matrix&#39;</span><span class="p">}</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">num_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">input_dims</span><span class="p">())</span>  <span class="c1"># type: ignore</span>
 
-<div class="viewcode-block" id="MatrixOp.add"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.add"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.add.html#qiskit.aqua.operators.primitive_ops.MatrixOp.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s1">&#39;Sum over operators with different numbers of qubits, </span><span class="si">{}</span><span class="s1"> and </span><span class="si">{}</span><span class="s1">, is not well &#39;</span>
@@ -417,11 +424,11 @@
         <span class="c1"># Covers Paulis, Circuits, and all else.</span>
         <span class="k">return</span> <span class="n">SummedOp</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="MatrixOp.adjoint"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.adjoint">[docs]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.adjoint"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.adjoint.html#qiskit.aqua.operators.primitive_ops.MatrixOp.adjoint">[docs]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">MatrixOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>  <span class="c1"># type: ignore</span>
                         <span class="n">coeff</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="MatrixOp.equals"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.equals">[docs]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.equals"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.equals.html#qiskit.aqua.operators.primitive_ops.MatrixOp.equals">[docs]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">MatrixOp</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">)</span> <span class="o">^</span> \
@@ -436,14 +443,14 @@
         <span class="n">identity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">MatrixOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">Operator</span><span class="p">(</span><span class="n">identity</span><span class="p">)),</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
 
-<div class="viewcode-block" id="MatrixOp.tensor"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.tensor"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.tensor.html#qiskit.aqua.operators.primitive_ops.MatrixOp.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">Operator</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
             <span class="k">return</span> <span class="n">MatrixOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">primitive</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
                             <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
 
         <span class="k">return</span> <span class="n">TensoredOp</span><span class="p">([</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="MatrixOp.compose"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span>
+<div class="viewcode-block" id="MatrixOp.compose"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.compose.html#qiskit.aqua.operators.primitive_ops.MatrixOp.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span>
                 <span class="n">permutation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
 
         <span class="n">new_self</span><span class="p">,</span> <span class="n">other</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_expand_shorter_operator_and_permute</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">permutation</span><span class="p">)</span>
@@ -457,7 +464,7 @@
 
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MatrixOp</span><span class="p">,</span> <span class="n">new_self</span><span class="p">)</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MatrixOp.permute"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.permute">[docs]</a>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;MatrixOp&#39;</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.permute"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.permute.html#qiskit.aqua.operators.primitive_ops.MatrixOp.permute">[docs]</a>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;MatrixOp&#39;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Creates a new MatrixOp that acts on the permuted qubits.</span>
 
 <span class="sd">        Args:</span>
@@ -491,7 +498,7 @@
         <span class="n">matrix</span> <span class="o">=</span> <span class="n">CircuitOp</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">MatrixOp</span><span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span> <span class="o">@</span> <span class="n">new_self</span> <span class="o">@</span> <span class="n">MatrixOp</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>  <span class="c1"># type: ignore</span></div>
 
-<div class="viewcode-block" id="MatrixOp.to_matrix"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.to_matrix"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.to_matrix.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">data</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span>  <span class="c1"># type: ignore</span></div>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -501,7 +508,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> * </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">prim_str</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MatrixOp.eval"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.eval">[docs]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<div class="viewcode-block" id="MatrixOp.eval"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.eval.html#qiskit.aqua.operators.primitive_ops.MatrixOp.eval">[docs]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
              <span class="n">front</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">complex</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
              <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">]:</span>
         <span class="c1"># For other ops&#39; eval we return self.to_matrix_op() here, but that&#39;s unnecessary here.</span>
@@ -530,19 +537,19 @@
 
         <span class="k">return</span> <span class="n">new_front</span></div>
 
-<div class="viewcode-block" id="MatrixOp.exp_i"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.exp_i">[docs]</a>    <span class="k">def</span> <span class="nf">exp_i</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.exp_i"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.exp_i.html#qiskit.aqua.operators.primitive_ops.MatrixOp.exp_i">[docs]</a>    <span class="k">def</span> <span class="nf">exp_i</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a ``CircuitOp`` equivalent to e^-iH for this operator H&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">CircuitOp</span><span class="p">(</span><span class="n">HamiltonianGate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">))</span></div>
 
     <span class="c1"># Op Conversions</span>
 
-<div class="viewcode-block" id="MatrixOp.to_matrix_op"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_matrix_op">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.to_matrix_op"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.to_matrix_op.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_matrix_op">[docs]</a>    <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="MatrixOp.to_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_instruction">[docs]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Instruction</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.to_instruction"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.to_instruction.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_instruction">[docs]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Instruction</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="p">)</span><span class="o">.</span><span class="n">to_instruction</span><span class="p">()</span>  <span class="c1"># type: ignore</span></div>
 
-<div class="viewcode-block" id="MatrixOp.to_legacy_op"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_legacy_op">[docs]</a>    <span class="k">def</span> <span class="nf">to_legacy_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MatrixOperator</span><span class="p">:</span>
+<div class="viewcode-block" id="MatrixOp.to_legacy_op"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.primitive_ops.MatrixOp.to_legacy_op.html#qiskit.aqua.operators.primitive_ops.MatrixOp.to_legacy_op">[docs]</a>    <span class="k">def</span> <span class="nf">to_legacy_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MatrixOperator</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">MatrixOperator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">(</span><span class="n">massive</span><span class="o">=</span><span class="n">massive</span><span class="p">))</span></div></div>
 </pre></div>
 
@@ -561,7 +568,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -641,7 +648,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -664,9 +671,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

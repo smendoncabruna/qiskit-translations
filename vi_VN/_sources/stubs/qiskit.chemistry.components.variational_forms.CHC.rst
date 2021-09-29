@@ -1,36 +1,29 @@
-﻿qiskit.chemistry.components.variational\_forms.CHC
-==================================================
+﻿CHC
+===
 
 .. currentmodule:: qiskit.chemistry.components.variational_forms
 
 .. autoclass:: CHC
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CHC.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CHC.construct_circuit
       ~CHC.get_entangler_map
       ~CHC.validate_entangler_map
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CHC.num_parameters
-      ~CHC.num_qubits
-      ~CHC.parameter_bounds
-      ~CHC.preferred_init_points
-      ~CHC.setting
-      ~CHC.support_parameterized_circuit
-   
-   
+   .. autoattribute:: num_parameters
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameter_bounds
+   .. autoattribute:: preferred_init_points
+   .. autoattribute:: setting
+   .. autoattribute:: support_parameterized_circuit

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.noise.errors.quantum_error &mdash; documentación de Qiskit - 0.29.0</title>
+  <title>qiskit.providers.aer.noise.errors.quantum_error &mdash; documentación de Qiskit - 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Página de inicio de la documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Página de inicio de la Documentación</a></li>
 </ul>
 <p><span class="caption-text">Preliminares</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Referencias de la API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aer.html">Simulador Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ignis.html">Experimentos Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aqua.html">Módulos de Aplicación Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Proveedor)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ignis.html">Qiskit Ignis (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aqua.html">Qiskit Aqua (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ibmq-provider.html">Proveedor Qiskit IBM Quantum</a></li>
 </ul>
-<p><span class="caption-text">Guía de Migración de Aplicaciones Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Guía de Migración de Qiskit Aqua</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../aqua_migration.html">Guía de Migración de Aplicaciones Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../aqua_migration.html">Guía de Migración de Qiskit Aqua</a></li>
 </ul>
 <p><span class="caption-text">Solución de Problemas</span></p>
 <ul>
@@ -367,7 +374,7 @@
     <span class="n">_RTOL_DEFAULT</span> <span class="o">=</span> <span class="n">RTOL_DEFAULT</span>
     <span class="n">_MAX_TOL</span> <span class="o">=</span> <span class="mf">1e-4</span>
 
-<div class="viewcode-block" id="QuantumError.__init__"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.__init__">[documentos]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">noise_ops</span><span class="p">,</span>
                  <span class="n">number_of_qubits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">standard_gates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -479,7 +486,7 @@
             <span class="k">raise</span> <span class="n">NoiseError</span><span class="p">(</span><span class="s2">&quot;Probabilities are invalid.&quot;</span><span class="p">)</span>
         <span class="c1"># Rescale probabilities if their sum is ok to avoid</span>
         <span class="c1"># accumulation of rounding errors</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_noise_probabilities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_noise_probabilities</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_probs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_noise_probabilities</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_noise_probabilities</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_probs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Display QuantumError.&quot;&quot;&quot;</span>
@@ -501,7 +508,7 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_quantumchannel</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">to_quantumchannel</span><span class="p">()</span>
 
-<div class="viewcode-block" id="QuantumError.copy"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.copy">[documentos]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.copy"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.copy.html#qiskit.providers.aer.noise.QuantumError.copy">[documentos]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Make a copy of current QuantumError.&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=no-value-for-parameter</span>
         <span class="c1"># The constructor of subclasses from raw data should be a copy</span>
@@ -517,7 +524,7 @@
         <span class="sd">&quot;&quot;&quot;The relative tolerance parameter for float comparisons.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">QuantumError</span><span class="o">.</span><span class="n">_RTOL_DEFAULT</span>
 
-<div class="viewcode-block" id="QuantumError.set_atol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.set_atol">[documentos]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="QuantumError.set_atol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.set_atol.html#qiskit.providers.aer.noise.QuantumError.set_atol">[documentos]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_atol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the class default absolute tolerance parameter for float comparisons.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -529,7 +536,7 @@
                     <span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_MAX_TOL</span><span class="p">))</span>
         <span class="bp">cls</span><span class="o">.</span><span class="n">_ATOL_DEFAULT</span> <span class="o">=</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="QuantumError.set_rtol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.set_rtol">[documentos]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="QuantumError.set_rtol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.set_rtol.html#qiskit.providers.aer.noise.QuantumError.set_rtol">[documentos]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_rtol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the class default relative tolerance parameter for float comparisons.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -561,18 +568,16 @@
         <span class="sd">&quot;&quot;&quot;Return the list of error probabilities.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_noise_probabilities</span>
 
-<div class="viewcode-block" id="QuantumError.ideal"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.ideal">[documentos]</a>    <span class="k">def</span> <span class="nf">ideal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.ideal"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.ideal.html#qiskit.providers.aer.noise.QuantumError.ideal">[documentos]</a>    <span class="k">def</span> <span class="nf">ideal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if current error object is an identity&quot;&quot;&quot;</span>
         <span class="n">instructions</span><span class="p">,</span> <span class="n">probability</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_term</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">probability</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">instructions</span> <span class="o">==</span> <span class="p">[{</span>
-                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;qubits&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="p">}]:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">probability</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">instructions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span>
+                <span class="n">instructions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;id&quot;</span><span class="p">):</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Error object is ideal&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="QuantumError.to_quantumchannel"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.to_quantumchannel">[documentos]</a>    <span class="k">def</span> <span class="nf">to_quantumchannel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.to_quantumchannel"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.to_quantumchannel.html#qiskit.providers.aer.noise.QuantumError.to_quantumchannel">[documentos]</a>    <span class="k">def</span> <span class="nf">to_quantumchannel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert the QuantumError to a SuperOp quantum channel.&quot;&quot;&quot;</span>
         <span class="c1"># Initialize as an empty superoperator of the correct size</span>
         <span class="n">dim</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">number_of_qubits</span>
@@ -583,11 +588,11 @@
             <span class="n">channel</span> <span class="o">=</span> <span class="n">channel</span> <span class="o">+</span> <span class="n">component</span>
         <span class="k">return</span> <span class="n">channel</span></div>
 
-<div class="viewcode-block" id="QuantumError.to_instruction"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.to_instruction">[documentos]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.to_instruction"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.to_instruction.html#qiskit.providers.aer.noise.QuantumError.to_instruction">[documentos]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert the QuantumError to a circuit Instruction.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_quantumchannel</span><span class="p">()</span><span class="o">.</span><span class="n">to_instruction</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="QuantumError.error_term"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.error_term">[documentos]</a>    <span class="k">def</span> <span class="nf">error_term</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.error_term"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.error_term.html#qiskit.providers.aer.noise.QuantumError.error_term">[documentos]</a>    <span class="k">def</span> <span class="nf">error_term</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a single term from the error.</span>
 
@@ -595,7 +600,7 @@
 <span class="sd">            position (int): the position of the error term.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            tuple: A pair `(p, circuit)` for error term at `position` &lt; size</span>
+<span class="sd">            tuple: A pair `(circuit, p)` for error term at `position` &lt; size</span>
 <span class="sd">            where `p` is the probability of the error term, and `circuit`</span>
 <span class="sd">            is the list of qobj instructions for the error term.</span>
 
@@ -609,7 +614,7 @@
             <span class="k">raise</span> <span class="n">NoiseError</span><span class="p">(</span><span class="s2">&quot;Position </span><span class="si">{}</span><span class="s2"> is greater than the number&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">position</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;of error outcomes </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="QuantumError.to_dict"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.to_dict">[documentos]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.to_dict"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.to_dict.html#qiskit.providers.aer.noise.QuantumError.to_dict">[documentos]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the current error as a dictionary.&quot;&quot;&quot;</span>
         <span class="n">error</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;qerror&quot;</span><span class="p">,</span>
@@ -619,7 +624,7 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">error</span></div>
 
-<div class="viewcode-block" id="QuantumError.compose"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.compose">[documentos]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.compose"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.compose.html#qiskit.providers.aer.noise.QuantumError.compose">[documentos]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the composition error channel other * self.</span>
 
 <span class="sd">        Note that for `front=True` this is equivalent to the</span>
@@ -641,7 +646,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">left_multiply</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">left_multiply</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="QuantumError.dot"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.dot">[documentos]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.dot"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.dot.html#qiskit.providers.aer.noise.QuantumError.dot">[documentos]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the composition error channel self * other.</span>
 
 <span class="sd">        Args:</span>
@@ -656,7 +661,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">left_multiply</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="QuantumError.power"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.power">[documentos]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.power"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.power.html#qiskit.providers.aer.noise.QuantumError.power">[documentos]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the compose of a error channel with itself n times.</span>
 
 <span class="sd">        Args:</span>
@@ -675,7 +680,7 @@
             <span class="n">ret</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="QuantumError.tensor"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.tensor">[documentos]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.tensor"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.tensor.html#qiskit.providers.aer.noise.QuantumError.tensor">[documentos]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product quantum error channel self ⊗ other.</span>
 
 <span class="sd">        Args:</span>
@@ -689,7 +694,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tensor_product</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="QuantumError.expand"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.html#qiskit.providers.aer.noise.QuantumError.expand">[documentos]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="QuantumError.expand"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.QuantumError.expand.html#qiskit.providers.aer.noise.QuantumError.expand">[documentos]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product quantum error channel self ⊗ other.</span>
 
 <span class="sd">        Args:</span>
@@ -1008,7 +1013,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/08/13.
+      Actualizado por última vez en 2021/09/23.
 
     </p>
   </div>
@@ -1088,7 +1093,7 @@
             <a href="../../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1111,9 +1116,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

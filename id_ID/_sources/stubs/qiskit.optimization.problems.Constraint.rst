@@ -1,32 +1,25 @@
-﻿qiskit.optimization.problems.Constraint
-=======================================
+﻿Constraint
+==========
 
 .. currentmodule:: qiskit.optimization.problems
 
 .. autoclass:: Constraint
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Constraint.__init__
-      ~Constraint.evaluate
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~Constraint.evaluate
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Constraint.name
-      ~Constraint.quadratic_program
-      ~Constraint.rhs
-      ~Constraint.sense
-   
-   
+   .. autoattribute:: name
+   .. autoattribute:: quadratic_program
+   .. autoattribute:: rhs
+   .. autoattribute:: sense

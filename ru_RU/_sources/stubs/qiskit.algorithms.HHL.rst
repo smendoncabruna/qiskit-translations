@@ -1,32 +1,25 @@
-﻿qiskit.algorithms.HHL
-=====================
+﻿HHL
+===
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: HHL
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HHL.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~HHL.construct_circuit
       ~HHL.solve
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~HHL.expectation
-      ~HHL.quantum_instance
-      ~HHL.scaling
-   
-   
+   .. autoattribute:: expectation
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: scaling

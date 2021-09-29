@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.UnitarySynthesis
-=========================================
+﻿UnitarySynthesis
+================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: UnitarySynthesis
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnitarySynthesis.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnitarySynthesis.name
       ~UnitarySynthesis.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnitarySynthesis.is_analysis_pass
-      ~UnitarySynthesis.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

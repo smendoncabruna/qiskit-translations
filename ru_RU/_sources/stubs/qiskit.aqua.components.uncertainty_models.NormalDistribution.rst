@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.NormalDistribution
-=============================================================
+﻿NormalDistribution
+==================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: NormalDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NormalDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NormalDistribution.build
       ~NormalDistribution.build_controlled
       ~NormalDistribution.build_controlled_inverse
@@ -27,20 +26,14 @@
       ~NormalDistribution.pdf_to_probabilities
       ~NormalDistribution.required_ancillas
       ~NormalDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NormalDistribution.high
-      ~NormalDistribution.low
-      ~NormalDistribution.num_target_qubits
-      ~NormalDistribution.num_values
-      ~NormalDistribution.probabilities
-      ~NormalDistribution.values
-   
-   
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: values

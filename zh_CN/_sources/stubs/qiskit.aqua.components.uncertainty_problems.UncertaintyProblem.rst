@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_problems.UncertaintyProblem
-===============================================================
+﻿UncertaintyProblem
+==================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_problems
 
 .. autoclass:: UncertaintyProblem
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UncertaintyProblem.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UncertaintyProblem.build
       ~UncertaintyProblem.build_controlled
       ~UncertaintyProblem.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~UncertaintyProblem.required_ancillas
       ~UncertaintyProblem.required_ancillas_controlled
       ~UncertaintyProblem.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UncertaintyProblem.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

@@ -1,24 +1,19 @@
-﻿qiskit.ignis.logging.IgnisLogReader
-===================================
+﻿IgnisLogReader
+==============
 
 .. currentmodule:: qiskit.ignis.logging
 
 .. autoclass:: IgnisLogReader
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IgnisLogReader.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IgnisLogReader.get_log_files
       ~IgnisLogReader.read_values
-   
-   
 
-   
-   
-   
+

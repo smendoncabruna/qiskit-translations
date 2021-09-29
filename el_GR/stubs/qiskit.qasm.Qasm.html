@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.qasm.Qasm &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>Qasm &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="qiskit.qasm.QasmError" href="qiskit.qasm.QasmError.html" />
+    <link rel="next" title="qiskit.qasm.Qasm.generate_tokens" href="qiskit.qasm.Qasm.generate_tokens.html" />
     <link rel="prev" title="Qasm (qiskit.qasm)" href="../apidoc/qasm.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/qasm.html">Qasm (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.qasm</span></code>)</a> &gt;</li>
         
-      <li>qiskit.qasm.Qasm</li>
+      <li>Qasm</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,19 +335,14 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-qasm-qasm">
-<h1>qiskit.qasm.Qasm<a class="headerlink" href="#qiskit-qasm-qasm" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="qasm">
+<h1>Qasm<a class="headerlink" href="#qasm" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.qasm.Qasm">
 <em class="property">class </em><code class="sig-name descname">Qasm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qasm/qasm.html#Qasm"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.qasm.Qasm" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>OPENQASM circuit object.</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>OPENQASM circuit object.</p>
 <p>Create an OPENQASM circuit object.</p>
-<dl class="py method">
-<dt id="qiskit.qasm.Qasm.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qasm/qasm.html#Qasm.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.qasm.Qasm.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Create an OPENQASM circuit object.</p>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -348,38 +350,17 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.qasm.Qasm.__init__" title="qiskit.qasm.Qasm.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([filename, data])</p></td>
-<td><p>Create an OPENQASM circuit object.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.qasm.Qasm.generate_tokens" title="qiskit.qasm.Qasm.generate_tokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_tokens</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.qasm.Qasm.generate_tokens.html#qiskit.qasm.Qasm.generate_tokens" title="qiskit.qasm.Qasm.generate_tokens"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_tokens</span></code></a></p></td>
 <td><p>Returns a generator of the tokens.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.qasm.Qasm.parse" title="qiskit.qasm.Qasm.parse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.qasm.Qasm.parse.html#qiskit.qasm.Qasm.parse" title="qiskit.qasm.Qasm.parse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse</span></code></a></p></td>
 <td><p>Parse the data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.qasm.Qasm.return_filename" title="qiskit.qasm.Qasm.return_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">return_filename</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.qasm.Qasm.return_filename.html#qiskit.qasm.Qasm.return_filename" title="qiskit.qasm.Qasm.return_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">return_filename</span></code></a></p></td>
 <td><p>Return the filename.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.qasm.Qasm.generate_tokens">
-<code class="sig-name descname">generate_tokens</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qasm/qasm.html#Qasm.generate_tokens"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.qasm.Qasm.generate_tokens" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Returns a generator of the tokens.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.qasm.Qasm.parse">
-<code class="sig-name descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qasm/qasm.html#Qasm.parse"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.qasm.Qasm.parse" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Parse the data.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.qasm.Qasm.return_filename">
-<code class="sig-name descname">return_filename</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qasm/qasm.html#Qasm.return_filename"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.qasm.Qasm.return_filename" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Return the filename.</p>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -392,7 +373,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.qasm.QasmError.html" class="btn btn-neutral float-right" title="qiskit.qasm.QasmError" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.qasm.Qasm.generate_tokens.html" class="btn btn-neutral float-right" title="qiskit.qasm.Qasm.generate_tokens" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../apidoc/qasm.html" class="btn btn-neutral" title="Qasm (qiskit.qasm)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -409,7 +390,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -428,7 +409,7 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.qasm.Qasm</a></li>
+<li><a class="reference internal" href="#">Qasm</a></li>
 </ul>
 
             </div>
@@ -492,7 +473,7 @@
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -515,9 +496,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

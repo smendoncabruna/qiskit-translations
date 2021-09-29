@@ -1,35 +1,28 @@
-﻿qiskit.chemistry.transformations.BosonicTransformation
-======================================================
+﻿BosonicTransformation
+=====================
 
 .. currentmodule:: qiskit.chemistry.transformations
 
 .. autoclass:: BosonicTransformation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BosonicTransformation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BosonicTransformation.build_hopping_operators
       ~BosonicTransformation.get_default_filter_criterion
       ~BosonicTransformation.interpret
       ~BosonicTransformation.transform
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BosonicTransformation.basis
-      ~BosonicTransformation.commutation_rule
-      ~BosonicTransformation.num_modes
-      ~BosonicTransformation.untapered_qubit_op
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: commutation_rule
+   .. autoattribute:: num_modes
+   .. autoattribute:: untapered_qubit_op

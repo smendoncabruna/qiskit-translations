@@ -1,25 +1,20 @@
-﻿qiskit.circuit.InstructionSet
-=============================
+﻿InstructionSet
+==============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: InstructionSet
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~InstructionSet.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~InstructionSet.add
       ~InstructionSet.c_if
       ~InstructionSet.inverse
-   
-   
 
-   
-   
-   
+

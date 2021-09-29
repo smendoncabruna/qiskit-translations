@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Providers Interface (qiskit.providers) &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>Providers Interface (qiskit.providers) &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Tìm Kiếm" href="../search.html" />
-    <link rel="next" title="qiskit.providers.Provider" href="../stubs/qiskit.providers.Provider.html" />
+    <link rel="next" title="Provider" href="../stubs/qiskit.providers.Provider.html" />
     <link rel="prev" title="qiskit.providers.basicaer.BasicAerError" href="../stubs/qiskit.providers.basicaer.BasicAerError.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -332,7 +339,7 @@
 provider is anything that provides an external service to Terra. The typical
 example of this is a Backend provider which provides
 <a class="reference internal" href="../stubs/qiskit.providers.Backend.html#qiskit.providers.Backend" title="qiskit.providers.Backend"><code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code></a> objects which can be used for executing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> and/or <a class="reference internal" href="../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a>
+<a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></a> and/or <a class="reference internal" href="../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a>
 objects. This module contains the abstract classes which are used to define the
 interface between a provider and terra.</p>
 <section id="version-support">
@@ -368,13 +375,14 @@ should) update to newer versions as soon as they can, the support window is
 just for Terra's supported versions. Part of this lengthy window prior to
 deprecation is to give providers enough time to do their own deprecation of a
 potential end user impacting change in a user facing part of the interface
-prior to bumping their version. For example, lets say we changed the signature
-to <cite>Backend.run()</cite> in <code class="docutils literal notranslate"><span class="pre">BackendV34</span></code> in a backwards incompatible way, before
-Aer could update its <code class="docutils literal notranslate"><span class="pre">AerBackend</span></code> class to use version 34 they'd need to
-deprecate the old signature prior to switching over. The changeover for Aer is
-not guaranteed to be lockstep with Terra so we need to ensure there is a
-sufficient amount of time for Aer to complete it's deprecation cycle prior to
-removing version 33 (ie making version 34 mandatory/the minimum version).</p>
+prior to bumping their version. For example, let's say we changed the signature
+to <code class="docutils literal notranslate"><span class="pre">Backend.run()</span></code> in <code class="docutils literal notranslate"><span class="pre">BackendV34</span></code> in a backwards incompatible way, before
+Aer could update its <code class="xref py py-class docutils literal notranslate"><span class="pre">AerBackend</span></code> class
+to use version 34 they'd need to deprecate the old signature prior to switching
+over. The changeover for Aer is not guaranteed to be lockstep with Terra so we
+need to ensure there is a sufficient amount of time for Aer to complete its
+deprecation cycle prior to removing version 33 (ie making version 34
+mandatory/the minimum version).</p>
 </section>
 </section>
 <section id="abstract-classes">
@@ -450,14 +458,14 @@ removing version 33 (ie making version 34 mandatory/the minimum version).</p>
 <h1>Writing a New Provider<a class="headerlink" href="#writing-a-new-provider" title="Permalink to this headline">¶</a></h1>
 <p>If you have a quantum device or simulator that you would like to integrate with
 Qiskit you will need to write a provider. A provider will provide Terra with a
-method to get available <code class="xref py py-class docutils literal notranslate"><span class="pre">BackendV1</span></code> objects. The
-<code class="xref py py-class docutils literal notranslate"><span class="pre">BackendV1</span></code> object provides both information describing
+method to get available <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1" title="qiskit.providers.BackendV1"><code class="xref py py-class docutils literal notranslate"><span class="pre">BackendV1</span></code></a> objects. The
+<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1" title="qiskit.providers.BackendV1"><code class="xref py py-class docutils literal notranslate"><span class="pre">BackendV1</span></code></a> object provides both information describing
 a backend and its operation for the <a class="reference internal" href="transpiler.html#module-qiskit.transpiler" title="qiskit.transpiler"><code class="xref py py-mod docutils literal notranslate"><span class="pre">transpiler</span></code></a> so that circuits
 can be compiled to something that is optimized and can execute on the
-backend. It also provides the <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method which can
+backend. It also provides the <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method which can
 run the <a class="reference internal" href="../stubs/qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code></a> objects and/or
 <a class="reference internal" href="../stubs/qiskit.pulse.Schedule.html#qiskit.pulse.Schedule" title="qiskit.pulse.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a> objects. This enables users and other Qiskit
-APIs, such as <code class="xref py py-func docutils literal notranslate"><span class="pre">execute()</span></code> and higher level algorithms in
+APIs, such as <a class="reference internal" href="execute.html#qiskit.execute_function.execute" title="qiskit.execute_function.execute"><code class="xref py py-func docutils literal notranslate"><span class="pre">execute()</span></code></a> and higher level algorithms in
 Qiskit Aqua, to get results from executing circuits on devices in a standard
 fashion regardless of how the Backend is implemented. At a high level the basic
 steps for writing a provider are:</p>
@@ -466,7 +474,7 @@ steps for writing a provider are:</p>
 <li><p>Implement a <a class="reference internal" href="../stubs/qiskit.providers.ProviderV1.html#qiskit.providers.ProviderV1" title="qiskit.providers.ProviderV1"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProviderV1</span></code></a> subclass that handles
 access to the backend(s).</p></li>
 <li><p>Implement a <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1" title="qiskit.providers.BackendV1"><code class="xref py py-class docutils literal notranslate"><span class="pre">BackendV1</span></code></a> subclass and its
-<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.</p>
+<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method.</p>
 <ul>
 <li><p>Add any custom gates for the backend's basis to the session
 <a class="reference internal" href="../stubs/qiskit.circuit.EquivalenceLibrary.html#qiskit.circuit.EquivalenceLibrary" title="qiskit.circuit.EquivalenceLibrary"><code class="xref py py-class docutils literal notranslate"><span class="pre">EquivalenceLibrary</span></code></a> instance.</p></li>
@@ -517,9 +525,9 @@ provide the interface between Qiskit and the hardware or simulator that will
 execute circuits. This includes providing the necessary information to
 describe a backend to the compiler so that it can embed and optimize any
 circuit for the backend. There are 3 required things in every backend object: a
-backend configuration property, a <code class="docutils literal notranslate"><span class="pre">run()</span></code> method, and a
-<code class="docutils literal notranslate"><span class="pre">_default_options()</span></code> method. For example, a minimum working example would be
-something like:</p>
+backend configuration property, a <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a> method, and a
+<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1._default_options" title="qiskit.providers.BackendV1._default_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_default_options</span></code></a> method. For example, a
+minimum working example would be something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.providers</span> <span class="kn">import</span> <span class="n">BackendV1</span> <span class="k">as</span> <span class="n">Backend</span>
 <span class="kn">from</span> <span class="nn">qiskit.providers.models</span> <span class="kn">import</span> <span class="n">BackendConfiguration</span>
 <span class="kn">from</span> <span class="nn">qiskit.providers</span> <span class="kn">import</span> <span class="n">Options</span>
@@ -620,7 +628,7 @@ custom basis set. This can be done by defining equivalent circuits, in terms
 of the custom gate, for standard gates. Typically if you can convert from a
 <a class="reference internal" href="../stubs/qiskit.circuit.library.CXGate.html#qiskit.circuit.library.CXGate" title="qiskit.circuit.library.CXGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">CXGate</span></code></a> (if your basis doesn't include a
 standard 2 qubit gate) and some commonly used single qubit rotation gates like
-the <code class="xref py py-class docutils literal notranslate"><span class="pre">HGate</span></code> and
+the <a class="reference internal" href="../stubs/qiskit.circuit.library.HGate.html#qiskit.circuit.library.HGate" title="qiskit.circuit.library.HGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">HGate</span></code></a> and
 <a class="reference internal" href="../stubs/qiskit.circuit.library.UGate.html#qiskit.circuit.library.UGate" title="qiskit.circuit.library.UGate"><code class="xref py py-class docutils literal notranslate"><span class="pre">UGate</span></code></a> that should be sufficient for the
 transpiler to translate any circuit into the custom basis gates. But, the more
 equivalence rules that are defined from standard gates to your basis the more
@@ -678,7 +686,7 @@ moving forward.</p>
 </section>
 <section id="run-method">
 <h3>Run Method<a class="headerlink" href="#run-method" title="Permalink to this headline">¶</a></h3>
-<p>Of key importance is the <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method, which
+<p>Of key importance is the <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method, which
 is used to actually submit circuits to a device or simulator. The run method
 handles submitting the circuits to the backend to be executed and returning a
 <a class="reference internal" href="../stubs/qiskit.providers.Job.html#qiskit.providers.Job" title="qiskit.providers.Job"><code class="xref py py-class docutils literal notranslate"><span class="pre">Job</span></code></a> object. Depending on the type of backend this
@@ -688,7 +696,8 @@ package this involves converting from a quantum circuit and options into a
 <a class="reference external" href="https://arxiv.org/abs/1809.03452">qobj</a> JSON payload and submitting
 that to the IBM Quantum API. Since every backend interface is different (and
 in the case of the local simulators serialization may not be needed) it is
-expected that the backend's <code class="docutils literal notranslate"><span class="pre">run()</span></code> method will handle this conversion.</p>
+expected that the backend's <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a> method will
+handle this conversion.</p>
 <p>An example run method would be something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">circuits</span><span class="o">.</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">kwarg</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
@@ -712,11 +721,12 @@ expected that the backend's <code class="docutils literal notranslate"><span cla
 The typical example of this is something like the number of <code class="docutils literal notranslate"><span class="pre">shots</span></code> which is
 how many times the circuit is to be executed. The options available for a
 backend are defined using an <a class="reference internal" href="../stubs/qiskit.providers.Options.html#qiskit.providers.Options" title="qiskit.providers.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a> object. This
-object is initially created by the <code class="docutils literal notranslate"><span class="pre">_default_options</span></code> method of a Backend
-class. The default options returns an initialized
-<a class="reference internal" href="../stubs/qiskit.providers.Options.html#qiskit.providers.Options" title="qiskit.providers.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a> object with all the default values for all
-the options a backend supports. For example, if the backend supports only
-supports <code class="docutils literal notranslate"><span class="pre">shots</span></code> the <code class="docutils literal notranslate"><span class="pre">_default_options</span></code> method would look like:</p>
+object is initially created by the
+<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1._default_options" title="qiskit.providers.BackendV1._default_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_default_options</span></code></a> method of a Backend class.
+The default options returns an initialized <a class="reference internal" href="../stubs/qiskit.providers.Options.html#qiskit.providers.Options" title="qiskit.providers.Options"><code class="xref py py-class docutils literal notranslate"><span class="pre">Options</span></code></a>
+object with all the default values for all the options a backend supports. For
+example, if the backend supports only supports <code class="docutils literal notranslate"><span class="pre">shots</span></code> the
+<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.html#qiskit.providers.BackendV1._default_options" title="qiskit.providers.BackendV1._default_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_default_options</span></code></a> method would look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">_default_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Options</span><span class="p">(</span><span class="n">shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
@@ -726,22 +736,23 @@ supports <code class="docutils literal notranslate"><span class="pre">shots</spa
 </section>
 <section id="id4">
 <h2>Job<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>The output from the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method is a <a class="reference internal" href="../stubs/qiskit.providers.JobV1.html#qiskit.providers.JobV1" title="qiskit.providers.JobV1"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobV1</span></code></a>
+<p>The output from the <a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a> method is a <a class="reference internal" href="../stubs/qiskit.providers.JobV1.html#qiskit.providers.JobV1" title="qiskit.providers.JobV1"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobV1</span></code></a>
 object. Each provider is expected to implement a custom job subclass that
 defines the behavior for the provider. There are 2 types of jobs depending on
 the backend's execution method, either a sync or async. By default jobs are
 considered async and the expectation is that it represents a handle to the
 async execution of the circuits submitted with <code class="docutils literal notranslate"><span class="pre">Backend.run()</span></code>. An async
-<code class="docutils literal notranslate"><span class="pre">Job</span></code> object provides users the ability to query the status of the execution,
+job object provides users the ability to query the status of the execution,
 cancel a running job, and block until the execution is finished. The
-<a class="reference internal" href="../stubs/qiskit.providers.JobV1.html#qiskit.providers.JobV1.result" title="qiskit.providers.JobV1.result"><code class="xref py py-class docutils literal notranslate"><span class="pre">result</span></code></a> is the primary user facing method
+<a class="reference internal" href="../stubs/qiskit.providers.JobV1.result.html#qiskit.providers.JobV1.result" title="qiskit.providers.JobV1.result"><code class="xref py py-obj docutils literal notranslate"><span class="pre">result</span></code></a> is the primary user facing method
 which will block until the execution is complete and then will return a
 <a class="reference internal" href="../stubs/qiskit.result.Result.html#qiskit.result.Result" title="qiskit.result.Result"><code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code></a> object with results of the job.</p>
 <p>For some backends (mainly local simulators) the execution of circuits is a
 synchronous operation and there is no need to return a handle to a running job
-elsewhere. For sync jobs its expected that the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method on the backend
-will block until a <a class="reference internal" href="../stubs/qiskit.result.Result.html#qiskit.result.Result" title="qiskit.result.Result"><code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code></a> object is generated and the
-sync job will return with that inner <a class="reference internal" href="../stubs/qiskit.result.Result.html#qiskit.result.Result" title="qiskit.result.Result"><code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code></a> object.</p>
+elsewhere. For sync jobs its expected that the
+<a class="reference internal" href="../stubs/qiskit.providers.BackendV1.run.html#qiskit.providers.BackendV1.run" title="qiskit.providers.BackendV1.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a> method on the backend will block until a
+<a class="reference internal" href="../stubs/qiskit.result.Result.html#qiskit.result.Result" title="qiskit.result.Result"><code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code></a> object is generated and the sync job will return
+with that inner <a class="reference internal" href="../stubs/qiskit.result.Result.html#qiskit.result.Result" title="qiskit.result.Result"><code class="xref py py-class docutils literal notranslate"><span class="pre">Result</span></code></a> object.</p>
 <p>An example job class for an async API based backend would look something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.providers</span> <span class="kn">import</span> <span class="n">JobV1</span> <span class="k">as</span> <span class="n">Job</span>
 <span class="kn">from</span> <span class="nn">qiskit.providers</span> <span class="kn">import</span> <span class="n">JobError</span>
@@ -892,7 +903,7 @@ be using the versioned interface.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../stubs/qiskit.providers.Provider.html" class="btn btn-neutral float-right" title="qiskit.providers.Provider" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="../stubs/qiskit.providers.Provider.html" class="btn btn-neutral float-right" title="Provider" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../stubs/qiskit.providers.basicaer.BasicAerError.html" class="btn btn-neutral" title="qiskit.providers.basicaer.BasicAerError" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -909,7 +920,7 @@ be using the versioned interface.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -1026,7 +1037,7 @@ be using the versioned interface.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1049,9 +1060,11 @@ be using the versioned interface.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,33 +1,26 @@
-﻿qiskit.chemistry.drivers.FCIDumpDriver
-======================================
+﻿FCIDumpDriver
+=============
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: FCIDumpDriver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~FCIDumpDriver.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~FCIDumpDriver.dump
       ~FCIDumpDriver.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FCIDumpDriver.basis
-      ~FCIDumpDriver.hf_method
-      ~FCIDumpDriver.molecule
-      ~FCIDumpDriver.supports_molecule
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule

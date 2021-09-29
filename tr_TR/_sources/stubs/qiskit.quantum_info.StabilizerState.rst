@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.StabilizerState
-====================================
+﻿StabilizerState
+===============
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: StabilizerState
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~StabilizerState.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~StabilizerState.conjugate
       ~StabilizerState.copy
       ~StabilizerState.dims
@@ -32,17 +31,11 @@
       ~StabilizerState.tensor
       ~StabilizerState.to_operator
       ~StabilizerState.trace
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~StabilizerState.clifford
-      ~StabilizerState.dim
-      ~StabilizerState.num_qubits
-   
-   
+   .. autoattribute:: clifford
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits

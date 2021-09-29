@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.TemplateOptimization
-=============================================
+﻿TemplateOptimization
+====================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: TemplateOptimization
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TemplateOptimization.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TemplateOptimization.name
       ~TemplateOptimization.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TemplateOptimization.is_analysis_pass
-      ~TemplateOptimization.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

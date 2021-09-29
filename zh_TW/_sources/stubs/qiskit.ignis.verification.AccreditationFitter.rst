@@ -1,37 +1,30 @@
-﻿qiskit.ignis.verification.AccreditationFitter
-=============================================
+﻿AccreditationFitter
+===================
 
 .. currentmodule:: qiskit.ignis.verification
 
 .. autoclass:: AccreditationFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AccreditationFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AccreditationFitter.bound_variation_distance
       ~AccreditationFitter.single_protocol_run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AccreditationFitter.N_acc
-      ~AccreditationFitter.bound
-      ~AccreditationFitter.confidence
-      ~AccreditationFitter.flag
-      ~AccreditationFitter.g_num
-      ~AccreditationFitter.num_runs
-      ~AccreditationFitter.num_traps
-      ~AccreditationFitter.outputs
-   
-   
+   .. autoattribute:: N_acc
+   .. autoattribute:: bound
+   .. autoattribute:: confidence
+   .. autoattribute:: flag
+   .. autoattribute:: g_num
+   .. autoattribute:: num_runs
+   .. autoattribute:: num_traps
+   .. autoattribute:: outputs

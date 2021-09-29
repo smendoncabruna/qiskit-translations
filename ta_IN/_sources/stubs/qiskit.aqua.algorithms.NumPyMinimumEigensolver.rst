@@ -1,34 +1,27 @@
-﻿qiskit.aqua.algorithms.NumPyMinimumEigensolver
-==============================================
+﻿NumPyMinimumEigensolver
+=======================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: NumPyMinimumEigensolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyMinimumEigensolver.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NumPyMinimumEigensolver.compute_minimum_eigenvalue
       ~NumPyMinimumEigensolver.run
       ~NumPyMinimumEigensolver.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumPyMinimumEigensolver.aux_operators
-      ~NumPyMinimumEigensolver.filter_criterion
-      ~NumPyMinimumEigensolver.operator
-      ~NumPyMinimumEigensolver.random
-   
-   
+   .. autoattribute:: aux_operators
+   .. autoattribute:: filter_criterion
+   .. autoattribute:: operator
+   .. autoattribute:: random

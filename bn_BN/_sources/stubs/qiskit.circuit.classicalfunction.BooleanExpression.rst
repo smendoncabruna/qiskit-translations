@@ -1,19 +1,18 @@
-﻿qiskit.circuit.classicalfunction.BooleanExpression
-==================================================
+﻿BooleanExpression
+=================
 
 .. currentmodule:: qiskit.circuit.classicalfunction
 
 .. autoclass:: BooleanExpression
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BooleanExpression.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BooleanExpression.add_decomposition
       ~BooleanExpression.assemble
       ~BooleanExpression.broadcast_arguments
@@ -33,20 +32,14 @@
       ~BooleanExpression.synth
       ~BooleanExpression.to_matrix
       ~BooleanExpression.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BooleanExpression.decompositions
-      ~BooleanExpression.definition
-      ~BooleanExpression.duration
-      ~BooleanExpression.label
-      ~BooleanExpression.params
-      ~BooleanExpression.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

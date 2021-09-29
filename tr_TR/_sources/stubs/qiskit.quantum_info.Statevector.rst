@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Statevector
-================================
+﻿Statevector
+===========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Statevector
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Statevector.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Statevector.conjugate
       ~Statevector.copy
       ~Statevector.dims
@@ -39,20 +38,14 @@
       ~Statevector.to_dict
       ~Statevector.to_operator
       ~Statevector.trace
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Statevector.atol
-      ~Statevector.data
-      ~Statevector.dim
-      ~Statevector.num_qubits
-      ~Statevector.rtol
-      ~Statevector.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

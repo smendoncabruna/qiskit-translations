@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit 에 기여하기 &mdash; Qiskit 0.29.0 문서</title>
+  <title>Qiskit 에 기여하기 &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -698,13 +705,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>소스 코드로부터 Terra 설치하기<a class="headerlink" href="#installing-terra-from-source" title="제목 주소">¶</a></h3>
 <p>소스 코드에서 설치하려면 C++11을 지원하는 시스템에서 C++ 컴파일러가 있어야 한다.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4540b880-c19e-42d5-b59e-c86a506a7053" name="c0ed9e66-6c0d-46b1-9bfc-f404f3fad049" type="radio">
-</input><label class="tabbed-label" for="4540b880-c19e-42d5-b59e-c86a506a7053">
+<input checked="checked" id="dd4ac6b2-33d9-48ea-abc9-28e1e0be9203" name="37ad10a4-2c3b-405d-b833-6f1bb0966a00" type="radio">
+</input><label class="tabbed-label" for="dd4ac6b2-33d9-48ea-abc9-28e1e0be9203">
 Linux용 컴파일러</label><div class="tabbed-content docutils">
 <p>대부분의 Linux 플랫폼에서는 필요한 GCC 컴파일러가 이미 설치되어 있다.</p>
 </div>
-<input id="c6d4705e-6f3b-40d3-aabc-aa0248ddee4f" name="c0ed9e66-6c0d-46b1-9bfc-f404f3fad049" type="radio">
-</input><label class="tabbed-label" for="c6d4705e-6f3b-40d3-aabc-aa0248ddee4f">
+<input id="792d0092-f959-4805-916d-40390c45e383" name="37ad10a4-2c3b-405d-b833-6f1bb0966a00" type="radio">
+</input><label class="tabbed-label" for="792d0092-f959-4805-916d-40390c45e383">
 macOS용 컴파일러</label><div class="tabbed-content docutils">
 <p>만약 macOS를 사용하고 있다면, XCode를 설치하면 Clang 컴파일러를 설치할 수 있다. XCode와 Clang이 설치되어 있는지 확인하기 위해서는 터미널를 열고 다음 명령어를 입력하라.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -715,8 +722,8 @@ macOS용 컴파일러</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="81674a04-3a7a-4ff7-a914-c1315168de06" name="c0ed9e66-6c0d-46b1-9bfc-f404f3fad049" type="radio">
-</input><label class="tabbed-label" for="81674a04-3a7a-4ff7-a914-c1315168de06">
+<input id="272958a0-99ec-4528-8005-324234963b0b" name="37ad10a4-2c3b-405d-b833-6f1bb0966a00" type="radio">
+</input><label class="tabbed-label" for="272958a0-99ec-4528-8005-324234963b0b">
 윈도우용 컴파일러</label><div class="tabbed-content docutils">
 <p>Windows에서는 <cite>Build Tools for Visual Studio 2017 &lt;https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017&gt;</cite> 에서 Visual C++ 컴파일러를 설치하는 것이 가장 쉬운 방법이다. Visual Studio 2015 나 2017 버전을 설치할 수 있고 C++ 컴파일러를 설치하는 옵션을 꼭 선택해 주어야 한다.</p>
 </div>
@@ -784,8 +791,8 @@ macOS용 컴파일러</label><div class="tabbed-content docutils">
 </ol>
 <p>이 후 Aer 설치 단계는 사용중인 운영 체제에 따라 다르다. Aer는 Python 인터페이스를 가진 컴파일 된 C ++ 프로그램이므로 운영 체제에 따라 바이너리 파일을 빌드하기 위해 Python과 관련없으나 필요한 필수 종속 프로그램/라이브러리가 있다.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="28cda12c-464c-40bf-9c9e-77198b13d18d" name="aaa139dc-a60c-4e08-8cf9-22ea264fa93e" type="radio">
-</input><label class="tabbed-label" for="28cda12c-464c-40bf-9c9e-77198b13d18d">
+<input checked="checked" id="625d3d1a-dd1a-47da-a85a-8d3de8dc26e9" name="c2a278ce-ecf2-4e42-9751-edc4f18ea6cc" type="radio">
+</input><label class="tabbed-label" for="625d3d1a-dd1a-47da-a85a-8d3de8dc26e9">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>컴파일러 요구사항을 설치한다.</p>
@@ -811,8 +818,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="bbc5f820-48c4-4fef-ade3-4935873ccfee" name="aaa139dc-a60c-4e08-8cf9-22ea264fa93e" type="radio">
-</input><label class="tabbed-label" for="bbc5f820-48c4-4fef-ade3-4935873ccfee">
+<input id="134176bb-03e4-417d-b0aa-b067aaf2c81d" name="c2a278ce-ecf2-4e42-9751-edc4f18ea6cc" type="radio">
+</input><label class="tabbed-label" for="134176bb-03e4-417d-b0aa-b067aaf2c81d">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>종속 라이브러리 설치</p>
@@ -832,8 +839,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="e87cb4d9-851f-4ecd-8a6e-d5d152fbf2b3" name="aaa139dc-a60c-4e08-8cf9-22ea264fa93e" type="radio">
-</input><label class="tabbed-label" for="e87cb4d9-851f-4ecd-8a6e-d5d152fbf2b3">
+<input id="596ebed1-4ee9-495f-a066-e0c4319f359b" name="c2a278ce-ecf2-4e42-9751-edc4f18ea6cc" type="radio">
+</input><label class="tabbed-label" for="596ebed1-4ee9-495f-a066-e0c4319f359b">
 Windows</label><div class="tabbed-content docutils">
 <p>윈도우에서는 모든 종속 라이브러리를 설치하기 위해 <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> 나 <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> 를 사용해야 한다.</p>
 <ol class="arabic" start="3">
@@ -1047,56 +1054,29 @@ pip install qiskit_aer-*.whl
 </section>
 <section id="minor-version-increases">
 <h4>부 버전 증가<a class="headerlink" href="#minor-version-increases" title="제목 주소">¶</a></h4>
-<p>Besides adding a new element to the meta-package the minor version of the
-meta-package should also be increased anytime a minor version is increased in
-a tracked element.</p>
-<p>For example, if the meta-package is tracking 2 elements <code class="docutils literal notranslate"><span class="pre">qiskit-terra==0.7.0</span></code>
-and <code class="docutils literal notranslate"><span class="pre">qiskit-aer==0.1.1</span></code> and the current version is <code class="docutils literal notranslate"><span class="pre">0.7.5</span></code>. When the
-<code class="docutils literal notranslate"><span class="pre">qiskit-aer</span></code> element releases <code class="docutils literal notranslate"><span class="pre">0.2.0</span></code> then we need to increase the
-meta-package version to be <code class="docutils literal notranslate"><span class="pre">0.8.0</span></code> to correspond to the new release.</p>
+<p>메타-패키지에 새로운 요소를 추가하는 것 외에도 추적되는 요소의 부 버전이 증가할 때마다 메타-패키지의 부 버전도 증가해야 한다.</p>
+<p>예를 들어, 메타-패키지가 2개의 요소 <code class="docutils literal notranslate"><span class="pre">qiskit-terra==0.7.0</span></code> 과 <code class="docutils literal notranslate"><span class="pre">qiskit-aer==0.1.1</span></code> 을 추적하고 버전이 <code class="docutils literal notranslate"><span class="pre">0.7.5</span></code> 라고 해보자. <code class="docutils literal notranslate"><span class="pre">qiskit-aer</span></code> 요소가 <code class="docutils literal notranslate"><span class="pre">0.2.0</span></code> 버전을 공개했다면 메타-패키지 버전도 <code class="docutils literal notranslate"><span class="pre">0.8.0</span></code> 로 올려서 새 배포에 일치시켜야 한다.</p>
 </section>
 <section id="major-version-increases">
-<h4>Major Version Increases<a class="headerlink" href="#major-version-increases" title="제목 주소">¶</a></h4>
-<p>The major version is different from the other version number components. Unlike
-the other version number components, which are updated in lock step with each
-tracked element, the major version is only increased when all tracked versions
-are bumped (at least before <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>). Right now all the elements still have
-a major version number component of <code class="docutils literal notranslate"><span class="pre">0</span></code> and until each tracked element in the
-meta-repository is marked as stable by bumping the major version to be <code class="docutils literal notranslate"><span class="pre">&gt;=1</span></code>
-then the meta-package version should not increase the major version.</p>
-<p>The behavior of the major version number component tracking after when all the
-elements are at &gt;=1.0.0 has not been decided yet.</p>
+<h4>주 버전 증가<a class="headerlink" href="#major-version-increases" title="제목 주소">¶</a></h4>
+<p>주 버전은 다른 버전 숫자들과는 다르다. 각각의 추적되는 요소에 맞춰 갱신되는 다른 버전 숫자들과는 달리 주 버전은 모든 추적되는 버전이 새 버전으로 올라갈 때 (적어도 <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> 전에) 에만 증가하게 된다. 현재는 모든 요소의 주 버전이 아직 <code class="docutils literal notranslate"><span class="pre">0</span></code> 이고 메타-저장소에 있는 각각의 추적 요소들이 안정적으로 판단되어 주 버전이 <code class="docutils literal notranslate"><span class="pre">&gt;=1</span></code> 이 되기 전까진 메타-페키지의 주 버전을 올리지 않는다.</p>
+<p>모든 요소들이 &gt;=1.0.0일 때 주 버전 숫자가 어떻게 바뀌어야 할 지에 대해서는 아직 정해지지 않았다.</p>
 </section>
 <section id="optional-extras">
-<h4>Optional Extras<a class="headerlink" href="#optional-extras" title="제목 주소">¶</a></h4>
-<p>In addition to the tracked elements there are additional packages built
-on top of Qiskit which are developed in tandem with Qiskit for example the
-application repositories like qiskit-optimization. For convienence
-these packages are tracked by the Qiskit metapackage as optional extras that
-can be installed with Qiskit. Releases of these optional downstream projects
-do not trigger a metapackage release as they are unpinned and do not effect the
-metapackage version. If there is a compatibility issue between Qiskit and these
-downstream optional dependencies and the minimum version needs to be adjusted
-in a standalone release this will only be done as a patch version release as
-it’s a packaging bugfix.</p>
+<h4>선택 사양<a class="headerlink" href="#optional-extras" title="제목 주소">¶</a></h4>
+<p>추적되는 요소 외에도 Qiskit과 함께 개발된 Qiskit 위에 설치되는 추가 패키지가 있으며, 예를 들어 qiskit-optimization과 같은 응용 프로그램 저장소가 있다. 편의성을 위해 이 패키지들은 Qiskit과 함께 설치될 수 있는 선택 사양으로써 Qiskit 메타-패키지에 추적된다. 이러한 다운스트림 프로젝트들의 배포는 메타-패키지 배포를 유도하지 않으며 메타-패키지 버전에도 영향을 주지 않는다. 만약 Qiskit과 해당 다운스트림의 선택적 종속성 사이에서 호환성 문제가 있어서 독립적 배포의 최소 버전이 조정되어야 하는 경우, 패키지 버그 수정처럼 패치 버전 배포로만 되어야 한다.</p>
 </section>
 </section>
 <section id="qiskit-element-requirement-tracking">
-<h3>Qiskit Element Requirement Tracking<a class="headerlink" href="#qiskit-element-requirement-tracking" title="제목 주소">¶</a></h3>
-<p>While not strictly related to the meta-package and Qiskit versioning how we
-track the element versions in the meta-package’s requirements list is
-important. Each element listed in the setup.py should be pinned to a single
-version. This means that each version of Qiskit should only install a single
-version for each tracked element. For example, the requirements list at any
-given point should look something like:</p>
+<h3>Qiskit 요소 요구사항 추적<a class="headerlink" href="#qiskit-element-requirement-tracking" title="제목 주소">¶</a></h3>
+<p>메타-패키지와 Qiskit 버저닝과 엄밀하게 관련되어 있는 건 아니지만, 메타-패키지의 요구사항 목록에 있는 요소 버전을 추적하는 것은 중요하다. setup.py에 나열된 각각의 요소들은 단일 버전으로 고정되어 있어야 한다. 이는 Qiskit의 각 버전이 추적되는 요소 중에서 단일 버전만 설치해야 한다는 것을 의미한다. 예를 들어서, 어떤 순간에서의 요구사항 목록은 다음과 같이 보일 것이다:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;qiskit_terra==0.7.0&quot;</span><span class="p">,</span>
     <span class="s2">&quot;qiskit-aer==0.1.1&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>This is to aid in debugging, but also make tracking the versions across
-multiple elements more transparent.</p>
+<p>이것은 디버깅을 돕기 위한 것이지만, 여러 요소들 간에 버전을 추적하는 일을 더 투명하도록 해 준다.</p>
 </section>
 </section>
 </section>
@@ -1126,7 +1106,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -1194,11 +1174,11 @@ multiple elements more transparent.</p>
 <li><a class="reference internal" href="#adding-new-tracked-elements">새 추적 요소 추가하기</a></li>
 <li><a class="reference internal" href="#patch-version-increases">패치 버전 증가</a></li>
 <li><a class="reference internal" href="#minor-version-increases">부 버전 증가</a></li>
-<li><a class="reference internal" href="#major-version-increases">Major Version Increases</a></li>
-<li><a class="reference internal" href="#optional-extras">Optional Extras</a></li>
+<li><a class="reference internal" href="#major-version-increases">주 버전 증가</a></li>
+<li><a class="reference internal" href="#optional-extras">선택 사양</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#qiskit-element-requirement-tracking">Qiskit Element Requirement Tracking</a></li>
+<li><a class="reference internal" href="#qiskit-element-requirement-tracking">Qiskit 요소 요구사항 추적</a></li>
 </ul>
 </li>
 </ul>
@@ -1266,7 +1246,7 @@ multiple elements more transparent.</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1289,9 +1269,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Operator Evolutions (qiskit.opflow.evolutions) &mdash; Qiskit 0.29.0 documentation</title>
+  <title>Operator Evolutions (qiskit.opflow.evolutions) &mdash; Qiskit 0.29.1 documentation</title>
   
 
   
@@ -30,19 +30,16 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="qiskit.opflow.evolutions.EvolutionBase" href="../stubs/qiskit.opflow.evolutions.EvolutionBase.html" />
-    <link rel="prev" title="qiskit.opflow.converters.TwoQubitReduction" href="../stubs/qiskit.opflow.converters.TwoQubitReduction.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -240,8 +237,8 @@
 <li class="toctree-l1"><a class="reference internal" href="circuit_library.html">Circuit Library</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="terra.html">Qiskit (Terra)</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="terra.html">Qiskit (Terra)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aer.html">Qiskit Simulator (Aer)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ignis.html">Qiskit Experiments (Ignis)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aqua.html">Qiskit Application Modules (Aqua)</a></li>
@@ -294,10 +291,6 @@
       </li>
 
         
-          <li><a href="terra.html">Qiskit Terra API Reference</a> &gt;</li>
-        
-          <li><a href="opflow.html">Operators (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow</span></code>)</a> &gt;</li>
-        
       <li>Operator Evolutions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.evolutions</span></code>)</li>
     
     
@@ -329,7 +322,7 @@
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
   <span class="target" id="module-qiskit.opflow.evolutions"><span id="qiskit-opflow-evolutions"></span></span><section id="operator-evolutions-qiskit-opflow-evolutions">
-<h1>Operator Evolutions (<a class="reference internal" href="#module-qiskit.opflow.evolutions" title="qiskit.opflow.evolutions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.evolutions</span></code></a>)<a class="headerlink" href="#operator-evolutions-qiskit-opflow-evolutions" title="Permalink to this headline">¶</a></h1>
+<h1>Operator Evolutions (<a class="reference internal" href="../stubs/qiskit.opflow.evolutions.html#module-qiskit.opflow.evolutions" title="qiskit.opflow.evolutions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.evolutions</span></code></a>)<a class="headerlink" href="#operator-evolutions-qiskit-opflow-evolutions" title="Permalink to this headline">¶</a></h1>
 <p>Evolutions are converters which traverse an Operator tree, replacing any <a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolvedOp.html#qiskit.opflow.evolutions.EvolvedOp" title="qiskit.opflow.evolutions.EvolvedOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvolvedOp</span></code></a> <cite>e</cite>
 with a Schrodinger equation-style evolution <a class="reference internal" href="../stubs/qiskit.opflow.primitive_ops.CircuitOp.html#qiskit.opflow.primitive_ops.CircuitOp" title="qiskit.opflow.primitive_ops.CircuitOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">CircuitOp</span></code></a>
 equalling or approximating the matrix exponential of -i * the Operator contained inside
@@ -337,7 +330,7 @@ equalling or approximating the matrix exponential of -i * the Operator contained
 algorithms, including various methods for Trotterization.</p>
 <p>The <a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolvedOp.html#qiskit.opflow.evolutions.EvolvedOp" title="qiskit.opflow.evolutions.EvolvedOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvolvedOp</span></code></a> is simply a placeholder signifying that the Operator inside it should be
 converted to its exponential by the Evolution converter. All Operators
-(not <a class="reference internal" href="qiskit.opflow.state_fns.html#module-qiskit.opflow.state_fns" title="qiskit.opflow.state_fns"><code class="xref py py-mod docutils literal notranslate"><span class="pre">state_fns</span></code></a>) have
+(not <a class="reference internal" href="../stubs/qiskit.opflow.state_fns.html#module-qiskit.opflow.state_fns" title="qiskit.opflow.state_fns"><code class="xref py py-mod docutils literal notranslate"><span class="pre">state_fns</span></code></a>) have
 <code class="docutils literal notranslate"><span class="pre">.exp_i()</span></code> methods which either return the exponential of the Operator directly,
 or an <a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolvedOp.html#qiskit.opflow.evolutions.EvolvedOp" title="qiskit.opflow.evolutions.EvolvedOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvolvedOp</span></code></a> containing the Operator.</p>
 <div class="admonition note">
@@ -347,9 +340,8 @@ or an <a class="reference internal" href="../stubs/qiskit.opflow.evolutions.Evol
 is an Operator, will produce a <a class="reference internal" href="../stubs/qiskit.opflow.primitive_ops.CircuitOp.html#qiskit.opflow.primitive_ops.CircuitOp" title="qiskit.opflow.primitive_ops.CircuitOp"><code class="xref py py-class docutils literal notranslate"><span class="pre">CircuitOp</span></code></a>
 equivalent to e^iHt.</p>
 </div>
-</section>
 <section id="evolution-base-class">
-<h1>Evolution Base Class<a class="headerlink" href="#evolution-base-class" title="Permalink to this headline">¶</a></h1>
+<h2>Evolution Base Class<a class="headerlink" href="#evolution-base-class" title="Permalink to this headline">¶</a></h2>
 <p>The EvolutionBase class gives an interface for algorithms to ask for Evolutions as
 execution settings. For example, if an algorithm contains an Operator evolution step within it,
 such as <a class="reference internal" href="../stubs/qiskit.algorithms.QAOA.html#qiskit.algorithms.QAOA" title="qiskit.algorithms.QAOA"><code class="xref py py-class docutils literal notranslate"><span class="pre">QAOA</span></code></a>, the algorithm can give the opportunity for the user
@@ -360,60 +352,61 @@ to pass an EvolutionBase of their choice to be used in that evolution step.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolutionBase.html#qiskit.opflow.evolutions.EvolutionBase" title="qiskit.opflow.evolutions.EvolutionBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvolutionBase</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolutionBase.html#qiskit.opflow.evolutions.EvolutionBase" title="qiskit.opflow.evolutions.EvolutionBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvolutionBase</span></code></a>()</p></td>
 <td><p>A base for Evolution converters.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="evolutions">
-<h1>Evolutions<a class="headerlink" href="#evolutions" title="Permalink to this headline">¶</a></h1>
+<h2>Evolutions<a class="headerlink" href="#evolutions" title="Permalink to this headline">¶</a></h2>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolutionFactory.html#qiskit.opflow.evolutions.EvolutionFactory" title="qiskit.opflow.evolutions.EvolutionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvolutionFactory</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolutionFactory.html#qiskit.opflow.evolutions.EvolutionFactory" title="qiskit.opflow.evolutions.EvolutionFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvolutionFactory</span></code></a>()</p></td>
 <td><p>A factory class for convenient automatic selection of an Evolution algorithm based on the Operator to be converted.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolvedOp.html#qiskit.opflow.evolutions.EvolvedOp" title="qiskit.opflow.evolutions.EvolvedOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvolvedOp</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.EvolvedOp.html#qiskit.opflow.evolutions.EvolvedOp" title="qiskit.opflow.evolutions.EvolvedOp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EvolvedOp</span></code></a>(primitive[, coeff])</p></td>
 <td><p>Class for wrapping Operator Evolutions for compilation (<code class="docutils literal notranslate"><span class="pre">convert</span></code>) by an EvolutionBase method later, essentially acting as a placeholder.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.MatrixEvolution.html#qiskit.opflow.evolutions.MatrixEvolution" title="qiskit.opflow.evolutions.MatrixEvolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixEvolution</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.MatrixEvolution.html#qiskit.opflow.evolutions.MatrixEvolution" title="qiskit.opflow.evolutions.MatrixEvolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MatrixEvolution</span></code></a>()</p></td>
 <td><p>Performs Evolution by classical matrix exponentiation, constructing a circuit with <code class="docutils literal notranslate"><span class="pre">UnitaryGates</span></code> or <code class="docutils literal notranslate"><span class="pre">HamiltonianGates</span></code> containing the exponentiation of the Operator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.PauliTrotterEvolution.html#qiskit.opflow.evolutions.PauliTrotterEvolution" title="qiskit.opflow.evolutions.PauliTrotterEvolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PauliTrotterEvolution</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.PauliTrotterEvolution.html#qiskit.opflow.evolutions.PauliTrotterEvolution" title="qiskit.opflow.evolutions.PauliTrotterEvolution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PauliTrotterEvolution</span></code></a>([trotter_mode, reps])</p></td>
 <td><p>An Evolution algorithm replacing exponentiated sums of Paulis by changing them each to the Z basis, rotating with an rZ, changing back, and Trotterizing.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="trotterizations">
-<h1>Trotterizations<a class="headerlink" href="#trotterizations" title="Permalink to this headline">¶</a></h1>
+<h2>Trotterizations<a class="headerlink" href="#trotterizations" title="Permalink to this headline">¶</a></h2>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.TrotterizationBase.html#qiskit.opflow.evolutions.TrotterizationBase" title="qiskit.opflow.evolutions.TrotterizationBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrotterizationBase</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.TrotterizationBase.html#qiskit.opflow.evolutions.TrotterizationBase" title="qiskit.opflow.evolutions.TrotterizationBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrotterizationBase</span></code></a>([reps])</p></td>
 <td><p>A base for Trotterization methods, algorithms for approximating exponentiations of operator sums by compositions of exponentiations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.TrotterizationFactory.html#qiskit.opflow.evolutions.TrotterizationFactory" title="qiskit.opflow.evolutions.TrotterizationFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrotterizationFactory</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.TrotterizationFactory.html#qiskit.opflow.evolutions.TrotterizationFactory" title="qiskit.opflow.evolutions.TrotterizationFactory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrotterizationFactory</span></code></a>()</p></td>
 <td><p>A factory for conveniently creating TrotterizationBase instances.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.Trotter.html#qiskit.opflow.evolutions.Trotter" title="qiskit.opflow.evolutions.Trotter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Trotter</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.Trotter.html#qiskit.opflow.evolutions.Trotter" title="qiskit.opflow.evolutions.Trotter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Trotter</span></code></a>([reps])</p></td>
 <td><p>Simple Trotter expansion, composing the evolution circuits of each Operator in the sum together <code class="docutils literal notranslate"><span class="pre">reps</span></code> times and dividing the evolution time of each by <code class="docutils literal notranslate"><span class="pre">reps</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.Suzuki.html#qiskit.opflow.evolutions.Suzuki" title="qiskit.opflow.evolutions.Suzuki"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Suzuki</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.Suzuki.html#qiskit.opflow.evolutions.Suzuki" title="qiskit.opflow.evolutions.Suzuki"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Suzuki</span></code></a>([reps, order])</p></td>
 <td><p>Suzuki Trotter expansion, composing the evolution circuits of each Operator in the sum together by a recursive &quot;bookends&quot; strategy, repeating the whole composed circuit <code class="docutils literal notranslate"><span class="pre">reps</span></code> times.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.QDrift.html#qiskit.opflow.evolutions.QDrift" title="qiskit.opflow.evolutions.QDrift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QDrift</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../stubs/qiskit.opflow.evolutions.QDrift.html#qiskit.opflow.evolutions.QDrift" title="qiskit.opflow.evolutions.QDrift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QDrift</span></code></a>([reps])</p></td>
 <td><p>The QDrift Trotterization method, which selects each each term in the Trotterization randomly, with a probability proportional to its weight.</p></td>
 </tr>
 </tbody>
 </table>
+</section>
 </section>
 
 
@@ -421,15 +414,6 @@ to pass an EvolutionBase of their choice to be used in that evolution step.</p>
              
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../stubs/qiskit.opflow.evolutions.EvolutionBase.html" class="btn btn-neutral float-right" title="qiskit.opflow.evolutions.EvolutionBase" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="../stubs/qiskit.opflow.converters.TwoQubitReduction.html" class="btn btn-neutral" title="qiskit.opflow.converters.TwoQubitReduction" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   
@@ -441,7 +425,7 @@ to pass an EvolutionBase of their choice to be used in that evolution step.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/11.
 
     </p>
   </div>
@@ -460,10 +444,12 @@ to pass an EvolutionBase of their choice to be used in that evolution step.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Operator Evolutions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.evolutions</span></code>)</a></li>
+<li><a class="reference internal" href="#">Operator Evolutions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.opflow.evolutions</span></code>)</a><ul>
 <li><a class="reference internal" href="#evolution-base-class">Evolution Base Class</a></li>
 <li><a class="reference internal" href="#evolutions">Evolutions</a></li>
 <li><a class="reference internal" href="#trotterizations">Trotterizations</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -527,7 +513,7 @@ to pass an EvolutionBase of their choice to be used in that evolution step.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">

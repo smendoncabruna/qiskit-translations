@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contribuir a Qiskit &mdash; documentación de Qiskit - 0.29.0</title>
+  <title>Contribuir a Qiskit &mdash; documentación de Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Página de inicio de la documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Página de inicio de la Documentación</a></li>
 </ul>
 <p><span class="caption-text">Preliminares</span></p>
 <ul class="current">
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Referencias de la API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Simulador Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Experimentos Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Módulos de Aplicación Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Proveedor)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (obsoleto)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Proveedor Qiskit IBM Quantum</a></li>
 </ul>
-<p><span class="caption-text">Guía de Migración de Aplicaciones Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Guía de Migración de Qiskit Aqua</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Guía de Migración de Aplicaciones Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Guía de Migración de Qiskit Aqua</a></li>
 </ul>
 <p><span class="caption-text">Solución de Problemas</span></p>
 <ul>
@@ -505,16 +512,10 @@ feature were deprecated in the 0.9.0 release of Terra, which was released on
 August 22, 2019, then that feature should still appear in all releases until at
 least November 22, 2019. Since releases do not occur at fixed time intervals,
 a deprecation warning may only occur in one release prior to removal.</p>
-<p>Note that this delay is a minimum. For significant features, it is recommended
-that the deprecated feature appears for at least double that time. Also, per
-the stable branch policy, deprecation removals can only occur during minor
-version releases; they are not appropriate for backporting.</p>
+<p>Ten en cuenta que este retraso es mínimo. Para características importantes, se recomienda que la característica obsoleta aparezca al menos el doble de ese tiempo. Además, según la política de rama (branch) estable, las eliminaciones de obsolescencia solo pueden ocurrir durante las versiones menores; no son apropiados para backporting (adaptación a versiones anteriores).</p>
 <section id="deprecation-warnings">
 <h4>Advertencias de Obsolescencia<a class="headerlink" href="#deprecation-warnings" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>The proper way to raise a deprecation warning is to use the <code class="docutils literal notranslate"><span class="pre">warn</span></code> function
-from the <a class="reference external" href="https://docs.python.org/3/library/warnings.html">warnings module</a>
-in the Python standard library. The warning category class
-should be a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>. An example would be:</p>
+<p>La forma correcta de generar una advertencia de obsolescencia es usar la función <code class="docutils literal notranslate"><span class="pre">warn</span></code> del <a class="reference external" href="https://docs.python.org/3/library/warnings.html">módulo de advertencias</a> en la biblioteca estándar de Python. La clase de categoría de advertencia debe ser una <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>. Un ejemplo sería:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
@@ -524,98 +525,47 @@ should be a <code class="docutils literal notranslate"><span class="pre">Depreca
                   <span class="s1">&#39;instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>One thing to note here is the <code class="docutils literal notranslate"><span class="pre">stack_level</span></code> kwarg on the warn() call. This
-argument is used to specify which level in the call stack will be used as
-the line initiating the warning. Typically, <code class="docutils literal notranslate"><span class="pre">stack_level</span></code> should be set to 2,
-as this will show the line calling the context where the warning was raised.
-In the above example, it would be the caller of <code class="docutils literal notranslate"><span class="pre">foo()</span></code>. If you did not set this,
-the warning would show that it was caused by the line in the foo()
-function, which is not helpful for users trying to determine the origin
-of a deprecated call. However, this value may be adjusted, depending on the call
-stack and where <code class="docutils literal notranslate"><span class="pre">warn()</span></code> gets called from. For example, if the warning is always
-raised by a private method that only has one caller, <code class="docutils literal notranslate"><span class="pre">stack_level=3</span></code> might be
-appropriate.</p>
+<p>Una cosa a tener en cuenta aquí es el kwarg <code class="docutils literal notranslate"><span class="pre">stack_level`</span> <span class="pre">en</span> <span class="pre">la</span> <span class="pre">llamada</span> <span class="pre">a</span> <span class="pre">warn().</span> <span class="pre">Este</span> <span class="pre">argumento</span> <span class="pre">se</span> <span class="pre">utiliza</span> <span class="pre">para</span> <span class="pre">especificar</span> <span class="pre">qué</span> <span class="pre">nivel</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">pila</span> <span class="pre">de</span> <span class="pre">llamadas</span> <span class="pre">se</span> <span class="pre">utilizará</span> <span class="pre">como</span> <span class="pre">línea</span> <span class="pre">que</span> <span class="pre">inicia</span> <span class="pre">la</span> <span class="pre">advertencia.</span> <span class="pre">Por</span> <span class="pre">lo</span> <span class="pre">general,</span> <span class="pre">``stack_level</span></code> debe establecerse en 2, ya que esto mostrará la línea que llama al contexto donde se generó la advertencia. En el ejemplo anterior, sería el llamador de <code class="docutils literal notranslate"><span class="pre">foo()</span></code>. Si no configuraste esto, la advertencia mostraría que fue causada por la línea en la función foo(), lo cual no es útil para los usuarios que intentan determinar el origen de una llamada obsoleta. Sin embargo, este valor puede ajustarse, dependiendo de la pila de llamadas y de dónde se llama a <code class="docutils literal notranslate"><span class="pre">warn()</span></code>. Por ejemplo, si la advertencia siempre se genera mediante un método privado que solo se llama desde un solo lugar, <code class="docutils literal notranslate"><span class="pre">stack_level=3</span></code> podría ser apropiado.</p>
 </section>
 </section>
 <section id="stable-branch-policy">
 <h3>Política de Ramificación Estable<a class="headerlink" href="#stable-branch-policy" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>The stable branch is intended to be a safe source of fixes for high-impact
-bugs and security issues that have been fixed on master since a
-release. When reviewing a stable branch PR, we must balance the risk
-of any given patch with the value that it will provide to users of the
-stable branch. Only a limited class of changes are appropriate for
-inclusion on the stable branch. A large, risky patch for a major issue
-might make sense, as might a trivial fix for a fairly obscure error-handling
-case. A number of factors must be weighed when considering a
-change:</p>
+<p>La rama estable está destinada a ser una fuente segura de correcciones para errores de alto impacto y problemas de seguridad que se han solucionado en master desde su lanzamiento. Al revisar un PR de rama estable, debemos equilibrar el riesgo de cualquier parche dado con el valor que proporcionará a los usuarios de la rama estable. Solo una clase limitada de cambios es apropiada para su inclusión en la rama estable. Un parche grande y arriesgado para un problema importante podría tener sentido, al igual que una solución trivial para un caso de manejo de errores bastante oscuro. Se deben tomar en cuenta varios factores al considerar un cambio:</p>
 <ul class="simple">
-<li><p>The risk of regression: even the tiniest changes carry some risk of
-breaking something, and we really want to avoid regressions on the
-stable branch.</p></li>
+<li><p>El riesgo de regresión: incluso los cambios más pequeños conllevan algún riesgo de romper algo, y realmente queremos evitar regresiones en la rama estable.</p></li>
 <li><p>El beneficio de visibilidad para el usuario: ¿estamos arreglando algo que los usuarios podrían notar? y, de ser así, ¿qué tan importante es?</p></li>
-<li><p>How self-contained the fix is: if it fixes a significant issue but
-also refactors a lot of code, it’s probably worth thinking about
-what a less risky fix might look like.</p></li>
-<li><p>Whether the fix is already on master: a change must be a backport of
-a change already merged onto master, unless the change simply does
-not make sense on master.</p></li>
+<li><p>Qué tan autónoma es la solución: si soluciona un problema importante, pero también refactoriza una gran cantidad de código, probablemente valga la pena pensar en cómo se vería una solución menos riesgosa.</p></li>
+<li><p>Si la corrección ya está en master: un cambio debe ser un backport de un cambio ya fusionado en master, a menos que el cambio simplemente no tenga sentido en master.</p></li>
 </ul>
 <section id="backporting-procedure">
-<h4>Backporting procedure:<a class="headerlink" href="#backporting-procedure" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>When backporting a patch from master to stable, we want to keep a
-reference to the change on master. When you create the branch for the
-stable PR, use:</p>
+<h4>Procedimiento de adaptación a versiones anteriores (backporting):<a class="headerlink" href="#backporting-procedure" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al adaptar un parche de la rama master a una rama estable, queremos mantener una referencia del cambio en master. Cuando crees la rama para el PR estable, usa:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git cherry-pick -x $master_commit_id
 </pre></div>
 </div>
-<p>However, this only works for small self-contained patches from master.
-If you need to backport a subset of a larger commit (from a squashed PR,
-for example) from master, do this manually. In these cases, add:</p>
+<p>Sin embargo, esto solo funciona para pequeños parches autónomos de master. Si necesitas exportar un subconjunto de un commit más grande (de un PR compactado, por ejemplo) de master, hazlo manualmente. En estos casos, agrega:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Backported</span> <span class="n">from</span><span class="p">:</span> <span class="c1">#master pr number</span>
 </pre></div>
 </div>
-<p>so that we can track the source of the change subset, even if
-a strict cherry-pick doesn't make sense.</p>
-<p>If the patch you’re proposing will not cherry-pick cleanly, you can help
-by resolving the conflicts yourself and proposing the resulting patch.
-Please keep Conflicts lines in the commit message to help review of the
-stable patch.</p>
+<p>para que podamos rastrear la fuente del subconjunto de cambios, incluso si una selección puntual (cherry-pick) no tiene sentido.</p>
+<p>Si el parche que estás proponiendo no se puede seleccionar puntualmente (cherry-pick) de manera limpia, puedes ayudar resolviendo los conflictos tu mismo y proponiendo el parche resultante. Mantén las líneas de Conflictos en el mensaje de confirmación (commit) para ayudar a revisar el parche estable.</p>
 </section>
 <section id="backport-labels">
 <h4>Etiquetas de backport<a class="headerlink" href="#backport-labels" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Bugs or PRs tagged with <code class="docutils literal notranslate"><span class="pre">stable</span> <span class="pre">backport</span> <span class="pre">potential</span></code> are bugs
-that apply to the stable release too and may be suitable for
-backporting once a fix lands in master. Once the backport has been
-proposed, the tag should be removed.</p>
-<p>Include <code class="docutils literal notranslate"><span class="pre">[Stable]</span></code> in the title of the PR against the stable branch,
-as a sign that setting the target branch as stable was not
-a mistake. Also, reference to the PR number in master that you are
-porting.</p>
+<p>Los errores o PRs etiquetados con <a href="#id1"><span class="problematic" id="id2">``</span></a>stable backport potential` son errores que también se aplican a la versión estable y pueden ser adecuados para el backporting una vez que una corrección llega a master. Una vez que se ha propuesto el backport, se debe quitar la etiqueta.</p>
+<p>Incluye <code class="docutils literal notranslate"><span class="pre">[Stable]</span></code> en el título del PR hacia la rama estable, como una señal de que establecer la rama objetivo como estable no fue un error. Además, haz referencia al número del PR en master del que se está transfiriendo.</p>
 </section>
 </section>
 </section>
 <section id="contributing-to-documentation">
 <h2>Contribuir a la Documentación<a class="headerlink" href="#contributing-to-documentation" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Qiskit documentation is shaped by the <a class="reference external" href="https://www.writethedocs.org/guide/docs-as-code/">docs as code</a> philosophy, primarily
-drawn from Qiskit code comments in the <a class="reference external" href="https://alistapart.com/article/the-ten-essentials-for-good-api-documentation/">style of API documentation</a>.</p>
+<p>La documentación de Qiskit está conformada por la filosofía <a class="reference external" href="https://www.writethedocs.org/guide/docs-as-code/">documentación como código</a>, extraída principalmente de los comentarios del código de Qiskit que está en el <a class="reference external" href="https://alistapart.com/article/the-ten-essentials-for-good-api-documentation/">estilo de documentación para APIs</a>.</p>
 <p>La documentación se construye desde la rama master de <a class="reference external" href="https://github.com/Qiskit/qiskit/tree/master/docs">Qiskit/qiskit/docs</a> usando <a class="reference external" href="http://www.sphinx-doc.org/en/master/">Sphinx</a>. La mayoría de la documentación, bajo <a class="reference external" href="https://qiskit.org/documentation/apidoc/qiskit.html">Referencias de la API</a>, se toma de los comentarios del código en los repositorios indicados en <a class="reference internal" href="#where-things-are"><span class="std std-ref">Dónde está el código</span></a>.</p>
 <section id="documentation-structure">
 <h3>Estructura de la Documentación<a class="headerlink" href="#documentation-structure" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>The way documentation is structured in Qiskit is to push as much of the actual
-documentation into the docstrings as possible. This makes it easier for
-additions and corrections to be made during development, because the majority
-of the documentation lives near the code being changed. There are three levels in
-the normal documentation structure in Terra:</p>
+<p>La forma en que la documentación está estructurada en Qiskit es buscar tener la mayor cantidad de la documentación en docstrings como sea posible. Esto facilita que se realicen adiciones y correcciones durante el desarrollo, porque la mayoría de la documentación se encuentra cerca del código que se cambia. Hay tres niveles en la estructura de documentación normal en Terra:</p>
 <dl>
-<dt>Los archivos <code class="docutils literal notranslate"><span class="pre">.rst</span></code> en <code class="docutils literal notranslate"><span class="pre">docs/apidocs</span></code></dt><dd><p>These files are used to tell Sphinx which modules to include in the rendered
-documentation. This contains two pieces of information:
-an <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#reference-names">internal reference</a>
-or <a class="reference external" href="https://www.sphinx-doc.org/en/latest/usage/restructuredtext/roles.html#ref-role">cross reference</a>
-to the module, which can be used for internal links
-inside the documentation, and an <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">automodule directive</a>
-used to parse the
-module docstrings from a specified import path. For example, the dagcircuit.rst
-file contains:</p>
+<dt>Los archivos <code class="docutils literal notranslate"><span class="pre">.rst</span></code> en <code class="docutils literal notranslate"><span class="pre">docs/apidocs</span></code></dt><dd><p>Estos archivos se utilizan para decirle a Sphinx qué módulos incluir en la documentación renderizada. Esto contiene dos piezas de información: una <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#reference-names">referencia interna</a> o una <a class="reference external" href="https://www.sphinx-doc.org/en/latest/usage/restructuredtext/roles.html#ref-role">referencia cruzada</a> al módulo, que se puede usar para enlaces internos dentro de la documentación, y una <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">directiva automodulo</a> que se utiliza para analizar las docstrings del módulo desde una ruta de importación especificada. Por ejemplo, el archivo dagcircuit.rst contiene:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_qiskit</span><span class="o">-</span><span class="n">dagcircuit</span><span class="p">:</span>
 
 
@@ -625,27 +575,9 @@ file contains:</p>
    <span class="p">:</span><span class="n">no</span><span class="o">-</span><span class="n">special</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>
 </pre></div>
 </div>
-<p>The only <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file outside of this is <code class="docutils literal notranslate"><span class="pre">qiskit.rst</span></code>, which contains the table of
-contents. If you’re adding a new <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file for a new module’s documentation, make
-sure to add it to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents">toctree</a>
-in that file.</p>
+<p>El único archivo <code class="docutils literal notranslate"><span class="pre">.rst</span></code> fuera de este es <code class="docutils literal notranslate"><span class="pre">qiskit.rst</span></code>, que contiene la tabla de contenido. Si estás agregando un nuevo archivo <code class="docutils literal notranslate"><span class="pre">.rst</span></code> para la documentación de un nuevo módulo, asegúrate de agregarlo al <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#table-of-contents">toctree</a> en ese archivo.</p>
 </dd>
-<dt>The module-level docstring</dt><dd><p>This docstring is at the module
-level for the module specified in the <code class="docutils literal notranslate"><span class="pre">automodule</span></code> directive in the rst file.
-If the module specified is a directory/namespace, the docstring should be
-specified in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file for that directory. This module-level
-docstring contains more details about the module being documented.
-The normal structure to this docstring is to outline all the classes and
-functions of the public API that are contained in that module. This is typically
-done using the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary directive</a>
-(or <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">autodoc directives</a>
-directly if the module is simple, such as in the case of <code class="docutils literal notranslate"><span class="pre">qiskit.execute</span></code>). The
-autosummary directive is used to autodoc a list of different Python elements
-(classes, functions, etc.) directly without having to manually call out the
-autodoc directives for each one. The module-level docstring is where to
-provide a high-level overview of what functionality the module provides.
-This is normally done by grouping the different
-components of the public API together into multiple subsections.</p>
+<dt>La docstring a nivel de módulo</dt><dd><p>Esta cadena de documentos (docstring) está a nivel de módulo para el módulo especificado en la directiva <code class="docutils literal notranslate"><span class="pre">automodule</span></code> en el primer archivo. Si el módulo especificado es un directorio/espacio de nombres (namespace), la docstring debe especificarse en el archivo <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> para ese directorio. Esta docstring a nivel de módulo contiene más detalles sobre el módulo que se está documentando. La estructura normal de esta docstring es describir todas las clases y funciones de la API pública contenidas en ese módulo. Esto se hace típicamente usando la <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">directiva autosummary</a> (o <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html">directivas autodoc</a> directamente si el módulo es simple, como en el caso de <code class="docutils literal notranslate"><span class="pre">qiskit.execute</span></code>). La directiva autosummary se usa para autodocumentar (autodoc) una lista de diferentes elementos de Python (clases, funciones, etc.) directamente sin tener que llamar manualmente las directivas autodoc para cada uno. La cadena de documentación a nivel de módulo es donde se proporciona una descripción general de alto nivel de las funciones que proporciona el módulo. Esto se hace normalmente agrupando los diferentes componentes de la API pública en múltiples subsecciones.</p>
 <p>Por ejemplo, como en el ejemplo anterior del módulo dagcircuit, los contenidos de la docstring del módulo para <code class="docutils literal notranslate"><span class="pre">qiskit/dagcircuit/__init__.py</span></code> serían:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">=======================================</span>
@@ -671,13 +603,7 @@ components of the public API together into multiple subsections.</p>
 <p>Esto es solamente un ejemplo y la docstring real para el módulo dagcircuit podría diferir.</p>
 </div>
 </dd>
-<dt>La docstring real para los elementos listados en la docstring del módulo</dt><dd><p>You should strive to document thoroughly all the public interfaces
-exposed using examples when necessary. For docstrings, <a class="reference external" href="https://google.github.io/styleguide/pyguide.html?showone=Comments#38-comments-and-docstrings">Google Python Style
-Docstrings</a>
-are used. This is parsed using the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html">napoleon
-sphinx extension</a>.
-The <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">napoleon documentation</a>
-contains a good example of how docstrings should be formatted.</p>
+<dt>La docstring real para los elementos listados en la docstring del módulo</dt><dd><p>Deberías esforzarte por documentar a fondo todas las interfaces públicas expuestas utilizando ejemplos cuando sea necesario. Para las cadenas de documentos, se utilizan <a class="reference external" href="https://google.github.io/styleguide/pyguide.html?showone=Comments#38-comments-and-docstrings">Google Python Style Docstrings</a>. Esto se analiza utilizando la extensión <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html">napoleon sphinx</a>. La <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">documentación de napoleon</a> contiene un buen ejemplo de cómo deben formatearse las cadenas de documentos.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Puedes usar cualquier directiva de Sphinx o del formato rst en una docstring mientras sea razonable. Por ejemplo, una extensión comúnmente usada es la directiva <code class="docutils literal notranslate"><span class="pre">jupyter-execute</span></code>, que se utiliza para ejecutar un bloque de código en Jupyter y mostrar tanto el código como su salida. Esto es particularmente útil para las visualizaciones.</p>
@@ -692,13 +618,7 @@ contains a good example of how docstrings should be formatted.</p>
 </section>
 <section id="translating-documentation">
 <h3>Traducir la Documentación<a class="headerlink" href="#translating-documentation" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Qiskit documentation is translated (localized) using Crowdin, a software and web
-localization platform that allows organizations to coordinate translation
-projects and collaborate with communities to translate materials. Crowdin allows
-our community of translators to amplify their impact by automatically reusing
-the work invested translating one sentence to translate other, similar
-sentences. Crowdin also makes translations resilient to many types of changes to
-the original material, such as moving sentences around, even across files.</p>
+<p>La documentación de Qiskit se traduce (se localiza) utilizando Crowdin, un software y una plataforma de localización web que permite a las organizaciones coordinar proyectos de traducción y colaborar con las comunidades para traducir materiales. Crowdin permite que nuestra comunidad de traductores amplifique su impacto al reutilizar automáticamente el trabajo invertido en la traducción de una oración para traducir otras oraciones similares. Crowdin también hace que las traducciones sean resistentes a muchos tipos de cambios en el material original, como mover oraciones, incluso entre archivos.</p>
 <p>Las solicitudes de localización de Qiskit se gestionan en el repositorio <a class="reference external" href="https://github.com/Qiskit/qiskit-translations">Qiskit Translations</a>. Para contribuir a la localización de Qiskit, sigue estos pasos:</p>
 <ol class="arabic">
 <li><p>Añade tu nombre (o ID) al archivo <a class="reference external" href="https://github.com/qiskit-community/qiskit-translations/blob/master/LOCALIZATION_CONTRIBUTORS">LOCALIZATION_CONTRIBUTORS</a>.</p></li>
@@ -708,15 +628,12 @@ the original material, such as moving sentences around, even across files.</p>
 <ul class="simple">
 <li><p>Cada colaborador debe crear su propio PR y firmar el acuerdo de licencia de colaborador (CLA).</p></li>
 <li><p>Por favor, indica en el resumen del PR el idioma al que deseas contribuir.</p></li>
-<li><p>If you have an open issue for a language request, <strong>add the issue link
-to the PR</strong>.</p></li>
+<li><p>Si tienes un issue abierto en el que se solicita un idioma, <strong>agrega el vínculo del issue al PR</strong>.</p></li>
 </ul>
 </div>
 </li>
 <li><p>Se te pedirá que firmes el Acuerdo de Licencia de Contribuidor (CLA); por favor, házlo.</p></li>
-<li><p>A minimum of <strong>three contributors</strong> per language are necessary for any new
-languages to be added, to receive official support from the administrators of
-the localization project.</p></li>
+<li><p>Un mínimo de <strong>tres contribuidores</strong> por idioma es necesario, para que el idioma sea agregado y reciba el soporte oficial de los administradores del proyecto de localización.</p></li>
 <li><p>Entre el grupo de contribuyentes, se debe identificar un líder de traducción para que sirva de enlace con los administradores del proyecto de localización. El líder debe contactar a: Yuri Kobayashi (<a class="reference external" href="mailto:yurik&#37;&#52;&#48;jp&#46;ibm&#46;com">yurik<span>&#64;</span>jp<span>&#46;</span>ibm<span>&#46;</span>com</a>) por correo electrónico.</p></li>
 <li><p>En el proyecto <a class="reference external" href="https://crowdin.com/project/qiskit-docs">Qiskit-Docs</a> Crowdin, elige el idioma al que deseas contribuir.</p>
 <div class="admonition note">
@@ -729,7 +646,7 @@ the localization project.</p></li>
 <p>Los administradores del proyecto Crowdin revisarán tu solicitud y te darán acceso tan pronto como sea posible.</p>
 </section>
 <section id="building-from-source">
-<h3>Building from Source<a class="headerlink" href="#building-from-source" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Construcción a partir del Código Fuente<a class="headerlink" href="#building-from-source" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Puedes construir una copia local de la documentación desde tu clonación local del repositorio <cite>Qiskit/qiskit</cite> de la siguiente manera:</p>
 <ol class="arabic">
 <li><p>Clonar el repositorio de Qiskit.</p>
@@ -762,21 +679,14 @@ the localization project.</p></li>
 </section>
 </section>
 <section id="installing-from-source">
-<span id="install-install-from-source-label"></span><h2>Installing from Source<a class="headerlink" href="#installing-from-source" title="Enlazar permanentemente con este título">¶</a></h2>
+<span id="install-install-from-source-label"></span><h2>Instalación a partir del Código Fuente<a class="headerlink" href="#installing-from-source" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Instalar los elementos usando el código fuente te permite acceder a la última versión de Qiskit en lugar de la versión del repositorio de Python Package Index (PyPl). Esto te da la capacidad de inspeccionar y extender la última versión del código de Qiskit más eficientemente.</p>
-<p>When installing the elements and components from source, by default their
-<code class="docutils literal notranslate"><span class="pre">development</span></code> version (which corresponds to the <code class="docutils literal notranslate"><span class="pre">master</span></code> git branch) will
-be used, as opposed to the <code class="docutils literal notranslate"><span class="pre">stable</span></code> version (which contains the same codebase
-as the published <code class="docutils literal notranslate"><span class="pre">pip</span></code> packages). Since the <code class="docutils literal notranslate"><span class="pre">development</span></code> versions of an
-element or component usually include new features and changes, they generally
-require using the <code class="docutils literal notranslate"><span class="pre">development</span></code> version of the rest of the items as well.</p>
+<p>Al instalar los elementos y componentes a partir del código fuente, por defecto se usará su versión marcada como <code class="docutils literal notranslate"><span class="pre">development</span></code> (que corresponde a la rama git <code class="docutils literal notranslate"><span class="pre">master</span></code>), y no la versión <code class="docutils literal notranslate"><span class="pre">stable</span></code> (que contiene la misma base de código que la publicada en los paquetes <code class="docutils literal notranslate"><span class="pre">pip</span></code>). Dado que las versiones <code class="docutils literal notranslate"><span class="pre">development</span></code> de cada elemento o componente normalmente incluyen nuevas funcionalidades y cambios, generalmente será necesario también instalar las versiones <code class="docutils literal notranslate"><span class="pre">development</span></code> del resto de los elementos.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Los paquetes de Terra y Aer requieren un compilador para construirse a partir del código fuente antes de poder instalarlos. Ignis, Aqua y el backend de IBM Quantum Provider no necesitan un compilador.</p>
 </div>
-<p>Installing elements from source requires the following order of installation to
-prevent installing versions of elements that may be lower than those desired if the
-<code class="docutils literal notranslate"><span class="pre">pip</span></code> version is behind the source versions:</p>
+<p>La instalación de los elementos a partir del código fuente requiere que se respete el siguiente orden de instalación para evitar que se instalen versiones inferiores de elementos si la versión en <code class="docutils literal notranslate"><span class="pre">pip</span></code> es inferior a la de las versiones del código fuente:</p>
 <ol class="arabic simple">
 <li><p><a class="reference internal" href="getting_started.html#install-qiskit-terra"><span class="std std-ref">qiskit-terra</span></a></p></li>
 <li><p><a class="reference internal" href="getting_started.html#install-qiskit-aer"><span class="std std-ref">qiskit-aer</span></a></p></li>
@@ -787,13 +697,7 @@ prevent installing versions of elements that may be lower than those desired if 
 <p>Para trabajar en varios componentes y elementos simultáneamente, sigue los siguientes pasos para cada elemento.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Due to the use of namespace packaging in Python, care must be taken in how you
-install packages. If you’re planning to install any element from source, do not
-use the <code class="docutils literal notranslate"><span class="pre">qiskit</span></code> meta-package. Also, follow this guide and use a separate virtual
-environment for development. If you do choose to mix an existing installation
-with your development, refer to
-<a class="reference external" href="https://github.com/pypa/sample-namespace-packages/blob/master/table.md">https://github.com/pypa/sample-namespace-packages/blob/master/table.md</a>
-for the set of combinations of installation methods that work together.</p>
+<p>Debido al uso del nombre de espacio (namespace) en los paquetes de Python, se debe tener cuidado al instalar los paquetes. Si planeas instalar cualquier elemento desde el código fuente, no uses el metapaquete <code class="docutils literal notranslate"><span class="pre">qiskit</span></code>. Además, sigue esta guía y utiliza un entorno virtual independiente para el desarrollo. Si eliges mezclar una instalación existente con su desarrollo, consulta <a class="reference external" href="https://github.com/pypa/sample-namespace-packages/blob/master/table.md">https://github.com/pypa/sample-namespace-packages/blob/master/table.md</a> para ver el conjunto de combinaciones de métodos de instalación que funcionan juntos.</p>
 </div>
 <section id="set-up-the-virtual-development-environment">
 <h3>Configurar el Ambiente de Desarrollo Virtual<a class="headerlink" href="#set-up-the-virtual-development-environment" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -806,13 +710,13 @@ conda activate QiskitDevenv
 <span id="install-qiskit-terra"></span><h3>Instalar Terra a partir del Código Fuente<a class="headerlink" href="#installing-terra-from-source" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Para instalar a partir del código fuente es necesario que tengas un compilador de C++ en tu computadora que soporte C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c1fe01a9-123e-45ad-8509-c2896c8b0407" name="0a2be6bc-cd31-4de6-9451-44db3608652f" type="radio">
-</input><label class="tabbed-label" for="c1fe01a9-123e-45ad-8509-c2896c8b0407">
+<input checked="checked" id="73b9b34d-5460-422e-b71e-c854b83adeea" name="ee44f7c8-0310-401b-83c2-4bbb5d83c802" type="radio">
+</input><label class="tabbed-label" for="73b9b34d-5460-422e-b71e-c854b83adeea">
 Compilador para Linux</label><div class="tabbed-content docutils">
 <p>En la mayoría de las plataformas Linux, el compilador necesario GCC está ya instalado.</p>
 </div>
-<input id="d9b88d81-5a2f-43a7-967c-41a9f25a674b" name="0a2be6bc-cd31-4de6-9451-44db3608652f" type="radio">
-</input><label class="tabbed-label" for="d9b88d81-5a2f-43a7-967c-41a9f25a674b">
+<input id="92b20bbe-7ec7-4b71-8728-24fc74e7083b" name="ee44f7c8-0310-401b-83c2-4bbb5d83c802" type="radio">
+</input><label class="tabbed-label" for="92b20bbe-7ec7-4b71-8728-24fc74e7083b">
 Compilador para macOS</label><div class="tabbed-content docutils">
 <p>Si utilizas macOS, puedes instalar el compilador Clang al instalar XCode. Comprueba si tienes XCode y Clang instalados abriendo una ventana de terminal y ejecutando los siguientes comandos.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -823,8 +727,8 @@ Compilador para macOS</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="02fc6cfc-74ca-4b0e-b87c-f175f6955012" name="0a2be6bc-cd31-4de6-9451-44db3608652f" type="radio">
-</input><label class="tabbed-label" for="02fc6cfc-74ca-4b0e-b87c-f175f6955012">
+<input id="fcaa184b-40e4-4ad9-99bd-1a158e8a0bb8" name="ee44f7c8-0310-401b-83c2-4bbb5d83c802" type="radio">
+</input><label class="tabbed-label" for="fcaa184b-40e4-4ad9-99bd-1a158e8a0bb8">
 Compilador para Windows</label><div class="tabbed-content docutils">
 <p>En Windows, lo más fácil de instalar es el compilador Visual C++ desde <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>. Por otro lado puedes instalar Visual Studio versión 2015 o 2017, asegurándote de seleccionar las opciones para instalar el compilador C++.</p>
 </div>
@@ -884,7 +788,7 @@ Compilador para Windows</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </li>
-<li><p>Install build requirements.</p>
+<li><p>Instalar los requerimientos para la construcción.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install cmake scikit-build cython
 </pre></div>
 </div>
@@ -892,8 +796,8 @@ Compilador para Windows</label><div class="tabbed-content docutils">
 </ol>
 <p>Después de esto, los pasos para instalar Aer dependerán del sistema operativo que estés usando. Dado que Aer es un programa compilado en C++ con una interfaz de Python, hay dependencias necesarias para construir Aer que no son de Python y que no se pueden instalar de manera universal en todos los sistemas operativos.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ee51956c-f7a4-4c2b-b717-2e19b2316a0c" name="e2897140-5570-4dd9-8c6f-8302ca008627" type="radio">
-</input><label class="tabbed-label" for="ee51956c-f7a4-4c2b-b717-2e19b2316a0c">
+<input checked="checked" id="622dc284-0653-488d-ae5b-ea473d8073d0" name="ec851d34-7407-41ef-9c8b-dcd077965e08" type="radio">
+</input><label class="tabbed-label" for="622dc284-0653-488d-ae5b-ea473d8073d0">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Instalar requerimientos del compilador.</p>
@@ -919,8 +823,8 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="5aa97f5f-6094-4737-9f0d-2708045545d3" name="e2897140-5570-4dd9-8c6f-8302ca008627" type="radio">
-</input><label class="tabbed-label" for="5aa97f5f-6094-4737-9f0d-2708045545d3">
+<input id="1aaabc5b-8416-4b1e-a0cf-3a26e0bb83f7" name="ec851d34-7407-41ef-9c8b-dcd077965e08" type="radio">
+</input><label class="tabbed-label" for="1aaabc5b-8416-4b1e-a0cf-3a26e0bb83f7">
 macOS</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Instalar dependencias.</p>
@@ -940,8 +844,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="1a32ff84-29f1-4e97-bbff-eb4775fd9f0c" name="e2897140-5570-4dd9-8c6f-8302ca008627" type="radio">
-</input><label class="tabbed-label" for="1a32ff84-29f1-4e97-bbff-eb4775fd9f0c">
+<input id="82868ef4-9540-4c6c-b49c-5caf3c3f4476" name="ec851d34-7407-41ef-9c8b-dcd077965e08" type="radio">
+</input><label class="tabbed-label" for="82868ef4-9540-4c6c-b49c-5caf3c3f4476">
 Windows</label><div class="tabbed-content docutils">
 <p>En Windows debes usar <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> o <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> para instalar todas las dependencias.</p>
 <ol class="arabic" start="3">
@@ -965,23 +869,19 @@ Windows</label><div class="tabbed-content docutils">
 pip install .
 </pre></div>
 </div>
-<p>This will both build the binaries and install Aer.</p>
-<p>Alternatively, if you have a newer pip installed, or have some custom requirement,
-you can build a Python wheel manually.</p>
+<p>Esto construirá los binarios e instalará Aer.</p>
+<p>Alternativamente, si tienes instalado un pip más nuevo o tienes algún requerimiento personalizado, puedes construir una Python wheel manualmente.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> qiskit-aer
 python ./setup.py bdist_wheel
 </pre></div>
 </div>
-<p>If you need to set a custom option during the wheel build, refer to
-<a class="reference internal" href="#aer-wheel-build-options"><span class="std std-ref">Opciones personalizadas durante la construcción de la wheel</span></a>.</p>
-<p>After you build the Python wheel, it will be stored in the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> dir in the
-Aer repository. The exact version will depend</p>
+<p>Si necesitas configurar una opción personalizada durante la construcción de la wheel, consulta <a class="reference internal" href="#aer-wheel-build-options"><span class="std std-ref">Opciones personalizadas durante la construcción de la wheel</span></a>.</p>
+<p>Después de construir la Python wheel, se almacenará en el directorio <code class="docutils literal notranslate"><span class="pre">dist/</span></code> en el repositorio de Aer. La versión exacta dependerá</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> dist
 pip install qiskit_aer-*.whl
 </pre></div>
 </div>
-<p>The exact filename of the output wheel file depends on the current version of
-Aer under development.</p>
+<p>El nombre exacto del archivo wheel de salida depende de la versión actual de Aer que está en desarrollo.</p>
 </li>
 </ol>
 <section id="custom-options-during-wheel-builds">
@@ -995,24 +895,18 @@ Aer under development.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python setup.py bdist_wheel -- -- -j8
 </pre></div>
 </div>
-<p>This is passing the flag <cite>-j8</cite> to the underlying build system (which in this
-case is <a class="reference external" href="https://www.gnu.org/software/automake/">Automake</a>), telling it that you want
-to build in parallel using 8 processes.</p>
+<p>Esto es pasar la bandera <cite>-j8</cite> al sistema de compilación subyacente (que en este caso es <a class="reference external" href="https://www.gnu.org/software/automake/">Automake</a>), indicándole que deseas compilar en paralelo usando 8 procesos.</p>
 <p>Por ejemplo, un caso de uso común de estas banderas (flags) en Linux es para indicar una versión específica del compilador de C++ a usar (normalmente se utiliza si el compilador por defecto es uno antiguo):</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python setup.py bdist_wheel -- -DCMAKE_CXX_COMPILER<span class="o">=</span>g++-7
 </pre></div>
 </div>
 <p>el cuál comunicará a CMake que use el comando g++-7 en vez del predeterminado g++ al compliar Aer.</p>
-<p>Another common use case for this, depending on your environment, is that you may
-need to specify your platform name and turn off static linking.</p>
+<p>Otro caso de uso común para esto, dependiendo de tu entorno, es que es posible que debas especificar el nombre de tu plataforma y desactivar el enlazamiento estático.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python setup.py bdist_wheel --plat-name macosx-10.9-x86_64 <span class="se">\</span>
 -- -DSTATIC_LINKING<span class="o">=</span>False -- -j8
 </pre></div>
 </div>
-<p>Here <code class="docutils literal notranslate"><span class="pre">--plat-name</span></code> is a flag to setuptools, to specify the platform name to
-use in the package metadata, <code class="docutils literal notranslate"><span class="pre">-DSTATIC_LINKING</span></code> is a flag for using CMake
-to disable static linking, and <code class="docutils literal notranslate"><span class="pre">-j8</span></code> is a flag for using Automake to use
-8 processes for compilation.</p>
+<p>Aquí <code class="docutils literal notranslate"><span class="pre">--plat-name</span></code> es la bandera para las setuptools que especifica el nombre de la plataforma a utilizar en los metadatos del paquete, <code class="docutils literal notranslate"><span class="pre">-DSTATIC_LINKING</span></code> es la bandera para hacer que CMake deshabilite el enlazamiento estático, y <code class="docutils literal notranslate"><span class="pre">-j8</span></code> es la bandera para hacer que Automake utilice 8 procesos para la compilación.</p>
 <p>Una lista de opciones comunes dependiendo de la plataforma es:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1146,108 +1040,48 @@ to disable static linking, and <code class="docutils literal notranslate"><span 
 </section>
 </section>
 <section id="qiskit-versioning">
-<span id="versioning-strategy"></span><h2>Qiskit Versioning<a class="headerlink" href="#qiskit-versioning" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>The Qiskit project is made up of several elements each performing different
-functionality. Each is independently useful and can be used on their own,
-but for convenience we provide this repository and meta-package to provide
-a single entrypoint to install all the elements at once. This is to simplify
-the install process and provide a unified interface to end users. However,
-because each Qiskit element has it’s own releases and versions some care is
-needed when dealing with versions between the different repositories. This
-document outlines the guidelines for dealing with versions and releases of
-both Qiskit elements and the meta-package.</p>
-<p>For the rest of this guide the standard Semantic Versioning nomenclature will
-be used of: <code class="docutils literal notranslate"><span class="pre">Major.Minor.Patch</span></code> to refer to the different components of a
-version number. For example, if the version number was <code class="docutils literal notranslate"><span class="pre">0.7.1</span></code>, then the major
-version is <code class="docutils literal notranslate"><span class="pre">0</span></code>, the minor version <code class="docutils literal notranslate"><span class="pre">7</span></code>, and the patch version <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<span id="versioning-strategy"></span><h2>Control de versiones de Qiskit<a class="headerlink" href="#qiskit-versioning" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El proyecto Qiskit se compone de varios elementos, cada uno de los cuales realiza una funcionalidad diferente. Cada uno es útil de forma independiente y se puede utilizar por sí solo, pero para mayor comodidad proporcionamos este repositorio y metapaquete para proporcionar un único punto de entrada para instalar todos los elementos a la vez. Esto es para simplificar el proceso de instalación y proporcionar una interfaz unificada a los usuarios finales. Sin embargo, debido a que cada elemento de Qiskit tiene sus propias liberaciones y versiones, es necesario tener cuidado al tratar con versiones entre los diferentes repositorios. Este documento describe las pautas para tratar con versiones y liberaciones tanto de los elementos de Qiskit como del metapaquete.</p>
+<p>Para el resto de esta guía, se utilizará la nomenclatura estándar de versiones semánticas de: <code class="docutils literal notranslate"><span class="pre">Major.Minor.Patch</span></code> para hacer referencia a los diferentes componentes de un número de versión. Por ejemplo, si el número de versión es <code class="docutils literal notranslate"><span class="pre">0.7.1</span></code>, entonces la versión principal es <code class="docutils literal notranslate"><span class="pre">0</span></code>, la versión secundaria <code class="docutils literal notranslate"><span class="pre">7</span></code> y la versión del parche <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
 <section id="meta-package-version">
-<h3>Meta-package Version<a class="headerlink" href="#meta-package-version" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>The Qiskit meta-package version is an independent value that is determined by
-the releases of each of the elements being tracked. Each time we push a release
-to a tracked component (or add an element) the meta-package requirements, and
-version will need to be updated and a new release published. The timing should
-be coordinated with the release of elements to ensure that the meta-package
-releases track with element releases.</p>
+<h3>Versión del Metapaquete<a class="headerlink" href="#meta-package-version" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La versión del metapaquete de Qiskit es un valor independiente que está determinado por las versiones de cada uno de los elementos que está siendo rastreado. Cada vez que enviamos una versión a un componente rastreado (o agregamos un elemento), los requisitos del metapaquete y la versión deberán actualizarse y publicarse una nueva versión. El tiempo debe coordinarse con el lanzamiento de elementos para garantizar que los lanzamientos de metapaquetes se realicen con los lanzamientos de elementos.</p>
 <section id="adding-new-tracked-elements">
-<h4>Adding New Tracked Elements<a class="headerlink" href="#adding-new-tracked-elements" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>When a new Qiskit element is being added to the meta-package requirements, we
-need to increase the <strong>Minor</strong> version of the meta-package.</p>
-<p>For example, if the meta-package is tracking 2 elements <code class="docutils literal notranslate"><span class="pre">qiskit-aer</span></code> and
-<code class="docutils literal notranslate"><span class="pre">qiskit-terra</span></code> and it’s version is <code class="docutils literal notranslate"><span class="pre">0.7.4</span></code>. Then we release a new element
-<code class="docutils literal notranslate"><span class="pre">qiskit-ignis</span></code> that we intend to also have included in the meta-package. When
-we add the new element to the meta-package we increase the version to
-<code class="docutils literal notranslate"><span class="pre">0.8.0</span></code>.</p>
+<h4>Adición de Nuevos Elementos Rastreados<a class="headerlink" href="#adding-new-tracked-elements" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Cuando se agrega un nuevo elemento Qiskit a los requisitos del metapaquete, necesitamos aumentar la versión <strong>Minor</strong> del metapaquete.</p>
+<p>Por ejemplo, si el metapaquete está rastreando los 2 elementos <code class="docutils literal notranslate"><span class="pre">qiskit-aer</span></code> y <code class="docutils literal notranslate"><span class="pre">qiskit-terra</span></code> y su versión es <code class="docutils literal notranslate"><span class="pre">0.7.4</span></code>. Luego lanzamos un nuevo elemento <code class="docutils literal notranslate"><span class="pre">qiskit-ignis</span></code> que pretendemos incluir también en el metapaquete. Entonces cuando agregamos el nuevo elemento al metapaquete, aumentamos la versión a <code class="docutils literal notranslate"><span class="pre">0.8.0</span></code>.</p>
 </section>
 <section id="patch-version-increases">
-<h4>Patch Version Increases<a class="headerlink" href="#patch-version-increases" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>When any Qiskit element that is being already tracked by the meta-package
-releases a patch version to fix bugs in a release we need also bump the
-requirement in the setup.py and then increase the patch version of the
-meta-package.</p>
-<p>For example, if the meta-package is tracking 3 elements <code class="docutils literal notranslate"><span class="pre">qiskit-terra==0.8.1</span></code>,
-<code class="docutils literal notranslate"><span class="pre">qiskit-aer==0.2.1</span></code>, and <code class="docutils literal notranslate"><span class="pre">qiskit-ignis==0.1.4</span></code> with the current version
-<code class="docutils literal notranslate"><span class="pre">0.9.6</span></code>. When qiskit-terra release a new patch version to fix a bug <code class="docutils literal notranslate"><span class="pre">0.8.2</span></code>
-the meta-package will also need to increase it’s patch version and release,
-becoming <code class="docutils literal notranslate"><span class="pre">0.9.7</span></code>.</p>
-<p>Additionally, there are occasionally packaging or other bugs in the
-meta-package itself that need to be fixed by pushing new releases. When those
-are encountered we should increase the patch version to differentiate it from
-the broken release. Do <strong>not</strong> delete the broken or any old releases from pypi
-in any situation, instead just increase the patch version and upload a new
-release.</p>
+<h4>Incremento de la Versión del Parche<a class="headerlink" href="#patch-version-increases" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Cuando cualquier elemento de Qiskit que ya está siendo rastreado por el metapaquete lanza una versión de parche para corregir errores en una versión, también necesitamos aumentar el requerimiento en setup.py y luego aumentar la versión del parche del metapaquete.</p>
+<p>Por ejemplo, si el metapaquete está rastreando los 3 elementos <code class="docutils literal notranslate"><span class="pre">qiskit-terra==0.8.1</span></code>, <code class="docutils literal notranslate"><span class="pre">qiskit-aer==0.2.1</span></code>, y <code class="docutils literal notranslate"><span class="pre">qiskit-ignis==0.1.4</span></code> con la versión actual <code class="docutils literal notranslate"><span class="pre">0.9.6</span></code>. Cuando qiskit-terra lance una nueva versión de parche para corregir un error <code class="docutils literal notranslate"><span class="pre">0.8.2</span></code>, el metapaquete también deberá aumentar su versión de parche y su liberación, convirtiéndose en <code class="docutils literal notranslate"><span class="pre">0.9.7</span></code>.</p>
+<p>Además, ocasionalmente hay empaquetados u otros errores en el metapaquete en sí que deben corregirse provocando nuevas versiones. Cuando se encuentren, deberíamos aumentar la versión del parche para diferenciarla de la liberación rota. <strong>No</strong> elimines las versiones rotas o antiguas de pypi en cualquier situación, en su lugar, simplemente aumenta la versión del parche y carga una nueva versión.</p>
 </section>
 <section id="minor-version-increases">
-<h4>Minor Version Increases<a class="headerlink" href="#minor-version-increases" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Besides adding a new element to the meta-package the minor version of the
-meta-package should also be increased anytime a minor version is increased in
-a tracked element.</p>
-<p>For example, if the meta-package is tracking 2 elements <code class="docutils literal notranslate"><span class="pre">qiskit-terra==0.7.0</span></code>
-and <code class="docutils literal notranslate"><span class="pre">qiskit-aer==0.1.1</span></code> and the current version is <code class="docutils literal notranslate"><span class="pre">0.7.5</span></code>. When the
-<code class="docutils literal notranslate"><span class="pre">qiskit-aer</span></code> element releases <code class="docutils literal notranslate"><span class="pre">0.2.0</span></code> then we need to increase the
-meta-package version to be <code class="docutils literal notranslate"><span class="pre">0.8.0</span></code> to correspond to the new release.</p>
+<h4>Incrementos de la Versión Menor<a class="headerlink" href="#minor-version-increases" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Además de agregar un nuevo elemento al metapaquete, la versión menor del metapaquete también debe aumentarse cada vez que se aumente una versión menor en un elemento rastreado.</p>
+<p>Por ejemplo, si el metapaquete está rastreando los 2 elementos <code class="docutils literal notranslate"><span class="pre">qiskit-terra==0.7.0</span></code> y <code class="docutils literal notranslate"><span class="pre">qiskit-aer==0.1.1</span></code> y la versión actual es <code class="docutils literal notranslate"><span class="pre">0.7.5</span></code>. Cuando el elemento <code class="docutils literal notranslate"><span class="pre">qiskit-aer</span></code> libere <code class="docutils literal notranslate"><span class="pre">0.2.0</span></code>, entonces necesitamos aumentar la versión del metapaquete para que sea <code class="docutils literal notranslate"><span class="pre">0.8.0</span></code> para que corresponda con la nueva versión.</p>
 </section>
 <section id="major-version-increases">
-<h4>Major Version Increases<a class="headerlink" href="#major-version-increases" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>The major version is different from the other version number components. Unlike
-the other version number components, which are updated in lock step with each
-tracked element, the major version is only increased when all tracked versions
-are bumped (at least before <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>). Right now all the elements still have
-a major version number component of <code class="docutils literal notranslate"><span class="pre">0</span></code> and until each tracked element in the
-meta-repository is marked as stable by bumping the major version to be <code class="docutils literal notranslate"><span class="pre">&gt;=1</span></code>
-then the meta-package version should not increase the major version.</p>
-<p>The behavior of the major version number component tracking after when all the
-elements are at &gt;=1.0.0 has not been decided yet.</p>
+<h4>Incrementos de la Versión Mayor<a class="headerlink" href="#major-version-increases" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>La versión principal (o mayor) es diferente de los demás componentes del número de versión. A diferencia de los otros componentes del número de versión, que se actualizan en el paso de bloqueo con cada elemento rastreado, la versión principal solo aumenta cuando se modifican todas las versiones rastreadas (al menos antes de <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code>). En este momento, todos los elementos todavía tienen un componente de número de versión principal de <code class="docutils literal notranslate"><span class="pre">0</span></code> y hasta que cada elemento rastreado en el meta-repositorio se marque como estable al hacer que la versión principal sea <code class="docutils literal notranslate"><span class="pre">&gt;=1</span></code>, entonces la versión del metapaquete no debería aumentar la versión mayor.</p>
+<p>Aún no se ha decidido el comportamiento del seguimiento del componente del número de versión principal después de que todos los elementos sean &gt;=1.0.0.</p>
 </section>
 <section id="optional-extras">
-<h4>Optional Extras<a class="headerlink" href="#optional-extras" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>In addition to the tracked elements there are additional packages built
-on top of Qiskit which are developed in tandem with Qiskit for example the
-application repositories like qiskit-optimization. For convienence
-these packages are tracked by the Qiskit metapackage as optional extras that
-can be installed with Qiskit. Releases of these optional downstream projects
-do not trigger a metapackage release as they are unpinned and do not effect the
-metapackage version. If there is a compatibility issue between Qiskit and these
-downstream optional dependencies and the minimum version needs to be adjusted
-in a standalone release this will only be done as a patch version release as
-it’s a packaging bugfix.</p>
+<h4>Extras Opcionales<a class="headerlink" href="#optional-extras" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Además de los elementos rastreados, hay paquetes adicionales construidos sobre Qiskit que se desarrollan en conjunto con Qiskit, por ejemplo, los repositorios de aplicaciones como qiskit-optimization. Para mayor comodidad, el metapaquete Qiskit realiza un seguimiento de estos paquetes como extras opcionales que se pueden instalar con Qiskit. Las versiones de estos proyectos posteriores opcionales no activan una versión de metapaquete, ya que no están anclados y no afectan a la versión del metapaquete. Si hay un problema de compatibilidad entre Qiskit y estas dependencias opcionales posteriores y la versión mínima debe ajustarse en una versión independiente, esto solo se hará como una versión de parche, ya que es una corrección de errores de empaquetamiento.</p>
 </section>
 </section>
 <section id="qiskit-element-requirement-tracking">
-<h3>Qiskit Element Requirement Tracking<a class="headerlink" href="#qiskit-element-requirement-tracking" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>While not strictly related to the meta-package and Qiskit versioning how we
-track the element versions in the meta-package’s requirements list is
-important. Each element listed in the setup.py should be pinned to a single
-version. This means that each version of Qiskit should only install a single
-version for each tracked element. For example, the requirements list at any
-given point should look something like:</p>
+<h3>Seguimiento de Requerimientos de Elementos de Qiskit<a class="headerlink" href="#qiskit-element-requirement-tracking" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si bien no está estrictamente relacionado con el metapaquete y el control de versiones de Qiskit, la forma en que rastreamos las versiones de los elementos en la lista de requerimientos del metapaquete es importante. Cada elemento enumerado en setup.py debe estar anclado a una única versión. Esto significa que cada versión de Qiskit solo debe instalar una única versión para cada elemento rastreado. Por ejemplo, la lista de requerimientos en un punto dado debería tener un aspecto similar a:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">requirements</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;qiskit_terra==0.7.0&quot;</span><span class="p">,</span>
     <span class="s2">&quot;qiskit-aer==0.1.1&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>This is to aid in debugging, but also make tracking the versions across
-multiple elements more transparent.</p>
+<p>Esto es para ayudar en la depuración, pero también hace que el seguimiento de las versiones en varios elementos sea más transparente.</p>
 </section>
 </section>
 </section>
@@ -1277,7 +1111,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/08/13.
+      Actualizado por última vez en 2021/09/23.
 
     </p>
   </div>
@@ -1313,7 +1147,7 @@ multiple elements more transparent.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#stable-branch-policy">Política de Ramificación Estable</a><ul>
-<li><a class="reference internal" href="#backporting-procedure">Backporting procedure:</a></li>
+<li><a class="reference internal" href="#backporting-procedure">Procedimiento de adaptación a versiones anteriores (backporting):</a></li>
 <li><a class="reference internal" href="#backport-labels">Etiquetas de backport</a></li>
 </ul>
 </li>
@@ -1325,10 +1159,10 @@ multiple elements more transparent.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#translating-documentation">Traducir la Documentación</a></li>
-<li><a class="reference internal" href="#building-from-source">Building from Source</a></li>
+<li><a class="reference internal" href="#building-from-source">Construcción a partir del Código Fuente</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#installing-from-source">Installing from Source</a><ul>
+<li><a class="reference internal" href="#installing-from-source">Instalación a partir del Código Fuente</a><ul>
 <li><a class="reference internal" href="#set-up-the-virtual-development-environment">Configurar el Ambiente de Desarrollo Virtual</a></li>
 <li><a class="reference internal" href="#installing-terra-from-source">Instalar Terra a partir del Código Fuente</a></li>
 <li><a class="reference internal" href="#installing-aer-from-source">Instalar Aer a partir del Código Fuente</a><ul>
@@ -1340,16 +1174,16 @@ multiple elements more transparent.</p>
 <li><a class="reference internal" href="#installing-ibm-quantum-provider-from-source">Instalar IBM Quantum Provider a partir del Código Fuente</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#qiskit-versioning">Qiskit Versioning</a><ul>
-<li><a class="reference internal" href="#meta-package-version">Meta-package Version</a><ul>
-<li><a class="reference internal" href="#adding-new-tracked-elements">Adding New Tracked Elements</a></li>
-<li><a class="reference internal" href="#patch-version-increases">Patch Version Increases</a></li>
-<li><a class="reference internal" href="#minor-version-increases">Minor Version Increases</a></li>
-<li><a class="reference internal" href="#major-version-increases">Major Version Increases</a></li>
-<li><a class="reference internal" href="#optional-extras">Optional Extras</a></li>
+<li><a class="reference internal" href="#qiskit-versioning">Control de versiones de Qiskit</a><ul>
+<li><a class="reference internal" href="#meta-package-version">Versión del Metapaquete</a><ul>
+<li><a class="reference internal" href="#adding-new-tracked-elements">Adición de Nuevos Elementos Rastreados</a></li>
+<li><a class="reference internal" href="#patch-version-increases">Incremento de la Versión del Parche</a></li>
+<li><a class="reference internal" href="#minor-version-increases">Incrementos de la Versión Menor</a></li>
+<li><a class="reference internal" href="#major-version-increases">Incrementos de la Versión Mayor</a></li>
+<li><a class="reference internal" href="#optional-extras">Extras Opcionales</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#qiskit-element-requirement-tracking">Qiskit Element Requirement Tracking</a></li>
+<li><a class="reference internal" href="#qiskit-element-requirement-tracking">Seguimiento de Requerimientos de Elementos de Qiskit</a></li>
 </ul>
 </li>
 </ul>
@@ -1417,7 +1251,7 @@ multiple elements more transparent.</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1440,9 +1274,11 @@ multiple elements more transparent.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

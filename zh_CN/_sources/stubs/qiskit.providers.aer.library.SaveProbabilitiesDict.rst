@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveProbabilitiesDict
-==================================================
+﻿SaveProbabilitiesDict
+=====================
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveProbabilitiesDict
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveProbabilitiesDict.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveProbabilitiesDict.add_decomposition
       ~SaveProbabilitiesDict.assemble
       ~SaveProbabilitiesDict.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveProbabilitiesDict.reverse_ops
       ~SaveProbabilitiesDict.soft_compare
       ~SaveProbabilitiesDict.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveProbabilitiesDict.decompositions
-      ~SaveProbabilitiesDict.definition
-      ~SaveProbabilitiesDict.duration
-      ~SaveProbabilitiesDict.label
-      ~SaveProbabilitiesDict.params
-      ~SaveProbabilitiesDict.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

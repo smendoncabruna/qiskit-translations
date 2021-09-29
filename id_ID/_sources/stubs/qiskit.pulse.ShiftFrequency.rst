@@ -1,19 +1,18 @@
-﻿qiskit.pulse.ShiftFrequency
-===========================
+﻿ShiftFrequency
+==============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: ShiftFrequency
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ShiftFrequency.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ShiftFrequency.append
       ~ShiftFrequency.assign_parameters
       ~ShiftFrequency.ch_duration
@@ -24,25 +23,19 @@
       ~ShiftFrequency.insert
       ~ShiftFrequency.is_parameterized
       ~ShiftFrequency.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ShiftFrequency.channel
-      ~ShiftFrequency.channels
-      ~ShiftFrequency.duration
-      ~ShiftFrequency.frequency
-      ~ShiftFrequency.id
-      ~ShiftFrequency.instructions
-      ~ShiftFrequency.name
-      ~ShiftFrequency.operands
-      ~ShiftFrequency.parameters
-      ~ShiftFrequency.start_time
-      ~ShiftFrequency.stop_time
-   
-   
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: frequency
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

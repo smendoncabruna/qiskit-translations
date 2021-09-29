@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.qobj.QasmQobjConfig &mdash; Qiskit 0.29.0 문서</title>
+  <title>QasmQobjConfig &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="색인" href="../genindex.html" />
     <link rel="search" title="검색" href="../search.html" />
-    <link rel="next" title="qiskit.qobj.QasmExperimentCalibrations" href="qiskit.qobj.QasmExperimentCalibrations.html" />
-    <link rel="prev" title="qiskit.qobj.QasmQobjExperiment" href="qiskit.qobj.QasmQobjExperiment.html" /> 
+    <link rel="next" title="qiskit.qobj.QasmQobjConfig.from_dict" href="qiskit.qobj.QasmQobjConfig.from_dict.html" />
+    <link rel="prev" title="qiskit.qobj.QasmQobjExperiment.to_dict" href="qiskit.qobj.QasmQobjExperiment.to_dict.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/qobj.html">Qobj (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.qobj</span></code>)</a> &gt;</li>
         
-      <li>qiskit.qobj.QasmQobjConfig</li>
+      <li>QasmQobjConfig</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-qobj-qasmqobjconfig">
-<h1>qiskit.qobj.QasmQobjConfig<a class="headerlink" href="#qiskit-qobj-qasmqobjconfig" title="제목 주소">¶</a></h1>
+  <section id="qasmqobjconfig">
+<h1>QasmQobjConfig<a class="headerlink" href="#qasmqobjconfig" title="제목 주소">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.qobj.QasmQobjConfig">
 <em class="property">class </em><code class="sig-name descname">QasmQobjConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shots</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_credits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">seed_simulator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parameter_binds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meas_level</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meas_return</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">memory_slots</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_qubits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pulse_library</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">calibrations</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rep_delay</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">qubit_lo_freq</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meas_lo_freq</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qobj/qasm_qobj.html#QasmQobjConfig"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.qobj.QasmQobjConfig" title="정의 주소">¶</a></dt>
-<dd><p>A configuration for a QASM Qobj.</p>
+<dd><p>기반 클래스: <code class="xref py py-class docutils literal notranslate"><span class="pre">types.SimpleNamespace</span></code></p>
+<p>A configuration for a QASM Qobj.</p>
 <p>Model for RunConfig.</p>
 <dl class="field-list simple">
 <dt class="field-odd">매개변수</dt>
@@ -361,38 +369,6 @@ configuration.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.qobj.QasmQobjConfig.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shots</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_credits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">seed_simulator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parameter_binds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meas_level</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meas_return</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">memory_slots</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_qubits</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pulse_library</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">calibrations</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rep_delay</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">qubit_lo_freq</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">meas_lo_freq</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qobj/qasm_qobj.html#QasmQobjConfig.__init__"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.qobj.QasmQobjConfig.__init__" title="정의 주소">¶</a></dt>
-<dd><p>Model for RunConfig.</p>
-<dl class="field-list simple">
-<dt class="field-odd">매개변수</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>shots</strong> (<em>int</em>) – the number of shots.</p></li>
-<li><p><strong>max_credits</strong> (<em>int</em>) – the max_credits to use on the IBMQ public devices.</p></li>
-<li><p><strong>seed_simulator</strong> (<em>int</em>) – the seed to use in the simulator</p></li>
-<li><p><strong>memory</strong> (<em>bool</em>) – whether to request memory from backend (per-shot readouts)</p></li>
-<li><p><strong>parameter_binds</strong> (<em>list</em><em>[</em><em>dict</em><em>]</em>) – List of parameter bindings</p></li>
-<li><p><strong>meas_level</strong> (<em>int</em>) – Measurement level 0, 1, or 2</p></li>
-<li><p><strong>meas_return</strong> (<em>str</em>) – For measurement level &lt; 2, whether single or avg shots are returned</p></li>
-<li><p><strong>memory_slots</strong> (<em>int</em>) – The number of memory slots on the device</p></li>
-<li><p><strong>n_qubits</strong> (<em>int</em>) – The number of qubits on the device</p></li>
-<li><p><strong>pulse_library</strong> (<em>list</em>) – List of <a class="reference internal" href="qiskit.qobj.PulseLibraryItem.html#qiskit.qobj.PulseLibraryItem" title="qiskit.qobj.PulseLibraryItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseLibraryItem</span></code></a>.</p></li>
-<li><p><strong>calibrations</strong> (<a class="reference internal" href="qiskit.qobj.QasmExperimentCalibrations.html#qiskit.qobj.QasmExperimentCalibrations" title="qiskit.qobj.QasmExperimentCalibrations"><em>QasmExperimentCalibrations</em></a>) – Information required for Pulse gates.</p></li>
-<li><p><strong>rep_delay</strong> (<em>float</em>) – Delay between programs in sec. Only supported on certain
-backends (<code class="docutils literal notranslate"><span class="pre">backend.configuration().dynamic_reprate_enabled</span></code> ). Must be from the
-range supplied by the backend (<code class="docutils literal notranslate"><span class="pre">backend.configuration().rep_delay_range</span></code>). Default
-is <code class="docutils literal notranslate"><span class="pre">backend.configuration().default_rep_delay</span></code>.</p></li>
-<li><p><strong>qubit_lo_freq</strong> (<em>list</em>) – List of frequencies (as floats) for the qubit driver LO’s in GHz.</p></li>
-<li><p><strong>meas_lo_freq</strong> (<em>list</em>) – List of frequencies (as floats) for the measurement driver LO’s in
-GHz.</p></li>
-<li><p><strong>kwargs</strong> – Additional free form key value fields to add to the
-configuration.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -400,48 +376,14 @@ configuration.</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.qobj.QasmQobjConfig.__init__" title="qiskit.qobj.QasmQobjConfig.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([shots, max_credits, …])</p></td>
-<td><p>Model for RunConfig.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.qobj.QasmQobjConfig.from_dict" title="qiskit.qobj.QasmQobjConfig.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a>(data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.qobj.QasmQobjConfig.from_dict.html#qiskit.qobj.QasmQobjConfig.from_dict" title="qiskit.qobj.QasmQobjConfig.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a></p></td>
 <td><p>Create a new QasmQobjConfig object from a dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.qobj.QasmQobjConfig.to_dict" title="qiskit.qobj.QasmQobjConfig.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.qobj.QasmQobjConfig.to_dict.html#qiskit.qobj.QasmQobjConfig.to_dict" title="qiskit.qobj.QasmQobjConfig.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a></p></td>
 <td><p>Return a dictionary format representation of the QASM Qobj config.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.qobj.QasmQobjConfig.from_dict">
-<em class="property">classmethod </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qobj/qasm_qobj.html#QasmQobjConfig.from_dict"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.qobj.QasmQobjConfig.from_dict" title="정의 주소">¶</a></dt>
-<dd><p>Create a new QasmQobjConfig object from a dictionary.</p>
-<dl class="field-list simple">
-<dt class="field-odd">매개변수</dt>
-<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – A dictionary for the config</p>
-</dd>
-<dt class="field-even">반환값</dt>
-<dd class="field-even"><p>The object from the input dictionary.</p>
-</dd>
-<dt class="field-odd">반환 형식</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#qiskit.qobj.QasmQobjConfig" title="qiskit.qobj.QasmQobjConfig">QasmQobjConfig</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.qobj.QasmQobjConfig.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/qobj/qasm_qobj.html#QasmQobjConfig.to_dict"><span class="viewcode-link">[소스]</span></a><a class="headerlink" href="#qiskit.qobj.QasmQobjConfig.to_dict" title="정의 주소">¶</a></dt>
-<dd><p>Return a dictionary format representation of the QASM Qobj config.</p>
-<dl class="field-list simple">
-<dt class="field-odd">반환값</dt>
-<dd class="field-odd"><p>The dictionary form of the QasmQobjConfig.</p>
-</dd>
-<dt class="field-even">반환 형식</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -454,10 +396,10 @@ configuration.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.qobj.QasmExperimentCalibrations.html" class="btn btn-neutral float-right" title="qiskit.qobj.QasmExperimentCalibrations" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.qobj.QasmQobjConfig.from_dict.html" class="btn btn-neutral float-right" title="qiskit.qobj.QasmQobjConfig.from_dict" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.qobj.QasmQobjExperiment.html" class="btn btn-neutral" title="qiskit.qobj.QasmQobjExperiment" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.qobj.QasmQobjExperiment.to_dict.html" class="btn btn-neutral" title="qiskit.qobj.QasmQobjExperiment.to_dict" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -471,7 +413,7 @@ configuration.</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -490,7 +432,7 @@ configuration.</p></li>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.qobj.QasmQobjConfig</a></li>
+<li><a class="reference internal" href="#">QasmQobjConfig</a></li>
 </ul>
 
             </div>
@@ -554,7 +496,7 @@ configuration.</p></li>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -577,9 +519,11 @@ configuration.</p></li>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

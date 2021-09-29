@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.algorithms.EOH &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>EOH &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="../genindex.html" />
     <link rel="search" title="Αναζήτηση" href="../search.html" />
-    <link rel="next" title="qiskit.aqua.algorithms.Simon" href="qiskit.aqua.algorithms.Simon.html" />
-    <link rel="prev" title="qiskit.aqua.algorithms.DeutschJozsa" href="qiskit.aqua.algorithms.DeutschJozsa.html" /> 
+    <link rel="next" title="qiskit.aqua.algorithms.EOH.construct_circuit" href="qiskit.aqua.algorithms.EOH.construct_circuit.html" />
+    <link rel="prev" title="qiskit.aqua.algorithms.DeutschJozsa.set_backend" href="qiskit.aqua.algorithms.DeutschJozsa.set_backend.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -300,7 +307,7 @@
         
           <li><a href="../apidoc/qiskit.aqua.algorithms.html">Algorithms (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.aqua.algorithms</span></code>)</a> &gt;</li>
         
-      <li>qiskit.aqua.algorithms.EOH</li>
+      <li>EOH</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -330,12 +337,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-aqua-algorithms-eoh">
-<h1>qiskit.aqua.algorithms.EOH<a class="headerlink" href="#qiskit-aqua-algorithms-eoh" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+  <section id="eoh">
+<h1>EOH<a class="headerlink" href="#eoh" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.aqua.algorithms.EOH">
 <em class="property">class </em><code class="sig-name descname">EOH</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">initial_state</span></em>, <em class="sig-param"><span class="n">evo_operator</span></em>, <em class="sig-param"><span class="n">evo_time</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num_time_slices</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">expansion_mode</span><span class="o">=</span><span class="default_value">'trotter'</span></em>, <em class="sig-param"><span class="n">expansion_order</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/education/eoh.html#EOH"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.EOH" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>The Quantum EOH (Evolution of Hamiltonian) algorithm.</p>
+<dd><p>Βάσεις: <code class="xref py py-class docutils literal notranslate"><span class="pre">qiskit.aqua.algorithms.quantum_algorithm.QuantumAlgorithm</span></code></p>
+<p>The Quantum EOH (Evolution of Hamiltonian) algorithm.</p>
 <p>EOH provides the lower-level building blocks for simulating
 universal quantum systems. For any given quantum system that can be
 decomposed into local interactions (for example, a global hamiltonian as
@@ -357,26 +365,6 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.EOH.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operator</span></em>, <em class="sig-param"><span class="n">initial_state</span></em>, <em class="sig-param"><span class="n">evo_operator</span></em>, <em class="sig-param"><span class="n">evo_time</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num_time_slices</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">expansion_mode</span><span class="o">=</span><span class="default_value">'trotter'</span></em>, <em class="sig-param"><span class="n">expansion_order</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/education/eoh.html#EOH.__init__"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.__init__" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>) – Operator to evaluate</p></li>
-<li><p><strong>initial_state</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">InitialState</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>]) – Initial state for evolution</p></li>
-<li><p><strong>evo_operator</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code>) – Operator to evolve</p></li>
-<li><p><strong>evo_time</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Evolution time, has min value of 0</p></li>
-<li><p><strong>num_time_slices</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Number of time slices, has minimum value of 1</p></li>
-<li><p><strong>expansion_mode</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Either <code class="docutils literal notranslate"><span class="pre">&quot;trotter&quot;</span></code> (Lloyd’s method) or <code class="docutils literal notranslate"><span class="pre">&quot;suzuki&quot;</span></code>
-(for Trotter-Suzuki expansion)</p></li>
-<li><p><strong>expansion_order</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The Trotter-Suzuki expansion order.</p></li>
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – Quantum Instance or Backend</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -384,46 +372,21 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.__init__" title="qiskit.aqua.algorithms.EOH.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(operator, initial_state, evo_operator)</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">type operator</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">LegacyBaseOperator</span></code></p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.construct_circuit" title="qiskit.aqua.algorithms.EOH.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.EOH.construct_circuit.html#qiskit.aqua.algorithms.EOH.construct_circuit" title="qiskit.aqua.algorithms.EOH.construct_circuit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_circuit</span></code></a></p></td>
 <td><p>Construct the circuit.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.run" title="qiskit.aqua.algorithms.EOH.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>([quantum_instance])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.EOH.run.html#qiskit.aqua.algorithms.EOH.run" title="qiskit.aqua.algorithms.EOH.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a></p></td>
 <td><p>Execute the algorithm with selected backend.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.set_backend" title="qiskit.aqua.algorithms.EOH.set_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_backend</span></code></a>(backend, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.aqua.algorithms.EOH.set_backend.html#qiskit.aqua.algorithms.EOH.set_backend" title="qiskit.aqua.algorithms.EOH.set_backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_backend</span></code></a></p></td>
 <td><p>Sets backend with configuration.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.backend" title="qiskit.aqua.algorithms.EOH.backend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend</span></code></a></p></td>
-<td><p>Returns backend.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.quantum_instance" title="qiskit.aqua.algorithms.EOH.quantum_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantum_instance</span></code></a></p></td>
-<td><p>Returns quantum instance.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.aqua.algorithms.EOH.random" title="qiskit.aqua.algorithms.EOH.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a></p></td>
-<td><p>Return a numpy random.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.EOH.backend">
-<em class="property">property </em><code class="sig-name descname">backend</code><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.backend" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">backend</code><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.backend" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Returns backend.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -432,23 +395,9 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.EOH.construct_circuit">
-<code class="sig-name descname">construct_circuit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/aqua/algorithms/education/eoh.html#EOH.construct_circuit"><span class="viewcode-link">[πηγή]</span></a><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.construct_circuit" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Construct the circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρέφει</dt>
-<dd class="field-odd"><p>the circuit.</p>
-</dd>
-<dt class="field-even">Επιστρεφόμενος τύπος</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.circuit.QuantumCircuit.html#qiskit.circuit.QuantumCircuit" title="qiskit.circuit.QuantumCircuit">QuantumCircuit</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.EOH.quantum_instance">
-<em class="property">property </em><code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.quantum_instance" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">quantum_instance</code><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.quantum_instance" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Returns quantum instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Επιστρεφόμενος τύπος</dt>
@@ -457,44 +406,10 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.aqua.algorithms.EOH.random">
-<em class="property">property </em><code class="sig-name descname">random</code><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.random" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
+<code class="sig-name descname">random</code><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.random" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
 <dd><p>Return a numpy random.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.EOH.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantum_instance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.run" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Execute the algorithm with selected backend.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Παράμετροι</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>quantum_instance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">QuantumInstance</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Backend</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseBackend</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]) – the experimental setting.</p></li>
-<li><p><strong>kwargs</strong> (<em>dict</em>) – kwargs</p></li>
-</ul>
-</dd>
-<dt class="field-even">Επιστρέφει</dt>
-<dd class="field-even"><p>results of an algorithm.</p>
-</dd>
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-<dt class="field-even">Προκαλεί</dt>
-<dd class="field-even"><p><a class="reference internal" href="qiskit.aqua.AquaError.html#qiskit.aqua.AquaError" title="qiskit.aqua.AquaError"><strong>AquaError</strong></a> – If a quantum instance or backend has not been provided</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.aqua.algorithms.EOH.set_backend">
-<code class="sig-name descname">set_backend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">backend</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.aqua.algorithms.EOH.set_backend" title="Μόνιμος σύνδεσμος σε αυτόν τον ορισμό">¶</a></dt>
-<dd><p>Sets backend with configuration.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Επιστρεφόμενος τύπος</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -509,10 +424,10 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.aqua.algorithms.Simon.html" class="btn btn-neutral float-right" title="qiskit.aqua.algorithms.Simon" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.aqua.algorithms.EOH.construct_circuit.html" class="btn btn-neutral float-right" title="qiskit.aqua.algorithms.EOH.construct_circuit" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.aqua.algorithms.DeutschJozsa.html" class="btn btn-neutral" title="qiskit.aqua.algorithms.DeutschJozsa" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.aqua.algorithms.DeutschJozsa.set_backend.html" class="btn btn-neutral" title="qiskit.aqua.algorithms.DeutschJozsa.set_backend" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -526,7 +441,7 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -545,7 +460,7 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.aqua.algorithms.EOH</a></li>
+<li><a class="reference internal" href="#">EOH</a></li>
 </ul>
 
             </div>
@@ -609,7 +524,7 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -632,9 +547,11 @@ via, for example, Lloyd’s method or Trotter-Suzuki decomposition.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

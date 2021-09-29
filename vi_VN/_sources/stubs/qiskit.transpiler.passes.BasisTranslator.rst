@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.BasisTranslator
-========================================
+﻿BasisTranslator
+===============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: BasisTranslator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BasisTranslator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BasisTranslator.name
       ~BasisTranslator.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BasisTranslator.is_analysis_pass
-      ~BasisTranslator.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

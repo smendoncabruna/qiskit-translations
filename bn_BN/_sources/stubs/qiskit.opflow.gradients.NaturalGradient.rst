@@ -1,33 +1,24 @@
-﻿qiskit.opflow.gradients.NaturalGradient
-=======================================
+NaturalGradient
+===============
 
 .. currentmodule:: qiskit.opflow.gradients
 
 .. autoclass:: NaturalGradient
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~NaturalGradient.__init__
-      ~NaturalGradient.convert
-      ~NaturalGradient.gradient_wrapper
-      ~NaturalGradient.parameter_expression_grad
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~NaturalGradient.convert
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NaturalGradient.grad_method
-      ~NaturalGradient.qfi_method
-      ~NaturalGradient.regularization
-   
-   
+   .. autoattribute:: grad_method
+   .. autoattribute:: qfi_method
+   .. autoattribute:: regularization

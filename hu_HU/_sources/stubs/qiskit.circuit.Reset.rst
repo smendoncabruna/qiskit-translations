@@ -1,19 +1,18 @@
-﻿qiskit.circuit.Reset
-====================
+﻿Reset
+=====
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Reset
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Reset.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Reset.add_decomposition
       ~Reset.assemble
       ~Reset.broadcast_arguments
@@ -27,20 +26,14 @@
       ~Reset.reverse_ops
       ~Reset.soft_compare
       ~Reset.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Reset.decompositions
-      ~Reset.definition
-      ~Reset.duration
-      ~Reset.label
-      ~Reset.params
-      ~Reset.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

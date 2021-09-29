@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.transformations.Transformation
-===============================================
+﻿Transformation
+==============
 
 .. currentmodule:: qiskit.chemistry.transformations
 
 .. autoclass:: Transformation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Transformation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Transformation.build_hopping_operators
       ~Transformation.get_default_filter_criterion
       ~Transformation.interpret
       ~Transformation.transform
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Transformation.commutation_rule
-   
-   
+   .. autoattribute:: commutation_rule

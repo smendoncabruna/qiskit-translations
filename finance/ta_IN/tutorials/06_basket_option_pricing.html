@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing Basket Options &mdash; Qiskit Finance 0.2.0 documentation</title>
+  <title>Pricing Basket Options &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
-    <link rel="next" title="Pricing Asian Barrier Spreads" href="07_asian_barrier_spread_pricing.html" />
+    <link rel="next" title="ஆசிய தடையின் பரவல் விலை" href="07_asian_barrier_spread_pricing.html" />
     <link rel="prev" title="Pricing Bull Spreads" href="05_bull_spread_pricing.html" /> 
 
   
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -484,19 +484,19 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
 <div class="section" id="Pricing-Basket-Options">
 <h1>Pricing Basket Options<a class="headerlink" href="#Pricing-Basket-Options" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
-<p>Suppose a basket option with strike price <span class="math notranslate nohighlight">\(K\)</span> and two underlying assets whose spot price at maturity <span class="math notranslate nohighlight">\(S_T^1\)</span>, <span class="math notranslate nohighlight">\(S_T^2\)</span> follow given random distributions. The corresponding payoff function is defined as:</p>
+<div class="section" id="முன்னுரை">
+<h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
+<p>வேலைநிறுத்த விலையுடன் ஒரு கூடை விருப்பத்தை வைத்துக்கொள்வோம் <span class="math notranslate nohighlight">\(K\)</span>, :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>S_T^2`கொடுக்கப்பட்ட சீரற்ற விநியோகங்களைப் பின்பற்றவும்.தொடர்புடைய செலுத்துதல் செயல்பாடு பின்வருமாறு வரையறுக்கப்படுகிறது:</p>
 <div class="math notranslate nohighlight">
 \[\max\ {S_T ^ 1 + S_T ^ 2-K, 0\}\]</div>
-<p>In the following, a quantum algorithm based on amplitude estimation is used to estimate the expected payoff, i.e., the fair price before discounting, for the option:</p>
+<p>பின்வருவனவற்றில்,எதிர்பார்த்த ஊதியத்தை மதிப்பிடுவதற்கு வீச்சு மதிப்பீட்டின் அடிப்படையில் ஒரு குவாண்டம் வழிமுறை பயன்படுத்தப்படுகிறது,அதாவது, தள்ளுபடிக்கு முன் நியாயமான விலை, விருப்பத்திற்கு:</p>
 <div class="math notranslate nohighlight">
 \[\mathbb{E}\left[ \max\{S_T^1 + S_T^2 - K, 0\} \right].\]</div>
-<p>The approximation of the objective function and a general introduction to option pricing and risk analysis on quantum computers are given in the following papers:</p>
+<p>புறநிலை செயல்பாட்டின் தோராயமும் குவாண்டம் கணினிகளில் விருப்பத்தேர்வு விலை மற்றும் இடர் பகுப்பாய்விற்கான பொதுவான அறிமுகமும் பின்வரும் ஆவணங்களில் கொடுக்கப்பட்டுள்ளன:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/1905.02666">Option Pricing using Quantum Computers. Stamatopoulos et al. 2019.</a></p></li>
@@ -521,16 +521,16 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Uncertainty-Model">
-<h2>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="Permalink to this headline">¶</a></h2>
-<p>We construct a circuit factory to load a multivariate log-normal random distribution into a quantum state on <span class="math notranslate nohighlight">\(n\)</span> qubits. For every dimension <span class="math notranslate nohighlight">\(j = 1,\ldots,d\)</span>, the distribution is truncated to a given interval <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span> and discretized using <span class="math notranslate nohighlight">\(2^{n_j}\)</span> grid points, where <span class="math notranslate nohighlight">\(n_j\)</span> denotes the number of qubits used to represent dimension <span class="math notranslate nohighlight">\(j\)</span>, i.e., <span class="math notranslate nohighlight">\(n_1+\ldots+n_d = n\)</span>. The unitary operator corresponding to the circuit factory implements
-the following:</p>
+<div class="section" id="நிச்சயமற்ற-மாதிரி">
+<h2>நிச்சயமற்ற மாதிரி<a class="headerlink" href="#நிச்சயமற்ற-மாதிரி" title="Permalink to this headline">¶</a></h2>
+<p>ஒரு பன்முக பதிவு-இயல்பான சீரற்ற விநியோகத்தை ஒரு குவாண்டம் நிலையில் ஏற்றுவதற்கு ஒரு சுற்று தொழிற்சாலையை உருவாக்குகிறோம் <span class="math notranslate nohighlight">\(n' qubits. ஒவ்வொரு பரிமாணத்திற்கும் :math:\)</span>, ஒரு குறிப்பிட்ட இடைவெளியில் விநியோகம் துண்டிக்கப்படுகிறது <span class="math notranslate nohighlight">\([\text{low}_j, \text{high}_j]\)</span>
+கட்டம் புள்ளிகள், எங்கே <span class="math notranslate nohighlight">\(n_j\)</span>,அதாவது,:math:<cite>n_1+ldots+n_d = n</cite>.சுற்று தொழிற்சாலைக்கு ஒத்த ஒற்றுமை ஆபரேட்டர் பின்வருவனவற்றை செயல்படுத்துகிறது:</p>
 <div class="math notranslate nohighlight">
 \[\big|0\rangle_{n} \mapsto \big|\psi\rangle_{n} = \sum_{i_1,\ldots,i_d} \sqrt{p_{i_1\ldots i_d}}\big|i_1\rangle_{n_1}\ldots\big|i_d\rangle_{n_d},\]</div>
-<p>where <span class="math notranslate nohighlight">\(p_{i_1\ldots i_d}\)</span> denote the probabilities corresponding to the truncated and discretized distribution and where <span class="math notranslate nohighlight">\(i_j\)</span> is mapped to the right interval using the affine map:</p>
+<p>எங்கே <span class="math notranslate nohighlight">\(p_{i_1\ldots i_d}\)</span> துண்டிக்கப்பட்ட மற்றும் தனிப்பயனாக்கப்பட்ட விநியோகம் மற்றும் எங்கு தொடர்புடைய நிகழ்தகவுகளைக் குறிக்கவும் <span class="math notranslate nohighlight">\(i_j\)</span> அஃபைன் வரைபடத்தைப் பயன்படுத்தி சரியான இடைவெளியில் மேப் செய்யப்படுகிறது:</p>
 <div class="math notranslate nohighlight">
 \[\{0, \ldots, 2^{n_j}-1\} \ni i_j \mapsto \frac{\text{high}_j - \text{low}_j}{2^{n_j} - 1} * i_j + \text{low}_j \in [\text{low}_j, \text{high}_j].\]</div>
-<p>For simplicity, we assume both stock prices are independent and identically distributed. This assumption just simplifies the parametrization below and can be easily relaxed to more complex and also correlated multivariate distributions. The only important assumption for the current implementation is that the discretization grid of the different dimensions has the same step size.</p>
+<p>எளிமைக்காக, இரு பங்கு விலைகளும் சுயாதீனமானவை மற்றும் ஒரே மாதிரியாக விநியோகிக்கப்படுகின்றன என்று நாங்கள் கருதுகிறோம். இந்த அனுமானம் கீழேயுள்ள அளவுருவை எளிதாக்குகிறது, மேலும் மிகவும் சிக்கலான மற்றும் ஒன்றோடு ஒன்று தொடர்புடைய பன்முக விநியோகங்களுக்கு எளிதில் தளர்த்த முடியும். தற்போதைய செயல்படுத்தலுக்கான ஒரே முக்கியமான அனுமானம் என்னவென்றால், வெவ்வேறு பரிமாணங்களின் தனிப்பயனாக்குதல் கட்டம் ஒரே படி அளவைக் கொண்டுள்ளது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -601,21 +601,21 @@ the following:</p>
 <img alt="../_images/tutorials_06_basket_option_pricing_5_0.svg" src="../_images/tutorials_06_basket_option_pricing_5_0.svg" /></div>
 </div>
 </div>
-<div class="section" id="Payoff-Function">
-<h2>Payoff Function<a class="headerlink" href="#Payoff-Function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="கொடுப்பனவு-செயல்பாடு">
+<h2>கொடுப்பனவு செயல்பாடு<a class="headerlink" href="#கொடுப்பனவு-செயல்பாடு" title="Permalink to this headline">¶</a></h2>
 <p>The payoff function equals zero as long as the sum of the spot prices at maturity <span class="math notranslate nohighlight">\((S_T^1 + S_T^2)\)</span> is less than the strike price <span class="math notranslate nohighlight">\(K\)</span> and then increases linearly. The implementation first uses a weighted sum operator to compute the sum of the spot prices into an ancilla register, and then uses a comparator, that flips an ancilla qubit from <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> to <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> if <span class="math notranslate nohighlight">\((S_T^1 + S_T^2) \geq K\)</span>. This ancilla is used to control the linear part of the payoff
 function.</p>
-<p>The linear part itself is approximated as follows. We exploit the fact that <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> for small <span class="math notranslate nohighlight">\(|y|\)</span>. Thus, for a given approximation rescaling factor <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> and <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span> we consider</p>
+<p>அவர் நேரியல் பகுதி பின்வருமாறு தோராயமாக மதிப்பிடப்படுகிறது. உண்மையை நாங்கள் சுரண்டிக்கொள்கிறோம் <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> for small <span class="math notranslate nohighlight">\(|y|\)</span>.எனவே, கொடுக்கப்பட்ட தோராயத்தை மீட்டெடுக்கும் அளவிடுதல் காரணிக்கு <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> and :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>x in [0, 1]`நாங்கள் கருதுகிறோம்</p>
 <div class="math notranslate nohighlight">
 \[\sin^2( \pi/2 * c_\text{approx} * ( x - 1/2 ) + \pi/4) \approx \pi/2 * c_\text{approx} * ( x - 1/2 ) + 1/2\]</div>
 <p>for small <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>.</p>
-<p>We can easily construct an operator that acts as</p>
+<p>ஒரு ஆபரேட்டரை நாம் எளிதாக உருவாக்க முடியும் ஆக செயல்படும்</p>
 <div class="math notranslate nohighlight">
 \[\big|x\rangle \big|0\rangle \mapsto \big|x\rangle \left( \cos(a*x+b) \big|0\rangle + \sin(a*x+b) \big|1\rangle \right),\]</div>
-<p>using controlled Y-rotations.</p>
-<p>Eventually, we are interested in the probability of measuring <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> in the last qubit, which corresponds to <span class="math notranslate nohighlight">\(\sin^2(a*x+b)\)</span>. Together with the approximation above, this allows to approximate the values of interest. The smaller we choose <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, the better the approximation. However, since we are then estimating a property scaled by <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, the number of evaluation qubits <span class="math notranslate nohighlight">\(m\)</span> needs to be adjusted accordingly.</p>
-<p>For more details on the approximation, we refer to: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
-<p>Since the weighted sum operator (in its current implementation) can only sum up integers, we need to map from the original ranges to the representable range to estimate the result, and reverse this mapping before interpreting the result. The mapping essentially corresponds to the affine mapping described in the context of the uncertainty model above.</p>
+<p>கட்டுப்படுத்தப்பட்ட Y- சுழற்சிகளைப் பயன்படுத்துதல்.</p>
+<p>இறுதியில், அளவிடும் நிகழ்தகவில் நாங்கள் ஆர்வமாக உள்ளோம் <span class="math notranslate nohighlight">\(\big|1\rangle\)</span>sin^2(a*x+b)`.மேலே உள்ள தோராயத்துடன், இது ஆர்வத்தின் மதிப்புகளை தோராயமாக மதிப்பிட அனுமதிக்கிறது.சிறியது நாம் தேர்வு செய்கிறோம் <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>,சிறந்த தோராயமான.எவ்வாறாயினும், அளவிடப்பட்ட ஒரு சொத்தை நாங்கள் மதிப்பிடுகிறோம் என்பதால் <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, மதிப்பீட்டு வினாடிகளின் எண்ணிக்கை <span class="math notranslate nohighlight">\(m\)</span> அதற்கேற்ப சரிசெய்யப்பட வேண்டும்.</p>
+<p>தோராயமாக மேலும் விவரங்களுக்கு, நாங்கள் பார்க்கிறோம்: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>எடையுள்ள தொகை ஆபரேட்டர் (அதன் தற்போதைய செயல்பாட்டில்) முழு எண்களை மட்டுமே தொகுக்க முடியும் என்பதால், முடிவை மதிப்பிடுவதற்கு அசல் வரம்புகளிலிருந்து பிரதிநிதித்துவ வரம்பிற்கு வரைபடம் செய்ய வேண்டும்,முடிவை விளக்கும் முன் இந்த மேப்பிங்கை மாற்றவும்.மேப்பிங் அடிப்படையில் மேலே உள்ள நிச்சயமற்ற மாதிரியின் சூழலில் விவரிக்கப்பட்டுள்ள அஃபைன் மேப்பிங்கிற்கு ஒத்திருக்கிறது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -769,9 +769,9 @@ exact expected value:   0.4870
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Evaluate-Expected-Payoff">
-<h2>Evaluate Expected Payoff<a class="headerlink" href="#Evaluate-Expected-Payoff" title="Permalink to this headline">¶</a></h2>
-<p>We first verify the quantum circuit by simulating it and analyzing the resulting probability to measure the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state in the objective qubit.</p>
+<div class="section" id="எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">
+<h2>எதிர்பார்த்த கொடுப்பனவை மதிப்பிடுங்கள்<a class="headerlink" href="#எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்" title="Permalink to this headline">¶</a></h2>
+<p>குவாண்டம் சுற்றுவட்டத்தை உருவகப்படுத்துவதன் மூலமும், அதன் அளவை அளவிடுவதற்கான நிகழ்தகவை பகுப்பாய்வு செய்வதன் மூலமும் முதலில் சரிபார்க்கிறோம் <span class="math notranslate nohighlight">\(|1\rangle\)</span> புறநிலை குவிட்டில் நிலை.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -929,7 +929,7 @@ Confidence interval:    [0.4493, 0.5357]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral float-right" title="Pricing Asian Barrier Spreads" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral float-right" title="ஆசிய தடையின் பரவல் விலை" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="05_bull_spread_pricing.html" class="btn btn-neutral" title="Pricing Bull Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -965,10 +965,10 @@ Confidence interval:    [0.4493, 0.5357]
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Pricing Basket Options</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Uncertainty-Model">Uncertainty Model</a></li>
-<li><a class="reference internal" href="#Payoff-Function">Payoff Function</a></li>
-<li><a class="reference internal" href="#Evaluate-Expected-Payoff">Evaluate Expected Payoff</a></li>
+<li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
+<li><a class="reference internal" href="#நிச்சயமற்ற-மாதிரி">நிச்சயமற்ற மாதிரி</a></li>
+<li><a class="reference internal" href="#கொடுப்பனவு-செயல்பாடு">கொடுப்பனவு செயல்பாடு</a></li>
+<li><a class="reference internal" href="#எதிர்பார்த்த-கொடுப்பனவை-மதிப்பிடுங்கள்">எதிர்பார்த்த கொடுப்பனவை மதிப்பிடுங்கள்</a></li>
 </ul>
 </li>
 </ul>

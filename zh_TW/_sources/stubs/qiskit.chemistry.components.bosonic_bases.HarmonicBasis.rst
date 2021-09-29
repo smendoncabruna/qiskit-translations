@@ -1,23 +1,18 @@
-﻿qiskit.chemistry.components.bosonic\_bases.HarmonicBasis
-========================================================
+﻿HarmonicBasis
+=============
 
 .. currentmodule:: qiskit.chemistry.components.bosonic_bases
 
 .. autoclass:: HarmonicBasis
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HarmonicBasis.__init__
-      ~HarmonicBasis.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~HarmonicBasis.convert
+
+

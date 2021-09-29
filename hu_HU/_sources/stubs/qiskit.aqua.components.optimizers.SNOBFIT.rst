@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.optimizers.SNOBFIT
-=========================================
+﻿SNOBFIT
+=======
 
 .. currentmodule:: qiskit.aqua.components.optimizers
 
 .. autoclass:: SNOBFIT
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SNOBFIT.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SNOBFIT.get_support_level
       ~SNOBFIT.gradient_num_diff
       ~SNOBFIT.optimize
@@ -21,27 +20,21 @@
       ~SNOBFIT.set_max_evals_grouped
       ~SNOBFIT.set_options
       ~SNOBFIT.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SNOBFIT.bounds_support_level
-      ~SNOBFIT.gradient_support_level
-      ~SNOBFIT.initial_point_support_level
-      ~SNOBFIT.is_bounds_ignored
-      ~SNOBFIT.is_bounds_required
-      ~SNOBFIT.is_bounds_supported
-      ~SNOBFIT.is_gradient_ignored
-      ~SNOBFIT.is_gradient_required
-      ~SNOBFIT.is_gradient_supported
-      ~SNOBFIT.is_initial_point_ignored
-      ~SNOBFIT.is_initial_point_required
-      ~SNOBFIT.is_initial_point_supported
-      ~SNOBFIT.setting
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting

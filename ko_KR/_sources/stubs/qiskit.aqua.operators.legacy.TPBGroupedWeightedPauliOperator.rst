@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.legacy.TPBGroupedWeightedPauliOperator
-============================================================
+﻿TPBGroupedWeightedPauliOperator
+===============================
 
 .. currentmodule:: qiskit.aqua.operators.legacy
 
 .. autoclass:: TPBGroupedWeightedPauliOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~TPBGroupedWeightedPauliOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~TPBGroupedWeightedPauliOperator.add
       ~TPBGroupedWeightedPauliOperator.anticommute_with
       ~TPBGroupedWeightedPauliOperator.chop
@@ -40,23 +39,17 @@
       ~TPBGroupedWeightedPauliOperator.to_file
       ~TPBGroupedWeightedPauliOperator.to_opflow
       ~TPBGroupedWeightedPauliOperator.unsorted_grouping
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~TPBGroupedWeightedPauliOperator.atol
-      ~TPBGroupedWeightedPauliOperator.basis
-      ~TPBGroupedWeightedPauliOperator.grouping_func
-      ~TPBGroupedWeightedPauliOperator.kwargs
-      ~TPBGroupedWeightedPauliOperator.name
-      ~TPBGroupedWeightedPauliOperator.num_groups
-      ~TPBGroupedWeightedPauliOperator.num_qubits
-      ~TPBGroupedWeightedPauliOperator.paulis
-      ~TPBGroupedWeightedPauliOperator.z2_symmetries
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: basis
+   .. autoattribute:: grouping_func
+   .. autoattribute:: kwargs
+   .. autoattribute:: name
+   .. autoattribute:: num_groups
+   .. autoattribute:: num_qubits
+   .. autoattribute:: paulis
+   .. autoattribute:: z2_symmetries

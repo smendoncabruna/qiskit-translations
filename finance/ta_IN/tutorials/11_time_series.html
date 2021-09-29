@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Loading and Processing Stock-Market Time-Series Data &mdash; Qiskit Finance 0.2.0 documentation</title>
+  <title>பங்குச் சந்தை நேர-தொடர் தரவை ஏற்றுகிறது மற்றும் செயலாக்குகிறது &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
     <link rel="next" title="Release Notes" href="../release_notes.html" />
-    <link rel="prev" title="Option Pricing with qGANs" href="10_qgan_option_pricing.html" /> 
+    <link rel="prev" title="உடன் விருப்பம் விலை qGANs" href="10_qgan_option_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Loading and Processing Stock-Market Time-Series Data</li>
+      <li>பங்குச் சந்தை நேர-தொடர் தரவை ஏற்றுகிறது மற்றும் செயலாக்குகிறது</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,12 +484,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/11_time_series.ipynb">docs/tutorials/11_time_series.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/11_time_series.ipynb">docs/tutorials/11_time_series.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<div class="section" id="Loading-and-Processing-Stock-Market-Time-Series-Data">
-<h1>Loading and Processing Stock-Market Time-Series Data<a class="headerlink" href="#Loading-and-Processing-Stock-Market-Time-Series-Data" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="பங்குச்-சந்தை-நேர-தொடர்-தரவை-ஏற்றுகிறது-மற்றும்-செயலாக்குகிறது">
+<h1>பங்குச் சந்தை நேர-தொடர் தரவை ஏற்றுகிறது மற்றும் செயலாக்குகிறது<a class="headerlink" href="#பங்குச்-சந்தை-நேர-தொடர்-தரவை-ஏற்றுகிறது-மற்றும்-செயலாக்குகிறது" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="முன்னுரை">
+<h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
 <p>நிதிகளில் பல சிக்கல்களில், ஒன்று நேரத் தொடரில் தொடங்குகிறது. போலி-சீரற்ற நேரத் தொடரை எவ்வாறு உருவாக்குவது, பல பொதுவான வழங்குநர்களிடமிருந்து உண்மையான பங்கு-சந்தை நேரத் தொடரைப் பதிவிறக்குவது மற்றும் நேர-தொடர் ஒற்றுமை நடவடிக்கைகளை எவ்வாறு கணக்கிடுவது என்பதை இங்கே காண்பிக்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -519,7 +519,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Once the data are loaded, you can run a variety of algorithms on those to aggregate the data. Notably, you can compute the covariance matrix or a variant, which would consider alternative time-series similarity measures based on <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">dynamic time warping</a> (DTW). In DTW, changes that vary in speed, e.g., one stock’s price following another stock’s price with a small delay, can be accommodated.</p>
+<p>தரவு ஏற்றப்பட்டவுடன், தரவைச் சேர்க்க பல்வேறு வழிமுறைகளை நீங்கள் இயக்கலாம். குறிப்பிடத்தக்க வகையில், நீங்கள் கோவரியன்ஸ் மேட்ரிக்ஸ் அல்லது ஒரு மாறுபாட்டைக் கணக்கிடலாம், இது <a href="#id1"><span class="problematic" id="id2">`</span></a>dynamic time warping &lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">https://en.wikipedia.org/wiki/Dynamic_time_warping</a>&gt; '__ (DTW) அடிப்படையிலான மாற்று நேர-தொடர் ஒற்றுமை நடவடிக்கைகளைக் கருத்தில் கொள்ளலாம்.DTW இல், வேகத்தில் மாறுபடும் மாற்றங்கள், எ.கா., ஒரு பங்கின் விலை மற்றொரு தாமதத்துடன் ஒரு சிறிய தாமதத்துடன், இடமளிக்க முடியும்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -862,7 +862,7 @@ TICKER2
         <a href="../release_notes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="10_qgan_option_pricing.html" class="btn btn-neutral" title="Option Pricing with qGANs" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="10_qgan_option_pricing.html" class="btn btn-neutral" title="உடன் விருப்பம் விலை qGANs" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -894,8 +894,8 @@ TICKER2
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Loading and Processing Stock-Market Time-Series Data</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#">பங்குச் சந்தை நேர-தொடர் தரவை ஏற்றுகிறது மற்றும் செயலாக்குகிறது</a><ul>
+<li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
 <li><a class="reference internal" href="#இறுதி-விலை-நேரத்-தொடருக்கான-அணுகல்">இறுதி விலை நேரத் தொடருக்கான அணுகல்</a></li>
 <li><a class="reference internal" href="#[Optional]-சமீபத்திய,-நேர்த்தியான-நேரத்-தொடரை-அணுக-டோக்கனை-அமைக்கவும்">[Optional] சமீபத்திய, நேர்த்தியான நேரத் தொடரை அணுக டோக்கனை அமைக்கவும்</a></li>
 </ul>

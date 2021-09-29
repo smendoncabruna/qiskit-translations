@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>設立隨機化基準 &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>設立隨機化基準 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -579,7 +586,7 @@ div.rendered_html tbody tr:hover {
 <section id="簡介">
 <h2>簡介<a class="headerlink" href="#簡介" title="本標題的永久連結">¶</a></h2>
 <p><strong>Randomization benchmarking (RB)</strong> 是一種眾所周知的方法，可通過執行隨機Clifford閘的序列來測量平均閘效能，這些序列會將量子位元返回到初始狀態。 Qiskit Ignis 有工具可以同時產生一個和兩個量子位元的 Clifford 的閘序列。</p>
-<p>This notebook gives an example for how to use the <code class="docutils literal notranslate"><span class="pre">ignis.verification.randomized_benchmarking</span></code> module. This particular example shows how to run 2-qubit randomized benchmarking (RB) simultaneous with 1-qubit RB. There are also examples on how to use some of the companion functions for predicting RB fidelity.</p>
+<p>此筆記本提供了如何使用 <code class="docutils literal notranslate"><span class="pre">ignis.verification.randomized_benchmarking</span></code> 模組的範例。 此特定範例顯示如何與單量子位元 RB 同時執行雙量子位元 RB。 也有一些例子說明如何使用一些伴隨函數來預測 RB 的保真度。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -610,7 +617,7 @@ div.rendered_html tbody tr:hover {
 <li><p><strong>rb_pattern:</strong> 為一個以 [[i, j], [k],…] 格式的清單，此清單將同時生成 RB 序列，其中 Qi 和 Qj 是二量子位元 RB 序列，Qk 是一量子位元序列等。量子位元的數目是輸入項目的總和。 對於 ‘regular’ RB 而言， 其 qubit_pattern 即為 [[0]],[[0,1]]。</p></li>
 <li><p><strong>length_multiplier:</strong> 如果這是一個陣列，其將對每一個 rb_sequence 乘以一個乘數。</p></li>
 <li><p><strong>seed_offset:</strong> 種子起始位置（例如，如果稍後要新增更多種子）。</p></li>
-<li><p><strong>align_cliffs:</strong> If true adds a barrier across all qubits in rb_pattern after each set of cliffords.</p></li>
+<li><p><strong>align_cliffs:</strong> 如果為真，則在 rb_pattern 中所有量子位元的每組 Cliffords 之後，都會新增一個屏障。</p></li>
 </ul>
 <p>在此範例中，我們有 3 個量子位元 Q0，Q1，Q2。 我們同時執行 2Q RB （在量子位元 Q0、Q2 上）和 1Q RB （在量子位元 Q1 上），其中有兩倍多的 1Q Clifford閘。</p>
 <div class="nbinput nblast docutils container">
@@ -702,7 +709,7 @@ qr_2: |0&gt;┤ H ├┤ S ├┤ X ├┤ H ├┤ S ├───────�
 </section>
 <section id="請看此相對於一個電路的么正矩陣">
 <h2>請看此相對於一個電路的么正矩陣<a class="headerlink" href="#請看此相對於一個電路的么正矩陣" title="本標題的永久連結">¶</a></h2>
-<p>The Unitary representing each RB circuit should be the identity (with a global phase), since we multiply random Clifford elements, including a computed reversal gate. We simulate this using an Aer unitary simulator.</p>
+<p>因為我們乘以隨機的 Clifford 元素及其對應的反轉閘，故每個 RB 電路的么正矩陣應是單位矩陣（帶有全局相位）。我們用一個 Aer 幺正模擬器來模擬這個情況。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -746,7 +753,7 @@ qr_2: |0&gt;┤ H ├┤ S ├┤ X ├┤ H ├┤ S ├───────�
 </section>
 <section id="定義雜訊模型">
 <h2>定義雜訊模型<a class="headerlink" href="#定義雜訊模型" title="本標題的永久連結">¶</a></h2>
-<p>We define a noise model for the simulator. To simulate decay, we add depolarizing error probabilities to the CNOT and U gates.</p>
+<p>我們為此模擬器定義了一個雜訊模型。 為了模擬衰變，我們在 CNOT 和 U 閘上增加了去極化誤差機率。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -764,7 +771,7 @@ qr_2: |0&gt;┤ H ├┤ S ├┤ X ├┤ H ├┤ S ├───────�
 </section>
 <section id="3）在-Aer-模擬器上執行-RB-序列">
 <h2>3）在 Aer 模擬器上執行 RB 序列<a class="headerlink" href="#3）在-Aer-模擬器上執行-RB-序列" title="本標題的永久連結">¶</a></h2>
-<p>We can execute the RB sequences either using a Qiskit Aer Simulator (with some noise model) or using an IBMQ provider, and obtain a list of results, <code class="docutils literal notranslate"><span class="pre">result_list</span></code>.</p>
+<p>我們可以使用 具有某種雜訊模型的Qiskit Aer Simulator或使用 一個 IBMQ provider 以執行 RB 序列，並取得結果清單 <code class="docutils literal notranslate"><span class="pre">result_list</span></code>。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -826,8 +833,8 @@ Finished Simulating
 </div>
 </div>
 </section>
-<section id="Plot-After-1-Seed">
-<h3>Plot After 1 Seed<a class="headerlink" href="#Plot-After-1-Seed" title="本標題的永久連結">¶</a></h3>
+<section id="在執行一次種子之後的圖表">
+<h3>在執行一次種子之後的圖表<a class="headerlink" href="#在執行一次種子之後的圖表" title="本標題的永久連結">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -857,9 +864,9 @@ Finished Simulating
 </div>
 </div>
 </section>
-<section id="Plot-with-the-Rest-of-the-Seeds">
-<h3>Plot with the Rest of the Seeds<a class="headerlink" href="#Plot-with-the-Rest-of-the-Seeds" title="本標題的永久連結">¶</a></h3>
-<p>The plot is being updated after each seed.</p>
+<section id="對應於剩餘次數種子的圖表">
+<h3>對應於剩餘次數種子的圖表<a class="headerlink" href="#對應於剩餘次數種子的圖表" title="本標題的永久連結">¶</a></h3>
+<p>在每執行一次種子之後，該圖都會被更新。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -975,8 +982,8 @@ Finished Simulating
 </section>
 <section id="預測的閘保真度">
 <h3>預測的閘保真度<a class="headerlink" href="#預測的閘保真度" title="本標題的永久連結">¶</a></h3>
-<p>From the known depolarizing errors on the simulation we can predict the <strong>fidelity</strong>. First we need to count the number of <strong>gates per Clifford</strong>.</p>
-<p>The function <strong>gates_per_clifford</strong> takes a list of transpiled RB circuits and outputs the number of basis gates in each circuit.</p>
+<p>可以根據模擬中已知的去極化錯誤來預測 <strong>fidelity</strong>。 首先，我們需要計算 <strong>gates per Clifford</strong> 的數量。</p>
+<p>此函數 <strong>gates_per_clifford</strong> 輸入轉譯 RB 電路的清單並輸出每一個電路中的基底閘之數量。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1002,7 +1009,7 @@ Number of u3 gates per Clifford: 0.490109
 Number of cx gates per Clifford: 1.526739
 </pre></div></div>
 </div>
-<p>The function <strong>calculate_2q_epc</strong> gives measured errors in the basis gates that were used to construct the Clifford. It assumes that the error in the underlying gates is depolarizing. It outputs the error per a 2-qubit Clifford.</p>
+<p>此函數 <strong>calculate_2q_epc</strong> 會給出基底閘中用來建構 Clifford 的測量誤差。 它假設基底閘中的誤差是去極化的，並會針對每一個二量子位元的 Clifford 輸出對應的誤差。</p>
 <p>該函數的輸入是： - <strong>gate_per_cliff:</strong> 一個包含 gate per Clifford 的字典。 - <strong>epg_2q:</strong> 誤差模型估計的 EPG。 - <strong>qubit_pair:</strong> 用於計算 EPC 的 2 個量子位元的索引。 - <strong>list_epgs_1q:</strong> `` qubit_pair`` 中列出的量子位元的單個量子位元 EPG 清單。 - <a href="#id1"><span class="problematic" id="id2">**</span></a>two_qubit_name:<a href="#id3"><span class="problematic" id="id4">**</span></a><code class="docutils literal notranslate"><span class="pre">basic</span> <span class="pre">gates</span></code> 中的兩個量子位元閘的名稱（預設為``cx``）。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
@@ -1036,7 +1043,7 @@ Predicted 2Q Error per Clifford: 1.591172e-02
 <section id="以-T1、T2-錯誤執行-RB-序列">
 <h2>以 T1、T2 錯誤執行 RB 序列<a class="headerlink" href="#以-T1、T2-錯誤執行-RB-序列" title="本標題的永久連結">¶</a></h2>
 <p>我們現在選擇只含有兩個量子位元 Cliffords 的 RB 序列。</p>
-<p>We execute these sequences as before, but with a noise model extended with T1/T2 thermal relaxation error, and fit the exponentially decaying curve.</p>
+<p>我們像之前一樣執行這些序列，但額外考慮進一個具有 T1/T2 熱弛緩誤差的雜訊模型，並使用指數衰減曲線進行擬合。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -1235,7 +1242,7 @@ Predicted 2Q Error per Clifford: 1.313111e-02
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1263,8 +1270,8 @@ Predicted 2Q Error per Clifford: 1.313111e-02
 <li><a class="reference internal" href="#3）在-Aer-模擬器上執行-RB-序列">3）在 Aer 模擬器上執行 RB 序列</a></li>
 <li><a class="reference internal" href="#4）擬合其-RB-結果並計算其閘的保真度">4）擬合其 RB 結果並計算其閘的保真度</a><ul>
 <li><a class="reference internal" href="#取得存活機率的統計資料">取得存活機率的統計資料</a></li>
-<li><a class="reference internal" href="#Plot-After-1-Seed">Plot After 1 Seed</a></li>
-<li><a class="reference internal" href="#Plot-with-the-Rest-of-the-Seeds">Plot with the Rest of the Seeds</a></li>
+<li><a class="reference internal" href="#在執行一次種子之後的圖表">在執行一次種子之後的圖表</a></li>
+<li><a class="reference internal" href="#對應於剩餘次數種子的圖表">對應於剩餘次數種子的圖表</a></li>
 <li><a class="reference internal" href="#增加量測次數並將結果添加至原有的數據">增加量測次數並將結果添加至原有的數據</a></li>
 <li><a class="reference internal" href="#預測的閘保真度">預測的閘保真度</a></li>
 </ul>
@@ -1336,7 +1343,7 @@ Predicted 2Q Error per Clifford: 1.313111e-02
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1359,9 +1366,11 @@ Predicted 2Q Error per Clifford: 1.313111e-02
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

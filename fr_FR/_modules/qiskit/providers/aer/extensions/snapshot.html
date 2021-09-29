@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.extensions.snapshot &mdash; Documentation Qiskit 0.29.0</title>
+  <title>qiskit.providers.aer.extensions.snapshot &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -230,7 +237,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -336,8 +343,7 @@
 <span class="sd">Simulator command to snapshot internal simulator representation.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
-
+<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
 <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
 <span class="kn">from</span> <span class="nn">qiskit.circuit.quantumregister</span> <span class="kn">import</span> <span class="n">QuantumRegister</span>
 <span class="kn">from</span> <span class="nn">qiskit.circuit</span> <span class="kn">import</span> <span class="n">Instruction</span>
@@ -349,7 +355,7 @@
 
     <span class="n">_directive</span> <span class="o">=</span> <span class="kc">True</span>
 
-<div class="viewcode-block" id="Snapshot.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.html#qiskit.circuit.Snapshot.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">label</span><span class="p">,</span>
                  <span class="n">snapshot_type</span><span class="o">=</span><span class="s1">&#39;statevector&#39;</span><span class="p">,</span>
                  <span class="n">num_qubits</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
@@ -366,35 +372,47 @@
 
 <span class="sd">        Raises:</span>
 <span class="sd">            ExtensionError: if snapshot label is invalid.</span>
+
+<span class="sd">        .. deprecated:: 0.9.0</span>
+
+<span class="sd">            This instruction has been deprecated and will be removed no earlier</span>
+<span class="sd">            than 3 months from the 0.9.0 release date. It has been superseded by</span>
+<span class="sd">            the save instructions in</span>
+<span class="sd">            :mod:`qiskit.providers.aer.library` module.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The `Snapshot` instruction will be deprecated in the&#39;</span>
+             <span class="s1">&#39; future. It has been superseded by the `SaveStatevector`&#39;</span>
+             <span class="s1">&#39; instructions.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">ExtensionError</span><span class="p">(</span><span class="s1">&#39;Snapshot label must be a string.&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">label</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_type</span> <span class="o">=</span> <span class="n">snapshot_type</span>
         <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">params</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;snapshot&#39;</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">num_clbits</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Snapshot.assemble"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.html#qiskit.circuit.Snapshot.assemble">[docs]</a>    <span class="k">def</span> <span class="nf">assemble</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s1">&#39;snapshot&#39;</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">num_clbits</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_type</span> <span class="o">=</span> <span class="n">snapshot_type</span>
+
+<div class="viewcode-block" id="Snapshot.assemble"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.assemble.html#qiskit.circuit.Snapshot.assemble">[docs]</a>    <span class="k">def</span> <span class="nf">assemble</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assemble a QasmQobjInstruction&quot;&quot;&quot;</span>
         <span class="n">instruction</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">assemble</span><span class="p">()</span>
         <span class="n">instruction</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_label</span>
         <span class="n">instruction</span><span class="o">.</span><span class="n">snapshot_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_snapshot_type</span>
         <span class="k">return</span> <span class="n">instruction</span></div>
 
-<div class="viewcode-block" id="Snapshot.inverse"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.html#qiskit.circuit.Snapshot.inverse">[docs]</a>    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Snapshot.inverse"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.inverse.html#qiskit.circuit.Snapshot.inverse">[docs]</a>    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Special case. Return self.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Snapshot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_clbits</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="Snapshot.define_snapshot_register"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.html#qiskit.circuit.Snapshot.define_snapshot_register">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Snapshot.define_snapshot_register"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.extensions.Snapshot.define_snapshot_register.html#qiskit.circuit.Snapshot.define_snapshot_register">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">define_snapshot_register</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span>
                                  <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                  <span class="n">qubits</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Defines qubits to snapshot for all snapshot methods&quot;&quot;&quot;</span>
         <span class="c1"># Convert label to string for backwards compatibility</span>
         <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="n">warn</span><span class="p">(</span>
                 <span class="s2">&quot;The &#39;label&#39; arg of `define_snapshot_register` has been deprecated&quot;</span>
                 <span class="s2">&quot;as of qiskit-aer 0.7.0.&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
         <span class="c1"># If no qubits are specified we add all qubits so it acts as a barrier</span>
@@ -459,6 +477,10 @@
 <span class="sd">    Raises:</span>
 <span class="sd">        ExtensionError: malformed command</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The Aer `snapshot` circuit method has been deprecated as of&#39;</span>
+         <span class="s1">&#39; qiskit-aer 0.9 and will be removed in a future release.&#39;</span>
+         <span class="s1">&#39; It has been superseded by the various `save_*`&#39;</span>
+         <span class="s1">&#39; circuit methods.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">snapshot_register</span> <span class="o">=</span> <span class="n">Snapshot</span><span class="o">.</span><span class="n">define_snapshot_register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubits</span><span class="o">=</span><span class="n">qubits</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -488,7 +510,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -568,7 +590,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -591,9 +613,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

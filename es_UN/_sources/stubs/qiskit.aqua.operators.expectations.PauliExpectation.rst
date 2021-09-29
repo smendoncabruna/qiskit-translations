@@ -1,24 +1,19 @@
-﻿qiskit.aqua.operators.expectations.PauliExpectation
-===================================================
+﻿PauliExpectation
+================
 
 .. currentmodule:: qiskit.aqua.operators.expectations
 
 .. autoclass:: PauliExpectation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PauliExpectation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliExpectation.compute_variance
       ~PauliExpectation.convert
-   
-   
 
-   
-   
-   
+

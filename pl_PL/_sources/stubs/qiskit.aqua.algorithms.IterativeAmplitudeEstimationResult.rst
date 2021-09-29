@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.IterativeAmplitudeEstimationResult
-=========================================================
+﻿IterativeAmplitudeEstimationResult
+==================================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: IterativeAmplitudeEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IterativeAmplitudeEstimationResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IterativeAmplitudeEstimationResult.clear
       ~IterativeAmplitudeEstimationResult.combine
       ~IterativeAmplitudeEstimationResult.copy
@@ -27,25 +26,19 @@
       ~IterativeAmplitudeEstimationResult.setdefault
       ~IterativeAmplitudeEstimationResult.update
       ~IterativeAmplitudeEstimationResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IterativeAmplitudeEstimationResult.a_estimation
-      ~IterativeAmplitudeEstimationResult.a_intervals
-      ~IterativeAmplitudeEstimationResult.actual_epsilon
-      ~IterativeAmplitudeEstimationResult.alpha
-      ~IterativeAmplitudeEstimationResult.confidence_interval
-      ~IterativeAmplitudeEstimationResult.estimation
-      ~IterativeAmplitudeEstimationResult.num_oracle_queries
-      ~IterativeAmplitudeEstimationResult.powers
-      ~IterativeAmplitudeEstimationResult.ratios
-      ~IterativeAmplitudeEstimationResult.theta_intervals
-      ~IterativeAmplitudeEstimationResult.value_confidence_interval
-   
-   
+   .. autoattribute:: a_estimation
+   .. autoattribute:: a_intervals
+   .. autoattribute:: actual_epsilon
+   .. autoattribute:: alpha
+   .. autoattribute:: confidence_interval
+   .. autoattribute:: estimation
+   .. autoattribute:: num_oracle_queries
+   .. autoattribute:: powers
+   .. autoattribute:: ratios
+   .. autoattribute:: theta_intervals
+   .. autoattribute:: value_confidence_interval

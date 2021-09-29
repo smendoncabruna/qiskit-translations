@@ -1,52 +1,30 @@
-﻿qiskit.circuit.library.CUGate
-=============================
+﻿CUGate
+======
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: CUGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~CUGate.__init__
-      ~CUGate.add_decomposition
-      ~CUGate.assemble
-      ~CUGate.broadcast_arguments
-      ~CUGate.c_if
-      ~CUGate.control
-      ~CUGate.copy
-      ~CUGate.inverse
-      ~CUGate.is_parameterized
-      ~CUGate.mirror
-      ~CUGate.power
-      ~CUGate.qasm
-      ~CUGate.repeat
-      ~CUGate.reverse_ops
-      ~CUGate.soft_compare
-      ~CUGate.to_matrix
-      ~CUGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~CUGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CUGate.ctrl_state
-      ~CUGate.decompositions
-      ~CUGate.definition
-      ~CUGate.duration
-      ~CUGate.label
-      ~CUGate.name
-      ~CUGate.num_ctrl_qubits
-      ~CUGate.params
-      ~CUGate.unit
-   
-   
+   .. autoattribute:: ctrl_state
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: name
+   .. autoattribute:: num_ctrl_qubits
+   .. autoattribute:: params
+   .. autoattribute:: unit

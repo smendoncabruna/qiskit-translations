@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.GroverResult
-===================================
+﻿GroverResult
+============
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: GroverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GroverResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~GroverResult.clear
       ~GroverResult.combine
       ~GroverResult.copy
@@ -27,19 +26,13 @@
       ~GroverResult.setdefault
       ~GroverResult.update
       ~GroverResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GroverResult.assignment
-      ~GroverResult.circuit
-      ~GroverResult.measurement
-      ~GroverResult.oracle_evaluation
-      ~GroverResult.top_measurement
-   
-   
+   .. autoattribute:: assignment
+   .. autoattribute:: circuit
+   .. autoattribute:: measurement
+   .. autoattribute:: oracle_evaluation
+   .. autoattribute:: top_measurement

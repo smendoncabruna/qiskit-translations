@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.optimization.applications.ising.tsp &mdash; Documentation Qiskit 0.29.0</title>
+  <title>qiskit.optimization.applications.ising.tsp &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -233,7 +240,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -348,25 +355,25 @@ Note that the weights are symmetric, i.e., w[j, i] = x always holds.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.calc_distance" title="qiskit.optimization.applications.ising.tsp.calc_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_distance</span></code></a>(coord[, name])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calc_distance</span></code>(coord[, name])</p></td>
 <td><p>calculate distance</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.get_operator" title="qiskit.optimization.applications.ising.tsp.get_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code></a>(ins[, penalty])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code>(ins[, penalty])</p></td>
 <td><p>Generate Hamiltonian for TSP of a graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.get_tsp_solution" title="qiskit.optimization.applications.ising.tsp.get_tsp_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tsp_solution</span></code></a>(x)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tsp_solution</span></code>(x)</p></td>
 <td><p>Get graph solution from binary string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.parse_tsplib_format" title="qiskit.optimization.applications.ising.tsp.parse_tsplib_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_tsplib_format</span></code></a>(filename)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_tsplib_format</span></code>(filename)</p></td>
 <td><p>Read graph in TSPLIB format from file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.random_tsp" title="qiskit.optimization.applications.ising.tsp.random_tsp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_tsp</span></code></a>(n[, low, high, savefile, seed, name])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_tsp</span></code>(n[, low, high, savefile, seed, name])</p></td>
 <td><p>Generate a random instance for TSP.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.tsp_feasible" title="qiskit.optimization.applications.ising.tsp.tsp_feasible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsp_feasible</span></code></a>(x)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsp_feasible</span></code>(x)</p></td>
 <td><p>Check whether a solution is feasible or not.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.tsp_value" title="qiskit.optimization.applications.ising.tsp.tsp_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsp_value</span></code></a>(z, w)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tsp_value</span></code>(z, w)</p></td>
 <td><p>Compute the TSP value of a solution.</p></td>
 </tr>
 </tbody>
@@ -378,189 +385,11 @@ Note that the weights are symmetric, i.e., w[j, i] = x always holds.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.TspData" title="qiskit.optimization.applications.ising.tsp.TspData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TspData</span></code></a>(name, dim, coord, w)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TspData</span></code>(name, dim, coord, w)</p></td>
 <td><p>Create new instance of TspData(name, dim, coord, w)</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py class">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData">
-<em class="property">class </em><code class="sig-name descname">TspData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">dim</span></em>, <em class="sig-param"><span class="n">coord</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Create new instance of TspData(name, dim, coord, w)</p>
-<dl class="py attribute">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData.coord">
-<code class="sig-name descname">coord</code><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData.coord" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData.count">
-<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData.count" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Return number of occurrences of value.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData.dim">
-<code class="sig-name descname">dim</code><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData.dim" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData.index">
-<code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">stop</span><span class="o">=</span><span class="default_value">9223372036854775807</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData.index" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Return first index of value.</p>
-<p>Raises ValueError if the value is not present.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData.name">
-<code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData.name" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="qiskit.optimization.applications.ising.tsp.TspData.w">
-<code class="sig-name descname">w</code><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.TspData.w" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.calc_distance">
-<code class="sig-name descname">calc_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coord</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'tmp'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#calc_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.calc_distance" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>calculate distance</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.get_operator">
-<code class="sig-name descname">get_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ins</span></em>, <em class="sig-param"><span class="n">penalty</span><span class="o">=</span><span class="default_value">100000.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#get_operator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.get_operator" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Generate Hamiltonian for TSP of a graph.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ins</strong> (<a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.TspData" title="qiskit.optimization.applications.ising.tsp.TspData"><em>TspData</em></a>) – TSP data including coordinates and distances.</p></li>
-<li><p><strong>penalty</strong> (<em>float</em>) – Penalty coefficient for the constraints</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>operator for the Hamiltonian and a
-constant shift for the obj function.</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p>tuple(<a class="reference internal" href="qiskit.aqua.operators.legacy.WeightedPauliOperator.html#qiskit.aqua.operators.legacy.WeightedPauliOperator" title="qiskit.aqua.operators.legacy.WeightedPauliOperator">WeightedPauliOperator</a>, float)</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.get_tsp_solution">
-<code class="sig-name descname">get_tsp_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#get_tsp_solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.get_tsp_solution" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Get graph solution from binary string.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>numpy.ndarray</em>) – binary string as numpy array.</p>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>sequence of cities to traverse.</dt><dd><p>The i-th item in the list corresponds to the city which is visited in the i-th step.
-The list for an infeasible answer e.g. [[0,1],1,] can be interpreted as
-visiting [city0 and city1] as the first city, then visit city1 as the second city,
-then visit no where as the third city).</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p>list[int]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py data">
-<dt id="qiskit.optimization.applications.ising.tsp.logger">
-<code class="sig-name descname">logger</code><em class="property"> = &lt;Logger qiskit.optimization.applications.ising.tsp (WARNING)&gt;</em><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.logger" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Instance data of TSP</p>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.parse_tsplib_format">
-<code class="sig-name descname">parse_tsplib_format</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#parse_tsplib_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.parse_tsplib_format" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Read graph in TSPLIB format from file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – name of the file.</p>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>instance data.</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.TspData" title="qiskit.optimization.applications.ising.tsp.TspData">TspData</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.random_tsp">
-<code class="sig-name descname">random_tsp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">low</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">high</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">savefile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'tmp'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#random_tsp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.random_tsp" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Generate a random instance for TSP.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n</strong> (<em>int</em>) – number of nodes.</p></li>
-<li><p><strong>low</strong> (<em>float</em>) – lower bound of coordinate.</p></li>
-<li><p><strong>high</strong> (<em>float</em>) – upper bound of coordinate.</p></li>
-<li><p><strong>savefile</strong> (<em>str</em><em> or </em><em>None</em>) – name of file where to save graph.</p></li>
-<li><p><strong>seed</strong> (<em>int</em><em> or </em><em>None</em>) – random seed - if None, will not initialize.</p></li>
-<li><p><strong>name</strong> (<em>str</em>) – name of an instance</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>instance data.</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#qiskit.optimization.applications.ising.tsp.TspData" title="qiskit.optimization.applications.ising.tsp.TspData">TspData</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.tsp_feasible">
-<code class="sig-name descname">tsp_feasible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#tsp_feasible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.tsp_feasible" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Check whether a solution is feasible or not.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>x</strong> (<em>numpy.ndarray</em>) – binary string as numpy array.</p>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>feasible or not.</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.optimization.applications.ising.tsp.tsp_value">
-<code class="sig-name descname">tsp_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">z</span></em>, <em class="sig-param"><span class="n">w</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/optimization/applications/ising/tsp.html#tsp_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#qiskit.optimization.applications.ising.tsp.tsp_value" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Compute the TSP value of a solution.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>z</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – list of cities.</p></li>
-<li><p><strong>w</strong> (<em>numpy.ndarray</em>) – adjacency matrix.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>value of the cut.</p>
-</dd>
-<dt class="field-odd">Type renvoyé</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
@@ -588,7 +417,7 @@ then visit no where as the third city).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -671,7 +500,7 @@ then visit no where as the third city).</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -694,9 +523,11 @@ then visit no where as the third city).</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

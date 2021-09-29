@@ -1,19 +1,18 @@
-﻿qiskit.pulse.SetPhase
-=====================
+﻿SetPhase
+========
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: SetPhase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SetPhase.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SetPhase.append
       ~SetPhase.assign_parameters
       ~SetPhase.ch_duration
@@ -24,25 +23,19 @@
       ~SetPhase.insert
       ~SetPhase.is_parameterized
       ~SetPhase.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SetPhase.channel
-      ~SetPhase.channels
-      ~SetPhase.duration
-      ~SetPhase.id
-      ~SetPhase.instructions
-      ~SetPhase.name
-      ~SetPhase.operands
-      ~SetPhase.parameters
-      ~SetPhase.phase
-      ~SetPhase.start_time
-      ~SetPhase.stop_time
-   
-   
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: phase
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

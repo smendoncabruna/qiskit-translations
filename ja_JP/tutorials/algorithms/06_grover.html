@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Grover のアルゴリズムと振幅増幅 &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>Grover のアルゴリズムと振幅増幅 &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -666,7 +673,7 @@ Top measurement: 11
 </section>
 <section id="Grover-のオラクルとしてさまざまなタイプのクラスを使用する">
 <h3><code class="docutils literal notranslate"><span class="pre">Grover</span></code> のオラクルとしてさまざまなタイプのクラスを使用する<a class="headerlink" href="#Grover-のオラクルとしてさまざまなタイプのクラスを使用する" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>In the above example, we used <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> as the oracle of <code class="docutils literal notranslate"><span class="pre">Grover</span></code>. However, we can also use <code class="docutils literal notranslate"><span class="pre">qiskit.quantum_info.Statevector</span></code> as oracle. All the following examples are when <span class="math notranslate nohighlight">\(|11\rangle\)</span> is “good state”</p>
+<p>上の例では、 <code class="docutils literal notranslate"><span class="pre">Grover</span></code> のオラクルとして <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> を用いました。しかし、 <code class="docutils literal notranslate"><span class="pre">qiskit.quantum_info.Statevector</span></code> をオラクルとして用いることも可能です。以下の例は全て、<span class="math notranslate nohighlight">\(|11\rangle\)</span> が「所望の状態」である場合です。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -714,7 +721,7 @@ Top measurement: 11
 <img alt="../../_images/tutorials_algorithms_06_grover_9_0.png" src="../../_images/tutorials_algorithms_06_grover_9_0.png" />
 </div>
 </div>
-<p>Qiskit allows for an easy construction of more complex oracles: * <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code>: for parsing logical expressions such as <code class="docutils literal notranslate"><span class="pre">'~a</span> <span class="pre">|</span> <span class="pre">b'</span></code>. This is especially useful for solving 3-SAT problems and is shown in the accompanying <a class="reference internal" href="07_grover_examples.html"><span class="doc">Grover Examples</span></a> tutorial.</p>
+<p>Qiskit ではより複雑なオラクルを簡単に構築することができます: * <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code> は、 <code class="docutils literal notranslate"><span class="pre">'~a</span> <span class="pre">|</span> <span class="pre">b'</span></code> のような論理式を解析します。 これは特に3-SAT問題を解決するのに役立ち、付随する`Grover の例 &lt;07_grover_examples.ipynb&gt;`__ チュートリアルで説明されています。</p>
 <p>ここでは <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code> を用い、<code class="docutils literal notranslate"><span class="pre">'a</span> <span class="pre">&amp;</span> <span class="pre">b'</span></code> に対応する状態である <span class="math notranslate nohighlight">\(|11\rangle\)</span> を見つける、簡単な例を示します。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -888,8 +895,8 @@ Top measurement: 111
 </div>
 </section>
 </section>
-<section id="Dive-into-other-arguments-of-Grover">
-<h2>Dive into other arguments of <code class="docutils literal notranslate"><span class="pre">Grover</span></code><a class="headerlink" href="#Dive-into-other-arguments-of-Grover" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="Grover-の他の引数について">
+<h2><code class="docutils literal notranslate"><span class="pre">Grover</span></code> の他の引数について<a class="headerlink" href="#Grover-の他の引数について" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Grover</span></code> には <code class="docutils literal notranslate"><span class="pre">oracle</span></code> と <code class="docutils literal notranslate"><span class="pre">state_preparation</span></code> 以外にも引数があります。このセクションでは、それらについて説明します。</p>
 <section id="good_state-の指定">
 <h3><code class="docutils literal notranslate"><span class="pre">good_state</span></code> の指定<a class="headerlink" href="#good_state-の指定" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -991,7 +998,7 @@ True
 </section>
 <section id="iterations-の回数">
 <h3><code class="docutils literal notranslate"><span class="pre">iterations</span></code> の回数<a class="headerlink" href="#iterations-の回数" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The number of repetition of applying the Grover operator is important to obtain the correct result with Grover’s algorithm. The number of iteration can be set by the <code class="docutils literal notranslate"><span class="pre">iteration</span></code> argument of <code class="docutils literal notranslate"><span class="pre">Grover</span></code>. The following inputs are supported: * an integer to specify a single power of the Grover operator that’s applied * or a list of integers, in which all these different powers of the Grover operator are run consecutively and after each time we check if a correct solution has been found</p>
+<p>Grover 演算子のアルゴリズムで正しい結果を得るためには、 Grover 演算子を適用する際の繰り返し回数が重要です。繰り返し回数は <code class="docutils literal notranslate"><span class="pre">Grover</span></code> の引数 <code class="docutils literal notranslate"><span class="pre">iterations</span></code> で設定することができます。次の入力がサポートされています。入力が整数ならば、適用される Grover 演算子 の回数を表します。入力が整数のリストならば、 Grover 演算子がそれらの回数だけ連続して適用され、各回の実行後に正しい解が見つかったかどうかチェックされます。</p>
 <p>これらに加えて、 <code class="docutils literal notranslate"><span class="pre">sample_from_iterations</span></code> という引数もあります。これが <code class="docutils literal notranslate"><span class="pre">True</span></code> になっている場合、 <code class="docutils literal notranslate"><span class="pre">iterations</span></code> で指定された指数の代わりに、 0 と <code class="docutils literal notranslate"><span class="pre">iterations</span></code> の間のランダムな整数を Grover 演算子の指数として用いることができます。この方法は、解の個数すら分からない場合に有用です。</p>
 <p><code class="docutils literal notranslate"><span class="pre">sample_from_iterations</span></code> を使用したアルゴリズムの詳細については、[4] を参照してください。</p>
 <p><strong>参考文献：</strong></p>
@@ -1136,7 +1143,7 @@ True
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -1166,7 +1173,7 @@ True
 <li><a class="reference internal" href="#完全な柔軟性">完全な柔軟性</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Dive-into-other-arguments-of-Grover">Dive into other arguments of <code class="docutils literal notranslate"><span class="pre">Grover</span></code></a><ul>
+<li><a class="reference internal" href="#Grover-の他の引数について"><code class="docutils literal notranslate"><span class="pre">Grover</span></code> の他の引数について</a><ul>
 <li><a class="reference internal" href="#good_state-の指定"><code class="docutils literal notranslate"><span class="pre">good_state</span></code> の指定</a></li>
 <li><a class="reference internal" href="#iterations-の回数"><code class="docutils literal notranslate"><span class="pre">iterations</span></code> の回数</a></li>
 <li><a class="reference internal" href="#post_processing-の適用"><code class="docutils literal notranslate"><span class="pre">post_processing</span></code> の適用</a></li>
@@ -1237,7 +1244,7 @@ True
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1260,9 +1267,11 @@ True
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

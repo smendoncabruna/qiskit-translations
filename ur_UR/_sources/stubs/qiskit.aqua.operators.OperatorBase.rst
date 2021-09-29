@@ -1,19 +1,18 @@
-﻿qiskit.aqua.operators.OperatorBase
-==================================
+﻿OperatorBase
+============
 
 .. currentmodule:: qiskit.aqua.operators
 
 .. autoclass:: OperatorBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~OperatorBase.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~OperatorBase.add
       ~OperatorBase.adjoint
       ~OperatorBase.assign_parameters
@@ -31,18 +30,12 @@
       ~OperatorBase.tensorpower
       ~OperatorBase.to_legacy_op
       ~OperatorBase.to_matrix
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OperatorBase.ENABLE_DEPRECATION
-      ~OperatorBase.INDENTATION
-      ~OperatorBase.num_qubits
-      ~OperatorBase.parameters
-   
-   
+   .. autoattribute:: ENABLE_DEPRECATION
+   .. autoattribute:: INDENTATION
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameters

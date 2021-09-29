@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.CountOps
-=================================
+﻿CountOps
+========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: CountOps
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CountOps.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CountOps.name
       ~CountOps.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CountOps.is_analysis_pass
-      ~CountOps.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

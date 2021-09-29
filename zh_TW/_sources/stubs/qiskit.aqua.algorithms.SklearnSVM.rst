@@ -1,37 +1,30 @@
-﻿qiskit.aqua.algorithms.SklearnSVM
-=================================
+﻿SklearnSVM
+==========
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: SklearnSVM
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SklearnSVM.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SklearnSVM.load_model
       ~SklearnSVM.predict
       ~SklearnSVM.run
       ~SklearnSVM.save_model
       ~SklearnSVM.test
       ~SklearnSVM.train
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SklearnSVM.class_to_label
-      ~SklearnSVM.label_to_class
-      ~SklearnSVM.random
-      ~SklearnSVM.ret
-   
-   
+   .. autoattribute:: class_to_label
+   .. autoattribute:: label_to_class
+   .. autoattribute:: random
+   .. autoattribute:: ret

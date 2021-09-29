@@ -1,19 +1,18 @@
-﻿qiskit.result.QuasiDistribution
-===============================
+﻿QuasiDistribution
+=================
 
 .. currentmodule:: qiskit.result
 
 .. autoclass:: QuasiDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuasiDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuasiDistribution.binary_probabilities
       ~QuasiDistribution.clear
       ~QuasiDistribution.copy
@@ -28,9 +27,5 @@
       ~QuasiDistribution.setdefault
       ~QuasiDistribution.update
       ~QuasiDistribution.values
-   
-   
 
-   
-   
-   
+

@@ -1,19 +1,18 @@
-﻿qiskit.finance.components.uncertainty\_problems.EuropeanCallExpectedValue
-=========================================================================
+﻿EuropeanCallExpectedValue
+=========================
 
 .. currentmodule:: qiskit.finance.components.uncertainty_problems
 
 .. autoclass:: EuropeanCallExpectedValue
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EuropeanCallExpectedValue.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EuropeanCallExpectedValue.build
       ~EuropeanCallExpectedValue.build_controlled
       ~EuropeanCallExpectedValue.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~EuropeanCallExpectedValue.required_ancillas
       ~EuropeanCallExpectedValue.required_ancillas_controlled
       ~EuropeanCallExpectedValue.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EuropeanCallExpectedValue.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.runtime.IBMRuntimeService
-===============================================
+﻿IBMRuntimeService
+=================
 
 .. currentmodule:: qiskit.providers.ibmq.runtime
 
 .. autoclass:: IBMRuntimeService
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMRuntimeService.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMRuntimeService.delete_job
       ~IBMRuntimeService.delete_program
       ~IBMRuntimeService.job
@@ -25,9 +24,5 @@
       ~IBMRuntimeService.run
       ~IBMRuntimeService.set_program_visibility
       ~IBMRuntimeService.upload_program
-   
-   
 
-   
-   
-   
+

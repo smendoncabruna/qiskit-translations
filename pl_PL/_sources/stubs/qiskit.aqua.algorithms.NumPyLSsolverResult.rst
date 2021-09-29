@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.NumPyLSsolverResult
-==========================================
+﻿NumPyLSsolverResult
+===================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: NumPyLSsolverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyLSsolverResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NumPyLSsolverResult.clear
       ~NumPyLSsolverResult.combine
       ~NumPyLSsolverResult.copy
@@ -27,16 +26,10 @@
       ~NumPyLSsolverResult.setdefault
       ~NumPyLSsolverResult.update
       ~NumPyLSsolverResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumPyLSsolverResult.eigvals
-      ~NumPyLSsolverResult.solution
-   
-   
+   .. autoattribute:: eigvals
+   .. autoattribute:: solution

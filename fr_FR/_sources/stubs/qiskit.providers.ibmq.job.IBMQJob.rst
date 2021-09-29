@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.job.IBMQJob
-=================================
+﻿IBMQJob
+=======
 
 .. currentmodule:: qiskit.providers.ibmq.job
 
 .. autoclass:: IBMQJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMQJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMQJob.backend
       ~IBMQJob.backend_options
       ~IBMQJob.cancel
@@ -42,17 +41,11 @@
       ~IBMQJob.update_name
       ~IBMQJob.update_tags
       ~IBMQJob.wait_for_final_state
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IBMQJob.client_version
-      ~IBMQJob.experiment_id
-      ~IBMQJob.version
-   
-   
+   .. autoattribute:: client_version
+   .. autoattribute:: experiment_id
+   .. autoattribute:: version

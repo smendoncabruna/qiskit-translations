@@ -1,19 +1,18 @@
-﻿qiskit.circuit.classicalfunction.ClassicalFunction
-==================================================
+﻿ClassicalFunction
+=================
 
 .. currentmodule:: qiskit.circuit.classicalfunction
 
 .. autoclass:: ClassicalFunction
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ClassicalFunction.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ClassicalFunction.add_decomposition
       ~ClassicalFunction.assemble
       ~ClassicalFunction.broadcast_arguments
@@ -34,26 +33,20 @@
       ~ClassicalFunction.synth
       ~ClassicalFunction.to_matrix
       ~ClassicalFunction.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ClassicalFunction.args
-      ~ClassicalFunction.decompositions
-      ~ClassicalFunction.definition
-      ~ClassicalFunction.duration
-      ~ClassicalFunction.label
-      ~ClassicalFunction.network
-      ~ClassicalFunction.params
-      ~ClassicalFunction.qregs
-      ~ClassicalFunction.scopes
-      ~ClassicalFunction.truth_table
-      ~ClassicalFunction.types
-      ~ClassicalFunction.unit
-   
-   
+   .. autoattribute:: args
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: network
+   .. autoattribute:: params
+   .. autoattribute:: qregs
+   .. autoattribute:: scopes
+   .. autoattribute:: truth_table
+   .. autoattribute:: types
+   .. autoattribute:: unit

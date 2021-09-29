@@ -1,19 +1,18 @@
-﻿qiskit.providers.models.PulseBackendConfiguration
-=================================================
+﻿PulseBackendConfiguration
+=========================
 
 .. currentmodule:: qiskit.providers.models
 
 .. autoclass:: PulseBackendConfiguration
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PulseBackendConfiguration.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PulseBackendConfiguration.acquire
       ~PulseBackendConfiguration.control
       ~PulseBackendConfiguration.describe
@@ -23,17 +22,11 @@
       ~PulseBackendConfiguration.get_qubit_channels
       ~PulseBackendConfiguration.measure
       ~PulseBackendConfiguration.to_dict
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PulseBackendConfiguration.control_channels
-      ~PulseBackendConfiguration.num_qubits
-      ~PulseBackendConfiguration.sample_rate
-   
-   
+   .. autoattribute:: control_channels
+   .. autoattribute:: num_qubits
+   .. autoattribute:: sample_rate

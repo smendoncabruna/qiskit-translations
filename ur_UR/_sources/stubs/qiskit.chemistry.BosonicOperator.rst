@@ -1,25 +1,20 @@
-﻿qiskit.chemistry.BosonicOperator
-================================
+﻿BosonicOperator
+===============
 
 .. currentmodule:: qiskit.chemistry
 
 .. autoclass:: BosonicOperator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BosonicOperator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BosonicOperator.direct_mapping_filtering_criterion
       ~BosonicOperator.mapping
       ~BosonicOperator.number_occupied_modals_per_mode
-   
-   
 
-   
-   
-   
+

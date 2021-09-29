@@ -1,19 +1,18 @@
-﻿qiskit.algorithms.VQE
-=====================
+﻿VQE
+===
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: VQE
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VQE.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~VQE.cleanup_parameterized_circuits
       ~VQE.compute_minimum_eigenvalue
       ~VQE.construct_circuit
@@ -27,22 +26,16 @@
       ~VQE.get_probabilities_for_counts
       ~VQE.print_settings
       ~VQE.supports_aux_operators
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VQE.ansatz
-      ~VQE.expectation
-      ~VQE.gradient
-      ~VQE.initial_point
-      ~VQE.optimal_params
-      ~VQE.optimizer
-      ~VQE.quantum_instance
-      ~VQE.setting
-   
-   
+   .. autoattribute:: ansatz
+   .. autoattribute:: expectation
+   .. autoattribute:: gradient
+   .. autoattribute:: initial_point
+   .. autoattribute:: optimal_params
+   .. autoattribute:: optimizer
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: setting

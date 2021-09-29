@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>শুরুর নির্দেশনা &mdash; Qiskit Optimization 0.2.2 documentation</title>
+  <title>শুরুর নির্দেশনা &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -127,7 +127,7 @@
               
               
                 <div class="version">
-                  0.2.2
+                  0.2.3
                 </div>
               
             
@@ -234,50 +234,35 @@
 <h1>শুরুর নির্দেশনা<a class="headerlink" href="#getting-started" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <div class="section" id="installation">
 <h2>স্থাপন (ইনস্টলেশন)<a class="headerlink" href="#installation" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Qiskit Optimization depends on the main Qiskit package which has its own
-<a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> detailing the
-installation options for Qiskit and its supported environments/platforms. You should refer to
-that first. Then the information here can be followed which focuses on the additional installation
-specific to Qiskit Optimization.</p>
-<p>Qiskit Optimization has some functions that have been made optional where the dependent code and/or
-support program(s) are not (or cannot be) installed by default. Those are IBM CPLEX, CVXPY and Matplotlib.
-See <a class="reference internal" href="#optional-installs"><span class="std std-ref">ঐচ্ছিক ইনস্টল</span></a> for more information.</p>
+<p>Qiskit Optimization মূল Qiskit প্যাকেজের উপর নির্ভর করে যার নিজস্ব <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> Qiskit এবং এর সমর্থিত পরিবেশ/প্ল্যাটফর্মগুলির জন্য ইনস্টলেশন বিকল্পগুলি বিশদ বর্ণনা করে। আপনার প্রথমে উল্লেখ করা উচিত। তারপরে এখানকার তথ্য অনুসরণ করা যেতে পারে যা কিসকিট অপটিমাইজার এর সাথে সম্পর্কিত অতিরিক্ত ইনস্টলেশনকে কেন্দ্র করে।</p>
+<p>কিস্কিট অপ্টিমাইজেশনের কিছু ফাংশন রয়েছে যা ঐচ্ছিক করা হয়েছে যেখানে নির্ভরশীল কোড এবং/অথবা সাপোর্ট প্রোগ্রাম (গুলি) ডিফল্টভাবে ইনস্টল করা হয় না (বা করা যায় না)। সেগুলো হল IBM CPLEX, CVXPY এবং Matplotlib। আরও তথ্যের জন্য <a class="reference internal" href="#optional-installs"><span class="std std-ref">ঐচ্ছিক ইনস্টল</span></a> দেখুন।</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="36c2e504-f5a4-43a6-9972-6f2b447d8f17" name="6888af99-580d-4fa9-b5c5-2658246be232" type="radio">
-</input><label class="tabbed-label" for="36c2e504-f5a4-43a6-9972-6f2b447d8f17">
+<input checked="checked" id="dcd5eb55-d240-468c-aedd-61e55c780f62" name="b04b86fa-c34e-4896-a73b-aa3b1ff64630" type="radio">
+</input><label class="tabbed-label" for="dcd5eb55-d240-468c-aedd-61e55c780f62">
 স্থানীয়ভাবে শুরু করা</label><div class="tabbed-content docutils">
 <p>সহজ করে শুরু করার  উপায় হ'ল 'Start locally' থেকে  শুরু করুন , <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<p>In your virtual environment where you installed Qiskit simply add <code class="docutils literal notranslate"><span class="pre">optimization</span></code> to the
-extra list in a similar manner to how the extra <code class="docutils literal notranslate"><span class="pre">visualization</span></code> support is installed for
-Qiskit, i.e:</p>
+<p>আপনার ভার্চুয়াল পরিবেশে যেখানে আপনি কিস্কিট (Qiskit) ইনস্টল করেছেন, কিস্কিটের জন্য কীভাবে অতিরিক্ত <code class="docutils literal notranslate"><span class="pre">visualization</span></code> সাহায্যকারীটি ইনস্টল করা হয়েছে তার সাথে একইভাবে অতিরিক্ত তালিকায় <code class="docutils literal notranslate"><span class="pre">optimization</span></code> যুক্ত করুন:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install qiskit<span class="o">[</span>optimization<span class="o">]</span>
 </pre></div>
 </div>
-<p>It is worth pointing out that if you're a zsh user (which is the default shell on newer
-versions of macOS), you'll need to put <code class="docutils literal notranslate"><span class="pre">qiskit[optimization]</span></code> in quotes:</p>
+<p>মনে করিয়ে দেয়া প্রয়োজন, আপনি যদি zsh (ম্যাকওএস এর নতুনতর সংস্করণগুলোতে এটি পূর্বনির্ধারিত (ডিফল্ট) শেল) ব্যবহারকারী হয়ে থাকেন তাহলে আপনাকে উদ্ধৃতির মধ্যে <code class="docutils literal notranslate"><span class="pre">qiskit[optimization]</span></code> লিখতে হবে:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install <span class="s1">&#39;qiskit[optimization]&#39;</span>
 </pre></div>
 </div>
 </div>
-<input id="e8c50135-1a8d-4d44-a778-d392eac680a1" name="6888af99-580d-4fa9-b5c5-2658246be232" type="radio">
-</input><label class="tabbed-label" for="e8c50135-1a8d-4d44-a778-d392eac680a1">
+<input id="07fb5f6f-86a1-403d-bcc1-e7eb6a3101dc" name="b04b86fa-c34e-4896-a73b-aa3b1ff64630" type="radio">
+</input><label class="tabbed-label" for="07fb5f6f-86a1-403d-bcc1-e7eb6a3101dc">
 উৎস থেকে স্থাপন</label><div class="tabbed-content docutils">
-<p>Installing Qiskit Optimization from source allows you to access the most recently
-updated version under development instead of using the version in the Python Package
-Index (PyPI) repository. This will give you the ability to inspect and extend
-the latest version of the Qiskit Optimization code more efficiently.</p>
-<p>Since Qiskit Optimization depends on Qiskit, and its latest changes may require new or changed
-features of Qiskit, you should first follow Qiskit's <cite>&quot;Install from source&quot;</cite> instructions
-here <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a></p>
-<h2>Installing Qiskit Optimization from Source</h2><p>Using the same development environment that you installed Qiskit in you are ready to install
-Qiskit Optimization.</p>
+<p>উৎস থেকে উপাদানগুলি ইনস্টল করলে আপনি Qiskit এর উন্নয়নের অধীনে অতি সম্প্রতি আপডেট হওয়া সংস্করণটি ব্যবহার করতে পারবেন Python Package Index (PyPI) রিপোজিটরি থেকে ইনস্টল করার পরিবর্তে। এটি আপনাকে Qiskit Optimization কোডের সর্বশেষ সংস্করণটি আরও নিখুঁত ভাবে পরিদর্শন করার এবং প্রসারিত করার দক্ষতা দেবে।.</p>
+<p>যেহেতু কিস্কিট অপ্টিমাইজেশন কিস্কিটের উপর নির্ভর করে, এবং এর সর্বশেষ পরিবর্তনগুলির জন্য কিস্কিটের নতুন বা পরিবর্তিত বৈশিষ্ট্যগুলির প্রয়োজন হতে পারে, তাই আপনাকে প্রথমে কিস্কিটের <cite>&quot;Install from source&quot;</cite> নির্দেশাবলী <a class="reference external" href="https://qiskit.org/documentation/getting_started.html">Qiskit Getting Started</a> এ অনুসরণ করতে হবে</p>
+<h2>Installing Qiskit Optimization from Source</h2><p>আপনি যেই কিস্কিট ইনস্টল করেছেন সেই একই কর্মপরিবেশ ব্যবহার করে আপনি কিস্কিট অপটিমাইজার ইনস্টল করতে প্রস্তুত।</p>
 <ol class="arabic">
-<li><p>Clone the Qiskit Optimization repository.</p>
+<li><p>Qiskit অপটিমাইজার রিপোজিটরি প্রতিলিপি করুন।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Qiskit/qiskit-optimization.git
 </pre></div>
 </div>
 </li>
-<li><p>Cloning the repository creates a local folder called <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
+<li><p>রিপোসিটোরিটিকে ক্লোন করলে <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code> নামক একটি স্থানীয় ফোল্ডার তৈরী হবে।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> qiskit-optimization
 </pre></div>
 </div>
@@ -287,7 +272,7 @@ Qiskit Optimization.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code>.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">qiskit-optimization</span></code> ইনস্টল করুন।</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install .
 </pre></div>
 </div>
@@ -303,20 +288,15 @@ Qiskit Optimization.</p>
 <div class="section" id="optional-installs">
 <span id="id1"></span><h2>ঐচ্ছিক ইনস্টল<a class="headerlink" href="#optional-installs" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <ul class="simple">
-<li><p><strong>IBM CPLEX</strong> may be installed using <cite>pip install 'qiskit-optimization[cplex]'</cite> to enable the reading of <cite>LP</cite> files and the usage of
-the <cite>CplexOptimizer</cite>, wrapper for <code class="docutils literal notranslate"><span class="pre">cplex.Cplex</span></code>. Currently there is no python 3.9 version of CPLEX. In this case, the CPLEX install
-command will have no effect.</p></li>
-<li><p><strong>CVXPY</strong>, may be installed using command <cite>pip install 'qiskit-optimization[cvx]'</cite> to install the
-package. CVXPY being installed will enable the usage of the Goemans-Williamson algorithm as an optimizer <cite>GoemansWilliamsonOptimizer</cite>.</p></li>
-<li><p><strong>Matplotlib</strong>, may be installed using command <cite>pip install 'qiskit-optimization[matplotlib]'</cite> to install the
-package. Matplotlib being installed will enable the usage of the <cite>draw</cite> method in the graph optimization application classes.</p></li>
-<li><p><strong>Gurobipy</strong> may be installed using command <cite>pip install 'qiskit-optimization[gurobi]'</cite> to install the
-package. Gurobipy being installed will enable the usage of the GurobiOptimizer.</p></li>
+<li><p><strong>IBM CPLEX</strong> <cite>pip install 'qiskit-optimization [cplex]'</cite> ব্যবহার করে ইনস্টল করা যেতে পারে যাতে <cite>LP</cite> ফাইল পড়া এবং <cite>CplexOptimizer</cite>, <cite>cplex.Cplex</cite> এর জন্য মোড়ক ব্যবহার করা যায়। বর্তমানে CPLEX এর কোন পাইথন 3.9 সংস্করণ নেই। এই ক্ষেত্রে, CPLEX ইনস্টল কমান্ডের কোন প্রভাব থাকবে না।</p></li>
+<li><p><strong>CVXPY</strong>, প্যাকেজটি ইনস্টল করার জন্য কমান্ড <cite>pip install 'qiskit-optimization [cvx]'</cite> ব্যবহার করে ইনস্টল করা যেতে পারে। CVXPY ইনস্টল করা Goemans-Williamson অ্যালগরিদমকে <cite>GoemansWilliamsonOptimizer</cite> অপ্টিমাইজার হিসাবে ব্যবহার করতে সক্ষম করবে।</p></li>
+<li><p><strong>Matplotlib</strong>, প্যাকেজটি ইনস্টল করার জন্য কমান্ড <cite>pip install 'qiskit-optimization[matplotlib]'</cite> ব্যবহার করে ইনস্টল করা যেতে পারে। Matplotlib ইনস্টল করা গ্রাফ অপ্টিমাইজেশন অ্যাপ্লিকেশন ক্লাসে <cite>draw</cite> পদ্ধতি ব্যবহার করতে সক্ষম হবে।</p></li>
+<li><p><strong>Gurobipy</strong>, প্যাকেজটি ইনস্টল করার জন্য কমান্ড <cite>pip install 'qiskit-optimization[gurobi]'</cite> ব্যবহার করে ইনস্টল করা যেতে পারে। Gurobipy ইনস্টল করা GurobiOptimizer এর ব্যবহার সক্ষম করবে।</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="ready-to-get-going">
-<h2>Ready to get going?...<a class="headerlink" href="#ready-to-get-going" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<h2>আরো এগোতে প্রস্তুত?...<a class="headerlink" href="#ready-to-get-going" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <div class="tutorials-callout-container">
    <div class="row"><p><div class="col-md-6">
     <div class="text-container">
@@ -375,7 +355,7 @@ package. Gurobipy being installed will enable the usage of the GurobiOptimizer.<
 <li><a class="reference internal" href="#">শুরুর নির্দেশনা</a><ul>
 <li><a class="reference internal" href="#installation">স্থাপন (ইনস্টলেশন)</a></li>
 <li><a class="reference internal" href="#optional-installs">ঐচ্ছিক ইনস্টল</a></li>
-<li><a class="reference internal" href="#ready-to-get-going">Ready to get going?...</a></li>
+<li><a class="reference internal" href="#ready-to-get-going">আরো এগোতে প্রস্তুত?...</a></li>
 </ul>
 </li>
 </ul>

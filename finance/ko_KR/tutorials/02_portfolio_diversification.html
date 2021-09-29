@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>포트폴리오 다양화 &mdash; Qiskit Finance 0.2.0 문서</title>
+  <title>포트폴리오 다각화 &mdash; Qiskit Finance 0.2.1 문서</title>
   
 
   
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>포트폴리오 다양화</li>
+      <li>포트폴리오 다각화</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -486,17 +486,12 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">참고</p>
 <p>이 페이지는 <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/02_portfolio_diversification.ipynb">docs/tutorials/02_portfolio_diversification.ipynb</a> 에서 생성되었다.</p>
 </div>
-<div class="section" id="포트폴리오-다양화">
-<h1>포트폴리오 다양화<a class="headerlink" href="#포트폴리오-다양화" title="이 표제에 대한 퍼머링크">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>In asset management, there are broadly two approaches: active and passive investment management. Within passive investment management, there are index-tracking funds and there are approaches based on portfolio diversification, which aim at representing a portfolio with a large number of assets by a smaller number of representative stocks. This notebook illustrates a portfolio diversification problem, which has recently become popular for two reasons: 1. it makes it possible to mimic the
-performance of an index (or a similarly large set of assets) with a limited budget, at limited transaction costs. That is: traditional index-tracking may purchase all assets in the index, ideally with the same weights as in the index. This may be impractical for a number of reasons: the total of even a single round lot per asset may amount to more than the assets under management, the large scale of the index-tracking problem with integrality constraints may render the optimization problem
-difficult, and the transaction costs of the frequent rebalancing to adjust the positions to the weights in the index may render the approach expensive. Thus, a popular approach is to select a portfolio of <span class="math notranslate nohighlight">\(q\)</span> assets that represent the market with <span class="math notranslate nohighlight">\(n\)</span> assets, where <span class="math notranslate nohighlight">\(q\)</span> is significantly smaller than <span class="math notranslate nohighlight">\(n\)</span>, but where the portfolio replicates the behavior of the underlying market. To determine how to group assets into <span class="math notranslate nohighlight">\(q\)</span> clusters and how to determine which <span class="math notranslate nohighlight">\(q\)</span>
-assets should represent the <span class="math notranslate nohighlight">\(q\)</span> clusters amounts to solving a large-scale optimization problem. In the following we describe the mathematical model for the portfolio diversification problem as introduced in [Cornuejols &amp; Tutuncu, 2006] 2. it allows for similarity measures between time-series beyond the covariance matrix. Notice that traditionally, modern portfolio theory considers the covariance matrix as a measure of similarity between the assets. As such, however, the covariance matrix
-is imperfect. Consider, for instance, a company listed both in London and New York. Although both listings should be very similar, only parts of the time series of the prices of the two listings will overlap, because of the partial overlap of the times the markets open. Instead of covariance, one can consider, for example, dynamic time warping of [Berndt and Clifford, 1994] as a measure of similarity between two time series, which allows for the fact that for some time periods, the data are
-captured by only one of the time series, while for others, both time series exhibit the similarity due to the parallel evolution of the stock price.</p>
-<p>The overall workflow we demonstrate comprises:</p>
+<div class="section" id="포트폴리오-다각화">
+<h1>포트폴리오 다각화<a class="headerlink" href="#포트폴리오-다각화" title="이 표제에 대한 퍼머링크">¶</a></h1>
+<div class="section" id="소개">
+<h2>소개<a class="headerlink" href="#소개" title="이 표제에 대한 퍼머링크">¶</a></h2>
+<p>자산 관리에서는 두 가지 개괄적인 접근 방식이 있다: 능동적 투자 관리와 수동적 투자 관리. 수동적 투자 관리에서는 지수-추적 펀드와 포트폴리오 다각화에 기반한 접근이 있는데, 이는 많은 자산을 소수의 대표 주식으로 포트폴리오를 만드는 것이 목적이다. 여기서는 최근 두 가지 이유로 유명해진 포트폴리오 다각화 문제를 설명한다: 1. 한정된 예산과 수수료로 지수 (혹은 유사한 대규모 자산)의 성능을 모방할 수 있다. 즉, 전통적인 지수-추적은 지수 내의 모든 자산을 구매하여 이상적으로 동일한 가중치를 주려고 한다. 이는 다수의 근거로 비현실적이다: 자산당 거래 단위가 하나여도 관리하는 자산보다 많을 수 있으며, 정수 제약이 있는 대규모의 지수-추적 문제는 최적화 문제를 어렵게 만들 수 있고, 지수에 가중치를 부여해 포지션을 조정하고자 반복적인 리밸런싱을 하여 수수료가 비싸질 수도 있다. 고로, <span class="math notranslate nohighlight">\(n\)</span> 개의 자산이 있는 시장에서 <span class="math notranslate nohighlight">\(q\)</span> 개의 자산을 가진 포트폴리오를 선택하여 <span class="math notranslate nohighlight">\(n\)</span> 보다 훨씬 적은 <span class="math notranslate nohighlight">\(q\)</span> 개의 자산으로도 시장의 흐름을 따르는 포트폴리오를 선택하는 방법이 인기가 있다. 자산을 <span class="math notranslate nohighlight">\(q\)</span> 클러스터들에 어떻게 그룹화하는지 그리고 어떤 <span class="math notranslate nohighlight">\(q\)</span> 개의 자산들이 <span class="math notranslate nohighlight">\(q\)</span> 클러스터들을 대표해야하는지 결정하는 방법은 대규모 최적화 문제를 푸는 것과 같다. 이후에는 [Cornuejols &amp; Tutuncu, 2006] 에서 소개된 포트폴리오 다각화 문제에 대한 수학적 모델을 기술할 것이다. 2. 이는 공분산 행렬을 넘어서 시계열 간의 유사도 측정을 가능하게 한다. 전통적으로 현대 포트폴리오 이론은 자산들 간의 유사도를 측정하는 것으로 여겼다는 것에 주목하라. 그러나 공분산 행렬은 불완전하다. 예를 들어서 런던과 뉴욕에 모두 상장된 회사를 고려해 보라. 두 상장 종목은 유사해야 함에도 불구하고 시장이 열리는 시간이 부분적으로만 겹치기에 두 상장 종목의 가격의 시계열도 부분적으로만 겹친다. 공분산 대신에 예를 들어, 어떤 시간 간격에서는 데이터를 오직 하나의 시계열에서만 가져오고, 다른 때에는 주가가 같이 변하는 유사성을 보이는 두 시계열에서의 유사도 측정치로써 [Berndt and Clifford, 1994] 의 동적 시간 워핑을 고려할 수 있다.</p>
+<p>설명할 전반적인 워크플로우는 다음으로 구성된다:</p>
 <ol class="arabic simple">
 <li><p>pick the ground set of assets. In our case, this is a small number of US stocks.</p></li>
 <li><p>load the time series capturing the evolution of the prices of assets. In our case, this is a simplistic load of adjusted daily closing price data from Wikipedia or Nasdaq or LSE or EuroNext, whereas in a real asset management, a much higher frequency may be considered.</p></li>
@@ -623,7 +618,7 @@ captured by only one of the time series, while for others, both time series exhi
 </pre></div>
 </div>
 </div>
-<p>다음으로, 2개의 주식에 대한 가격 데이터를 다운로드하고 이들의 페어 단위 유사성 매트릭스 (상호 간에 (0, 1] 에 대해 정규화된 동적 <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">타임 워핑 거리</a>) 를 계산한다. 예를 들어, 오프라인 상태이거나 주식 시장 데이터에 대한 액세스에 대한 일일 한계를 초과하여 실패하는 경우, 대신 상수 매트릭스를 고려한다.</p>
+<p>다음으로, 2개의 주식에 대한 가격 데이터를 다운로드하고 이들의 쌍 유사도 행렬 (pair-wise similarity matrix, 상호 간에 (0, 1] 에 대해 정규화된 <a class="reference external" href="https://en.wikipedia.org/wiki/Dynamic_time_warping">동적 시간 워핑</a> 거리) 를 계산한다. 예를 들어, 오프라인 상태이거나 주식 시장 데이터 접근에 대한 일일 한계를 초과하여 실패하는 경우, 대신 상수 행렬을 고려한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -657,7 +652,7 @@ captured by only one of the time series, while for others, both time series exhi
 </div>
 <div class="section" id="Classical-solution-using-IBM-ILOG-CPLEX">
 <h2>Classical solution using IBM ILOG CPLEX<a class="headerlink" href="#Classical-solution-using-IBM-ILOG-CPLEX" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>고전적 솔루션의 경우 IBM CPLEX를 사용한다. CPLEX는 이 문제에 대한 정확한 해결책을 찾을 수 있다. 먼저 문제를 CPLEX가 해결할 수 있는 방식으로 인코딩하는 ClassicalOptimizer 클래스를 정의한 다음 클래스를 인스턴스화하고 해결한다.</p>
+<p>고전적 해의 경우 IBM CPLEX를 사용한다. CPLEX는 이 문제에 대한 완전해를 찾을 수 있다. 먼저 문제를 CPLEX가 풀 수 있는 방식으로 인코딩하는 ClassicalOptimizer 클래스를 정의하고, 클래스를 인스턴스화하고 푼다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -805,7 +800,7 @@ Total number of combinations= 64
 </div>
 <div class="section" id="Quantum-Computing-with-IBM-Q">
 <h2>Quantum Computing with IBM Q<a class="headerlink" href="#Quantum-Computing-with-IBM-Q" title="이 표제에 대한 퍼머링크">¶</a></h2>
-<p>양자 솔루션에는 Qiskit을 사용한다. 먼저 문제를 해결하기 위해 양자 접근 방식을 인코딩하는 클래스 QuantumOptimizer를 정의한 다음 이를 인스턴스화하고 해결한다. 클래스 내에서 다음과 같은 매서드를 정의한다.</p>
+<p>양자 해의 경우 Qiskit을 사용한다. 먼저 문제를 양자적으로 풀 수 있는 방식으로 인코딩하는 클래스 QuantumOptimizer를 정의하고 인스턴스화하여 푼다. 클래스 안에 다음의 메서드들을 정의한다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">exact_solution</span></code> : to make sure that the Ising Hamiltonian is correctly encoded in the <span class="math notranslate nohighlight">\(Z\)</span> basis, we can compute its eigendecomposition classically, i.e., considering a symmetric matrix of dimension <span class="math notranslate nohighlight">\(2^N \times 2^N\)</span>. For the problem at hand <span class="math notranslate nohighlight">\(n=3\)</span>, that is <span class="math notranslate nohighlight">\(N = 12\)</span>, seems to be the limit for many laptops;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">vqe_solution</span></code> : solves the problem <span class="math notranslate nohighlight">\((M)\)</span> via the variational quantum eigensolver (VQE);</p></li>
@@ -1103,8 +1098,8 @@ finding optimal solutions of the ILP is harder than finding local optima of the 
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">포트폴리오 다양화</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
+<li><a class="reference internal" href="#">포트폴리오 다각화</a><ul>
+<li><a class="reference internal" href="#소개">소개</a></li>
 <li><a class="reference internal" href="#The-Model">The Model</a></li>
 <li><a class="reference internal" href="#A-Hybrid-Approach">A Hybrid Approach</a><ul>
 <li><a class="reference internal" href="#Construct-a-binary-polynomial-optimization">Construct a binary polynomial optimization</a></li>

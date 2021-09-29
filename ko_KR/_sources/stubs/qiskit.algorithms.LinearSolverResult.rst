@@ -1,32 +1,25 @@
-﻿qiskit.algorithms.LinearSolverResult
-====================================
+﻿LinearSolverResult
+==================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: LinearSolverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LinearSolverResult.__init__
-      ~LinearSolverResult.combine
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~LinearSolverResult.combine
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LinearSolverResult.circuit_results
-      ~LinearSolverResult.euclidean_norm
-      ~LinearSolverResult.observable
-      ~LinearSolverResult.state
-   
-   
+   .. autoattribute:: circuit_results
+   .. autoattribute:: euclidean_norm
+   .. autoattribute:: observable
+   .. autoattribute:: state

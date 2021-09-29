@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.Choi
-=========================
+﻿Choi
+====
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: Choi
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Choi.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Choi.adjoint
       ~Choi.compose
       ~Choi.conjugate
@@ -32,21 +31,15 @@
       ~Choi.to_instruction
       ~Choi.to_operator
       ~Choi.transpose
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Choi.atol
-      ~Choi.data
-      ~Choi.dim
-      ~Choi.num_qubits
-      ~Choi.qargs
-      ~Choi.rtol
-      ~Choi.settings
-   
-   
+   .. autoattribute:: atol
+   .. autoattribute:: data
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: qargs
+   .. autoattribute:: rtol
+   .. autoattribute:: settings

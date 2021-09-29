@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.utils.NoiseTransformer
-===========================================
+﻿NoiseTransformer
+================
 
 .. currentmodule:: qiskit.providers.aer.utils
 
 .. autoclass:: NoiseTransformer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NoiseTransformer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NoiseTransformer.channel_matrix_representation
       ~NoiseTransformer.compute_P
       ~NoiseTransformer.compute_channel_operation
@@ -31,9 +30,5 @@
       ~NoiseTransformer.solve_quadratic_program
       ~NoiseTransformer.transform_by_given_channel
       ~NoiseTransformer.transform_by_operator_list
-   
-   
 
-   
-   
-   
+

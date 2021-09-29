@@ -1,19 +1,19 @@
-﻿qiskit.providers.aer.QasmSimulator
-==================================
+﻿QasmSimulator
+=============
 
 .. currentmodule:: qiskit.providers.aer
 
 .. autoclass:: QasmSimulator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QasmSimulator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
+      ~QasmSimulator.available_devices
       ~QasmSimulator.available_methods
       ~QasmSimulator.clear_options
       ~QasmSimulator.configuration
@@ -26,16 +26,10 @@
       ~QasmSimulator.set_option
       ~QasmSimulator.set_options
       ~QasmSimulator.status
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QasmSimulator.options
-      ~QasmSimulator.version
-   
-   
+   .. autoattribute:: options
+   .. autoattribute:: version

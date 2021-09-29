@@ -1,28 +1,14 @@
-﻿qiskit.optimization.problems.QuadraticProgramElement
-====================================================
+﻿QuadraticProgramElement
+=======================
 
 .. currentmodule:: qiskit.optimization.problems
 
 .. autoclass:: QuadraticProgramElement
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~QuadraticProgramElement.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuadraticProgramElement.quadratic_program
-   
-   
+   .. autoattribute:: quadratic_program

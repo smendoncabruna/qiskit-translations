@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.results.VibronicStructureResult
-================================================
+﻿VibronicStructureResult
+=======================
 
 .. currentmodule:: qiskit.chemistry.results
 
 .. autoclass:: VibronicStructureResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VibronicStructureResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~VibronicStructureResult.clear
       ~VibronicStructureResult.combine
       ~VibronicStructureResult.copy
@@ -26,24 +25,18 @@
       ~VibronicStructureResult.setdefault
       ~VibronicStructureResult.update
       ~VibronicStructureResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VibronicStructureResult.algorithm_result
-      ~VibronicStructureResult.aux_operator_eigenvalues
-      ~VibronicStructureResult.computed_vibronic_energies
-      ~VibronicStructureResult.eigenenergies
-      ~VibronicStructureResult.eigenstates
-      ~VibronicStructureResult.formatted
-      ~VibronicStructureResult.groundenergy
-      ~VibronicStructureResult.groundstate
-      ~VibronicStructureResult.num_occupied_modals_per_mode
-      ~VibronicStructureResult.raw_result
-   
-   
+   .. autoattribute:: algorithm_result
+   .. autoattribute:: aux_operator_eigenvalues
+   .. autoattribute:: computed_vibronic_energies
+   .. autoattribute:: eigenenergies
+   .. autoattribute:: eigenstates
+   .. autoattribute:: formatted
+   .. autoattribute:: groundenergy
+   .. autoattribute:: groundstate
+   .. autoattribute:: num_occupied_modals_per_mode
+   .. autoattribute:: raw_result

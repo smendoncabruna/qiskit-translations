@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.neural_networks.circuit_qnn &mdash; Qiskit Machine Learning 0.2.0 ドキュメント</title>
+  <title>qiskit_machine_learning.neural_networks.circuit_qnn &mdash; Qiskit Machine Learning 0.2.1 ドキュメント</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/neural_networks/circuit_qnn.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/neural_networks/circuit_qnn.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/neural_networks/circuit_qnn.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/neural_networks/circuit_qnn.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/neural_networks/circuit_qnn.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/neural_networks/circuit_qnn.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -326,7 +332,8 @@
 <span class="sd">            interpret: A callable that maps the measured integer to another unsigned integer or</span>
 <span class="sd">                tuple of unsigned integers. These are used as new indices for the (potentially</span>
 <span class="sd">                sparse) output array. If this is used, and ``sampling==False``, the output shape of</span>
-<span class="sd">                the output needs to be given as a separate argument.</span>
+<span class="sd">                the output needs to be given as a separate argument. If no interpret function is</span>
+<span class="sd">                passed, then an identity function will be used by this neural network.</span>
 <span class="sd">            output_shape: The output shape of the custom interpretation, only used in the case</span>
 <span class="sd">                where an interpret function is provided and ``sampling==False``. Note that in the</span>
 <span class="sd">                remaining cases, the output shape is automatically inferred by: ``2^num_qubits`` if</span>
@@ -345,40 +352,37 @@
 <span class="sd">            QiskitMachineLearningError: if ``interpret`` is passed without ``output_shape``.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># TODO: need to handle case without a quantum instance</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">,</span> <span class="p">(</span><span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">)):</span>
-            <span class="n">quantum_instance</span> <span class="o">=</span> <span class="n">QuantumInstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="o">=</span> <span class="n">quantum_instance</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_params</span> <span class="ow">or</span> <span class="p">[])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_weight_params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">weight_params</span> <span class="ow">or</span> <span class="p">[])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_interpret</span> <span class="o">=</span> <span class="n">interpret</span> <span class="k">if</span> <span class="n">interpret</span> <span class="k">else</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span> <span class="o">=</span> <span class="n">input_gradients</span>
-        <span class="n">sparse_</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">sampling</span> <span class="k">else</span> <span class="n">sparse</span>
+        <span class="n">sparse</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">sampling</span> <span class="k">else</span> <span class="n">sparse</span>
 
         <span class="c1"># copy circuit and add measurements in case non are given</span>
         <span class="c1"># TODO: need to be able to handle partial measurements! (partial trace...)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="o">.</span><span class="n">is_statevector</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">num_clbits</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">remove_final_measurements</span><span class="p">()</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">num_clbits</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">measure_all</span><span class="p">()</span>
+        <span class="c1"># these original values may be re-used when a quantum instance is set,</span>
+        <span class="c1"># but initially it was None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_output_shape</span> <span class="o">=</span> <span class="n">output_shape</span>
+        <span class="c1"># next line is required by pylint only</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interpret</span> <span class="o">=</span> <span class="n">interpret</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_interpret</span> <span class="o">=</span> <span class="n">interpret</span>
 
-        <span class="n">output_shape_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_output_shape</span><span class="p">(</span><span class="n">interpret</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="n">sampling</span><span class="p">)</span>
+        <span class="c1"># we need this property in _set_quantum_instance despite it is initialized</span>
+        <span class="c1"># in the super class later on, review of SamplingNN is required.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sampling</span> <span class="o">=</span> <span class="n">sampling</span>
+
+        <span class="c1"># set quantum instance and derive target output_shape and interpret</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_quantum_instance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="n">interpret</span><span class="p">)</span>
 
         <span class="c1"># init super class</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_input_params</span><span class="p">),</span>
             <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_weight_params</span><span class="p">),</span>
-            <span class="n">sparse_</span><span class="p">,</span>
+            <span class="n">sparse</span><span class="p">,</span>
             <span class="n">sampling</span><span class="p">,</span>
-            <span class="n">output_shape_</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output_shape</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span><span class="p">,</span>
         <span class="p">)</span>
-
-        <span class="c1"># prepare sampler</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_sampler</span> <span class="o">=</span> <span class="n">CircuitSampler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="p">,</span> <span class="n">param_qobj</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">caching</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_original_circuit</span> <span class="o">=</span> <span class="n">circuit</span>
         <span class="c1"># use given gradient or default</span>
@@ -390,6 +394,7 @@
     <span class="k">def</span> <span class="nf">_construct_gradient_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_gradient_circuit</span><span class="p">:</span> <span class="n">QuantumCircuit</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># todo: avoid copying the circuit</span>
             <span class="n">grad_circuit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_circuit</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
             <span class="n">grad_circuit</span><span class="o">.</span><span class="n">remove_final_measurements</span><span class="p">()</span>  <span class="c1"># ideally this would not be necessary</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span><span class="p">:</span>
@@ -402,26 +407,35 @@
 
     <span class="k">def</span> <span class="nf">_compute_output_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interpret</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="n">sampling</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Validate and compute the output shape.&quot;&quot;&quot;</span>
+        <span class="c1"># a safety check cause we use quantum instance below</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
+                <span class="s2">&quot;A quantum instance is required to compute output shape!&quot;</span>
+            <span class="p">)</span>
 
         <span class="c1"># this definition is required by mypy</span>
         <span class="n">output_shape_</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,)</span>
+        <span class="c1"># todo: move sampling code to the super class</span>
         <span class="k">if</span> <span class="n">sampling</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">output_shape</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="c1"># Warn user that output_shape parameter will be ignored</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-                    <span class="s2">&quot;In sampling mode, output_shape will be automatically inferred  &quot;</span>
+                    <span class="s2">&quot;In sampling mode, output_shape will be automatically inferred &quot;</span>
                     <span class="s2">&quot;from the number of samples and interpret function, if provided.&quot;</span>
                 <span class="p">)</span>
 
             <span class="n">num_samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="o">.</span><span class="n">run_config</span><span class="o">.</span><span class="n">shots</span>
-            <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interpret</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># infer shape from function</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">output_shape_</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">interpret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="n">interpret</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># infer shape from function</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">output_shape_</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">output_shape_</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="o">*</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">output_shape_</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="o">*</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">output_shape_</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">interpret</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">interpret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">output_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
                         <span class="s2">&quot;No output shape given, but required in case of custom interpret!&quot;</span>
@@ -440,6 +454,10 @@
                     <span class="p">)</span>
 
                 <span class="n">output_shape_</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,)</span>
+
+        <span class="c1"># final validation</span>
+        <span class="n">output_shape_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_output_shape</span><span class="p">(</span><span class="n">output_shape_</span><span class="p">)</span>
+
         <span class="k">return</span> <span class="n">output_shape_</span>
 
     <span class="nd">@property</span>
@@ -458,23 +476,63 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_weight_params</span>
 
     <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">interpret</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]]]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns interpret function to be used by the neural network. If it is not set in</span>
+<span class="sd">        the constructor or can not be implicitly derived (e.g. a quantum instance is not provided),</span>
+<span class="sd">        then ``None`` is returned.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interpret</span>
+
+    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">quantum_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumInstance</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns the quantum instance to evaluate the circuit.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span>
 
     <span class="nd">@quantum_instance</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">quantum_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantum_instance</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">quantum_instance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">quantum_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QuantumInstance</span><span class="p">,</span> <span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Sets the quantum instance to evaluate the circuit and make sure circuit has</span>
 <span class="sd">        measurements or not depending on the type of backend used.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_quantum_instance</span><span class="p">(</span>
+            <span class="n">quantum_instance</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_output_shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_interpret</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_set_quantum_instance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">quantum_instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QuantumInstance</span><span class="p">,</span> <span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">]],</span>
+        <span class="n">output_shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
+        <span class="n">interpret</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]]],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal method to set a quantum instance and compute/initialize internal properties such</span>
+<span class="sd">        as an interpret function, output shape and a sampler.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            quantum_instance: A quantum instance to set.</span>
+<span class="sd">            output_shape: An output shape of the custom interpretation.</span>
+<span class="sd">            interpret: A callable that maps the measured integer to another unsigned integer or</span>
+<span class="sd">                tuple of unsigned integers.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">,</span> <span class="p">(</span><span class="n">BaseBackend</span><span class="p">,</span> <span class="n">Backend</span><span class="p">)):</span>
+            <span class="n">quantum_instance</span> <span class="o">=</span> <span class="n">QuantumInstance</span><span class="p">(</span><span class="n">quantum_instance</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="o">=</span> <span class="n">quantum_instance</span>
 
-        <span class="c1"># add measurements in case non are given</span>
-        <span class="k">if</span> <span class="n">quantum_instance</span><span class="o">.</span><span class="n">is_statevector</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">clbits</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">remove_final_measurements</span><span class="p">()</span>
-        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">clbits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">measure_all</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># add measurements in case none are given</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="o">.</span><span class="n">is_statevector</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">clbits</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">remove_final_measurements</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">clbits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_circuit</span><span class="o">.</span><span class="n">measure_all</span><span class="p">()</span>
+
+            <span class="c1"># set interpret and compute output shape</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_interpret</span><span class="p">(</span><span class="n">interpret</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">)</span>
+
+            <span class="c1"># prepare sampler</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sampler</span> <span class="o">=</span> <span class="n">CircuitSampler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="p">,</span> <span class="n">param_qobj</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">caching</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_output_shape</span> <span class="o">=</span> <span class="n">output_shape</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">input_gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -488,16 +546,38 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_gradients</span> <span class="o">=</span> <span class="n">input_gradients</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_construct_gradient_circuit</span><span class="p">()</span>
 
-<div class="viewcode-block" id="CircuitQNN.set_interpret"><a class="viewcode-back" href="../../../stubs/qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret.html#qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">set_interpret</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interpret</span><span class="p">,</span> <span class="n">output_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CircuitQNN.set_interpret"><a class="viewcode-back" href="../../../stubs/qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret.html#qiskit_machine_learning.neural_networks.CircuitQNN.set_interpret">[ドキュメント]</a>    <span class="k">def</span> <span class="nf">set_interpret</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">interpret</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]]],</span>
+        <span class="n">output_shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Change &#39;interpret&#39; and corresponding &#39;output_shape&#39;. If self.sampling==True, the</span>
 <span class="sd">        output _shape does not have to be set and is inferred from the interpret function.</span>
-<span class="sd">        Otherwise, the output_shape needs to be given.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_interpret</span> <span class="o">=</span> <span class="n">interpret</span> <span class="k">if</span> <span class="n">interpret</span> <span class="k">else</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_output_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_output_shape</span><span class="p">(</span><span class="n">interpret</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampling</span><span class="p">)</span></div>
+<span class="sd">        Otherwise, the output_shape needs to be given.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            interpret: A callable that maps the measured integer to another unsigned integer or</span>
+<span class="sd">                tuple of unsigned integers. See constructor for more details.</span>
+<span class="sd">            output_shape: The output shape of the custom interpretation, only used in the case</span>
+<span class="sd">                where an interpret function is provided and ``sampling==False``. See constructor</span>
+<span class="sd">                for more details.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># save original values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_output_shape</span> <span class="o">=</span> <span class="n">output_shape</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_interpret</span> <span class="o">=</span> <span class="n">interpret</span>
+
+        <span class="c1"># derive target values to be used in computations</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_output_shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_output_shape</span><span class="p">(</span><span class="n">interpret</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampling</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_interpret</span> <span class="o">=</span> <span class="n">interpret</span> <span class="k">if</span> <span class="n">interpret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span></div>
 
     <span class="k">def</span> <span class="nf">_sample</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">weights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span><span class="s2">&quot;Sampling requires a quantum instance!&quot;</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span><span class="o">.</span><span class="n">is_statevector</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span><span class="s2">&quot;Sampling does not work with statevector simulator!&quot;</span><span class="p">)</span>
 
@@ -533,6 +613,12 @@
     <span class="k">def</span> <span class="nf">_probabilities</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">weights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">SparseArray</span><span class="p">]:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
+                <span class="s2">&quot;Evaluation of probabilities requires a quantum instance!&quot;</span>
+            <span class="p">)</span>
+
         <span class="c1"># evaluate operator</span>
         <span class="n">circuits</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -578,6 +664,11 @@
     <span class="k">def</span> <span class="nf">_probability_gradients</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">weights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">SparseArray</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">SparseArray</span><span class="p">]]:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quantum_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">QiskitMachineLearningError</span><span class="p">(</span>
+                <span class="s2">&quot;Evaluation of probability gradients requires a quantum instance!&quot;</span>
+            <span class="p">)</span>
 
         <span class="c1"># check whether gradient circuit could be constructed</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gradient_circuit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

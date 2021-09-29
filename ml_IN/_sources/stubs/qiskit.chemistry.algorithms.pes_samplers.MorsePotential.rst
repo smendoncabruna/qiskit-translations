@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.MorsePotential
-========================================================
+﻿MorsePotential
+==============
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: MorsePotential
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MorsePotential.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MorsePotential.dissociation_energy
       ~MorsePotential.eval
       ~MorsePotential.fit
@@ -27,9 +26,5 @@
       ~MorsePotential.update_molecule
       ~MorsePotential.vibrational_energy_level
       ~MorsePotential.wave_number
-   
-   
 
-   
-   
-   
+

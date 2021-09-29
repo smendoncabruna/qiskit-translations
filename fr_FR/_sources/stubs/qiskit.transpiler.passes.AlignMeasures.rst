@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.AlignMeasures
-======================================
+﻿AlignMeasures
+=============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: AlignMeasures
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AlignMeasures.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AlignMeasures.name
       ~AlignMeasures.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~AlignMeasures.is_analysis_pass
-      ~AlignMeasures.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

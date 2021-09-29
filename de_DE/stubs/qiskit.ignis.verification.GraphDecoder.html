@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.verification.GraphDecoder &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>GraphDecoder &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="qiskit.ignis.verification.lookuptable_decoding" href="qiskit.ignis.verification.lookuptable_decoding.html" />
-    <link rel="prev" title="qiskit.ignis.verification.RepetitionCode" href="qiskit.ignis.verification.RepetitionCode.html" /> 
+    <link rel="next" title="qiskit.ignis.verification.GraphDecoder.get_error_probs" href="qiskit.ignis.verification.GraphDecoder.get_error_probs.html" />
+    <link rel="prev" title="qiskit.ignis.verification.RepetitionCode.x" href="qiskit.ignis.verification.RepetitionCode.x.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/verification.html">Verification (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.ignis.verification</span></code>)</a> &gt;</li>
         
-      <li>qiskit.ignis.verification.GraphDecoder</li>
+      <li>GraphDecoder</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-ignis-verification-graphdecoder">
-<h1>qiskit.ignis.verification.GraphDecoder<a class="headerlink" href="#qiskit-ignis-verification-graphdecoder" title="Link zu dieser Überschrift">¶</a></h1>
+  <section id="graphdecoder">
+<h1>GraphDecoder<a class="headerlink" href="#graphdecoder" title="Link zu dieser Überschrift">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.ignis.verification.GraphDecoder">
 <em class="property">class </em><code class="sig-name descname">GraphDecoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">S</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Class to construct the graph corresponding to the possible syndromes
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to construct the graph corresponding to the possible syndromes
 of a quantum error correction code, and then run suitable decoders.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameter</dt>
@@ -353,29 +361,6 @@ if this was created for a differently defined <code class="docutils literal notr
 work properly.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.ignis.verification.GraphDecoder.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">S</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder.__init__"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder.__init__" title="Link zu dieser Definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>code</strong> (<em>RepitionCode</em>) – The QEC Code object for which this decoder
-will be used.</p></li>
-<li><p><strong>S</strong> (<em>retworkx.PyGraph</em>) – Graph describing connectivity between syndrome
-elements. Will be generated automatically if not supplied.</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Additional information:</dt><dd><p>The decoder for the supplied <code class="docutils literal notranslate"><span class="pre">code</span></code> is initialized by running
-<code class="docutils literal notranslate"><span class="pre">_make_syndrome_graph()</span></code>. Since this process can take some
-time, it is also possible to load in a premade <code class="docutils literal notranslate"><span class="pre">S</span></code>. However,
-if this was created for a differently defined <code class="docutils literal notranslate"><span class="pre">code</span></code>, it won’t
-work properly.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -383,18 +368,10 @@ work properly.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.verification.GraphDecoder.__init__" title="qiskit.ignis.verification.GraphDecoder.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(code[, S])</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">param code</dt>
-<dd class="field-odd"><p>The QEC Code object for which this decoder</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.verification.GraphDecoder.get_error_probs" title="qiskit.ignis.verification.GraphDecoder.get_error_probs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_error_probs</span></code></a>(results)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.verification.GraphDecoder.get_error_probs.html#qiskit.ignis.verification.GraphDecoder.get_error_probs" title="qiskit.ignis.verification.GraphDecoder.get_error_probs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_error_probs</span></code></a></p></td>
 <td><p>Generate probabilities of single error events from result counts.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.verification.GraphDecoder.get_logical_prob" title="qiskit.ignis.verification.GraphDecoder.get_logical_prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_logical_prob</span></code></a>(results[, algorithm])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.verification.GraphDecoder.get_logical_prob.html#qiskit.ignis.verification.GraphDecoder.get_logical_prob" title="qiskit.ignis.verification.GraphDecoder.get_logical_prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_logical_prob</span></code></a></p></td>
 <td><p><dl class="field-list simple">
 <dt class="field-odd">param results</dt>
 <dd class="field-odd"><p>A results dictionary, as produced by the</p>
@@ -402,7 +379,7 @@ work properly.</p>
 </dl>
 </p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.verification.GraphDecoder.make_error_graph" title="qiskit.ignis.verification.GraphDecoder.make_error_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_error_graph</span></code></a>(string[, subgraphs])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.verification.GraphDecoder.make_error_graph.html#qiskit.ignis.verification.GraphDecoder.make_error_graph" title="qiskit.ignis.verification.GraphDecoder.make_error_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_error_graph</span></code></a></p></td>
 <td><p><dl class="field-list simple">
 <dt class="field-odd">param string</dt>
 <dd class="field-odd"><p>A string describing the output from the code.</p>
@@ -410,7 +387,7 @@ work properly.</p>
 </dl>
 </p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.ignis.verification.GraphDecoder.matching" title="qiskit.ignis.verification.GraphDecoder.matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matching</span></code></a>(string)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.ignis.verification.GraphDecoder.matching.html#qiskit.ignis.verification.GraphDecoder.matching" title="qiskit.ignis.verification.GraphDecoder.matching"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matching</span></code></a></p></td>
 <td><p><dl class="field-list simple">
 <dt class="field-odd">param string</dt>
 <dd class="field-odd"><p>A string describing the output from the code.</p>
@@ -418,127 +395,11 @@ work properly.</p>
 </dl>
 </p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph" title="qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight_syndrome_graph</span></code></a>(results)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph.html#qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph" title="qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight_syndrome_graph</span></code></a></p></td>
 <td><p>Generate weighted syndrome graph from result counts.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="qiskit.ignis.verification.GraphDecoder.get_error_probs">
-<code class="sig-name descname">get_error_probs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">results</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder.get_error_probs"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder.get_error_probs" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Generate probabilities of single error events from result counts.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>results</strong> (<em>dict</em>) – A results dictionary, as produced by the</p></li>
-<li><p><strong>method of the code.</strong> (<em>process_results</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>Keys are the edges for specific error
-events, and values are the calculated probabilities</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Additional information:</dt><dd><p>Uses <cite>results</cite> to estimate the probability of the errors that
-create the pairs of nodes specified by the edge.
-Calculation done using the method of Spitz, et al.
-<a class="reference external" href="https://doi.org/10.1002/qute.201800012">https://doi.org/10.1002/qute.201800012</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.GraphDecoder.get_logical_prob">
-<code class="sig-name descname">get_logical_prob</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">results</span></em>, <em class="sig-param"><span class="n">algorithm</span><span class="o">=</span><span class="default_value">'matching'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder.get_logical_prob"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder.get_logical_prob" title="Link zu dieser Definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>results</strong> (<em>dict</em>) – A results dictionary, as produced by the</p></li>
-<li><p><strong>method of the code.</strong> (<em>process_results</em>) – </p></li>
-<li><p><strong>algorithm</strong> (<em>str</em>) – Choice of which decoder to use.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>Dictionary of logical error probabilities for
-each of the encoded logical states whose results were given in
-the input.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.GraphDecoder.make_error_graph">
-<code class="sig-name descname">make_error_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">subgraphs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder.make_error_graph"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder.make_error_graph" title="Link zu dieser Definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>string</strong> (<em>str</em>) – A string describing the output from the code.</p></li>
-<li><p><strong>subgraphs</strong> (<em>list</em>) – Used when multiple, semi-independent graphs need</p></li>
-<li><p><strong>to created.</strong> (<em>need</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p>The subgraph(s) of S which corresponds to the non-trivial
-syndrome elements in the given string.</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p>E</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.GraphDecoder.matching">
-<code class="sig-name descname">matching</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder.matching"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder.matching" title="Link zu dieser Definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – A string describing the output from the code.</p>
-</dd>
-<dt class="field-even">Rückgabe</dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>A string with corrected logical values,</dt><dd><p>computed using minimum weight perfect matching.</p>
-</dd>
-</dl>
-</p>
-</dd>
-<dt class="field-odd">Rückgabetyp</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Additional information:</dt><dd><p>This function can be run directly, or used indirectly to
-calculate a logical error probability with <cite>get_logical_prob</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph">
-<code class="sig-name descname">weight_syndrome_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">results</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/ignis/verification/topological_codes/fitters.html#GraphDecoder.weight_syndrome_graph"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.ignis.verification.GraphDecoder.weight_syndrome_graph" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Generate weighted syndrome graph from result counts.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>results</strong> (<em>dict</em>) – A results dictionary, as produced by the</p></li>
-<li><p><strong>method of the code.</strong> (<em>process_results</em>) – </p></li>
-</ul>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Additional information:</dt><dd><p>Uses <cite>results</cite> to estimate the probability of the errors that
-create the pairs of nodes in S. The edge weights are then
-replaced with the corresponding -log(p/(1-p).</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -551,10 +412,10 @@ replaced with the corresponding -log(p/(1-p).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.ignis.verification.lookuptable_decoding.html" class="btn btn-neutral float-right" title="qiskit.ignis.verification.lookuptable_decoding" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.ignis.verification.GraphDecoder.get_error_probs.html" class="btn btn-neutral float-right" title="qiskit.ignis.verification.GraphDecoder.get_error_probs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.ignis.verification.RepetitionCode.html" class="btn btn-neutral" title="qiskit.ignis.verification.RepetitionCode" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.ignis.verification.RepetitionCode.x.html" class="btn btn-neutral" title="qiskit.ignis.verification.RepetitionCode.x" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -568,7 +429,7 @@ replaced with the corresponding -log(p/(1-p).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -587,7 +448,7 @@ replaced with the corresponding -log(p/(1-p).</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.ignis.verification.GraphDecoder</a></li>
+<li><a class="reference internal" href="#">GraphDecoder</a></li>
 </ul>
 
             </div>
@@ -651,7 +512,7 @@ replaced with the corresponding -log(p/(1-p).</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -674,9 +535,11 @@ replaced with the corresponding -log(p/(1-p).</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

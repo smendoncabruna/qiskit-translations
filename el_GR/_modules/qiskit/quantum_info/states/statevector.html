@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.states.statevector &mdash; Τεκμηρίωση του Qiskit - 0.29.0</title>
+  <title>qiskit.quantum_info.states.statevector &mdash; Τεκμηρίωση του Qiskit - 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Αρχική σελίδα τεκμηρίωσης</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Πρόσοψη</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Παραπομπές API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Προσομοιωτής Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Ενότητες εφαρμογής Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Πάροχος)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Οδηγός Μετάβασης των εφαρμογών Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Αντιμετώπιση προβλημάτων</span></p>
 <ul>
@@ -360,7 +367,7 @@
 <div class="viewcode-block" id="Statevector"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector">[τεκμηρίωση]</a><span class="k">class</span> <span class="nc">Statevector</span><span class="p">(</span><span class="n">QuantumState</span><span class="p">,</span> <span class="n">TolerancesMixin</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Statevector class&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Statevector.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.__init__">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize a statevector object.</span>
 
 <span class="sd">        Args:</span>
@@ -418,7 +425,7 @@
                 <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span>
             <span class="k">elif</span> <span class="n">ndim</span> <span class="o">!=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">QiskitError</span><span class="p">(</span><span class="s2">&quot;Invalid input: not a vector or column-vector.&quot;</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">op_shape</span><span class="o">=</span><span class="n">OpShape</span><span class="o">.</span><span class="n">auto</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">dims_l</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span> <span class="n">num_qubits_r</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">op_shape</span><span class="o">=</span><span class="n">OpShape</span><span class="o">.</span><span class="n">auto</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">dims_l</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span> <span class="n">num_qubits_r</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">dtype</span><span class="p">:</span>
@@ -445,7 +452,7 @@
         <span class="sd">&quot;&quot;&quot;Return settings.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="s2">&quot;dims&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_op_shape</span><span class="o">.</span><span class="n">dims_l</span><span class="p">()}</span>
 
-<div class="viewcode-block" id="Statevector.draw"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.draw">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">drawer_args</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.draw"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.draw.html#qiskit.quantum_info.Statevector.draw">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">drawer_args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a visualization of the Statevector.</span>
 
 <span class="sd">        **repr**: ASCII TextMatrix of the state&#39;s ``__repr__``.</span>
@@ -505,7 +512,7 @@
         <span class="sd">&quot;&quot;&quot;Return data.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
 
-<div class="viewcode-block" id="Statevector.is_valid"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.is_valid">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.is_valid"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.is_valid.html#qiskit.quantum_info.Statevector.is_valid">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">is_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if a Statevector has norm 1.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">atol</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">atol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atol</span>
@@ -514,20 +521,20 @@
         <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">rtol</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">atol</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.to_operator"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.to_operator">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">to_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.to_operator"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.to_operator.html#qiskit.quantum_info.Statevector.to_operator">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">to_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert state to a rank-1 projector operator&quot;&quot;&quot;</span>
         <span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">Operator</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">input_dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">(),</span> <span class="n">output_dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="Statevector.conjugate"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.conjugate">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.conjugate"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.conjugate.html#qiskit.quantum_info.Statevector.conjugate">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the conjugate of the operator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Statevector</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="Statevector.trace"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.trace">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.trace"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.trace.html#qiskit.quantum_info.Statevector.trace">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the trace of the quantum state as a density matrix.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.purity"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.purity">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">purity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.purity"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.purity.html#qiskit.quantum_info.Statevector.purity">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">purity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the purity of the quantum state.&quot;&quot;&quot;</span>
         <span class="c1"># For a valid statevector the purity is always 1, however if we simply</span>
         <span class="c1"># have an arbitrary vector (not correctly normalized) then the</span>
@@ -535,7 +542,7 @@
         <span class="c1"># P(|psi&gt;) = Tr[|psi&gt;&lt;psi|psi&gt;&lt;psi|] = |&lt;psi|psi&gt;|^2</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span> <span class="o">**</span> <span class="mi">2</span></div>
 
-<div class="viewcode-block" id="Statevector.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.tensor">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.tensor.html#qiskit.quantum_info.Statevector.tensor">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product state self ⊗ other.</span>
 
 <span class="sd">        Args:</span>
@@ -554,7 +561,7 @@
         <span class="n">ret</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="Statevector.expand"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.expand">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.expand"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.expand.html#qiskit.quantum_info.Statevector.expand">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product state other ⊗ self.</span>
 
 <span class="sd">        Args:</span>
@@ -611,7 +618,7 @@
         <span class="n">ret</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">other</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
         <span class="k">return</span> <span class="n">ret</span>
 
-<div class="viewcode-block" id="Statevector.evolve"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.evolve">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.evolve"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.evolve.html#qiskit.quantum_info.Statevector.evolve">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">evolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Evolve a quantum state by the operator.</span>
 
 <span class="sd">        Args:</span>
@@ -651,7 +658,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">Statevector</span><span class="o">.</span><span class="n">_evolve_operator</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="n">qargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.equiv"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.equiv">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">equiv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.equiv"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.equiv.html#qiskit.quantum_info.Statevector.equiv">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">equiv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if other is equivalent as a statevector up to global phase.</span>
 
 <span class="sd">        .. note::</span>
@@ -681,7 +688,7 @@
             <span class="n">rtol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rtol</span>
         <span class="k">return</span> <span class="n">matrix_equal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">ignore_phase</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">rtol</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">atol</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.reverse_qargs"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.reverse_qargs">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">reverse_qargs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.reverse_qargs"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.reverse_qargs.html#qiskit.quantum_info.Statevector.reverse_qargs">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">reverse_qargs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return a Statevector with reversed subsystem ordering.</span>
 
 <span class="sd">        For a tensor product state this is equivalent to reversing the order</span>
@@ -735,7 +742,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">z_mask</span><span class="p">,</span> <span class="n">x_mask</span><span class="p">,</span> <span class="n">y_phase</span><span class="p">,</span> <span class="n">x_max</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="Statevector.expectation_value"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.expectation_value">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">expectation_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oper</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.expectation_value"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.expectation_value.html#qiskit.quantum_info.Statevector.expectation_value">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">expectation_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oper</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Compute the expectation value of an operator.</span>
 
 <span class="sd">        Args:</span>
@@ -758,7 +765,7 @@
         <span class="n">conj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">conj</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.probabilities"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.probabilities">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.probabilities"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.probabilities.html#qiskit.quantum_info.Statevector.probabilities">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the subsystem measurement probability vector.</span>
 
 <span class="sd">        Measurement probabilities are with respect to measurement in the</span>
@@ -821,7 +828,7 @@
             <span class="n">probs</span> <span class="o">=</span> <span class="n">probs</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">probs</span></div>
 
-<div class="viewcode-block" id="Statevector.reset"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.reset">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.reset"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.reset.html#qiskit.quantum_info.Statevector.reset">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Reset state or subsystems to the 0-state.</span>
 
 <span class="sd">        Args:</span>
@@ -867,7 +874,7 @@
         <span class="n">reset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">reset</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">proj</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">evolve</span><span class="p">(</span><span class="n">Operator</span><span class="p">(</span><span class="n">reset</span><span class="p">,</span> <span class="n">input_dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span> <span class="n">output_dims</span><span class="o">=</span><span class="n">dims</span><span class="p">),</span> <span class="n">qargs</span><span class="o">=</span><span class="n">qargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.from_label"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.from_label">[τεκμηρίωση]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Statevector.from_label"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.from_label.html#qiskit.quantum_info.Statevector.from_label">[τεκμηρίωση]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_label</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a tensor product of Pauli X,Y,Z eigenstates.</span>
 
@@ -936,7 +943,7 @@
                     <span class="n">state</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="p">(</span><span class="n">y_mat</span><span class="p">,</span> <span class="n">qargs</span><span class="o">=</span><span class="p">[</span><span class="n">qubit</span><span class="p">])</span>
         <span class="k">return</span> <span class="n">state</span></div>
 
-<div class="viewcode-block" id="Statevector.from_int"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.from_int">[τεκμηρίωση]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Statevector.from_int"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.from_int.html#qiskit.quantum_info.Statevector.from_int">[τεκμηρίωση]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dims</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a computational basis statevector.</span>
 
@@ -964,7 +971,7 @@
         <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
         <span class="k">return</span> <span class="n">Statevector</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.from_instruction"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.from_instruction">[τεκμηρίωση]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Statevector.from_instruction"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.from_instruction.html#qiskit.quantum_info.Statevector.from_instruction">[τεκμηρίωση]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_instruction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instruction</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the output statevector of an instruction.</span>
 
@@ -991,7 +998,7 @@
         <span class="n">vec</span> <span class="o">=</span> <span class="n">Statevector</span><span class="p">(</span><span class="n">init</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">instruction</span><span class="o">.</span><span class="n">num_qubits</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
         <span class="k">return</span> <span class="n">Statevector</span><span class="o">.</span><span class="n">_evolve_instruction</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="n">instruction</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Statevector.to_dict"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.html#qiskit.quantum_info.Statevector.to_dict">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statevector.to_dict"><a class="viewcode-back" href="../../../../stubs/qiskit.quantum_info.Statevector.to_dict.html#qiskit.quantum_info.Statevector.to_dict">[τεκμηρίωση]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Convert the statevector to dictionary form.</span>
 
 <span class="sd">        This dictionary representation uses a Ket-like notation where the</span>
@@ -1147,7 +1154,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/08/13.
+      Τελευταία ενημέρωση στις 2021/09/23.
 
     </p>
   </div>
@@ -1227,7 +1234,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1250,9 +1257,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

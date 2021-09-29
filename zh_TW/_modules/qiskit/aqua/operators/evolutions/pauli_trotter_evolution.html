@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.operators.evolutions.pauli_trotter_evolution &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>qiskit.aqua.operators.evolutions.pauli_trotter_evolution &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -230,27 +237,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -367,7 +374,7 @@
 <span class="sd">    evolution circuits are composed together by Trotterization scheme.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PauliTrotterEvolution.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.__init__">[文件]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">trotter_mode</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">TrotterizationBase</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;trotter&#39;</span><span class="p">,</span>
                  <span class="n">reps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                  <span class="c1"># TODO uncomment when we implement Abelian grouped evolution.</span>
@@ -389,7 +396,7 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">trotter_mode</span><span class="p">,</span> <span class="n">TrotterizationBase</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_trotter</span> <span class="o">=</span> <span class="n">trotter_mode</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_trotter</span> <span class="o">=</span> <span class="n">TrotterizationFactory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">trotter_mode</span><span class="p">,</span> <span class="n">reps</span><span class="o">=</span><span class="n">reps</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trotter</span> <span class="o">=</span> <span class="n">TrotterizationFactory</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">trotter_mode</span><span class="p">,</span> <span class="n">reps</span><span class="o">=</span><span class="n">reps</span><span class="p">)</span>
 
         <span class="c1"># TODO uncomment when we implement Abelian grouped evolution.</span>
         <span class="c1"># self._grouper = AbelianGrouper() if group_paulis else None</span>
@@ -404,7 +411,7 @@
         <span class="sd">&quot;&quot;&quot; Set TrotterizationBase used to evolve SummedOps. &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_trotter</span> <span class="o">=</span> <span class="n">trotter</span>
 
-<div class="viewcode-block" id="PauliTrotterEvolution.convert"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.convert">[文件]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliTrotterEvolution.convert"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.convert.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.convert">[文件]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Traverse the operator, replacing ``EvolvedOps`` with ``CircuitOps`` containing</span>
 <span class="sd">        trotterized evolutions equalling the exponentiation of -i * operator.</span>
@@ -462,7 +469,7 @@
 
         <span class="k">return</span> <span class="n">operator</span>
 
-<div class="viewcode-block" id="PauliTrotterEvolution.evolution_for_pauli"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.evolution_for_pauli">[文件]</a>    <span class="k">def</span> <span class="nf">evolution_for_pauli</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pauli_op</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveOp</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliTrotterEvolution.evolution_for_pauli"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.evolution_for_pauli.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.evolution_for_pauli">[文件]</a>    <span class="k">def</span> <span class="nf">evolution_for_pauli</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pauli_op</span><span class="p">:</span> <span class="n">PauliOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveOp</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute evolution Operator for a single Pauli using a ``PauliBasisChange``.</span>
 
@@ -488,7 +495,7 @@
         <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">PrimitiveOp</span><span class="p">,</span> <span class="n">cob</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">pauli_op</span><span class="p">))</span></div>
 
     <span class="c1"># TODO implement Abelian grouped evolution.</span>
-<div class="viewcode-block" id="PauliTrotterEvolution.evolution_for_abelian_paulisum"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.evolution_for_abelian_paulisum">[文件]</a>    <span class="k">def</span> <span class="nf">evolution_for_abelian_paulisum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op_sum</span><span class="p">:</span> <span class="n">SummedOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveOp</span><span class="p">:</span>
+<div class="viewcode-block" id="PauliTrotterEvolution.evolution_for_abelian_paulisum"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.operators.evolutions.PauliTrotterEvolution.evolution_for_abelian_paulisum.html#qiskit.aqua.operators.evolutions.PauliTrotterEvolution.evolution_for_abelian_paulisum">[文件]</a>    <span class="k">def</span> <span class="nf">evolution_for_abelian_paulisum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">op_sum</span><span class="p">:</span> <span class="n">SummedOp</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrimitiveOp</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot; Evolution for abelian pauli sum &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
 </pre></div>
@@ -508,7 +515,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -589,7 +596,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -612,9 +619,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

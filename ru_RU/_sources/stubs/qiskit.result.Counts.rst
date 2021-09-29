@@ -1,19 +1,18 @@
-﻿qiskit.result.Counts
-====================
+﻿Counts
+======
 
 .. currentmodule:: qiskit.result
 
 .. autoclass:: Counts
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Counts.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Counts.clear
       ~Counts.copy
       ~Counts.fromkeys
@@ -28,15 +27,9 @@
       ~Counts.setdefault
       ~Counts.update
       ~Counts.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Counts.bitstring_regex
-   
-   
+   .. autoattribute:: bitstring_regex

@@ -1,23 +1,18 @@
-﻿qiskit.opflow.gradients.CircuitQFI
-==================================
+CircuitQFI
+==========
 
 .. currentmodule:: qiskit.opflow.gradients
 
 .. autoclass:: CircuitQFI
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~CircuitQFI.__init__
-      ~CircuitQFI.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~CircuitQFI.convert
+
+

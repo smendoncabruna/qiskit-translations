@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.BasicSwap
-==================================
+﻿BasicSwap
+=========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: BasicSwap
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BasicSwap.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BasicSwap.name
       ~BasicSwap.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BasicSwap.is_analysis_pass
-      ~BasicSwap.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

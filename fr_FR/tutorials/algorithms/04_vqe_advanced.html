@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Utilisation avancée de VQE &mdash; Documentation Qiskit 0.29.0</title>
+  <title>Utilisation avancée de VQE &mdash; Documentation Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Page d'accueil de la documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Avant propos</span></p>
 <ul>
@@ -231,7 +238,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contribuer à Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Configuration locale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Questions fréquentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Foire aux Questions</a></li>
 </ul>
 <p><span class="caption-text">Bibliothèques</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Références de l'API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Simulateur Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Expériences Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Modules d'applications Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Fournisseur)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Guide de migration des applications Qiskit (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Guide de migration des applications Qiskit (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Déboggage</span></p>
 <ul>
@@ -576,7 +583,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="Utilisation-avancée-de-VQE">
 <h1>Utilisation avancée de VQE<a class="headerlink" href="#Utilisation-avancée-de-VQE" title="Lien permanent vers ce titre">¶</a></h1>
-<p>There exist several parameters for configuring and using more advanced <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html">VQE</a> capabilities. This tutorial will cover the parameters such as <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">expectation</span></code> and <code class="docutils literal notranslate"><span class="pre">gradient</span></code>.</p>
+<p>Il existe plusieurs paramètres permettant de configurer et d’utiliser des fonctionnalités plus avancées de <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.VQE.html">VQE</a> . Ce tutoriel couvrira les paramètres <code class="docutils literal notranslate"><span class="pre">initial_point</span></code>, <code class="docutils literal notranslate"><span class="pre">expectation</span></code> et <code class="docutils literal notranslate"><span class="pre">gradient</span></code>.</p>
 <p>Il couvrira également l’utilisation avancée du simulateur, comme l’utilisation d’Aer avec la méthode Matrix Product State.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -608,8 +615,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="Point-initial">
 <h2>Point initial<a class="headerlink" href="#Point-initial" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">initial_point</span></code> parameter allows the optimization to begin at the given point, where the point is a list of parameters that will configure the ansatz. By default the initial point is <code class="docutils literal notranslate"><span class="pre">None</span></code> which means that VQE will choose one. The choice in in this case is if the supplied ansatz has a preferred point, based on the initial state provided to it, then this will be chosen, otherwise a random initial point that fits with any bounds the ansatz has will be chosen. If an initial point is
-supplied it will take priority though and be used - note though it must match in length to the number of parameters in the ansatz circuit.</p>
+<p>Le paramètre <code class="docutils literal notranslate"><span class="pre">initial_point</span></code> permet à l’optimisation de commencer au point donné, où le point est une liste de paramètres qui configureront l’ansatz. Par défaut, le point initial est <code class="docutils literal notranslate"><span class="pre">None</span></code>, auquel cas VQE en choisira un. Le choix dans ce cas est : si l’ansatz fournie a un point préféré, basé sur l’état initial qui lui a été fourni, alors il sera choisi, sinon un point initial aléatoire satisfaisant les limites de l’ansatz sera choisi. Si un point initial est fourni, il prendra la priorité et sera utilisé - notez qu’il doit correspondre en longueur au nombre de paramètres dans le circuit de l’ansatz.</p>
 <p>Pourquoi utiliser un point initial ? Si par exemple vous avez deviné un bon point de départ pour le problème ou si des expériences précédentes vous ont déjà permis d’en apprendre un peu sur la solution.</p>
 <p>Pour démontrer l’utilisation, nous allons tout d’abord répéter le premier exemple de travail à partir du tutoriel l’introduction d’algorithmes pour obtenir le point optimal d’une solution.</p>
 <div class="nbinput docutils container">
@@ -704,16 +710,13 @@ supplied it will take priority though and be used - note though it must match in
 optimizer_evals is 9 with initial point versus 65 without it.
 </pre></div></div>
 </div>
-<p>Here we see that result was arrived at much more quickly with <code class="docutils literal notranslate"><span class="pre">optimizer_evals</span></code> when it started from a random value when the initial point was not supplied (default of None).</p>
-<p>Where this becomes useful for examples where we the solution to one problem can be used to for a guess for the solution to a very close similar problem. Chemistry is very good example where we change the inter-atomic distance(s) of molecule to plot a dissociation profile. When the distance changes are small we expect the solution to still be nearby the prior one. One technique is to simply use the optimal point from one solution as the starting point for the next step. Now more complex
-techniques are possible that do some extrapolation to compute an initial position based on prior solution(s) rather than directly use the prior solution.</p>
+<p>Ici, nous voyons grâce à <code class="docutils literal notranslate"><span class="pre">optimizer_evals</span></code> que le résultat a été obtenu beaucoup plus rapidement en spécifiant le point initial qu’en en choisissant un au hasard (ce qui est le comportement par défaut lorsque l’on lui passe None).</p>
+<p>Cela devient utile pour des exemples où nous pouvons utiliser la solution à un problème pour trouver une solution à un problème similaire très proche. La chimie en est un très bon exemple, où nous changeons la distance interatomique de la molécule pour tracer un profil de dissociation. Lorsque les changements de distance sont faibles, nous nous attendons à ce que la solution reste à proximité de la précédente. L’une des techniques consiste à simplement utiliser le point optimal d’une solution comme point de départ pour l’étape suivante. De plus, des techniques plus complexes sont possibles, qui réalisent une extrapolation pour calculer une position initiale basée sur la(les) solution(s) antérieure(s) plutôt que d’utiliser directement la solution précédente.</p>
 </section>
 <section id="Espérance">
 <h2>Espérance<a class="headerlink" href="#Espérance" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The energy of the Hamiltonian operator that VQE is working on is the expectation value when evaluated with the parameterized ansatz. To compute the expectation value VQE uses an instance of an <a class="reference external" href="https://qiskit.org/documentation/apidoc/qiskit.opflow.expectations.html">expectation</a> object. Such an instance may be supplied via the <code class="docutils literal notranslate"><span class="pre">expectation</span></code> parameter, or in the default case, where it has a value of <code class="docutils literal notranslate"><span class="pre">None</span></code>, VQE will use the
-<a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.opflow.expectations.ExpectationFactory.html">ExpectationFactory</a> to create itself a suitable instance based on the supplied backend.</p>
-<p>For most cases letting VQE create a suitable instance is sufficient. However the Qiskit Aer aer_simulator supports a snapshot instruction that can be used in conjunction with the operator expectation computation. If used then the outcome is ideal, i.e. like the statevector simulator, and has no shot noise. Since people normally choose the aer_simulator to have shot noise (sampling noise), and be more like a real-device outcome, VQE has an <code class="docutils literal notranslate"><span class="pre">include_custom</span></code> flag that is passed on to the
-ExpectationFactory. When using Aer qasm simulator, and this is set <code class="docutils literal notranslate"><span class="pre">True</span></code>, the factory will return <code class="docutils literal notranslate"><span class="pre">AerPauliExpectation</span></code> which uses the snapshot instruction, when <code class="docutils literal notranslate"><span class="pre">False</span></code>, default, then the regular <code class="docutils literal notranslate"><span class="pre">PauliExpectation</span></code> is returned.</p>
+<p>L’énergie de l’opérateur Hamiltonien sur lequel VQE travaille est la valeur moyenne obtenue lors de l’évaluation de l’ansatz paramétrée. Pour calculer cette valeur moyenne, VQE utilise une instance d’un objet <a class="reference external" href="https://qiskit.org/documentation/apidoc/qiskit.aqua.operators.expectations.html">expectation</a>. Une telle instance peut être fournie via le paramètre <code class="docutils literal notranslate"><span class="pre">expectation</span></code>, ou via la valeur par défaut <code class="docutils literal notranslate"><span class="pre">None</span></code>, auquel cas VQE utilisera la <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.aqua.operators.expectations.ExpectationFactory.html">ExpectationFactory</a> pour créer une instance appropriée basée sur le backend fourni.</p>
+<p>Dans la plupart des cas, laisser VQE créer une instance appropriée est suffisant. Cependant, le simulateur aer_simulator de Qiskit Aer est capable de réaliser un instantané (snapshot) qui peut être utilisé en conjonction avec le calcul de valeur moyenne de l’opérateur. S’il est utilisé alors le résultat est idéal, c’est-à-dire comme ce que l’on aurait obtenu avec le simulateur statevector, et n’a pas de bruit dû aux mesures. Puisque le simulateur aer_simulator est souvent choisi pour avoir ce bruit de mesure (bruit d’échantillonnage) et être plus proche d’un résultat matériel réel, VQE a un flag <code class="docutils literal notranslate"><span class="pre">include_custom</span></code> qui est passé à l’ExpectationFactory. Lorsque vous utilisez le simulateur Aer aer_simulator et que le paramètre <code class="docutils literal notranslate"><span class="pre">include_custom</span></code> est défini à <code class="docutils literal notranslate"><span class="pre">True</span></code>, l’ExpectationFactory retournera <code class="docutils literal notranslate"><span class="pre">AerPauliExpectation</span></code> qui utilise l’instantané, tandis que la <code class="docutils literal notranslate"><span class="pre">PauliExpectation</span></code> normale sera renvoyée s’il est défini à <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>L’exemple suivant montre <code class="docutils literal notranslate"><span class="pre">include_custom=True</span></code> où le résultat correspond au simulateur statevector. En fait, il peut être mieux/plus rapide de le faire que d’utiliser directement le simulateur statevector_simulator. C’est parce que dans ce dernier cas lorsque le Hamiltonien est une somme de Paulis, il doit être converti en une matrice, ce qui est évité lors de l’utilisation de l’instruction de snapshot lorsque include_custom est True.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -758,7 +761,7 @@ ExpectationFactory. When using Aer qasm simulator, and this is set <code class="
     &#39;optimizer_time&#39;: 0.17621898651123047}
 </pre></div></div>
 </div>
-<p>In case you have doubts here is the aer_simulator again but include_custom has been left to default to False. The optimization ended abruptly, presumably due to the shot noise confusing the SLSQP optimizer.</p>
+<p>Si vous doutez de ce fait, voici de nouveau le simulateur <code class="docutils literal notranslate"><span class="pre">aer_simulator</span></code>, cette fois-ci dans le cas où <code class="docutils literal notranslate"><span class="pre">include_custom</span></code> a été laissé par défaut à <code class="docutils literal notranslate"><span class="pre">False</span></code>. L’optimisation s’est arrêtée brusquement, probablement à cause du bruit dû à ma mesure qui perturbe l’optimiseur SLSQP.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -895,8 +898,7 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
     &#39;optimizer_time&#39;: 0.20196986198425293}
 </pre></div></div>
 </div>
-<p>By default, the <code class="docutils literal notranslate"><span class="pre">PauliExpectation</span></code> object, that would have be chosen when include_custom is False (or when using Aer aer_simulator, or a real device) groups Paulis into commuting sets. This is efficient as it runs less circuits to compute the expectation. However, if for some reason you wanted to run a circuit for each Pauli then then grouping can be turned off when constructing the PauliExpectation. You need to explicitly pass in such an expectation instance to VQE to have it work this way
-though as shown below.</p>
+<p>Par défaut, l’objet <code class="docutils literal notranslate"><span class="pre">PauliExpectation</span></code>, qui aurait été choisi lorsque <code class="docutils literal notranslate"><span class="pre">include_custom</span></code> est <code class="docutils literal notranslate"><span class="pre">False</span></code> (ou lors de l’utilisation du simulateur <code class="docutils literal notranslate"><span class="pre">aer_simulator</span></code> de BasicAer, ou sur un appareil réel) regroupe les Paulis dans des ensembles qui commutent deux à deux. L’efficacité de cette méthode est assurée par le fait que moins de circuits doivent être exécutés pour calculer la valeur moyenne. Cependant, si pour une raison quelconque vous vouliez exécuter un circuit pour chaque Pauli, alors le regroupement peut être désactivé lors de la construction de l’instance de PauliExpectation. Vous devez pour cela passer explicitement l’instance à VQE en utilisant le paramètre <code class="docutils literal notranslate"><span class="pre">expectation</span></code>, comme montré ci-dessous.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -948,7 +950,7 @@ though as shown below.</p>
 </section>
 <section id="Instance-Quantum-et-simulation-avancée">
 <h2>Instance Quantum et simulation avancée<a class="headerlink" href="#Instance-Quantum-et-simulation-avancée" title="Lien permanent vers ce titre">¶</a></h2>
-<p>While you may be familiar with passing a QuantumInstancen created from a <code class="docutils literal notranslate"><span class="pre">aer_simulator_statevector</span></code> a <code class="docutils literal notranslate"><span class="pre">aer_simulator</span></code> or real device backend, it is possible to use the advanced simulation modes of Aer too when applicable. For instance we can easily use the Aer <a class="reference internal" href="../simulators/7_matrix_product_state_method.html"><span class="doc">Matrix Product State</span></a> method, that has the potential to scale to larger numbers of qubits.</p>
+<p>Bien que vous soyez peut-être familiers avec le fait de passer une instance de QuantumInstance créée à partir d’un <code class="docutils literal notranslate"><span class="pre">statevector_simulator</span></code> ou d’un <code class="docutils literal notranslate"><span class="pre">aer_simulator</span></code> ou d’un backend permettant d’accéder à une machine réelle, il est également possible d’utiliser les modes de simulation avancés d’Aer. Par exemple, nous pouvons facilement utiliser la méthode Aer <a class="reference internal" href="../simulators/7_matrix_product_state_method.html"><span class="doc">Matrix Product State</span></a>, qui a le potentiel de simuler un plus grand nombre de qubits.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -1043,7 +1045,7 @@ though as shown below.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Mis à jour le 2021/08/13.
+      Mis à jour le 2021/09/23.
 
     </p>
   </div>
@@ -1132,7 +1134,7 @@ though as shown below.</p>
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1155,9 +1157,11 @@ though as shown below.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,41 +1,34 @@
-﻿qiskit.ignis.characterization.DragFitter
-========================================
+﻿DragFitter
+==========
 
 .. currentmodule:: qiskit.ignis.characterization
 
 .. autoclass:: DragFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DragFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DragFitter.add_data
       ~DragFitter.drag_amplitude
       ~DragFitter.fit_data
       ~DragFitter.guess_params
       ~DragFitter.plot
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DragFitter.backend_result
-      ~DragFitter.description
-      ~DragFitter.fit_fun
-      ~DragFitter.measured_qubits
-      ~DragFitter.params
-      ~DragFitter.params_err
-      ~DragFitter.series
-      ~DragFitter.xdata
-      ~DragFitter.ydata
-   
-   
+   .. autoattribute:: backend_result
+   .. autoattribute:: description
+   .. autoattribute:: fit_fun
+   .. autoattribute:: measured_qubits
+   .. autoattribute:: params
+   .. autoattribute:: params_err
+   .. autoattribute:: series
+   .. autoattribute:: xdata
+   .. autoattribute:: ydata

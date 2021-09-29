@@ -1,30 +1,23 @@
-﻿qiskit.optimization.converters.LinearEqualityToPenalty
-======================================================
+﻿LinearEqualityToPenalty
+=======================
 
 .. currentmodule:: qiskit.optimization.converters
 
 .. autoclass:: LinearEqualityToPenalty
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LinearEqualityToPenalty.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LinearEqualityToPenalty.convert
       ~LinearEqualityToPenalty.interpret
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LinearEqualityToPenalty.penalty
-   
-   
+   .. autoattribute:: penalty

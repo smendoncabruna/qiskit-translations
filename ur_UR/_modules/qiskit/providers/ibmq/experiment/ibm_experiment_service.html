@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.experiment.ibm_experiment_service &mdash; Qiskit 0.29.0 documentation</title>
+  <title>qiskit.providers.ibmq.experiment.ibm_experiment_service &mdash; Qiskit 0.30.0 documentation</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -404,7 +411,7 @@
 
     <span class="n">_default_preferences</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;auto_save&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
 
-<div class="viewcode-block" id="IBMExperimentService.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">provider</span><span class="p">:</span> <span class="s1">&#39;accountprovider.AccountProvider&#39;</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -418,9 +425,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_provider</span> <span class="o">=</span> <span class="n">provider</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_api_client</span> <span class="o">=</span> <span class="n">ExperimentClient</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">credentials</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_preferences</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_default_preferences</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_preferences</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">preferences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;experiments&#39;</span><span class="p">,</span> <span class="p">{}))</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preferences</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">provider</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">preferences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;experiments&#39;</span><span class="p">,</span> <span class="p">{}))</span>
 
-<div class="viewcode-block" id="IBMExperimentService.backends"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.backends">[docs]</a>    <span class="k">def</span> <span class="nf">backends</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
+<div class="viewcode-block" id="IBMExperimentService.backends"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.backends.html#qiskit.providers.ibmq.experiment.IBMExperimentService.backends">[docs]</a>    <span class="k">def</span> <span class="nf">backends</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return a list of backends that can be used for experiments.</span>
 
 <span class="sd">        Returns:</span>
@@ -428,7 +435,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_client</span><span class="o">.</span><span class="n">experiment_devices</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.create_experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment">[docs]</a>    <span class="k">def</span> <span class="nf">create_experiment</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.create_experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment">[docs]</a>    <span class="k">def</span> <span class="nf">create_experiment</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">backend_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -498,7 +505,7 @@
             <span class="n">response_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_client</span><span class="o">.</span><span class="n">experiment_upload</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">json_encoder</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">response_data</span><span class="p">[</span><span class="s1">&#39;uuid&#39;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.update_experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment">[docs]</a>    <span class="k">def</span> <span class="nf">update_experiment</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.update_experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_experiment">[docs]</a>    <span class="k">def</span> <span class="nf">update_experiment</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -602,7 +609,7 @@
             <span class="n">data</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">local_to_utc_str</span><span class="p">(</span><span class="n">end_dt</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span>
 
-<div class="viewcode-block" id="IBMExperimentService.experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.experiment">[docs]</a>    <span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.experiment">[docs]</a>    <span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">json_decoder</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span>
@@ -625,7 +632,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_to_experiment_data</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">json_decoder</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.experiments"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.experiments">[docs]</a>    <span class="k">def</span> <span class="nf">experiments</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.experiments"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.experiments.html#qiskit.providers.ibmq.experiment.IBMExperimentService.experiments">[docs]</a>    <span class="k">def</span> <span class="nf">experiments</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
             <span class="n">json_decoder</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">,</span>
@@ -860,7 +867,7 @@
             <span class="k">return</span>
         <span class="n">data</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">utc_to_local</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
 
-<div class="viewcode-block" id="IBMExperimentService.delete_experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment">[docs]</a>    <span class="k">def</span> <span class="nf">delete_experiment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="IBMExperimentService.delete_experiment"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_experiment">[docs]</a>    <span class="k">def</span> <span class="nf">delete_experiment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Delete an experiment.</span>
 
 <span class="sd">        Args:</span>
@@ -885,7 +892,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">IBMQApiError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to process the request: </span><span class="si">{</span><span class="n">api_err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.create_analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">create_analysis_result</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.create_analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">create_analysis_result</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">result_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
@@ -956,7 +963,7 @@
                 <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">json_encoder</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;uuid&#39;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.update_analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">update_analysis_result</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.update_analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">update_analysis_result</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">result_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">result_data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1052,7 +1059,7 @@
             <span class="n">out</span><span class="p">[</span><span class="s2">&quot;chisq&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chisq</span>
         <span class="k">return</span> <span class="n">out</span>
 
-<div class="viewcode-block" id="IBMExperimentService.analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">analysis_result</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">analysis_result</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">result_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">json_decoder</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span>
@@ -1075,7 +1082,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_to_analysis_result</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">json_decoder</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.analysis_results"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results">[docs]</a>    <span class="k">def</span> <span class="nf">analysis_results</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.analysis_results"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results.html#qiskit.providers.ibmq.experiment.IBMExperimentService.analysis_results">[docs]</a>    <span class="k">def</span> <span class="nf">analysis_results</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
             <span class="n">json_decoder</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecoder</span><span class="p">,</span>
@@ -1349,7 +1356,7 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">out_dict</span>
 
-<div class="viewcode-block" id="IBMExperimentService.delete_analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">delete_analysis_result</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.delete_analysis_result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_analysis_result">[docs]</a>    <span class="k">def</span> <span class="nf">delete_analysis_result</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">result_id</span><span class="p">:</span> <span class="nb">str</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1376,7 +1383,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">IBMQApiError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to process the request: </span><span class="si">{</span><span class="n">api_err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.create_figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure">[docs]</a>    <span class="k">def</span> <span class="nf">create_figure</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.create_figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.create_figure">[docs]</a>    <span class="k">def</span> <span class="nf">create_figure</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">figure</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">],</span>
@@ -1416,7 +1423,7 @@
                                                                <span class="n">sync_upload</span><span class="o">=</span><span class="n">sync_upload</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.update_figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure">[docs]</a>    <span class="k">def</span> <span class="nf">update_figure</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.update_figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.update_figure">[docs]</a>    <span class="k">def</span> <span class="nf">update_figure</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">figure</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">],</span>
@@ -1445,7 +1452,7 @@
 
         <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.figure">[docs]</a>    <span class="k">def</span> <span class="nf">figure</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.figure">[docs]</a>    <span class="k">def</span> <span class="nf">figure</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">figure_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1477,7 +1484,7 @@
 
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.delete_figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure">[docs]</a>    <span class="k">def</span> <span class="nf">delete_figure</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.delete_figure"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure.html#qiskit.providers.ibmq.experiment.IBMExperimentService.delete_figure">[docs]</a>    <span class="k">def</span> <span class="nf">delete_figure</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">experiment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">figure_name</span><span class="p">:</span> <span class="nb">str</span>
@@ -1506,7 +1513,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">IBMQApiError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to process the request: </span><span class="si">{</span><span class="n">api_err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="bp">None</span></div>
 
-<div class="viewcode-block" id="IBMExperimentService.device_components"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.device_components">[docs]</a>    <span class="k">def</span> <span class="nf">device_components</span><span class="p">(</span>
+<div class="viewcode-block" id="IBMExperimentService.device_components"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.device_components.html#qiskit.providers.ibmq.experiment.IBMExperimentService.device_components">[docs]</a>    <span class="k">def</span> <span class="nf">device_components</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">backend_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">],</span> <span class="n">List</span><span class="p">]:</span>
@@ -1549,7 +1556,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preferences</span>
 
-<div class="viewcode-block" id="IBMExperimentService.save_preferences"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.html#qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences">[docs]</a>    <span class="k">def</span> <span class="nf">save_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auto_save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="IBMExperimentService.save_preferences"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences.html#qiskit.providers.ibmq.experiment.IBMExperimentService.save_preferences">[docs]</a>    <span class="k">def</span> <span class="nf">save_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auto_save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Stores experiment preferences on disk.</span>
 
 <span class="sd">        Note:</span>
@@ -1588,7 +1595,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/08/13.
+      Last updated on 2021/09/23.
 
     </p>
   </div>
@@ -1668,7 +1675,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1691,9 +1698,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.managed.managedjob &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>qiskit.providers.ibmq.managed.managedjob &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -361,7 +368,7 @@
 <div class="viewcode-block" id="ManagedJob"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob">[docs]</a><span class="k">class</span> <span class="nc">ManagedJob</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Job managed by the Job Manager.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="ManagedJob.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">start_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
             <span class="n">experiments_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -380,9 +387,9 @@
 
         <span class="c1"># Properties that may be populated by the future.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">job</span> <span class="o">=</span> <span class="n">job</span>  <span class="c1"># type: Optional[IBMQJob]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">submit_error</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[Exception]</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">submit_error</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: Optional[Exception]</span>
 
-<div class="viewcode-block" id="ManagedJob.submit"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.submit">[docs]</a>    <span class="k">def</span> <span class="nf">submit</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedJob.submit"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.submit.html#qiskit.providers.ibmq.managed.ManagedJob.submit">[docs]</a>    <span class="k">def</span> <span class="nf">submit</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">circuits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">]]],</span>
             <span class="n">job_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -473,7 +480,7 @@
             <span class="n">submit_lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Job </span><span class="si">%s</span><span class="s2"> released the submit lock.&quot;</span><span class="p">,</span> <span class="n">job_name</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ManagedJob.status"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.status">[docs]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">JobStatus</span><span class="p">]:</span>
+<div class="viewcode-block" id="ManagedJob.status"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.status.html#qiskit.providers.ibmq.managed.ManagedJob.status">[docs]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">JobStatus</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Query the server for job status.</span>
 
 <span class="sd">        Returns:</span>
@@ -495,7 +502,7 @@
 
         <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="ManagedJob.result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.result">[docs]</a>    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span>
+<div class="viewcode-block" id="ManagedJob.result"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.result.html#qiskit.providers.ibmq.managed.ManagedJob.result">[docs]</a>    <span class="k">def</span> <span class="nf">result</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">partial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -529,7 +536,7 @@
 
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="ManagedJob.error_message"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.error_message">[docs]</a>    <span class="k">def</span> <span class="nf">error_message</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="ManagedJob.error_message"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.error_message.html#qiskit.providers.ibmq.managed.ManagedJob.error_message">[docs]</a>    <span class="k">def</span> <span class="nf">error_message</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Provide details about the reason of failure.</span>
 
 <span class="sd">        Returns:</span>
@@ -542,7 +549,7 @@
         <span class="k">except</span> <span class="n">JobError</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">&quot;Unknown error.&quot;</span></div>
 
-<div class="viewcode-block" id="ManagedJob.cancel"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.cancel">[docs]</a>    <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="ManagedJob.cancel"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.cancel.html#qiskit.providers.ibmq.managed.ManagedJob.cancel">[docs]</a>    <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Attempt to cancel the job.&quot;&quot;&quot;</span>
         <span class="n">cancelled</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">cancel_error</span> <span class="o">=</span> <span class="s2">&quot;Unknown error&quot;</span>
@@ -555,7 +562,7 @@
             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Unable to cancel job </span><span class="si">%s</span><span class="s2"> for experiments </span><span class="si">%d</span><span class="s2">-</span><span class="si">%d</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
                            <span class="bp">self</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">job_id</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_index</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_index</span><span class="p">,</span> <span class="n">cancel_error</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ManagedJob.qobj"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.html#qiskit.providers.ibmq.managed.ManagedJob.qobj">[docs]</a>    <span class="k">def</span> <span class="nf">qobj</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QasmQobj</span><span class="p">,</span> <span class="n">PulseQobj</span><span class="p">]]:</span>
+<div class="viewcode-block" id="ManagedJob.qobj"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.managed.ManagedJob.qobj.html#qiskit.providers.ibmq.managed.ManagedJob.qobj">[docs]</a>    <span class="k">def</span> <span class="nf">qobj</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">QasmQobj</span><span class="p">,</span> <span class="n">PulseQobj</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Return the Qobj for this job.</span>
 
 <span class="sd">        Returns:</span>
@@ -588,7 +595,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -668,7 +675,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -691,9 +698,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

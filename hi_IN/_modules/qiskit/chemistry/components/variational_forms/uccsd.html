@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.chemistry.components.variational_forms.uccsd &mdash; Qiskit 0.29.0 दिग्दर्शिका</title>
+  <title>qiskit.chemistry.components.variational_forms.uccsd &mdash; Qiskit 0.30.0 दिग्दर्शिका</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -368,7 +375,7 @@
 <span class="sd">    And for the singlet q-UCCD (full) and pair q-UCCD) see: https://arxiv.org/abs/1911.10864</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="UCCSD.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">num_orbitals</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
                  <span class="n">num_particles</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">],</span>
                  <span class="n">reps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -527,7 +534,7 @@
 
             <span class="bp">self</span><span class="o">.</span><span class="n">_hopping_ops</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_single_excitations</span><span class="p">):]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hopping_ops_doubles_temp</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_logging_construct_circuit</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_logging_construct_circuit</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">single_excitations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -644,7 +651,7 @@
                          <span class="s1">&#39;with symmetries&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">index</span><span class="p">]))</span>
         <span class="k">return</span> <span class="n">qubit_op</span><span class="p">,</span> <span class="n">index</span>
 
-<div class="viewcode-block" id="UCCSD.manage_hopping_operators"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.manage_hopping_operators">[docs]</a>    <span class="k">def</span> <span class="nf">manage_hopping_operators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UCCSD.manage_hopping_operators"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.manage_hopping_operators.html#qiskit.chemistry.components.variational_forms.UCCSD.manage_hopping_operators">[docs]</a>    <span class="k">def</span> <span class="nf">manage_hopping_operators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Triggers the adaptive behavior of this UCCSD instance.</span>
 <span class="sd">        This function is used by the Adaptive VQE algorithm. It stores the full list of available</span>
@@ -666,7 +673,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="p">[]</span></div>
 
-<div class="viewcode-block" id="UCCSD.push_hopping_operator"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.push_hopping_operator">[docs]</a>    <span class="k">def</span> <span class="nf">push_hopping_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">excitation</span><span class="p">):</span>
+<div class="viewcode-block" id="UCCSD.push_hopping_operator"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.push_hopping_operator.html#qiskit.chemistry.components.variational_forms.UCCSD.push_hopping_operator">[docs]</a>    <span class="k">def</span> <span class="nf">push_hopping_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">excitation</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pushes a new hopping operator.</span>
 
@@ -677,7 +684,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hopping_ops</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reps</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="UCCSD.pop_hopping_operator"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.pop_hopping_operator">[docs]</a>    <span class="k">def</span> <span class="nf">pop_hopping_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UCCSD.pop_hopping_operator"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.pop_hopping_operator.html#qiskit.chemistry.components.variational_forms.UCCSD.pop_hopping_operator">[docs]</a>    <span class="k">def</span> <span class="nf">pop_hopping_operator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pops the hopping operator that was added last.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -685,7 +692,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hopping_ops</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reps</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="UCCSD.construct_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.construct_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">construct_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="UCCSD.construct_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.construct_circuit.html#qiskit.chemistry.components.variational_forms.UCCSD.construct_circuit">[docs]</a>    <span class="k">def</span> <span class="nf">construct_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Construct the variational form, given its parameters.</span>
 
@@ -776,7 +783,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
-<div class="viewcode-block" id="UCCSD.compute_excitation_lists"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.compute_excitation_lists">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="UCCSD.compute_excitation_lists"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.compute_excitation_lists.html#qiskit.chemistry.components.variational_forms.UCCSD.compute_excitation_lists">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">compute_excitation_lists</span><span class="p">(</span><span class="n">num_particles</span><span class="p">,</span> <span class="n">num_orbitals</span><span class="p">,</span> <span class="n">active_occ_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                  <span class="n">active_unocc_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">same_spin_doubles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                                  <span class="n">method_singles</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">method_doubles</span><span class="o">=</span><span class="s1">&#39;ucc&#39;</span><span class="p">,</span>
@@ -972,7 +979,7 @@
 
     <span class="c1"># below are all tool functions that serve to group excitations that are controlled by</span>
     <span class="c1"># same angle theta in singlet ucc</span>
-<div class="viewcode-block" id="UCCSD.compute_excitation_lists_singlet"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.compute_excitation_lists_singlet">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="UCCSD.compute_excitation_lists_singlet"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.compute_excitation_lists_singlet.html#qiskit.chemistry.components.variational_forms.UCCSD.compute_excitation_lists_singlet">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">compute_excitation_lists_singlet</span><span class="p">(</span><span class="n">double_exc</span><span class="p">,</span> <span class="n">num_orbitals</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Outputs the list of lists of grouped excitation. A single list inside is controlled by</span>
@@ -989,7 +996,7 @@
 
         <span class="k">return</span> <span class="n">de_groups</span></div>
 
-<div class="viewcode-block" id="UCCSD.same_ao_double_excitation_block_spin"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.same_ao_double_excitation_block_spin">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="UCCSD.same_ao_double_excitation_block_spin"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.same_ao_double_excitation_block_spin.html#qiskit.chemistry.components.variational_forms.UCCSD.same_ao_double_excitation_block_spin">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">same_ao_double_excitation_block_spin</span><span class="p">(</span><span class="n">de_1</span><span class="p">,</span> <span class="n">de_2</span><span class="p">,</span> <span class="n">num_orbitals</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Regroups the excitations that involve same spatial orbitals</span>
@@ -1036,7 +1043,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="UCCSD.group_excitations"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.group_excitations">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="UCCSD.group_excitations"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.group_excitations.html#qiskit.chemistry.components.variational_forms.UCCSD.group_excitations">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">group_excitations</span><span class="p">(</span><span class="n">list_de</span><span class="p">,</span> <span class="n">num_orbitals</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Groups the excitations and gives out the remaining ones in the list_de_temp list</span>
@@ -1071,7 +1078,7 @@
 
         <span class="k">return</span> <span class="n">list_same_ao_group</span><span class="p">,</span> <span class="n">list_de_temp</span></div>
 
-<div class="viewcode-block" id="UCCSD.group_excitations_if_same_ao"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.group_excitations_if_same_ao">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="UCCSD.group_excitations_if_same_ao"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.group_excitations_if_same_ao.html#qiskit.chemistry.components.variational_forms.UCCSD.group_excitations_if_same_ao">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">group_excitations_if_same_ao</span><span class="p">(</span><span class="n">list_de</span><span class="p">,</span> <span class="n">num_orbitals</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define that, given list of double excitations list_de and number of spin-orbitals</span>
@@ -1093,7 +1100,7 @@
 
         <span class="k">return</span> <span class="n">list_groups</span></div>
 
-<div class="viewcode-block" id="UCCSD.order_labels_for_hopping_ops"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.html#qiskit.chemistry.components.variational_forms.UCCSD.order_labels_for_hopping_ops">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="UCCSD.order_labels_for_hopping_ops"><a class="viewcode-back" href="../../../../../stubs/qiskit.chemistry.components.variational_forms.UCCSD.order_labels_for_hopping_ops.html#qiskit.chemistry.components.variational_forms.UCCSD.order_labels_for_hopping_ops">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">order_labels_for_hopping_ops</span><span class="p">(</span><span class="n">double_exc</span><span class="p">,</span> <span class="n">gde</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Orders the hopping operators according to the grouped excitations for the full singlet</span>
@@ -1136,7 +1143,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      अंतिम बार सम्पादित 2021/08/13.
+      अंतिम बार सम्पादित 2021/09/23.
 
     </p>
   </div>
@@ -1217,7 +1224,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1240,9 +1247,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,19 +1,18 @@
-﻿qiskit.circuit.Delay
-====================
+﻿Delay
+=====
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Delay
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Delay.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Delay.add_decomposition
       ~Delay.assemble
       ~Delay.broadcast_arguments
@@ -28,20 +27,14 @@
       ~Delay.soft_compare
       ~Delay.to_matrix
       ~Delay.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Delay.decompositions
-      ~Delay.definition
-      ~Delay.duration
-      ~Delay.label
-      ~Delay.params
-      ~Delay.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

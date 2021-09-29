@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.models.backendproperties &mdash; документация Qiskit 0.29.0</title>
+  <title>qiskit.providers.models.backendproperties &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -487,7 +494,7 @@
 
     <span class="n">_data</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="BackendProperties.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.__init__">[документация]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">backend_name</span><span class="p">,</span> <span class="n">backend_version</span><span class="p">,</span> <span class="n">last_update_date</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">gates</span><span class="p">,</span> <span class="n">general</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize a BackendProperties instance.</span>
@@ -532,7 +539,7 @@
                 <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_prefix</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
                 <span class="n">formatted_props</span><span class="p">[</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_gates</span><span class="p">[</span><span class="n">gate</span><span class="o">.</span><span class="n">gate</span><span class="p">][</span><span class="nb">tuple</span><span class="p">(</span><span class="n">gate</span><span class="o">.</span><span class="n">qubits</span><span class="p">)]</span> <span class="o">=</span> <span class="n">formatted_props</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
@@ -540,7 +547,7 @@
         <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not defined&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
 
-<div class="viewcode-block" id="BackendProperties.from_dict"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.from_dict">[документация]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BackendProperties.from_dict"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.from_dict.html#qiskit.providers.models.BackendProperties.from_dict">[документация]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a new Gate object from a dictionary.</span>
 
@@ -569,7 +576,7 @@
             <span class="n">backend_name</span><span class="p">,</span> <span class="n">backend_version</span><span class="p">,</span> <span class="n">last_update_date</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="n">gates</span><span class="p">,</span> <span class="n">general</span><span class="p">,</span> <span class="o">**</span><span class="n">in_data</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="BackendProperties.to_dict"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.to_dict">[документация]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendProperties.to_dict"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.to_dict.html#qiskit.providers.models.BackendProperties.to_dict">[документация]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a dictionary format representation of the BackendProperties.</span>
 
 <span class="sd">        Returns:</span>
@@ -597,7 +604,7 @@
                 <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="BackendProperties.gate_property"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.gate_property">[документация]</a>    <span class="k">def</span> <span class="nf">gate_property</span><span class="p">(</span>
+<div class="viewcode-block" id="BackendProperties.gate_property"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.gate_property.html#qiskit.providers.models.BackendProperties.gate_property">[документация]</a>    <span class="k">def</span> <span class="nf">gate_property</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -629,7 +636,7 @@
             <span class="k">raise</span> <span class="n">BackendPropertyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find the desired property for </span><span class="si">{</span><span class="n">gate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="BackendProperties.faulty_qubits"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.faulty_qubits">[документация]</a>    <span class="k">def</span> <span class="nf">faulty_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendProperties.faulty_qubits"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.faulty_qubits.html#qiskit.providers.models.BackendProperties.faulty_qubits">[документация]</a>    <span class="k">def</span> <span class="nf">faulty_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a list of faulty qubits.&quot;&quot;&quot;</span>
         <span class="n">faulty</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">qubit</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_qubits</span><span class="p">:</span>
@@ -637,7 +644,7 @@
                 <span class="n">faulty</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">qubit</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">faulty</span></div>
 
-<div class="viewcode-block" id="BackendProperties.faulty_gates"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.faulty_gates">[документация]</a>    <span class="k">def</span> <span class="nf">faulty_gates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="BackendProperties.faulty_gates"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.faulty_gates.html#qiskit.providers.models.BackendProperties.faulty_gates">[документация]</a>    <span class="k">def</span> <span class="nf">faulty_gates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a list of faulty gates.&quot;&quot;&quot;</span>
         <span class="n">faulty</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">gate</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">gates</span><span class="p">:</span>
@@ -645,7 +652,7 @@
                 <span class="n">faulty</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gate</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">faulty</span></div>
 
-<div class="viewcode-block" id="BackendProperties.is_gate_operational"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.is_gate_operational">[документация]</a>    <span class="k">def</span> <span class="nf">is_gate_operational</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.is_gate_operational"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.is_gate_operational.html#qiskit.providers.models.BackendProperties.is_gate_operational">[документация]</a>    <span class="k">def</span> <span class="nf">is_gate_operational</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the operational status of the given gate.</span>
 
@@ -662,7 +669,7 @@
             <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">properties</span><span class="p">[</span><span class="s2">&quot;operational&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
         <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># if property operational not existent, then True.</span></div>
 
-<div class="viewcode-block" id="BackendProperties.gate_error"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.gate_error">[документация]</a>    <span class="k">def</span> <span class="nf">gate_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.gate_error"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.gate_error.html#qiskit.providers.models.BackendProperties.gate_error">[документация]</a>    <span class="k">def</span> <span class="nf">gate_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return gate error estimates from backend properties.</span>
 
@@ -675,7 +682,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gate_property</span><span class="p">(</span><span class="n">gate</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="s2">&quot;gate_error&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.gate_length"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.gate_length">[документация]</a>    <span class="k">def</span> <span class="nf">gate_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.gate_length"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.gate_length.html#qiskit.providers.models.BackendProperties.gate_length">[документация]</a>    <span class="k">def</span> <span class="nf">gate_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gate</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">qubits</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the duration of the gate in units of seconds.</span>
 
@@ -688,7 +695,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gate_property</span><span class="p">(</span><span class="n">gate</span><span class="p">,</span> <span class="n">qubits</span><span class="p">,</span> <span class="s2">&quot;gate_length&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.qubit_property"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.qubit_property">[документация]</a>    <span class="k">def</span> <span class="nf">qubit_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]:</span>
+<div class="viewcode-block" id="BackendProperties.qubit_property"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.qubit_property.html#qiskit.providers.models.BackendProperties.qubit_property">[документация]</a>    <span class="k">def</span> <span class="nf">qubit_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the property of the given qubit.</span>
 
@@ -713,7 +720,7 @@
             <span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="BackendProperties.t1"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.t1">[документация]</a>    <span class="k">def</span> <span class="nf">t1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>  <span class="c1"># pylint: disable=invalid-name</span>
+<div class="viewcode-block" id="BackendProperties.t1"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.t1.html#qiskit.providers.models.BackendProperties.t1">[документация]</a>    <span class="k">def</span> <span class="nf">t1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>  <span class="c1"># pylint: disable=invalid-name</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the T1 time of the given qubit.</span>
 
@@ -725,7 +732,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qubit_property</span><span class="p">(</span><span class="n">qubit</span><span class="p">,</span> <span class="s2">&quot;T1&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.t2"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.t2">[документация]</a>    <span class="k">def</span> <span class="nf">t2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>  <span class="c1"># pylint: disable=invalid-name</span>
+<div class="viewcode-block" id="BackendProperties.t2"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.t2.html#qiskit.providers.models.BackendProperties.t2">[документация]</a>    <span class="k">def</span> <span class="nf">t2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>  <span class="c1"># pylint: disable=invalid-name</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the T2 time of the given qubit.</span>
 
@@ -737,7 +744,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qubit_property</span><span class="p">(</span><span class="n">qubit</span><span class="p">,</span> <span class="s2">&quot;T2&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.frequency"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.frequency">[документация]</a>    <span class="k">def</span> <span class="nf">frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.frequency"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.frequency.html#qiskit.providers.models.BackendProperties.frequency">[документация]</a>    <span class="k">def</span> <span class="nf">frequency</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the frequency of the given qubit.</span>
 
@@ -749,7 +756,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qubit_property</span><span class="p">(</span><span class="n">qubit</span><span class="p">,</span> <span class="s2">&quot;frequency&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.readout_error"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.readout_error">[документация]</a>    <span class="k">def</span> <span class="nf">readout_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.readout_error"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.readout_error.html#qiskit.providers.models.BackendProperties.readout_error">[документация]</a>    <span class="k">def</span> <span class="nf">readout_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the readout error of the given qubit.</span>
 
@@ -761,7 +768,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qubit_property</span><span class="p">(</span><span class="n">qubit</span><span class="p">,</span> <span class="s2">&quot;readout_error&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.readout_length"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.readout_length">[документация]</a>    <span class="k">def</span> <span class="nf">readout_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.readout_length"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.readout_length.html#qiskit.providers.models.BackendProperties.readout_length">[документация]</a>    <span class="k">def</span> <span class="nf">readout_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the readout length [sec] of the given qubit.</span>
 
@@ -773,7 +780,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">qubit_property</span><span class="p">(</span><span class="n">qubit</span><span class="p">,</span> <span class="s2">&quot;readout_length&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Throw away datetime at index 1</span></div>
 
-<div class="viewcode-block" id="BackendProperties.is_qubit_operational"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.html#qiskit.providers.models.BackendProperties.is_qubit_operational">[документация]</a>    <span class="k">def</span> <span class="nf">is_qubit_operational</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="BackendProperties.is_qubit_operational"><a class="viewcode-back" href="../../../../stubs/qiskit.providers.models.BackendProperties.is_qubit_operational.html#qiskit.providers.models.BackendProperties.is_qubit_operational">[документация]</a>    <span class="k">def</span> <span class="nf">is_qubit_operational</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the operational status of the given qubit.</span>
 
@@ -824,7 +831,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -904,7 +911,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -927,9 +934,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

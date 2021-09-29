@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.drivers.PyQuanteDriver
-=======================================
+﻿PyQuanteDriver
+==============
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: PyQuanteDriver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PyQuanteDriver.__init__
-      ~PyQuanteDriver.run
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~PyQuanteDriver.run
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PyQuanteDriver.basis
-      ~PyQuanteDriver.hf_method
-      ~PyQuanteDriver.molecule
-      ~PyQuanteDriver.supports_molecule
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule

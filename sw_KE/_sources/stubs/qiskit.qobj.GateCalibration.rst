@@ -1,24 +1,19 @@
-﻿qiskit.qobj.GateCalibration
-===========================
+﻿GateCalibration
+===============
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: GateCalibration
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GateCalibration.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~GateCalibration.from_dict
       ~GateCalibration.to_dict
-   
-   
 
-   
-   
-   
+

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.verification.topological_codes.circuits &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>qiskit.ignis.verification.topological_codes.circuits &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -348,7 +355,7 @@
 <span class="sd">    T syndrome measurement rounds.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="RepetitionCode.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.html#qiskit.ignis.verification.RepetitionCode.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates the circuits corresponding to a logical 0 and 1 encoded</span>
 <span class="sd">        using a repetition code.</span>
@@ -387,9 +394,9 @@
 
         <span class="k">if</span> <span class="n">T</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">syndrome_measurement</span><span class="p">(</span><span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">readout</span><span class="p">()</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">readout</span><span class="p">()</span>
 
-<div class="viewcode-block" id="RepetitionCode.get_circuit_list"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.html#qiskit.ignis.verification.RepetitionCode.get_circuit_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_circuit_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RepetitionCode.get_circuit_list"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.get_circuit_list.html#qiskit.ignis.verification.RepetitionCode.get_circuit_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_circuit_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            circuit_list: self.circuit as a list, with</span>
@@ -399,7 +406,7 @@
         <span class="n">circuit_list</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">circuit</span><span class="p">[</span><span class="n">log</span><span class="p">]</span> <span class="k">for</span> <span class="n">log</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]]</span>
         <span class="k">return</span> <span class="n">circuit_list</span></div>
 
-<div class="viewcode-block" id="RepetitionCode.x"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.html#qiskit.ignis.verification.RepetitionCode.x">[docs]</a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">barrier</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RepetitionCode.x"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.x.html#qiskit.ignis.verification.RepetitionCode.x">[docs]</a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">barrier</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies a logical x to the circuits for the given logical values.</span>
 
@@ -422,7 +429,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
 
-<div class="viewcode-block" id="RepetitionCode.syndrome_measurement"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.html#qiskit.ignis.verification.RepetitionCode.syndrome_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">syndrome_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">barrier</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RepetitionCode.syndrome_measurement"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.syndrome_measurement.html#qiskit.ignis.verification.RepetitionCode.syndrome_measurement">[docs]</a>    <span class="k">def</span> <span class="nf">syndrome_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">barrier</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Application of a syndrome measurement round.</span>
 
@@ -455,7 +462,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">T</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="RepetitionCode.readout"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.html#qiskit.ignis.verification.RepetitionCode.readout">[docs]</a>    <span class="k">def</span> <span class="nf">readout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RepetitionCode.readout"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.readout.html#qiskit.ignis.verification.RepetitionCode.readout">[docs]</a>    <span class="k">def</span> <span class="nf">readout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Readout of all code qubits, which corresponds to a logical measurement</span>
 <span class="sd">        as well as allowing for a measurement of the syndrome to be inferred.</span>
@@ -464,7 +471,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">circuit</span><span class="p">[</span><span class="n">log</span><span class="p">]</span><span class="o">.</span><span class="n">add_register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code_bit</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">circuit</span><span class="p">[</span><span class="n">log</span><span class="p">]</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code_qubit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">code_bit</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RepetitionCode.process_results"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.html#qiskit.ignis.verification.RepetitionCode.process_results">[docs]</a>    <span class="k">def</span> <span class="nf">process_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_results</span><span class="p">):</span>
+<div class="viewcode-block" id="RepetitionCode.process_results"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.verification.RepetitionCode.process_results.html#qiskit.ignis.verification.RepetitionCode.process_results">[docs]</a>    <span class="k">def</span> <span class="nf">process_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_results</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            raw_results (dict): A dictionary whose keys are logical values,</span>
@@ -536,7 +543,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -616,7 +623,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -639,9 +646,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

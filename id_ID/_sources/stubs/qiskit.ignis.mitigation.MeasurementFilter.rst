@@ -1,30 +1,23 @@
-﻿qiskit.ignis.mitigation.MeasurementFilter
-=========================================
+﻿MeasurementFilter
+=================
 
 .. currentmodule:: qiskit.ignis.mitigation
 
 .. autoclass:: MeasurementFilter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MeasurementFilter.__init__
-      ~MeasurementFilter.apply
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~MeasurementFilter.apply
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MeasurementFilter.cal_matrix
-      ~MeasurementFilter.state_labels
-   
-   
+   .. autoattribute:: cal_matrix
+   .. autoattribute:: state_labels

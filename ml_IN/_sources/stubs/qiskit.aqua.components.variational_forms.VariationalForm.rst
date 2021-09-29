@@ -1,36 +1,29 @@
-﻿qiskit.aqua.components.variational\_forms.VariationalForm
-=========================================================
+﻿VariationalForm
+===============
 
 .. currentmodule:: qiskit.aqua.components.variational_forms
 
 .. autoclass:: VariationalForm
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~VariationalForm.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~VariationalForm.construct_circuit
       ~VariationalForm.get_entangler_map
       ~VariationalForm.validate_entangler_map
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~VariationalForm.num_parameters
-      ~VariationalForm.num_qubits
-      ~VariationalForm.parameter_bounds
-      ~VariationalForm.preferred_init_points
-      ~VariationalForm.setting
-      ~VariationalForm.support_parameterized_circuit
-   
-   
+   .. autoattribute:: num_parameters
+   .. autoattribute:: num_qubits
+   .. autoattribute:: parameter_bounds
+   .. autoattribute:: preferred_init_points
+   .. autoattribute:: setting
+   .. autoattribute:: support_parameterized_circuit

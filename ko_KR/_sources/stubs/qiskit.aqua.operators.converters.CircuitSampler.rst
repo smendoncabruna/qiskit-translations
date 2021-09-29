@@ -1,32 +1,25 @@
-﻿qiskit.aqua.operators.converters.CircuitSampler
-===============================================
+﻿CircuitSampler
+==============
 
 .. currentmodule:: qiskit.aqua.operators.converters
 
 .. autoclass:: CircuitSampler
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CircuitSampler.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CircuitSampler.convert
       ~CircuitSampler.sample_circuits
       ~CircuitSampler.set_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CircuitSampler.backend
-      ~CircuitSampler.quantum_instance
-   
-   
+   .. autoattribute:: backend
+   .. autoattribute:: quantum_instance

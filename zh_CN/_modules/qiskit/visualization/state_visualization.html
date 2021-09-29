@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.visualization.state_visualization &mdash; Qiskit 0.29.0 文档</title>
+  <title>qiskit.visualization.state_visualization &mdash; Qiskit 0.30.0 文档</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -351,7 +358,11 @@
 <span class="kn">from</span> <span class="nn">qiskit.utils.deprecation</span> <span class="kn">import</span> <span class="n">deprecate_arguments</span>
 <span class="kn">from</span> <span class="nn">qiskit.visualization.matplotlib</span> <span class="kn">import</span> <span class="n">HAS_MATPLOTLIB</span>
 <span class="kn">from</span> <span class="nn">qiskit.visualization.exceptions</span> <span class="kn">import</span> <span class="n">VisualizationError</span>
-<span class="kn">from</span> <span class="nn">qiskit.visualization.utils</span> <span class="kn">import</span> <span class="n">_bloch_multivector_data</span><span class="p">,</span> <span class="n">_paulivec_data</span>
+<span class="kn">from</span> <span class="nn">qiskit.visualization.utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">_bloch_multivector_data</span><span class="p">,</span>
+    <span class="n">_paulivec_data</span><span class="p">,</span>
+    <span class="n">matplotlib_close_if_inline</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">qiskit.circuit.tools.pi_check</span> <span class="kn">import</span> <span class="n">pi_check</span>
 
 
@@ -407,7 +418,6 @@
             <span class="n">pip_install</span><span class="o">=</span><span class="s2">&quot;pip install matplotlib&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">get_backend</span>
 
     <span class="c1"># Figure data</span>
     <span class="n">rho</span> <span class="o">=</span> <span class="n">DensityMatrix</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -489,8 +499,7 @@
     <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
         <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">ax_real</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ax_imag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">get_backend</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;module://ipykernel.pylab.backend_inline&quot;</span><span class="p">,</span> <span class="s2">&quot;nbAgg&quot;</span><span class="p">]:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="n">matplotlib_close_if_inline</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">fig</span></div>
 
 
@@ -532,8 +541,6 @@
             <span class="n">pip_install</span><span class="o">=</span><span class="s2">&quot;pip install matplotlib&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="kn">from</span> <span class="nn">qiskit.visualization.bloch</span> <span class="kn">import</span> <span class="n">Bloch</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">get_backend</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
     <span class="k">if</span> <span class="n">figsize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -548,8 +555,7 @@
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">fig</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">fig</span>
         <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">figsize</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">figsize</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">get_backend</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;module://ipykernel.pylab.backend_inline&quot;</span><span class="p">,</span> <span class="s2">&quot;nbAgg&quot;</span><span class="p">]:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="n">matplotlib_close_if_inline</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">fig</span>
     <span class="k">return</span> <span class="kc">None</span></div>
 
@@ -595,7 +601,6 @@
             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plot_bloch_multivector&quot;</span><span class="p">,</span>
             <span class="n">pip_install</span><span class="o">=</span><span class="s2">&quot;pip install matplotlib&quot;</span><span class="p">,</span>
         <span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">get_backend</span>
     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
     <span class="c1"># Data</span>
@@ -610,8 +615,7 @@
         <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
         <span class="n">plot_bloch_vector</span><span class="p">(</span><span class="n">bloch_data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;qubit &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pos</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">get_backend</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;module://ipykernel.pylab.backend_inline&quot;</span><span class="p">,</span> <span class="s2">&quot;nbAgg&quot;</span><span class="p">]:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">matplotlib_close_if_inline</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fig</span></div>
 
 
@@ -676,7 +680,6 @@
             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plot_state_city&quot;</span><span class="p">,</span>
             <span class="n">pip_install</span><span class="o">=</span><span class="s2">&quot;pip install matplotlib&quot;</span><span class="p">,</span>
         <span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">get_backend</span>
     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
     <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.art3d</span> <span class="kn">import</span> <span class="n">Poly3DCollection</span>
 
@@ -839,8 +842,7 @@
 
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">ax_real</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ax_imag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">get_backend</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;module://ipykernel.pylab.backend_inline&quot;</span><span class="p">,</span> <span class="s2">&quot;nbAgg&quot;</span><span class="p">]:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="n">matplotlib_close_if_inline</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">fig</span></div>
 
 
@@ -891,7 +893,6 @@
             <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plot_state_paulivec&quot;</span><span class="p">,</span>
             <span class="n">pip_install</span><span class="o">=</span><span class="s2">&quot;pip install matplotlib&quot;</span><span class="p">,</span>
         <span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">get_backend</span>
     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
     <span class="n">labels</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="n">_paulivec_data</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -925,8 +926,7 @@
         <span class="n">tick</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">return_fig</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">get_backend</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;module://ipykernel.pylab.backend_inline&quot;</span><span class="p">,</span> <span class="s2">&quot;nbAgg&quot;</span><span class="p">]:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="n">matplotlib_close_if_inline</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">fig</span></div>
 
 
@@ -1051,7 +1051,6 @@
     <span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
     <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
     <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Circle</span>
-    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">get_backend</span>
     <span class="kn">from</span> <span class="nn">qiskit.visualization.bloch</span> <span class="kn">import</span> <span class="n">Arrow3D</span>
 
     <span class="k">try</span><span class="p">:</span>
@@ -1258,8 +1257,7 @@
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">return_fig</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">get_backend</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;module://ipykernel.pylab.backend_inline&quot;</span><span class="p">,</span> <span class="s2">&quot;nbAgg&quot;</span><span class="p">]:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="n">matplotlib_close_if_inline</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">fig</span></div>
 
 
@@ -1617,7 +1615,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最后更新于 2021/08/13.
+      最后更新于 2021/09/23.
 
     </p>
   </div>
@@ -1698,7 +1696,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1721,9 +1719,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

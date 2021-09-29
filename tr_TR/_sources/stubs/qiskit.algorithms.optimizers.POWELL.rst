@@ -1,19 +1,18 @@
-﻿qiskit.algorithms.optimizers.POWELL
-===================================
+POWELL
+======
 
 .. currentmodule:: qiskit.algorithms.optimizers
 
 .. autoclass:: POWELL
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~POWELL.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~POWELL.get_support_level
       ~POWELL.gradient_num_diff
       ~POWELL.optimize
@@ -21,28 +20,22 @@
       ~POWELL.set_max_evals_grouped
       ~POWELL.set_options
       ~POWELL.wrap_function
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~POWELL.bounds_support_level
-      ~POWELL.gradient_support_level
-      ~POWELL.initial_point_support_level
-      ~POWELL.is_bounds_ignored
-      ~POWELL.is_bounds_required
-      ~POWELL.is_bounds_supported
-      ~POWELL.is_gradient_ignored
-      ~POWELL.is_gradient_required
-      ~POWELL.is_gradient_supported
-      ~POWELL.is_initial_point_ignored
-      ~POWELL.is_initial_point_required
-      ~POWELL.is_initial_point_supported
-      ~POWELL.setting
-      ~POWELL.settings
-   
-   
+   .. autoattribute:: bounds_support_level
+   .. autoattribute:: gradient_support_level
+   .. autoattribute:: initial_point_support_level
+   .. autoattribute:: is_bounds_ignored
+   .. autoattribute:: is_bounds_required
+   .. autoattribute:: is_bounds_supported
+   .. autoattribute:: is_gradient_ignored
+   .. autoattribute:: is_gradient_required
+   .. autoattribute:: is_gradient_supported
+   .. autoattribute:: is_initial_point_ignored
+   .. autoattribute:: is_initial_point_required
+   .. autoattribute:: is_initial_point_supported
+   .. autoattribute:: setting
+   .. autoattribute:: settings

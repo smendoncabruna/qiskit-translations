@@ -1,19 +1,18 @@
-﻿qiskit.providers.basicaer.BasicAerJob
-=====================================
+﻿BasicAerJob
+===========
 
 .. currentmodule:: qiskit.providers.basicaer
 
 .. autoclass:: BasicAerJob
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BasicAerJob.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BasicAerJob.backend
       ~BasicAerJob.cancel
       ~BasicAerJob.cancelled
@@ -25,15 +24,9 @@
       ~BasicAerJob.status
       ~BasicAerJob.submit
       ~BasicAerJob.wait_for_final_state
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BasicAerJob.version
-   
-   
+   .. autoattribute:: version

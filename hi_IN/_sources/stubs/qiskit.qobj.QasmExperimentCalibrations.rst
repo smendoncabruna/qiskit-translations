@@ -1,24 +1,19 @@
-﻿qiskit.qobj.QasmExperimentCalibrations
-======================================
+﻿QasmExperimentCalibrations
+==========================
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: QasmExperimentCalibrations
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QasmExperimentCalibrations.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QasmExperimentCalibrations.from_dict
       ~QasmExperimentCalibrations.to_dict
-   
-   
 
-   
-   
-   
+

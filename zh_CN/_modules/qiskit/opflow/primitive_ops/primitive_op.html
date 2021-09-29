@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.opflow.primitive_ops.primitive_op &mdash; Qiskit 0.29.0 文档</title>
+  <title>qiskit.opflow.primitive_ops.primitive_op &mdash; Qiskit 0.30.0 文档</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -346,7 +353,7 @@
 <span class="kn">from</span> <span class="nn">qiskit.quantum_info</span> <span class="kn">import</span> <span class="n">Operator</span><span class="p">,</span> <span class="n">Pauli</span><span class="p">,</span> <span class="n">SparsePauliOp</span><span class="p">,</span> <span class="n">Statevector</span>
 
 
-<div class="viewcode-block" id="PrimitiveOp"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp">[文档]</a><span class="k">class</span> <span class="nc">PrimitiveOp</span><span class="p">(</span><span class="n">OperatorBase</span><span class="p">):</span>
+<div class="viewcode-block" id="PrimitiveOp"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.primitive_ops.PrimitiveOp">[文档]</a><span class="k">class</span> <span class="nc">PrimitiveOp</span><span class="p">(</span><span class="n">OperatorBase</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class for representing basic Operators, backed by Operator primitives from</span>
 <span class="sd">    Terra. This class (and inheritors) primarily serves to allow the underlying</span>
@@ -414,7 +421,7 @@
             <span class="s2">&quot;factory constructor&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">primitive</span><span class="p">))</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="PrimitiveOp.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">primitive</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Operator</span><span class="p">,</span> <span class="n">Pauli</span><span class="p">,</span> <span class="n">SparsePauliOp</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">],</span>
         <span class="n">coeff</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
@@ -426,7 +433,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_primitive</span> <span class="o">=</span> <span class="n">primitive</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span> <span class="o">=</span> <span class="n">coeff</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span> <span class="o">=</span> <span class="n">coeff</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">primitive</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">Operator</span><span class="p">,</span> <span class="n">Pauli</span><span class="p">,</span> <span class="n">SparsePauliOp</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">]:</span>
@@ -456,19 +463,19 @@
         <span class="sd">&quot;&quot;&quot;Return operator settings.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;primitive&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_primitive</span><span class="p">,</span> <span class="s2">&quot;coeff&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span><span class="p">}</span>
 
-<div class="viewcode-block" id="PrimitiveOp.primitive_strings"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.primitive_strings">[文档]</a>    <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<div class="viewcode-block" id="PrimitiveOp.primitive_strings"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.primitive_strings.html#qiskit.opflow.primitive_ops.PrimitiveOp.primitive_strings">[文档]</a>    <span class="k">def</span> <span class="nf">primitive_strings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.add"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.add">[文档]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.add"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.add.html#qiskit.opflow.primitive_ops.PrimitiveOp.add">[文档]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.adjoint"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.adjoint">[文档]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.adjoint"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.adjoint.html#qiskit.opflow.primitive_ops.PrimitiveOp.adjoint">[文档]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.equals"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.equals">[文档]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.equals"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.equals.html#qiskit.opflow.primitive_ops.PrimitiveOp.equals">[文档]</a>    <span class="k">def</span> <span class="nf">equals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.mul"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.mul">[文档]</a>    <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.mul"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.mul.html#qiskit.opflow.primitive_ops.PrimitiveOp.mul">[文档]</a>    <span class="k">def</span> <span class="nf">mul</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scalar</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Operators can only be scalar multiplied by float or complex, not &quot;</span>
@@ -477,10 +484,10 @@
         <span class="c1"># Need to return self.__class__ in case the object is one of the inherited OpPrimitives</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">scalar</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.tensor">[文档]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.tensor"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.tensor.html#qiskit.opflow.primitive_ops.PrimitiveOp.tensor">[文档]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.tensorpower"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.tensorpower">[文档]</a>    <span class="k">def</span> <span class="nf">tensorpower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<div class="viewcode-block" id="PrimitiveOp.tensorpower"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.tensorpower.html#qiskit.opflow.primitive_ops.PrimitiveOp.tensorpower">[文档]</a>    <span class="k">def</span> <span class="nf">tensorpower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">OperatorBase</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="c1"># Hack to make Z^(I^0) work as intended.</span>
         <span class="k">if</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">1</span>
@@ -491,7 +498,7 @@
             <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">temp</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.compose"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.compose">[文档]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span>
+<div class="viewcode-block" id="PrimitiveOp.compose"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.compose.html#qiskit.opflow.primitive_ops.PrimitiveOp.compose">[文档]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">OperatorBase</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">front</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="c1"># pylint: disable=cyclic-import</span>
@@ -510,17 +517,17 @@
     <span class="k">def</span> <span class="nf">_expand_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
-<div class="viewcode-block" id="PrimitiveOp.permute"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.permute">[文档]</a>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.permute"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.permute.html#qiskit.opflow.primitive_ops.PrimitiveOp.permute">[文档]</a>    <span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">permutation</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.exp_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.exp_i">[文档]</a>    <span class="k">def</span> <span class="nf">exp_i</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.exp_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.exp_i.html#qiskit.opflow.primitive_ops.PrimitiveOp.exp_i">[文档]</a>    <span class="k">def</span> <span class="nf">exp_i</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return Operator exponentiation, equaling e^(-i * op)&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=cyclic-import</span>
         <span class="kn">from</span> <span class="nn">..evolutions.evolved_op</span> <span class="kn">import</span> <span class="n">EvolvedOp</span>
 
         <span class="k">return</span> <span class="n">EvolvedOp</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.log_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.log_i">[文档]</a>    <span class="k">def</span> <span class="nf">log_i</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.log_i"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.log_i.html#qiskit.opflow.primitive_ops.PrimitiveOp.log_i">[文档]</a>    <span class="k">def</span> <span class="nf">log_i</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a ``MatrixOp`` equivalent to log(H)/-i for this operator H. This</span>
 <span class="sd">        function is the effective inverse of exp_i, equivalent to finding the Hermitian</span>
 <span class="sd">        Operator which produces self when exponentiated.&quot;&quot;&quot;</span>
@@ -540,7 +547,7 @@
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="p">)</span><span class="si">}</span><span class="s2">, coeff=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="si">}</span><span class="s2">)&quot;</span>
 
-<div class="viewcode-block" id="PrimitiveOp.eval"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.eval">[文档]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
+<div class="viewcode-block" id="PrimitiveOp.eval"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.eval.html#qiskit.opflow.primitive_ops.PrimitiveOp.eval">[文档]</a>    <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">front</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
             <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">complex</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">OperatorBase</span><span class="p">,</span> <span class="n">Statevector</span><span class="p">]</span>
@@ -557,7 +564,7 @@
             <span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">params</span>
 
-<div class="viewcode-block" id="PrimitiveOp.assign_parameters"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.assign_parameters">[文档]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.assign_parameters"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.assign_parameters.html#qiskit.opflow.primitive_ops.PrimitiveOp.assign_parameters">[文档]</a>    <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="n">param_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">):</span>
             <span class="n">unrolled_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unroll_param_dict</span><span class="p">(</span><span class="n">param_dict</span><span class="p">)</span>
@@ -572,13 +579,13 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">param_value</span><span class="p">)</span></div>
 
     <span class="c1"># Nothing to collapse here.</span>
-<div class="viewcode-block" id="PrimitiveOp.reduce"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.reduce">[文档]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.reduce"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.reduce.html#qiskit.opflow.primitive_ops.PrimitiveOp.reduce">[文档]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.to_matrix"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.to_matrix">[文档]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.to_matrix"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.to_matrix.html#qiskit.opflow.primitive_ops.PrimitiveOp.to_matrix">[文档]</a>    <span class="k">def</span> <span class="nf">to_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.to_matrix_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.to_matrix_op">[文档]</a>    <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.to_matrix_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.to_matrix_op.html#qiskit.opflow.primitive_ops.PrimitiveOp.to_matrix_op">[文档]</a>    <span class="k">def</span> <span class="nf">to_matrix_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a ``MatrixOp`` equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="n">coeff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff</span>
         <span class="n">op</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -588,17 +595,17 @@
 
         <span class="k">return</span> <span class="n">MatrixOp</span><span class="p">(</span><span class="n">prim_mat</span><span class="p">,</span> <span class="n">coeff</span><span class="o">=</span><span class="n">coeff</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.to_instruction"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.to_instruction">[文档]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Instruction</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.to_instruction"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.to_instruction.html#qiskit.opflow.primitive_ops.PrimitiveOp.to_instruction">[文档]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Instruction</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns an ``Instruction`` equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.to_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.to_circuit">[文档]</a>    <span class="k">def</span> <span class="nf">to_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumCircuit</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.to_circuit"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.to_circuit.html#qiskit.opflow.primitive_ops.PrimitiveOp.to_circuit">[文档]</a>    <span class="k">def</span> <span class="nf">to_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QuantumCircuit</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a ``QuantumCircuit`` equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">)</span>
         <span class="n">qc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_instruction</span><span class="p">(),</span> <span class="n">qargs</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">primitive</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">qc</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.to_circuit_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.to_circuit_op">[文档]</a>    <span class="k">def</span> <span class="nf">to_circuit_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.to_circuit_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.to_circuit_op.html#qiskit.opflow.primitive_ops.PrimitiveOp.to_circuit_op">[文档]</a>    <span class="k">def</span> <span class="nf">to_circuit_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a ``CircuitOp`` equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">.circuit_op</span> <span class="kn">import</span> <span class="n">CircuitOp</span>
 
@@ -606,7 +613,7 @@
             <span class="k">return</span> <span class="n">CircuitOp</span><span class="p">(</span><span class="n">QuantumCircuit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_qubits</span><span class="p">),</span> <span class="n">coeff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">CircuitOp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_circuit</span><span class="p">(),</span> <span class="n">coeff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coeff</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PrimitiveOp.to_pauli_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.html#qiskit.opflow.evolutions.PrimitiveOp.to_pauli_op">[文档]</a>    <span class="k">def</span> <span class="nf">to_pauli_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
+<div class="viewcode-block" id="PrimitiveOp.to_pauli_op"><a class="viewcode-back" href="../../../../stubs/qiskit.opflow.primitive_ops.PrimitiveOp.to_pauli_op.html#qiskit.opflow.primitive_ops.PrimitiveOp.to_pauli_op">[文档]</a>    <span class="k">def</span> <span class="nf">to_pauli_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">massive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperatorBase</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns a sum of ``PauliOp`` s equivalent to this Operator.&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=cyclic-import</span>
         <span class="kn">from</span> <span class="nn">.matrix_op</span> <span class="kn">import</span> <span class="n">MatrixOp</span>
@@ -653,7 +660,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最后更新于 2021/08/13.
+      最后更新于 2021/09/23.
 
     </p>
   </div>
@@ -734,7 +741,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -757,9 +764,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

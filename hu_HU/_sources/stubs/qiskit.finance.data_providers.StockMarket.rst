@@ -1,24 +1,16 @@
-﻿qiskit.finance.data\_providers.StockMarket
-==========================================
+﻿StockMarket
+===========
 
 .. currentmodule:: qiskit.finance.data_providers
 
 .. autoclass:: StockMarket
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~StockMarket.EURONEXT
-      ~StockMarket.LONDON
-      ~StockMarket.SINGAPORE
-   
-   
+   .. autoattribute:: EURONEXT
+   .. autoattribute:: LONDON
+   .. autoattribute:: SINGAPORE

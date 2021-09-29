@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quantum Kernel Machine Learning &mdash; Documentação Qiskit Machine Learning 0.2.0</title>
+  <title>Núcleo Quântico de Aprendizagem de Máquina &mdash; Documentação Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/tutorials/03_quantum_kernel.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/tutorials/03_quantum_kernel.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/tutorials/03_quantum_kernel.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/tutorials/03_quantum_kernel.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/tutorials/03_quantum_kernel.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/tutorials/03_quantum_kernel.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -222,7 +228,7 @@
         
           <li><a href="index.html">Tutoriais de Aprendizado de Máquina</a> &gt;</li>
         
-      <li>Quantum Kernel Machine Learning</li>
+      <li>Núcleo Quântico de Aprendizagem de Máquina</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -502,14 +508,13 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
+<p>Esta página foi gerada a partir <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/03_quantum_kernel.ipynb">docs/tutorials/03_quantum_kernel.ipynb</a>.</p>
 </div>
-<div class="section" id="Quantum-Kernel-Machine-Learning">
-<h1>Quantum Kernel Machine Learning<a class="headerlink" href="#Quantum-Kernel-Machine-Learning" title="Link permanente para este título">¶</a></h1>
-<p>The general task of machine learning is to find and study patterns in data. For many datasets, the datapoints are better understood in a higher dimensional feature space, through the use of a kernel function: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the kernel function, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> are <span class="math notranslate nohighlight">\(n\)</span> dimensional inputs, <span class="math notranslate nohighlight">\(f\)</span> is a map from <span class="math notranslate nohighlight">\(n\)</span>-dimension to <span class="math notranslate nohighlight">\(m\)</span>-dimension space and <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span>
-denotes the dot product. When considering finite data, a kernel function can be represented as a matrix: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
-<p>In quantum kernel machine learning, a quantum feature map <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> is used to map a classical feature vector <span class="math notranslate nohighlight">\(\vec{x}\)</span> to a quantum Hilbert space, <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span>, such that <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. See <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a> for more details.</p>
-<p>In this notebook, we use <code class="docutils literal notranslate"><span class="pre">qiskit</span></code> to calculate a kernel matrix using a quantum feature map, then use this kernel matrix in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> classification and clustering algorithms.</p>
+<div class="section" id="Núcleo-Quântico-de-Aprendizagem-de-Máquina">
+<h1>Núcleo Quântico de Aprendizagem de Máquina<a class="headerlink" href="#Núcleo-Quântico-de-Aprendizagem-de-Máquina" title="Link permanente para este título">¶</a></h1>
+<p>A tarefa geral do machine learning é encontrar e estudar padrões em dados. Para muitos conjuntos de dados, os pontos de dados são melhores entendidos em um espaço de recursos de dimensão superior, através do uso de uma função kernel: <span class="math notranslate nohighlight">\(k(\vec{x}_i, \vec{x}_j) = \langle f(\vec{x}_i), f(\vec{x}_j) \rangle\)</span> onde <span class="math notranslate nohighlight">\(k\)</span> representa a função kernel, <span class="math notranslate nohighlight">\(\vec{x}_i, \vec{x}_j\)</span> são <span class="math notranslate nohighlight">\(n\)</span> inputs dimensionais, <span class="math notranslate nohighlight">\(f\)</span> é um mapa da <span class="math notranslate nohighlight">\(n\)</span>-dimensão para <span class="math notranslate nohighlight">\(m\)</span>-dimensão espacial e <span class="math notranslate nohighlight">\(\langle a,b \rangle\)</span> denota o produto escalar. Quando consideramos dados finitos, a função kernel pode ser representada como uma matrix: <span class="math notranslate nohighlight">\(K_{ij} = k(\vec{x}_i,\vec{x}_j)\)</span>.</p>
+<p>No aprendizado de máquina do kernel quântico, um mapa de recurso quântico <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> é utilizado para mapear um vetor de funcionalidade clássico <span class="math notranslate nohighlight">\(\vec{x}\)</span> para um espaço quântico Hilbert <span class="math notranslate nohighlight">\(| \phi(\vec{x})\rangle \langle \phi(\vec{x})|\)</span>, como este <span class="math notranslate nohighlight">\(K_{ij} = \left| \langle \phi^\dagger(\vec{x}_j)| \phi(\vec{x}_i) \rangle \right|^{2}\)</span>. Veja <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Aprendizado supervisionado com espaços de recursos quânticos aprimorados</a> para mais detalhes.</p>
+<p>Neste notebook, nós utilizamos <code class="docutils literal notranslate"><span class="pre">qiskit</span></code> para calcular uma matriz de núcleo usando um mapa de recursos quânticos, em seguida, usamos esta matriz de núcleo na classificação <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> e agrupamento de algoritmos.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -536,7 +541,7 @@ denotes the dot product. When considering finite data, a kernel function can be 
 </div>
 <div class="section" id="Classificação">
 <h2>Classificação<a class="headerlink" href="#Classificação" title="Link permanente para este título">¶</a></h2>
-<p>For our classification example, we will use the <em>ad hoc dataset</em> as described in <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, and the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">support vector machine</a> classification (<code class="docutils literal notranslate"><span class="pre">svc</span></code>) algorithm.</p>
+<p>Para o nosso exemplo de classificação, nós iremos utilizar um <em>conjunto de dados ad hoc</em> como descrito em <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Aprendizado supervisionado com espaços de recursos quânticos aprimorados</a>, e o <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html">maquina de vetor de suporte</a> classificação de algoritmo (<code class="docutils literal notranslate"><span class="pre">svc</span></code>).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -580,7 +585,7 @@ denotes the dot product. When considering finite data, a kernel function can be 
 <img alt="../_images/tutorials_03_quantum_kernel_3_0.png" src="../_images/tutorials_03_quantum_kernel_3_0.png" />
 </div>
 </div>
-<p>With our training and testing datasets ready, we set up the <code class="docutils literal notranslate"><span class="pre">QuantumKernel</span></code> class to calculate a kernel matrix using the <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.circuit.library.ZZFeatureMap.html">ZZFeatureMap</a>, and the <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> using 1024 shots.</p>
+<p>Com nossos conjuntos de dados de treinos e testes preparados, nós configuramos a classe <code class="docutils literal notranslate"><span class="pre">QuantumKernel</span></code> para calcular a matriz do núcleo executando o <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.circuit.library.ZZFeatureMap.html">ZZFeatureMap</a>, e o <code class="docutils literal notranslate"><span class="pre">BasicAer</span></code> <a href="#id1"><span class="problematic" id="id2">``</span></a>simulador_qasm `` utilizando 1024 shots.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -596,8 +601,8 @@ denotes the dot product. When considering finite data, a kernel function can be 
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">svc</span></code> algorithm allows us to define a <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html#custom-kernels">custom kernel</a> in two ways: by providing the kernel as a callable function or by precomputing the kernel matrix. We can do either of these using the <code class="docutils literal notranslate"><span class="pre">QuantumKernel</span></code> class in <code class="docutils literal notranslate"><span class="pre">qiskit</span></code>.</p>
-<p>The following code gives the kernel as a callable function:</p>
+<p>O algoritmo <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">svc</span></code> nos permite definir um <a class="reference external" href="https://scikit-learn.org/stable/modules/svm.html#custom-kernels">núcleo personalizado</a> de duas maneiras: Fornecendo o núcleo como uma função exigível ou pré-computando a matriz do núcleo. Nós podemos fazer qualquer uma das duas utilizando a classe <code class="docutils literal notranslate"><span class="pre">QuantumKernel</span></code> no <code class="docutils literal notranslate"><span class="pre">qiskit</span></code>.</p>
+<p>O código a seguir nos retorna o núcleo como função exigível:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -619,7 +624,7 @@ denotes the dot product. When considering finite data, a kernel function can be 
 Callable kernel classification test score: 1.0
 </pre></div></div>
 </div>
-<p>The following code precomputes and plots the training and testing kernel matrices before providing them to the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">svc</span></code> algorithm:</p>
+<p>O código a seguir, pré-computa e plota as matrizes de núcleo de treinamento e testes antes de fornecê-las ao algoritmo <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">svc</span></code>:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -661,7 +666,7 @@ Callable kernel classification test score: 1.0
 Precomputed kernel classification test score: 1.0
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">qiskit</span></code> also contains the <code class="docutils literal notranslate"><span class="pre">qsvc</span></code> class that extends the <code class="docutils literal notranslate"><span class="pre">sklearn</span> <span class="pre">svc</span></code> class, that can be used as follows:</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">qiskit</span></code> também contem a classe <code class="docutils literal notranslate"><span class="pre">qsvc</span></code> que extende a classe <code class="docutils literal notranslate"><span class="pre">sklearn</span> <span class="pre">svc</span></code>, esta pode ser utilizada da seguinte forma:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -671,7 +676,7 @@ Precomputed kernel classification test score: 1.0
 <span class="n">qsvc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
 <span class="n">qsvc_score</span> <span class="o">=</span> <span class="n">qsvc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;QSVC classification test score: </span><span class="si">{</span><span class="n">adhoc_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;QSVC classification test score: </span><span class="si">{</span><span class="n">qsvc_score</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -686,7 +691,7 @@ QSVC classification test score: 1.0
 </div>
 <div class="section" id="Agrupamento">
 <h2>Agrupamento<a class="headerlink" href="#Agrupamento" title="Link permanente para este título">¶</a></h2>
-<p>For our clustering example, we will again use the <em>ad hoc dataset</em> as described in <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Supervised learning with quantum enhanced feature spaces</a>, and the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code> clustering algorithm.</p>
+<p>Para nosso exemplo de agrupamento, nós usaremos novamente o <em>conjunto de dados ad hoc</em> como descrito em <a class="reference external" href="https://arxiv.org/pdf/1804.11326.pdf">Aprendizado supervisionado com espaços de recursos quânticos aprimorados</a>, e o algoritmo de agrupamento <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> <code class="docutils literal notranslate"><span class="pre">spectral</span></code>.</p>
 <p>Nós regeramos o dataset com uma lacuna maior entre as duas classes, e como agrupamento é uma tarefa de aprendizado de máquina não supervisionada, não precisamos de uma amostra de teste.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -726,7 +731,7 @@ QSVC classification test score: 1.0
 <img alt="../_images/tutorials_03_quantum_kernel_13_0.png" src="../_images/tutorials_03_quantum_kernel_13_0.png" />
 </div>
 </div>
-<p>We again set up the <code class="docutils literal notranslate"><span class="pre">QuantumKernel</span></code> class to calculate a kernel matrix using the <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.circuit.library.ZZFeatureMap.html">ZZFeatureMap</a>, and the BasicAer <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> using 1024 shots.</p>
+<p>Nós novamente configuramos a classe <code class="docutils literal notranslate"><span class="pre">QuantumKernel</span></code> para calcular a matriz do núcleo utilizando o <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.circuit.library.ZZFeatureMap.html">ZZFeatureMap</a>, e o BasicAer <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> usando 1024 shots.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -742,8 +747,8 @@ QSVC classification test score: 1.0
 </pre></div>
 </div>
 </div>
-<p>The scikit-learn spectral clustering algorithm allows us to define a [custom kernel] in two ways: by providing the kernel as a callable function or by precomputing the kernel matrix. Using the QuantumKernel class in qiskit, we can only use the latter.</p>
-<p>The following code precomputes and plots the kernel matrices before providing it to the scikit-learn spectral clustering algorithm, and scoring the labels using normalized mutual information, since we a priori know the class labels.</p>
+<p>O algoritmo de agrupamento spectral scikit-learn nos permite definir um [núcleo personalizado] de duas maneiras: Fornecendo o núcleo como uma função exigível ou pré-computando a matriz do núcleo. Usando a classe QuantumKernel no Qiskit, só podemos usar o último.</p>
+<p>O código a seguir pré-computa e plota as matrizes do núcleo antes de fornecê-las ao algoritmo de agrupamento espectral scikit-learn, e pontua o rótulo usando informação mútua normalizada, já que conhecemos a priori os rótulos das classes.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -779,13 +784,13 @@ QSVC classification test score: 1.0
 Clustering score: 0.7287008798015754
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> has other algorithms that can use a precomputed kernel matrix, here are a few:</p>
+<p>O <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> tem outros algoritmos que pré-computam a matriz do núcleo, aqui estão alguns:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html">Agglomerative clustering</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html">Support vector regression</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html">Ridge regression</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/gaussian_process.html">Gaussian process regression</a></p></li>
-<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.KernelPCA.html">Principal component analysis</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html">Agrupamento aglomerativo</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html">Suporte regressão vetorial</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html">Cume de regressão</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/gaussian_process.html">Processo de regressão Gaussiana</a></p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.KernelPCA.html">Análise do componente principal</a></p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -856,7 +861,7 @@ Clustering score: 0.7287008798015754
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Quantum Kernel Machine Learning</a><ul>
+<li><a class="reference internal" href="#">Núcleo Quântico de Aprendizagem de Máquina</a><ul>
 <li><a class="reference internal" href="#Classificação">Classificação</a></li>
 <li><a class="reference internal" href="#Agrupamento">Agrupamento</a></li>
 </ul>

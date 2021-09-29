@@ -1,24 +1,19 @@
-﻿qiskit.providers.models.PulseDefaults
-=====================================
+﻿PulseDefaults
+=============
 
 .. currentmodule:: qiskit.providers.models
 
 .. autoclass:: PulseDefaults
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PulseDefaults.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PulseDefaults.from_dict
       ~PulseDefaults.to_dict
-   
-   
 
-   
-   
-   
+

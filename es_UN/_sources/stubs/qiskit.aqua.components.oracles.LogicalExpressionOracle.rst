@@ -1,33 +1,26 @@
-﻿qiskit.aqua.components.oracles.LogicalExpressionOracle
-======================================================
+﻿LogicalExpressionOracle
+=======================
 
 .. currentmodule:: qiskit.aqua.components.oracles
 
 .. autoclass:: LogicalExpressionOracle
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LogicalExpressionOracle.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LogicalExpressionOracle.construct_circuit
       ~LogicalExpressionOracle.evaluate_classically
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LogicalExpressionOracle.ancillary_register
-      ~LogicalExpressionOracle.circuit
-      ~LogicalExpressionOracle.output_register
-      ~LogicalExpressionOracle.variable_register
-   
-   
+   .. autoattribute:: ancillary_register
+   .. autoattribute:: circuit
+   .. autoattribute:: output_register
+   .. autoattribute:: variable_register

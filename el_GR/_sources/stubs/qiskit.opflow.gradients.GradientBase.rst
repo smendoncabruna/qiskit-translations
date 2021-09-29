@@ -1,31 +1,14 @@
-﻿qiskit.opflow.gradients.GradientBase
-====================================
+GradientBase
+============
 
 .. currentmodule:: qiskit.opflow.gradients
 
 .. autoclass:: GradientBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~GradientBase.__init__
-      ~GradientBase.convert
-      ~GradientBase.gradient_wrapper
-      ~GradientBase.parameter_expression_grad
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GradientBase.grad_method
-   
-   
+   .. autoattribute:: grad_method

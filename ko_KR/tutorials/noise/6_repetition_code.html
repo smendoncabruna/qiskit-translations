@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>반복 코드 &mdash; Qiskit 0.29.0 문서</title>
+  <title>반복 코드 &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -614,7 +621,7 @@ link_qubit_0: |0&gt;┤ X ├┤ X ├
                  └───┘└───┘
 </pre></div></div>
 </div>
-<p>Here we provide tools for creating and testing repetition codes. The first thing we need to do is import them.</p>
+<p>여기서는 반복 코드를 만들고 테스트하기 위한 도구를 제공한다. 우리가 가장 먼저 할 일은 그것들을 불러오는 것이다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -629,7 +636,7 @@ link_qubit_0: |0&gt;┤ X ├┤ X ├
 </section>
 <section id="반복-코드-만들기">
 <h2>반복 코드 만들기<a class="headerlink" href="#반복-코드-만들기" title="제목 주소">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">repetition_code</span></code> class creates a code for given values of <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">repetition_code</span></code> 클래스는 <span class="math notranslate nohighlight">\(d\)</span> 와 <span class="math notranslate nohighlight">\(T\)</span> 의 주어진 값에 대한 코드를 생성한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -641,7 +648,7 @@ link_qubit_0: |0&gt;┤ X ├┤ X ├
 </pre></div>
 </div>
 </div>
-<p>With this we can inspect various properties of the code, such as the names of the qubit registers used for the code and ancilla qubits.</p>
+<p>이를 통해 코드의 다양한 특성 (예: 코드 및 보조 비트에 사용되는 qubit 레지스터의 이름) 을 검사할 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -660,7 +667,7 @@ link_qubit_0: |0&gt;┤ X ├┤ X ├
 {&#39;code_qubit&#39;, &#39;link_qubit&#39;}
 </pre></div></div>
 </div>
-<p>These registers are also attributes of the <code class="docutils literal notranslate"><span class="pre">repetition_code</span></code> object.</p>
+<p>이 레지스터들은 또한 <code class="docutils literal notranslate"><span class="pre">repetition_code</span></code> 객체의 속성이다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -679,7 +686,7 @@ link_qubit_0: |0&gt;┤ X ├┤ X ├
 QuantumRegister(3, &#39;code_qubit&#39;)
 </pre></div></div>
 </div>
-<p>You can also access the quantum circuits that implement the code. Two of these are produced: one for each of the two possible logical bit values.</p>
+<p>코드를 구현하는 양자 회로에도 액세스할 수 있다. 이들 중 2개는 가능한 2개의 논리적 비트 값들 각각에 대해 하나씩 생성된다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -807,7 +814,7 @@ round_1_link_bit_1: 0 ═══════════════════�
 </section>
 <section id="사용자-정의-반복-코드-빌드하기">
 <h2>사용자 정의 반복 코드 빌드하기<a class="headerlink" href="#사용자-정의-반복-코드-빌드하기" title="제목 주소">¶</a></h2>
-<p>You can also implement measurement rounds and logical <code class="docutils literal notranslate"><span class="pre">X</span></code> gates yourself. For example, let’s set up a code with no syndrome measurement rounds.</p>
+<p>측정 라운드와 논리적 <code class="docutils literal notranslate"><span class="pre">X</span></code> 게이트를 직접 구현할 수도 있다. 예를 들어, 증후군 측정 라운드가 없는 코드를 설정하자.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -817,7 +824,7 @@ round_1_link_bit_1: 0 ═══════════════════�
 </pre></div>
 </div>
 </div>
-<p>This does nothing but set up two circuits for the two logical encoded states. There are no syndrome measurement rounds, and no final readout.</p>
+<p>이 작업은 두 개의 논리 인코딩 상태에 대해 두 개의 회로를 설정하는 작업만 수행한다. 신드롬 수치(syndrome measurement) 도 없고 최종 판독도 없다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -867,7 +874,7 @@ code_qubit_2: |0&gt;┤ X ├─░─
                  └───┘ ░
 </pre></div></div>
 </div>
-<p>We can add a round using the <code class="docutils literal notranslate"><span class="pre">syndrome_measurement()</span></code> method.</p>
+<p>우리는 <code class="docutils literal notranslate"><span class="pre">syndrome_measurement</span> <span class="pre">()</span></code> 방법을 사용하여 라운드를 추가할 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -921,7 +928,7 @@ round_0_link_bit_1: 0 ═══════════════════�
 
 </pre></div></div>
 </div>
-<p>A logical <code class="docutils literal notranslate"><span class="pre">X</span></code> operation can be added using the <code class="docutils literal notranslate"><span class="pre">x()</span></code> method.</p>
+<p>논리적인 <code class="docutils literal notranslate"><span class="pre">X</span></code> 의 연산은 <code class="docutils literal notranslate"><span class="pre">x()</span></code> 방법을 사용하여 추가될 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -975,8 +982,8 @@ round_0_link_bit_1: 0 ═══════════════════�
 
 </pre></div></div>
 </div>
-<p>This also has a <code class="docutils literal notranslate"><span class="pre">logs</span></code> kwarg, which is a list of the circuits for which <code class="docutils literal notranslate"><span class="pre">X</span></code> is applied. This is <code class="docutils literal notranslate"><span class="pre">['0','1']</span></code> by default.</p>
-<p>Final readout is then done with the <code class="docutils literal notranslate"><span class="pre">readout()</span></code> method.</p>
+<p>이것은 또한 <code class="docutils literal notranslate"><span class="pre">X</span></code> 가 적용되는 회로의 목록인 <code class="docutils literal notranslate"><span class="pre">logs</span></code> kwarg도 가지고 있다. 이것은 기본적으로 <code class="docutils literal notranslate"><span class="pre">['0','1']</span></code> 이다.</p>
+<p>그런 다음 최종 판독은 <code class="docutils literal notranslate"><span class="pre">readout()</span></code> 방식으로 수행된다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -1066,8 +1073,8 @@ round_0_link_bit_1: 0 ═══════════════════�
 </section>
 <section id="반복-코드-실행하기">
 <h2>반복 코드 실행하기<a class="headerlink" href="#반복-코드-실행하기" title="제목 주소">¶</a></h2>
-<p>The code object produces the circuits required for the code. The user can then run them using any method they prefer, allowing full control over compilation, backends, noise models and so on.</p>
-<p>For example, here we run them without noise on the <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code>.</p>
+<p>코드 객체는 코드에 필요한 회로를 생성한다. 그런 다음 사용자는 원하는 방법을 사용하여 실행시켜 컴파일, 백엔드, 노이즈 모델 등을 완벽한 제어를 할 수 있다.</p>
+<p>예를 들어 <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code> 에서 노이즈 없이 실행한다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1099,7 +1106,7 @@ round_0_link_bit_1: 0 ═══════════════════�
 </pre></div></div>
 </div>
 <p>Here the strings from right to left represent the outputs of the syndrome measurement rounds, followed by the final measurement of the code qubits.</p>
-<p>These results need to be rewritten in a different form in order to be decoded. To do this we can use the <code class="docutils literal notranslate"><span class="pre">process_results</span></code> method of the code object.</p>
+<p>이러한 결과들은 디코딩되기 위해 다른 형태로 개정될 필요가 있다. 이를 위해 코드 객체의 <code class="docutils literal notranslate"><span class="pre">process_results</span></code> 방법을 사용할 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1118,23 +1125,19 @@ round_0_link_bit_1: 0 ═══════════════════�
 {&#39;0&#39;: {&#39;0 0  00 00 00&#39;: 1024}, &#39;1&#39;: {&#39;1 1  00 00 00&#39;: 1024}}
 </pre></div></div>
 </div>
-<p>The result is a dictionary whose keys are bit strings that represent outputs of the circuit, and the values represent the number of shots for which this output occurred.</p>
-<p>The strings are not the direct output from the circuits. They have been processed to take the form that helps us correct errors. Here’s a short guided tour.</p>
+<p>결과는 해당 키가 회로의 출력을 나타내는 비트 스트링(bit string) 인 사전이고, 값은 이 출력이 발생한 샷의 수를 나타낸다.</p>
+<p>문자열은 회로의 직접 출력이 아니다. 오류를 정정하는 데 도움이 되는 양식을 사용하도록 처리되었다. 여기 짧은 안내 투어가 있다.</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span></code> to the far left for the logical <code class="docutils literal notranslate"><span class="pre">0</span></code> result, and the <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">1</span></code> to the far left of the logical <code class="docutils literal notranslate"><span class="pre">1</span></code>, are the logical readout. Any code qubit could be used for this readout, since they should (without errors) all be equal. So we could have just one result here, for one arbitrarily chosen code qubit. Or we could have <span class="math notranslate nohighlight">\(d\)</span>, one for each qubit. Instead we have two, from the two qubits at either end of the line. This is because it works best with the decoder (which we’ll use
-later). In the absence of errors, these two values will always be equal.</p></li>
-<li><p>The following <code class="docutils literal notranslate"><span class="pre">0000</span></code> is the <span class="math notranslate nohighlight">\(d-1\)</span> results of the syndrome measurements for the first round.A <code class="docutils literal notranslate"><span class="pre">0</span></code> implies that the corresponding pair of qubits where the same, and <code class="docutils literal notranslate"><span class="pre">1</span></code> implies different. There are <span class="math notranslate nohighlight">\(d-1\)</span> results because the line of <span class="math notranslate nohighlight">\(d\)</span> code qubits has <span class="math notranslate nohighlight">\(d-1\)</span> possible neighboring pairs. In the absence of errors, they will all be <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">0000</span></code> that follows that is the syndrome change between the first and second rounds. It is therefore the bitwise <code class="docutils literal notranslate"><span class="pre">OR</span></code> of the syndrome measurement results from the second round with those from the first. In the absence of errors, they will all be <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
-<li><p>Subsequent blocks follow the same formula, though the last requires some comment. This is not measured using the standard method (with a link qubit). Instead it is calculated from the final readout measurement of all code qubits. Again it is presented as a syndrome change, and will be all <code class="docutils literal notranslate"><span class="pre">0</span></code> in the absence of errors. This is the <span class="math notranslate nohighlight">\(T+1\)</span>-th block of syndrome measurements since, as it is not done in the same way as the others, it is not counted among the <span class="math notranslate nohighlight">\(T\)</span> syndrome measurement
-rounds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span></code> 에서 맨 왼쪽에 있는 논리적인 <code class="docutils literal notranslate"><span class="pre">0</span></code> 결과와 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">1</span></code> 에서 맨 왼쪽에 있는 논리적 <code class="docutils literal notranslate"><span class="pre">1</span></code> 은 논리적인 해독이다. 모든 코드는 이 판독에 사용될 수 있는데, 그 이유는 (오류가 없는) 모든 것이 동일해야 하기 때문이다. 그래서 우리는 여기서 한 가지 결과를 얻을 수 있었다. 임의로 선택된 코드를 위해서였다. 아니면 각각의 것에 하나씩 <span class="math notranslate nohighlight">\(d\)</span> 가 있을 수도 있다. 그 대신에, 양쪽 끝중에 있는 두개의 큐비트가 있다. 이는 디코더 (나중에 사용할) 로 가장 잘 작동하기 때문이다. 오류가 없으면 이 두 값은 항상 동일하다.</p></li>
+<li><p>이 같은 <cite>0000</cite> 은 1차 신드롬 측정 결과인 <span class="math notranslate nohighlight">\(d-1\)</span> 이다. <code class="docutils literal notranslate"><span class="pre">0</span></code> 은 행당하는 큐비트쌍이 동일하다는것을 의미하고 <code class="docutils literal notranslate"><span class="pre">1</span></code> 은 다르다는 것을 의미한다. <span class="math notranslate nohighlight">\(d\)</span> 코드 큐비트 라인에는 <span class="math notranslate nohighlight">\(d-1\)</span> 가능한 이웃 쌍이 있기 때문에 <span class="math notranslate nohighlight">\(d-1\)</span> 결과들 나온다. 오류가 없다면 모두 <code class="docutils literal notranslate"><span class="pre">0</span></code> 이 될 것이다.</p></li>
+<li><p>그 다음에 나오는 <code class="docutils literal notranslate"><span class="pre">0000</span></code> 은 첫 번째와 두 번째 라운드 사이의 신드롬 변화이다. 따라서 이는 1차부터 2라운드까지의 신드롬 측정 결과의 비트와이즈 <code class="docutils literal notranslate"><span class="pre">OR</span></code> 로 한 것이다. 오류가 없으면 모두 <code class="docutils literal notranslate"><span class="pre">0</span></code> 이 될 것이다.</p></li>
+<li><p>마지막으로 일부 주석이 필요하지만 후속 블록은 동일한 수식을 따른다. 이는 표준 방법 (링크 큐비트 포함) 을 사용하여 측정되지 않는다. 대신, 모든 코드 큐비트의 최종 판독 측정으로부터 계산된다. 다시 말해, 그것은 신드롬의 변화로 제시되고 있으며, 오류가 없는 상태에서는 모두 <code class="docutils literal notranslate"><span class="pre">0</span></code> 이 될 것이다. 이는 다른것과 동일한 방식으로 이뤄지지 않아 <span class="math notranslate nohighlight">\(T\)</span> 신드롬 측정 라운드에서 집계되지 않기 때문에 <span class="math notranslate nohighlight">\(T+1\)</span> 번째 신드롬 측정 블록이다.</p></li>
 </ul>
-<p><strong>Example 1:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span>&#160; <span class="pre">0110</span> <span class="pre">0000</span> <span class="pre">0000</span></code> would represent a <span class="math notranslate nohighlight">\(d=5\)</span>, <span class="math notranslate nohighlight">\(T=2\)</span> repetition code with encoded <code class="docutils literal notranslate"><span class="pre">0</span></code>. The syndrome shows that (most likely) the middle code qubit was flipped by an error before the first measurement round. This causes it to disagree with both neighboring code qubits for the rest of the circuit. This is shown by the syndrome in the first round, but the blocks for subsequent rounds do not report it as it no longer represents a change. Other sets of errors could also
-have caused this syndrome, but they would need to be more complex and so presumably less likely.</p>
-<p><strong>Example 2:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span>&#160; <span class="pre">0010</span> <span class="pre">0010</span> <span class="pre">0000</span></code> would represent a <span class="math notranslate nohighlight">\(d=5\)</span>, <span class="math notranslate nohighlight">\(T=2\)</span> repetition code with encoded <code class="docutils literal notranslate"><span class="pre">0</span></code>. Here one of the syndrome measurements reported a difference between two code qubits in the first round, leading to a <code class="docutils literal notranslate"><span class="pre">1</span></code>. The next round did not see the same effect, and so resulted in a <code class="docutils literal notranslate"><span class="pre">0</span></code>. However, since this disagreed with the previous result for the same syndrome measurement, and since we track syndrome changes, this change results in another <code class="docutils literal notranslate"><span class="pre">1</span></code>. Subsequent rounds
-also do not detect anything, but this no longer represents a change and hence results in a <code class="docutils literal notranslate"><span class="pre">0</span></code> in the same position. Most likely the measurement result leading to the first <code class="docutils literal notranslate"><span class="pre">1</span></code> was an error.</p>
-<p><strong>Example 3:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1</span>&#160; <span class="pre">0000</span> <span class="pre">0001</span> <span class="pre">0000</span></code> would represent a <span class="math notranslate nohighlight">\(d=5\)</span>, <span class="math notranslate nohighlight">\(T=2\)</span> repetition code with encoded <code class="docutils literal notranslate"><span class="pre">1</span></code>. A code qubit on the end of the line is flipped before the second round of syndrome measurements. This is detected by only a single syndrome measurement, because it is on the end of the line. For the same reason, it also disturbs one of the logical readouts.</p>
-<p>Note that in all these examples, a single error causes exactly two characters in the string to change from the value it would have with no errors. This is, in fact, the reason why the logical output consists of both endpoints. It is a property that will be used by the decoder.</p>
-<p>To see the effects of noise, we need to specify a noise model. For example, let’s set up a simple noise model with gate and measurement errors.</p>
+<p><strong>예 1:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span>&#160; <span class="pre">0110</span> <span class="pre">0000</span> <span class="pre">0000</span></code> 은 <a href="#id1"><span class="problematic" id="id2">``</span></a>0``으로 인코딩된 <span class="math notranslate nohighlight">\(T=2\)</span> 반복 코드인 <span class="math notranslate nohighlight">\(d=5\)</span> 를 나타낼 것이다. 이 신드롬은 첫 번째 측정 라운드 이전에 중간 코드 포인트가 오류에 의해 플립되었다는 것을 보여준다. 이로 인해 회로의 나머지 부분에 대해 이웃 코드 조회 모두에 동의하지 않는다. 이는 첫 번째 라운드에서 신드롬에 의해 나타나지만, 이후의 라운드를 위한 블록은 더 이상 변화를 나타내지 않는다고 보고하지 않는다. 다른 세트의 에러들 또한 이러한 신드롬을 야기할 수 있지만, 그것들은 더 복잡하고 아마도 덜 가능성이 있을 것이다.</p>
+<p><strong>예 2:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">0</span>&#160; <span class="pre">0010</span> <span class="pre">0010</span> <span class="pre">0000</span></code> 은 <code class="docutils literal notranslate"><span class="pre">0</span></code> 으로 인코딩된 <span class="math notranslate nohighlight">\(T=2\)</span> 반복 코드인 <span class="math notranslate nohighlight">\(d=5\)</span> 를 나타낼 것이다. 여기서 신드롬 측정치 중 하나는 1 라운드에서 두 코드 큐비트 간의 차이를 보고하고 이는 <code class="docutils literal notranslate"><span class="pre">1</span></code> 로 만든다. 다음 라운드는 같은 효과를 보지 못하여 <code class="docutils literal notranslate"><span class="pre">0</span></code> 으로 귀결된다. 그러나 이는 동일한 신드롬 측정의 이전 결과와 일치하지 않고, 신드롬 변화를 추적했기 때문에 이러한 변화 또는 <code class="docutils literal notranslate"><span class="pre">1</span></code> 로 귀결된다. 후속 라운드도 아무것도 감지하지 못하지만 이는 더 이상 변화를 나타내지 않으며 따라서 동일한 위치에서 결과는 <code class="docutils literal notranslate"><span class="pre">0</span></code> 이 된다. 아마도 첫 번째 <code class="docutils literal notranslate"><span class="pre">1</span></code> 로 나온 측정 결과는 오류였을 것이다.</p>
+<p><strong>예 3:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1</span>&#160; <span class="pre">0000</span> <span class="pre">0001</span> <span class="pre">0000</span></code> 은 <code class="docutils literal notranslate"><span class="pre">1</span></code> 으로 인코딩된 <span class="math notranslate nohighlight">\(T=2\)</span> 반복 코드인 <span class="math notranslate nohighlight">\(d=5\)</span> 를 나타낼 것이다.  두 번째 라운드 신드롬 측정 전에 라인 끝에 있는 코드 큐비트가 플립된다. 이것은 라인의 끝에 있기 때문에 단일 신드롬 측정으로만 감지된다. 같은 이유로, 그것은 또한 논리적 판독 중 하나를 방해한다.</p>
+<p>이러한 모든 예제에서는 단일 오류로 인해 문자열에 있는 정확히 두 개의 문자가 오류가 없는 값에서 변경된다. 실제로 논리 출력이 두 엔드포인트 모두로 구성되는 이유이다. 이것은 디코더에 의해 사용될 속성이다.</p>
+<p>노이즈의 효과를 보려면 노이즈 모델을 지정해야 한다. 예를 들어, 게이트 및 측정 오류가 있는 단순 노이즈 모델을 설정하자.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -1167,7 +1170,7 @@ also do not detect anything, but this no longer represents a change and hence re
 </pre></div>
 </div>
 </div>
-<p>This can then be run to generate noisy results. Let’s make a quick function to do this, and then run it.</p>
+<p>그런 다음 이를 실행하여 노이즈가 많은 결과를 생성할 수 있다. 이를 수행하는 간단한 기능을 만들고 실행하자.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -1308,7 +1311,7 @@ also do not detect anything, but this no longer represents a change and hence re
 </section>
 <section id="반복-코드-분석하기">
 <h2>반복 코드 분석하기<a class="headerlink" href="#반복-코드-분석하기" title="제목 주소">¶</a></h2>
-<p>Noisy results can change the logical value at readout, and so affect our ability to read out the logical qubit. This can be mitigated by looking at the syndrome values. These can tell us whether or not the logical values are most likely to have changed, and so allow us to correct for the errors. The process of analyzing the syndrome to correct for the errors is called ‘decoding’. We do this by building a decoding object for our code.</p>
+<p>결과적으로 읽을 수 없는 결과는 논리적인 값을 변경할 수 있으므로 논리적인 값을 읽을 수 있는 우리의 능력에 영향을 미칠 수 있다. 이는 신드롬 값들을 봄으로써 완화될 수 있다. 이들은 논리적 값이 변경되었을 가능성이 가장 높은지 여부를 알 수 있으므로 오류를 정정할 수 dTek. 오류를 정정하기 위해 신드롬을 분석하는 프로세스는 ‘디코딩’ 이라고 불린다. 코드에 대한 디코딩 오브젝트를 빌드하여 이를 수행한다.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -1318,7 +1321,7 @@ also do not detect anything, but this no longer represents a change and hence re
 </pre></div>
 </div>
 </div>
-<p>This analyzes the code by seeing how different kinds of error change the output. With this information, along with a decoding algorithm, we can determine what the logical value is most likely to have been.</p>
+<p>이는 서로 다른 종류의 오류가 출력을 어떻게 변화시키는지 보고 코드를 분석한다. 이 정보를 통해 디코딩 알고리즘과 함께 논리적 값이 무엇이었을지를 결정할 수 있다.</p>
 <p>예를 들어, 최소 가중치 완벽 일치를 기반으로 하는 ‘일치’ 알고리즘을 사용하자. 이는 특정 출력 문자열을 입력으로 사용한다. 두 개의 오류를 겪은 논리적인 <code class="docutils literal notranslate"><span class="pre">1</span></code> 을 위해 간단한 예제 문자열 <code class="docutils literal notranslate"><span class="pre">'1</span> <span class="pre">0</span>&#160; <span class="pre">001</span> <span class="pre">100</span> <span class="pre">100'</span></code> 을 제공한다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
@@ -1338,8 +1341,8 @@ also do not detect anything, but this no longer represents a change and hence re
 &#39;1 1&#39;
 </pre></div></div>
 </div>
-<p>The output is what the logical part should have been. As you can see, the decoder correctly determined that the readout should have been of a logical <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-<p>When we take many samples, we can determine the probability with which the decoder is incorrect. This should decrease exponentially as the code size is increased, since the configurations of noise that fool the decoder become less likely. The probability of a logical error is calculated using the <code class="docutils literal notranslate"><span class="pre">logical_prob()</span></code> method. This runs matching by default, but other algorithms can be specified by the <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> kwarg.</p>
+<p>출력은 논리적인 부분이 되여아 하는 것이다. 보다시피 디코더는 판독값이 논리적 <code class="docutils literal notranslate"><span class="pre">1</span></code> 이어야 한다고 올바르게 판단했다.</p>
+<p>많은 샘플을 채취할 때, 우리는 디코더가 정확하지 않은 확률을 결정할 수 있다. 이는 코드 크기가 증가함에 따라 기하급수적으로 감소해야 하는데, 이는 디코더를 무시하는 잡음의 구성이 더 적게 되기 때문이다. 논리적 오류의 확률은 <code class="docutils literal notranslate"><span class="pre">logical_prob()</span></code> 방법을 사용하여 계산된다. 이는 기본적으로 일치하지만 다른 알고리즘은 알고리즘 <code class="docutils literal notranslate"><span class="pre">algorithm</span></code> kwarg에 의해 지정될 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
@@ -1481,7 +1484,7 @@ logical error probability for postselection = 0.0
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -1571,7 +1574,7 @@ logical error probability for postselection = 0.0
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1594,9 +1597,11 @@ logical error probability for postselection = 0.0
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

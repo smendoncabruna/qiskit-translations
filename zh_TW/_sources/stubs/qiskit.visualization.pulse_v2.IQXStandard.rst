@@ -1,19 +1,18 @@
-﻿qiskit.visualization.pulse\_v2.IQXStandard
-==========================================
+﻿IQXStandard
+===========
 
 .. currentmodule:: qiskit.visualization.pulse_v2
 
 .. autoclass:: IQXStandard
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IQXStandard.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IQXStandard.clear
       ~IQXStandard.copy
       ~IQXStandard.fromkeys
@@ -25,9 +24,5 @@
       ~IQXStandard.setdefault
       ~IQXStandard.update
       ~IQXStandard.values
-   
-   
 
-   
-   
-   
+

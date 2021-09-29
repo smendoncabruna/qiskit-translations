@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.finance.applications.ising.portfolio_diversification &mdash; Qiskit 0.29.0 Dokumentation</title>
+  <title>qiskit.finance.applications.ising.portfolio_diversification &mdash; Qiskit 0.30.0 Dokumentation</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -342,84 +349,17 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio_diversification.get_operator" title="qiskit.finance.applications.ising.portfolio_diversification.get_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code></a>(rho, n, q)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_operator</span></code>(rho, n, q)</p></td>
 <td><p>Converts an instance of portfolio optimization into a list of Paulis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_solution" title="qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_portfoliodiversification_solution</span></code></a>(rho, …)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_portfoliodiversification_solution</span></code>(rho, …)</p></td>
 <td><p>Tries to obtain a feasible solution (in vector form) of an instance of portfolio diversification from the results dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_value" title="qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_portfoliodiversification_value</span></code></a>(rho, n, …)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_portfoliodiversification_value</span></code>(rho, n, …)</p></td>
 <td><p>Evaluates an objective function of an instance of portfolio diversification and its solution (in vector form).</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio_diversification.get_operator">
-<code class="sig-name descname">get_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">q</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio_diversification.html#get_operator"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio_diversification.get_operator" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Converts an instance of portfolio optimization into a list of Paulis.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>rho</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – an asset-to-asset similarity matrix, such as the covariance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the number of assets.</p></li>
-<li><p><strong>q</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the number of clusters of assets to output.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabetyp</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">WeightedPauliOperator</span></code></p>
-</dd>
-<dt class="field-odd">Rückgabe</dt>
-<dd class="field-odd"><p>operator for the Hamiltonian</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_solution">
-<code class="sig-name descname">get_portfoliodiversification_solution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">result</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio_diversification.html#get_portfoliodiversification_solution"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_solution" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Tries to obtain a feasible solution (in vector form) of an instance of
-portfolio diversification from the results dictionary.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>rho</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – an asset-to-asset similarity matrix, such as the covariance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the number of assets.</p></li>
-<li><p><strong>q</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the number of clusters of assets to output.</p></li>
-<li><p><strong>result</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MinimumEigensolverResult</span></code>) – a result obtained by QAOA.run or VQE.run containing key ‚eigvecs‘.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabetyp</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></p>
-</dd>
-<dt class="field-odd">Rückgabe</dt>
-<dd class="field-odd"><p>a vector describing the solution.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_value">
-<code class="sig-name descname">get_portfoliodiversification_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">x_state</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/finance/applications/ising/portfolio_diversification.html#get_portfoliodiversification_value"><span class="viewcode-link">[Quellcode]</span></a><a class="headerlink" href="#qiskit.finance.applications.ising.portfolio_diversification.get_portfoliodiversification_value" title="Link zu dieser Definition">¶</a></dt>
-<dd><p>Evaluates an objective function of an instance of portfolio diversification and
-its solution (in vector form).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameter</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>rho</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – an asset-to-asset similarity matrix, such as the covariance matrix.</p></li>
-<li><p><strong>n</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the number of assets.</p></li>
-<li><p><strong>q</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – the number of clusters of assets to output.</p></li>
-<li><p><strong>x_state</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – a vector describing the solution.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Rückgabetyp</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-<dt class="field-odd">Rückgabe</dt>
-<dd class="field-odd"><p>cost of the solution.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 
 
@@ -447,7 +387,7 @@ its solution (in vector form).</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Zuletzt aktualisiert am 2021/08/13.
+      Zuletzt aktualisiert am 2021/09/23.
 
     </p>
   </div>
@@ -530,7 +470,7 @@ its solution (in vector form).</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -553,9 +493,11 @@ its solution (in vector form).</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

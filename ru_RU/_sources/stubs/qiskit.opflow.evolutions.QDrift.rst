@@ -1,29 +1,22 @@
-﻿qiskit.opflow.evolutions.QDrift
-===============================
+QDrift
+======
 
 .. currentmodule:: qiskit.opflow.evolutions
 
 .. autoclass:: QDrift
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~QDrift.__init__
-      ~QDrift.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~QDrift.convert
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QDrift.reps
-   
-   
+   .. autoattribute:: reps

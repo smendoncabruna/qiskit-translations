@@ -1,26 +1,21 @@
-﻿qiskit.aqua.components.multiclass\_extensions.MulticlassExtension
-=================================================================
+﻿MulticlassExtension
+===================
 
 .. currentmodule:: qiskit.aqua.components.multiclass_extensions
 
 .. autoclass:: MulticlassExtension
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MulticlassExtension.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MulticlassExtension.predict
       ~MulticlassExtension.set_estimator
       ~MulticlassExtension.test
       ~MulticlassExtension.train
-   
-   
 
-   
-   
-   
+

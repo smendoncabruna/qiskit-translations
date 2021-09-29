@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.noise.errors.readout_error &mdash; Dokumentasi Qiskit 0.29.0</title>
+  <title>qiskit.providers.aer.noise.errors.readout_error &mdash; Dokumentasi Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -356,7 +363,7 @@
     <span class="n">_RTOL_DEFAULT</span> <span class="o">=</span> <span class="n">RTOL_DEFAULT</span>
     <span class="n">_MAX_TOL</span> <span class="o">=</span> <span class="mf">1e-4</span>
 
-<div class="viewcode-block" id="ReadoutError.__init__"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">ATOL_DEFAULT</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">ATOL_DEFAULT</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a readout error for a noise model.</span>
 
@@ -393,7 +400,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_probabilities</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">atol</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_number_of_qubits</span> <span class="o">=</span> <span class="n">qubits_from_mat</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_number_of_qubits</span> <span class="o">=</span> <span class="n">qubits_from_mat</span><span class="p">(</span><span class="n">probabilities</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Display ReadoutError.&quot;&quot;&quot;</span>
@@ -416,7 +423,7 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_probabilities</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_probabilities</span><span class="p">,</span>
                            <span class="n">atol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">atol</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rtol</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ReadoutError.copy"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.copy"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.copy.html#qiskit.providers.aer.noise.ReadoutError.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Make a copy of current ReadoutError.&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=no-value-for-parameter</span>
         <span class="c1"># The constructor of subclasses from raw data should be a copy</span>
@@ -442,7 +449,7 @@
         <span class="sd">&quot;&quot;&quot;The relative tolerance parameter for float comparisons.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ReadoutError</span><span class="o">.</span><span class="n">_RTOL_DEFAULT</span>
 
-<div class="viewcode-block" id="ReadoutError.set_atol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.set_atol">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ReadoutError.set_atol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.set_atol.html#qiskit.providers.aer.noise.ReadoutError.set_atol">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_atol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the class default absolute tolerance parameter for float comparisons.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -454,7 +461,7 @@
                     <span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_MAX_TOL</span><span class="p">))</span>
         <span class="bp">cls</span><span class="o">.</span><span class="n">_ATOL_DEFAULT</span> <span class="o">=</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="ReadoutError.set_rtol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.set_rtol">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="ReadoutError.set_rtol"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.set_rtol.html#qiskit.providers.aer.noise.ReadoutError.set_rtol">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">set_rtol</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the class default relative tolerance parameter for float comparisons.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -466,7 +473,7 @@
                     <span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_MAX_TOL</span><span class="p">))</span>
         <span class="bp">cls</span><span class="o">.</span><span class="n">_RTOL_DEFAULT</span> <span class="o">=</span> <span class="n">value</span></div>
 
-<div class="viewcode-block" id="ReadoutError.ideal"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.ideal">[docs]</a>    <span class="k">def</span> <span class="nf">ideal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.ideal"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.ideal.html#qiskit.providers.aer.noise.ReadoutError.ideal">[docs]</a>    <span class="k">def</span> <span class="nf">ideal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return True if current error object is an identity&quot;&quot;&quot;</span>
         <span class="n">iden</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">number_of_qubits</span><span class="p">)</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probabilities</span><span class="p">)</span> <span class="o">-</span> <span class="n">iden</span><span class="p">),</span> <span class="mi">12</span><span class="p">)</span>
@@ -474,11 +481,11 @@
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="ReadoutError.to_instruction"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.to_instruction">[docs]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.to_instruction"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.to_instruction.html#qiskit.providers.aer.noise.ReadoutError.to_instruction">[docs]</a>    <span class="k">def</span> <span class="nf">to_instruction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert the ReadoutError to a circuit Instruction.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Instruction</span><span class="p">(</span><span class="s2">&quot;roerror&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">number_of_qubits</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_probabilities</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ReadoutError.to_dict"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.to_dict"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.to_dict.html#qiskit.providers.aer.noise.ReadoutError.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the current error as a dictionary.&quot;&quot;&quot;</span>
         <span class="n">error</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;roerror&quot;</span><span class="p">,</span>
@@ -487,7 +494,7 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">error</span></div>
 
-<div class="viewcode-block" id="ReadoutError.compose"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.compose"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.compose.html#qiskit.providers.aer.noise.ReadoutError.compose">[docs]</a>    <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">front</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the composition readout error other * self.</span>
 
 <span class="sd">        Note that for `front=True` this is equivalent to the</span>
@@ -509,7 +516,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">left_multiply</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ReadoutError.dot"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.dot"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.dot.html#qiskit.providers.aer.noise.ReadoutError.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the composition readout error self * other.</span>
 
 <span class="sd">        Args:</span>
@@ -524,7 +531,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_matmul</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ReadoutError.power"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.power">[docs]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.power"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.power.html#qiskit.providers.aer.noise.ReadoutError.power">[docs]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the compose of the readout error with itself n times.</span>
 
 <span class="sd">        Args:</span>
@@ -543,7 +550,7 @@
             <span class="n">ret</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="ReadoutError.tensor"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.tensor"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.tensor.html#qiskit.providers.aer.noise.ReadoutError.tensor">[docs]</a>    <span class="k">def</span> <span class="nf">tensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product readout error self ⊗ other.</span>
 
 <span class="sd">        Args:</span>
@@ -557,7 +564,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tensor_product</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ReadoutError.expand"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.html#qiskit.providers.aer.noise.ReadoutError.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="ReadoutError.expand"><a class="viewcode-back" href="../../../../../../stubs/qiskit.providers.aer.noise.ReadoutError.expand.html#qiskit.providers.aer.noise.ReadoutError.expand">[docs]</a>    <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the tensor product readout error self ⊗ other.</span>
 
 <span class="sd">        Args:</span>
@@ -686,7 +693,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Terakhir diperbarui pada 2021/08/13.
+      Terakhir diperbarui pada 2021/09/23.
 
     </p>
   </div>
@@ -766,7 +773,7 @@
             <a href="../../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -789,9 +796,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

@@ -1,24 +1,19 @@
-﻿qiskit.aqua.operators.expectations.AerPauliExpectation
-======================================================
+﻿AerPauliExpectation
+===================
 
 .. currentmodule:: qiskit.aqua.operators.expectations
 
 .. autoclass:: AerPauliExpectation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AerPauliExpectation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AerPauliExpectation.compute_variance
       ~AerPauliExpectation.convert
-   
-   
 
-   
-   
-   
+

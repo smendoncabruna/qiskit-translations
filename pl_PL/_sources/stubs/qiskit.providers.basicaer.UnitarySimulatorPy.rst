@@ -1,19 +1,18 @@
-﻿qiskit.providers.basicaer.UnitarySimulatorPy
-============================================
+﻿UnitarySimulatorPy
+==================
 
 .. currentmodule:: qiskit.providers.basicaer
 
 .. autoclass:: UnitarySimulatorPy
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnitarySimulatorPy.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnitarySimulatorPy.configuration
       ~UnitarySimulatorPy.name
       ~UnitarySimulatorPy.properties
@@ -22,19 +21,13 @@
       ~UnitarySimulatorPy.run_experiment
       ~UnitarySimulatorPy.set_options
       ~UnitarySimulatorPy.status
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnitarySimulatorPy.DEFAULT_CONFIGURATION
-      ~UnitarySimulatorPy.DEFAULT_OPTIONS
-      ~UnitarySimulatorPy.MAX_QUBITS_MEMORY
-      ~UnitarySimulatorPy.options
-      ~UnitarySimulatorPy.version
-   
-   
+   .. autoattribute:: DEFAULT_CONFIGURATION
+   .. autoattribute:: DEFAULT_OPTIONS
+   .. autoattribute:: MAX_QUBITS_MEMORY
+   .. autoattribute:: options
+   .. autoattribute:: version

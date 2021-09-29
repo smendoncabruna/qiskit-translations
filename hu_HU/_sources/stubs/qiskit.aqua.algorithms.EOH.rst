@@ -1,33 +1,26 @@
-﻿qiskit.aqua.algorithms.EOH
-==========================
+﻿EOH
+===
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: EOH
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~EOH.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~EOH.construct_circuit
       ~EOH.run
       ~EOH.set_backend
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~EOH.backend
-      ~EOH.quantum_instance
-      ~EOH.random
-   
-   
+   .. autoattribute:: backend
+   .. autoattribute:: quantum_instance
+   .. autoattribute:: random

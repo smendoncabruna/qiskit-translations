@@ -1,19 +1,18 @@
-﻿qiskit.extensions.UnitaryGate
-=============================
+﻿UnitaryGate
+===========
 
 .. currentmodule:: qiskit.extensions
 
 .. autoclass:: UnitaryGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnitaryGate.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnitaryGate.add_decomposition
       ~UnitaryGate.adjoint
       ~UnitaryGate.assemble
@@ -33,20 +32,14 @@
       ~UnitaryGate.to_matrix
       ~UnitaryGate.transpose
       ~UnitaryGate.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnitaryGate.decompositions
-      ~UnitaryGate.definition
-      ~UnitaryGate.duration
-      ~UnitaryGate.label
-      ~UnitaryGate.params
-      ~UnitaryGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

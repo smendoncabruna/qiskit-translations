@@ -1,28 +1,20 @@
-﻿qiskit.providers.JobStatus
-==========================
+﻿JobStatus
+=========
 
 .. currentmodule:: qiskit.providers
 
 .. autoclass:: JobStatus
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~JobStatus.CANCELLED
-      ~JobStatus.DONE
-      ~JobStatus.ERROR
-      ~JobStatus.INITIALIZING
-      ~JobStatus.QUEUED
-      ~JobStatus.RUNNING
-      ~JobStatus.VALIDATING
-   
-   
+   .. autoattribute:: CANCELLED
+   .. autoattribute:: DONE
+   .. autoattribute:: ERROR
+   .. autoattribute:: INITIALIZING
+   .. autoattribute:: QUEUED
+   .. autoattribute:: RUNNING
+   .. autoattribute:: VALIDATING

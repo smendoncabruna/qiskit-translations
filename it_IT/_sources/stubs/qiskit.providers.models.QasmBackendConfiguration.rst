@@ -1,30 +1,23 @@
-﻿qiskit.providers.models.QasmBackendConfiguration
-================================================
+﻿QasmBackendConfiguration
+========================
 
 .. currentmodule:: qiskit.providers.models
 
 .. autoclass:: QasmBackendConfiguration
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QasmBackendConfiguration.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QasmBackendConfiguration.from_dict
       ~QasmBackendConfiguration.to_dict
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QasmBackendConfiguration.num_qubits
-   
-   
+   .. autoattribute:: num_qubits

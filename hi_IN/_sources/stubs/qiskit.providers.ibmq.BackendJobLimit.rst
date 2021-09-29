@@ -1,22 +1,10 @@
-﻿qiskit.providers.ibmq.BackendJobLimit
-=====================================
+﻿BackendJobLimit
+===============
 
 .. currentmodule:: qiskit.providers.ibmq
 
 .. autoclass:: BackendJobLimit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~BackendJobLimit.__init__
-   
-   
-
-   
-   
-   

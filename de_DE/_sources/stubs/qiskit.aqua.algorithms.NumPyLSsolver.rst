@@ -1,29 +1,22 @@
-﻿qiskit.aqua.algorithms.NumPyLSsolver
-====================================
+﻿NumPyLSsolver
+=============
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: NumPyLSsolver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NumPyLSsolver.__init__
-      ~NumPyLSsolver.run
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~NumPyLSsolver.run
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NumPyLSsolver.random
-   
-   
+   .. autoattribute:: random

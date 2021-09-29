@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting started &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>Getting started &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -327,8 +334,8 @@
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <div class="tabbed-set docutils">
-<input checked="checked" id="5c9decef-5cdd-4341-8824-1eabf626416f" name="0a956003-2e71-4ce1-bb4b-bbdb2769f3ad" type="radio">
-</input><label class="tabbed-label" for="5c9decef-5cdd-4341-8824-1eabf626416f">
+<input checked="checked" id="4e52fcd6-f82c-4d3e-8d0d-2154ac0eab84" name="a2e20d40-8422-4e12-b858-aba1e52e297b" type="radio">
+</input><label class="tabbed-label" for="4e52fcd6-f82c-4d3e-8d0d-2154ac0eab84">
 Start locally</label><div class="tabbed-content docutils">
 <p>Qiskit supports Python 3.6 or later. However, both Python and Qiskit are
 evolving ecosystems, and sometimes when new releases occur in one or the other,
@@ -376,8 +383,8 @@ versions of macOS), you’ll need to put <code class="docutils literal notransla
 </pre></div>
 </div>
 </div>
-<input id="110fe5f4-3156-47c6-8dd0-cf5cf134ad4f" name="0a956003-2e71-4ce1-bb4b-bbdb2769f3ad" type="radio">
-</input><label class="tabbed-label" for="110fe5f4-3156-47c6-8dd0-cf5cf134ad4f">
+<input id="650352c7-0ac7-41e7-89b0-8ad1aa37216a" name="a2e20d40-8422-4e12-b858-aba1e52e297b" type="radio">
+</input><label class="tabbed-label" for="650352c7-0ac7-41e7-89b0-8ad1aa37216a">
 Start on the cloud</label><div class="tabbed-content docutils">
 <blockquote>
 <div><p>The following cloud vendors have Qiskit pre-installed in their environments:</p>
@@ -433,8 +440,8 @@ Start on the cloud</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div></div>
-<input id="00c11aa2-d32d-4e87-8a17-1d4e8714d43d" name="0a956003-2e71-4ce1-bb4b-bbdb2769f3ad" type="radio">
-</input><label class="tabbed-label" for="00c11aa2-d32d-4e87-8a17-1d4e8714d43d">
+<input id="f261c631-16db-4cf5-9fbe-a8ee0ddfe1c2" name="a2e20d40-8422-4e12-b858-aba1e52e297b" type="radio">
+</input><label class="tabbed-label" for="f261c631-16db-4cf5-9fbe-a8ee0ddfe1c2">
 Install from source</label><div class="tabbed-content docutils">
 <p>Installing the elements from source allows you to access the most recently
 updated version of Qiskit instead of using the version in the Python Package
@@ -480,13 +487,13 @@ conda activate QiskitDevenv
 <h2>Installing Terra from Source</h2><p>Installing from source requires that you have a C++ compiler on your system that supports
 C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="03d2d289-21c7-4338-8a03-99fdf27d36f1" name="6c43909c-6427-41d8-8243-885ef7cad361" type="radio">
-</input><label class="tabbed-label" for="03d2d289-21c7-4338-8a03-99fdf27d36f1">
+<input checked="checked" id="4a82c07c-5e5e-4a26-931d-abdd364f495d" name="0e8bb519-8c36-43e3-b305-6e1ca00a71f8" type="radio">
+</input><label class="tabbed-label" for="4a82c07c-5e5e-4a26-931d-abdd364f495d">
 Compiler for Linux</label><div class="tabbed-content docutils">
 <p>On most Linux platforms, the necessary GCC compiler is already installed.</p>
 </div>
-<input id="70eface0-e85f-4c9c-8d0d-3d623a53cbf9" name="6c43909c-6427-41d8-8243-885ef7cad361" type="radio">
-</input><label class="tabbed-label" for="70eface0-e85f-4c9c-8d0d-3d623a53cbf9">
+<input id="9affec59-8540-4d2e-96cf-a06d0ef7158c" name="0e8bb519-8c36-43e3-b305-6e1ca00a71f8" type="radio">
+</input><label class="tabbed-label" for="9affec59-8540-4d2e-96cf-a06d0ef7158c">
 Compiler for macOS</label><div class="tabbed-content docutils">
 <p>If you use macOS, you can install the Clang compiler by installing XCode.
 Check if you have XCode and Clang installed by opening a terminal window and entering the
@@ -499,8 +506,8 @@ following.</p>
 </pre></div>
 </div>
 </div>
-<input id="8786884d-ab90-40a3-9082-0b93cf830eb3" name="6c43909c-6427-41d8-8243-885ef7cad361" type="radio">
-</input><label class="tabbed-label" for="8786884d-ab90-40a3-9082-0b93cf830eb3">
+<input id="47f1829e-f407-4483-8e16-0cd3818bc5d3" name="0e8bb519-8c36-43e3-b305-6e1ca00a71f8" type="radio">
+</input><label class="tabbed-label" for="47f1829e-f407-4483-8e16-0cd3818bc5d3">
 Compiler for Windows</label><div class="tabbed-content docutils">
 <p>On Windows, it is easiest to install the Visual C++ compiler from the
 <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019">Build Tools for Visual Studio 2019</a>.
@@ -907,7 +914,7 @@ project don’t require a reinstall to be applied:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -994,7 +1001,7 @@ project don’t require a reinstall to be applied:</p>
             <a href="tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1017,9 +1024,11 @@ project don’t require a reinstall to be applied:</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

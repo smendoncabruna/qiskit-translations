@@ -1,23 +1,18 @@
-﻿qiskit.opflow.converters.TwoQubitReduction
-==========================================
+TwoQubitReduction
+=================
 
 .. currentmodule:: qiskit.opflow.converters
 
 .. autoclass:: TwoQubitReduction
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~TwoQubitReduction.__init__
-      ~TwoQubitReduction.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~TwoQubitReduction.convert
+
+

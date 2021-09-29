@@ -1,24 +1,19 @@
-﻿qiskit.qobj.PulseLibraryItem
-============================
+﻿PulseLibraryItem
+================
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: PulseLibraryItem
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PulseLibraryItem.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PulseLibraryItem.from_dict
       ~PulseLibraryItem.to_dict
-   
-   
 
-   
-   
-   
+

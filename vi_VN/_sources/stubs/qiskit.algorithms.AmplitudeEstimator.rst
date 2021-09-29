@@ -1,23 +1,18 @@
-﻿qiskit.algorithms.AmplitudeEstimator
-====================================
+﻿AmplitudeEstimator
+==================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: AmplitudeEstimator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~AmplitudeEstimator.__init__
-      ~AmplitudeEstimator.estimate
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~AmplitudeEstimator.estimate
+
+

@@ -1,24 +1,16 @@
-﻿qiskit.chemistry.transformations.FermionicQubitMappingType
-==========================================================
+﻿FermionicQubitMappingType
+=========================
 
 .. currentmodule:: qiskit.chemistry.transformations
 
 .. autoclass:: FermionicQubitMappingType
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   
 
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~FermionicQubitMappingType.BRAVYI_KITAEV
-      ~FermionicQubitMappingType.JORDAN_WIGNER
-      ~FermionicQubitMappingType.PARITY
-   
-   
+   .. autoattribute:: BRAVYI_KITAEV
+   .. autoattribute:: JORDAN_WIGNER
+   .. autoattribute:: PARITY

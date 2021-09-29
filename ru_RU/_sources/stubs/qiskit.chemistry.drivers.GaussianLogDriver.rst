@@ -1,32 +1,25 @@
-﻿qiskit.chemistry.drivers.GaussianLogDriver
-==========================================
+﻿GaussianLogDriver
+=================
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: GaussianLogDriver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GaussianLogDriver.__init__
-      ~GaussianLogDriver.run
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~GaussianLogDriver.run
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GaussianLogDriver.basis
-      ~GaussianLogDriver.hf_method
-      ~GaussianLogDriver.molecule
-      ~GaussianLogDriver.supports_molecule
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule

@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.LookaheadSwap
-======================================
+﻿LookaheadSwap
+=============
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: LookaheadSwap
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~LookaheadSwap.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~LookaheadSwap.name
       ~LookaheadSwap.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~LookaheadSwap.is_analysis_pass
-      ~LookaheadSwap.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

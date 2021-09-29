@@ -1,33 +1,26 @@
-﻿qiskit.optimization.algorithms.CobylaOptimizer
-==============================================
+﻿CobylaOptimizer
+===============
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: CobylaOptimizer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~CobylaOptimizer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~CobylaOptimizer.get_compatibility_msg
       ~CobylaOptimizer.is_compatible
       ~CobylaOptimizer.multi_start_solve
       ~CobylaOptimizer.solve
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~CobylaOptimizer.clip
-      ~CobylaOptimizer.trials
-   
-   
+   .. autoattribute:: clip
+   .. autoattribute:: trials

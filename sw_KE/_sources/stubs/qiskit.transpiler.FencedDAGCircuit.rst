@@ -1,22 +1,10 @@
-﻿qiskit.transpiler.FencedDAGCircuit
-==================================
+﻿FencedDAGCircuit
+================
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: FencedDAGCircuit
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~FencedDAGCircuit.__init__
-   
-   
-
-   
-   
-   

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing Basket Options &mdash; documentación de Qiskit Finance - 0.2.0</title>
+  <title>Fijación de Precios de Opciones de Canasta &mdash; documentación de Qiskit Finance - 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Pricing Asian Barrier Spreads" href="07_asian_barrier_spread_pricing.html" />
-    <link rel="prev" title="Pricing Bull Spreads" href="05_bull_spread_pricing.html" /> 
+    <link rel="next" title="Fijación de Precios de los Márgenes de Barrera Asiáticos" href="07_asian_barrier_spread_pricing.html" />
+    <link rel="prev" title="Fijación de Precios de los Márgenes Alcistas" href="05_bull_spread_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Pricing Basket Options</li>
+      <li>Fijación de Precios de Opciones de Canasta</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,13 +484,13 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a>.</p>
+<p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/06_basket_option_pricing.ipynb">docs/tutorials/06_basket_option_pricing.ipynb</a>.</p>
 </div>
-<div class="section" id="Pricing-Basket-Options">
-<h1>Pricing Basket Options<a class="headerlink" href="#Pricing-Basket-Options" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="Fijación-de-Precios-de-Opciones-de-Canasta">
+<h1>Fijación de Precios de Opciones de Canasta<a class="headerlink" href="#Fijación-de-Precios-de-Opciones-de-Canasta" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Suppose a basket option with strike price <span class="math notranslate nohighlight">\(K\)</span> and two underlying assets whose spot price at maturity <span class="math notranslate nohighlight">\(S_T^1\)</span>, <span class="math notranslate nohighlight">\(S_T^2\)</span> follow given random distributions. The corresponding payoff function is defined as:</p>
+<p>Supón una opción de canasta con precio de ejercicio <span class="math notranslate nohighlight">\(K\)</span> y dos activos subyacentes cuyos precios al contado al vencimiento <span class="math notranslate nohighlight">\(S_T^1\)</span>, <span class="math notranslate nohighlight">\(S_T^2\)</span> siguen distribuciones aleatorias dadas. La función de rendimiento correspondiente se define como:</p>
 <div class="math notranslate nohighlight">
 \[\max\{S_T^1 + S_T^2 - K, 0\}\]</div>
 <p>A continuación, se utiliza un algoritmo cuántico basado en la estimación de amplitud para estimar el rendimiento esperado, es decir, el precio justo antes del descuento, para la opción:</p>
@@ -612,7 +612,7 @@ div.rendered_html tbody tr:hover {
 \[\big|x\rangle \big|0\rangle \mapsto \big|x\rangle \left( \cos(a*x+b) \big|0\rangle + \sin(a*x+b) \big|1\rangle \right),\]</div>
 <p>utilizando rotaciones Y controladas.</p>
 <p>Finalmente, nos interesa la probabilidad de medir <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> en el último qubit, que corresponde a <span class="math notranslate nohighlight">\(\sin^2(a*x+b)\)</span>. Junto con la aproximación anterior, esto permite aproximar los valores de interés. Cuanto más pequeño elijamos <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, mejor será la aproximación. Sin embargo, dado que estamos estimando una propiedad escalada por <span class="math notranslate nohighlight">\(c_\text{approx}\)</span>, el número de qubits de evaluación <span class="math notranslate nohighlight">\(m\)</span> debe ajustarse en consecuencia.</p>
-<p>For more details on the approximation, we refer to: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>Para más detalles sobre la aproximación, nos referimos a: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <p>Dado que el operador de suma ponderada (en su implementación actual) solo puede sumar números enteros, necesitamos mapear desde los rangos originales al rango representable para estimar el resultado y revertir este mapeo antes de interpretar el resultado. El mapeo corresponde esencialmente al mapeo afín descrito en el contexto del modelo de incertidumbre anterior.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -927,10 +927,10 @@ Confidence interval:    [0.4493, 0.5357]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral float-right" title="Pricing Asian Barrier Spreads" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral float-right" title="Fijación de Precios de los Márgenes de Barrera Asiáticos" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="05_bull_spread_pricing.html" class="btn btn-neutral" title="Pricing Bull Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="05_bull_spread_pricing.html" class="btn btn-neutral" title="Fijación de Precios de los Márgenes Alcistas" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -962,7 +962,7 @@ Confidence interval:    [0.4493, 0.5357]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing Basket Options</a><ul>
+<li><a class="reference internal" href="#">Fijación de Precios de Opciones de Canasta</a><ul>
 <li><a class="reference internal" href="#Introducción">Introducción</a></li>
 <li><a class="reference internal" href="#Modelo-de-Incertidumbre">Modelo de Incertidumbre</a></li>
 <li><a class="reference internal" href="#Función-de-Rendimiento">Función de Rendimiento</a></li>

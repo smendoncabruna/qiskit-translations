@@ -1,24 +1,19 @@
-﻿qiskit.chemistry.algorithms.MinimumEigensolverFactory
-=====================================================
+﻿MinimumEigensolverFactory
+=========================
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: MinimumEigensolverFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MinimumEigensolverFactory.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MinimumEigensolverFactory.get_solver
       ~MinimumEigensolverFactory.supports_aux_operators
-   
-   
 
-   
-   
-   
+

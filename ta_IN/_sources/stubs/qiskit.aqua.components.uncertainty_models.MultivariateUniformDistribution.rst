@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.MultivariateUniformDistribution
-==========================================================================
+﻿MultivariateUniformDistribution
+===============================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: MultivariateUniformDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MultivariateUniformDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MultivariateUniformDistribution.build
       ~MultivariateUniformDistribution.build_controlled
       ~MultivariateUniformDistribution.build_controlled_inverse
@@ -27,23 +26,17 @@
       ~MultivariateUniformDistribution.pdf_to_probabilities
       ~MultivariateUniformDistribution.required_ancillas
       ~MultivariateUniformDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MultivariateUniformDistribution.dimension
-      ~MultivariateUniformDistribution.high
-      ~MultivariateUniformDistribution.low
-      ~MultivariateUniformDistribution.num_qubits
-      ~MultivariateUniformDistribution.num_target_qubits
-      ~MultivariateUniformDistribution.num_values
-      ~MultivariateUniformDistribution.probabilities
-      ~MultivariateUniformDistribution.probabilities_vector
-      ~MultivariateUniformDistribution.values
-   
-   
+   .. autoattribute:: dimension
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_qubits
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: probabilities_vector
+   .. autoattribute:: values

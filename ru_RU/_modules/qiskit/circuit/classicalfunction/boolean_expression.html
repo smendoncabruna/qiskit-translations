@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.circuit.classicalfunction.boolean_expression &mdash; документация Qiskit 0.29.0</title>
+  <title>qiskit.circuit.classicalfunction.boolean_expression &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -347,7 +354,7 @@
 <div class="viewcode-block" id="BooleanExpression"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.html#qiskit.circuit.classicalfunction.BooleanExpression">[документация]</a><span class="k">class</span> <span class="nc">BooleanExpression</span><span class="p">(</span><span class="n">ClassicalElement</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The Boolean Expression gate.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="BooleanExpression.__init__"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.html#qiskit.circuit.classicalfunction.BooleanExpression.__init__">[документация]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            expression (str): The logical expression string.</span>
@@ -362,9 +369,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_tweedledum_bool_expression</span><span class="o">.</span><span class="n">num_outputs</span><span class="p">()</span>
             <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tweedledum_bool_expression</span><span class="o">.</span><span class="n">num_inputs</span><span class="p">()</span>
         <span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span> <span class="ow">or</span> <span class="n">short_expr_for_name</span><span class="p">,</span> <span class="n">num_qubits</span><span class="o">=</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[])</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span> <span class="ow">or</span> <span class="n">short_expr_for_name</span><span class="p">,</span> <span class="n">num_qubits</span><span class="o">=</span><span class="n">num_qubits</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[])</span>
 
-<div class="viewcode-block" id="BooleanExpression.simulate"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.html#qiskit.circuit.classicalfunction.BooleanExpression.simulate">[документация]</a>    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bitstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="viewcode-block" id="BooleanExpression.simulate"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.simulate.html#qiskit.circuit.classicalfunction.BooleanExpression.simulate">[документация]</a>    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bitstring</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Evaluate the expression on a bitstring.</span>
 
 <span class="sd">        This evaluation is done classically.</span>
@@ -380,7 +387,7 @@
             <span class="n">bits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BitVec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">bit</span><span class="p">))</span>
         <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tweedledum_bool_expression</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="o">*</span><span class="n">bits</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="BooleanExpression.synth"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.html#qiskit.circuit.classicalfunction.BooleanExpression.synth">[документация]</a>    <span class="k">def</span> <span class="nf">synth</span><span class="p">(</span>
+<div class="viewcode-block" id="BooleanExpression.synth"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.synth.html#qiskit.circuit.classicalfunction.BooleanExpression.synth">[документация]</a>    <span class="k">def</span> <span class="nf">synth</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">registerless</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">synthesizer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="s2">&quot;BooleanExpression&quot;</span><span class="p">],</span> <span class="n">QuantumCircuit</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -412,7 +419,7 @@
         <span class="sd">&quot;&quot;&quot;The definition of the boolean expression is its synthesis&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synth</span><span class="p">()</span>
 
-<div class="viewcode-block" id="BooleanExpression.from_dimacs_file"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.html#qiskit.circuit.classicalfunction.BooleanExpression.from_dimacs_file">[документация]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="BooleanExpression.from_dimacs_file"><a class="viewcode-back" href="../../../../stubs/qiskit.circuit.classicalfunction.BooleanExpression.from_dimacs_file.html#qiskit.circuit.classicalfunction.BooleanExpression.from_dimacs_file">[документация]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_dimacs_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a BooleanExpression from the string in the DIMACS format.</span>
 <span class="sd">        Args:</span>
@@ -455,7 +462,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -535,7 +542,7 @@
             <a href="../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -558,9 +565,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

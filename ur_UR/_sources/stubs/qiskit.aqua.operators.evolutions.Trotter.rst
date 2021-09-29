@@ -1,30 +1,23 @@
-﻿qiskit.aqua.operators.evolutions.Trotter
-========================================
+﻿Trotter
+=======
 
 .. currentmodule:: qiskit.aqua.operators.evolutions
 
 .. autoclass:: Trotter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Trotter.__init__
-      ~Trotter.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~Trotter.convert
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Trotter.order
-      ~Trotter.reps
-   
-   
+   .. autoattribute:: order
+   .. autoattribute:: reps

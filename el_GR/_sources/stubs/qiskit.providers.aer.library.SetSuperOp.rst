@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SetSuperOp
-=======================================
+﻿SetSuperOp
+==========
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SetSuperOp
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SetSuperOp.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SetSuperOp.add_decomposition
       ~SetSuperOp.assemble
       ~SetSuperOp.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SetSuperOp.reverse_ops
       ~SetSuperOp.soft_compare
       ~SetSuperOp.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SetSuperOp.decompositions
-      ~SetSuperOp.definition
-      ~SetSuperOp.duration
-      ~SetSuperOp.label
-      ~SetSuperOp.params
-      ~SetSuperOp.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

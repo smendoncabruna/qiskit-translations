@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.NoiseAdaptiveLayout
-============================================
+﻿NoiseAdaptiveLayout
+===================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: NoiseAdaptiveLayout
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~NoiseAdaptiveLayout.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~NoiseAdaptiveLayout.name
       ~NoiseAdaptiveLayout.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~NoiseAdaptiveLayout.is_analysis_pass
-      ~NoiseAdaptiveLayout.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

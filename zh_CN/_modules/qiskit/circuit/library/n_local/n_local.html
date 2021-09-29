@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.circuit.library.n_local.n_local &mdash; Qiskit 0.29.0 文档</title>
+  <title>qiskit.circuit.library.n_local.n_local &mdash; Qiskit 0.30.0 文档</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Troubleshooting</span></p>
 <ul>
@@ -387,7 +394,7 @@
 <span class="sd">    If an initial state object of Qiskit Aqua is provided, it is added in front of the NLocal.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="NLocal.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.html#qiskit.circuit.library.NLocal.__init__">[文档]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">num_qubits</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">rotation_blocks</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
@@ -478,7 +485,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">entanglement</span> <span class="o">=</span> <span class="n">entanglement</span>
 
         <span class="k">if</span> <span class="n">initial_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">initial_state</span> <span class="o">=</span> <span class="n">initial_state</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">initial_state</span> <span class="o">=</span> <span class="n">initial_state</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">num_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -747,7 +754,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_insert_barriers</span> <span class="o">=</span> <span class="n">insert_barriers</span>
 
-<div class="viewcode-block" id="NLocal.get_unentangled_qubits"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.html#qiskit.circuit.library.NLocal.get_unentangled_qubits">[文档]</a>    <span class="k">def</span> <span class="nf">get_unentangled_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<div class="viewcode-block" id="NLocal.get_unentangled_qubits"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.get_unentangled_qubits.html#qiskit.circuit.library.NLocal.get_unentangled_qubits">[文档]</a>    <span class="k">def</span> <span class="nf">get_unentangled_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Get the indices of unentangled qubits in a set.</span>
 
 <span class="sd">        Returns:</span>
@@ -832,7 +839,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_reps</span> <span class="o">=</span> <span class="n">repetitions</span>
 
-<div class="viewcode-block" id="NLocal.print_settings"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.html#qiskit.circuit.library.NLocal.print_settings">[文档]</a>    <span class="k">def</span> <span class="nf">print_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="NLocal.print_settings"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.print_settings.html#qiskit.circuit.library.NLocal.print_settings">[文档]</a>    <span class="k">def</span> <span class="nf">print_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Returns information about the setting.</span>
 
 <span class="sd">        Returns:</span>
@@ -856,7 +863,7 @@
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="c1"># pylint: disable=too-many-return-statements</span>
-<div class="viewcode-block" id="NLocal.get_entangler_map"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.html#qiskit.circuit.library.NLocal.get_entangler_map">[文档]</a>    <span class="k">def</span> <span class="nf">get_entangler_map</span><span class="p">(</span>
+<div class="viewcode-block" id="NLocal.get_entangler_map"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.get_entangler_map.html#qiskit.circuit.library.NLocal.get_entangler_map">[文档]</a>    <span class="k">def</span> <span class="nf">get_entangler_map</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">rep_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">block_num</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_block_qubits</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
         <span class="sd">&quot;&quot;&quot;Get the entangler map for in the repetition ``rep_num`` and the block ``block_num``.</span>
@@ -1052,7 +1059,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_table</span> <span class="o">=</span> <span class="n">ParameterTable</span><span class="p">()</span>
 
-<div class="viewcode-block" id="NLocal.add_layer"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.html#qiskit.circuit.library.NLocal.add_layer">[文档]</a>    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span>
+<div class="viewcode-block" id="NLocal.add_layer"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.add_layer.html#qiskit.circuit.library.NLocal.add_layer">[文档]</a>    <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="s2">&quot;NLocal&quot;</span><span class="p">,</span> <span class="n">Instruction</span><span class="p">,</span> <span class="n">QuantumCircuit</span><span class="p">],</span>
         <span class="n">entanglement</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1116,7 +1123,7 @@
 
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="NLocal.assign_parameters"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.html#qiskit.circuit.library.NLocal.assign_parameters">[文档]</a>    <span class="nd">@deprecate_arguments</span><span class="p">({</span><span class="s2">&quot;param_dict&quot;</span><span class="p">:</span> <span class="s2">&quot;parameters&quot;</span><span class="p">})</span>
+<div class="viewcode-block" id="NLocal.assign_parameters"><a class="viewcode-back" href="../../../../../stubs/qiskit.circuit.library.NLocal.assign_parameters.html#qiskit.circuit.library.NLocal.assign_parameters">[文档]</a>    <span class="nd">@deprecate_arguments</span><span class="p">({</span><span class="s2">&quot;param_dict&quot;</span><span class="p">:</span> <span class="s2">&quot;parameters&quot;</span><span class="p">})</span>
     <span class="k">def</span> <span class="nf">assign_parameters</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">parameters</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Parameter</span><span class="p">],</span> <span class="n">ParameterVector</span><span class="p">],</span>
@@ -1457,7 +1464,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最后更新于 2021/08/13.
+      最后更新于 2021/09/23.
 
     </p>
   </div>
@@ -1538,7 +1545,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1561,9 +1568,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

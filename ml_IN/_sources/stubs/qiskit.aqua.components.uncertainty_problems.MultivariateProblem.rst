@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_problems.MultivariateProblem
-================================================================
+﻿MultivariateProblem
+===================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_problems
 
 .. autoclass:: MultivariateProblem
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MultivariateProblem.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MultivariateProblem.build
       ~MultivariateProblem.build_controlled
       ~MultivariateProblem.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~MultivariateProblem.required_ancillas
       ~MultivariateProblem.required_ancillas_controlled
       ~MultivariateProblem.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MultivariateProblem.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

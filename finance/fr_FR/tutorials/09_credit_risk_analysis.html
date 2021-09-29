@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Credit Risk Analysis &mdash; Documentation Qiskit Finance 0.2.0</title>
+  <title>Analyse du Risque de Crédit &mdash; Documentation Qiskit Finance 0.2.1</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Rechercher" href="../search.html" />
     <link rel="next" title="Option Pricing with qGANs" href="10_qgan_option_pricing.html" />
-    <link rel="prev" title="Pricing Fixed-Income Assets" href="08_fixed_income_pricing.html" /> 
+    <link rel="prev" title="Prix des actifs à revenu fixe" href="08_fixed_income_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Credit Risk Analysis</li>
+      <li>Analyse du Risque de Crédit</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,29 +484,29 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a>.</p>
+<p>Cette page a été générée à partir de <cite>docs/tutorials/09_credit_risk_analysis.ipynb</cite> __.</p>
 </div>
-<div class="section" id="Credit-Risk-Analysis">
-<h1>Credit Risk Analysis<a class="headerlink" href="#Credit-Risk-Analysis" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="Analyse-du-Risque-de-Crédit">
+<h1>Analyse du Risque de Crédit<a class="headerlink" href="#Analyse-du-Risque-de-Crédit" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Lien permanent vers ce titre">¶</a></h2>
-<p>This tutorial shows how quantum algorithms can be used for credit risk analysis. More precisely, how Quantum Amplitude Estimation (QAE) can be used to estimate risk measures with a quadratic speed-up over classical Monte Carlo simulation. The tutorial is based on the following papers:</p>
+<p>Ce tutoriel montre comment les algorithmes quantiques peuvent être utilisés pour l’analyse des risques de crédit. Plus précisément, comment l’estimation de l’amplitude quantique (QAE) peut être utilisée pour estimer les mesures de risque avec une accélération quadratique par rapport à la simulation classique de Monte Carlo. Le tutoriel est basé sur les documents suivants:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.nature.com/articles/s41534-019-0130-6">Quantum Risk Analysis. Stefan Woerner, Daniel J. Egger.</a> [Woerner2019]</p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/1907.03044">Credit Risk Analysis using Quantum Computers. Egger et al. (2019)</a> [Egger2019]</p></li>
+<li><p> » Analyse des risques quantiques. Stefan Woerner, Daniel J. Egger. &lt;<a class="reference external" href="https://www.nature.com/articles/s41534-019-0130-6">https://www.nature.com/articles/s41534-019-0130-6</a>&gt;` __ [Woerner2019]</p></li>
+<li><p> » Credit Risk Analysis using Quantum Computers. Egger et al. (2019) &lt;<a class="reference external" href="https://arxiv.org/abs/1907.03044">https://arxiv.org/abs/1907.03044</a>&gt;` __ [Egger2019]</p></li>
 </ul>
-<p>A general introduction to QAE can be found in the following paper:</p>
+<p>Une introduction générale à la QAE se trouve dans le document suivant:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://arxiv.org/abs/quant-ph/0005055">Quantum Amplitude Amplification and Estimation. Gilles Brassard et al.</a></p></li>
+<li><p><cite>Quantum Amplitude Amplification and Estimation. Gilles Brassard et al. &lt;http://arxiv.org/abs/quant-ph/0005055&gt;</cite> __</p></li>
 </ul>
-<p>The structure of the tutorial is as follows:</p>
+<p>La structure de ce tutoriel est la suivante:</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="#Problem-Definition">Problem Definition</a></p></li>
-<li><p><a class="reference external" href="#Uncertainty-Model">Uncertainty Model</a></p></li>
-<li><p><a class="reference external" href="#Expected-Loss">Expected Loss</a></p></li>
-<li><p><a class="reference external" href="#Cumulative-Distribution-Function">Cumulative Distribution Function</a></p></li>
-<li><p><a class="reference external" href="#Value-at-Risk">Value at Risk</a></p></li>
-<li><p><a class="reference external" href="#Conditional-Value-at-Risk">Conditional Value at Risk</a></p></li>
+<li><p><a class="reference external" href="#Problem-Definition">Définition du problème</a></p></li>
+<li><p><a class="reference external" href="#Uncertainty-Model">Modèle d’incertitude</a></p></li>
+<li><p><a class="reference external" href="#Expected-Loss">Perte attendue</a></p></li>
+<li><p><a class="reference external" href="#Cumulative-Distribution-Function">Fonction de Distribution Cumulative</a></p></li>
+<li><p><a class="reference external" href="#Value-at-Risk">Valeur à Risque</a></p></li>
+<li><p><a class="reference external" href="#Conditional-Value-at-Risk">Valeur à risque conditionnelle</a></p></li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -524,24 +524,23 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Problem-Definition">
-<h2>Problem Definition<a class="headerlink" href="#Problem-Definition" title="Lien permanent vers ce titre">¶</a></h2>
-<p>In this tutorial we want to analyze the credit risk of a portfolio of <span class="math notranslate nohighlight">\(K\)</span> assets. The default probability of every asset <span class="math notranslate nohighlight">\(k\)</span> follows a <em>Gaussian Conditional Independence</em> model, i.e., given a value <span class="math notranslate nohighlight">\(z\)</span> sampled from a latent random variable <span class="math notranslate nohighlight">\(Z\)</span> following a standard normal distribution, the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> is given by</p>
+<div class="section" id="Définition-du-Problème">
+<h2>Définition du Problème<a class="headerlink" href="#Définition-du-Problème" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans ce tutoriel, nous voulons analyser le risque de crédit d’un portefeuille de <span class="math notranslate nohighlight">\(K\)</span> actifs. La probabilité par défaut de chaque actif <span class="math notranslate nohighlight">\(k\)</span> suit un modèle <em>Gaussien d’indépendance conditionnelle</em>, c’est-à-dire étant donné une valeur <span class="math notranslate nohighlight">\(z\)</span> échantillonnée à partir d’une variable aléatoire latente <span class="math notranslate nohighlight">\(Z\)</span> suivant une distribution normale standard, la probabilité par défaut de l’actif <span class="math notranslate nohighlight">\(k\)</span> est donnée par</p>
 <div class="math notranslate nohighlight">
 \[p_k(z) = F\left( \frac{F^{-1}(p_k^0) - \sqrt{\rho_k}z}{\sqrt{1 - \rho_k}} \right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(F\)</span> denotes the cumulative distribution function of <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(p_k^0\)</span> is the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> for <span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(\rho_k\)</span> is the sensitivity of the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> with respect to <span class="math notranslate nohighlight">\(Z\)</span>. Thus, given a concrete realization of <span class="math notranslate nohighlight">\(Z\)</span> the individual default events are assumed to be independent from each other.</p>
-<p>We are interested in analyzing risk measures of the total loss</p>
+<p>où <span class="math notranslate nohighlight">\(F\)</span> indique la fonction de distribution cumulée de <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(p_k^0\)</span> est la probabilité par défaut de l’actif <span class="math notranslate nohighlight">\(k\)</span> pour <span class="math notranslate nohighlight">\(z=0\)</span> et <span class="math notranslate nohighlight">\(\rho_k\)</span> est la sensibilité de la probabilité par défaut de l’actif <span class="math notranslate nohighlight">\(k\)</span> par rapport à <span class="math notranslate nohighlight">\(Z\)</span>. Ainsi, compte tenu d’une réalisation concrète de <span class="math notranslate nohighlight">\(Z\)</span> les événements par défaut individuels sont supposés être indépendants les uns des autres.</p>
+<p>Nous sommes intéressés par l’analyse des mesures de risque de la perte totale</p>
 <div class="math notranslate nohighlight">
 \[L = \sum_{k=1}^K \lambda_k X_k(Z)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda_k\)</span> denotes the <em>loss given default</em> of asset <span class="math notranslate nohighlight">\(k\)</span>, and given <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(X_k(Z)\)</span> denotes a Bernoulli variable representing the default event of asset <span class="math notranslate nohighlight">\(k\)</span>. More precisely, we are interested in the expected value <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span>, the Value at Risk (VaR) of <span class="math notranslate nohighlight">\(L\)</span> and the Conditional Value at Risk of <span class="math notranslate nohighlight">\(L\)</span> (also called Expected Shortfall). Where VaR and CVaR are defined as</p>
+<p>où <span class="math notranslate nohighlight">\(\lambda_k\)</span> indique la <em>perte par défaut</em> de l’actif <span class="math notranslate nohighlight">\(k\)</span>, et a donné <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(X_k(Z)\)</span> désigne une variable de Bernoulli représentant l’événement par défaut de l’actif <span class="math notranslate nohighlight">\(k\)</span>. Plus précisément, nous nous interessons à la valeur espérée <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span>, la valeur à risque (VaR) de <span class="math notranslate nohighlight">\(L\)</span> et la valeur conditionnelle à risque de <span class="math notranslate nohighlight">\(L\)</span> (également appelée déficit attendu). Là où VaR et CVaR sont définis comme</p>
 <div class="math notranslate nohighlight">
 \[\text{VaR}_{\alpha}(L) = \inf \{ x \mid \mathbb{P}[L &lt;= x] \geq 1 - \alpha \}\]</div>
-<p>with confidence level <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>, and</p>
+<p>avec le niveau de confiance <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>, et</p>
 <div class="math notranslate nohighlight">
 \[\text{CVaR}_{\alpha}(L) = \mathbb{E}[ L \mid L \geq \text{VaR}_{\alpha}(L) ].\]</div>
-<p>For more details on the considered model, see, e.g., <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
-<p>The problem is defined by the following parameters: - number of qubits used to represent <span class="math notranslate nohighlight">\(Z\)</span>, denoted by <span class="math notranslate nohighlight">\(n_z\)</span> - truncation value for <span class="math notranslate nohighlight">\(Z\)</span>, denoted by <span class="math notranslate nohighlight">\(z_{\text{max}}\)</span>, i.e., Z is assumed to take <span class="math notranslate nohighlight">\(2^{n_z}\)</span> equidistant values in <span class="math notranslate nohighlight">\(\{-z_{max}, ..., +z_{max}\}\)</span> - the base default probabilities for each asset <span class="math notranslate nohighlight">\(p_0^k \in (0, 1)\)</span>, <span class="math notranslate nohighlight">\(k=1, ..., K\)</span> - sensitivities of the default probabilities with respect to <span class="math notranslate nohighlight">\(Z\)</span>, denoted by <span class="math notranslate nohighlight">\(\rho_k \in [0, 1)\)</span> -
-loss given default for asset <span class="math notranslate nohighlight">\(k\)</span>, denoted by <span class="math notranslate nohighlight">\(\lambda_k\)</span> - confidence level for VaR / CVaR <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>.</p>
+<p>Pour plus de détails sur le modèle considéré, voir par exemple <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
+<p>Le problème est défini par les paramètres suivants : - nombre de qubits utilisés pour représenter <span class="math notranslate nohighlight">\(Z\)</span>, notés <span class="math notranslate nohighlight">\(n_z\)</span> - valeur de troncature pour <span class="math notranslate nohighlight">\(Z\)</span>, dénoté par <span class="math notranslate nohighlight">\(z_{\text{max}}\)</span>, i. ., Z est supposé prendre <span class="math notranslate nohighlight">\(2^{n_z}\)</span> valeurs équidistantes dans <span class="math notranslate nohighlight">\(\{-z_{max}, ... +z_{max}\}\)</span> - les probabilités par défaut de base pour chaque ressource <span class="math notranslate nohighlight">\(p_0^k \in (0, 1)\)</span>, <span class="math notranslate nohighlight">\(k=1, ... K\)</span> - Sensibilité des probabilités par défaut par rapport à <span class="math notranslate nohighlight">\(Z\)</span>, notés <span class="math notranslate nohighlight">\(\rho_k \in [0, 1)\)</span> - perte par défaut pour la ressource <span class="math notranslate nohighlight">\(k\)</span>, notée <span class="math notranslate nohighlight">\(\lambda_k\)</span> - niveau de confiance pour VaR / CVaR <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -560,13 +559,13 @@ loss given default for asset <span class="math notranslate nohighlight">\(k\)</s
 </div>
 </div>
 </div>
-<div class="section" id="Uncertainty-Model">
-<h2>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="Lien permanent vers ce titre">¶</a></h2>
-<p>We now construct a circuit that loads the uncertainty model. This can be achieved by creating a quantum state in a register of <span class="math notranslate nohighlight">\(n_z\)</span> qubits that represents <span class="math notranslate nohighlight">\(Z\)</span> following a standard normal distribution. This state is then used to control single qubit Y-rotations on a second qubit register of <span class="math notranslate nohighlight">\(K\)</span> qubits, where a <span class="math notranslate nohighlight">\(|1\rangle\)</span> state of qubit <span class="math notranslate nohighlight">\(k\)</span> represents the default event of asset <span class="math notranslate nohighlight">\(k\)</span>. The resulting quantum state can be written as</p>
+<div class="section" id="Modèle-d'incertitude">
+<h2>Modèle d’incertitude<a class="headerlink" href="#Modèle-d'incertitude" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous construisons maintenant un circuit qui permet de charger le modèle d’incertitude. Ceci peut être réalisé en créant un état quantique dans un registre de <span class="math notranslate nohighlight">\(n_z\)</span> qubits qui représente <span class="math notranslate nohighlight">\(Z\)</span> suivant une distribution normale standard. Cet état est ensuite utilisé pour contrôler des rotations en Y sur un second registre de qubits de <span class="math notranslate nohighlight">\(K\)</span> de qubit <span class="math notranslate nohighlight">\(k\)</span> représente l’événement par défaut de l’asset <span class="math notranslate nohighlight">\(k\)</span>. L’état quantique résultant peut être écrit comme</p>
 <div class="math notranslate nohighlight">
 \[ |\Psi\rangle = \sum_{i=0}^{2^{n_z}-1} \sqrt{p_z^i} |z_i \rangle \bigotimes_{k=1}^K
 \left( \sqrt{1 - p_k(z_i)}|0\rangle + \sqrt{p_k(z_i)}|1\rangle\right),\]</div>
-<p>where we denote by <span class="math notranslate nohighlight">\(z_i\)</span> the <span class="math notranslate nohighlight">\(i\)</span>-th value of the discretized and truncated <span class="math notranslate nohighlight">\(Z\)</span> [Egger2019].</p>
+<p>où nous notons <span class="math notranslate nohighlight">\(z_i\)</span> la <span class="math notranslate nohighlight">\(i\)</span>-ème valeur de la valeur discrétisée et tronquée <span class="math notranslate nohighlight">\(Z\)</span> [Egger2019].</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -601,7 +600,7 @@ q_2: ─────────┤2        ├┤         ├
 q_3: ────────────────────┤2        ├
                          └─────────┘</pre></div>
 </div>
-<p>We now use the simulator to validate the circuit that constructs <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> and compute the corresponding exact values for - expected loss <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span> - PDF and CDF of <span class="math notranslate nohighlight">\(L\)</span> - value at risk <span class="math notranslate nohighlight">\(VaR(L)\)</span> and corresponding probability - conditional value at risk <span class="math notranslate nohighlight">\(CVaR(L)\)</span></p>
+<p>Nous utilisons maintenant le simulateur pour valider le circuit qui construit l’état <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> et calculer les valeurs exactes correspondantes pour - la perte attendue <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span> - PDF et CDF de <span class="math notranslate nohighlight">\(L\)</span> - la valeur à risque <span class="math notranslate nohighlight">\(VaR(L)\)</span> et la probabilité correspondante - la valeur conditionnelle à risque <span class="math notranslate nohighlight">\(CVaR(L)\)</span></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -755,19 +754,19 @@ Conditional Value at Risk CVaR[L]: 3.0000
 <img alt="../_images/tutorials_09_credit_risk_analysis_14_0.svg" src="../_images/tutorials_09_credit_risk_analysis_14_0.svg" /></div>
 </div>
 </div>
-<div class="section" id="Expected-Loss">
-<h2>Expected Loss<a class="headerlink" href="#Expected-Loss" title="Lien permanent vers ce titre">¶</a></h2>
-<p>To estimate the expected loss, we first apply a weighted sum operator to sum up individual losses to total loss:</p>
+<div class="section" id="Perte-Attendue">
+<h2>Perte Attendue<a class="headerlink" href="#Perte-Attendue" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour estimer la perte attendue, nous appliquons d’abord un opérateur de somme pondérée pour obtenir la perte totale à partir des pertes individuelles :</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{S}: |x_1, ..., x_K \rangle_K |0\rangle_{n_S} \mapsto |x_1, ..., x_K \rangle_K |\lambda_1x_1 + ... + \lambda_K x_K\rangle_{n_S}.\]</div>
-<p>The required number of qubits to represent the result is given by</p>
+<p>Le nombre qubits requis pour représenter le résultat est donné par</p>
 <div class="math notranslate nohighlight">
 \[n_s = \lfloor \log_2( \lambda_1 + ... + \lambda_K ) \rfloor + 1.\]</div>
-<p>Once we have the total loss distribution in a quantum register, we can use the techniques described in [Woerner2019] to map a total loss <span class="math notranslate nohighlight">\(L \in \{0, ..., 2^{n_s}-1\}\)</span> to the amplitude of an objective qubit by an operator</p>
+<p>Une fois que nous avons la distribution des pertes totales dans un registre quantique, nous pouvons utiliser les techniques décrites dans [Woerner2019] pour faire correspondre une perte totale :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>L in { 0, …, 2 ^{n_s}-1 } ` à l’amplitude d’un qubit cible par un opérateur</p>
 <div class="math notranslate nohighlight">
 \[ | L \rangle_{n_s}|0\rangle \mapsto
 | L \rangle_{n_s} \left( \sqrt{1 - L/(2^{n_s}-1)}|0\rangle + \sqrt{L/(2^{n_s}-1)}|1\rangle \right),\]</div>
-<p>which allows to run amplitude estimation to evaluate the expected loss.</p>
+<p>ce qui permet d’exécuter l’estimation de l’amplitude pour évaluer l’espérance de la perte.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -807,7 +806,7 @@ Conditional Value at Risk CVaR[L]: 3.0000
 </pre></div>
 </div>
 </div>
-<p>Create the state preparation circuit:</p>
+<p>Création du circuit de préparation d’état :</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -862,7 +861,7 @@ objective_0: ─────────┤        ├┤2   ├┤           �
     carry_0: ─────────┤6       ├──────┤6          ├
                       └────────┘      └───────────┘</pre></div>
 </div>
-<p>Before we use QAE to estimate the expected loss, we validate the quantum circuit representing the objective function by just simulating it directly and analyzing the probability of the objective qubit being in the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state, i.e., the value QAE will eventually approximate.</p>
+<p>Avant d’utiliser QAE pour estimer la perte attendue, nous validons le circuit quantique représentant la fonction objectif en le simulant directement et en analysant la probabilité que le qubit objectif soit dans l’état <span class="math notranslate nohighlight">\(|1\rangle\)</span> c’est-à-dire que la valeur QAE sera approchée.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -901,7 +900,7 @@ Exact Operator Value:  0.3906
 Mapped Operator value: 0.6640
 </pre></div></div>
 </div>
-<p>Next we run QAE to estimate the expected loss with a quadratic speed-up over classical Monte Carlo simulation.</p>
+<p>Ensuite, nous exécutons QAE pour estimer la perte attendue avec une accélération quadratique par rapport à la simulation classique de Monte Carlo.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -938,22 +937,22 @@ Confidence interval:    [0.6587, 0.6878]
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Cumulative-Distribution-Function">
-<h2>Cumulative Distribution Function<a class="headerlink" href="#Cumulative-Distribution-Function" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Instead of the expected loss (which could also be estimated efficiently using classical techniques) we now estimate the cumulative distribution function (CDF) of the loss. Classically, this either involves evaluating all the possible combinations of defaulting assets, or many classical samples in a Monte Carlo simulation. Algorithms based on QAE have the potential to significantly speed up this analysis in the future.</p>
-<p>To estimate the CDF, i.e., the probability <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq x]\)</span>, we again apply <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> to compute the total loss, and then apply a comparator that for a given value <span class="math notranslate nohighlight">\(x\)</span> acts as</p>
+<div class="section" id="Fonction-de-distribution-cumulée">
+<h2>Fonction de distribution cumulée<a class="headerlink" href="#Fonction-de-distribution-cumulée" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Au lieu de l’espérance de la perte (qui pourrait aussi être estimée efficacement à l’aide de techniques classiques), nous estimons à présent la fonction de distribution cumulative (CDF) de la perte. En termes classiques, il s’agit soit d’évaluer toutes les combinaisons possibles d’actifs défaillants, soit de nombreux échantillons classiques dans une simulation de Monte Carlo. Les algorithmes basés sur la QAE ont le potentiel d’accélérer considérablement cette analyse à l’avenir.</p>
+<p>Pour estimer le CDF, c’est-à-dire la probabilité <span class="math notranslate nohighlight">\(\mathbb{P}[L \leqx]\)</span>, nous appliquons à nouveau <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> pour calculer la perte totale, puis un comparateur qui pour une valeur donnée <span class="math notranslate nohighlight">\(x\)</span> agit comme</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \mathcal{C}: |L\rangle_n|0&gt; \mapsto
 \begin{cases}
 |L\rangle_n|1&gt; &amp; \text{if}\quad L \leq x \\
 |L\rangle_n|0&gt; &amp; \text{if}\quad L &gt; x.
 \end{cases}\end{split}\]</div>
-<p>The resulting quantum state can be written as</p>
+<p>L’état quantique obtenu peut être écrit comme ceci</p>
 <div class="math notranslate nohighlight">
 \[ \sum_{L = 0}^{x} \sqrt{p_{L}}|L\rangle_{n_s}|1\rangle +
 \sum_{L = x+1}^{2^{n_s}-1} \sqrt{p_{L}}|L\rangle_{n_s}|1\rangle,\]</div>
-<p>where we directly assume the summed up loss values and corresponding probabilities instead of presenting the details of the uncertainty model.</p>
-<p>The CDF(<span class="math notranslate nohighlight">\(x\)</span>) equals the probability of measuring <span class="math notranslate nohighlight">\(|1\rangle\)</span> in the objective qubit and QAE can be directly used to estimate it.</p>
+<p>où nous adoptons directement la somme des valeurs de perte et des probabilités correspondantes au lieu de présenter les détails du modèle d’incertitude.</p>
+<p>Le CDF (<span class="math notranslate nohighlight">\(x\)</span>) est égal à la probabilité de mesurer <span class="math notranslate nohighlight">\(|1\rangle\)</span> dans le qubit objectif et QAE peut être utilisé directement pour l’estimer.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1017,7 +1016,7 @@ compare_0: ──┼──┤ X ├┤ X ├──┼──
 </pre></div>
 </div>
 </div>
-<p>Again, we first use quantum simulation to validate the quantum circuit.</p>
+<p>Encore une fois, nous utilisons d’abord la simulation quantique pour valider le circuit quantique.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -1085,7 +1084,7 @@ Operator CDF(2) = 0.9591
 Exact    CDF(2) = 0.9591
 </pre></div></div>
 </div>
-<p>Next we run QAE to estimate the CDF for a given <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Ensuite, nous exécutons QAE pour estimer le CDF pour un <span class="math notranslate nohighlight">\(x\)</span> donné.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1121,9 +1120,9 @@ Confidence interval:    [0.9582, 0.9604]
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Value-at-Risk">
-<h2>Value at Risk<a class="headerlink" href="#Value-at-Risk" title="Lien permanent vers ce titre">¶</a></h2>
-<p>In the following we use a bisection search and QAE to efficiently evaluate the CDF to estimate the value at risk.</p>
+<div class="section" id="Valeur-à-Risque">
+<h2>Valeur à Risque<a class="headerlink" href="#Valeur-à-Risque" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans ce qui suit, nous utilisons une recherche de bisection et QAE pour évaluer efficacement le CDF pour estimer la valeur à risque.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -1264,15 +1263,15 @@ Exact Probability:        0.959
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Conditional-Value-at-Risk">
-<h2>Conditional Value at Risk<a class="headerlink" href="#Conditional-Value-at-Risk" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Last, we compute the CVaR, i.e. the expected value of the loss conditional to it being larger than or equal to the VaR. To do so, we evaluate a piecewise linear objective function <span class="math notranslate nohighlight">\(f(L)\)</span>, dependent on the total loss <span class="math notranslate nohighlight">\(L\)</span>, that is given by</p>
+<div class="section" id="Valeur-Conditionnelle-à-Risque">
+<h2>Valeur Conditionnelle à Risque<a class="headerlink" href="#Valeur-Conditionnelle-à-Risque" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Enfin, nous calculons le CVaR, c’est-à-dire que la valeur attendue de la perte est conditionnelle à ce qu’elle soit supérieure ou égale à la VaR. Pour ce faire, nous évaluons une fonction objectif linéaire par morceaux <span class="math notranslate nohighlight">\(f(L)\)</span>, dépendant de la perte totale <span class="math notranslate nohighlight">\(L\)</span>, qui est donnée par</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f(L) = \begin{cases}
 0 &amp; \text{if}\quad L \leq VaR \\
 L &amp; \text{if}\quad L &gt; VaR.
 \end{cases}\end{split}\]</div>
-<p>To normalize, we have to divide the resulting expected value by the VaR-probability, i.e. <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq VaR]\)</span>.</p>
+<p>Pour normaliser, nous devons diviser la valeur attendue obtenue par la probabilité de VaR, c.-à-d. :math:` mathbb{P}[ L leq VaR ] <a href="#id1"><span class="problematic" id="id2">`</span></a>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
@@ -1355,7 +1354,7 @@ q155_0: ┤2        ├┤  cmp ├┤2        ├┤  cmp_dg ├
 &lt;qiskit.circuit.instructionset.InstructionSet at 0x14b747640&gt;
 </pre></div></div>
 </div>
-<p>Again, we first use quantum simulation to validate the quantum circuit.</p>
+<p>Encore une fois, nous utilisons d’abord la simulation quantique pour valider le circuit quantique.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
@@ -1397,7 +1396,7 @@ Estimated CVaR: 3.3021
 Exact CVaR:     3.0000
 </pre></div></div>
 </div>
-<p>Next we run QAE to estimate the CVaR.</p>
+<p>Ensuite, nous exécutons QAE pour estimer la CVaR.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
@@ -1486,7 +1485,7 @@ Estimated CVaR: 3.3836
         <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="Option Pricing with qGANs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Pricing Fixed-Income Assets" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Prix des actifs à revenu fixe" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1518,14 +1517,14 @@ Estimated CVaR: 3.3836
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Credit Risk Analysis</a><ul>
+<li><a class="reference internal" href="#">Analyse du Risque de Crédit</a><ul>
 <li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Problem-Definition">Problem Definition</a></li>
-<li><a class="reference internal" href="#Uncertainty-Model">Uncertainty Model</a></li>
-<li><a class="reference internal" href="#Expected-Loss">Expected Loss</a></li>
-<li><a class="reference internal" href="#Cumulative-Distribution-Function">Cumulative Distribution Function</a></li>
-<li><a class="reference internal" href="#Value-at-Risk">Value at Risk</a></li>
-<li><a class="reference internal" href="#Conditional-Value-at-Risk">Conditional Value at Risk</a></li>
+<li><a class="reference internal" href="#Définition-du-Problème">Définition du Problème</a></li>
+<li><a class="reference internal" href="#Modèle-d'incertitude">Modèle d’incertitude</a></li>
+<li><a class="reference internal" href="#Perte-Attendue">Perte Attendue</a></li>
+<li><a class="reference internal" href="#Fonction-de-distribution-cumulée">Fonction de distribution cumulée</a></li>
+<li><a class="reference internal" href="#Valeur-à-Risque">Valeur à Risque</a></li>
+<li><a class="reference internal" href="#Valeur-Conditionnelle-à-Risque">Valeur Conditionnelle à Risque</a></li>
 </ul>
 </li>
 </ul>

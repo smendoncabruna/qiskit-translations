@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.IBMQFactory
-=================================
+﻿IBMQFactory
+===========
 
 .. currentmodule:: qiskit.providers.ibmq
 
 .. autoclass:: IBMQFactory
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMQFactory.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMQFactory.active_account
       ~IBMQFactory.delete_account
       ~IBMQFactory.disable_account
@@ -24,9 +23,5 @@
       ~IBMQFactory.save_account
       ~IBMQFactory.stored_account
       ~IBMQFactory.update_account
-   
-   
 
-   
-   
-   
+

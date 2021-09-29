@@ -1,29 +1,22 @@
-﻿qiskit.chemistry.algorithms.QEOM
-================================
+﻿QEOM
+====
 
 .. currentmodule:: qiskit.chemistry.algorithms
 
 .. autoclass:: QEOM
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QEOM.__init__
-      ~QEOM.solve
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~QEOM.solve
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QEOM.excitations
-   
-   
+   .. autoattribute:: excitations

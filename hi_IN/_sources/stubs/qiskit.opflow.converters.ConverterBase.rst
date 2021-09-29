@@ -1,23 +1,18 @@
-﻿qiskit.opflow.converters.ConverterBase
-======================================
+ConverterBase
+=============
 
 .. currentmodule:: qiskit.opflow.converters
 
 .. autoclass:: ConverterBase
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~ConverterBase.__init__
-      ~ConverterBase.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~ConverterBase.convert
+
+

@@ -1,26 +1,21 @@
-﻿qiskit.aqua.components.multiclass\_extensions.ErrorCorrectingCode
-=================================================================
+﻿ErrorCorrectingCode
+===================
 
 .. currentmodule:: qiskit.aqua.components.multiclass_extensions
 
 .. autoclass:: ErrorCorrectingCode
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ErrorCorrectingCode.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ErrorCorrectingCode.predict
       ~ErrorCorrectingCode.set_estimator
       ~ErrorCorrectingCode.test
       ~ErrorCorrectingCode.train
-   
-   
 
-   
-   
-   
+

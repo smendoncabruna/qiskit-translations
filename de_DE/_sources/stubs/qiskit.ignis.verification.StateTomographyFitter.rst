@@ -1,34 +1,27 @@
-﻿qiskit.ignis.verification.StateTomographyFitter
-===============================================
+﻿StateTomographyFitter
+=====================
 
 .. currentmodule:: qiskit.ignis.verification
 
 .. autoclass:: StateTomographyFitter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~StateTomographyFitter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~StateTomographyFitter.add_data
       ~StateTomographyFitter.fit
       ~StateTomographyFitter.set_measure_basis
       ~StateTomographyFitter.set_preparation_basis
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~StateTomographyFitter.data
-      ~StateTomographyFitter.measure_basis
-      ~StateTomographyFitter.preparation_basis
-   
-   
+   .. autoattribute:: data
+   .. autoattribute:: measure_basis
+   .. autoattribute:: preparation_basis

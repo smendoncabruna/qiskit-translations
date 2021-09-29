@@ -1,19 +1,18 @@
-﻿qiskit.pulse.ScheduleBlock
-==========================
+﻿ScheduleBlock
+=============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: ScheduleBlock
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ScheduleBlock.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ScheduleBlock.append
       ~ScheduleBlock.assign_parameters
       ~ScheduleBlock.ch_duration
@@ -29,27 +28,21 @@
       ~ScheduleBlock.is_schedulable
       ~ScheduleBlock.replace
       ~ScheduleBlock.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ScheduleBlock.alignment_context
-      ~ScheduleBlock.blocks
-      ~ScheduleBlock.channels
-      ~ScheduleBlock.duration
-      ~ScheduleBlock.instances_counter
-      ~ScheduleBlock.instructions
-      ~ScheduleBlock.metadata
-      ~ScheduleBlock.name
-      ~ScheduleBlock.parameters
-      ~ScheduleBlock.prefix
-      ~ScheduleBlock.start_time
-      ~ScheduleBlock.stop_time
-      ~ScheduleBlock.timeslots
-   
-   
+   .. autoattribute:: alignment_context
+   .. autoattribute:: blocks
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: instances_counter
+   .. autoattribute:: instructions
+   .. autoattribute:: metadata
+   .. autoattribute:: name
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time
+   .. autoattribute:: timeslots

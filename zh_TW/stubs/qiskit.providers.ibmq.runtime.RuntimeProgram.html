@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.runtime.RuntimeProgram &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>RuntimeProgram &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,8 +40,8 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜尋" href="../search.html" />
-    <link rel="next" title="qiskit.providers.ibmq.runtime.UserMessenger" href="qiskit.providers.ibmq.runtime.UserMessenger.html" />
-    <link rel="prev" title="qiskit.providers.ibmq.runtime.RuntimeJob" href="qiskit.providers.ibmq.runtime.RuntimeJob.html" /> 
+    <link rel="next" title="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters" href="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters.html" />
+    <link rel="prev" title="qiskit.providers.ibmq.runtime.RuntimeJob.wait_for_final_state" href="qiskit.providers.ibmq.runtime.RuntimeJob.wait_for_final_state.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -233,27 +240,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/ibmq_runtime.html">Runtime (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.providers.ibmq.runtime</span></code>)</a> &gt;</li>
         
-      <li>qiskit.providers.ibmq.runtime.RuntimeProgram</li>
+      <li>RuntimeProgram</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,13 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-providers-ibmq-runtime-runtimeprogram">
-<h1>qiskit.providers.ibmq.runtime.RuntimeProgram<a class="headerlink" href="#qiskit-providers-ibmq-runtime-runtimeprogram" title="本標題的永久連結">¶</a></h1>
+  <section id="runtimeprogram">
+<h1>RuntimeProgram<a class="headerlink" href="#runtimeprogram" title="本標題的永久連結">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram">
 <em class="property">class </em><code class="sig-name descname">RuntimeProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program_name</span></em>, <em class="sig-param"><span class="n">program_id</span></em>, <em class="sig-param"><span class="n">description</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interim_results</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_execution_time</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">'0'</span></em>, <em class="sig-param"><span class="n">backend_requirements</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">creation_date</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">is_public</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/runtime/runtime_program.html#RuntimeProgram"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram" title="本定義的永久連結">¶</a></dt>
-<dd><p>Class representing program metadata.</p>
+<dd><p>基礎類別：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing program metadata.</p>
 <p>This class contains the metadata describing a program, such as its
 name, ID, description, etc.</p>
 <p>You can use the <a class="reference internal" href="qiskit.providers.ibmq.runtime.IBMRuntimeService.html#qiskit.providers.ibmq.runtime.IBMRuntimeService" title="qiskit.providers.ibmq.runtime.IBMRuntimeService"><code class="xref py py-class docutils literal notranslate"><span class="pre">IBMRuntimeService</span></code></a>
@@ -368,29 +376,6 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program_name</span></em>, <em class="sig-param"><span class="n">program_id</span></em>, <em class="sig-param"><span class="n">description</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interim_results</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_execution_time</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">'0'</span></em>, <em class="sig-param"><span class="n">backend_requirements</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">creation_date</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">is_public</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/runtime/runtime_program.html#RuntimeProgram.__init__"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.__init__" title="本定義的永久連結">¶</a></dt>
-<dd><p>RuntimeProgram constructor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">參數</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>program_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Program name.</p></li>
-<li><p><strong>program_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Program ID.</p></li>
-<li><p><strong>description</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Program description.</p></li>
-<li><p><strong>parameters</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]) – Documentation on program parameters.</p></li>
-<li><p><strong>return_values</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]) – Documentation on program return values.</p></li>
-<li><p><strong>interim_results</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]) – Documentation on program interim results.</p></li>
-<li><p><strong>max_execution_time</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Maximum execution time.</p></li>
-<li><p><strong>version</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Program version.</p></li>
-<li><p><strong>backend_requirements</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – Backend requirements.</p></li>
-<li><p><strong>creation_date</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Program creation date.</p></li>
-<li><p><strong>is_public</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> if program is visible to all. <code class="docutils literal notranslate"><span class="pre">False</span></code> if it’s only visible to you.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -398,59 +383,18 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.__init__" title="qiskit.providers.ibmq.runtime.RuntimeProgram.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(program_name, program_id, description)</p></td>
-<td><p>RuntimeProgram constructor.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.parameters" title="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters.html#qiskit.providers.ibmq.runtime.RuntimeProgram.parameters" title="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a></p></td>
 <td><p>Program parameter namespace.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict" title="qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict.html#qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict" title="qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a></p></td>
 <td><p>Convert program metadata to dictionary format.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.backend_requirements" title="qiskit.providers.ibmq.runtime.RuntimeProgram.backend_requirements"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend_requirements</span></code></a></p></td>
-<td><p>Backend requirements.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.creation_date" title="qiskit.providers.ibmq.runtime.RuntimeProgram.creation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">creation_date</span></code></a></p></td>
-<td><p>Program creation date.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.description" title="qiskit.providers.ibmq.runtime.RuntimeProgram.description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">description</span></code></a></p></td>
-<td><p>Program description.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.interim_results" title="qiskit.providers.ibmq.runtime.RuntimeProgram.interim_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interim_results</span></code></a></p></td>
-<td><p>Program interim result definitions.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.is_public" title="qiskit.providers.ibmq.runtime.RuntimeProgram.is_public"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_public</span></code></a></p></td>
-<td><p>Whether the program is visible to all.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.max_execution_time" title="qiskit.providers.ibmq.runtime.RuntimeProgram.max_execution_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_execution_time</span></code></a></p></td>
-<td><p>Maximum execution time in seconds.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.name" title="qiskit.providers.ibmq.runtime.RuntimeProgram.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
-<td><p>Program name.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.program_id" title="qiskit.providers.ibmq.runtime.RuntimeProgram.program_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">program_id</span></code></a></p></td>
-<td><p>Program ID.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.return_values" title="qiskit.providers.ibmq.runtime.RuntimeProgram.return_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">return_values</span></code></a></p></td>
-<td><p>Program return value definitions.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.version" title="qiskit.providers.ibmq.runtime.RuntimeProgram.version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">version</span></code></a></p></td>
-<td><p>Program version.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.backend_requirements">
-<em class="property">property </em><code class="sig-name descname">backend_requirements</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.backend_requirements" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">backend_requirements</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.backend_requirements" title="本定義的永久連結">¶</a></dt>
 <dd><p>Backend requirements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -462,9 +406,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.creation_date">
-<em class="property">property </em><code class="sig-name descname">creation_date</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.creation_date" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">creation_date</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.creation_date" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program creation date.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -476,9 +420,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.description">
-<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.description" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">description</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.description" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program description.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -490,9 +434,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.interim_results">
-<em class="property">property </em><code class="sig-name descname">interim_results</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.interim_results" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">interim_results</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.interim_results" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program interim result definitions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -504,9 +448,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.is_public">
-<em class="property">property </em><code class="sig-name descname">is_public</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.is_public" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">is_public</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.is_public" title="本定義的永久連結">¶</a></dt>
 <dd><p>Whether the program is visible to all.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -518,9 +462,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.max_execution_time">
-<em class="property">property </em><code class="sig-name descname">max_execution_time</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.max_execution_time" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">max_execution_time</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.max_execution_time" title="本定義的永久連結">¶</a></dt>
 <dd><p>Maximum execution time in seconds.</p>
 <p>A program execution exceeding this time will be forcibly terminated.</p>
 <dl class="field-list simple">
@@ -533,9 +477,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.name">
-<em class="property">property </em><code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.name" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">name</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.name" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -547,28 +491,9 @@ to retrieve the metadata of a specific program or all programs. For example:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters">
-<code class="sig-name descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/runtime/runtime_program.html#RuntimeProgram.parameters"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.parameters" title="本定義的永久連結">¶</a></dt>
-<dd><p>Program parameter namespace.</p>
-<p>You can use the returned namespace to assign parameter values and pass
-the namespace to <a class="reference internal" href="qiskit.providers.ibmq.runtime.IBMRuntimeService.html#qiskit.providers.ibmq.runtime.IBMRuntimeService.run" title="qiskit.providers.ibmq.runtime.IBMRuntimeService.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit.providers.ibmq.runtime.IBMRuntimeService.run()</span></code></a>.
-The namespace allows you to use auto-completion to find program parameters.</p>
-<p>Note that each call to this method returns a new namespace instance and
-does not include any modification to the previous instance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">傳回型態</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterNamespace</span></code></p>
-</dd>
-<dt class="field-even">傳回</dt>
-<dd class="field-even"><p>Program parameter namespace.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.program_id">
-<em class="property">property </em><code class="sig-name descname">program_id</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.program_id" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">program_id</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.program_id" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -580,9 +505,9 @@ does not include any modification to the previous instance.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.return_values">
-<em class="property">property </em><code class="sig-name descname">return_values</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.return_values" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">return_values</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.return_values" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program return value definitions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -594,23 +519,9 @@ does not include any modification to the previous instance.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/runtime/runtime_program.html#RuntimeProgram.to_dict"><span class="viewcode-link">[原始碼]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.to_dict" title="本定義的永久連結">¶</a></dt>
-<dd><p>Convert program metadata to dictionary format.</p>
-<dl class="field-list simple">
-<dt class="field-odd">傳回型態</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></p>
-</dd>
-<dt class="field-even">傳回</dt>
-<dd class="field-even"><p>Program metadata in dictionary format.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.providers.ibmq.runtime.RuntimeProgram.version">
-<em class="property">property </em><code class="sig-name descname">version</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.version" title="本定義的永久連結">¶</a></dt>
+<code class="sig-name descname">version</code><a class="headerlink" href="#qiskit.providers.ibmq.runtime.RuntimeProgram.version" title="本定義的永久連結">¶</a></dt>
 <dd><p>Program version.</p>
 <dl class="field-list simple">
 <dt class="field-odd">傳回型態</dt>
@@ -634,10 +545,10 @@ does not include any modification to the previous instance.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.providers.ibmq.runtime.UserMessenger.html" class="btn btn-neutral float-right" title="qiskit.providers.ibmq.runtime.UserMessenger" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters.html" class="btn btn-neutral float-right" title="qiskit.providers.ibmq.runtime.RuntimeProgram.parameters" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="qiskit.providers.ibmq.runtime.RuntimeJob.html" class="btn btn-neutral" title="qiskit.providers.ibmq.runtime.RuntimeJob" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="qiskit.providers.ibmq.runtime.RuntimeJob.wait_for_final_state.html" class="btn btn-neutral" title="qiskit.providers.ibmq.runtime.RuntimeJob.wait_for_final_state" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -651,7 +562,7 @@ does not include any modification to the previous instance.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -670,7 +581,7 @@ does not include any modification to the previous instance.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.providers.ibmq.runtime.RuntimeProgram</a></li>
+<li><a class="reference internal" href="#">RuntimeProgram</a></li>
 </ul>
 
             </div>
@@ -735,7 +646,7 @@ does not include any modification to the previous instance.</p>
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -758,9 +669,11 @@ does not include any modification to the previous instance.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

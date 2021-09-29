@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pulseスケジュールの構築 &mdash; Qiskit 0.29.0 ドキュメント</title>
+  <title>Pulseスケジュールの構築 &mdash; Qiskit 0.30.0 ドキュメント</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">ドキュメントのホームページ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">始めに</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">API リファレンス</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit シミュレーター (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit アプリケーション モジュール (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit アプリケーション (Aqua) マイグレーション ガイド</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit アプリケーション (Aqua) マイグレーション ガイド</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">トラブルシューティング</span></p>
 <ul>
@@ -576,8 +583,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="Pulseスケジュールの構築">
 <h1>Pulseスケジュールの構築<a class="headerlink" href="#Pulseスケジュールの構築" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Pulse gates define a low-level, exact representation for a circuit gate. A single operation can be implemented with a pulse program, which is comprised of multiple low-level instructions. To learn more about pulse gates, refer back to the documentation <a class="reference internal" href="05_pulse_gates.html"><span class="doc">here</span></a>. This page details how to create pulse programs.</p>
-<p>Note: For IBM devices, pulse programs are used as subroutines to describe gates. Previously, some devices accepted full programs in this format, but this is being sunset in December 2021. Other providers may still accept full programs in this format. Regardless of how the program is used, the syntax for building the program is the same. Read on to learn how!</p>
+<p>パルスゲートは、回路ゲートの低レベルで正確な表現を定義します。 あるひとつの演算は、複数の低レベル命令で構成されるパルス・プログラムで実装することができます。 パルスゲートの詳細については、 <a class="reference internal" href="05_pulse_gates.html"><span class="doc">こちら</span></a> を参照してください。</p>
+<p>注: IBM デバイスでは、ゲートを記述するサブルーチンとしてパルス・プログラムが使用されます。 以前は、このフォーマットで完全なプログラムを受け入れたデバイスもありましたが、これは2021年12月に終了しています。 他のプロバイダーでは、まだこの形式で完全なプログラムを受け入れることができます。 プログラムがどのように使われるかに関わらず、プログラムを構築するための構文は同じです。その方法をご紹介しましょう!</p>
 <p>パルス・プログラムは、<code class="docutils literal notranslate"><span class="pre">Schedule</span></code> と呼ばれ、制御エレクトロニクスの命令シーケンスを記述します。 Pulse Builder を使用して <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> を作成します。スケジュールを初期化するのは簡単です：</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -635,7 +642,7 @@ Schedule(, name=&#34;my_example&#34;)
 </pre></div>
 </div>
 </div>
-<p>The pulse <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> is independent of the backend it runs on. However, we can build our program in a context that is aware of the target backend by supplying it to <code class="docutils literal notranslate"><span class="pre">pulse.build</span></code>. When possible you should supply a backend. By using the channel accessors <code class="docutils literal notranslate"><span class="pre">pulse.&lt;type&gt;_channel(&lt;idx&gt;)</span></code> we can make sure we are only using available device resources.</p>
+<p>パルス <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> は実行するバックエンドに依存しません。 しかしながら、<code class="docutils literal notranslate"><span class="pre">pulse.build</span></code> にターゲットバックエンドを提供することで、それを認識するコンテキストでプログラムを構築することができます。 可能な場合はバックエンドを提供するべきです。チャンネル・アクセサの <code class="docutils literal notranslate"><span class="pre">pulse.&lt;type&gt;_channel(&lt;idx&gt;)</span></code> を使うことで、利用可能なデバイス・リソースのみを使用することができます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -800,7 +807,7 @@ Schedule(, name=&#34;my_example&#34;)
 <img alt="../../_images/tutorials_circuits_advanced_06_building_pulse_schedules_18_0.png" src="../../_images/tutorials_circuits_advanced_06_building_pulse_schedules_18_0.png" />
 </div>
 </div>
-<p>You may also supply a complex list or array directly to <code class="docutils literal notranslate"><span class="pre">play</span></code></p>
+<p>複雑なリストや配列を直接 <code class="docutils literal notranslate"><span class="pre">play</span></code> に指定することもできます。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -1066,7 +1073,7 @@ Schedule(, name=&#34;my_example&#34;)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最終更新: 2021/08/13
+      最終更新: 2021/09/23
 
     </p>
   </div>
@@ -1174,7 +1181,7 @@ Schedule(, name=&#34;my_example&#34;)
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1197,9 +1204,11 @@ Schedule(, name=&#34;my_example&#34;)
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

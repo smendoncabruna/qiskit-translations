@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.quantum_info.OneQubitEulerDecomposer &mdash; документация Qiskit 0.29.0</title>
+  <title>OneQubitEulerDecomposer &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
@@ -41,7 +40,7 @@
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
     <link rel="search" title="Поиск" href="../search.html" />
-    <link rel="next" title="qiskit.quantum_info.TwoQubitBasisDecomposer" href="qiskit.quantum_info.TwoQubitBasisDecomposer.html" />
+    <link rel="next" title="qiskit.quantum_info.OneQubitEulerDecomposer.angles" href="qiskit.quantum_info.OneQubitEulerDecomposer.angles.html" />
     <link rel="prev" title="qiskit.quantum_info.hellinger_fidelity" href="qiskit.quantum_info.hellinger_fidelity.html" /> 
 
   
@@ -65,7 +64,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -95,7 +94,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -172,6 +173,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -224,7 +231,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -241,15 +248,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -298,7 +305,7 @@
         
           <li><a href="../apidoc/quantum_info.html">Quantum Information (<code class="xref py py-mod docutils literal notranslate"><span class="pre">qiskit.quantum_info</span></code>)</a> &gt;</li>
         
-      <li>qiskit.quantum_info.OneQubitEulerDecomposer</li>
+      <li>OneQubitEulerDecomposer</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -328,12 +335,15 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <section id="qiskit-quantum-info-onequbiteulerdecomposer">
-<h1>qiskit.quantum_info.OneQubitEulerDecomposer<a class="headerlink" href="#qiskit-quantum-info-onequbiteulerdecomposer" title="Ссылка на этот заголовок">¶</a></h1>
+  <section id="onequbiteulerdecomposer">
+<h1>OneQubitEulerDecomposer<a class="headerlink" href="#onequbiteulerdecomposer" title="Ссылка на этот заголовок">¶</a></h1>
 <dl class="py class">
 <dt id="qiskit.quantum_info.OneQubitEulerDecomposer">
 <em class="property">class </em><code class="sig-name descname">OneQubitEulerDecomposer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">'U3'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/synthesis/one_qubit_decompose.html#OneQubitEulerDecomposer"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.quantum_info.OneQubitEulerDecomposer" title="Ссылка на это определение">¶</a></dt>
-<dd><p>A class for decomposing 1-qubit unitaries into Euler angle rotations.</p>
+<dd><blockquote>
+<div><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</div></blockquote>
+<p>A class for decomposing 1-qubit unitaries into Euler angle rotations.</p>
 <p>The resulting decomposition is parameterized by 3 Euler rotation angle
 parameters <span class="math notranslate nohighlight">\((\theta, \phi, \lambda)\)</span>, and a phase parameter
 <span class="math notranslate nohighlight">\(\gamma\)</span>. The value of the parameters for an input unitary depends
@@ -416,22 +426,6 @@ or
 <dd class="field-even"><p><strong>QiskitError</strong> – If input basis is not recognized.</p>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="qiskit.quantum_info.OneQubitEulerDecomposer.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">'U3'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/synthesis/one_qubit_decompose.html#OneQubitEulerDecomposer.__init__"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.quantum_info.OneQubitEulerDecomposer.__init__" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Initialize decomposer</p>
-<p>Supported bases are: „U“, „PSX“, „ZSXX“, „ZSX“, „U321“, „U3“, „U1X“, „RR“, „ZYZ“, „ZXZ“,
-„XYX“, „XZX“.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><p><strong>basis</strong> (<em>str</em>) – the decomposition basis [Default: „U3“]</p>
-</dd>
-<dt class="field-even">Исключение</dt>
-<dd class="field-even"><p><strong>QiskitError</strong> – If input basis is not recognized.</p>
-</dd>
-</dl>
-</dd></dl>
-
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -439,66 +433,18 @@ or
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.OneQubitEulerDecomposer.__init__" title="qiskit.quantum_info.OneQubitEulerDecomposer.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([basis])</p></td>
-<td><p>Initialize decomposer</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#qiskit.quantum_info.OneQubitEulerDecomposer.angles" title="qiskit.quantum_info.OneQubitEulerDecomposer.angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angles</span></code></a>(unitary)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="qiskit.quantum_info.OneQubitEulerDecomposer.angles.html#qiskit.quantum_info.OneQubitEulerDecomposer.angles" title="qiskit.quantum_info.OneQubitEulerDecomposer.angles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angles</span></code></a></p></td>
 <td><p>Return the Euler angles for input array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase" title="qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angles_and_phase</span></code></a>(unitary)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase.html#qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase" title="qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">angles_and_phase</span></code></a></p></td>
 <td><p>Return the Euler angles and phase for input array.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#qiskit.quantum_info.OneQubitEulerDecomposer.basis" title="qiskit.quantum_info.OneQubitEulerDecomposer.basis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">basis</span></code></a></p></td>
-<td><p>The decomposition basis.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="qiskit.quantum_info.OneQubitEulerDecomposer.angles">
-<code class="sig-name descname">angles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">unitary</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/synthesis/one_qubit_decompose.html#OneQubitEulerDecomposer.angles"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.quantum_info.OneQubitEulerDecomposer.angles" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Return the Euler angles for input array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><p><strong>unitary</strong> (<em>np.ndarray</em>) – 2x2 unitary matrix.</p>
-</dd>
-<dt class="field-even">Результат</dt>
-<dd class="field-even"><p>(theta, phi, lambda).</p>
-</dd>
-<dt class="field-odd">Тип результата</dt>
-<dd class="field-odd"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase">
-<code class="sig-name descname">angles_and_phase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">unitary</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/quantum_info/synthesis/one_qubit_decompose.html#OneQubitEulerDecomposer.angles_and_phase"><span class="viewcode-link">[исходный код]</span></a><a class="headerlink" href="#qiskit.quantum_info.OneQubitEulerDecomposer.angles_and_phase" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Return the Euler angles and phase for input array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Параметры</dt>
-<dd class="field-odd"><p><strong>unitary</strong> (<em>np.ndarray</em>) – 2x2 unitary matrix.</p>
-</dd>
-<dt class="field-even">Результат</dt>
-<dd class="field-even"><p>(theta, phi, lambda, phase).</p>
-</dd>
-<dt class="field-odd">Тип результата</dt>
-<dd class="field-odd"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
+<dl class="py attribute">
 <dt id="qiskit.quantum_info.OneQubitEulerDecomposer.basis">
-<em class="property">property </em><code class="sig-name descname">basis</code><a class="headerlink" href="#qiskit.quantum_info.OneQubitEulerDecomposer.basis" title="Ссылка на это определение">¶</a></dt>
+<code class="sig-name descname">basis</code><a class="headerlink" href="#qiskit.quantum_info.OneQubitEulerDecomposer.basis" title="Ссылка на это определение">¶</a></dt>
 <dd><p>The decomposition basis.</p>
 </dd></dl>
 
@@ -514,7 +460,7 @@ or
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qiskit.quantum_info.TwoQubitBasisDecomposer.html" class="btn btn-neutral float-right" title="qiskit.quantum_info.TwoQubitBasisDecomposer" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="qiskit.quantum_info.OneQubitEulerDecomposer.angles.html" class="btn btn-neutral float-right" title="qiskit.quantum_info.OneQubitEulerDecomposer.angles" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="qiskit.quantum_info.hellinger_fidelity.html" class="btn btn-neutral" title="qiskit.quantum_info.hellinger_fidelity" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -531,7 +477,7 @@ or
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -550,7 +496,7 @@ or
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">qiskit.quantum_info.OneQubitEulerDecomposer</a></li>
+<li><a class="reference internal" href="#">OneQubitEulerDecomposer</a></li>
 </ul>
 
             </div>
@@ -614,7 +560,7 @@ or
             <a href="../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -637,9 +583,11 @@ or
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

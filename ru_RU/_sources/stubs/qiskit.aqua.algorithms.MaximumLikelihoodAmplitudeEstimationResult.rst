@@ -1,19 +1,18 @@
-﻿qiskit.aqua.algorithms.MaximumLikelihoodAmplitudeEstimationResult
-=================================================================
+﻿MaximumLikelihoodAmplitudeEstimationResult
+==========================================
 
 .. currentmodule:: qiskit.aqua.algorithms
 
 .. autoclass:: MaximumLikelihoodAmplitudeEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MaximumLikelihoodAmplitudeEstimationResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MaximumLikelihoodAmplitudeEstimationResult.clear
       ~MaximumLikelihoodAmplitudeEstimationResult.combine
       ~MaximumLikelihoodAmplitudeEstimationResult.copy
@@ -27,21 +26,15 @@
       ~MaximumLikelihoodAmplitudeEstimationResult.setdefault
       ~MaximumLikelihoodAmplitudeEstimationResult.update
       ~MaximumLikelihoodAmplitudeEstimationResult.values
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MaximumLikelihoodAmplitudeEstimationResult.a_estimation
-      ~MaximumLikelihoodAmplitudeEstimationResult.circuit_results
-      ~MaximumLikelihoodAmplitudeEstimationResult.confidence_interval
-      ~MaximumLikelihoodAmplitudeEstimationResult.estimation
-      ~MaximumLikelihoodAmplitudeEstimationResult.fisher_information
-      ~MaximumLikelihoodAmplitudeEstimationResult.num_oracle_queries
-      ~MaximumLikelihoodAmplitudeEstimationResult.theta
-   
-   
+   .. autoattribute:: a_estimation
+   .. autoattribute:: circuit_results
+   .. autoattribute:: confidence_interval
+   .. autoattribute:: estimation
+   .. autoattribute:: fisher_information
+   .. autoattribute:: num_oracle_queries
+   .. autoattribute:: theta

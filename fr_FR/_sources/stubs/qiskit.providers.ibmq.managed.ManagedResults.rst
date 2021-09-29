@@ -1,28 +1,23 @@
-﻿qiskit.providers.ibmq.managed.ManagedResults
-============================================
+﻿ManagedResults
+==============
 
 .. currentmodule:: qiskit.providers.ibmq.managed
 
 .. autoclass:: ManagedResults
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ManagedResults.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ManagedResults.combine_results
       ~ManagedResults.data
       ~ManagedResults.get_counts
       ~ManagedResults.get_memory
       ~ManagedResults.get_statevector
       ~ManagedResults.get_unitary
-   
-   
 
-   
-   
-   
+

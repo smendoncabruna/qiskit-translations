@@ -1,19 +1,18 @@
-﻿qiskit.transpiler.PropertySet
-=============================
+﻿PropertySet
+===========
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: PropertySet
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PropertySet.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PropertySet.clear
       ~PropertySet.copy
       ~PropertySet.fromkeys
@@ -25,9 +24,5 @@
       ~PropertySet.setdefault
       ~PropertySet.update
       ~PropertySet.values
-   
-   
 
-   
-   
-   
+

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.extensions.hamiltonian_gate &mdash; документация Qiskit 0.29.0</title>
+  <title>qiskit.extensions.hamiltonian_gate &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -354,7 +361,7 @@
 <span class="sd">    resolves to a UnitaryGate U(t) = exp(-1j * t * H), which can be decomposed into basis gates if</span>
 <span class="sd">    it is 2 qubits or less, or simulated directly in Aer for more qubits.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="HamiltonianGate.__init__"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.__init__">[документация]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a gate from a hamiltonian operator and evolution time parameter t</span>
 
 <span class="sd">        Args:</span>
@@ -388,7 +395,7 @@
             <span class="k">raise</span> <span class="n">ExtensionError</span><span class="p">(</span><span class="s2">&quot;Input matrix is not an N-qubit operator.&quot;</span><span class="p">)</span>
 
         <span class="c1"># Store instruction params</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;hamiltonian&quot;</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;hamiltonian&quot;</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">HamiltonianGate</span><span class="p">):</span>
@@ -410,19 +417,19 @@
                 <span class="s2">&quot;unbound t parameter </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
             <span class="p">)</span> <span class="kn">from</span> <span class="nn">ex</span>
 
-<div class="viewcode-block" id="HamiltonianGate.inverse"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.inverse">[документация]</a>    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HamiltonianGate.inverse"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.inverse.html#qiskit.circuit.HamiltonianGate.inverse">[документация]</a>    <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the adjoint of the unitary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjoint</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="HamiltonianGate.conjugate"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.conjugate">[документация]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HamiltonianGate.conjugate"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.conjugate.html#qiskit.circuit.HamiltonianGate.conjugate">[документация]</a>    <span class="k">def</span> <span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the conjugate of the Hamiltonian.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">HamiltonianGate</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="HamiltonianGate.adjoint"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.adjoint">[документация]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HamiltonianGate.adjoint"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.adjoint.html#qiskit.circuit.HamiltonianGate.adjoint">[документация]</a>    <span class="k">def</span> <span class="nf">adjoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the adjoint of the unitary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">HamiltonianGate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="HamiltonianGate.transpose"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.transpose">[документация]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HamiltonianGate.transpose"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.transpose.html#qiskit.circuit.HamiltonianGate.transpose">[документация]</a>    <span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the transpose of the Hamiltonian.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">HamiltonianGate</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
@@ -433,11 +440,11 @@
         <span class="n">qc</span><span class="o">.</span><span class="n">_append</span><span class="p">(</span><span class="n">UnitaryGate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_matrix</span><span class="p">()),</span> <span class="n">q</span><span class="p">[:],</span> <span class="p">[])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">definition</span> <span class="o">=</span> <span class="n">qc</span>
 
-<div class="viewcode-block" id="HamiltonianGate.qasm"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.qasm">[документация]</a>    <span class="k">def</span> <span class="nf">qasm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="HamiltonianGate.qasm"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.qasm.html#qiskit.circuit.HamiltonianGate.qasm">[документация]</a>    <span class="k">def</span> <span class="nf">qasm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Raise an error, as QASM is not defined for the HamiltonianGate.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="n">ExtensionError</span><span class="p">(</span><span class="s2">&quot;HamiltonianGate has no QASM definition.&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="HamiltonianGate.validate_parameter"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.html#qiskit.circuit.HamiltonianGate.validate_parameter">[документация]</a>    <span class="k">def</span> <span class="nf">validate_parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
+<div class="viewcode-block" id="HamiltonianGate.validate_parameter"><a class="viewcode-back" href="../../../stubs/qiskit.extensions.HamiltonianGate.validate_parameter.html#qiskit.circuit.HamiltonianGate.validate_parameter">[документация]</a>    <span class="k">def</span> <span class="nf">validate_parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Hamiltonian parameter has to be an ndarray, operator or float.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)):</span>
             <span class="k">return</span> <span class="n">parameter</span>
@@ -475,7 +482,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -555,7 +562,7 @@
             <a href="../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -578,9 +585,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

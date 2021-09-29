@@ -1,30 +1,23 @@
-﻿qiskit.quantum\_info.OneQubitEulerDecomposer
-============================================
+﻿OneQubitEulerDecomposer
+=======================
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: OneQubitEulerDecomposer
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~OneQubitEulerDecomposer.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~OneQubitEulerDecomposer.angles
       ~OneQubitEulerDecomposer.angles_and_phase
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OneQubitEulerDecomposer.basis
-   
-   
+   .. autoattribute:: basis

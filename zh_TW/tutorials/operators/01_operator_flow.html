@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>運算子流程 &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>運算子流程 &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -621,7 +628,7 @@ I X Y Z
 2.5 * X
 </pre></div></div>
 </div>
-<p>These coefficients allow the operators to be used as terms in a sum.</p>
+<p>這些係數可讓運算子以總和形式使用。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -676,8 +683,8 @@ XYZ
 iI
 </pre></div></div>
 </div>
-<p>In the preceding two examples, the tensor product and composition of Pauli operators were immediately reduced to the equivalent (possibly multi-qubit) Pauli operator. If we tensor or compose more complicated objects, the result is objects representing the unevaluated operations. That is, algebraic expressions.</p>
-<p>For example, composing two sums gives</p>
+<p>在前面的兩個例子中，Pauli運算子的張量積被立即減少到等價的（可能是多量子位元的）Pauli運算子。 如果我們取張量積或建構更複雜的物件時，會得到代表未經評估之操作的物件，也就是其代數表示式。</p>
+<p>舉個例子，計算兩個和給我們</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -738,7 +745,7 @@ iI
 (PauliOp(Pauli(&#39;I&#39;), coeff=1.0), PauliOp(Pauli(&#39;X&#39;), coeff=1.0))
 </pre></div></div>
 </div>
-<p>Each Pauli operator is an instance of <code class="docutils literal notranslate"><span class="pre">PauliOp</span></code>, which wraps an instance of <code class="docutils literal notranslate"><span class="pre">qiskit.quantum_info.Pauli</span></code>, and adds a coefficient <code class="docutils literal notranslate"><span class="pre">coeff</span></code>. In general, a <code class="docutils literal notranslate"><span class="pre">PauliOp</span></code> represents a weighted tensor product of Pauli operators.</p>
+<p>每一個 Pauli 運算子都是 <code class="docutils literal notranslate"><span class="pre">PauliOp</span></code> 的實例，其包裝 ` <cite>qiskit.quantum_info.Pauli`</cite> 的實例，並新增係數 <code class="docutils literal notranslate"><span class="pre">coeff</span></code>，一般而言， <a href="#id1"><span class="problematic" id="id2">``</span></a>PauliOp` ` 代表 Pauli 運算子的張量積乘上某個係數。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -757,8 +764,8 @@ iI
 PauliOp(Pauli(&#39;XYZ&#39;), coeff=2.0)
 </pre></div></div>
 </div>
-<p>For the encoding of the Pauli operators as pairs of Boolean values, see the documentation for <code class="docutils literal notranslate"><span class="pre">qiskit.quantum_info.Pauli</span></code>.</p>
-<p>All of the objects representing operators, whether as “primitive”s such as <code class="docutils literal notranslate"><span class="pre">PauliOp</span></code>, or algebraic expressions carry a coefficient</p>
+<p>如果要將 Pauli 運算子的編碼作為成對布林值，請參閱 <code class="docutils literal notranslate"><span class="pre">qiskit.quantum_info.Pauli</span></code> 的說明文件。</p>
+<p>所有表示運算子的物件，無論是 」 primitives 」 ，例如 <code class="docutils literal notranslate"><span class="pre">PauliOp</span></code> ，或代數表示式都具有一個係數</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -779,14 +786,13 @@ PauliOp(Pauli(&#39;XYZ&#39;), coeff=2.0)
 )
 </pre></div></div>
 </div>
-<p>In the following we take a broader and deeper look at Qiskit’s operators, states, and the building blocks of quantum algorithms.</p>
+<p>在下面我們對 Qiskit 的運算子、狀態和量子演算法的構建塊進行了更廣泛和更深入的研究。</p>
 </section>
 </section>
 <section id="第一部分：狀態函數和測量">
 <h2>第一部分：狀態函數和測量<a class="headerlink" href="#第一部分：狀態函數和測量" title="本標題的永久連結">¶</a></h2>
-<p>Quantum states are represented by subclasses of the class <code class="docutils literal notranslate"><span class="pre">StateFn</span></code>. There are four representations of quantum states: <code class="docutils literal notranslate"><span class="pre">DictStateFn</span></code> is a sparse representation in the computational basis, backed by a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. <code class="docutils literal notranslate"><span class="pre">VectorStateFn</span></code> is a dense representation in the computational basis backed by a numpy array. <code class="docutils literal notranslate"><span class="pre">CircuitStateFn</span></code> is backed by a circuit and represents the state obtained by executing the circuit on the all-zero computational-basis state. <code class="docutils literal notranslate"><span class="pre">OperatorStateFn</span></code> represents mixed states
-via a density matrix. (As we will see later, <code class="docutils literal notranslate"><span class="pre">OperatorStateFn</span></code> is also used to represent observables.)</p>
-<p>Several <code class="docutils literal notranslate"><span class="pre">StateFn</span></code> instances are provided for convenience. For example <code class="docutils literal notranslate"><span class="pre">Zero,</span> <span class="pre">One,</span> <span class="pre">Plus,</span> <span class="pre">Minus</span></code>.</p>
+<p>量子狀態被代表在類別 <code class="docutils literal notranslate"><span class="pre">StateFn</span></code> 中的子類。有四種量子狀態的表示法 : 在計算基礎上， `` DictStateFn`` 是由 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 所支援的稀疏表示法。在計算基礎上， `` VectorStateFn`` 是由 numpy 陣列所支援的密集表示法。 `` CircuitStateFn`` 被電路支援，表示通過在所有零計算基礎上執行電路獲得的狀態。 <code class="docutils literal notranslate"><span class="pre">OperatorStateFn</span></code> 代表透過密度矩陣的混合狀態。 （如我們稍後看到， `` OperatorStateFn `` 也用來代表可觀察的。）</p>
+<p>提供了數個 <code class="docutils literal notranslate"><span class="pre">StateFn</span></code> 的實例，以方便使用。 例如 <code class="docutils literal notranslate"><span class="pre">Zero，</span> <span class="pre">One，</span> <span class="pre">Plus，</span> <span class="pre">Minus</span></code>。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -867,7 +873,7 @@ q_0: ┤ X ├┤ H ├
 (-0.7071067811865475+8.7e-17j)
 </pre></div></div>
 </div>
-<p>The dual vector of a quantum state, that is the <em>bra</em> corresponding to a <em>ket</em> is obtained via the <code class="docutils literal notranslate"><span class="pre">adjoint</span></code> method. The <code class="docutils literal notranslate"><span class="pre">StateFn</span></code> carries a flag <code class="docutils literal notranslate"><span class="pre">is_measurement</span></code>, which is <code class="docutils literal notranslate"><span class="pre">False</span></code> if the object is a ket and <code class="docutils literal notranslate"><span class="pre">True</span></code> if it is a bra.</p>
+<p>量子態的對偶向量，即對應於 <em>ket</em> 的 <em>bra</em>，是通過“伴隨”方法獲得的。</p>
 <p>在這裡，我們建構 <span class="math notranslate nohighlight">\(\langle 1 |\)</span>。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
@@ -909,8 +915,8 @@ DictStateFn({&#39;1&#39;: 1}, coeff=1.0, is_measurement=True)
 <section id="Algebraic-operations-and-predicates">
 <h3>Algebraic operations and predicates<a class="headerlink" href="#Algebraic-operations-and-predicates" title="本標題的永久連結">¶</a></h3>
 <p>Many algebraic operations and predicates between <code class="docutils literal notranslate"><span class="pre">StateFn</span></code>s are supported, including: * <code class="docutils literal notranslate"><span class="pre">+</span></code> - addition * <code class="docutils literal notranslate"><span class="pre">-</span></code> - subtraction, negation (scalar multiplication by -1) * <code class="docutils literal notranslate"><span class="pre">*</span></code> - scalar multiplication * <code class="docutils literal notranslate"><span class="pre">/</span></code> - scalar division * <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> - composition * <code class="docutils literal notranslate"><span class="pre">^</span></code> - tensor product or tensor power (tensor with self n times) * <code class="docutils literal notranslate"><span class="pre">**</span></code> - composition power (compose with self n times) * <code class="docutils literal notranslate"><span class="pre">==</span></code> - equality * <code class="docutils literal notranslate"><span class="pre">~</span></code> - adjoint, alternating between a State Function and Measurement</p>
-<p>Be aware that parentheses are often necessary to override <strong>operator precedence</strong>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">StateFn</span></code>s carry a coefficient. This allows us multiply states by a scalar, and so to construct sums.</p>
+<p>請注意，括弧通常是必要的置換 <strong>operator precedence</strong>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">StateFn</span></code>s 具有係數。 這使得我們將狀態乘以一個純量，並因此來構造求和。</p>
 <p>在這裡，我們建構 <span class="math notranslate nohighlight">\(（2 + 3i）|0\r角\)</span>。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -930,7 +936,7 @@ DictStateFn({&#39;1&#39;: 1}, coeff=1.0, is_measurement=True)
 DictStateFn({&#39;0&#39;: 1}, coeff=(2+3j), is_measurement=False)
 </pre></div></div>
 </div>
-<p>Here, we see that adding two <code class="docutils literal notranslate"><span class="pre">DictStateFn</span></code>s returns an object of the same type. We construct <span class="math notranslate nohighlight">\(|0\rangle + |1\rangle\)</span>.</p>
+<p>在這裡，我們看到新增兩個 <cite>DictStateFn</cite> ` s 會傳回相同類型的物件。 我們構造 <span class="math notranslate nohighlight">\(|0\r角 + |1\r角\)</span>。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -948,7 +954,7 @@ DictStateFn({&#39;0&#39;: 1}, coeff=(2+3j), is_measurement=False)
 DictStateFn({&#39;0&#39;: 1.0, &#39;1&#39;: 1.0})
 </pre></div></div>
 </div>
-<p>Note that you must normalize states by hand. For example, to construct <span class="math notranslate nohighlight">\((|0\rangle + |1\rangle)/\sqrt{2}\)</span>, we write</p>
+<p>請注意，您必須依手進行狀態正規化。 例如，若要建構 <span class="math notranslate nohighlight">\(（|0\r角度 + |1\rangle）/\sqrt{2}\)</span>，我們寫入</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -969,7 +975,7 @@ DictStateFn({&#39;0&#39;: 1.0, &#39;1&#39;: 1.0})
 DictStateFn({&#39;0&#39;: 1.0, &#39;1&#39;: 1.0}) * 0.7071067811865475
 </pre></div></div>
 </div>
-<p>In other cases, the result is a symbolic representation of a sum. For example, here is a representation of <span class="math notranslate nohighlight">\(|+\rangle + |-\rangle\)</span>.</p>
+<p>在其他情況下，結果是一筆符號的符號表示法。 例如，這裡是代表 <span class="math notranslate nohighlight">\(|+\r角度 + |-\r角度\)</span>。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
@@ -998,7 +1004,7 @@ SummedOp([
 ])
 </pre></div></div>
 </div>
-<p>The composition operator is used to perform an inner product, which by default is held in an unevaluated form. Here is a representation of <span class="math notranslate nohighlight">\(\langle 1 | 1 \rangle\)</span>.</p>
+<p>組合運算子是用來執行內部產品，依預設會保留在未評估的表單中。 以下是代表 :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>langle 1 | 1 rangle`的表示法。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
@@ -1019,8 +1025,8 @@ ComposedOp([
 ])
 </pre></div></div>
 </div>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">is_measurement</span></code> flag causes the (bra) state <code class="docutils literal notranslate"><span class="pre">~One</span></code> to be printed <code class="docutils literal notranslate"><span class="pre">DictMeasurement</span></code>.</p>
-<p>Symbolic expressions may be evaluated with the <code class="docutils literal notranslate"><span class="pre">eval</span></code> method.</p>
+<p>請注意， <code class="docutils literal notranslate"><span class="pre">is_measurement</span></code> 標誌會導致列印 <a href="#id1"><span class="problematic" id="id2">``</span></a>DictMeasurement `` 中的（bra）狀態 ` ` ~` ` ` 。</p>
+<p>符號表示式可以用 <code class="docutils literal notranslate"><span class="pre">eval</span></code> 方法進行評估。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1165,7 +1171,7 @@ q_1: ─────
 )
 </pre></div></div>
 </div>
-<p>Tensor powers are constructed using the caret <code class="docutils literal notranslate"><span class="pre">^</span></code> as follows. Here are <span class="math notranslate nohighlight">\(600 (|11111\rangle + |00000\rangle)\)</span>, and <span class="math notranslate nohighlight">\(|10\rangle^{\otimes 3}\)</span>.</p>
+<p>使用照顧者 ` ` ^`` 如下所示來建構 Tensor 權限。 這裡是 <span class="math notranslate nohighlight">\(600 （|11111\r角度 + |00000\r角）\)</span>， and <span class="math notranslate nohighlight">\(|10\r角度^{\otimes 3}\)</span>。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
@@ -1185,7 +1191,7 @@ DictStateFn({&#39;11111&#39;: 1.0, &#39;00000&#39;: 1.0}) * 600.0
 DictStateFn({&#39;101010&#39;: 1})
 </pre></div></div>
 </div>
-<p>The method <code class="docutils literal notranslate"><span class="pre">to_matrix_op</span></code> converts to <code class="docutils literal notranslate"><span class="pre">VectorStateFn</span></code>.</p>
+<p>函式``to_matrix_op``轉換成``VectorStateFn``。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
@@ -1225,7 +1231,7 @@ q_3: ┤ H ├
 </div>
 <p>Constructing a StateFn is easy. The <code class="docutils literal notranslate"><span class="pre">StateFn</span></code> class also serves as a factory, and can take any applicable primitive in its constructor and return the correct StateFn subclass. Currently the following primitives can be passed into the constructor, listed alongside the <code class="docutils literal notranslate"><span class="pre">StateFn</span></code> subclass they produce:</p>
 <ul class="simple">
-<li><p>str (equal to some basis bitstring) -&gt; DictStateFn</p></li>
+<li><p>str （等於部分基準位元字串） -&gt; DictStateFn</p></li>
 <li><p>dict -&gt; DictStateFn</p></li>
 <li><p>Qiskit Result object -&gt; DictStateFn</p></li>
 <li><p>list -&gt; VectorStateFn</p></li>
@@ -1272,7 +1278,7 @@ q_1: ┤ RY(θ[1]) ├┤ X ├┤ RY(θ[3]) ├┤ X ├┤ RY(θ[5]) ├┤ X 
 </section>
 <section id="第二部分：-``PrimitiveOp``s">
 <h2>第二部分： <a href="#id1"><span class="problematic" id="id2">``</span></a>PrimitiveOp``s<a class="headerlink" href="#第二部分：-``PrimitiveOp``s" title="本標題的永久連結">¶</a></h2>
-<p>The basic Operators are subclasses of <code class="docutils literal notranslate"><span class="pre">PrimitiveOp</span></code>. Just like <code class="docutils literal notranslate"><span class="pre">StateFn</span></code>, <code class="docutils literal notranslate"><span class="pre">PrimitiveOp</span></code> is also a factory for creating the correct type of <code class="docutils literal notranslate"><span class="pre">PrimitiveOp</span></code> for a given primitive. Currently, the following primitives can be passed into the constructor, listed alongside the <code class="docutils literal notranslate"><span class="pre">PrimitiveOp</span></code> subclass they produce:</p>
+<p>基本運算子是 <code class="docutils literal notranslate"><span class="pre">PrimitiveOp`</span> <span class="pre">`</span> <span class="pre">的子類別。就像</span> <span class="pre">``StateFn</span></code> ， ` ` PrimitiveOp`` 也是一個 Factory ，用於為給定的基本元素建立正確的 ` <cite>PrimitiveOp`</cite> 類型。 目前，下列基本元素可以傳遞至建構子，並與它們產生的 <a href="#id1"><span class="problematic" id="id2">``</span></a>PrimitiveOp` ` 子類別並排列出：</p>
 <ul class="simple">
 <li><p>Terra’s Pauli -&gt; PauliOp</p></li>
 <li><p>Instruction -&gt; CircuitOp</p></li>
@@ -1414,8 +1420,8 @@ VectorStateFn(Statevector([0.+0.j, 0.+0.j, 0.+0.j, 1.+0.j],
 </pre></div></div>
 </div>
 </section>
-<section id="Applying-an-operator-to-a-state-vector">
-<h3>Applying an operator to a state vector<a class="headerlink" href="#Applying-an-operator-to-a-state-vector" title="本標題的永久連結">¶</a></h3>
+<section id="將運算子套用至狀態向量">
+<h3>將運算子套用至狀態向量<a class="headerlink" href="#將運算子套用至狀態向量" title="本標題的永久連結">¶</a></h3>
 <p>Applying an operator to a state vector may be done with the <code class="docutils literal notranslate"><span class="pre">compose</span></code> method (equivalently, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator). Here is a representation of <span class="math notranslate nohighlight">\(X | 1 \rangle = |0\rangle\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
@@ -2262,7 +2268,7 @@ ComposedOp([
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -2292,7 +2298,7 @@ ComposedOp([
 </li>
 <li><a class="reference internal" href="#第二部分：-``PrimitiveOp``s">第二部分： ``PrimitiveOp``s</a><ul>
 <li><a class="reference internal" href="#Matrix-elements">Matrix elements</a></li>
-<li><a class="reference internal" href="#Applying-an-operator-to-a-state-vector">Applying an operator to a state vector</a></li>
+<li><a class="reference internal" href="#將運算子套用至狀態向量">將運算子套用至狀態向量</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#Part-III-ListOp-and-subclasses">Part III <code class="docutils literal notranslate"><span class="pre">ListOp</span></code> and subclasses</a><ul>
@@ -2376,7 +2382,7 @@ ComposedOp([
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -2399,9 +2405,11 @@ ComposedOp([
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

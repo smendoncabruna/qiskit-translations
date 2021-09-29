@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.ignis.mitigation.measurement.fitters &mdash; Tài liệu Qiskit 0.29.0</title>
+  <title>qiskit.ignis.mitigation.measurement.fitters &mdash; Tài liệu Qiskit 0.30.0</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Trang chủ trang tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">Tài liệu tham khảo về API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Trình mô phỏng Qiskit (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Thí nghiệm Qiskit (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Mô-đun ứng dụng Qiskit (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Trình cung cấp lượng tử IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -362,7 +369,7 @@
 <span class="sd">    Measurement correction fitter for a full calibration</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="CompleteMeasFitter.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.html#qiskit.ignis.mitigation.CompleteMeasFitter.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">results</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Result</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Result</span><span class="p">]],</span>
                  <span class="n">state_labels</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
                  <span class="n">qubit_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -392,7 +399,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_tens_fitt</span> <span class="o">=</span> <span class="n">TensoredMeasFitter</span><span class="p">(</span><span class="n">results</span><span class="p">,</span>
                                              <span class="p">[</span><span class="n">qubit_list</span><span class="p">],</span>
                                              <span class="p">[</span><span class="n">state_labels</span><span class="p">],</span>
-                                             <span class="n">circlabel</span><span class="p">)</span></div>
+                                             <span class="n">circlabel</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">cal_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -424,7 +431,7 @@
         <span class="sd">&quot;&quot;&quot;Return a measurement filter using the cal matrix.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">MeasurementFilter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cal_matrix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">state_labels</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CompleteMeasFitter.add_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.html#qiskit.ignis.mitigation.CompleteMeasFitter.add_data">[docs]</a>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_results</span><span class="p">,</span> <span class="n">rebuild_cal_matrix</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="CompleteMeasFitter.add_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.add_data.html#qiskit.ignis.mitigation.CompleteMeasFitter.add_data">[docs]</a>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_results</span><span class="p">,</span> <span class="n">rebuild_cal_matrix</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add measurement calibration data</span>
 
@@ -436,7 +443,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_tens_fitt</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">new_results</span><span class="p">,</span> <span class="n">rebuild_cal_matrix</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CompleteMeasFitter.subset_fitter"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.html#qiskit.ignis.mitigation.CompleteMeasFitter.subset_fitter">[docs]</a>    <span class="k">def</span> <span class="nf">subset_fitter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit_sublist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CompleteMeasFitter.subset_fitter"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.subset_fitter.html#qiskit.ignis.mitigation.CompleteMeasFitter.subset_fitter">[docs]</a>    <span class="k">def</span> <span class="nf">subset_fitter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qubit_sublist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a fitter object that is a subset of the qubits in the original</span>
 <span class="sd">        list.</span>
@@ -509,7 +516,7 @@
 
         <span class="k">return</span> <span class="n">new_fitter</span></div>
 
-<div class="viewcode-block" id="CompleteMeasFitter.readout_fidelity"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.html#qiskit.ignis.mitigation.CompleteMeasFitter.readout_fidelity">[docs]</a>    <span class="k">def</span> <span class="nf">readout_fidelity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CompleteMeasFitter.readout_fidelity"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.readout_fidelity.html#qiskit.ignis.mitigation.CompleteMeasFitter.readout_fidelity">[docs]</a>    <span class="k">def</span> <span class="nf">readout_fidelity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Based on the results, output the readout fidelity which is the</span>
 <span class="sd">        normalized trace of the calibration matrix</span>
@@ -530,7 +537,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tens_fitt</span><span class="o">.</span><span class="n">readout_fidelity</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">label_list</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="CompleteMeasFitter.plot_calibration"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.html#qiskit.ignis.mitigation.CompleteMeasFitter.plot_calibration">[docs]</a>    <span class="k">def</span> <span class="nf">plot_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="CompleteMeasFitter.plot_calibration"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.CompleteMeasFitter.plot_calibration.html#qiskit.ignis.mitigation.CompleteMeasFitter.plot_calibration">[docs]</a>    <span class="k">def</span> <span class="nf">plot_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Plot the calibration matrix (2D color grid plot)</span>
 
@@ -548,7 +555,7 @@
 <span class="sd">    Measurement correction fitter for a tensored calibration.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="TensoredMeasFitter.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.html#qiskit.ignis.mitigation.TensoredMeasFitter.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">results</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Result</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Result</span><span class="p">]],</span>
                  <span class="n">mit_pattern</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
                  <span class="n">substate_labels_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -601,7 +608,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_indices_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                 <span class="p">{</span><span class="n">lab</span><span class="p">:</span> <span class="n">ind</span> <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">lab</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sub_labels</span><span class="p">)})</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">results</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">cal_matrices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -628,7 +635,7 @@
         <span class="sd">&quot;&quot;&quot;Return _qubit_list_sizes.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_qubit_list_sizes</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TensoredMeasFitter.add_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.html#qiskit.ignis.mitigation.TensoredMeasFitter.add_data">[docs]</a>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_results</span><span class="p">,</span> <span class="n">rebuild_cal_matrix</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="TensoredMeasFitter.add_data"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.add_data.html#qiskit.ignis.mitigation.TensoredMeasFitter.add_data">[docs]</a>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_results</span><span class="p">,</span> <span class="n">rebuild_cal_matrix</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add measurement calibration data</span>
 
@@ -650,7 +657,7 @@
         <span class="k">if</span> <span class="n">rebuild_cal_matrix</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_build_calibration_matrices</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="TensoredMeasFitter.readout_fidelity"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.html#qiskit.ignis.mitigation.TensoredMeasFitter.readout_fidelity">[docs]</a>    <span class="k">def</span> <span class="nf">readout_fidelity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cal_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TensoredMeasFitter.readout_fidelity"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.readout_fidelity.html#qiskit.ignis.mitigation.TensoredMeasFitter.readout_fidelity">[docs]</a>    <span class="k">def</span> <span class="nf">readout_fidelity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cal_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label_list</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Based on the results, output the readout fidelity, which is the average</span>
 <span class="sd">        of the diagonal entries in the calibration matrices.</span>
@@ -764,7 +771,7 @@
                 <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cal_matrices</span><span class="p">[</span><span class="n">mat_index</span><span class="p">]),</span>
                 <span class="n">where</span><span class="o">=</span><span class="n">sums_of_columns</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TensoredMeasFitter.plot_calibration"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.html#qiskit.ignis.mitigation.TensoredMeasFitter.plot_calibration">[docs]</a>    <span class="k">def</span> <span class="nf">plot_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cal_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="TensoredMeasFitter.plot_calibration"><a class="viewcode-back" href="../../../../../stubs/qiskit.ignis.mitigation.TensoredMeasFitter.plot_calibration.html#qiskit.ignis.mitigation.TensoredMeasFitter.plot_calibration">[docs]</a>    <span class="k">def</span> <span class="nf">plot_calibration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cal_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Plot one of the calibration matrices (2D color grid plot).</span>
 
@@ -822,7 +829,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/08/13.
+      Cập nhật mới nhất vào 2021/09/23.
 
     </p>
   </div>
@@ -902,7 +909,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -925,9 +932,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

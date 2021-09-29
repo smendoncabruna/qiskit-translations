@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Visualizing a Quantum Circuit &mdash; документация Qiskit 0.29.0</title>
+  <title>Визуализация квантовой цепи &mdash; документация Qiskit 0.30.0</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Главная страница документации</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Вступление</span></p>
 <ul>
@@ -239,15 +246,15 @@
 </ul>
 <p><span class="caption-text">Справочники по API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit симулятор (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit эксперименты (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Модули Qiskit Application (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Провайдер)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Инструкция по миграции Qiskit Applications (Aqua)</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Инструкция по миграции Qiskit Applications (Aqua)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Устранение неполадок</span></p>
 <ul>
@@ -292,7 +299,7 @@
       </li>
 
         
-      <li>Visualizing a Quantum Circuit</li>
+      <li>Визуализация квантовой цепи</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -572,10 +579,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits_advanced/03_advanced_circuit_visualization.ipynb">tutorials/circuits_advanced/03_advanced_circuit_visualization.ipynb</a>.</p>
+<p>Страница создана на основе <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits_advanced/03_advanced_circuit_visualization.ipynb">tutorials/circuits_advanced/03_advanced_circuit_visualization.ipynb</a>.</p>
 </div>
-<section id="Visualizing-a-Quantum-Circuit">
-<h1>Visualizing a Quantum Circuit<a class="headerlink" href="#Visualizing-a-Quantum-Circuit" title="Ссылка на этот заголовок">¶</a></h1>
+<section id="Визуализация-квантовой-цепи">
+<h1>Визуализация квантовой цепи<a class="headerlink" href="#Визуализация-квантовой-цепи" title="Ссылка на этот заголовок">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -585,9 +592,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Drawing-a-Quantum-Circuit">
-<h2>Drawing a Quantum Circuit<a class="headerlink" href="#Drawing-a-Quantum-Circuit" title="Ссылка на этот заголовок">¶</a></h2>
-<p>When building a quantum circuit, it often helps to draw the circuit. This is supported natively by a <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> object. You can either call <code class="docutils literal notranslate"><span class="pre">print()</span></code> on the circuit, or call the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> method on the object. This will render a <a class="reference external" href="https://en.wikipedia.org/wiki/ASCII_art">ASCII art version</a> of the circuit diagram.</p>
+<section id="Изображение-квантовой-цепи">
+<h2>Изображение квантовой цепи<a class="headerlink" href="#Изображение-квантовой-цепи" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Просмотр создаваемой квантовой цепи часто оказывается полезным при ее проектировании. Такая возможность по умолчанию предусмотрена для объектов``QuantumCircuit``. Вы можете использовать как <code class="docutils literal notranslate"><span class="pre">print()</span></code> с цепью в качестве аргумента, так и метод объекта <code class="docutils literal notranslate"><span class="pre">draw()</span></code>. Результатом будет схема в виде <a class="reference external" href="https://ru.wikipedia.org/wiki/ASCII-графика">ASCII-графики</a>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -661,10 +668,9 @@ c_2: ═══════╩═════════════
                           </pre></div>
 </div>
 </section>
-<section id="Alternative-Renderers-for-Circuits">
-<h2>Alternative Renderers for Circuits<a class="headerlink" href="#Alternative-Renderers-for-Circuits" title="Ссылка на этот заголовок">¶</a></h2>
-<p>A text output is useful for quickly seeing the output while developing a circuit, but it doesn’t provide the most flexibility in its output. There are two alternative output renderers for the quantum circuit. One uses <a class="reference external" href="https://matplotlib.org/">matplotlib</a>, and the other uses <a class="reference external" href="https://www.latex-project.org/">LaTeX</a>, which leverages the <a class="reference external" href="https://github.com/CQuIC/qcircuit">qcircuit package</a>. These can be specified by using <code class="docutils literal notranslate"><span class="pre">mpl</span></code> and <code class="docutils literal notranslate"><span class="pre">latex</span></code> values for the <code class="docutils literal notranslate"><span class="pre">output</span></code> kwarg on the draw()
-method.</p>
+<section id="Альтернативные-визуализаторы-цепей">
+<h2>Альтернативные визуализаторы цепей<a class="headerlink" href="#Альтернативные-визуализаторы-цепей" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Текстовый вывод полезен для быстрого просмотра вывода при разработке схемы, но не обладает достаточной гибкостью. В качестве альтернативы можно использовать <a class="reference external" href="https://matplotlib.org/">matplotlib</a>, или <a class="reference external" href="https://www.latex-project.org/">LaTeX</a>, использующий пакет <a class="reference external" href="https://github.com/CQuIC/qcircuit">qcircuit</a>. Значение <code class="docutils literal notranslate"><span class="pre">mpl</span></code> или``latex`` нужно указать в качестве аргумента с ключом <code class="docutils literal notranslate"><span class="pre">output</span></code> в методе draw().</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -684,17 +690,16 @@ method.</p>
 </div>
 </div>
 </section>
-<section id="Controlling-output-from-circuit.draw()">
-<h2>Controlling output from circuit.draw()<a class="headerlink" href="#Controlling-output-from-circuit.draw()" title="Ссылка на этот заголовок">¶</a></h2>
-<p>By default, the draw method returns the rendered image as an object and does not output anything. The exact class returned depends on the output specified: <code class="docutils literal notranslate"><span class="pre">'text'</span></code>(the default) returns a <code class="docutils literal notranslate"><span class="pre">TextDrawer</span></code> object, <code class="docutils literal notranslate"><span class="pre">'mpl'</span></code> returns a <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> object, and <code class="docutils literal notranslate"><span class="pre">latex</span></code> returns a <code class="docutils literal notranslate"><span class="pre">PIL.Image</span></code> object. Having the return types enables modifying or directly interacting with the rendered output from the drawers. Jupyter notebooks understand these return types and render them for us in this
-tutorial, but when running outside of Jupyter, you do not have this feature automatically. However, the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> method has optional arguments to display or save the output. When specified, the <code class="docutils literal notranslate"><span class="pre">filename</span></code> kwarg takes a path to which it saves the rendered output. Alternatively, if you’re using the <code class="docutils literal notranslate"><span class="pre">mpl</span></code> or <code class="docutils literal notranslate"><span class="pre">latex</span></code> outputs, you can leverage the <code class="docutils literal notranslate"><span class="pre">interactive</span></code> kwarg to open the image in a new window (this will not always work from within a notebook but will be demonstrated anyway).</p>
+<section id="Управлением-выводом-circuit.draw()">
+<h2>Управлением выводом circuit.draw()<a class="headerlink" href="#Управлением-выводом-circuit.draw()" title="Ссылка на этот заголовок">¶</a></h2>
+<p>По умолчанию метод просто возвращает нарисованную схему как объект, класс которого зависит от типа вывода: <code class="docutils literal notranslate"><span class="pre">TextDrawer</span></code> для <code class="docutils literal notranslate"><span class="pre">'text'</span></code>(по умолчанию), <code class="docutils literal notranslate"><span class="pre">matplotlib.Figure</span></code> для <code class="docutils literal notranslate"><span class="pre">'mpl'</span></code> и <code class="docutils literal notranslate"><span class="pre">PIL.Image</span></code> для <code class="docutils literal notranslate"><span class="pre">latex</span></code>. Эти типы позволяют изменять или напрямую взаимодействовать с полученным изображением. Блокноты Jupyter могут их распознать, как например в данном руководстве, однако вне Jupyter это не происходит автоматически. Метод <code class="docutils literal notranslate"><span class="pre">draw()</span></code> содержит необязательные аргументы для настроек отображения или сохранения вывода. Путь, куда будет сохранен файл, задается по ключу <code class="docutils literal notranslate"><span class="pre">filename</span></code>, а при выводе <code class="docutils literal notranslate"><span class="pre">mpl</span></code> и <code class="docutils literal notranslate"><span class="pre">latex</span></code>, можно использовать ключ <code class="docutils literal notranslate"><span class="pre">interactive</span></code>, чтобы открыть изображение в новом окне (может не сработать при работе в блокноте, но в любом случае отобразит схему).</p>
 </section>
-<section id="Customizing-the-output">
-<h2>Customizing the output<a class="headerlink" href="#Customizing-the-output" title="Ссылка на этот заголовок">¶</a></h2>
-<p>Depending on the output, there are also options to customize the circuit diagram rendered by the circuit.</p>
-<section id="Disable-Plot-Barriers-and-Reversing-Bit-Order">
-<h3>Disable Plot Barriers and Reversing Bit Order<a class="headerlink" href="#Disable-Plot-Barriers-and-Reversing-Bit-Order" title="Ссылка на этот заголовок">¶</a></h3>
-<p>The first two options are shared among all three backends. They allow you to configure both the bit orders and whether or not you draw barriers. These can be set by the <code class="docutils literal notranslate"><span class="pre">reverse_bits</span></code> kwarg and <code class="docutils literal notranslate"><span class="pre">plot_barriers</span></code> kwarg, respectively. The examples below will work with any output backend; <code class="docutils literal notranslate"><span class="pre">mpl</span></code> is used here for brevity.</p>
+<section id="Настройка-вывода">
+<h2>Настройка вывода<a class="headerlink" href="#Настройка-вывода" title="Ссылка на этот заголовок">¶</a></h2>
+<p>В некоторых случаях можно настроить вид схемы, соответствующей цепи.</p>
+<section id="Пропуск-разделителей-и-обратный-порядок-битов">
+<h3>Пропуск разделителей и обратный порядок битов<a class="headerlink" href="#Пропуск-разделителей-и-обратный-порядок-битов" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Первые две опции доступны для всех трех типов отображений. Они позволяют настраивать порядок битов (по ключу <code class="docutils literal notranslate"><span class="pre">reverse_bits</span></code>) и наличие разделителей (по ключу <code class="docutils literal notranslate"><span class="pre">plot_barriers</span></code>) независимо друг от друга. Приведенные ниже примеры будут работать с любым выводом; <code class="docutils literal notranslate"><span class="pre">mpl</span></code> выбран для краткости.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -799,22 +804,21 @@ tutorial, but when running outside of Jupyter, you do not have this feature auto
 </div>
 </div>
 </section>
-<section id="Backend-specific-customizations">
-<h3>Backend-specific customizations<a class="headerlink" href="#Backend-specific-customizations" title="Ссылка на этот заголовок">¶</a></h3>
-<p>Some available customizing options are specific to a backend. The <code class="docutils literal notranslate"><span class="pre">line_length</span></code> kwarg for the <code class="docutils literal notranslate"><span class="pre">text</span></code> backend can be used to set a maximum width for the output. When a diagram is wider than the maximum, it will wrap the diagram below. The <code class="docutils literal notranslate"><span class="pre">mpl</span></code> backend has the <code class="docutils literal notranslate"><span class="pre">style</span></code> kwarg, which is used to customize the output. The <code class="docutils literal notranslate"><span class="pre">scale</span></code> option is used by the <code class="docutils literal notranslate"><span class="pre">mpl</span></code> and <code class="docutils literal notranslate"><span class="pre">latex</span></code> backends to scale the size of the output image with a multiplicative adjustment factor. The <code class="docutils literal notranslate"><span class="pre">style</span></code> kwarg takes in a
-<code class="docutils literal notranslate"><span class="pre">dict</span></code> with multiple options, providing a high level of flexibility for changing colors, changing rendered text for different types of gates, different line styles, etc. Available options are:</p>
+<section id="Настройки,-зависящие-от-визуализатора">
+<h3>Настройки, зависящие от визуализатора<a class="headerlink" href="#Настройки,-зависящие-от-визуализатора" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Некоторые опции доступны только для определенных типов вывода. Ключ <code class="docutils literal notranslate"><span class="pre">line_length</span></code>, применяемый для вывода <code class="docutils literal notranslate"><span class="pre">text</span></code>, задает длину строки, после которой происходит перенос. При выводе в виде <code class="docutils literal notranslate"><span class="pre">mpl</span></code> доступна дополнительная настройка в аргументе с ключом <code class="docutils literal notranslate"><span class="pre">style</span></code>. Опция <code class="docutils literal notranslate"><span class="pre">scale</span></code> (для <code class="docutils literal notranslate"><span class="pre">mpl</span></code> или <code class="docutils literal notranslate"><span class="pre">latex</span></code>) масштабирует размер, умножая его на задаваемое число. Словарь в аргументе с ключом <code class="docutils literal notranslate"><span class="pre">style</span></code> дает расширенный доступ, позволяя изменять цвета, наименования гейтов, типы линий и прочее. Список доступных опций:</p>
 <ul>
-<li><p><strong>textcolor</strong> (str): The color code to use for text. Defaults to <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
-<li><p><strong>subtextcolor</strong> (str): The color code to use for subtext. Defaults to <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
-<li><p><strong>linecolor</strong> (str): The color code to use for lines. Defaults to <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
-<li><p><strong>creglinecolor</strong> (str): The color code to use for classical register lines <code class="docutils literal notranslate"><span class="pre">'#778899'</span></code></p></li>
-<li><p><strong>gatetextcolor</strong> (str): The color code to use for gate text <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
-<li><p><strong>gatefacecolor</strong> (str): The color code to use for gates. Defaults to <code class="docutils literal notranslate"><span class="pre">'#ffffff'</span></code></p></li>
-<li><p><strong>barrierfacecolor</strong> (str): The color code to use for barriers. Defaults to <code class="docutils literal notranslate"><span class="pre">'#bdbdbd'</span></code></p></li>
-<li><p><strong>backgroundcolor</strong> (str): The color code to use for the background. Defaults to <code class="docutils literal notranslate"><span class="pre">'#ffffff'</span></code></p></li>
-<li><p><strong>fontsize</strong> (int): The font size to use for text. Defaults to 13</p></li>
-<li><p><strong>subfontsize</strong> (int): The font size to use for subtext. Defaults to 8</p></li>
-<li><p><strong>displaytext</strong> (dict): A dictionary of the text to use for each element type in the output visualization. The default values are:</p>
+<li><p><strong>textcolor</strong> (str): Цвет основного текста. По умолчанию <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
+<li><p><strong>subtextcolor</strong> (str): Цвет дополнительного текста <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
+<li><p><strong>linecolor</strong> (str): Цвет линий <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
+<li><p><strong>creglinecolor</strong> (str): Цвет линий классического регистра <code class="docutils literal notranslate"><span class="pre">'#778899'</span></code></p></li>
+<li><p><strong>gatetextcolor</strong> (str): Цвет текста в гейтах <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code></p></li>
+<li><p><strong>gatefacecolor</strong> (str): Цвет гейтов <code class="docutils literal notranslate"><span class="pre">'#ffffff'</span></code></p></li>
+<li><p><strong>barrierfacecolor</strong> (str): Цвет разделителей <code class="docutils literal notranslate"><span class="pre">'#bdbdbd'</span></code></p></li>
+<li><p><strong>backgroundcolor</strong> (str): Фоновый цвет <code class="docutils literal notranslate"><span class="pre">'#ffffff'</span></code></p></li>
+<li><p><strong>fontsize</strong> (int): Кегль (размер) основного текста. По умолчанию: 13</p></li>
+<li><p><strong>subfontsize</strong> (int): Кегль (размер) дополнительного текста. По умолчанию: 8</p></li>
+<li><p><strong>displaytext</strong> (dict): Словарь отображаемых элементов. По умолчанию:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;id&#39;: &#39;id&#39;,
 &#39;u0&#39;: &#39;U_0&#39;,
 &#39;u1&#39;: &#39;U_1&#39;,
@@ -834,18 +838,18 @@ tutorial, but when running outside of Jupyter, you do not have this feature auto
 &#39;reset&#39;: &#39;\\left|0\\right\\rangle&#39;
 </pre></div>
 </div>
-<p>You must specify all the necessary values if using this. There is no provision for an incomplete dict passed in.</p>
+<p>При использовании этой опции необходимо определить все значения. Неполное задание словаря не предусмотрено.</p>
 </li>
-<li><p><strong>displaycolor</strong> (dict): The color codes to use for each circuit element. By default, all values default to the value of <code class="docutils literal notranslate"><span class="pre">gatefacecolor</span></code> and the keys are the same as <code class="docutils literal notranslate"><span class="pre">displaytext</span></code>. Also, just like <code class="docutils literal notranslate"><span class="pre">displaytext</span></code>, there is no provision for an incomplete dict passed in.</p></li>
-<li><p><strong>latexdrawerstyle</strong> (bool): When set to True, enable LaTeX mode, which will draw gates like the <code class="docutils literal notranslate"><span class="pre">latex</span></code> output modes.</p></li>
-<li><p><strong>usepiformat</strong> (bool): When set to True, use radians for output.</p></li>
-<li><p><strong>fold</strong> (int): The number of circuit elements at which to fold the circuit. Defaults to 20</p></li>
-<li><p><strong>cregbundle</strong> (bool): If set True, bundle classical registers.</p></li>
-<li><p><strong>showindex</strong> (bool): If set True, draw an index.</p></li>
-<li><p><strong>compress</strong> (bool): If set True, draw a compressed circuit.</p></li>
-<li><p><strong>figwidth</strong> (int): The maximum width (in inches) for the output figure.</p></li>
-<li><p><strong>dpi</strong> (int): The DPI to use for the output image. Defaults to 150.</p></li>
-<li><p><strong>creglinestyle</strong> (str): The style of line to use for classical registers. Choices are <code class="docutils literal notranslate"><span class="pre">'solid'</span></code>, <code class="docutils literal notranslate"><span class="pre">'doublet'</span></code>, or any valid matplotlib <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> kwarg value. Defaults to <code class="docutils literal notranslate"><span class="pre">doublet</span></code>.</p></li>
+<li><p><strong>displaycolor</strong> (dict): Словарь цвета элементов цепи. По умолчанию значения совпадают с <code class="docutils literal notranslate"><span class="pre">gatefacecolor</span></code> и <code class="docutils literal notranslate"><span class="pre">displaytext</span></code>. Как и в предыдущем случае, словарь необходимо определить целиком.</p></li>
+<li><p><strong>latexdrawerstyle</strong> (bool): Значение True включает режим отображения гейтов в стиле LaTeX.</p></li>
+<li><p><strong>usepiformat</strong> (bool): При True углы указываются в радианах.</p></li>
+<li><p><strong>fold</strong> (int): Число элементов цепи на одной строке. По умолчанию: 20</p></li>
+<li><p><strong>cregbundle</strong> (bool): При True классические биты отображаются единым регистром.</p></li>
+<li><p><strong>showindex</strong> (bool): Значение True показывает индекс.</p></li>
+<li><p><strong>compress</strong> (bool): Значение True отображает схему в сжатом виде.</p></li>
+<li><p><strong>figwidth</strong> (int): Максимальная ширина изображения (в дюймах).</p></li>
+<li><p><strong>dpi</strong> (int): Разрешение изображения. По умолчанию: 150.</p></li>
+<li><p><strong>creglinestyle</strong> (str): Тип линии классического регистра. Можно установить <code class="docutils literal notranslate"><span class="pre">'solid'</span></code>, <code class="docutils literal notranslate"><span class="pre">'doublet'``или</span> <span class="pre">любой</span> <span class="pre">другой</span> <span class="pre">аргумент</span> <span class="pre">``linestyle</span></code>, используемый matplotlib. По умолчанию: <code class="docutils literal notranslate"><span class="pre">doublet</span></code>.</p></li>
 </ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -937,10 +941,10 @@ c1_4: ════════════════════════�
 </div>
 </section>
 </section>
-<section id="circuit_drawer()-as-function">
-<h2>circuit_drawer() as function<a class="headerlink" href="#circuit_drawer()-as-function" title="Ссылка на этот заголовок">¶</a></h2>
-<p>If you have an application where you prefer to draw a circuit with a self-contained function instead of as a method of a circuit object, you can directly use the <code class="docutils literal notranslate"><span class="pre">circuit_drawer()</span></code> function, which is part of the public stable interface from <code class="docutils literal notranslate"><span class="pre">qiskit.tools.visualization</span></code>. The function behaves identically to the <code class="docutils literal notranslate"><span class="pre">circuit.draw()</span></code> method, except that it takes in a circuit object as required argument.</p>
-<div class="alert alert-block alert-info"><p>Note: In Qiskit Terra &lt;= 0.7, the default behavior for the circuit_drawer() function is to use the latex output backend, and in 0.6.x that includes a fallback to mpl if latex fails for any reason. Starting with release &gt; 0.7, the default changes to the text output.</p>
+<section id="circuit_drawer()-как-функция">
+<h2>circuit_drawer() как функция<a class="headerlink" href="#circuit_drawer()-как-функция" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Если вы хотите отобразить цепь, не используя метод объекта, а применяя автономную функцию стороннего приложения, можно напрямую использовать функцию <code class="docutils literal notranslate"><span class="pre">circuit_drawer()</span></code>, являющуюся частью открытого стабильного интерфейса из <code class="docutils literal notranslate"><span class="pre">qiskit.tools.visualization</span></code>. Эта функция ведет себя аналогично рассмотренному методу, однако требует указания цепи в качестве аргумента.</p>
+<div class="alert alert-block alert-info"><p>Примечание: В версиях Qiskit Terra &lt;= 0.7, функция circuit_drawer() использует latex-отображение по умолчанию, при этом в 0.6.x резервным вариантом служит mpl при возникновении любых ошибок. Начиная с версии &gt; 0.7 стандартным является текстовый вывод.</p>
 </div><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1019,7 +1023,7 @@ c1_4: ════════════════════════�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/08/13.
+      Обновлено: 2021/09/23.
 
     </p>
   </div>
@@ -1038,16 +1042,16 @@ c1_4: ════════════════════════�
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Visualizing a Quantum Circuit</a><ul>
-<li><a class="reference internal" href="#Drawing-a-Quantum-Circuit">Drawing a Quantum Circuit</a></li>
-<li><a class="reference internal" href="#Alternative-Renderers-for-Circuits">Alternative Renderers for Circuits</a></li>
-<li><a class="reference internal" href="#Controlling-output-from-circuit.draw()">Controlling output from circuit.draw()</a></li>
-<li><a class="reference internal" href="#Customizing-the-output">Customizing the output</a><ul>
-<li><a class="reference internal" href="#Disable-Plot-Barriers-and-Reversing-Bit-Order">Disable Plot Barriers and Reversing Bit Order</a></li>
-<li><a class="reference internal" href="#Backend-specific-customizations">Backend-specific customizations</a></li>
+<li><a class="reference internal" href="#">Визуализация квантовой цепи</a><ul>
+<li><a class="reference internal" href="#Изображение-квантовой-цепи">Изображение квантовой цепи</a></li>
+<li><a class="reference internal" href="#Альтернативные-визуализаторы-цепей">Альтернативные визуализаторы цепей</a></li>
+<li><a class="reference internal" href="#Управлением-выводом-circuit.draw()">Управлением выводом circuit.draw()</a></li>
+<li><a class="reference internal" href="#Настройка-вывода">Настройка вывода</a><ul>
+<li><a class="reference internal" href="#Пропуск-разделителей-и-обратный-порядок-битов">Пропуск разделителей и обратный порядок битов</a></li>
+<li><a class="reference internal" href="#Настройки,-зависящие-от-визуализатора">Настройки, зависящие от визуализатора</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#circuit_drawer()-as-function">circuit_drawer() as function</a></li>
+<li><a class="reference internal" href="#circuit_drawer()-как-функция">circuit_drawer() как функция</a></li>
 </ul>
 </li>
 </ul>
@@ -1113,7 +1117,7 @@ c1_4: ════════════════════════�
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1136,9 +1140,11 @@ c1_4: ════════════════════════�
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

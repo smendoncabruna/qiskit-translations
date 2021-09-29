@@ -1,33 +1,26 @@
-﻿qiskit.algorithms.PhaseEstimationResult
-=======================================
+﻿PhaseEstimationResult
+=====================
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: PhaseEstimationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PhaseEstimationResult.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PhaseEstimationResult.combine
       ~PhaseEstimationResult.filter_phases
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PhaseEstimationResult.circuit_result
-      ~PhaseEstimationResult.most_likely_phase
-      ~PhaseEstimationResult.phase
-      ~PhaseEstimationResult.phases
-   
-   
+   .. autoattribute:: circuit_result
+   .. autoattribute:: most_likely_phase
+   .. autoattribute:: phase
+   .. autoattribute:: phases

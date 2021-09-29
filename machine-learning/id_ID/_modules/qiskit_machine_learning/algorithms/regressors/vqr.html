@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.algorithms.regressors.vqr &mdash; Dokumentasi Qiskit Machine Learning 0.2.0</title>
+  <title>qiskit_machine_learning.algorithms.regressors.vqr &mdash; Dokumentasi Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -99,6 +99,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/algorithms/regressors/vqr.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/algorithms/regressors/vqr.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/algorithms/regressors/vqr.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/algorithms/regressors/vqr.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/algorithms/regressors/vqr.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/_modules/qiskit_machine_learning/algorithms/regressors/vqr.html">Japanese</a></dd>
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -260,7 +266,7 @@
 <span class="c1"># that they have been altered from the originals.</span>
 <span class="sd">&quot;&quot;&quot;An implementation of quantum neural network regressor.&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">cast</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">cast</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -288,6 +294,7 @@
         <span class="n">warm_start</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">quantum_instance</span><span class="p">:</span> <span class="n">QuantumInstance</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">initial_point</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">callback</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
@@ -303,7 +310,11 @@
 <span class="sd">            optimizer: An instance of an optimizer to be used in training. When `None` defaults to SLSQP.</span>
 <span class="sd">            warm_start: Use weights from previous fit to start next fit.</span>
 <span class="sd">            initial_point: Initial point for the optimizer to start from.</span>
-
+<span class="sd">            callback: a reference to a user&#39;s callback function that has two parameters and</span>
+<span class="sd">                returns ``None``. The callback can access intermediate data during training.</span>
+<span class="sd">                On each iteration an optimizer invokes the callback and passes current weights</span>
+<span class="sd">                as an array and a computed value as a float of the objective function being</span>
+<span class="sd">                optimized. This allows to track how well optimization / training process is going on.</span>
 <span class="sd">        Raises:</span>
 <span class="sd">            QiskitMachineLearningError: Neither num_qubits, nor feature_map, nor ansatz given.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -324,6 +335,7 @@
             <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span>
             <span class="n">warm_start</span><span class="o">=</span><span class="n">warm_start</span><span class="p">,</span>
             <span class="n">initial_point</span><span class="o">=</span><span class="n">initial_point</span><span class="p">,</span>
+            <span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="nd">@property</span>

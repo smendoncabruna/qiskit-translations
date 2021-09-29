@@ -1,19 +1,18 @@
-﻿qiskit.pulse.Schedule
-=====================
+﻿Schedule
+========
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: Schedule
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Schedule.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Schedule.append
       ~Schedule.assign_parameters
       ~Schedule.ch_duration
@@ -29,26 +28,20 @@
       ~Schedule.is_parameterized
       ~Schedule.replace
       ~Schedule.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Schedule.channels
-      ~Schedule.children
-      ~Schedule.duration
-      ~Schedule.instances_counter
-      ~Schedule.instructions
-      ~Schedule.metadata
-      ~Schedule.name
-      ~Schedule.parameters
-      ~Schedule.prefix
-      ~Schedule.start_time
-      ~Schedule.stop_time
-      ~Schedule.timeslots
-   
-   
+   .. autoattribute:: channels
+   .. autoattribute:: children
+   .. autoattribute:: duration
+   .. autoattribute:: instances_counter
+   .. autoattribute:: instructions
+   .. autoattribute:: metadata
+   .. autoattribute:: name
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time
+   .. autoattribute:: timeslots

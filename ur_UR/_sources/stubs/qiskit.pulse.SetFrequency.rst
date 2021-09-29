@@ -1,19 +1,18 @@
-﻿qiskit.pulse.SetFrequency
-=========================
+﻿SetFrequency
+============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: SetFrequency
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SetFrequency.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SetFrequency.append
       ~SetFrequency.assign_parameters
       ~SetFrequency.ch_duration
@@ -24,25 +23,19 @@
       ~SetFrequency.insert
       ~SetFrequency.is_parameterized
       ~SetFrequency.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SetFrequency.channel
-      ~SetFrequency.channels
-      ~SetFrequency.duration
-      ~SetFrequency.frequency
-      ~SetFrequency.id
-      ~SetFrequency.instructions
-      ~SetFrequency.name
-      ~SetFrequency.operands
-      ~SetFrequency.parameters
-      ~SetFrequency.start_time
-      ~SetFrequency.stop_time
-   
-   
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: frequency
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

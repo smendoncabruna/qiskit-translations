@@ -1,31 +1,17 @@
-﻿qiskit.chemistry.drivers.BaseDriver
-===================================
+﻿BaseDriver
+==========
 
 .. currentmodule:: qiskit.chemistry.drivers
 
 .. autoclass:: BaseDriver
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~BaseDriver.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BaseDriver.basis
-      ~BaseDriver.hf_method
-      ~BaseDriver.molecule
-      ~BaseDriver.supports_molecule
-   
-   
+   .. autoattribute:: basis
+   .. autoattribute:: hf_method
+   .. autoattribute:: molecule
+   .. autoattribute:: supports_molecule

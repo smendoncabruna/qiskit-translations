@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.BIPMapping
-===================================
+﻿BIPMapping
+==========
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: BIPMapping
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~BIPMapping.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~BIPMapping.name
       ~BIPMapping.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~BIPMapping.is_analysis_pass
-      ~BIPMapping.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

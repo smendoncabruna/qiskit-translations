@@ -1,34 +1,27 @@
-﻿qiskit.algorithms.GroverResult
-==============================
+﻿GroverResult
+============
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: GroverResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~GroverResult.__init__
-      ~GroverResult.combine
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~GroverResult.combine
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~GroverResult.assignment
-      ~GroverResult.circuit_results
-      ~GroverResult.iterations
-      ~GroverResult.max_probability
-      ~GroverResult.oracle_evaluation
-      ~GroverResult.top_measurement
-   
-   
+   .. autoattribute:: assignment
+   .. autoattribute:: circuit_results
+   .. autoattribute:: iterations
+   .. autoattribute:: max_probability
+   .. autoattribute:: oracle_evaluation
+   .. autoattribute:: top_measurement

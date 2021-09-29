@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.MultivariateVariationalDistribution
-==============================================================================
+﻿MultivariateVariationalDistribution
+===================================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: MultivariateVariationalDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MultivariateVariationalDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MultivariateVariationalDistribution.build
       ~MultivariateVariationalDistribution.build_controlled
       ~MultivariateVariationalDistribution.build_controlled_inverse
@@ -28,23 +27,17 @@
       ~MultivariateVariationalDistribution.required_ancillas
       ~MultivariateVariationalDistribution.required_ancillas_controlled
       ~MultivariateVariationalDistribution.set_probabilities
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MultivariateVariationalDistribution.dimension
-      ~MultivariateVariationalDistribution.high
-      ~MultivariateVariationalDistribution.low
-      ~MultivariateVariationalDistribution.num_qubits
-      ~MultivariateVariationalDistribution.num_target_qubits
-      ~MultivariateVariationalDistribution.num_values
-      ~MultivariateVariationalDistribution.probabilities
-      ~MultivariateVariationalDistribution.probabilities_vector
-      ~MultivariateVariationalDistribution.values
-   
-   
+   .. autoattribute:: dimension
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_qubits
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: probabilities_vector
+   .. autoattribute:: values

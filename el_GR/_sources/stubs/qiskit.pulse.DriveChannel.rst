@@ -1,33 +1,26 @@
-﻿qiskit.pulse.DriveChannel
-=========================
+﻿DriveChannel
+============
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: DriveChannel
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~DriveChannel.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~DriveChannel.assign
       ~DriveChannel.is_parameterized
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~DriveChannel.index
-      ~DriveChannel.name
-      ~DriveChannel.parameters
-      ~DriveChannel.prefix
-   
-   
+   .. autoattribute:: index
+   .. autoattribute:: name
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix

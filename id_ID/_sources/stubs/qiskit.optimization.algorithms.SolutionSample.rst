@@ -1,22 +1,10 @@
-﻿qiskit.optimization.algorithms.SolutionSample
-=============================================
+﻿SolutionSample
+==============
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: SolutionSample
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~SolutionSample.__init__
-   
-   
-
-   
-   
-   

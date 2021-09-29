@@ -1,49 +1,28 @@
-﻿qiskit.circuit.library.ZGate
-============================
+﻿ZGate
+=====
 
 .. currentmodule:: qiskit.circuit.library
 
 .. autoclass:: ZGate
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~ZGate.__init__
-      ~ZGate.add_decomposition
-      ~ZGate.assemble
-      ~ZGate.broadcast_arguments
-      ~ZGate.c_if
-      ~ZGate.control
-      ~ZGate.copy
-      ~ZGate.inverse
-      ~ZGate.is_parameterized
-      ~ZGate.mirror
-      ~ZGate.power
-      ~ZGate.qasm
-      ~ZGate.repeat
-      ~ZGate.reverse_ops
-      ~ZGate.soft_compare
-      ~ZGate.to_matrix
-      ~ZGate.validate_parameter
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~ZGate.control
+      ~ZGate.inverse
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ZGate.decompositions
-      ~ZGate.definition
-      ~ZGate.duration
-      ~ZGate.label
-      ~ZGate.params
-      ~ZGate.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

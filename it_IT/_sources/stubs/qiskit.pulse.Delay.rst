@@ -1,19 +1,18 @@
-﻿qiskit.pulse.Delay
-==================
+﻿Delay
+=====
 
 .. currentmodule:: qiskit.pulse
 
 .. autoclass:: Delay
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Delay.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Delay.append
       ~Delay.assign_parameters
       ~Delay.ch_duration
@@ -24,24 +23,18 @@
       ~Delay.insert
       ~Delay.is_parameterized
       ~Delay.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Delay.channel
-      ~Delay.channels
-      ~Delay.duration
-      ~Delay.id
-      ~Delay.instructions
-      ~Delay.name
-      ~Delay.operands
-      ~Delay.parameters
-      ~Delay.start_time
-      ~Delay.stop_time
-   
-   
+   .. autoattribute:: channel
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time

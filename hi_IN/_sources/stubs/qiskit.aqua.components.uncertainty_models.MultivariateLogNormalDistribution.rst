@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_models.MultivariateLogNormalDistribution
-============================================================================
+﻿MultivariateLogNormalDistribution
+=================================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_models
 
 .. autoclass:: MultivariateLogNormalDistribution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MultivariateLogNormalDistribution.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~MultivariateLogNormalDistribution.build
       ~MultivariateLogNormalDistribution.build_controlled
       ~MultivariateLogNormalDistribution.build_controlled_inverse
@@ -27,23 +26,17 @@
       ~MultivariateLogNormalDistribution.pdf_to_probabilities
       ~MultivariateLogNormalDistribution.required_ancillas
       ~MultivariateLogNormalDistribution.required_ancillas_controlled
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~MultivariateLogNormalDistribution.dimension
-      ~MultivariateLogNormalDistribution.high
-      ~MultivariateLogNormalDistribution.low
-      ~MultivariateLogNormalDistribution.num_qubits
-      ~MultivariateLogNormalDistribution.num_target_qubits
-      ~MultivariateLogNormalDistribution.num_values
-      ~MultivariateLogNormalDistribution.probabilities
-      ~MultivariateLogNormalDistribution.probabilities_vector
-      ~MultivariateLogNormalDistribution.values
-   
-   
+   .. autoattribute:: dimension
+   .. autoattribute:: high
+   .. autoattribute:: low
+   .. autoattribute:: num_qubits
+   .. autoattribute:: num_target_qubits
+   .. autoattribute:: num_values
+   .. autoattribute:: probabilities
+   .. autoattribute:: probabilities_vector
+   .. autoattribute:: values

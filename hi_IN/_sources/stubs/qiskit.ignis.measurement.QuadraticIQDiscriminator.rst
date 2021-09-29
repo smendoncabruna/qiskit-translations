@@ -1,19 +1,18 @@
-﻿qiskit.ignis.measurement.QuadraticIQDiscriminator
-=================================================
+﻿QuadraticIQDiscriminator
+========================
 
 .. currentmodule:: qiskit.ignis.measurement
 
 .. autoclass:: QuadraticIQDiscriminator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QuadraticIQDiscriminator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QuadraticIQDiscriminator.add_data
       ~QuadraticIQDiscriminator.discriminate
       ~QuadraticIQDiscriminator.fit
@@ -23,17 +22,11 @@
       ~QuadraticIQDiscriminator.is_calibration
       ~QuadraticIQDiscriminator.plot
       ~QuadraticIQDiscriminator.plot_xdata
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~QuadraticIQDiscriminator.expected_states
-      ~QuadraticIQDiscriminator.fitted
-      ~QuadraticIQDiscriminator.schedules
-   
-   
+   .. autoattribute:: expected_states
+   .. autoattribute:: fitted
+   .. autoattribute:: schedules

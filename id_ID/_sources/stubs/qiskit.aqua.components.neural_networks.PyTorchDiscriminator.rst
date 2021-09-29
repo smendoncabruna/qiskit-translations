@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.neural\_networks.PyTorchDiscriminator
-============================================================
+﻿PyTorchDiscriminator
+====================
 
 .. currentmodule:: qiskit.aqua.components.neural_networks
 
 .. autoclass:: PyTorchDiscriminator
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PyTorchDiscriminator.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PyTorchDiscriminator.get_label
       ~PyTorchDiscriminator.gradient_penalty
       ~PyTorchDiscriminator.load_model
@@ -21,15 +20,9 @@
       ~PyTorchDiscriminator.save_model
       ~PyTorchDiscriminator.set_seed
       ~PyTorchDiscriminator.train
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PyTorchDiscriminator.discriminator_net
-   
-   
+   .. autoattribute:: discriminator_net

@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.Optimize1qGatesDecomposition
-=====================================================
+﻿Optimize1qGatesDecomposition
+============================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: Optimize1qGatesDecomposition
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Optimize1qGatesDecomposition.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Optimize1qGatesDecomposition.name
       ~Optimize1qGatesDecomposition.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Optimize1qGatesDecomposition.is_analysis_pass
-      ~Optimize1qGatesDecomposition.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

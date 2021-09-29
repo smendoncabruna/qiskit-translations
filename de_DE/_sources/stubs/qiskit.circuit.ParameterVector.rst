@@ -1,31 +1,24 @@
-﻿qiskit.circuit.ParameterVector
-==============================
+﻿ParameterVector
+===============
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: ParameterVector
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ParameterVector.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~ParameterVector.index
       ~ParameterVector.resize
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ParameterVector.name
-      ~ParameterVector.params
-   
-   
+   .. autoattribute:: name
+   .. autoattribute:: params

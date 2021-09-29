@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.backends.aer_simulator &mdash; Qiskit 0.29.0 dokumentáció</title>
+  <title>qiskit.providers.aer.backends.aer_simulator &mdash; Qiskit 0.30.0 dokumentáció</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Dokumentáció főoldal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Bevezető</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Hivatkozások</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Szimulátor (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Kísérletek (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Alkalmazás Modulok (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applikáció (Aqua) Migrálási Útmutató</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Applikáció (Aqua) Migrálási Útmutató</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hibaelhárítás</span></p>
 <ul>
@@ -473,12 +480,27 @@
 <span class="sd">    The following simulator specific backend options are supported</span>
 
 <span class="sd">    * ``method`` (str): Set the simulation method (Default: ``&quot;automatic&quot;``).</span>
+<span class="sd">      Use :meth:`available_methods` to return a list of all availabe methods.</span>
 
 <span class="sd">    * ``device`` (str): Set the simulation device (Default: ``&quot;CPU&quot;``).</span>
+<span class="sd">      Use :meth:`available_devices` to return a list of devices supported</span>
+<span class="sd">      on the current system.</span>
 
 <span class="sd">    * ``precision`` (str): Set the floating point precision for</span>
 <span class="sd">      certain simulation methods to either ``&quot;single&quot;`` or ``&quot;double&quot;``</span>
 <span class="sd">      precision (default: ``&quot;double&quot;``).</span>
+
+<span class="sd">    * ``executor`` (futures.Executor or None): Set a custom executor for</span>
+<span class="sd">      asynchronous running of simulation jobs (Default: None).</span>
+
+<span class="sd">    * ``max_job_size`` (int or None): If the number of run circuits</span>
+<span class="sd">      exceeds this value simulation will be run as a set of of sub-jobs</span>
+<span class="sd">      on the executor. If ``None`` simulation of all circuits are submitted</span>
+<span class="sd">      to the executor as a single job (Default: None).</span>
+
+<span class="sd">    * ``enable_truncation`` (bool): If set to True this removes unnecessary</span>
+<span class="sd">      qubits which do not affect the simulation outcome from the simulated</span>
+<span class="sd">      circuits (Default: True).</span>
 
 <span class="sd">    * ``zero_threshold`` (double): Sets the threshold for truncating</span>
 <span class="sd">      small values to zero in the result data (Default: 1e-10).</span>
@@ -547,26 +569,26 @@
 <span class="sd">    These backend options only apply when using the ``&quot;extended_stabilizer&quot;``</span>
 <span class="sd">    simulation method:</span>
 
-<span class="sd">    * ``extended_stabilizer_sampling_methid`` (string): Choose how to simulate</span>
+<span class="sd">    * ``extended_stabilizer_sampling_method`` (string): Choose how to simulate</span>
 <span class="sd">      measurements on qubits. The performance of the simulator depends</span>
 <span class="sd">      significantly on this choice. In the following, let n be the number of</span>
 <span class="sd">      qubits in the circuit, m the number of qubits measured, and S be the</span>
-<span class="sd">      number of shots. (Default: resampled_metropolis)</span>
+<span class="sd">      number of shots (Default: resampled_metropolis).</span>
 
-<span class="sd">      * ``&quot;metropolis&quot;``: Use a Monte-Carlo method to sample many output</span>
+<span class="sd">      - ``&quot;metropolis&quot;``: Use a Monte-Carlo method to sample many output</span>
 <span class="sd">        strings from the simulator at once. To be accurate, this method</span>
 <span class="sd">        requires that all the possible output strings have a non-zero</span>
 <span class="sd">        probability. It will give inaccurate results on cases where</span>
 <span class="sd">        the circuit has many zero-probability outcomes.</span>
 <span class="sd">        This method has an overall runtime that scales as n^{2} + (S-1)n.</span>
 
-<span class="sd">      * ``&quot;resampled_metropolis&quot;``: A variant of the metropolis method,</span>
+<span class="sd">      - ``&quot;resampled_metropolis&quot;``: A variant of the metropolis method,</span>
 <span class="sd">        where the Monte-Carlo method is reinitialised for every shot. This</span>
 <span class="sd">        gives better results for circuits where some outcomes have zero</span>
 <span class="sd">        probability, but will still fail if the output distribution</span>
 <span class="sd">        is sparse. The overall runtime scales as Sn^{2}.</span>
 
-<span class="sd">      * ``&quot;norm_estimation&quot;``: An alternative sampling method using</span>
+<span class="sd">      - ``&quot;norm_estimation&quot;``: An alternative sampling method using</span>
 <span class="sd">        random state inner products to estimate outcome probabilites. This</span>
 <span class="sd">        method requires twice as much memory, and significantly longer</span>
 <span class="sd">        runtimes, but gives accurate results on circuits with sparse</span>
@@ -616,15 +638,23 @@
 <span class="sd">      their squares is smaller than this threshold.</span>
 <span class="sd">      (Default: 1e-16).</span>
 
-<span class="sd">    * ``mps_sample_measure_algorithm`` (str):</span>
-<span class="sd">      Choose which algorithm to use for ``&quot;sample_measure&quot;``. ``&quot;mps_probabilities&quot;``</span>
-<span class="sd">      means all state probabilities are computed and measurements are based on them.</span>
-<span class="sd">      It is more efficient for a large number of shots, small number of qubits and low</span>
-<span class="sd">      entanglement. ``&quot;mps_apply_measure&quot;`` creates a copy of the mps structure and</span>
-<span class="sd">      makes a measurement on it. It is more effients for a small number of shots, high</span>
-<span class="sd">      number of qubits, and low entanglement. If the user does not specify the algorithm,</span>
-<span class="sd">      a heuristic algorithm is used to select between the two algorithms.</span>
-<span class="sd">      (Default: &quot;mps_heuristic&quot;).</span>
+<span class="sd">    * ``mps_sample_measure_algorithm`` (str): Choose which algorithm to use for</span>
+<span class="sd">      ``&quot;sample_measure&quot;`` (Default: &quot;mps_apply_measure&quot;).</span>
+
+<span class="sd">      - ``&quot;mps_probabilities&quot;``: This method first constructs the probability</span>
+<span class="sd">        vector and then generates a sample per shot. It is more efficient for</span>
+<span class="sd">        a large number of shots and a small number of qubits, with complexity</span>
+<span class="sd">        O(2^n * n * D^2) to create the vector and O(1) per shot, where n is</span>
+<span class="sd">        the number of qubits and D is the bond dimension.</span>
+
+<span class="sd">      - ``&quot;mps_apply_measure&quot;``: This method creates a copy of the mps structure</span>
+<span class="sd">        and measures directly on it. It is more efficient for a small number of</span>
+<span class="sd">        shots, and a large number of qubits, with complexity around</span>
+<span class="sd">        O(n * D^2) per shot.</span>
+
+<span class="sd">    * ``mps_log_data`` (str): if True, output logging data of the MPS</span>
+<span class="sd">      structure: bond dimensions and values discarded during approximation.</span>
+<span class="sd">      (Default: False)</span>
 
 <span class="sd">    These backend options apply in circuit optimization passes:</span>
 
@@ -641,46 +671,46 @@
     <span class="n">_BASIS_GATES</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;statevector&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
             <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;u2&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="s1">&#39;ry&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2&#39;</span><span class="p">,</span> <span class="s1">&#39;cu3&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2&#39;</span><span class="p">,</span> <span class="s1">&#39;cu3&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span>
             <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;cswap&#39;</span><span class="p">,</span> <span class="s1">&#39;mcx&#39;</span><span class="p">,</span> <span class="s1">&#39;mcy&#39;</span><span class="p">,</span> <span class="s1">&#39;mcz&#39;</span><span class="p">,</span> <span class="s1">&#39;mcsx&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;mcphase&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu1&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu2&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu3&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrx&#39;</span><span class="p">,</span> <span class="s1">&#39;mcry&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrz&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;mcp&#39;</span><span class="p">,</span> <span class="s1">&#39;mcphase&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu1&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu2&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu3&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrx&#39;</span><span class="p">,</span> <span class="s1">&#39;mcry&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrz&#39;</span><span class="p">,</span>
             <span class="s1">&#39;mcr&#39;</span><span class="p">,</span> <span class="s1">&#39;mcswap&#39;</span><span class="p">,</span> <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal&#39;</span><span class="p">,</span> <span class="s1">&#39;multiplexer&#39;</span><span class="p">,</span>
             <span class="s1">&#39;initialize&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span><span class="p">,</span> <span class="s1">&#39;mcx_gray&#39;</span>
         <span class="p">]),</span>
         <span class="s1">&#39;density_matrix&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
             <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;u2&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="s1">&#39;ry&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
             <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span> <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span>
             <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span><span class="p">,</span>
         <span class="p">]),</span>
         <span class="s1">&#39;matrix_product_state&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
             <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;u2&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;roerror&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;roerror&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span><span class="p">,</span>
             <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="s1">&#39;ry&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span> <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cswap&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal&#39;</span><span class="p">,</span>
             <span class="s1">&#39;initialize&#39;</span>
         <span class="p">]),</span>
         <span class="s1">&#39;stabilizer&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
-            <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span>
         <span class="p">]),</span>
         <span class="s1">&#39;extended_stabilizer&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
-            <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;u0&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccz&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span>
+            <span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;u0&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccz&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span>
         <span class="p">]),</span>
         <span class="s1">&#39;unitary&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
             <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;u2&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="s1">&#39;ry&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2&#39;</span><span class="p">,</span> <span class="s1">&#39;cu3&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;csx&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;cu2&#39;</span><span class="p">,</span> <span class="s1">&#39;cu3&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span>
             <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;cswap&#39;</span><span class="p">,</span> <span class="s1">&#39;mcx&#39;</span><span class="p">,</span> <span class="s1">&#39;mcy&#39;</span><span class="p">,</span> <span class="s1">&#39;mcz&#39;</span><span class="p">,</span> <span class="s1">&#39;mcsx&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;mcp&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu1&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu2&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu3&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrx&#39;</span><span class="p">,</span> <span class="s1">&#39;mcry&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrz&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;mcp&#39;</span><span class="p">,</span> <span class="s1">&#39;mcphase&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu1&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu2&#39;</span><span class="p">,</span> <span class="s1">&#39;mcu3&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrx&#39;</span><span class="p">,</span> <span class="s1">&#39;mcry&#39;</span><span class="p">,</span> <span class="s1">&#39;mcrz&#39;</span><span class="p">,</span>
             <span class="s1">&#39;mcr&#39;</span><span class="p">,</span> <span class="s1">&#39;mcswap&#39;</span><span class="p">,</span> <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal&#39;</span><span class="p">,</span> <span class="s1">&#39;multiplexer&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span><span class="p">,</span>
         <span class="p">]),</span>
         <span class="s1">&#39;superop&#39;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">([</span>
             <span class="s1">&#39;u1&#39;</span><span class="p">,</span> <span class="s1">&#39;u2&#39;</span><span class="p">,</span> <span class="s1">&#39;u3&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;rx&#39;</span><span class="p">,</span> <span class="s1">&#39;ry&#39;</span><span class="p">,</span> <span class="s1">&#39;rz&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="s1">&#39;sx&#39;</span><span class="p">,</span> <span class="s1">&#39;sxdg&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;tdg&#39;</span><span class="p">,</span> <span class="s1">&#39;swap&#39;</span><span class="p">,</span> <span class="s1">&#39;cx&#39;</span><span class="p">,</span>
             <span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="s1">&#39;cz&#39;</span><span class="p">,</span> <span class="s1">&#39;cp&#39;</span><span class="p">,</span> <span class="s1">&#39;cu1&#39;</span><span class="p">,</span> <span class="s1">&#39;rxx&#39;</span><span class="p">,</span> <span class="s1">&#39;ryy&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;rzz&#39;</span><span class="p">,</span> <span class="s1">&#39;rzx&#39;</span><span class="p">,</span> <span class="s1">&#39;ccx&#39;</span><span class="p">,</span> <span class="s1">&#39;unitary&#39;</span><span class="p">,</span> <span class="s1">&#39;diagonal&#39;</span><span class="p">,</span> <span class="s1">&#39;delay&#39;</span><span class="p">,</span> <span class="s1">&#39;pauli&#39;</span>
         <span class="p">])</span>
     <span class="p">}</span>
     <span class="c1"># Automatic method basis gates are the union of statevector,</span>
@@ -767,11 +797,11 @@
 
     <span class="n">_AVAILABLE_METHODS</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="n">_SIMULATION_DEVICES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CPU&#39;</span><span class="p">,</span> <span class="s1">&#39;GPU&#39;</span><span class="p">,</span> <span class="s1">&#39;Thrust&#39;</span><span class="p">]</span>
+    <span class="n">_SIMULATION_DEVICES</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;CPU&#39;</span><span class="p">,</span> <span class="s1">&#39;GPU&#39;</span><span class="p">,</span> <span class="s1">&#39;Thrust&#39;</span><span class="p">)</span>
 
     <span class="n">_AVAILABLE_DEVICES</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="AerSimulator.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.html#qiskit.providers.aer.AerSimulator.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">provider</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -798,9 +828,8 @@
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span>
                          <span class="n">properties</span><span class="o">=</span><span class="n">properties</span><span class="p">,</span>
-                         <span class="n">available_methods</span><span class="o">=</span><span class="n">AerSimulator</span><span class="o">.</span><span class="n">_AVAILABLE_METHODS</span><span class="p">,</span>
                          <span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span>
-                         <span class="n">backend_options</span><span class="o">=</span><span class="n">backend_options</span><span class="p">)</span></div>
+                         <span class="n">backend_options</span><span class="o">=</span><span class="n">backend_options</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_default_options</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
@@ -810,6 +839,9 @@
             <span class="n">method</span><span class="o">=</span><span class="s1">&#39;automatic&#39;</span><span class="p">,</span>
             <span class="n">device</span><span class="o">=</span><span class="s1">&#39;CPU&#39;</span><span class="p">,</span>
             <span class="n">precision</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="p">,</span>
+            <span class="n">executor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">max_job_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">enable_truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">zero_threshold</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span>
             <span class="n">validation_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">max_parallel_threads</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -838,13 +870,14 @@
             <span class="n">extended_stabilizer_metropolis_mixing_time</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
             <span class="n">extended_stabilizer_approximation_error</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
             <span class="n">extended_stabilizer_norm_estimation_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-            <span class="n">extended_stabilizer_norm_estimation_repitions</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">extended_stabilizer_norm_estimation_repetitions</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
             <span class="n">extended_stabilizer_parallel_threshold</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
             <span class="n">extended_stabilizer_probabilities_snapshot_samples</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
             <span class="c1"># MPS options</span>
             <span class="n">matrix_product_state_truncation_threshold</span><span class="o">=</span><span class="mf">1e-16</span><span class="p">,</span>
             <span class="n">matrix_product_state_max_bond_dimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">mps_sample_measure_algorithm</span><span class="o">=</span><span class="s1">&#39;mps_heuristic&#39;</span><span class="p">,</span>
+            <span class="n">mps_log_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">chop_threshold</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span>
             <span class="n">mps_parallel_threshold</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
             <span class="n">mps_omp_threads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -858,7 +891,7 @@
         <span class="n">pad</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="se">\n</span><span class="si">{}</span><span class="s1">noise_model=</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">display</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">pad</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">noise_model</span><span class="p">))</span>
 
-<div class="viewcode-block" id="AerSimulator.name"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.html#qiskit.providers.aer.AerSimulator.name">[docs]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="AerSimulator.name"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.name.html#qiskit.providers.aer.AerSimulator.name">[docs]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Format backend name string for simulator&quot;&quot;&quot;</span>
         <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_configuration</span><span class="o">.</span><span class="n">backend_name</span>
         <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -869,7 +902,7 @@
             <span class="n">name</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">name</span></div>
 
-<div class="viewcode-block" id="AerSimulator.from_backend"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.html#qiskit.providers.aer.AerSimulator.from_backend">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="AerSimulator.from_backend"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.from_backend.html#qiskit.providers.aer.AerSimulator.from_backend">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_backend</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize simulator from backend.&quot;&quot;&quot;</span>
         <span class="c1"># pylint: disable=import-outside-toplevel</span>
@@ -896,11 +929,15 @@
                   <span class="o">**</span><span class="n">options</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">sim</span></div>
 
-<div class="viewcode-block" id="AerSimulator.available_devices"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.html#qiskit.providers.aer.AerSimulator.available_devices">[docs]</a>    <span class="k">def</span> <span class="nf">available_devices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="AerSimulator.available_methods"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.available_methods.html#qiskit.providers.aer.AerSimulator.available_methods">[docs]</a>    <span class="k">def</span> <span class="nf">available_methods</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the available simulation methods.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_AVAILABLE_DEVICES</span></div>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_AVAILABLE_METHODS</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="AerSimulator.configuration"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.html#qiskit.providers.aer.AerSimulator.configuration">[docs]</a>    <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="AerSimulator.available_devices"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.available_devices.html#qiskit.providers.aer.AerSimulator.available_devices">[docs]</a>    <span class="k">def</span> <span class="nf">available_devices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the available simulation methods.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_AVAILABLE_DEVICES</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="AerSimulator.configuration"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.configuration.html#qiskit.providers.aer.AerSimulator.configuration">[docs]</a>    <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the simulator backend configuration.</span>
 
 <span class="sd">        Returns:</span>
@@ -929,11 +966,15 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">cpp_execute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_controller</span><span class="p">,</span> <span class="n">qobj</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AerSimulator.set_options"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.html#qiskit.providers.aer.AerSimulator.set_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
+<div class="viewcode-block" id="AerSimulator.set_options"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.AerSimulator.set_options.html#qiskit.providers.aer.AerSimulator.set_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
         <span class="n">out_options</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">update_basis_gates</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">fields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;method&#39;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">available_methods</span><span class="p">()):</span>
+                    <span class="k">raise</span> <span class="n">AerError</span><span class="p">(</span>
+                        <span class="s2">&quot;Invalid simulation method </span><span class="si">{}</span><span class="s2">. Available methods&quot;</span>
+                        <span class="s2">&quot; are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">available_methods</span><span class="p">()))</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_set_method_config</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
                 <span class="n">update_basis_gates</span> <span class="o">=</span> <span class="kc">True</span>
                 <span class="n">out_options</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
@@ -1058,7 +1099,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Utolsó frissítés 2021/08/13.
+      Utolsó frissítés 2021/09/23.
 
     </p>
   </div>
@@ -1138,7 +1179,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1161,9 +1202,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

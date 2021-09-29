@@ -1,23 +1,18 @@
-﻿qiskit.aqua.operators.evolutions.MatrixEvolution
-================================================
+﻿MatrixEvolution
+===============
 
 .. currentmodule:: qiskit.aqua.operators.evolutions
 
 .. autoclass:: MatrixEvolution
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~MatrixEvolution.__init__
-      ~MatrixEvolution.convert
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
-   
+      ~MatrixEvolution.convert
+
+

@@ -1,19 +1,18 @@
-qiskit.pulse.instructions.Call
-==============================
+Call
+====
 
 .. currentmodule:: qiskit.pulse.instructions
 
 .. autoclass:: Call
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Call.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Call.append
       ~Call.assign_parameters
       ~Call.assigned_subroutine
@@ -25,26 +24,20 @@ qiskit.pulse.instructions.Call
       ~Call.insert
       ~Call.is_parameterized
       ~Call.shift
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Call.arguments
-      ~Call.channels
-      ~Call.duration
-      ~Call.id
-      ~Call.instructions
-      ~Call.name
-      ~Call.operands
-      ~Call.parameters
-      ~Call.prefix
-      ~Call.start_time
-      ~Call.stop_time
-      ~Call.subroutine
-   
-   
+   .. autoattribute:: arguments
+   .. autoattribute:: channels
+   .. autoattribute:: duration
+   .. autoattribute:: id
+   .. autoattribute:: instructions
+   .. autoattribute:: name
+   .. autoattribute:: operands
+   .. autoattribute:: parameters
+   .. autoattribute:: prefix
+   .. autoattribute:: start_time
+   .. autoattribute:: stop_time
+   .. autoattribute:: subroutine

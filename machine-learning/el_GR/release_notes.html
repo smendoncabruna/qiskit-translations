@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release Notes &mdash; Τεκμηρίωση του Qiskit Machine Learning - 0.2.0</title>
+  <title>Release Notes &mdash; Τεκμηρίωση του Qiskit Machine Learning - 0.2.1</title>
   
 
   
@@ -100,6 +100,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/release_notes.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/release_notes.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/release_notes.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/release_notes.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/release_notes.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/release_notes.html">Japanese</a></dd>
@@ -146,7 +152,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -251,6 +257,56 @@
               
   <br><br><br><div class="section" id="release-notes">
 <h1>Release Notes<a class="headerlink" href="#release-notes" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h1>
+<div class="section" id="release-notes-0-2-1-6">
+<span id="id1"></span><h2>0.2.1-6<a class="headerlink" href="#release-notes-0-2-1-6" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
+<div class="section" id="bug-fixes">
+<span id="release-notes-0-2-1-6-bug-fixes"></span><h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
+<ul class="simple">
+<li><p>In some configurations forward pass of a neural network may return the same value across
+multiple calls even if different weights are passed. This behavior is confirmed with <code class="docutils literal notranslate"><span class="pre">AQGD</span></code>
+optimizer. This was due to a bug in the implementation of the objective functions. They cache
+a value obtained at the forward pass to be re-used in the backward pass. Initially, this cache
+was based on an identifier (a call of id() function) of the weights array. AQGD re-uses the
+same array for weights: it updates the values keeping an instance of the array the same. This
+caused to re-use the same forward pass value across all iteration. Now the forward pass cache
+is based on actual values of weights instead of identifiers.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-notes-0-2-1">
+<span id="id2"></span><h2>0.2.1<a class="headerlink" href="#release-notes-0-2-1" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h2>
+<div class="section" id="new-features">
+<span id="release-notes-0-2-1-new-features"></span><h3>New Features<a class="headerlink" href="#new-features" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
+<ul class="simple">
+<li><p>The class <code class="docutils literal notranslate"><span class="pre">TrainableModel</span></code>, and its sub-classes <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code>, <code class="docutils literal notranslate"><span class="pre">NeuralNetworkRegressor</span></code>, <code class="docutils literal notranslate"><span class="pre">VQR</span></code>, 
+<code class="docutils literal notranslate"><span class="pre">VQC</span></code>, have a new optional argument <code class="docutils literal notranslate"><span class="pre">callback</span></code>. User can optionally provide a callback function that can access 
+the intermediate training data to track the optimization process, else it defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>. The callback function 
+takes in two parameters: the weights for the objective function and the computed objective value. For each iteration
+an optimizer invokes the callback and passes current weights and computed value of the objective function.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Classification models (i.e. models that extend the <code class="docutils literal notranslate"><span class="pre">NeuralNetworkClassifier</span></code> class like VQC)
+can now handle categorical target data in methods like <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">score()</span></code>. Categorical
+data is inferred from the presence of string type data and is automatically encoded using
+either one-hot or integer encodings. Encoder type is determined by the <code class="docutils literal notranslate"><span class="pre">one_hot</span></code> argument
+supplied when instantiating the model.</p></li>
+</ul>
+</div>
+<div class="section" id="release-notes-0-2-1-bug-fixes">
+<span id="id3"></span><h3>Bug Fixes<a class="headerlink" href="#release-notes-0-2-1-bug-fixes" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
+<ul class="simple">
+<li><p>Fix a bug, where <code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit_machine_learning.circuit.library.RawFeatureVector.copy()</span></code> didn’t
+copy all internal settings which could lead to issues with the copied circuit. As a consequence
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">qiskit_machine_learning.circuit.library.RawFeatureVector.bind_parameters()</span></code> is also fixed.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The QNN weight parameter in TorchConnector is now registered in the torch
+DAG as <code class="docutils literal notranslate"><span class="pre">weight</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">_weights</span></code>. This is consistent with the
+PyTorch naming convention and the <code class="docutils literal notranslate"><span class="pre">weight</span></code> property used to get access
+to the computed weights.</p></li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -294,7 +350,18 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Release Notes</a></li>
+<li><a class="reference internal" href="#">Release Notes</a><ul>
+<li><a class="reference internal" href="#release-notes-0-2-1-6">0.2.1-6</a><ul>
+<li><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#release-notes-0-2-1">0.2.1</a><ul>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#release-notes-0-2-1-bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             </div>

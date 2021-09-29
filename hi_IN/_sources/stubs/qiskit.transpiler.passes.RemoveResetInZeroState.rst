@@ -1,31 +1,24 @@
-﻿qiskit.transpiler.passes.RemoveResetInZeroState
-===============================================
+﻿RemoveResetInZeroState
+======================
 
 .. currentmodule:: qiskit.transpiler.passes
 
 .. autoclass:: RemoveResetInZeroState
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RemoveResetInZeroState.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RemoveResetInZeroState.name
       ~RemoveResetInZeroState.run
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~RemoveResetInZeroState.is_analysis_pass
-      ~RemoveResetInZeroState.is_transformation_pass
-   
-   
+   .. autoattribute:: is_analysis_pass
+   .. autoattribute:: is_transformation_pass

@@ -1,24 +1,19 @@
-﻿qiskit.qobj.QasmQobjExperiment
-==============================
+﻿QasmQobjExperiment
+==================
 
 .. currentmodule:: qiskit.qobj
 
 .. autoclass:: QasmQobjExperiment
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~QasmQobjExperiment.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~QasmQobjExperiment.from_dict
       ~QasmQobjExperiment.to_dict
-   
-   
 
-   
-   
-   
+

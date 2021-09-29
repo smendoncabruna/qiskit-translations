@@ -1,19 +1,18 @@
-﻿qiskit.providers.ibmq.experiment.IBMExperimentService
-=====================================================
+﻿IBMExperimentService
+====================
 
 .. currentmodule:: qiskit.providers.ibmq.experiment
 
 .. autoclass:: IBMExperimentService
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IBMExperimentService.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IBMExperimentService.analysis_result
       ~IBMExperimentService.analysis_results
       ~IBMExperimentService.backends
@@ -31,15 +30,9 @@
       ~IBMExperimentService.update_analysis_result
       ~IBMExperimentService.update_experiment
       ~IBMExperimentService.update_figure
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~IBMExperimentService.preferences
-   
-   
+   .. autoattribute:: preferences

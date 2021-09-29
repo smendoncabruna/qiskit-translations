@@ -1,19 +1,18 @@
-﻿qiskit.chemistry.algorithms.pes\_samplers.HarmonicPotential
-===========================================================
+﻿HarmonicPotential
+=================
 
 .. currentmodule:: qiskit.chemistry.algorithms.pes_samplers
 
 .. autoclass:: HarmonicPotential
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~HarmonicPotential.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~HarmonicPotential.dissociation_energy
       ~HarmonicPotential.eval
       ~HarmonicPotential.fit
@@ -28,9 +27,5 @@
       ~HarmonicPotential.update_molecule
       ~HarmonicPotential.vibrational_energy_level
       ~HarmonicPotential.wave_number
-   
-   
 
-   
-   
-   
+

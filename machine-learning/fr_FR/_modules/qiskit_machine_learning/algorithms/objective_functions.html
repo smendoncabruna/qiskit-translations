@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit_machine_learning.algorithms.objective_functions &mdash; Documentation Qiskit Machine Learning 0.2.0</title>
+  <title>qiskit_machine_learning.algorithms.objective_functions &mdash; Documentation Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -89,7 +89,7 @@
 
     <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
-    <span class="rst-current-version-label">fr_FR</span>
+    <span class="rst-current-version-label">French</span>
     <span class="rst-versions-dropdown-icon"></span>
   </span>
   <div class="rst-other-versions">
@@ -98,6 +98,12 @@
       <dt>Langues</dt>
       
         <dd><a class="version" href="/documentation/machine-learning/_modules/qiskit_machine_learning/algorithms/objective_functions.html">English</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/_modules/qiskit_machine_learning/algorithms/objective_functions.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/_modules/qiskit_machine_learning/algorithms/objective_functions.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/_modules/qiskit_machine_learning/algorithms/objective_functions.html">Hindi</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/_modules/qiskit_machine_learning/algorithms/objective_functions.html">Italian</a></dd>
       
@@ -145,7 +151,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -303,7 +309,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_y</span> <span class="o">=</span> <span class="n">y</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_neural_network</span> <span class="o">=</span> <span class="n">neural_network</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_loss</span> <span class="o">=</span> <span class="n">loss</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_weights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">SparseArray</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="ObjectiveFunction.objective"><a class="viewcode-back" href="../../../stubs/qiskit_machine_learning.algorithms.ObjectiveFunction.objective.html#qiskit_machine_learning.algorithms.ObjectiveFunction.objective">[docs]</a>    <span class="nd">@abstractmethod</span>
@@ -341,14 +347,15 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            The result of the neural network.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># we compare weights and input data by identifier to make it faster.</span>
-        <span class="c1"># input data is added to the comparison for safety reasons only,</span>
-        <span class="c1"># comparison of weights should be enough.</span>
-        <span class="n">data_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">weights</span><span class="p">))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_X</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">data_id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_id</span><span class="p">:</span>
+        <span class="c1"># if we get the same weights, we don&#39;t compute the forward pass again.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_weights</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_weights</span><span class="p">))</span>
+        <span class="p">):</span>
             <span class="c1"># compute forward and cache the results for re-use in backward</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_neural_network</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_X</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_id</span> <span class="o">=</span> <span class="n">data_id</span>
+            <span class="c1"># a copy avoids keeping a reference to the same array, so we are sure we have</span>
+            <span class="c1"># different arrays on the next iteration.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_forward</span></div>
 
 

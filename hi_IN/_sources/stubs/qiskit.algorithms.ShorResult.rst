@@ -1,31 +1,24 @@
-﻿qiskit.algorithms.ShorResult
-============================
+﻿ShorResult
+==========
 
 .. currentmodule:: qiskit.algorithms
 
 .. autoclass:: ShorResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~ShorResult.__init__
-      ~ShorResult.combine
-   
-   
+      :nosignatures:
+      :toctree: ../stubs/
 
-   
-   
+      ~ShorResult.combine
+
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~ShorResult.factors
-      ~ShorResult.successful_counts
-      ~ShorResult.total_counts
-   
-   
+   .. autoattribute:: factors
+   .. autoattribute:: successful_counts
+   .. autoattribute:: total_counts

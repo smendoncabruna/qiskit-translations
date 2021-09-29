@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qGANs para o Carregamento de Distribuições Aleatórias &mdash; Documentação Qiskit Machine Learning 0.2.0</title>
+  <title>qGANs para o Carregamento de Distribuições Aleatórias &mdash; Documentação Qiskit Machine Learning 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Torch Connector and Hybrid QNNs" href="05_torch_connector.html" />
-    <link rel="prev" title="Quantum Kernel Machine Learning" href="03_quantum_kernel.html" /> 
+    <link rel="next" title="Conector Torch e QNNs híbridas" href="05_torch_connector.html" />
+    <link rel="prev" title="Núcleo Quântico de Aprendizagem de Máquina" href="03_quantum_kernel.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -101,6 +101,12 @@
       
         <dd><a class="version" href="/documentation/machine-learning/tutorials/04_qgans_for_loading_random_distributions.html">English</a></dd>
       
+        <dd><a class="version" href="/documentation/machine-learning/locale/bn_BN/tutorials/04_qgans_for_loading_random_distributions.html">Bengali</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/fr_FR/tutorials/04_qgans_for_loading_random_distributions.html">French</a></dd>
+      
+        <dd><a class="version" href="/documentation/machine-learning/locale/hi_IN/tutorials/04_qgans_for_loading_random_distributions.html">Hindi</a></dd>
+      
         <dd><a class="version" href="/documentation/machine-learning/locale/it_IT/tutorials/04_qgans_for_loading_random_distributions.html">Italian</a></dd>
       
         <dd><a class="version" href="/documentation/machine-learning/locale/ja_JP/tutorials/04_qgans_for_loading_random_distributions.html">Japanese</a></dd>
@@ -147,7 +153,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -502,7 +508,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning/blob/stable/0.2/docs/tutorials/04_qgans_for_loading_random_distributions.ipynb">docs/tutorials/04_qgans_for_loading_random_distributions.ipynb</a>.</p>
 </div>
 <div class="section" id="qGANs-para-o-Carregamento-de-Distribuições-Aleatórias">
 <h1>qGANs para o Carregamento de Distribuições Aleatórias<a class="headerlink" href="#qGANs-para-o-Carregamento-de-Distribuições-Aleatórias" title="Link permanente para este título">¶</a></h1>
@@ -512,7 +518,7 @@ div.rendered_html tbody tr:hover {
 <p>onde <span class="math notranslate nohighlight">\(p_{\theta}^{j}\)</span> descreve as probabilidades de ocorrência dos estados base <span class="math notranslate nohighlight">\(\big| j\rangle\)</span>.</p>
 <p>O objetivo do treinamento da qGAN é gerar um estado <span class="math notranslate nohighlight">\(\big| g_{\theta}\rangle\)</span> onde <span class="math notranslate nohighlight">\(p_{\theta}^{j}\)</span>, for <span class="math notranslate nohighlight">\(j\in \left\{0, \ldots, {2^n-1} \right\}\)</span>, descreve uma distribuição de probabilidade que esteja próxima da distribuição subjacente aos dados de treinamento <span class="math notranslate nohighlight">\(X=\left\{x^0, \ldots, x^{k-1} \right\}\)</span>.</p>
 <p>Para mais detalhes, consulte <a class="reference external" href="https://arxiv.org/abs/1904.00043">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions</a> <em>Zoufal, Lucchi, Woerner</em> [2019].</p>
-<p>For an example of how to use a trained qGAN in an application, the pricing of financial derivatives, please see the <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/tree/main/docs/tutorials/10_qgan_option_pricing.ipynb">Option Pricing with qGANs</a> tutorial.</p>
+<p>Para um exemplo de como usar um qGAN treinado em um aplicativo, a precificação de derivativos financeiros, por favor veja o tutorial <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/tree/main/docs/tutorials/10_qgan_option_pricing.ipynb">Opções de preços com qGANs</a>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -564,9 +570,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Inicialize-a-qGAN">
 <h2>Inicialize a qGAN<a class="headerlink" href="#Inicialize-a-qGAN" title="Link permanente para este título">¶</a></h2>
-<p>The qGAN consists of a quantum generator <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, i.e., an ansatz, and a classical discriminator <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, a neural network.</p>
-<p>To implement the quantum generator, we choose a depth-<span class="math notranslate nohighlight">\(1\)</span> ansatz that implements <span class="math notranslate nohighlight">\(R_Y\)</span> rotations and <span class="math notranslate nohighlight">\(CZ\)</span> gates which takes a uniform distribution as an input state. Notably, for <span class="math notranslate nohighlight">\(k&gt;1\)</span> the generator’s parameters must be chosen carefully. For example, the circuit depth should be <span class="math notranslate nohighlight">\(&gt;1\)</span> because higher circuit depths enable the representation of more complex structures.</p>
-<p>The classical discriminator used here is based on a neural network implementation using NumPy. There is also a discriminator based on PyTorch which is not installed by default when installing Qiskit - see <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning#optional-installs">Optional Install</a> for more information.</p>
+<p>O qGAN consiste em um gerador quântico <span class="math notranslate nohighlight">\(G_{\theta}\)</span>, ou seja, um ansatz, e um discriminador clássico <span class="math notranslate nohighlight">\(D_{\phi}\)</span>, uma rede neural.</p>
+<p>Para implementar o gerador quântico, nós escolhemos a profundidade ansatz-<span class="math notranslate nohighlight">\(1\)</span> que implementa rotações <span class="math notranslate nohighlight">\(R_Y\)</span> e portas <span class="math notranslate nohighlight">\(CZ\)</span> que recebe uma distribuição uniforme como estado de entrada. Notavelmente, para <span class="math notranslate nohighlight">\(k&gt;1\)</span> os parâmetros do gerador devem ser escolhidos com cuidado. Por exemplo, o circuito profundo deve ser <span class="math notranslate nohighlight">\(&gt;1\)</span> pois maiores profundidades de circuito permitem a representação de estruturas mais complexas.</p>
+<p>O discriminador clássico usado aqui é baseado na implementação de rede neural usando NumPy. Também existe um discriminador baseado em PyTorch que não é instalado por padrão quando instalamos o Qiskit - Veja <a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning#optional-installs">Instalação Opcional</a> para mais informações.</p>
 <p>Aqui, ambas as redes são atualizadas com o algoritmo de otimização ADAM (ADAM é o otimizador padrão da qGAN).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -790,10 +796,10 @@ Training results:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="05_torch_connector.html" class="btn btn-neutral float-right" title="Torch Connector and Hybrid QNNs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="05_torch_connector.html" class="btn btn-neutral float-right" title="Conector Torch e QNNs híbridas" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="03_quantum_kernel.html" class="btn btn-neutral" title="Quantum Kernel Machine Learning" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="03_quantum_kernel.html" class="btn btn-neutral" title="Núcleo Quântico de Aprendizagem de Máquina" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   

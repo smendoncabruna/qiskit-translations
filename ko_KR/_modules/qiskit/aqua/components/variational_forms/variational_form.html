@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.aqua.components.variational_forms.variational_form &mdash; Qiskit 0.29.0 문서</title>
+  <title>qiskit.aqua.components.variational_forms.variational_form &mdash; Qiskit 0.30.0 문서</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">문서 홈 페이지</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">전문</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API 참조 문서</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit 시뮬레이터 (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit 실험 (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit 애플리케이션 모듈 (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM 양자 시스템 (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit 애플리케이션 (Aqua) 마이그레이션 가이드</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">문제 해결</span></p>
 <ul>
@@ -359,17 +366,17 @@
 <span class="sd">        available.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="VariationalForm.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.html#qiskit.aqua.components.variational_forms.VariationalForm.__init__">[문서]</a>    <span class="nd">@abstractmethod</span>
+    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_parameters</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_num_qubits</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>  <span class="c1"># type: List[object]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># type: List[object]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_preferred_init_points</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_support_parameterized_circuit</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">warn_package</span><span class="p">(</span><span class="s1">&#39;aqua.components.variational_forms&#39;</span><span class="p">)</span></div>
+        <span class="n">warn_package</span><span class="p">(</span><span class="s1">&#39;aqua.components.variational_forms&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="VariationalForm.construct_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.html#qiskit.aqua.components.variational_forms.VariationalForm.construct_circuit">[문서]</a>    <span class="nd">@abstractmethod</span>
+<div class="viewcode-block" id="VariationalForm.construct_circuit"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.construct_circuit.html#qiskit.aqua.components.variational_forms.VariationalForm.construct_circuit">[문서]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">construct_circuit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                           <span class="n">parameters</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
                           <span class="n">q</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">QuantumRegister</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoReturn</span><span class="p">:</span>
@@ -450,12 +457,12 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preferred_init_points</span>
 
-<div class="viewcode-block" id="VariationalForm.get_entangler_map"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.html#qiskit.aqua.components.variational_forms.VariationalForm.get_entangler_map">[문서]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="VariationalForm.get_entangler_map"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.get_entangler_map.html#qiskit.aqua.components.variational_forms.VariationalForm.get_entangler_map">[문서]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_entangler_map</span><span class="p">(</span><span class="n">map_type</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; returns entangler map &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">get_entangler_map</span><span class="p">(</span><span class="n">map_type</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="VariationalForm.validate_entangler_map"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.html#qiskit.aqua.components.variational_forms.VariationalForm.validate_entangler_map">[문서]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="VariationalForm.validate_entangler_map"><a class="viewcode-back" href="../../../../../stubs/qiskit.aqua.components.variational_forms.VariationalForm.validate_entangler_map.html#qiskit.aqua.components.variational_forms.VariationalForm.validate_entangler_map">[문서]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">validate_entangler_map</span><span class="p">(</span><span class="n">entangler_map</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; validate entangler map &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">validate_entangler_map</span><span class="p">(</span><span class="n">entangler_map</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">)</span></div></div>
@@ -476,7 +483,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      최종 업데이트: 2021/08/13
+      최종 업데이트: 2021/09/23
 
     </p>
   </div>
@@ -556,7 +563,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -579,9 +586,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

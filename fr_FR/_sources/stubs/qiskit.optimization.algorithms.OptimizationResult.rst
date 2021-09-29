@@ -1,35 +1,21 @@
-﻿qiskit.optimization.algorithms.OptimizationResult
-=================================================
+﻿OptimizationResult
+==================
 
 .. currentmodule:: qiskit.optimization.algorithms
 
 .. autoclass:: OptimizationResult
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
 
-   
-   .. rubric:: Methods
 
-   .. autosummary::
-   
-      ~OptimizationResult.__init__
-   
-   
-
-   
-   
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~OptimizationResult.fval
-      ~OptimizationResult.raw_results
-      ~OptimizationResult.samples
-      ~OptimizationResult.status
-      ~OptimizationResult.variable_names
-      ~OptimizationResult.variables
-      ~OptimizationResult.variables_dict
-      ~OptimizationResult.x
-   
-   
+   .. autoattribute:: fval
+   .. autoattribute:: raw_results
+   .. autoattribute:: samples
+   .. autoattribute:: status
+   .. autoattribute:: variable_names
+   .. autoattribute:: variables
+   .. autoattribute:: variables_dict
+   .. autoattribute:: x

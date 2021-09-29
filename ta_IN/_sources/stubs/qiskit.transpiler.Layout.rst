@@ -1,19 +1,18 @@
-﻿qiskit.transpiler.Layout
-========================
+﻿Layout
+======
 
 .. currentmodule:: qiskit.transpiler
 
 .. autoclass:: Layout
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Layout.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Layout.add
       ~Layout.add_register
       ~Layout.combine_into_edge_map
@@ -28,9 +27,5 @@
       ~Layout.order_based_on_type
       ~Layout.reorder_bits
       ~Layout.swap
-   
-   
 
-   
-   
-   
+

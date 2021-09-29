@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.finance.components.uncertainty_problems.european_call_expected_value &mdash; Qiskit 0.29.0 belgelendirmesi</title>
+  <title>qiskit.finance.components.uncertainty_problems.european_call_expected_value &mdash; Qiskit 0.30.0 belgelendirmesi</title>
   
 
   
@@ -29,7 +29,6 @@
 
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
@@ -62,7 +61,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -92,7 +91,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -169,6 +170,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -221,7 +228,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Belgeleme ana sayfası</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Ön Bölümler</span></p>
 <ul>
@@ -238,15 +245,15 @@
 </ul>
 <p><span class="caption-text">API Kaynakları</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Simülatör (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Deneyleri (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Uygulama Modülleri (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Sağlayıcı)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Uygulamaları (Aqua) Geçiş Rehberi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
 <p><span class="caption-text">Hata Giderme</span></p>
 <ul>
@@ -348,7 +355,7 @@
 <span class="sd">    The payoff function is f(S, K) = max(0, S - K) for a spot price S and strike price K.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="EuropeanCallExpectedValue.__init__"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.__init__">[belgeler]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">uncertainty_model</span><span class="p">:</span> <span class="n">UnivariateDistribution</span><span class="p">,</span>
                  <span class="n">strike_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
                  <span class="n">c_approx</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
@@ -402,9 +409,9 @@
                 <span class="p">(</span><span class="n">uncertainty_model</span><span class="o">.</span><span class="n">num_values</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapped_strike_price</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">offset_angle</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">slope_angle</span> <span class="o">=</span> <span class="mi">0</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">slope_angle</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="EuropeanCallExpectedValue.value_to_estimation"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.value_to_estimation">[belgeler]</a>    <span class="k">def</span> <span class="nf">value_to_estimation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="EuropeanCallExpectedValue.value_to_estimation"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.value_to_estimation.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.value_to_estimation">[belgeler]</a>    <span class="k">def</span> <span class="nf">value_to_estimation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="n">estimator</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_approx</span>
         <span class="n">estimator</span> <span class="o">*=</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_c_approx</span>
         <span class="n">estimator</span> <span class="o">*=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_uncertainty_model</span><span class="o">.</span><span class="n">num_values</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapped_strike_price</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -412,13 +419,13 @@
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_uncertainty_model</span><span class="o">.</span><span class="n">num_values</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">estimator</span></div>
 
-<div class="viewcode-block" id="EuropeanCallExpectedValue.required_ancillas"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.required_ancillas">[belgeler]</a>    <span class="k">def</span> <span class="nf">required_ancillas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="EuropeanCallExpectedValue.required_ancillas"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.required_ancillas.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.required_ancillas">[belgeler]</a>    <span class="k">def</span> <span class="nf">required_ancillas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">num_uncertainty_ancillas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uncertainty_model</span><span class="o">.</span><span class="n">required_ancillas</span><span class="p">()</span>
         <span class="n">num_comparator_ancillas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparator</span><span class="o">.</span><span class="n">num_ancillas</span>
         <span class="n">num_ancillas</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">num_uncertainty_ancillas</span><span class="p">,</span> <span class="n">num_comparator_ancillas</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">num_ancillas</span></div>
 
-<div class="viewcode-block" id="EuropeanCallExpectedValue.build"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.build">[belgeler]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">q_ancillas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="EuropeanCallExpectedValue.build"><a class="viewcode-back" href="../../../../../stubs/qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.build.html#qiskit.finance.components.uncertainty_problems.EuropeanCallExpectedValue.build">[belgeler]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qc</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">q_ancillas</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="c1"># get qubits</span>
         <span class="n">q_state</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">i_state</span><span class="p">]</span>
@@ -456,7 +463,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Son güncelleme: 2021/08/13.
+      Son güncelleme: 2021/09/23.
 
     </p>
   </div>
@@ -536,7 +543,7 @@
             <a href="../../../../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -559,9 +566,11 @@
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

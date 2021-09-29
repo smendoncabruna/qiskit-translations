@@ -1,19 +1,18 @@
-﻿qiskit.visualization.pulse\_v2.IQXDebugging
-===========================================
+﻿IQXDebugging
+============
 
 .. currentmodule:: qiskit.visualization.pulse_v2
 
 .. autoclass:: IQXDebugging
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~IQXDebugging.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~IQXDebugging.clear
       ~IQXDebugging.copy
       ~IQXDebugging.fromkeys
@@ -25,9 +24,5 @@
       ~IQXDebugging.setdefault
       ~IQXDebugging.update
       ~IQXDebugging.values
-   
-   
 
-   
-   
-   
+

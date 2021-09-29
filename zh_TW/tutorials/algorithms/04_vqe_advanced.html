@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced VQE usage &mdash; Qiskit 0.29.0 說明文件</title>
+  <title>Advanced VQE usage &mdash; Qiskit 0.30.0 說明文件</title>
   
 
   
@@ -30,7 +30,6 @@
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/thebelab.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
@@ -63,7 +62,7 @@
           </li>
 
           <li>
-            <a href="https://qiskit.org/documentation/partners/" target="_blank">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
           </li>
 
           <li>
@@ -93,7 +92,9 @@
                 </a>
               </div>
           </li>
-
+          <li>
+              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
               <a class="resource-option with-down-orange-arrow">
@@ -170,6 +171,12 @@
       
         <dd><a class="version" href="/documentation/stable/0.26/index.html">0.26</a></dd>
       
+        <dd><a class="version" href="/documentation/stable/0.27/index.html">0.27</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
     </dl>
   </div>
   <script>
@@ -222,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
 </ul>
 <p><span class="caption-text">Frontmatter</span></p>
 <ul>
@@ -231,27 +238,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">Local Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常見問答</a></li>
 </ul>
-<p><span class="caption-text">Libraries</span></p>
+<p><span class="caption-text">程式庫</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">Circuit Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/circuit_library.html">電路檔案庫</a></li>
 </ul>
 <p><span class="caption-text">API References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit (Terra)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Simulator (Aer)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Experiments (Ignis)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Application Modules (Aqua)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum (Provider)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Applications (Aqua) Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Applications (Aqua) Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
 </ul>
-<p><span class="caption-text">Troubleshooting</span></p>
+<p><span class="caption-text">疑難排解</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API error codes</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://quantum-computing.ibm.com/lab/docs/iql/manage/errors">IBM Quantum API 錯誤碼</a></li>
 </ul>
 
             
@@ -572,12 +579,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/04_vqe_advanced.ipynb">tutorials/algorithms/04_vqe_advanced.ipynb</a>.</p>
+<p>此頁面是從 <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/04_vqe_advanced.ipynb">tutorials/algorithms/04_vqe_advanced.ipynb</a> 所產生的。</p>
 </div>
 <section id="Advanced-VQE-usage">
 <h1>Advanced VQE usage<a class="headerlink" href="#Advanced-VQE-usage" title="本標題的永久連結">¶</a></h1>
-<p>There exist several parameters for configuring and using more advanced <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html">VQE</a> capabilities. This tutorial will cover the parameters such as <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">point</span></code>, <code class="docutils literal notranslate"><span class="pre">expectation</span></code> and <code class="docutils literal notranslate"><span class="pre">gradient</span></code>.</p>
-<p>It will also cover advanced simulator use such as using Aer with the Matrix Product State method.</p>
+<p>有幾個參數可以讓我們配置及使用更進階的 <a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.algorithms.VQE.html">VQE</a> 功能。本指導教學將涵蓋 <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">point</span></code>， <code class="docutils literal notranslate"><span class="pre">expectation</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gradient</span></code> 等參數。</p>
+<p>它還將涵蓋進階模擬器使用，例如利用 Matrix Product State 方法使用 Aer 。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -592,7 +599,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Here we will use the same operator as used in the other VQE algorithms tutorials.</p>
+<p>在這裡，我們將使用與其他 VQE 演算法指導教學中相同的算子。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -611,7 +618,7 @@ div.rendered_html tbody tr:hover {
 <p>The <code class="docutils literal notranslate"><span class="pre">initial_point</span></code> parameter allows the optimization to begin at the given point, where the point is a list of parameters that will configure the ansatz. By default the initial point is <code class="docutils literal notranslate"><span class="pre">None</span></code> which means that VQE will choose one. The choice in in this case is if the supplied ansatz has a preferred point, based on the initial state provided to it, then this will be chosen, otherwise a random initial point that fits with any bounds the ansatz has will be chosen. If an initial point is
 supplied it will take priority though and be used - note though it must match in length to the number of parameters in the ansatz circuit.</p>
 <p>Why to use a initial point? One reason would be if you have guess a reasonable starting point for the problem or perhaps know have information from a prior experiment.</p>
-<p>To demonstrate the use let’s first simply repeat the first working example from the <a class="reference internal" href="01_algorithms_introduction.html#A-complete-working-example"><span class="std std-ref">algorithms introduction</span></a> tutorial to get a solution’s optimal point.</p>
+<p>若要示範使用，請先從 algorithms introduction 指導教學中重複第一個範例，以取得解決方案的最佳解。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -704,7 +711,7 @@ supplied it will take priority though and be used - note though it must match in
 optimizer_evals is 9 with initial point versus 65 without it.
 </pre></div></div>
 </div>
-<p>Here we see that result was arrived at much more quickly with <code class="docutils literal notranslate"><span class="pre">optimizer_evals</span></code> when it started from a random value when the initial point was not supplied (default of None).</p>
+<p>在這裡，我們看到，當起始點未提供（預設值為 None）並從隨機值開始時，使用``optimizer_evals`` 會更快速得到結果。</p>
 <p>Where this becomes useful for examples where we the solution to one problem can be used to for a guess for the solution to a very close similar problem. Chemistry is very good example where we change the inter-atomic distance(s) of molecule to plot a dissociation profile. When the distance changes are small we expect the solution to still be nearby the prior one. One technique is to simply use the optimal point from one solution as the starting point for the next step. Now more complex
 techniques are possible that do some extrapolation to compute an initial position based on prior solution(s) rather than directly use the prior solution.</p>
 </section>
@@ -808,7 +815,7 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
     &#39;optimizer_time&#39;: 0.07421207427978516}
 </pre></div></div>
 </div>
-<p>Changing the optimizer to SPSA, which is designed to work in noisy environments, gets us a better result. Though the noise has affected the outcome so it’s not as accurate.</p>
+<p>將優化器變更為 SPSA(設計為在雜訊多的環境中運作)，可讓我們獲得更好的結果。 因為雜訊影響到結果，所以並不是準確的。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -851,7 +858,7 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
     &#39;optimizer_time&#39;: 1.2898402214050293}
 </pre></div></div>
 </div>
-<p>As mentioned above, an expectation object can be explicitly given (so the internal <code class="docutils literal notranslate"><span class="pre">ExpectationFactory</span></code> and include_custom are never used/needed. Below we create an <code class="docutils literal notranslate"><span class="pre">AerPauliExpectation</span></code> and pass this to VQE. We can see the result matches that above where we set include_custom to True and let VQE create its own expectation object.</p>
+<p>如上所述，可以明確地給出一個期望物件(因此，內部 <code class="docutils literal notranslate"><span class="pre">ExpectationFactory</span></code> 和 include_custom 從來沒有被使用/需要。我們在下面建立一個 <code class="docutils literal notranslate"><span class="pre">AerPauliExpecation</span></code> ，並將它傳遞至 VQE 我們可以看到結果符合上述情況，我們將 include_custom 設為 True，並讓 VQE 建立自己的預期物件。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -895,8 +902,7 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
     &#39;optimizer_time&#39;: 0.20196986198425293}
 </pre></div></div>
 </div>
-<p>By default, the <code class="docutils literal notranslate"><span class="pre">PauliExpectation</span></code> object, that would have be chosen when include_custom is False (or when using Aer aer_simulator, or a real device) groups Paulis into commuting sets. This is efficient as it runs less circuits to compute the expectation. However, if for some reason you wanted to run a circuit for each Pauli then then grouping can be turned off when constructing the PauliExpectation. You need to explicitly pass in such an expectation instance to VQE to have it work this way
-though as shown below.</p>
+<p>依預設， <code class="docutils literal notranslate"><span class="pre">PauliExpecation</span></code> 物件，如果 include_custom 為 False (或使用 Aer aer_simulator，或實際裝置)將 Paulis 群組轉換為通勤集時，就會選擇該物件。 這很有效率，因為它執行較少的電路來計算預期。不過，如果基於某個原因，您想為每個 Pauli 執行一個電路，則在建構 PauliExpecation 時，可以關閉分組。您需要明確地將這樣的預期實例傳遞給 VQE，讓它如此運作，如下所示。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -944,7 +950,7 @@ though as shown below.</p>
 <section id="Gradient">
 <h2>Gradient<a class="headerlink" href="#Gradient" title="本標題的永久連結">¶</a></h2>
 <p>Optimizers that use a gradient-based technique can be supplied with a user defined gradient that will be used instead of their default gradient computation which is usually done by simple finite difference. Gradients are passed indirectly via to the optimizer via its <code class="docutils literal notranslate"><span class="pre">gradient</span></code> parameter.</p>
-<p>As the use of a user supplied <code class="docutils literal notranslate"><span class="pre">gradient</span></code> was shown in the <a class="reference internal" href="02_vqe_convergence.html#Using-Gradient-framework"><span class="std std-ref">Monitoring VQE Convergence</span></a> tutorial I will simply refer you there. Also the <a class="reference internal" href="../operators/02_gradients_framework.html"><span class="doc">Gradients framework</span></a> tutorial has much more about the gradients themselves.</p>
+<p>As the use of a user supplied <code class="docutils literal notranslate"><span class="pre">gradient</span></code> was shown in the Monitoring VQE Convergence tutorial I will simply refer you there. Also the <a class="reference internal" href="../operators/02_gradients_framework.html"><span class="doc">Gradients framework</span></a> tutorial has much more about the gradients themselves.</p>
 </section>
 <section id="Quantum-Instance-and-advanced-simulation">
 <h2>Quantum Instance and advanced simulation<a class="headerlink" href="#Quantum-Instance-and-advanced-simulation" title="本標題的永久連結">¶</a></h2>
@@ -1043,7 +1049,7 @@ though as shown below.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/08/13。
+      最後更新於 2021/09/24。
 
     </p>
   </div>
@@ -1133,7 +1139,7 @@ though as shown below.</p>
             <a href="../../tutorials.html">Tutorials</a>
           </li>
           <li>
-            <a href="https://qiskit.org/documentation/partners/">Providers</a>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
           </li>
           <br>
           <li class="resources-mobile-menu-title">
@@ -1156,9 +1162,11 @@ though as shown below.</p>
               <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
             </li>
           </ul>
-
           <br>
-
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
           <li class="resources-mobile-menu-title">
             Resources
           </li>

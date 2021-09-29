@@ -1,24 +1,19 @@
-﻿qiskit.assembler.RunConfig
-==========================
+﻿RunConfig
+=========
 
 .. currentmodule:: qiskit.assembler
 
 .. autoclass:: RunConfig
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~RunConfig.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~RunConfig.from_dict
       ~RunConfig.to_dict
-   
-   
 
-   
-   
-   
+

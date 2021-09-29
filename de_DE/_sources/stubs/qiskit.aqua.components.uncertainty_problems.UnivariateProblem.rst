@@ -1,19 +1,18 @@
-﻿qiskit.aqua.components.uncertainty\_problems.UnivariateProblem
-==============================================================
+﻿UnivariateProblem
+=================
 
 .. currentmodule:: qiskit.aqua.components.uncertainty_problems
 
 .. autoclass:: UnivariateProblem
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~UnivariateProblem.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~UnivariateProblem.build
       ~UnivariateProblem.build_controlled
       ~UnivariateProblem.build_controlled_inverse
@@ -27,15 +26,9 @@
       ~UnivariateProblem.required_ancillas
       ~UnivariateProblem.required_ancillas_controlled
       ~UnivariateProblem.value_to_estimation
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~UnivariateProblem.num_target_qubits
-   
-   
+   .. autoattribute:: num_target_qubits

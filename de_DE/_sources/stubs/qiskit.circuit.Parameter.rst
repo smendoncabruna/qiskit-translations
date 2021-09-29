@@ -1,19 +1,18 @@
-﻿qiskit.circuit.Parameter
-========================
+﻿Parameter
+=========
 
 .. currentmodule:: qiskit.circuit
 
 .. autoclass:: Parameter
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~Parameter.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~Parameter.arccos
       ~Parameter.arcsin
       ~Parameter.arctan
@@ -28,16 +27,10 @@
       ~Parameter.sin
       ~Parameter.subs
       ~Parameter.tan
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~Parameter.name
-      ~Parameter.parameters
-   
-   
+   .. autoattribute:: name
+   .. autoattribute:: parameters

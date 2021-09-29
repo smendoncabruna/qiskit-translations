@@ -1,24 +1,19 @@
-﻿qiskit.opflow.expectations.AerPauliExpectation
-==============================================
+AerPauliExpectation
+===================
 
 .. currentmodule:: qiskit.opflow.expectations
 
 .. autoclass:: AerPauliExpectation
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
-   .. rubric:: Methods
+   .. rubric:: Methods Defined Here
 
    .. autosummary::
-   
-      ~AerPauliExpectation.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~AerPauliExpectation.compute_variance
       ~AerPauliExpectation.convert
-   
-   
 
-   
-   
-   
+

@@ -1,19 +1,18 @@
-﻿qiskit.providers.aer.library.SaveState
-======================================
+﻿SaveState
+=========
 
 .. currentmodule:: qiskit.providers.aer.library
 
 .. autoclass:: SaveState
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~SaveState.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~SaveState.add_decomposition
       ~SaveState.assemble
       ~SaveState.broadcast_arguments
@@ -27,20 +26,14 @@
       ~SaveState.reverse_ops
       ~SaveState.soft_compare
       ~SaveState.validate_parameter
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~SaveState.decompositions
-      ~SaveState.definition
-      ~SaveState.duration
-      ~SaveState.label
-      ~SaveState.params
-      ~SaveState.unit
-   
-   
+   .. autoattribute:: decompositions
+   .. autoattribute:: definition
+   .. autoattribute:: duration
+   .. autoattribute:: label
+   .. autoattribute:: params
+   .. autoattribute:: unit

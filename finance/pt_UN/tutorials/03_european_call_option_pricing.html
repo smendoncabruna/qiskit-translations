@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing European Call Options &mdash; Documentação Qiskit Finance 0.2.0</title>
+  <title>Precificando Call Options Europeias &mdash; Documentação Qiskit Finance 0.2.1</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
-    <link rel="next" title="Pricing European Put Options" href="04_european_put_option_pricing.html" />
-    <link rel="prev" title="Portfolio Diversification" href="02_portfolio_diversification.html" /> 
+    <link rel="next" title="Precificando Put Options Europeias" href="04_european_put_option_pricing.html" />
+    <link rel="prev" title="Diversificação de Portfólio" href="02_portfolio_diversification.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -129,7 +129,7 @@
               
               
                 <div class="version">
-                  0.2.0
+                  0.2.1
                 </div>
               
             
@@ -202,9 +202,9 @@
       </li>
 
         
-          <li><a href="index.html">Finance Tutorials</a> &gt;</li>
+          <li><a href="index.html">Tutoriais de Finanças</a> &gt;</li>
         
-      <li>Pricing European Call Options</li>
+      <li>Precificando Call Options Europeias</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,10 +484,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/03_european_call_option_pricing.ipynb">docs/tutorials/03_european_call_option_pricing.ipynb</a>.</p>
+<p>Esta página foi gerada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/03_european_call_option_pricing.ipynb">docs/tutorials/03_european_call_option_pricing.ipynb</a>.</p>
 </div>
-<div class="section" id="Pricing-European-Call-Options">
-<h1>Pricing European Call Options<a class="headerlink" href="#Pricing-European-Call-Options" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="Precificando-Call-Options-Europeias">
+<h1>Precificando Call Options Europeias<a class="headerlink" href="#Precificando-Call-Options-Europeias" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="Introdução">
 <h2>Introdução<a class="headerlink" href="#Introdução" title="Link permanente para este título">¶</a></h2>
 <p>Suponha uma opção de compra Europeia com preço contratado <span class="math notranslate nohighlight">\(K\)</span> e um ativo subjacente cujo preço à vista na maturidade <span class="math notranslate nohighlight">\(S_T\)</span> segue uma determinada distribuição aleatória. A função de pagamento correspondente é definida como:</p>
@@ -598,7 +598,7 @@ div.rendered_html tbody tr:hover {
 \[\big|x\rangle \big|0\rangle \mapsto \big|x\rangle \left( \cos(a*x+b) \big|0\rangle + \sin(a*x+b) \big|1\rangle \right),\]</div>
 <p>usando rotações Y controladas.</p>
 <p>Eventualmente, estamos interessados na probabilidade de medir <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> no último qubit, o que corresponde a <span class="math notranslate nohighlight">\(\sin^2(a*x+b)\)</span>. Juntamente com a aproximação, acima, isto permite aproximar os valores de interesse. Quanto menor o <span class="math notranslate nohighlight">\(c_\text{approx}\)</span> escolhido, melhor a aproximação. No entanto, uma vez que estamos estimando uma propriedade escalonada por <span class="math notranslate nohighlight">\(c_\text{approx}\)</span> em seguida, o número de qubits de avaliação <span class="math notranslate nohighlight">\(m\)</span> precisa ser ajustado de acordo.</p>
-<p>For more details on the approximation, we refer to: <a class="reference external" href="https://www.nature.com/articles/s41534-019-0130-6">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>Para mais detalhes sobre a aproximação, nós nos referimos a: <a class="reference external" href="https://www.nature.com/articles/s41534-019-0130-6">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -788,7 +788,7 @@ Estimated value:        0.1681
 Confidence interval:    [0.1633, 0.1730]
 </pre></div></div>
 </div>
-<p>Instead of constructing these circuits manually, Qiskit’s finance module offers the <code class="docutils literal notranslate"><span class="pre">EuropeanCallPricing</span></code> circuit, which already implements this functionality as building block.</p>
+<p>Ao invés de construir manualmente estes circuitos, o módulo de finanças do Qiskit oferece o circuito <code class="docutils literal notranslate"><span class="pre">EuropeanCallPricing</span></code>, o qual já implementa essa funcionalidade como bloco de construção.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -1006,10 +1006,10 @@ Confidence interval:    [0.8005, 0.8120]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="04_european_put_option_pricing.html" class="btn btn-neutral float-right" title="Pricing European Put Options" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="04_european_put_option_pricing.html" class="btn btn-neutral float-right" title="Precificando Put Options Europeias" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="02_portfolio_diversification.html" class="btn btn-neutral" title="Portfolio Diversification" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="02_portfolio_diversification.html" class="btn btn-neutral" title="Diversificação de Portfólio" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1041,7 +1041,7 @@ Confidence interval:    [0.8005, 0.8120]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing European Call Options</a><ul>
+<li><a class="reference internal" href="#">Precificando Call Options Europeias</a><ul>
 <li><a class="reference internal" href="#Introdução">Introdução</a></li>
 <li><a class="reference internal" href="#Modelo-de-incerteza">Modelo de incerteza</a></li>
 <li><a class="reference internal" href="#Função-Payoff">Função Payoff</a></li>

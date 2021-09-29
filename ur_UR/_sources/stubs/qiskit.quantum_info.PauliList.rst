@@ -1,19 +1,18 @@
-﻿qiskit.quantum\_info.PauliList
-==============================
+﻿PauliList
+=========
 
 .. currentmodule:: qiskit.quantum_info
 
 .. autoclass:: PauliList
+   :no-members:
+   :show-inheritance:
 
-   
-   .. automethod:: __init__
-
-   
    .. rubric:: Methods
 
    .. autosummary::
-   
-      ~PauliList.__init__
+      :nosignatures:
+      :toctree: ../stubs/
+
       ~PauliList.adjoint
       ~PauliList.anticommutes
       ~PauliList.anticommutes_with_all
@@ -43,23 +42,17 @@
       ~PauliList.to_matrix
       ~PauliList.transpose
       ~PauliList.unique
-   
-   
 
-   
-   
+
+
    .. rubric:: Attributes
 
-   .. autosummary::
-   
-      ~PauliList.dim
-      ~PauliList.num_qubits
-      ~PauliList.phase
-      ~PauliList.qargs
-      ~PauliList.settings
-      ~PauliList.shape
-      ~PauliList.size
-      ~PauliList.x
-      ~PauliList.z
-   
-   
+   .. autoattribute:: dim
+   .. autoattribute:: num_qubits
+   .. autoattribute:: phase
+   .. autoattribute:: qargs
+   .. autoattribute:: settings
+   .. autoattribute:: shape
+   .. autoattribute:: size
+   .. autoattribute:: x
+   .. autoattribute:: z
