@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Option Pricing with qGANs &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -40,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="Loading and Processing Stock-Market Time-Series Data" href="11_time_series.html" />
+    <link rel="next" title="স্টক-মার্কেট টাইম-সিরিজ ডেটা লোডিং এবং প্রসেসিং" href="11_time_series.html" />
     <link rel="prev" title="Credit Risk Analysis" href="09_credit_risk_analysis.html" /> 
 
   
@@ -160,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/10_qgan_option_pricing.ipynb">docs/tutorials/10_qgan_option_pricing.ipynb</a>.</p>
 </div>
-<section id="Option-Pricing-with-qGANs">
+<div class="section" id="Option-Pricing-with-qGANs">
 <h1>Option Pricing with qGANs<a class="headerlink" href="#Option-Pricing-with-qGANs" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>In this notebook, we discuss how a Quantum Machine Learning Algorithm, namely a quantum Generative Adversarial Network (qGAN), can facilitate the pricing of a European call option. More specifically, a qGAN can be trained such that a quantum circuit models the spot price of an asset underlying a European call option. The resulting model can then be integrated into a Quantum Amplitude Estimation based algorithm to evaluate the expected payoff - see <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option
 Pricing</span></a>. For further details on learning and loading random distributions by training a qGAN please refer to <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
@@ -513,7 +512,7 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-<section id="Uncertainty-Model">
+<div class="section" id="Uncertainty-Model">
 <h3>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>The Black-Scholes model assumes that the spot price at maturity <span class="math notranslate nohighlight">\(S_T\)</span> for a European call option is log-normally distributed. Thus, we can train a qGAN on samples from a log-normal distribution and use the result as an uncertainty model underlying the option. In the following, we construct a quantum circuit that loads the uncertainty model. The circuit output reads</p>
 <div class="math notranslate nohighlight">
@@ -547,8 +546,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Evaluate-Expected-Payoff">
+</div>
+<div class="section" id="Evaluate-Expected-Payoff">
 <h3>Evaluate Expected Payoff<a class="headerlink" href="#Evaluate-Expected-Payoff" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>Now, the trained uncertainty model can be used to evaluate the expectation value of the option’s payoff function with Quantum Amplitude Estimation.</p>
 <div class="nbinput nblast docutils container">
@@ -564,8 +563,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Plot-the-probability-distribution">
+</div>
+<div class="section" id="Plot-the-probability-distribution">
 <h3>Plot the probability distribution<a class="headerlink" href="#Plot-the-probability-distribution" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>Next, we plot the trained probability distribution and, for reasons of comparison, also the target probability distribution.</p>
 <div class="nbinput docutils container">
@@ -610,8 +609,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_10_qgan_option_pricing_7_0.svg" src="../_images/tutorials_10_qgan_option_pricing_7_0.svg" /></div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>Evaluate Expected Payoff<a class="headerlink" href="#id2" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>Now, the trained uncertainty model can be used to evaluate the expectation value of the option’s payoff function analytically and with Quantum Amplitude Estimation.</p>
 <div class="nbinput docutils container">
@@ -737,9 +736,9 @@ Confidence interval:    [0.9965, 1.0455]
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>
@@ -749,7 +748,7 @@ Confidence interval:    [0.9965, 1.0455]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="11_time_series.html" class="btn btn-neutral float-right" title="Loading and Processing Stock-Market Time-Series Data" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="11_time_series.html" class="btn btn-neutral float-right" title="স্টক-মার্কেট টাইম-সিরিজ ডেটা লোডিং এবং প্রসেসিং" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="09_credit_risk_analysis.html" class="btn btn-neutral" title="Credit Risk Analysis" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>

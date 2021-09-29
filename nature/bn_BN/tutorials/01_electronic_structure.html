@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ইলেকট্রনিক গঠন &mdash; Qiskit Nature 0.2.1 documentation</title>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/01_electronic_structure.ipynb">docs/tutorials/01_electronic_structure.ipynb</a> -থেকে বানানো হয়েছে।</p>
 </div>
-<section id="ইলেকট্রনিক-গঠন">
+<div class="section" id="ইলেকট্রনিক-গঠন">
 <h1>ইলেকট্রনিক গঠন<a class="headerlink" href="#ইলেকট্রনিক-গঠন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<section id="ভূমিকা">
+<div class="section" id="ভূমিকা">
 <h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>মলিকুলার বা আণবিক হ্যামিল্টোনিয়ান হলো</p>
 <div class="math notranslate nohighlight">
@@ -507,8 +506,8 @@ div.rendered_html tbody tr:hover {
 <p>যেখানে <span class="math notranslate nohighlight">\(\Psi_0\)</span> সিস্টেমের প্রাথমিক অবস্থা।</p>
 <p>তবুও, এই সমস্যাটির মাত্রা স্বাধীনতার মাত্রা (ডিগ্রিস অফ ফ্রিডম) হারে বৃদ্ধি পায়। এই সমস্যাটি সমাধানের লক্ষ্যে, আমরা কোয়ান্টাম কম্পিউটারে <span class="math notranslate nohighlight">\(\Psi_0\)</span> তৈরি ও এর মাধ্যমে হ্যামিল্টোনিয় প্রত্যাশিত মানটি (অথবা <span class="math notranslate nohighlight">\(E_0\)</span>) সরাসরি পরিমাপ করতে পারি।</p>
 <p>তাহলে আমরা এইটা কিভাবে করি?</p>
-</section>
-<section id="হার্ট্রি-ফক-প্রাথমিক-মান">
+</div>
+<div class="section" id="হার্ট্রি-ফক-প্রাথমিক-মান">
 <h2>হার্ট্রি-ফক প্রাথমিক মান<a class="headerlink" href="#হার্ট্রি-ফক-প্রাথমিক-মান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>এই সমস্যা সমাধানের জন্যে একটি ভালো সূচনা পদ্ধতি হলো হাট্রি-ফক (এইচ.এফ.) পদ্ধতি। এই পদ্ধতি একটি N-বস্তু সমস্যাকে N সংখ্যক এক-বস্তু সমস্যায় অনুমিত করে যেখানে প্রতিটি ইলেকট্রন অপরের গড়-ক্ষেত্র (mean-field) এ প্রদক্ষিণ করে। প্রথাগতভাবে (ক্লাসিক্যালি) এইচ-এফ সমীকরণ সমাধান করা উপযোগী এবং একেবারে এক্সচেঞ্জ শক্তির মান দেয়, কিন্তু কোনো ইলেকট্রন কোরিলেশনকে অন্তর্ভুক্ত করে না। তাই, কোরিলেশন যোগ করা শুরু করার জন্য সাধারণত এটি একটি ভালো সুচনাস্থল।</p>
 <p>হ্যামিল্টোনিয়ানকে এইচ-এফ পদ্ধতির সমাধান বেসিস(একটি কলাম ভেক্টর)গুলিতে পুনরায় প্রকাশ করা যায়, যাকে আণবিক কক্ষপথও বলে।</p>
@@ -557,10 +556,10 @@ Couldn&#39;t find cython becke routine
 </pre></div></div>
 </div>
 <p>ড্রাইভারগুলির সম্পর্কে আরও তথ্যের জন্য <a class="reference external" href="https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html">https://qiskit.org/documentation/nature/apidocs/qiskit_nature.drivers.second_quantization.html</a> দেখুন</p>
-</section>
-<section id="ফার্মিয়ন-থেকে-কিউবিট-এর-ম্যাপিং-(চিত্রায়ন)">
+</div>
+<div class="section" id="ফার্মিয়ন-থেকে-কিউবিট-এর-ম্যাপিং-(চিত্রায়ন)">
 <h2>ফার্মিয়ন থেকে কিউবিট এর ম্যাপিং (চিত্রায়ন)<a class="headerlink" href="#ফার্মিয়ন-থেকে-কিউবিট-এর-ম্যাপিং-(চিত্রায়ন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p><img alt="075024e5ba9741d29787920647552682" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
+<p><img alt="2e16b33e5bce40e881dd2367184b7023" class="no-scaled-link" src="../_images/jw_mapping.png" style="width: 500px;" /></p>
 <p>পূর্ববর্তী বিভাগে প্রদত্ত হ্যামিল্টোনিয়ানটি ফার্মিওনিক অপারেটরদের (fermionic operators) সাহায্যে প্রকাশ করা হয়। সমস্যাটি একটি কোয়ান্টাম কম্পিউটারের অবস্থায় সংকেতায়ন(এনকোড) করতে, এই অপারেটরদের অবশ্যই স্পিন অপারেটরদের সাথে চিত্রায়ন(ম্যাপ) করতে হবে (প্রকৃতপক্ষে কিউবিটগুলি স্পিন পরিসংখ্যান অনুসরণ করে)।</p>
 <p>বিভিন্ন বৈশিষ্ট্যসহ বিভিন্ন ম্যাপিং(চিত্রায়ন) প্রকার বিদ্যমান। Qiskit ইতিমধ্যে নিম্নলিখিত ম্যাপিংগুলিকে সমর্থন করে: * The Jordan-Wigner ‘jordan_wigner’ mapping (über das paulische äquivalenzverbot. In The Collected Works of Eugene Paul Wigner (pp. 109-129). Springer, Berlin, Heidelberg (1993)). * The Parity ‘parity’ (The Journal of chemical physics, 137(22), 224109 (2012)) * The Bravyi-Kitaev ‘bravyi_kitaev’ (Annals of Physics, 298(1), 210-226 (2002))</p>
 <p>জর্ডান-উইগনার (Jordan-Wigner) ম্যাপিং (চিত্রায়ন) বিশেষভাবে আকর্ষণীয় কারণ এটি প্রতিটি স্পিন কক্ষপথসমূহ (অরবিটাল)-কে একটি কিউবিটে চিত্রায়ন করে (উপরের চিত্রে যেমন দেখানো হয়েছে)।</p>
@@ -692,8 +691,8 @@ Couldn&#39;t find cython becke routine
 <div class="output_area rendered_html docutils container">
 <div style='width: 100%; background-color:#d5d9e0;padding-left: 10px; padding-bottom: 10px; padding-right: 10px; padding-top: 5px'><h3>This code is a part of Qiskit</h3><p>&copy; Copyright IBM 2017, 2021.</p><p>This code is licensed under the Apache License, Version 2.0. You may<br>obtain a copy of this license in the LICENSE.txt file in the root directory<br> of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.<p>Any modifications or derivative works of this code must retain this<br>copyright notice, and modified files need to carry a notice indicating<br>that they have been altered from the originals.</p></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>পোর্টফোলিও অপটিমাইজেশন &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -160,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/01_portfolio_optimization.ipynb">docs/tutorials/01_portfolio_optimization.ipynb</a> -থেকে বানানো হয়েছে।</p>
 </div>
-<section id="পোর্টফোলিও-অপটিমাইজেশন">
+<div class="section" id="পোর্টফোলিও-অপটিমাইজেশন">
 <h1>পোর্টফোলিও অপটিমাইজেশন<a class="headerlink" href="#পোর্টফোলিও-অপটিমাইজেশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<section id="ভূমিকা">
+<div class="section" id="ভূমিকা">
 <h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>এই টিউটোরিয়াল দেখায় কীভাবে  <span class="math notranslate nohighlight">\(n\)</span> সম্পদের জন্য নীচের মীন-ভ্যারিয়্যান্স পোর্টফোলিও অপ্টিমাইজেশান সমস্যাটি সমাধান করা যায়:</p>
 <div class="math notranslate nohighlight">
@@ -529,13 +528,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="[Optional]-একটি-বাস্তব-ডিভাইসে-পরীক্ষা-চালানোর-জন্য-কুপন-(টোকেন)-সেটআপ-করুন">
+<div class="section" id="[Optional]-একটি-বাস্তব-ডিভাইসে-পরীক্ষা-চালানোর-জন্য-কুপন-(টোকেন)-সেটআপ-করুন">
 <h3>[Optional] একটি বাস্তব ডিভাইসে পরীক্ষা চালানোর জন্য কুপন (টোকেন) সেটআপ করুন<a class="headerlink" href="#[Optional]-একটি-বাস্তব-ডিভাইসে-পরীক্ষা-চালানোর-জন্য-কুপন-(টোকেন)-সেটআপ-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>আপনি যদি সত্যিকারের ডিভাইসে পরীক্ষা চালাতে চান তবে আপনাকে প্রথমে আপনার অ্যাকাউন্টটি সেটআপ করতে হবে।</p>
 <p>টীকা: আপনি যদি এখনও আপনার কুপন (টোকেন) সংরক্ষণ করে না রাখেন, তবে <code class="docutils literal notranslate"><span class="pre">IBMQ.save_account('MY_API_TOKEN')</span></code> ব্যবহার করে প্রথমে তা সংরক্ষণ করে নিন।</p>
-</section>
-</section>
-<section id="সমস্যা-দৃষ্টান্ত-(ইনস্ট্যান্স)-সংজ্ঞায়িত-করুন">
+</div>
+</div>
+<div class="section" id="সমস্যা-দৃষ্টান্ত-(ইনস্ট্যান্স)-সংজ্ঞায়িত-করুন">
 <h2>সমস্যা দৃষ্টান্ত (ইনস্ট্যান্স) সংজ্ঞায়িত করুন<a class="headerlink" href="#সমস্যা-দৃষ্টান্ত-(ইনস্ট্যান্স)-সংজ্ঞায়িত-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>আমাদের হ্যামিলটনীয়ানের জন্য এখানে একটি অপারেটর উদাহরণ তৈরি করা হয়েছে। এক্ষেত্রে পলিসগুলি পোর্টফোলিও সমস্যা থেকে অনূদিত আইসিং হ্যামিলটোনিয়ান থেকে এসেছে। এই নোটবুকের জন্য আমরা একটি এলোমেলো পোর্টফোলিও সমস্যা ব্যবহার করি। বাস্তব অর্থনৈতিক ডাটা ব্যবহার করে একে বিস্তৃত করা বেশ সোজা-সাপ্টা, যেমনটা দেখানো হয়েছে এখানটায়: <a class="reference internal" href="11_time_series.html"><span class="doc">Loading and Processing Stock-Market Time-Series Data</span></a></p>
 <div class="nbinput nblast docutils container">
@@ -653,8 +652,8 @@ End
 </pre></div>
 </div>
 </div>
-</section>
-<section id="NumPyMinimumEigensolver-(একটি-ধ্রুপদী-তথ্যসূত্র-(রেফারেন্স)-হিসাবে)">
+</div>
+<div class="section" id="NumPyMinimumEigensolver-(একটি-ধ্রুপদী-তথ্যসূত্র-(রেফারেন্স)-হিসাবে)">
 <h2>NumPyMinimumEigensolver (একটি ধ্রুপদী তথ্যসূত্র (রেফারেন্স) হিসাবে)<a class="headerlink" href="#NumPyMinimumEigensolver-(একটি-ধ্রুপদী-তথ্যসূত্র-(রেফারেন্স)-হিসাবে)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>সমস্যাটির সমাধান করা যাক। প্রথমে ধ্রুপদী পদ্ধতিতে…</p>
 <p>কীভাবে গঠন বা নির্মাণ (বিল্ড) হয়েছিল তার নির্দিষ্টতা বিবেচনা না করেই আমরা এখন উপরে নির্মিত অপারেটরটি ব্যবহার করতে পারি। আমরা NumPyMinimumEigensolver এর জন্য অ্যালগরিদম সেট করেছি যাতে আমাদের একটি শাস্ত্রীয় তথ্যসূত্র (রেফারেন্স) থাকতে পারে। সমস্যাটি 'ইজিং' এর জন্য সেট করা আছে।কোয়ান্টাম কম্পিউটেশনের পরিবর্তে, ধ্রুপদিভাবে হিসেব করা হয় বলে এখানে ব্যাকএন্ডের প্রয়োজন হয় না। ফলাফলটি ডিকশনারি হিসাবে ফিরে আসে</p>
@@ -700,8 +699,8 @@ selection       value           probability
  [0 0 0 0]      4.0795          0.0000
 </pre></div></div>
 </div>
-</section>
-<section id="ভি-কিউ-ই-ব্যবহার-করে-সমাধান">
+</div>
+<div class="section" id="ভি-কিউ-ই-ব্যবহার-করে-সমাধান">
 <h2>ভি কিউ ই ব্যবহার করে সমাধান<a class="headerlink" href="#ভি-কিউ-ই-ব্যবহার-করে-সমাধান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>সমস্যাটি সমাধানের জন্য আমরা এখন ভেরিয়েশনাল কোয়ান্টাম আইজেনসলভার (ভিকিউই) ব্যবহার করতে পারি। ব্যবহারের জন্য আমরা অপটিমাইজার (অনুকূলায়ক) এবং পরিবর্তনশীল (ভ্যারিয়েশনাল) ফর্মটি নির্দিষ্ট করব।</p>
 <p>টীকা: আপনি ব্যাকএন্ডের নাম সরবরাহ করে বিভিন্ন ব্যাকএন্ডে পরিবর্তন করতে পারেন।</p>
@@ -755,7 +754,7 @@ selection       value           probability
  [1 1 0 0]      0.0160          0.0000
 </pre></div></div>
 </div>
-<section id="কিউএওএ-(QAOA)-ব্যবহার-করে-সমাধান">
+<div class="section" id="কিউএওএ-(QAOA)-ব্যবহার-করে-সমাধান">
 <h3>কিউএওএ (QAOA) ব্যবহার করে সমাধান<a class="headerlink" href="#কিউএওএ-(QAOA)-ব্যবহার-করে-সমাধান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>আমরা এখানে কোয়ান্টাম অ্যাপ্রক্সিমেইট অপ্টিমাইজেশন অ্যালগরিদম কিউএওএ (QAOA) ব্যবহার করে পাওয়া একটি ফলাফলও দেখাই। এটি আরেকটি পরিবর্তনশীল (ভ্যারিয়েশনাল) অ্যালগরিদম এবং এটি ব্যবহার করে সমস্যার ভিত্তিতে তৈরি একটি অভ্যন্তরীণ পরিবর্তনশীল (ভ্যারিয়েশনাল) ফর্ম।</p>
 <div class="nbinput docutils container">
@@ -838,9 +837,9 @@ selection       value           probability
 </pre></div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
              </article>

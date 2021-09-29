@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>ইউরোপীয় কল বিকল্পগুলির মূল্য নির্ধারণ &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -160,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/03_european_call_option_pricing.ipynb">docs/tutorials/03_european_call_option_pricing.ipynb</a> থেকে বানানো হয়েছে।</p>
 </div>
-<section id="ইউরোপীয়-কল-বিকল্পগুলির-মূল্য-নির্ধারণ">
+<div class="section" id="ইউরোপীয়-কল-বিকল্পগুলির-মূল্য-নির্ধারণ">
 <h1>ইউরোপীয় কল বিকল্পগুলির মূল্য নির্ধারণ<a class="headerlink" href="#ইউরোপীয়-কল-বিকল্পগুলির-মূল্য-নির্ধারণ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<section id="ভূমিকা">
+<div class="section" id="ভূমিকা">
 <h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>মনে করা যাক স্ট্রাইক প্রাইস সহ একটি ইউরোপীয় পুট বিকল্প <span class="math notranslate nohighlight">\(K\)</span> এবং একটি অন্তর্নিহিত সম্পদ যার পূর্ণ পরিণতিতে স্পট মূল্য <span class="math notranslate nohighlight">\(S_T\)</span>, যেটি একটি প্রদত্ত এলোমেলো বিতরণ অনুসরণ করে। এই সম্পর্কিত পে অফ ফাংশনটি সংজ্ঞায়িত করা হয়:</p>
 <div class="math notranslate nohighlight">
@@ -522,8 +521,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="অনিশ্চয়তা-মডেল">
+</div>
+<div class="section" id="অনিশ্চয়তা-মডেল">
 <h2>অনিশ্চয়তা মডেল<a class="headerlink" href="#অনিশ্চয়তা-মডেল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>আমরা log-normal র‍্যান্ডম ডিস্ট্রিবিউশন কোয়ান্টামের স্টেটে যুক্ত করার জন্য একটি সার্কিট ফ্যাক্টরি তৈরি করি। ডিস্ট্রিবিউশনটি একটি নির্দিষ্ট ইন্টারভালে <span class="math notranslate nohighlight">\([\text{low}, \text{high}]\)</span> বিচ্ছিন্ন হয় এবং সেগুলি <span class="math notranslate nohighlight">\(2^n\)</span> গ্রিড পয়েন্ট ব্যবহার করে বিযুক্ত করা হয়। এখানে <span class="math notranslate nohighlight">\(n\)</span> দ্বারা কিউবিট সংখ্যার বর্ণনা করা হচ্ছে। সার্কিট ফ্যাক্টরির মত ইউনিটরি অপারেটর নিম্নলিখিতভাবে প্রয়োগ করা হয়:</p>
 <div class="math notranslate nohighlight">
@@ -586,8 +585,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_03_european_call_option_pricing_5_0.svg" src="../_images/tutorials_03_european_call_option_pricing_5_0.svg" /></div>
 </div>
-</section>
-<section id="পেঅফ-ফাংশন">
+</div>
+<div class="section" id="পেঅফ-ফাংশন">
 <h2>পেঅফ ফাংশন<a class="headerlink" href="#পেঅফ-ফাংশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>যতক্ষণ পরিপক্ক অবস্থায় স্ট্রাইক মূল্য <span class="math notranslate nohighlight">\(S_T\)</span>,   <span class="math notranslate nohighlight">\(K\)</span> থেকে কম থাকছে ততক্ষণ পর্যন্ত পে অফ ফাঙ্কশন শূন্য থাকবে তারপর মান রৈখিকভাবে বৃদ্ধি পাবে। এই প্রয়োগপদ্ধতিতে একটি comparator ব্যবহার করা হয়, এটি  <span class="math notranslate nohighlight">\(\big|0\rangle\)</span> থেকে  <span class="math notranslate nohighlight">\(\big|1\rangle\)</span> পর্যন্ত  যদি <span class="math notranslate nohighlight">\(S_T \geq K\)</span> হয় তাহলে একটি অ্যানসিলা কিউবিট ফ্লিপ করে এবং অ্যানসিলাটি পে অফ ফাঙ্কশন এর লিনিয়ার অংশ নিয়ন্ত্রণ করতে ব্যবহৃত হয়।</p>
 <p>রৈখিক অংশ (linear part) টি অনুমান করতে এই পদ্ধতি ব্যবহার করা হয়। ছোট <span class="math notranslate nohighlight">\(|y|\)</span> এর মানের জন্যে <span class="math notranslate nohighlight">\(\sin^2(y + \pi/4) \approx y + 1/2\)</span> হয়। ফলে যেকোনো প্রদত্ত আনুমানিক আরোহী গুণক (স্কেলিং factor) <span class="math notranslate nohighlight">\(c_\text{approx} \in [0, 1]\)</span> এবং <span class="math notranslate nohighlight">\(x \in [0, 1]\)</span> এর জন্যে আমরা ধরে নেই,</p>
@@ -707,8 +706,8 @@ exact expected value:   0.1623
 exact delta value:      0.8098
 </pre></div></div>
 </div>
-</section>
-<section id="প্রত্যাশিত-পেঅফ-নির্ধারণ-করা">
+</div>
+<div class="section" id="প্রত্যাশিত-পেঅফ-নির্ধারণ-করা">
 <h2>প্রত্যাশিত পেঅফ নির্ধারণ করা<a class="headerlink" href="#প্রত্যাশিত-পেঅফ-নির্ধারণ-করা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -837,8 +836,8 @@ Estimated value:        0.1673
 Confidence interval:    [0.1623, 0.1722]
 </pre></div></div>
 </div>
-</section>
-<section id="ডেল্টা-মূল্যায়ন-করা">
+</div>
+<div class="section" id="ডেল্টা-মূল্যায়ন-করা">
 <h2>ডেল্টা মূল্যায়ন করা<a class="headerlink" href="#ডেল্টা-মূল্যায়ন-করা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>প্রত্যাশিত পেঅফের চেয়ে ডেল্টা মূল্যায়ন করা কিছুটা সহজ। প্রত্যাশিত পেঅফ এর মতোই আমরা <span class="math notranslate nohighlight">\(S_T \leq K\)</span> কেসগুলি সনাক্ত করতে একটি তুলনামূলক বর্তনী (সার্কিট) এবং একটি অ্যানসিলা কিউবিট ব্যবহার করি। তবে, যেহেতু আমরা কেবলমাত্র এই অবস্থা সত্য হওয়ার সম্ভাবনা সম্পর্কে আগ্রহী, তাই আমরা আরও কিছু অনুমান ছাড়াই সরাসরি বিস্তার অনুমানে এই অ্যানসিলা কিউবিট টি অবজেক্টিভ কিউবিট হিসাবে ব্যবহার করতে পারি।</p>
 <div class="nbinput nblast docutils container">
@@ -996,8 +995,8 @@ Confidence interval:    [0.8005, 0.8120]
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>

@@ -6,8 +6,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="bn-BN" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Credit Risk Analysis &mdash; Qiskit Finance 0.2.1 documentation</title>
@@ -160,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_finance.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -487,9 +486,9 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">নোট</p>
 <p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a>.</p>
 </div>
-<section id="Credit-Risk-Analysis">
+<div class="section" id="Credit-Risk-Analysis">
 <h1>Credit Risk Analysis<a class="headerlink" href="#Credit-Risk-Analysis" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<section id="Introduction">
+<div class="section" id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>This tutorial shows how quantum algorithms can be used for credit risk analysis. More precisely, how Quantum Amplitude Estimation (QAE) can be used to estimate risk measures with a quadratic speed-up over classical Monte Carlo simulation. The tutorial is based on the following papers:</p>
 <ul class="simple">
@@ -524,8 +523,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Problem-Definition">
+</div>
+<div class="section" id="Problem-Definition">
 <h2>Problem Definition<a class="headerlink" href="#Problem-Definition" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>In this tutorial we want to analyze the credit risk of a portfolio of <span class="math notranslate nohighlight">\(K\)</span> assets. The default probability of every asset <span class="math notranslate nohighlight">\(k\)</span> follows a <em>Gaussian Conditional Independence</em> model, i.e., given a value <span class="math notranslate nohighlight">\(z\)</span> sampled from a latent random variable <span class="math notranslate nohighlight">\(Z\)</span> following a standard normal distribution, the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> is given by</p>
 <div class="math notranslate nohighlight">
@@ -560,8 +559,8 @@ loss given default for asset <span class="math notranslate nohighlight">\(k\)</s
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Uncertainty-Model">
+</div>
+<div class="section" id="Uncertainty-Model">
 <h2>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>We now construct a circuit that loads the uncertainty model. This can be achieved by creating a quantum state in a register of <span class="math notranslate nohighlight">\(n_z\)</span> qubits that represents <span class="math notranslate nohighlight">\(Z\)</span> following a standard normal distribution. This state is then used to control single qubit Y-rotations on a second qubit register of <span class="math notranslate nohighlight">\(K\)</span> qubits, where a <span class="math notranslate nohighlight">\(|1\rangle\)</span> state of qubit <span class="math notranslate nohighlight">\(k\)</span> represents the default event of asset <span class="math notranslate nohighlight">\(k\)</span>. The resulting quantum state can be written as</p>
 <div class="math notranslate nohighlight">
@@ -755,8 +754,8 @@ Conditional Value at Risk CVaR[L]: 3.0000
 <div class="output_area docutils container">
 <img alt="../_images/tutorials_09_credit_risk_analysis_14_0.svg" src="../_images/tutorials_09_credit_risk_analysis_14_0.svg" /></div>
 </div>
-</section>
-<section id="Expected-Loss">
+</div>
+<div class="section" id="Expected-Loss">
 <h2>Expected Loss<a class="headerlink" href="#Expected-Loss" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>To estimate the expected loss, we first apply a weighted sum operator to sum up individual losses to total loss:</p>
 <div class="math notranslate nohighlight">
@@ -938,8 +937,8 @@ Estimated value:        0.6733
 Confidence interval:    [0.6587, 0.6878]
 </pre></div></div>
 </div>
-</section>
-<section id="Cumulative-Distribution-Function">
+</div>
+<div class="section" id="Cumulative-Distribution-Function">
 <h2>Cumulative Distribution Function<a class="headerlink" href="#Cumulative-Distribution-Function" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>Instead of the expected loss (which could also be estimated efficiently using classical techniques) we now estimate the cumulative distribution function (CDF) of the loss. Classically, this either involves evaluating all the possible combinations of defaulting assets, or many classical samples in a Monte Carlo simulation. Algorithms based on QAE have the potential to significantly speed up this analysis in the future.</p>
 <p>To estimate the CDF, i.e., the probability <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq x]\)</span>, we again apply <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> to compute the total loss, and then apply a comparator that for a given value <span class="math notranslate nohighlight">\(x\)</span> acts as</p>
@@ -1121,8 +1120,8 @@ Estimated value:        0.9593
 Confidence interval:    [0.9582, 0.9604]
 </pre></div></div>
 </div>
-</section>
-<section id="Value-at-Risk">
+</div>
+<div class="section" id="Value-at-Risk">
 <h2>Value at Risk<a class="headerlink" href="#Value-at-Risk" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>In the following we use a bisection search and QAE to efficiently evaluate the CDF to estimate the value at risk.</p>
 <div class="nbinput nblast docutils container">
@@ -1264,8 +1263,8 @@ Estimated Probability:    0.960
 Exact Probability:        0.959
 </pre></div></div>
 </div>
-</section>
-<section id="Conditional-Value-at-Risk">
+</div>
+<div class="section" id="Conditional-Value-at-Risk">
 <h2>Conditional Value at Risk<a class="headerlink" href="#Conditional-Value-at-Risk" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>Last, we compute the CVaR, i.e. the expected value of the loss conditional to it being larger than or equal to the VaR. To do so, we evaluate a piecewise linear objective function <span class="math notranslate nohighlight">\(f(L)\)</span>, dependent on the total loss <span class="math notranslate nohighlight">\(L\)</span>, that is given by</p>
 <div class="math notranslate nohighlight">
@@ -1473,8 +1472,8 @@ Estimated CVaR: 3.3836
 </pre></div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
              </article>
