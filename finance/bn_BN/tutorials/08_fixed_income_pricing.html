@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pricing Fixed-Income Assets &mdash; Qiskit Finance 0.2.1 documentation</title>
+  <title>Pricing Fixed-Income Assets (নির্দিষ্ট আয় সম্পদ মূল্য নির্ধারণ) &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="Credit Risk Analysis" href="09_credit_risk_analysis.html" />
-    <link rel="prev" title="Pricing Asian Barrier Spreads" href="07_asian_barrier_spread_pricing.html" /> 
+    <link rel="next" title="ক্রেডিট ঝুঁকি বিশ্লেষণ" href="09_credit_risk_analysis.html" />
+    <link rel="prev" title="এশিয়ান ব্যারিয়ার স্প্রেডের মূল্য নির্ধারণ" href="07_asian_barrier_spread_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Pricing Fixed-Income Assets</li>
+      <li><em>Pricing Fixed-Income Assets</em> (<em>নির্দিষ্ট আয় সম্পদ মূল্য নির্ধারণ</em>)</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,17 +484,16 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/08_fixed_income_pricing.ipynb">docs/tutorials/08_fixed_income_pricing.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/08_fixed_income_pricing.ipynb">docs/tutorials/08_fixed_income_pricing.ipynb</a> থেকে নেয়া হয়েছে।</p>
 </div>
-<div class="section" id="Pricing-Fixed-Income-Assets">
-<h1>Pricing Fixed-Income Assets<a class="headerlink" href="#Pricing-Fixed-Income-Assets" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We seek to price a fixed-income asset knowing the distributions describing the relevant interest rates. The cash flows <span class="math notranslate nohighlight">\(c_t\)</span> of the asset and the dates at which they occur are known. The total value <span class="math notranslate nohighlight">\(V\)</span> of the asset is thus the expectation value of:</p>
+<div class="section" id="Pricing-Fixed-Income-Assets-(নির্দিষ্ট-আয়-সম্পদ-মূল্য-নির্ধারণ)">
+<h1><em>Pricing Fixed-Income Assets</em> (<em>নির্দিষ্ট আয় সম্পদ মূল্য নির্ধারণ</em>)<a class="headerlink" href="#Pricing-Fixed-Income-Assets-(নির্দিষ্ট-আয়-সম্পদ-মূল্য-নির্ধারণ)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>প্রাসঙ্গিক সুদের হারগুলি বর্ণনা করে এমন বিতরণগুলি জেনে আমরা একটি নির্দিষ্ট-আয়ের সম্পদের মূল্য চাই। সম্পদের নগদ <span class="math notranslate nohighlight">\(c_t\)</span> প্রবাহ এবং যে তারিখে তারা ঘটে সেগুলি জানা যায়। সম্পত্তির মোট মূল্য <span class="math notranslate nohighlight">\(V\)</span> হল এর গড় মান:</p>
 <div class="math notranslate nohighlight">
 \[V = \sum_{t=1}^T \frac{c_t}{(1+r_t)^t}\]</div>
-<p>Each cash flow is treated as a zero coupon bond with a corresponding interest rate <span class="math notranslate nohighlight">\(r_t\)</span> that depends on its maturity. The user must specify the distribution modeling the uncertainty in each <span class="math notranslate nohighlight">\(r_t\)</span> (possibly correlated) as well as the number of qubits he wishes to use to sample each distribution. In this example we expand the value of the asset to first order in the interest rates <span class="math notranslate nohighlight">\(r_t\)</span>. This corresponds to studying the asset in terms of its duration. The approximation of the
-objective function follows the following paper: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
+<p>প্রতিটি নগদ প্রবাহকে শূন্য কুপন বন্ড হিসেবে বিবেচনা করা হয় যার সাথে সংশ্লিষ্ট সুদের হার <span class="math notranslate nohighlight">\(r_t\)</span> যা তার পরিপক্কতার উপর নির্ভর করে। ব্যবহারকারীকে অবশ্যই প্রতিটি <span class="math notranslate nohighlight">\(r_t\)</span> (সম্ভবত পারস্পরিক সম্পর্কযুক্ত) অনিশ্চয়তার বণ্টন মডেলিং নির্দিষ্ট করতে হবে এবং সেইসাথে প্রতিটি বন্টনের নমুনার জন্য তিনি যে কিউবিটগুলি ব্যবহার করতে চান তা উল্লেখ করতে হবে। এই উদাহরণে আমরা সম্পদের মান সুদের হারে প্রথম অর্ডারে প্রসারিত করি <span class="math notranslate nohighlight">\(r_t\)</span>। এটি সম্পদের সময়কাল অনুসারে অধ্যয়নের সাথে মিলে যায়। উদ্দেশ্য ফাংশনের আনুমানিকতা নিম্নলিখিত গবেষণা অনুসরণ করে: <a class="reference external" href="https://arxiv.org/abs/1806.06893">Quantum Risk Analysis. Woerner, Egger. 2018.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -519,18 +518,18 @@ objective function follows the following paper: <a class="reference external" hr
 </pre></div>
 </div>
 </div>
-<div class="section" id="Uncertainty-Model">
-<h3>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>We construct a circuit factory to load a multivariate normal random distribution in <span class="math notranslate nohighlight">\(d\)</span> dimensions into a quantum state. The distribution is truncated to a given box <span class="math notranslate nohighlight">\(\otimes_{i=1}^d [low_i, high_i]\)</span> and discretized using <span class="math notranslate nohighlight">\(2^{n_i}\)</span> grid points, where <span class="math notranslate nohighlight">\(n_i\)</span> denotes the number of qubits used for dimension <span class="math notranslate nohighlight">\(i = 1,\ldots, d\)</span>. The unitary operator corresponding to the circuit factory implements the following:</p>
+<div class="section" id="অনিশ্চয়তা-মডেল">
+<h3>অনিশ্চয়তা মডেল<a class="headerlink" href="#অনিশ্চয়তা-মডেল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>আমরা একটি বহুবিধ নর্মাল দৈব বণ্টনকে (multivariate normal random distribution) কোয়ান্টামের স্টেটে <span class="math notranslate nohighlight">\(d\)</span> মাত্রাগুলিতে লোড করার জন্য একটি বর্তনী (সার্কিট) ফ্যাক্টরি তৈরি করি । বিতরণটি একটি নির্দিষ্ট বিরতিতে <span class="math notranslate nohighlight">\(\otimes_{i=1}^d [low_i, high_i]\)</span> কাটা হয় এবং সেগুলি <span class="math notranslate nohighlight">\(2^{n_i}\)</span> গ্রিড পয়েন্ট ব্যবহার করে বিযুক্ত করা হয় যেখানে <span class="math notranslate nohighlight">\(n_i\)</span> দ্বারা <span class="math notranslate nohighlight">\(i = 1,\ldots, d\)</span> মাত্রার কিউবিট সংখ্যার বর্ণনা করা হচ্ছে। সার্কিট ফ্যাক্টরির অনুরূপ ইউনিটারি অপারেটর নিম্নলিখিতগুলিকে প্রয়োগ করে:</p>
 <div class="math notranslate nohighlight">
 \[\big|0\rangle_{n_1}\ldots\big|0\rangle_{n_d} \mapsto \big|\psi\rangle = \sum_{i_1=0}^{2^n_-1}\ldots\sum_{i_d=0}^{2^n_-1} \sqrt{p_{i_1,...,i_d}}\big|i_1\rangle_{n_1}\ldots\big|i_d\rangle_{n_d},\]</div>
-<p>where <span class="math notranslate nohighlight">\(p_{i_1, ..., i_d}\)</span> denote the probabilities corresponding to the truncated and discretized distribution and where <span class="math notranslate nohighlight">\(i_j\)</span> is mapped to the right interval <span class="math notranslate nohighlight">\([low_j, high_j]\)</span> using the affine map:</p>
+<p>যেখানে <span class="math notranslate nohighlight">\(p_{i_1, ..., i_d}\)</span> সংক্ষিপ্ত এবং বিযুক্ত বিতরণগুলির সম্ভাবনা বোঝায় এবং <span class="math notranslate nohighlight">\(i_j\)</span> অ্যাফাইন ম্যাপ ব্যবহার করে <span class="math notranslate nohighlight">\([low_j, high_j]\)</span> ডান বিরতি ব্যবধানে ম্যাপ করা হয়েছে:</p>
 <div class="math notranslate nohighlight">
 \[\{0, \ldots, 2^{n_{j}}-1\} \ni i_j \mapsto \frac{high_j - low_j}{2^{n_j} - 1} * i_j + low_j \in [low_j, high_j].\]</div>
-<p>In addition to the uncertainty model, we can also apply an affine map, e.g. resulting from a principal component analysis. The interest rates used are then given by:</p>
+<p>অনিশ্চয়তা মডেল ছাড়াও, আমরা একটি অ্যাফাইন মানচিত্রও প্রয়োগ করতে পারি, উদা: একটি মূল উপাদান বিশ্লেষণের (principal component analysis) ফল। ব্যবহৃত সুদের হারগুলি এভাবে দেওয়া হয়:</p>
 <div class="math notranslate nohighlight">
 \[\vec{r} = A * \vec{x} + b,\]</div>
-<p>where <span class="math notranslate nohighlight">\(\vec{x} \in \otimes_{i=1}^d [low_i, high_i]\)</span> follows the given random distribution.</p>
+<p>যেখানে <span class="math notranslate nohighlight">\(\vec{x} \in \otimes_{i=1}^d [low_i, high_i]\)</span> প্রদত্ত দৈব (random) বণ্টন অনুসরণ করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -582,10 +581,10 @@ objective function follows the following paper: <a class="reference external" hr
 <img alt="../_images/tutorials_08_fixed_income_pricing_6_0.svg" src="../_images/tutorials_08_fixed_income_pricing_6_0.svg" /></div>
 </div>
 </div>
-<div class="section" id="Cash-flow,-payoff-function,-and-exact-expected-value">
-<h3>Cash flow, payoff function, and exact expected value<a class="headerlink" href="#Cash-flow,-payoff-function,-and-exact-expected-value" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>In the following we define the cash flow per period, the resulting payoff function and evaluate the exact expected value.</p>
-<p>For the payoff function we first use a first order approximation and then apply the same approximation technique as for the linear part of the payoff function of the <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option</span></a>.</p>
+<div class="section" id="নগদ-প্রবাহ,-পে-অফ-ফাংশন-এবং-সঠিক-গড়-মান">
+<h3>নগদ প্রবাহ, পে-অফ ফাংশন এবং সঠিক গড় মান<a class="headerlink" href="#নগদ-প্রবাহ,-পে-অফ-ফাংশন-এবং-সঠিক-গড়-মান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>নিম্নলিখিত অংশটিতে আমরা সময়কালে নগদ প্রবাহ সংজ্ঞায়িত করি, ফলাফলের পে-অফ ফাংশন এবং সঠিক গড় মানটি মূল্যায়ন করি।</p>
+<p>পে-অফ ফাংশনের জন্য আমরা প্রথমে, প্রথম অর্ডার অনুমান ব্যবহার করি এবং তারপরে <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option</span></a> এর পে-অফ ফাংশনের রৈখিক অংশের মতো একই আনুমানিক পদ্ধতি প্রয়োগ করি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -810,10 +809,10 @@ Confidence interval:    [2.3015, 2.3823]
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="09_credit_risk_analysis.html" class="btn btn-neutral float-right" title="Credit Risk Analysis" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="09_credit_risk_analysis.html" class="btn btn-neutral float-right" title="ক্রেডিট ঝুঁকি বিশ্লেষণ" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral" title="Pricing Asian Barrier Spreads" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="07_asian_barrier_spread_pricing.html" class="btn btn-neutral" title="এশিয়ান ব্যারিয়ার স্প্রেডের মূল্য নির্ধারণ" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -845,10 +844,10 @@ Confidence interval:    [2.3015, 2.3823]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Pricing Fixed-Income Assets</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#Uncertainty-Model">Uncertainty Model</a></li>
-<li><a class="reference internal" href="#Cash-flow,-payoff-function,-and-exact-expected-value">Cash flow, payoff function, and exact expected value</a></li>
+<li><a class="reference internal" href="#"><em>Pricing Fixed-Income Assets</em> (<em>নির্দিষ্ট আয় সম্পদ মূল্য নির্ধারণ</em>)</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a><ul>
+<li><a class="reference internal" href="#অনিশ্চয়তা-মডেল">অনিশ্চয়তা মডেল</a></li>
+<li><a class="reference internal" href="#নগদ-প্রবাহ,-পে-অফ-ফাংশন-এবং-সঠিক-গড়-মান">নগদ প্রবাহ, পে-অফ ফাংশন এবং সঠিক গড় মান</a></li>
 </ul>
 </li>
 </ul>

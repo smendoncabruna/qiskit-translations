@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Leveraging Qiskit Runtime &mdash; Qiskit Nature 0.2.1 documentation</title>
+  <title>Qiskit இயக்க நேரத்தை மேம்படுத்துதல் &mdash; Qiskit Nature 0.2.1 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடல்" href="../search.html" />
-    <link rel="next" title="The Property Framework" href="08_property_framework.html" />
+    <link rel="next" title="பொருள் கட்டமைப்பு" href="08_property_framework.html" />
     <link rel="prev" title="Calculating Thermodynamics Observables with a quantum computer" href="06_calculating_thermodynamic_observables.html" /> 
 
   
@@ -202,9 +202,9 @@
       </li>
 
         
-          <li><a href="index.html">Qiskit Nature Tutorials</a> &gt;</li>
+          <li><a href="index.html">Qiskit இயற்கை பயிற்சிகள்</a> &gt;</li>
         
-      <li>Leveraging Qiskit Runtime</li>
+      <li>Qiskit இயக்க நேரத்தை மேம்படுத்துதல்</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,22 +484,21 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/07_leveraging_qiskit_runtime.ipynb">docs/tutorials/07_leveraging_qiskit_runtime.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/07_leveraging_qiskit_runtime.ipynb">docs/tutorials/07_leveraging_qiskit_runtime.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<div class="section" id="Leveraging-Qiskit-Runtime">
-<h1>Leveraging Qiskit Runtime<a class="headerlink" href="#Leveraging-Qiskit-Runtime" title="Permalink to this headline">¶</a></h1>
-<p>Iterative algorithms, such as the Variational Quantum Eigensolver (VQE), traditionally send one batch of circuits (one “job”) to be executed on the quantum device in each iteration. Sending a job involves certain overhead, mainly</p>
+<div class="section" id="Qiskit-இயக்க-நேரத்தை-மேம்படுத்துதல்">
+<h1>Qiskit இயக்க நேரத்தை மேம்படுத்துதல்<a class="headerlink" href="#Qiskit-இயக்க-நேரத்தை-மேம்படுத்துதல்" title="Permalink to this headline">¶</a></h1>
+<p>வேரியேஷனல் குவாண்டம் ஈஜென்சால்வர் (VQE) போன்ற வழக்கமான வழிமுறைகள், ஒவ்வொரு மறு செய்கையிலும் குவாண்டம் சாதனத்தில் செயல்படுத்தப்படும் ஒரு தொகுதி சுற்றுகளை (ஒரு &quot;வேலை&quot;) பாரம்பரியமாக அனுப்புகின்றன. ஒரு வேலையை அனுப்புவது முக்கியமாக சில மேல்நிலைகளை உள்ளடக்கியது</p>
 <ul class="simple">
-<li><p>the time to process the requests and send the data (API overhead, usually about 10s)</p></li>
-<li><p>the job queue time, that is how long you have to wait before it’s your turn to run on the device (usually about 2min)</p></li>
+<li><p>கோரிக்கைகளை செயலாக்க மற்றும் தரவை அனுப்ப நேரம் (API மேல்நிலை, பொதுவாக சுமார் 10 கள்)</p></li>
+<li><p>வேலை வரிசை நேரம், சாதனத்தில் இயங்குவதற்கான உங்கள் முறை வரும் வரை நீங்கள் எவ்வளவு நேரம் காத்திருக்க வேண்டும் (வழக்கமாக சுமார் 2 நிமிடங்கள்)</p></li>
 </ul>
-<p>If we send hundreds of jobs iteratively, this overhead quickly dominates the execution time of our algorithm. Qiskit Runtime allows us to tackle these issues and significantly speed up (especially) iterative algorithms. With Qiskit Runtime, one job does not contain only a batch of circuits but the <em>entire</em> algorithm. That means we only experience the API overhead and queue wait <em>once</em> instead of in every iteration! You’ll be able to either upload algorithm parameters and delegate all the
-complexity to the cloud, where your program is executed, or upload your personal algorithm directly.</p>
-<p>For the VQE, the integration of Qiskit Runtime in your existing code is a piece of cake. There is a (almost) drop-in replacement, called <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> for the <code class="docutils literal notranslate"><span class="pre">VQE</span></code> class.</p>
-<p>Let’s see how you can leverage the runtime on a simple chemistry example: Finding the ground state energy of the lithium hydrate (LiH) molecule at a given bond distance.</p>
-<div class="section" id="Problem-specification:-LiH-molecule">
-<h2>Problem specification: LiH molecule<a class="headerlink" href="#Problem-specification:-LiH-molecule" title="Permalink to this headline">¶</a></h2>
-<p>First, we specify the molecule whose ground state energy we seek. Here, we look at LiH with a bond distance of 2.5 Å.</p>
+<p>நாங்கள் நூற்றுக்கணக்கான வேலைகளை மீண்டும் மீண்டும் அனுப்பினால், இந்த மேல்நிலை எங்கள் வழிமுறையின் செயல்பாட்டு நேரத்தை விரைவாக ஆதிக்கம் செலுத்துகிறது. Qiskit இயக்க நேரம் இந்த சிக்கல்களைச் சமாளிக்கவும், (குறிப்பாக) மறு செயல்பாட்டு வழிமுறைகளை கணிசமாக வேகப்படுத்தவும் அனுமதிக்கிறது. Qiskit இயக்க நேரத்துடன், ஒரு வேலையில் ஒரு தொகுதி சுற்றுகள் மட்டும் இல்லை ஆனால் <em>முழு</em> வழிமுறையும் உள்ளது. அதாவது ஒவ்வொரு மறு செய்கையிலும் <em>ஒரு முறை</em> API மேல்நிலை மற்றும் வரிசை காத்திருப்பை மட்டுமே நாங்கள் அனுபவிக்கிறோம்! நீங்கள் அல்காரிதம் அளவுருக்களை பதிவேற்றலாம் மற்றும் உங்கள் நிரல் செயல்படுத்தப்படும் மேகக்கணிக்கு அனைத்து சிக்கல்களையும் வழங்கலாம் அல்லது உங்கள் தனிப்பட்ட வழிமுறையை நேரடியாக பதிவேற்றலாம்.</p>
+<p>VQE க்கு, உங்கள் தற்போதைய குறியீட்டில் Qiskit இயக்க நேரத்தின் ஒருங்கிணைப்பு ஒரு துண்டு கேக் ஆகும். <code class="docutils literal notranslate"><span class="pre">VQE</span></code> வகுப்பிற்கு <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> எனப்படும் (கிட்டத்தட்ட) டிராப்-இன் மாற்று உள்ளது.</p>
+<p>ஒரு எளிய வேதியியல் உதாரணத்தில் நீங்கள் இயக்க நேரத்தை எவ்வாறு மேம்படுத்துவது என்று பார்ப்போம்: கொடுக்கப்பட்ட பிணைப்பு தூரத்தில் லித்தியம் ஹைட்ரேட் (LiH) மூலக்கூறின் தரை நிலை ஆற்றலைக் கண்டறிதல்.</p>
+<div class="section" id="சிக்கல்-விவரக்குறிப்பு:-LiH-மூலக்கூறு">
+<h2>சிக்கல் விவரக்குறிப்பு: LiH மூலக்கூறு<a class="headerlink" href="#சிக்கல்-விவரக்குறிப்பு:-LiH-மூலக்கூறு" title="Permalink to this headline">¶</a></h2>
+<p>முதலில், மூலக்கூறின் நிலத்தடி ஆற்றலை நாம் தேடுகிறோம். இங்கே, நாங்கள் 2.5 Å பிணைப்பு தூரத்துடன் LiH ஐப் பார்க்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -548,9 +547,9 @@ complexity to the cloud, where your program is executed, or upload your personal
 </div>
 </div>
 </div>
-<div class="section" id="Classical-reference-solution">
-<h2>Classical reference solution<a class="headerlink" href="#Classical-reference-solution" title="Permalink to this headline">¶</a></h2>
-<p>As a reference solution we can solve this system classically with the <code class="docutils literal notranslate"><span class="pre">NumPyEigensolver</span></code>.</p>
+<div class="section" id="கிளாசிக்கல்-குறிப்பு-தீர்வு">
+<h2>கிளாசிக்கல் குறிப்பு தீர்வு<a class="headerlink" href="#கிளாசிக்கல்-குறிப்பு-தீர்வு" title="Permalink to this headline">¶</a></h2>
+<p>குறிப்பு தீர்வாக நாம் இந்த அமைப்பை <code class="docutils literal notranslate"><span class="pre">NumPyEigensolver</span></code> மூலம் கிளாசிக்கல் முறையில் தீர்க்க முடியும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -588,7 +587,7 @@ Energy: -7.773617988868097
 </div>
 <div class="section" id="VQE">
 <h2>VQE<a class="headerlink" href="#VQE" title="Permalink to this headline">¶</a></h2>
-<p>To run the VQE we need to select a parameterized quantum circuit acting as ansatz and a classical optimizer. Here we’ll choose a heuristic, hardware efficient ansatz and the SPSA optimizer.</p>
+<p>VQE ஐ இயக்க நாம் அன்சட்ஸ் மற்றும் கிளாசிக்கல் ஆப்டிமைசராக செயல்படும் ஒரு அளவுரு குவாண்டம் சர்க்யூட்டை தேர்ந்தெடுக்க வேண்டும். இங்கே நாம் ஒரு ஹியூரிஸ்டிக், வன்பொருள் திறமையான அன்சட்ஸ் மற்றும் SPSA ஆப்டிமைசரை தேர்ந்தெடுப்போம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -623,7 +622,7 @@ Energy: -7.773617988868097
 </pre></div>
 </div>
 </div>
-<p>Before executing the VQE in the cloud using Qiskit Runtime, let’s execute a local VQE first.</p>
+<p>Qiskit இயக்க நேரத்தைப் பயன்படுத்தி கிளவுட்டில் VQE ஐ செயல்படுத்துவதற்கு முன், முதலில் ஒரு லோக்கல் VQE ஐ இயக்கலாம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -669,10 +668,10 @@ Energy: -7.561492258661798
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Runtime-VQE">
-<h2>Runtime VQE<a class="headerlink" href="#Runtime-VQE" title="Permalink to this headline">¶</a></h2>
-<p>Let’s exchange the eigensolver from a local VQE algorithm to a VQE executed using Qiskit Runtime – simply by exchanging the <code class="docutils literal notranslate"><span class="pre">VQE</span></code> class by the <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code>.</p>
-<p>First, we’ll have to load a provider to access Qiskit Runtime. <strong>Note:</strong> You have to replace the next cell with your provider.</p>
+<div class="section" id="இயக்க-நேரம்-VQE">
+<h2>இயக்க நேரம் VQE<a class="headerlink" href="#இயக்க-நேரம்-VQE" title="Permalink to this headline">¶</a></h2>
+<p>ஒரு லோக்கல் VQE அல்காரிதத்தில் இருந்து ஒரு VQE க்கு Qiskit Runtime- ஐ பயன்படுத்தி செயல்படுத்தப்படும் Eigensolver ஐ மாற்றுவோம் - <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> மூலம் <code class="docutils literal notranslate"><span class="pre">VQE</span></code> வகுப்பை பரிமாறிக்கொள்வதன் மூலம்.</p>
+<p>முதலில், Qiskit இயக்க நேரத்தை அணுக ஒரு வழங்குநரை ஏற்ற வேண்டும். <strong>குறிப்பு</strong>: அடுத்த கலத்தை உங்கள் வழங்குநரிடம் மாற்ற வேண்டும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -687,7 +686,7 @@ Energy: -7.561492258661798
 </pre></div>
 </div>
 </div>
-<p>Now we can set up the <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code>. In this first release, the optimizer must be provided as a dictionary, in future releases you’ll be able to pass the same optimizer object as in the traditional VQE.</p>
+<p>இப்போது நாம் <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> ஐ அமைக்கலாம். இந்த முதல் வெளியீட்டில், ஆப்டிமைசர் ஒரு அகராதியாக வழங்கப்பட வேண்டும், எதிர்கால வெளியீடுகளில் நீங்கள் பாரம்பரிய VQE இல் உள்ள அதே ஆப்டிமைசர் பொருளை அனுப்ப முடியும்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -740,7 +739,7 @@ Energy: -7.561492258661798
 Energy: -7.575601255595115
 </pre></div></div>
 </div>
-<p>If we are interested in the development of the energy, the <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> allows access to the history of the optimizer, which contains the loss per iteration (along with the parameters and a timestamp). We can access this data via the <code class="docutils literal notranslate"><span class="pre">raw_result</span></code> attribute of the ground state solver.</p>
+<p>ஆற்றலின் வளர்ச்சியில் நாம் ஆர்வமாக இருந்தால், <code class="docutils literal notranslate"><span class="pre">VQEProgram</span></code> ஆப்டிமைசரின் வரலாற்றை அணுக அனுமதிக்கிறது, இதில் மறு செய்கை இழப்பு (அளவுருக்கள் மற்றும் நேர முத்திரையுடன்) உள்ளது. தரை நிலை கரைப்பானின் <code class="docutils literal notranslate"><span class="pre">raw_result</span></code> பண்பு வழியாக இந்தத் தரவை நாம் அணுகலாம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -801,7 +800,7 @@ Energy: -7.575601255595115
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="08_property_framework.html" class="btn btn-neutral float-right" title="The Property Framework" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="08_property_framework.html" class="btn btn-neutral float-right" title="பொருள் கட்டமைப்பு" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="06_calculating_thermodynamic_observables.html" class="btn btn-neutral" title="Calculating Thermodynamics Observables with a quantum computer" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -836,11 +835,11 @@ Energy: -7.575601255595115
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Leveraging Qiskit Runtime</a><ul>
-<li><a class="reference internal" href="#Problem-specification:-LiH-molecule">Problem specification: LiH molecule</a></li>
-<li><a class="reference internal" href="#Classical-reference-solution">Classical reference solution</a></li>
+<li><a class="reference internal" href="#">Qiskit இயக்க நேரத்தை மேம்படுத்துதல்</a><ul>
+<li><a class="reference internal" href="#சிக்கல்-விவரக்குறிப்பு:-LiH-மூலக்கூறு">சிக்கல் விவரக்குறிப்பு: LiH மூலக்கூறு</a></li>
+<li><a class="reference internal" href="#கிளாசிக்கல்-குறிப்பு-தீர்வு">கிளாசிக்கல் குறிப்பு தீர்வு</a></li>
 <li><a class="reference internal" href="#VQE">VQE</a></li>
-<li><a class="reference internal" href="#Runtime-VQE">Runtime VQE</a></li>
+<li><a class="reference internal" href="#இயக்க-நேரம்-VQE">இயக்க நேரம் VQE</a></li>
 </ul>
 </li>
 </ul>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>The Property Framework &mdash; Qiskit Nature 0.2.1 documentation</title>
+  <title>பொருள் கட்டமைப்பு &mdash; Qiskit Nature 0.2.1 documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="உள்ளடக்கம்" href="../genindex.html" />
     <link rel="search" title="தேடல்" href="../search.html" />
     <link rel="next" title="Protein Folding" href="09_Protein_Folding.html" />
-    <link rel="prev" title="Leveraging Qiskit Runtime" href="07_leveraging_qiskit_runtime.html" /> 
+    <link rel="prev" title="Qiskit இயக்க நேரத்தை மேம்படுத்துதல்" href="07_leveraging_qiskit_runtime.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -202,9 +202,9 @@
       </li>
 
         
-          <li><a href="index.html">Qiskit Nature Tutorials</a> &gt;</li>
+          <li><a href="index.html">Qiskit இயற்கை பயிற்சிகள்</a> &gt;</li>
         
-      <li>The Property Framework</li>
+      <li>பொருள் கட்டமைப்பு</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,10 +484,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/08_property_framework.ipynb">docs/tutorials/08_property_framework.ipynb</a>.</p>
+<p>இந்தப் பக்கம் <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/08_property_framework.ipynb">docs/tutorials/08_property_framework.ipynb</a> இலிருந்து உருவாக்கப்பட்டது.</p>
 </div>
-<div class="section" id="The-Property-Framework">
-<h1>The Property Framework<a class="headerlink" href="#The-Property-Framework" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="பொருள்-கட்டமைப்பு">
+<h1>பொருள் கட்டமைப்பு<a class="headerlink" href="#பொருள்-கட்டமைப்பு" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -497,16 +497,16 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Qiskit Nature 0.2.0 introduces the <em>Property</em> framework. This framework replaces the legacy driver return types like <code class="docutils literal notranslate"><span class="pre">QMolecule</span></code> and <code class="docutils literal notranslate"><span class="pre">WatsonHamiltonian</span></code> with a more modular and extensible approach.</p>
-<p>In this tutorial, we will walk through the framework, explain its most important components and show you, how you can extend it with a custom <em>property</em> yourself.</p>
-<div class="section" id="What-is-a-Property?">
-<h2>What is a <code class="docutils literal notranslate"><span class="pre">Property</span></code>?<a class="headerlink" href="#What-is-a-Property?" title="Permalink to this headline">¶</a></h2>
-<p>At its core, a <code class="docutils literal notranslate"><span class="pre">Property</span></code> is an object complementing some raw data with functions that allow you to transform/manipulate/interpret this raw data. This “definition” is kept rather abstract on purpose, but what it means is essentially the following. A <code class="docutils literal notranslate"><span class="pre">Property</span></code>:</p>
+<p>Qiskit Nature 0.2.0 <em>Property</em> கட்டமைப்பை அறிமுகப்படுத்துகிறது. இந்த கட்டமைப்பானது <code class="docutils literal notranslate"><span class="pre">QMolecule</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">WatsonHamiltonian</span></code> போன்ற பாரம்பரிய டிரைவர் ரிட்டர்ன் வகைகளை அதிக மட்டு மற்றும் விரிவாக்க அணுகுமுறையுடன் மாற்றுகிறது.</p>
+<p>இந்த பயிற்சியில், நாங்கள் கட்டமைப்பின் வழியாக நடந்து, அதன் மிக முக்கியமான கூறுகளை விளக்கி, தனிப்பயன் <em>property</em> நீங்களே எப்படி நீட்டிக்க முடியும் என்பதை உங்களுக்குக் காண்பிப்போம்.</p>
+<div class="section" id="Property-என்றால்-என்ன?">
+<h2><code class="docutils literal notranslate"><span class="pre">Property</span></code> என்றால் என்ன?<a class="headerlink" href="#Property-என்றால்-என்ன?" title="Permalink to this headline">¶</a></h2>
+<p>அதன் மையத்தில், <code class="docutils literal notranslate"><span class="pre">Property</span></code> என்பது இந்த மூல தரவை மாற்ற/கையாள/விளக்குவதற்கு அனுமதிக்கும் செயல்பாடுகளுடன் சில மூல தரவுகளை பூர்த்தி செய்யும் ஒரு பொருள். இந்த &quot;வரையறை&quot; வேண்டுமென்றே சுருக்கமாக வைக்கப்பட்டுள்ளது, ஆனால் இதன் பொருள் அடிப்படையில் பின்வருமாறு. ஒரு <code class="docutils literal notranslate"><span class="pre">Property</span></code>:</p>
 <ul class="simple">
-<li><p>represents a physical observable (that’s the raw data)</p></li>
-<li><p>can be expressed as an operator</p></li>
-<li><p>can be evaluated with a wavefunction</p></li>
-<li><p>provides an <code class="docutils literal notranslate"><span class="pre">interpret</span></code> method which gives meaning to the eigenvalue of the evaluated qubit operator</p></li>
+<li><p>ஒரு உடல் காணக்கூடியதைக் குறிக்கிறது (அது பதனிடப்படாத தரவு)</p></li>
+<li><p>ஒரு ஆபரேட்டராக வெளிப்படுத்தலாம்</p></li>
+<li><p>ஒரு அலை செயல்பாட்டுடன் மதிப்பீடு செய்யலாம்</p></li>
+<li><p>மதிப்பீடு செய்யப்பட்ட க்யூபிட் ஆபரேட்டரின் முக்கிய மதிப்பை வழங்கும் <code class="docutils literal notranslate"><span class="pre">interpret</span></code> முறையை வழங்குகிறது</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -517,24 +517,24 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">qiskit_nature.properties</span></code> module provides two classes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">qiskit_nature.properties</span></code> தொகுதி இரண்டு வகுப்புகளை வழங்குகிறது:</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Property</span></code>: this is the basic interface. It requires only a <code class="docutils literal notranslate"><span class="pre">name</span></code> and an <code class="docutils literal notranslate"><span class="pre">interpret</span></code> method to be implemented.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GroupedProperty</span></code>: this class is an implementation of the <a class="reference external" href="https://en.wikipedia.org/wiki/Composite_pattern">Composite pattern</a> which allows you to <em>group</em> multiple properties into one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Property</span></code>: இது அடிப்படை இடைமுகம். அதை செயல்படுத்த <code class="docutils literal notranslate"><span class="pre">name</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">interpret</span></code> முறை மட்டுமே தேவைப்படுகிறது.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GroupedProperty</span></code>: இந்த வகுப்பு <a class="reference external" href="https://en.wikipedia.org/wiki/Composite_pattern">Composite pattern</a> இன் செயல்பாடாகும், இது உங்களை <em>பல</em> பண்புகளை ஒன்றாக இணைக்க அனுமதிக்கிறது.</p></li>
 </ol>
-<p><strong>Note:</strong> Grouped properties must have unique <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes!</p>
+<p><strong>குறிப்பு:</strong> தொகுக்கப்பட்ட பண்புகள் தனித்துவமான <code class="docutils literal notranslate"><span class="pre">name</span></code> பண்புகளைக் கொண்டிருக்க வேண்டும்!</p>
 </div>
-<div class="section" id="Second-Quantization-Properties">
-<h2>Second Quantization Properties<a class="headerlink" href="#Second-Quantization-Properties" title="Permalink to this headline">¶</a></h2>
-<p>At the time of writing, Qiskit Nature ships with a single variant of properties: the <code class="docutils literal notranslate"><span class="pre">SecondQuantizedProperty</span></code> objects.</p>
-<p>This sub-type adds one additional requirement because any <code class="docutils literal notranslate"><span class="pre">SecondQuantizedProperty</span></code></p>
+<div class="section" id="இரண்டாவது-அளவீட்டு-பண்புகள்">
+<h2>இரண்டாவது அளவீட்டு பண்புகள்<a class="headerlink" href="#இரண்டாவது-அளவீட்டு-பண்புகள்" title="Permalink to this headline">¶</a></h2>
+<p>எழுதும் நேரத்தில், Qiskit Nature பண்புகளின் ஒற்றை மாறுபாட்டுடன் அனுப்பப்படுகிறது: <code class="docutils literal notranslate"><span class="pre">SecondQuantizedProperty</span></code> பொருள்கள்.</p>
+<p>இந்த துணை வகை ஒரு கூடுதல் தேவையை சேர்க்கிறது, ஏனெனில் எந்த <code class="docutils literal notranslate"><span class="pre">SecondQuantizedProperty</span></code></p>
 <ul class="simple">
-<li><p><strong>must</strong> implement a <code class="docutils literal notranslate"><span class="pre">second_q_ops</span></code> method which constructs a (list of) <code class="docutils literal notranslate"><span class="pre">SecondQuantizedOp</span></code>s.</p></li>
+<li><p>ஒரு <code class="docutils literal notranslate"><span class="pre">second_q_ops</span></code> முறையை அமல்படுத்த <strong>வேண்டும்</strong>, இது ஒரு (பட்டியல்) <code class="docutils literal notranslate"><span class="pre">SecondQuantizedOp</span></code> ஐ உருவாக்குகிறது.</p></li>
 </ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">qiskit_nature.properties.second_quantization</span></code> module is further divided into <code class="docutils literal notranslate"><span class="pre">electronic</span></code> and <code class="docutils literal notranslate"><span class="pre">vibrational</span></code> modules (similar to other modules of Qiskit Nature). Let us dive into the <code class="docutils literal notranslate"><span class="pre">electronic</span></code> sub-module first.</p>
-<div class="section" id="Electronic-Second-Quantization-Properties">
-<h3>Electronic Second Quantization Properties<a class="headerlink" href="#Electronic-Second-Quantization-Properties" title="Permalink to this headline">¶</a></h3>
-<p>Out-of-the-box Qiskit Nature ships the following electronic properties:</p>
+<p><code class="docutils literal notranslate"><span class="pre">qiskit_nature.properties.second_quantization</span></code> தொகுதி மேலும் <code class="docutils literal notranslate"><span class="pre">electronic</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">vibrational</span></code> தொகுதிகளாக பிரிக்கப்பட்டுள்ளது (Qiskit Nature மற்ற தொகுதிகள் போன்றது). முதலில் <code class="docutils literal notranslate"><span class="pre">electronic</span></code> துணை-தொகுதிக்குள் நுழைவோம்.</p>
+<div class="section" id="மின்னணு-இரண்டாம்-அளவு-பண்புகள்">
+<h3>மின்னணு இரண்டாம் அளவு பண்புகள்<a class="headerlink" href="#மின்னணு-இரண்டாம்-அளவு-பண்புகள்" title="Permalink to this headline">¶</a></h3>
+<p>பெட்டிக்கு வெளியே உள்ள Qiskit இயற்கை பின்வரும் மின்னணு பண்புகளை அனுப்புகிறது:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -559,9 +559,9 @@ div.rendered_html tbody tr:hover {
   h5py.get_config().default_file_mode = &#39;a&#39;
 </pre></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> is arguably the most important property because it contains the <em>Hamiltonian</em> representing the electronic structure problem whose eigenvalues we are interested in when solving an <code class="docutils literal notranslate"><span class="pre">ElectronicStructureProblem</span></code>. The way in which it stores this Hamiltonian is, just like the rest of the framework, highly modular. The initializer of the <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> has a single required argument, <code class="docutils literal notranslate"><span class="pre">electronic_integrals</span></code>, which is a <code class="docutils literal notranslate"><span class="pre">List[ElectronicIntegrals]</span></code>.</p>
-<div class="section" id="ElectronicIntegrals">
-<h4>ElectronicIntegrals<a class="headerlink" href="#ElectronicIntegrals" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> என்பது மிக முக்கியமான சொத்து, ஏனெனில் இது மின்னணு கட்டமைப்பு சிக்கலைக் குறிக்கும் <em>Hamiltonian</em> ஐக் கொண்டுள்ளது, அதன் <code class="docutils literal notranslate"><span class="pre">ElectronicStructureProblem</span></code> ஐ தீர்க்கும்போது நாம் ஆர்வமாக உள்ளோம். இந்த ஹாமில்டோனியனை அது சேமிக்கும் விதம், மீதமுள்ள கட்டமைப்பைப் போலவே, மிகவும் மட்டு. <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> இன் துவக்கத்தில் ஒரு தேவையான வாதம் உள்ளது, <code class="docutils literal notranslate"><span class="pre">electronic_integrals</span></code>, இது ஒரு <code class="docutils literal notranslate"><span class="pre">List[ElectronicIntegrals]</span></code>.</p>
+<div class="section" id="மின்னணு-ஒருங்கிணைப்பு">
+<h4>மின்னணு ஒருங்கிணைப்பு<a class="headerlink" href="#மின்னணு-ஒருங்கிணைப்பு" title="Permalink to this headline">¶</a></h4>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -576,7 +576,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">ElectronicIntegrals</span></code> are a container class for <em>n-body</em> interactions in a given basis, which can be any of the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ElectronicIntegrals</span></code> என்பது கொடுக்கப்பட்ட அடிப்படையில் <em>n-body</em> தொடர்புகளுக்கான ஒரு கொள்கலன் வகுப்பாகும், இது பின்வருவனவற்றில் ஏதேனும் இருக்கலாம்:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -606,7 +606,7 @@ div.rendered_html tbody tr:hover {
  &lt;ElectronicBasis.SO: &#39;spin&#39;&gt;]
 </pre></div></div>
 </div>
-<p>Let us take the <code class="docutils literal notranslate"><span class="pre">OneBodyElectronicIntegrals</span></code> as an example. As the name suggests, this container is for 1-body interaction integrals. You can construct an instance of it like so:</p>
+<p>உதாரணமாக <code class="docutils literal notranslate"><span class="pre">OneBodyElectronicIntegrals</span></code> ஐ எடுத்துக் கொள்வோம். பெயர் குறிப்பிடுவது போல, இந்த கொள்கலன் 1-body தொடர்பு ஒருங்கிணைப்புகளுக்கானது. இது போன்ற ஒரு உதாரணத்தை நீங்கள் உருவாக்கலாம்:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -639,13 +639,13 @@ div.rendered_html tbody tr:hover {
         [1, 1] = 2.0
 </pre></div></div>
 </div>
-<p>As you can see, the first argument simply specifies the basis of the integrals. The second argument requires a little further explanation:</p>
+<p>நீங்கள் பார்க்க முடியும் என, முதல் வாதம் வெறுமனே ஒருங்கிணைப்புகளின் அடிப்படையைக் குறிப்பிடுகிறது. இரண்டாவது வாதத்திற்கு இன்னும் கொஞ்சம் விளக்கம் தேவை:</p>
 <ol class="arabic simple">
-<li><p>In the case of the <code class="docutils literal notranslate"><span class="pre">AO</span></code> or <code class="docutils literal notranslate"><span class="pre">MO</span></code> basis, this argument <strong>must</strong> be a pair of numpy arrays, where the first and second one are the alpha- and beta-spin integrals, respectively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AO</span></code> அல்லது <code class="docutils literal notranslate"><span class="pre">MO</span></code> அடிப்படையில், இந்த வாதம் ஒரு ஜோடி எண் வரிசைகளாக இருக்க <strong>வேண்டும்</strong>, அங்கு முதல் மற்றும் இரண்டாவது முறையே ஆல்பா மற்றும் பீட்டா-ஸ்பின் ஒருங்கிணைப்புகள்.</p></li>
 </ol>
-<p><strong>Note:</strong> The second argument may be <code class="docutils literal notranslate"><span class="pre">None</span></code>, for the case where the beta-spin integrals are the same as the alpha-spin integrals (so there is no need to provide the same values twice).</p>
+<p><strong>குறிப்பு:</strong> இரண்டாவது வாதம் <code class="docutils literal notranslate"><span class="pre">None</span></code> என்று இருக்கலாம், பீட்டா-ஸ்பின் ஒருங்கிணைந்தவை ஆல்ஃபா-ஸ்பின் ஒருங்கிணைந்தவை (எனவே ஒரே மதிப்புகளை இரண்டு முறை வழங்க வேண்டிய அவசியம் இல்லை).</p>
 <ol class="arabic simple" start="2">
-<li><p>In the case of the <code class="docutils literal notranslate"><span class="pre">SO</span></code> basis, this argument <strong>must</strong> be a single numpy array, storing the alpha- and beta-spin integrals in blocked order, i.e. like so:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SO</span></code> அடிப்படையைப் பொறுத்தவரை, இந்த வாதம் ஒற்றை எண் வரிசையாக இருக்க <strong>வேண்டும்</strong>, ஆல்பா மற்றும் பீட்டா-ஸ்பின் ஒருங்கிணைப்புகளை தடுக்கப்பட்ட வரிசையில் சேமிக்கிறது, அதாவது. அப்படி:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spin_basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">alpha_spin</span><span class="p">,</span> <span class="n">zeros</span><span class="p">],</span> <span class="p">[</span><span class="n">zeros</span><span class="p">,</span> <span class="n">beta_spin</span><span class="p">]])</span>
 </pre></div>
@@ -709,18 +709,18 @@ div.rendered_html tbody tr:hover {
         ... skipping 11 entries
 </pre></div></div>
 </div>
-<p>We should take note of a few observations:</p>
+<p>ஒரு சில அவதானிப்புகளை நாம் கவனத்தில் கொள்ள வேண்டும்:</p>
 <ul class="simple">
-<li><p>the numpy arrays shall be ordered as <code class="docutils literal notranslate"><span class="pre">(&quot;alpha-alpha&quot;,</span> <span class="pre">&quot;beta-alpha&quot;,</span> <span class="pre">&quot;beta-beta&quot;,</span> <span class="pre">&quot;alpha-beta&quot;)</span></code></p></li>
-<li><p>the <code class="docutils literal notranslate"><span class="pre">alpha-alpha</span></code> matrix may <strong>not</strong> be <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
-<li><p>if the <code class="docutils literal notranslate"><span class="pre">alpha-beta</span></code> matrix is <code class="docutils literal notranslate"><span class="pre">None</span></code>, but <code class="docutils literal notranslate"><span class="pre">beta-alpha</span></code> is not, its transpose will be used (like above)</p></li>
-<li><p>in any other case, matrices which are <code class="docutils literal notranslate"><span class="pre">None</span></code> will be filled with the <code class="docutils literal notranslate"><span class="pre">alpha-alpha</span></code> matrix</p></li>
-<li><p>in the <code class="docutils literal notranslate"><span class="pre">SO</span></code> basis case, a single numpy array must be specified. Refer to <code class="docutils literal notranslate"><span class="pre">TwoBodyElectronicIntegrals.to_spin()</span></code> for its exact formatting.</p></li>
+<li><p>எண் வரிசைகள் <code class="docutils literal notranslate"><span class="pre">(&quot;alpha-alpha&quot;,</span> <span class="pre">&quot;beta-alpha&quot;,</span> <span class="pre">&quot;beta-beta&quot;,</span> <span class="pre">&quot;alpha-beta&quot;)</span></code> என வரிசைப்படுத்தப்பட வேண்டும்</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha-alpha</span></code> அணி <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha-beta</span></code> மேட்ரிக்ஸ் <code class="docutils literal notranslate"><span class="pre">None</span></code>, ஆனால் <code class="docutils literal notranslate"><span class="pre">beta-alpha</span></code> இல்லையென்றால், அதன் இடமாற்றம் பயன்படுத்தப்படும் (மேலே உள்ளதைப் போல)</p></li>
+<li><p>வேறு எந்த விஷயத்திலும், <code class="docutils literal notranslate"><span class="pre">None</span></code> என்ற அணி <code class="docutils literal notranslate"><span class="pre">alpha-alpha</span></code> அணிகளால் நிரப்பப்படும்</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SO</span></code> அடிப்படை வழக்கில், ஒற்றை எண் வரிசை குறிப்பிடப்பட வேண்டும். அதன் சரியான வடிவமைப்பிற்காக <code class="docutils literal notranslate"><span class="pre">TwoBodyElectronicIntegrals.to_spin</span> <span class="pre">()</span></code> ஐப் பார்க்கவும்.</p></li>
 </ul>
 </div>
-<div class="section" id="ElectronicEnergy">
-<h4>ElectronicEnergy<a class="headerlink" href="#ElectronicEnergy" title="Permalink to this headline">¶</a></h4>
-<p>Now we are ready to construct an <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> instance:</p>
+<div class="section" id="மின்னணு-ஆற்றல்">
+<h4>மின்னணு ஆற்றல்<a class="headerlink" href="#மின்னணு-ஆற்றல்" title="Permalink to this headline">¶</a></h4>
+<p>இப்போது நாம் <code class="docutils literal notranslate"><span class="pre">ElectronicEnergy</span></code> உதாரணத்தை உருவாக்கத் தயாராக உள்ளோம்:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -783,7 +783,7 @@ ElectronicEnergy
                 ... skipping 11 entries
 </pre></div></div>
 </div>
-<p>This property can now be used to construct a <code class="docutils literal notranslate"><span class="pre">SecondQuantizedOp</span></code> (which can then be mapped to a <code class="docutils literal notranslate"><span class="pre">QubitOperator</span></code>):</p>
+<p>இந்த சொத்தை இப்போது <code class="docutils literal notranslate"><span class="pre">SecondQuantizedOp</span></code> ஐ உருவாக்க பயன்படுத்தலாம் (பின்னர் அதை <code class="docutils literal notranslate"><span class="pre">QubitOperator</span></code> க்கு வரைபடமாக்கலாம்):</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -811,9 +811,9 @@ register length=4, number terms=20
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Result-interpretation">
-<h4>Result interpretation<a class="headerlink" href="#Result-interpretation" title="Permalink to this headline">¶</a></h4>
-<p>An additional benefit which we gain from the <code class="docutils literal notranslate"><span class="pre">Property</span></code> framework, is that the result interpretation of a computed eigenvalue can be handled by each property itself. This results in nice and logically consistent classes because the result gets interpreted in the same context where the raw data is available.</p>
+<div class="section" id="முடிவு-விளக்கம்">
+<h4>முடிவு விளக்கம்<a class="headerlink" href="#முடிவு-விளக்கம்" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Property</span></code> கட்டமைப்பிலிருந்து நாம் பெறும் கூடுதல் நன்மை என்னவென்றால், கணக்கிடப்பட்ட ஈஜென்வெல்யூவின் முடிவு விளக்கத்தை ஒவ்வொரு சொத்தாலும் கையாள முடியும். இது நல்ல மற்றும் தர்க்கரீதியாக சீரான வகுப்புகளில் விளைகிறது, ஏனெனில் பதனிடப்படாதத் தரவு கிடைக்கும் அதே சூழலில் இதன் விளைவாக விளக்கப்படுகிறது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -1457,7 +1457,7 @@ register length=4, number terms=2
         <a href="09_Protein_Folding.html" class="btn btn-neutral float-right" title="Protein Folding" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="07_leveraging_qiskit_runtime.html" class="btn btn-neutral" title="Leveraging Qiskit Runtime" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="07_leveraging_qiskit_runtime.html" class="btn btn-neutral" title="Qiskit இயக்க நேரத்தை மேம்படுத்துதல்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1489,13 +1489,13 @@ register length=4, number terms=2
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">The Property Framework</a><ul>
-<li><a class="reference internal" href="#What-is-a-Property?">What is a <code class="docutils literal notranslate"><span class="pre">Property</span></code>?</a></li>
-<li><a class="reference internal" href="#Second-Quantization-Properties">Second Quantization Properties</a><ul>
-<li><a class="reference internal" href="#Electronic-Second-Quantization-Properties">Electronic Second Quantization Properties</a><ul>
-<li><a class="reference internal" href="#ElectronicIntegrals">ElectronicIntegrals</a></li>
-<li><a class="reference internal" href="#ElectronicEnergy">ElectronicEnergy</a></li>
-<li><a class="reference internal" href="#Result-interpretation">Result interpretation</a></li>
+<li><a class="reference internal" href="#">பொருள் கட்டமைப்பு</a><ul>
+<li><a class="reference internal" href="#Property-என்றால்-என்ன?"><code class="docutils literal notranslate"><span class="pre">Property</span></code> என்றால் என்ன?</a></li>
+<li><a class="reference internal" href="#இரண்டாவது-அளவீட்டு-பண்புகள்">இரண்டாவது அளவீட்டு பண்புகள்</a><ul>
+<li><a class="reference internal" href="#மின்னணு-இரண்டாம்-அளவு-பண்புகள்">மின்னணு இரண்டாம் அளவு பண்புகள்</a><ul>
+<li><a class="reference internal" href="#மின்னணு-ஒருங்கிணைப்பு">மின்னணு ஒருங்கிணைப்பு</a></li>
+<li><a class="reference internal" href="#மின்னணு-ஆற்றல்">மின்னணு ஆற்றல்</a></li>
+<li><a class="reference internal" href="#முடிவு-விளக்கம்">முடிவு விளக்கம்</a></li>
 <li><a class="reference internal" href="#ParticleNumber">ParticleNumber</a></li>
 <li><a class="reference internal" href="#GroupedProperty">GroupedProperty</a></li>
 <li><a class="reference internal" href="#Constructing-a-Hamiltonian-from-raw-integrals">Constructing a Hamiltonian from raw integrals</a></li>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Grover Optimizer &mdash; Qiskit Optimization 0.2.3 documentation</title>
+  <title>গ্রোভার অপ্টিমাইজার &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
     <link rel="next" title="এ ডি এম এম অনুকূলায়ক (অপ্টিমাইজার)" href="05_admm_optimizer.html" />
-    <link rel="prev" title="Minimum Eigen Optimizer" href="03_minimum_eigen_optimizer.html" /> 
+    <link rel="prev" title="ন্যূনতম আইজেন অপটিমাইজার" href="03_minimum_eigen_optimizer.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
         
-      <li>Grover Optimizer</li>
+      <li>গ্রোভার অপ্টিমাইজার</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,44 +482,42 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/04_grover_optimizer.ipynb">docs/tutorials/04_grover_optimizer.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/04_grover_optimizer.ipynb">docs/tutorials/04_grover_optimizer.ipynb</a> থেকে বানানো হয়েছে।</p>
 </div>
-<div class="section" id="Grover-Optimizer">
-<h1>Grover Optimizer<a class="headerlink" href="#Grover-Optimizer" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Grover Adaptive Search (GAS) has been explored as a possible solution for combinatorial optimization problems, alongside variational algorithms such as Variational Quantum Eigensolver (VQE) and Quantum Approximate Optimization Algorithm (QAOA). The algorithm iteratively applies Grover Search to find the optimum value of an objective function, by using the best-known value from the previous run as a threshold. The adaptive oracle used in GAS recognizes all values above or below the current
-threshold (for max and min respectively), decreasing the size of the search space every iteration the threshold is updated, until an optimum is found.</p>
-<p>In this notebook we will explore each component of the <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code>, which utilizes the techniques described in GAS, by minimizing a Quadratic Unconstrained Binary Optimization (QUBO) problem, as described in [1]</p>
-<div class="section" id="References">
-<h3>References<a class="headerlink" href="#References" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<div class="section" id="গ্রোভার-অপ্টিমাইজার">
+<h1>গ্রোভার অপ্টিমাইজার<a class="headerlink" href="#গ্রোভার-অপ্টিমাইজার" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>গ্রোভার এডাপটিভ সার্চ (GAS) কে সংমিশ্রণমূলক অপ্টিমাইজেশন সমস্যার পাশাপাশি পরিবর্তনশীল (ভ্যারিয়েশনাল) অ্যালগরিদম, যেমন Variational Quantum Eigensolver (VQE) এবং Quantum Approximate Optimization Algorithm (QAOA) এর সম্ভাব্য সমাধান হিসাবে অন্বেষণ করা হয়েছে। এই অ্যালগরিদমটি একটি অব্জেক্টিভ ফাংশন এর সর্বোত্তম মানটি সন্ধান করার জন্য পুনরুক্তি ভাবে গ্রোভার অনুসন্ধান প্রয়োগ করে, যেটা প্রান্তিক হিসাবে আগের রান থেকে সর্বাধিক পরিচিত মান ব্যবহার করে। GAS-এ ব্যবহৃত অভিযোজিত ওরাকল বর্তমান প্রান্তিকের উপরে বা নীচে (যথাক্রমে সর্বাধিক এবং সর্বনিম্ন জন্য) সমস্ত মানকে স্বীকৃতি দেয়, যতক্ষণ না কোনও সর্বোত্তম সন্ধান পাওয়া যায় ততক্ষণ প্রতিটি পুনরাবৃত্তির প্রান্তিক আপডেট হয় সন্ধানের জায়গার আকার হ্রাস করে।</p>
+<p>[1] এ বর্ণিত শর্তহীন দ্বিঘাত দ্বিমিক অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাটিকে হ্রাস করার মাধ্যমে এই নোটবুকে আমরা <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> এর প্রত্যেকটি উপাদান সম্পর্কে জানব যেগুলো জি এ এস-এ বর্ণিত উপায়গুলোকে ব্যবহার করে।</p>
+<div class="section" id="তথ্যসূত্র">
+<h3>তথ্যসূত্র<a class="headerlink" href="#তথ্যসূত্র" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <p>[1] <a class="reference external" href="https://arxiv.org/abs/1912.04088">A. Gilliam, S. Woerner, C. Gonciulea, Grover Adaptive Search for Constrained Polynomial Binary Optimization, arXiv preprint arXiv:1912.04088 (2019).</a></p>
 </div>
 </div>
-<div class="section" id="Grover-Adaptive-Search">
-<h2>Grover Adaptive Search<a class="headerlink" href="#Grover-Adaptive-Search" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Grover Search, the core element of GAS, needs three ingredients:</p>
+<div class="section" id="গ্রোভার-অ্যাডাপটিভ-সার্চ">
+<h2>গ্রোভার অ্যাডাপটিভ সার্চ<a class="headerlink" href="#গ্রোভার-অ্যাডাপটিভ-সার্চ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>GAS এর মূল উপাদান গ্রোভার সার্চের জন্য তিনটি উপাদান প্রয়োজন:</p>
 <ol class="arabic simple">
-<li><p>A state preparation operator <span class="math notranslate nohighlight">\(A\)</span> to construct a superposition of all states in the search space.</p></li>
-<li><p>An oracle operator <span class="math notranslate nohighlight">\(O\)</span>, that recognizes the states of interest and multiplies their amplitudes by -1.</p></li>
-<li><p>The Grover diffusion operator <span class="math notranslate nohighlight">\(D\)</span>, that multiplies the amplitude of the <span class="math notranslate nohighlight">\(|0\rangle_n\)</span> state by -1.</p></li>
+<li><p>একটি মান প্রস্তুতি অপারেটর <span class="math notranslate nohighlight">\(A\)</span> সার্চ স্পেসে সমস্ত মানের জন্য একটি উপরিপাতন তৈরি করে।</p></li>
+<li><p>একটি ওরাকল অপারেটর <span class="math notranslate nohighlight">\(O\)</span> যা আগ্রহের মানগুলি স্বীকৃতি দেয় এবং তাদের বিস্তার -1 দ্বারা বহুগুণ করে।</p></li>
+<li><p>Grover ব্যাপ্তি অপারেটর <span class="math notranslate nohighlight">\(D\)</span>, যা <span class="math notranslate nohighlight">\(|0\rangle_n\)</span> বিস্তার এর মান কে -১ দ্বারা গুন করে।</p></li>
 </ol>
-<p>While implementations of GAS vary around the specific use case, the general framework still loosely follows the steps described below.</p>
-<div><p><img alt="2b47e41818394eeeb59b38d6b7be1495" class="no-scaled-link" src="../_images/GAS-Algorithm.png" style="width: 400px;" /></p>
-</div><p><code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> uses <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToNegativeValueOracle</span></code> to construct <span class="math notranslate nohighlight">\(A_y\)</span> such that it prepares a <span class="math notranslate nohighlight">\(n\)</span>-qubit register to represent the equal superposition of all <span class="math notranslate nohighlight">\(|x\rangle_n\)</span> and a <span class="math notranslate nohighlight">\(m\)</span>-qubit register to (approximately) represent the corresponding <span class="math notranslate nohighlight">\(|Q(x)-y\rangle_m\)</span>. Then, all states with <span class="math notranslate nohighlight">\((Q(x) - y)\)</span> negative should be flagged by <span class="math notranslate nohighlight">\(O_y\)</span>. Note that in the implementation discussed, the oracle operator is actually independent of <span class="math notranslate nohighlight">\(y\)</span>, but
-this is not a requirement. For clarity, we will refer to the oracle as <span class="math notranslate nohighlight">\(O\)</span> when the oracle is independent of <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>Put formally, <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToNegativeValueOracle</span></code> constructs an <span class="math notranslate nohighlight">\(A_y\)</span> and <span class="math notranslate nohighlight">\(O\)</span> such that:</p>
-<div><p><img alt="a91d5bcbee94496992e2fea38f428da2" class="no-scaled-link" src="../_images/a-o-dfn.png" style="width: 400px;" /></p>
-</div><p>where <span class="math notranslate nohighlight">\(|x\rangle\)</span> is the binary encoding of the integer <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>At each iteration in which the threshold <span class="math notranslate nohighlight">\(y\)</span> is updated, we adapt <span class="math notranslate nohighlight">\(A_y\)</span> such that the function values are shifted up or down (for minimum and maximum respectively) by <span class="math notranslate nohighlight">\(y\)</span>. For example, in the context of finding the minimum, as the value of <span class="math notranslate nohighlight">\(y\)</span> decreases, the search space (negative values) also decreases, until only the minimum value remains. A concrete example will be explored in the next section.</p>
+<p>GAS বাস্তবায়ন নির্দিষ্ট ব্যবহারের ক্ষেত্রে প্রায় পৃথক হলেও সাধারণ কাঠামো এখনও নীচে বর্ণিত পদক্ষেপগুলি আলগাভাবে অনুসরণ করে।</p>
+<div><p><img alt="3fd3a661a63344e9933f91c6b42cea2a" class="no-scaled-link" src="../_images/GAS-Algorithm.png" style="width: 400px;" /></p>
+</div><p><code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> <span class="math notranslate nohighlight">\(A_y\)</span> ব্যবহার করে যাতে এটা :math::<cite>n</cite>-qubit রেজিস্টার প্রস্তুত করে যাতে উপরিপাতন প্রতিনিধিত্ব করতে সব <span class="math notranslate nohighlight">\(|x\rangle_n\)</span> এবং একটি <span class="math notranslate nohighlight">\(m\)</span>-qubit রেজিস্টার (আনুমানিক) <span class="math notranslate nohighlight">\(|Q(x)-y\rangle_m\)</span> উপস্থাপন করুন।তারপরে, <span class="math notranslate nohighlight">\((Q(x) - y)\)</span> নেতিবাচক সমস্ত মানগুলি <span class="math notranslate nohighlight">\(O_y\)</span> পতাকা দ্বারা চিহ্নিত করা উচিত। নোট করুন, যে আলোচিত বাস্তবায়নে, ওরাকল অপারেটরটি আসলে <span class="math notranslate nohighlight">\(y\)</span> এর থেকে স্বতন্ত্র, তবে এটি কোনো প্রয়োজন নয়। স্পষ্টতার জন্য, যখন ওরাকলটি <span class="math notranslate nohighlight">\(y\)</span> থেকে স্বতন্ত্র থাকে, তখন আমরা ওরাকলকে <span class="math notranslate nohighlight">\(O\)</span> হিসাবে উল্লেখ করব।</p>
+<p>রীত্যনুসারে <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToNegativeValueOracle</span></code> <span class="math notranslate nohighlight">\(A_y\)</span> এবং <span class="math notranslate nohighlight">\(O\)</span> গঠন করে যাতে:</p>
+<div><p><img alt="a0d83bd092e24264812b9199dd5b961c" class="no-scaled-link" src="../_images/a-o-dfn.png" style="width: 400px;" /></p>
+</div><p>যেখানে <span class="math notranslate nohighlight">\(|x\rangle\)</span> হল <span class="math notranslate nohighlight">\(x\)</span> অখণ্ড সংখ্যার দ্বিমিক (বাইনারি) এনকোডিং।</p>
+<p>প্রতিটি পুনরাবৃত্তিতে যেখানে প্রান্তিক <span class="math notranslate nohighlight">\(y\)</span> আপডেট করা হয়, আমরা অভিযোজিত :math:` A_y` যেমন ফাংশন মানগুলি উপরে বা নিচে স্থানান্তরিত হয় (যথাক্রমে সর্বনিম্ন এবং সর্বাধিকের জন্য) দ্বারা <span class="math notranslate nohighlight">\(y\)</span>। উদাহরণস্বরূপ, সর্বনিম্ন সন্ধানের প্রসঙ্গে, যেমন <span class="math notranslate nohighlight">\(y\)</span> এর মান হ্রাস হয়, অনুসন্ধানের স্থানো (নেতিবাচক মান) হ্রাস পায়, যতক্ষণ না কেবল সর্বনিম্ন মান থাকে। এর একটি অবয়ববিশিষ্ট উদাহরণ পরবর্তী বিভাগে খুঁজা হবে।</p>
 </div>
-<div class="section" id="Find-the-Minimum-of-a-QUBO-Problem-using-GroverOptimizer">
-<h2>Find the Minimum of a QUBO Problem using GroverOptimizer<a class="headerlink" href="#Find-the-Minimum-of-a-QUBO-Problem-using-GroverOptimizer" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The following is a toy example of a minimization problem.</p>
+<div class="section" id="GroverOptimizer-ব্যবহার-করে-কোনো-ন্যূনতম-QUBO-সমস্যার-সন্ধান-করুন">
+<h2>GroverOptimizer ব্যবহার করে কোনো ন্যূনতম QUBO সমস্যার সন্ধান করুন<a class="headerlink" href="#GroverOptimizer-ব্যবহার-করে-কোনো-ন্যূনতম-QUBO-সমস্যার-সন্ধান-করুন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>নিম্নলিখিত একটি লঘুকরণ সমস্যার একটি ছোট্ট উদাহরণ আছে।</p>
 <p><span class="math">\begin{eqnarray}
 \min_{x \in \{0, 1\}^3} -2x_1x_3 - x_2x_3 - 1x_1 + 2x_2 - 3x_3.
 \end{eqnarray}</span></p>
-<p>For our initial steps, we create a docplex model that defines the problem above, and then use the <code class="docutils literal notranslate"><span class="pre">from_docplex_mp()</span></code> function to convert the model to a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>, which can be used to represent a QUBO in Qiskit Optimization.</p>
+<p>প্রাথমিক পদক্ষেপরূপে আমরা একটি ডকপ্লেক্স মডেল তৈরি করব যেটা উপরের সমস্যাটিকে সংজ্ঞায়িত করবে, তারপর মডেলটিকে একটি <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> এ রূপান্তর করতে <code class="docutils literal notranslate"><span class="pre">from_docplex()</span></code> ফাংশনটি ব্যবহার করব, যা Qiskit অনুকূলকরণে (অপ্টিমাইজেশন) একটা QUBO এর প্রতিনিধিত্ব করতে পারে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -575,7 +573,7 @@ End
 
 </pre></div></div>
 </div>
-<p>Next, we create a <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> that uses 6 qubits to encode the value, and will terminate after there have been 10 iterations of GAS without progress (i.e. the value of <span class="math notranslate nohighlight">\(y\)</span> does not change). The <code class="docutils literal notranslate"><span class="pre">solve()</span></code> function takes the <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> we created earlier, and returns a results object that contains information about the run.</p>
+<p>এরপরে, আমরা একটি <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> তৈরি করব যা মানটি এনকোড করতে ৬ কিউবিট ব্যবহার করে এবং প্রগতি ছাড়াই GAS ১০ টি পুনরাবৃত্তি হওয়ার পরে শেষ হবে (অর্থাৎ <span class="math notranslate nohighlight">\(y\)</span> এর মান পরিবর্তন হয় না)। <code class="docutils literal notranslate"><span class="pre">solve()</span></code> ফাংশনটি আমরা আগে তৈরি <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> নেয় এবং একটি ফলাফল অবজেক্ট দেয় যা রান সম্পর্কে তথ্য ধারণ করে।.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -597,15 +595,14 @@ x=[1. 0. 1.]
 fval=-6.0
 </pre></div></div>
 </div>
-<p>This results in the optimal solution <span class="math notranslate nohighlight">\(x_0=1\)</span>, <span class="math notranslate nohighlight">\(x_1=0\)</span>, <span class="math notranslate nohighlight">\(x_2=1\)</span> and the optimal objective value of <span class="math notranslate nohighlight">\(-6\)</span> (most of the time, since it is a randomized algorithm). In the following, a custom visualization of the quantum state shows a possible run of <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> applied to this QUBO.</p>
-<div><p><img alt="771d2ae7437f4e49b2d5482a2b6cc6db" class="no-scaled-link" src="../_images/GAS-QUBO-Example.png" style="width: 800px;" /></p>
-</div><p>Each graph shows a single iteration of GAS, with the current values of <span class="math notranslate nohighlight">\(r\)</span> (= iteration counter) and <span class="math notranslate nohighlight">\(y\)</span> (= threshold/offset) shown in the title. The X-axis displays the integer equivalent of the input (e.g. ‘101’ <span class="math notranslate nohighlight">\(\rightarrow\)</span> 5), and the Y-axis shows the possible function values. As there are 3 binary variables, there are <span class="math notranslate nohighlight">\(2^3=8\)</span> possible solutions, which are shown in each graph. The color intensity indicates the probability of measuring a certain result (with bright
-intensity being the highest), while the actual color indicates the corresponding phase (see phase color-wheel below). Note that as <span class="math notranslate nohighlight">\(y\)</span> decreases, we shift all of the values up by that amount, meaning there are fewer and fewer negative values in the distribution, until only one remains (the minimum).</p>
-<div><p><img alt="a08d5fc4e6bb46dd97cb0b2195e17658" class="no-scaled-link" src="../_images/color-wheel-phase.png" style="width: 200px;" /></p>
+<p>এটি সর্বোত্তম সমাধানে ফলাফল <span class="math notranslate nohighlight">\(x_0 = 1\)</span>, :math:` x_1 = 0`, :math: <cite>x_2 = 1</cite> এবং সর্বোত্তম উদ্দেশ্য মান :math:` -6` (বেশিরভাগ সময়, যেহেতু এটি রন্ডমাইজড অ্যালগরিদম)। নিম্নলিখিতটিতে, কোয়ান্টাম মানের একটি বিশেষায়িত চিত্রায়ন (কাস্টম ভিজ্যুয়ালাইজেশন) এই QUBO তে প্রয়োগ হওয়া <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> এর একটি সম্ভাব্য রান দেখায়।</p>
+<div><p><img alt="88e18a96640448d78bf7f228235d7946" class="no-scaled-link" src="../_images/GAS-QUBO-Example.png" style="width: 800px;" /></p>
+</div><p>প্রতিটি গ্রাফ শিরোনামে প্রদর্শিত <span class="math notranslate nohighlight">\(r\)</span> (= পুনরুক্তি কাউন্টার) এবং <span class="math notranslate nohighlight">\(y\)</span> (= প্রান্তিক/অফসেট) এর বর্তমান মানগুলির সাথে GAS এর একক পুনরাবৃত্তি দেখায়। X-অক্ষটি নিবেশের (ইনপুটের) সমতুল্য পূর্ণসংখ্যা প্রদর্শন করে (উদাঃ ‘101’ <span class="math notranslate nohighlight">\(\rightarrow\)</span> 5), এবং Y-অক্ষটি সম্ভাব্য ফাংশন মানগুলি দেখায়। যেমন এখনে ৩ টি দ্বিমিক (বাইনারি) চল রাশি রয়েছে, তেমন <span class="math notranslate nohighlight">\(2^3=8\)</span> সম্ভাব্য সমাধান রয়েছে, যেটা প্রতিটি গ্রাফে প্রদর্শিত করা হয়েছে। রঙের তীব্রতা একটি নির্দিষ্ট ফলাফলের পরিমাপের সম্ভাবনা নির্দেশ করে (উজ্জ্বল তীব্রতা সর্বাধিক থাকে), তবে প্রকৃত রঙটি সংশ্লিষ্ট দশাটি নির্দেশ করে (নিচে দশার রঙ-চাকাটি দেখুন)। নোট করুন, যে হিসাবে <span class="math notranslate nohighlight">\(y\)</span> হ্রাস হয়, আমরা সমস্ত মানকে সেই পরিমাণে উপরে স্থানান্তরিত করি, অর্থাত বিতরণে কম এবং কম নেতিবাচক মান রয়েছে, যতক্ষণ না কেবল একটি অবশেষ থাকে (সর্বনিম্ন)।</p>
+<div><p><img alt="9f741c06ff2a4413b1d5c064f00aa283" class="no-scaled-link" src="../_images/color-wheel-phase.png" style="width: 200px;" /></p>
 </div></div>
-<div class="section" id="Check-that-GroverOptimizer-finds-the-correct-value">
-<h2>Check that GroverOptimizer finds the correct value<a class="headerlink" href="#Check-that-GroverOptimizer-finds-the-correct-value" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We can verify that the algorithm is working correctly using the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> in Qiskit.</p>
+<div class="section" id="পরীক্ষা-করে-দেখুন-যে-GroverOptimizer-সঠিক-মানটি-পাচ্ছে">
+<h2>পরীক্ষা করে দেখুন যে GroverOptimizer সঠিক মানটি পাচ্ছে<a class="headerlink" href="#পরীক্ষা-করে-দেখুন-যে-GroverOptimizer-সঠিক-মানটি-পাচ্ছে" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা যাচাই করতে পারি যে সমাধানপদ্ধতিটি Qiskit এ <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> ব্যবহার করে সঠিকভাবে কাজ করছে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -674,7 +671,7 @@ fval=-6.0
         <a href="05_admm_optimizer.html" class="btn btn-neutral float-right" title="এ ডি এম এম অনুকূলায়ক (অপ্টিমাইজার)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="03_minimum_eigen_optimizer.html" class="btn btn-neutral" title="Minimum Eigen Optimizer" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="03_minimum_eigen_optimizer.html" class="btn btn-neutral" title="ন্যূনতম আইজেন অপটিমাইজার" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -706,14 +703,14 @@ fval=-6.0
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Grover Optimizer</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#References">References</a></li>
+<li><a class="reference internal" href="#">গ্রোভার অপ্টিমাইজার</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a><ul>
+<li><a class="reference internal" href="#তথ্যসূত্র">তথ্যসূত্র</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Grover-Adaptive-Search">Grover Adaptive Search</a></li>
-<li><a class="reference internal" href="#Find-the-Minimum-of-a-QUBO-Problem-using-GroverOptimizer">Find the Minimum of a QUBO Problem using GroverOptimizer</a></li>
-<li><a class="reference internal" href="#Check-that-GroverOptimizer-finds-the-correct-value">Check that GroverOptimizer finds the correct value</a></li>
+<li><a class="reference internal" href="#গ্রোভার-অ্যাডাপটিভ-সার্চ">গ্রোভার অ্যাডাপটিভ সার্চ</a></li>
+<li><a class="reference internal" href="#GroverOptimizer-ব্যবহার-করে-কোনো-ন্যূনতম-QUBO-সমস্যার-সন্ধান-করুন">GroverOptimizer ব্যবহার করে কোনো ন্যূনতম QUBO সমস্যার সন্ধান করুন</a></li>
+<li><a class="reference internal" href="#পরীক্ষা-করে-দেখুন-যে-GroverOptimizer-সঠিক-মানটি-পাচ্ছে">পরীক্ষা করে দেখুন যে GroverOptimizer সঠিক মানটি পাচ্ছে</a></li>
 </ul>
 </li>
 </ul>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Option Pricing with qGANs &mdash; Qiskit Finance 0.2.1 documentation</title>
+  <title>qGANs দিয়ে বিকল্প মূল্য নির্ধারণ &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
     <link rel="next" title="স্টক-মার্কেট টাইম-সিরিজ ডেটা লোডিং এবং প্রসেসিং" href="11_time_series.html" />
-    <link rel="prev" title="Credit Risk Analysis" href="09_credit_risk_analysis.html" /> 
+    <link rel="prev" title="ক্রেডিট ঝুঁকি বিশ্লেষণ" href="09_credit_risk_analysis.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Option Pricing with qGANs</li>
+      <li>qGANs দিয়ে বিকল্প মূল্য নির্ধারণ</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,14 +484,13 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/10_qgan_option_pricing.ipynb">docs/tutorials/10_qgan_option_pricing.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/10_qgan_option_pricing.ipynb">docs/tutorials/10_qgan_option_pricing.ipynb</a> থেকে নেয়া হয়েছে।</p>
 </div>
-<div class="section" id="Option-Pricing-with-qGANs">
-<h1>Option Pricing with qGANs<a class="headerlink" href="#Option-Pricing-with-qGANs" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>In this notebook, we discuss how a Quantum Machine Learning Algorithm, namely a quantum Generative Adversarial Network (qGAN), can facilitate the pricing of a European call option. More specifically, a qGAN can be trained such that a quantum circuit models the spot price of an asset underlying a European call option. The resulting model can then be integrated into a Quantum Amplitude Estimation based algorithm to evaluate the expected payoff - see <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option
-Pricing</span></a>. For further details on learning and loading random distributions by training a qGAN please refer to <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
+<div class="section" id="qGANs-দিয়ে-বিকল্প-মূল্য-নির্ধারণ">
+<h1>qGANs দিয়ে বিকল্প মূল্য নির্ধারণ<a class="headerlink" href="#qGANs-দিয়ে-বিকল্প-মূল্য-নির্ধারণ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>এখন আমরা আলোচনা করব কোয়ান্টাম জেনারেটিভ অ্যাডভারসারিয়াল নেটওয়ার্ক (qGAN) নামে একটি কোয়ান্টাম মেশিন লার্নিং অ্যালগরিদম। এর একটি ব্যবহারিক প্রয়োগ দেখানো হবে যেখানে qGAN ব্যবহার করে একটি কোয়ান্টাম সার্কিট মডেল করা হবে যা ইউরোপিয়ান কল অপশনের মূল্য নির্ধারন করতে পারবে। এই মডেলটিকে কোয়ান্টাম বিস্তার এস্টিমেশন এলগোরিদম দ্বারা যাচাই করা যাবে, যা থেকে গড় মূল্যের মান নির্ণয় করা যাবে। বিস্তারিত জানতে <a class="reference internal" href="03_european_call_option_pricing.html"><span class="doc">European Call Option Pricing</span></a> এই নোটবুক ফাইল ব্যবহারের অনুরোধ রইল। একটি qGAN প্রশিক্ষণ দিয়ে দৈব বণ্টন শেখার এবং লোড করার বিষয়ে আরও বিস্তারিত জানার জন্য অনুগ্রহ করে এই সহায়িকা গবেষণাপত্রটি পড়ুন <a class="reference external" href="https://www.nature.com/articles/s41534-019-0223-2">Quantum Generative Adversarial Networks for Learning and Loading Random Distributions. Zoufal, Lucchi, Woerner. 2019.</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -512,12 +511,12 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </pre></div>
 </div>
 </div>
-<div class="section" id="Uncertainty-Model">
-<h3>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>The Black-Scholes model assumes that the spot price at maturity <span class="math notranslate nohighlight">\(S_T\)</span> for a European call option is log-normally distributed. Thus, we can train a qGAN on samples from a log-normal distribution and use the result as an uncertainty model underlying the option. In the following, we construct a quantum circuit that loads the uncertainty model. The circuit output reads</p>
+<div class="section" id="অনিশ্চয়তা-মডেল">
+<h3>অনিশ্চয়তা মডেল<a class="headerlink" href="#অনিশ্চয়তা-মডেল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>ব্ল্যাক-স্কোলস মডেল অনুমান করে যে পরিপক্কতার সময় স্পট মূল্য <span class="math notranslate nohighlight">\(S_T\)</span> একটি ইউরোপীয় কল বিকল্পের জন্য log-normally distributed হয়। এইভাবে, আমরা একটি লগ-নরমাল ডিস্ট্রিবিউশন থেকে নমুনার উপর একটি qGAN প্রশিক্ষণ দিতে পারি এবং ফলাফলটিকে একটি অনিশ্চয়তা মডেল হিসেবে ব্যবহার করতে পারি। নিম্নলিখিতগুলিতে, আমরা একটি কোয়ান্টাম সার্কিট তৈরি করি যা অনিশ্চয়তা মডেল লোড করে। সার্কিট আউটপুটটি এইটা পড়ে</p>
 <div class="math notranslate nohighlight">
 \[\big| g_{\theta}\rangle = \sum_{j=0}^{2^n-1}\sqrt{p_{\theta}^{j}} \big| j \rangle ,\]</div>
-<p>where the probabilities <span class="math notranslate nohighlight">\(p_{\theta}^{j}\)</span>, for <span class="math notranslate nohighlight">\(j\in \left\{0, \ldots, {2^n-1} \right\}\)</span>, represent a model of the target distribution.</p>
+<p>যেখানে সম্ভাব্যতা <span class="math notranslate nohighlight">\(p_{\theta}^{j}\)</span>, for <span class="math notranslate nohighlight">\(j\in \left\{0, \ldots, {2^n-1} \right\}\)</span>, একটি লক্ষ্য বণ্টনের (টার্গেট ডিস্ট্রিবিউশন) মডেল প্রতিনিধিত্ব করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -547,9 +546,9 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </div>
 </div>
 </div>
-<div class="section" id="Evaluate-Expected-Payoff">
-<h3>Evaluate Expected Payoff<a class="headerlink" href="#Evaluate-Expected-Payoff" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>Now, the trained uncertainty model can be used to evaluate the expectation value of the option’s payoff function with Quantum Amplitude Estimation.</p>
+<div class="section" id="গড়-বেতন-মূল্য-নির্ধারণ-কর">
+<h3>গড় বেতন মূল্য নির্ধারণ কর<a class="headerlink" href="#গড়-বেতন-মূল্য-নির্ধারণ-কর" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>এখন, প্রশিক্ষিত (ট্রেইনড) অসম্ভাব্যতা মডেলটি কোয়ান্টাম বিস্তার অনুমান (কোয়ান্টাম অ্যামপ্লিটিউড এস্টিমেশন) দিয়ে বিকল্প অন্বয়ের গড় মান বিশ্লেষণ করতে পারে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -564,9 +563,9 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </div>
 </div>
 </div>
-<div class="section" id="Plot-the-probability-distribution">
-<h3>Plot the probability distribution<a class="headerlink" href="#Plot-the-probability-distribution" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>Next, we plot the trained probability distribution and, for reasons of comparison, also the target probability distribution.</p>
+<div class="section" id="সম্ভাব্যতা-বণ্টনের-লেখচিত্র-অঙ্কন-কর">
+<h3>সম্ভাব্যতা বণ্টনের লেখচিত্র অঙ্কন কর<a class="headerlink" href="#সম্ভাব্যতা-বণ্টনের-লেখচিত্র-অঙ্কন-কর" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>তারপর, আমরা প্রশিক্ষিত (ট্রেইনড) সম্ভাব্যতা বিস্তারের লেখচিত্র এবং তুলনা করার জন্য লক্ষ্য (টার্গেট) সম্ভাব্যতা বিস্তারের লেখচিত্রটিও অঙ্কন করি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -611,8 +610,8 @@ Pricing</span></a>. For further details on learning and loading random distribut
 </div>
 </div>
 <div class="section" id="id2">
-<h3>Evaluate Expected Payoff<a class="headerlink" href="#id2" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>Now, the trained uncertainty model can be used to evaluate the expectation value of the option’s payoff function analytically and with Quantum Amplitude Estimation.</p>
+<h3>গড় বেতন মূল্য নির্ধারণ কর<a class="headerlink" href="#id2" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>এখন, প্রশিক্ষিত (ট্রেইনড) অসম্ভাব্যতা মডেলটি কোয়ান্টাম বিস্তার অনুমান (কোয়ান্টাম অ্যামপ্লিটিউড এস্টিমেশন) দিয়ে বিকল্প মূল্য অন্বয়ের গড় মান বিশ্লেষণ করতে পারে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -751,7 +750,7 @@ Confidence interval:    [0.9965, 1.0455]
         <a href="11_time_series.html" class="btn btn-neutral float-right" title="স্টক-মার্কেট টাইম-সিরিজ ডেটা লোডিং এবং প্রসেসিং" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="09_credit_risk_analysis.html" class="btn btn-neutral" title="Credit Risk Analysis" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="09_credit_risk_analysis.html" class="btn btn-neutral" title="ক্রেডিট ঝুঁকি বিশ্লেষণ" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -783,12 +782,12 @@ Confidence interval:    [0.9965, 1.0455]
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Option Pricing with qGANs</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#Uncertainty-Model">Uncertainty Model</a></li>
-<li><a class="reference internal" href="#Evaluate-Expected-Payoff">Evaluate Expected Payoff</a></li>
-<li><a class="reference internal" href="#Plot-the-probability-distribution">Plot the probability distribution</a></li>
-<li><a class="reference internal" href="#id2">Evaluate Expected Payoff</a></li>
+<li><a class="reference internal" href="#">qGANs দিয়ে বিকল্প মূল্য নির্ধারণ</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a><ul>
+<li><a class="reference internal" href="#অনিশ্চয়তা-মডেল">অনিশ্চয়তা মডেল</a></li>
+<li><a class="reference internal" href="#গড়-বেতন-মূল্য-নির্ধারণ-কর">গড় বেতন মূল্য নির্ধারণ কর</a></li>
+<li><a class="reference internal" href="#সম্ভাব্যতা-বণ্টনের-লেখচিত্র-অঙ্কন-কর">সম্ভাব্যতা বণ্টনের লেখচিত্র অঙ্কন কর</a></li>
+<li><a class="reference internal" href="#id2">গড় বেতন মূল্য নির্ধারণ কর</a></li>
 </ul>
 </li>
 </ul>

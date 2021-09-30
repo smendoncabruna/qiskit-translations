@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Credit Risk Analysis &mdash; Qiskit Finance 0.2.1 documentation</title>
+  <title>ক্রেডিট ঝুঁকি বিশ্লেষণ &mdash; Qiskit Finance 0.2.1 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="Option Pricing with qGANs" href="10_qgan_option_pricing.html" />
-    <link rel="prev" title="Pricing Fixed-Income Assets" href="08_fixed_income_pricing.html" /> 
+    <link rel="next" title="qGANs দিয়ে বিকল্প মূল্য নির্ধারণ" href="10_qgan_option_pricing.html" />
+    <link rel="prev" title="Pricing Fixed-Income Assets (নির্দিষ্ট আয় সম্পদ মূল্য নির্ধারণ)" href="08_fixed_income_pricing.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Finance Tutorials</a> &gt;</li>
         
-      <li>Credit Risk Analysis</li>
+      <li>ক্রেডিট ঝুঁকি বিশ্লেষণ</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,22 +484,22 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a>.</p>
+<p>এই পেজটি <a class="reference external" href="https://github.com/Qiskit/qiskit-finance/blob/stable/0.2/docs/tutorials/09_credit_risk_analysis.ipynb">docs/tutorials/09_credit_risk_analysis.ipynb</a> থেকে তৈরি হয়েছে।</p>
 </div>
-<div class="section" id="Credit-Risk-Analysis">
-<h1>Credit Risk Analysis<a class="headerlink" href="#Credit-Risk-Analysis" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>This tutorial shows how quantum algorithms can be used for credit risk analysis. More precisely, how Quantum Amplitude Estimation (QAE) can be used to estimate risk measures with a quadratic speed-up over classical Monte Carlo simulation. The tutorial is based on the following papers:</p>
+<div class="section" id="ক্রেডিট-ঝুঁকি-বিশ্লেষণ">
+<h1>ক্রেডিট ঝুঁকি বিশ্লেষণ<a class="headerlink" href="#ক্রেডিট-ঝুঁকি-বিশ্লেষণ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>এই টিউটোরিয়াল দেখায় কিভাবে ক্রেডিট ঝুঁকি বিশ্লেষণের জন্য কোয়ান্টাম অ্যালগরিদম ব্যবহার করা যায়। আরো স্পষ্টভাবে, কিভাবে কোয়ান্টাম প্রশস্ততা অনুমান (QAE) প্রথাগত (ক্লাসিক্যাল) মন্টে কার্লো সিমুলেশন উপর একটি দ্বিঘাত গতি বৃদ্ধির সঙ্গে ঝুঁকি পরিমাপ অনুমান করতে ব্যবহার করা যেতে পারে। টিউটোরিয়ালটি নিম্নলিখিত গবেষণার উপর ভিত্তি করে:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.nature.com/articles/s41534-019-0130-6">Quantum Risk Analysis. Stefan Woerner, Daniel J. Egger.</a> [Woerner2019]</p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/1907.03044">Credit Risk Analysis using Quantum Computers. Egger et al. (2019)</a> [Egger2019]</p></li>
 </ul>
-<p>A general introduction to QAE can be found in the following paper:</p>
+<p>QAE- এর একটি সাধারণ ভূমিকা নিম্নলিখিত গবেষণায় পাওয়া যাবে:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://arxiv.org/abs/quant-ph/0005055">Quantum Amplitude Amplification and Estimation. Gilles Brassard et al.</a></p></li>
 </ul>
-<p>The structure of the tutorial is as follows:</p>
+<p>টিউটোরিয়ালের গঠন নিম্নরূপ:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="#Problem-Definition">Problem Definition</a></p></li>
 <li><p><a class="reference external" href="#Uncertainty-Model">Uncertainty Model</a></p></li>
@@ -524,24 +524,23 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Problem-Definition">
-<h2>Problem Definition<a class="headerlink" href="#Problem-Definition" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>In this tutorial we want to analyze the credit risk of a portfolio of <span class="math notranslate nohighlight">\(K\)</span> assets. The default probability of every asset <span class="math notranslate nohighlight">\(k\)</span> follows a <em>Gaussian Conditional Independence</em> model, i.e., given a value <span class="math notranslate nohighlight">\(z\)</span> sampled from a latent random variable <span class="math notranslate nohighlight">\(Z\)</span> following a standard normal distribution, the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> is given by</p>
+<div class="section" id="সমস্যার-সংজ্ঞায়ণ">
+<h2>সমস্যার সংজ্ঞায়ণ<a class="headerlink" href="#সমস্যার-সংজ্ঞায়ণ" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>এই টিউটোরিয়ালে আমরা <span class="math notranslate nohighlight">\(K\)</span> সম্পদের একটি পোর্টফলিও এর ঋণের ঝুঁকি বিশ্লেষণ করতে চাই। প্রতিটি <span class="math notranslate nohighlight">\(k\)</span> সম্পদের ডিফল্ট বা পূর্বনির্ধারিত সম্ভাবনা একটি <em>Gaussian Conditional Independence</em> মডেল অনুসরণ করে, অর্থাৎ, একটি প্রদত্ত মান <span class="math notranslate nohighlight">\(z\)</span> যা স্ট্যান্ডার্ড normal বণ্টন কে অনুসরণকারী একটি সুপ্ত র‍্যান্ডম (দৈবচয়নের মাধ্যমে নির্বাচিত) চল রাশি <span class="math notranslate nohighlight">\(Z\)</span> থেকে স্যাম্পলিং করা হলে , <span class="math notranslate nohighlight">\(k\)</span> সম্পদ বা এ্যাসেটের ডিফল্ট সম্ভাবনা হবে</p>
 <div class="math notranslate nohighlight">
 \[p_k(z) = F\left( \frac{F^{-1}(p_k^0) - \sqrt{\rho_k}z}{\sqrt{1 - \rho_k}} \right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(F\)</span> denotes the cumulative distribution function of <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(p_k^0\)</span> is the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> for <span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(\rho_k\)</span> is the sensitivity of the default probability of asset <span class="math notranslate nohighlight">\(k\)</span> with respect to <span class="math notranslate nohighlight">\(Z\)</span>. Thus, given a concrete realization of <span class="math notranslate nohighlight">\(Z\)</span> the individual default events are assumed to be independent from each other.</p>
-<p>We are interested in analyzing risk measures of the total loss</p>
+<p>যেখানে <span class="math notranslate nohighlight">\(F\)</span> হল <span class="math notranslate nohighlight">\(Z\)</span> এর ক্রমবর্ধমান বন্টন ফাংশনকে বোঝায়, <span class="math notranslate nohighlight">\(p_k^0\)</span> হল <span class="math notranslate nohighlight">\(z=0\)</span> এর জন্য সম্পদ <span class="math notranslate nohighlight">\(k\)</span> এর ডিফল্ট সম্ভাব্যতা এবং <span class="math notranslate nohighlight">\(\rho_k\)</span> হল <span class="math notranslate nohighlight">\(Z\)</span> এর সাপেক্ষে সম্পদ <span class="math notranslate nohighlight">\(k\)</span> এর ডিফল্ট সম্ভাব্যতার সংবেদনশীলতা। এইভাবে, <span class="math notranslate nohighlight">\(Z\)</span> এর একটি সুনির্দিষ্ট উপলব্ধি দেওয়া হলে পৃথক ডিফল্ট ঘটনাগুলি একে অপরের থেকে স্বাধীন বলে ধরে নেওয়া হয়।</p>
+<p>আমরা মোট লোকসানের ঝুঁকিপূর্ণতা বিশ্লেষণ করতে আগ্রহী</p>
 <div class="math notranslate nohighlight">
 \[L = \sum_{k=1}^K \lambda_k X_k(Z)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda_k\)</span> denotes the <em>loss given default</em> of asset <span class="math notranslate nohighlight">\(k\)</span>, and given <span class="math notranslate nohighlight">\(Z\)</span>, <span class="math notranslate nohighlight">\(X_k(Z)\)</span> denotes a Bernoulli variable representing the default event of asset <span class="math notranslate nohighlight">\(k\)</span>. More precisely, we are interested in the expected value <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span>, the Value at Risk (VaR) of <span class="math notranslate nohighlight">\(L\)</span> and the Conditional Value at Risk of <span class="math notranslate nohighlight">\(L\)</span> (also called Expected Shortfall). Where VaR and CVaR are defined as</p>
+<p>যেখানে <span class="math notranslate nohighlight">\(\lambda_k\)</span> সম্পদ <span class="math notranslate nohighlight">\(k\)</span> এর <em>ডিফল্ট প্রদত্ত ক্ষতি</em> বোঝায়, এবং <span class="math notranslate nohighlight">\(Z\)</span> দেওয়া আছে, <span class="math notranslate nohighlight">\(X_k(Z)\)</span> একটি বার্নোলি চল রাশিকে বোঝায় যা সম্পদ <span class="math notranslate nohighlight">\(k\)</span> এর ডিফল্ট ইভেন্টের প্রতিনিধিত্ব করে। আরো স্পষ্টভাবে, আমরা গড় মান <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span>, <span class="math notranslate nohighlight">\(L\)</span> এর ঝুঁকিতে (VaR) মান এবং <span class="math notranslate nohighlight">\(L\)</span> এর ঝুঁকিতে শর্তাধীন মান (যা প্রত্যাশিত শর্টফালও বলা হয়) সম্পর্কে আগ্রহী। যেখানে VaR এবং CVaR কে সংজ্ঞায়িত করা হয়েছে</p>
 <div class="math notranslate nohighlight">
 \[\text{VaR}_{\alpha}(L) = \inf \{ x \mid \mathbb{P}[L &lt;= x] \geq 1 - \alpha \}\]</div>
-<p>with confidence level <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>, and</p>
+<p>যার confidence level <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>, এবং</p>
 <div class="math notranslate nohighlight">
 \[\text{CVaR}_{\alpha}(L) = \mathbb{E}[ L \mid L \geq \text{VaR}_{\alpha}(L) ].\]</div>
-<p>For more details on the considered model, see, e.g., <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
-<p>The problem is defined by the following parameters: - number of qubits used to represent <span class="math notranslate nohighlight">\(Z\)</span>, denoted by <span class="math notranslate nohighlight">\(n_z\)</span> - truncation value for <span class="math notranslate nohighlight">\(Z\)</span>, denoted by <span class="math notranslate nohighlight">\(z_{\text{max}}\)</span>, i.e., Z is assumed to take <span class="math notranslate nohighlight">\(2^{n_z}\)</span> equidistant values in <span class="math notranslate nohighlight">\(\{-z_{max}, ..., +z_{max}\}\)</span> - the base default probabilities for each asset <span class="math notranslate nohighlight">\(p_0^k \in (0, 1)\)</span>, <span class="math notranslate nohighlight">\(k=1, ..., K\)</span> - sensitivities of the default probabilities with respect to <span class="math notranslate nohighlight">\(Z\)</span>, denoted by <span class="math notranslate nohighlight">\(\rho_k \in [0, 1)\)</span> -
-loss given default for asset <span class="math notranslate nohighlight">\(k\)</span>, denoted by <span class="math notranslate nohighlight">\(\lambda_k\)</span> - confidence level for VaR / CVaR <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span>.</p>
+<p>বিবেচিত মডেল সম্পর্কে আরো বিস্তারিত জানার জন্য, দেখুন, যেমন, <a class="reference external" href="https://arxiv.org/abs/1412.1183">Regulatory Capital Modeling for Credit Risk. Marek Rutkowski, Silvio Tarca</a></p>
+<p>সমস্যাটি নিম্নোক্ত প্যারামিটার দ্বারা সংজ্ঞায়িত করা হয়: <span class="math notranslate nohighlight">\(Z\)</span> দ্বারা প্রতিনিধিত্ব করার জন্য ব্যবহৃত কুইবিটের সংখ্যা, <span class="math notranslate nohighlight">\(n_z\)</span> দ্বারা চিহ্নিত - <span class="math notranslate nohighlight">\(Z\)</span> এর জন্য ছোট করার মান, <span class="math notranslate nohighlight">\(z_{\text{max}}\)</span> দ্বারা চিহ্নিত করা হয়, অর্থাৎ, Z- কে <span class="math notranslate nohighlight">\(\{-z_{max}, ..., +z_{max}\}\)</span> এর মধ্যে <span class="math notranslate nohighlight">\(2^{n_z}\)</span>- এ সমতুল্য মান গ্রহণ করা হয় বলে মনে করা হয় - প্রতিটি সম্পদের জন্য মূল ডিফল্ট সম্ভাবনা <span class="math notranslate nohighlight">\(p_0^k \in (0, 1)\)</span>, <span class="math notranslate nohighlight">\(k=1, ..., K\)</span> হলো ডিফল্ট সম্ভাব্যতার সংবেদনশীলতা <span class="math notranslate nohighlight">\(Z\)</span> এর সাপেক্ষে, <span class="math notranslate nohighlight">\(\rho_k \in [0, 1)\)</span> দ্বারা চিহ্নিত করা হয় - loss given default সম্পদের জন্য <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(\lambda_k\)</span> দ্বারা চিহ্নিত - VaR / CVaR <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span> এর জন্য confidence level।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -560,13 +559,13 @@ loss given default for asset <span class="math notranslate nohighlight">\(k\)</s
 </div>
 </div>
 </div>
-<div class="section" id="Uncertainty-Model">
-<h2>Uncertainty Model<a class="headerlink" href="#Uncertainty-Model" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We now construct a circuit that loads the uncertainty model. This can be achieved by creating a quantum state in a register of <span class="math notranslate nohighlight">\(n_z\)</span> qubits that represents <span class="math notranslate nohighlight">\(Z\)</span> following a standard normal distribution. This state is then used to control single qubit Y-rotations on a second qubit register of <span class="math notranslate nohighlight">\(K\)</span> qubits, where a <span class="math notranslate nohighlight">\(|1\rangle\)</span> state of qubit <span class="math notranslate nohighlight">\(k\)</span> represents the default event of asset <span class="math notranslate nohighlight">\(k\)</span>. The resulting quantum state can be written as</p>
+<div class="section" id="অনিশ্চয়তা-মডেল">
+<h2>অনিশ্চয়তা মডেল<a class="headerlink" href="#অনিশ্চয়তা-মডেল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা এখন একটি সার্কিট তৈরি করি যা অনিশ্চয়তা মডেল লোড করে। <span class="math notranslate nohighlight">\(n_z\)</span> qubits এর একটি রেজিস্টারে একটি কোয়ান্টাম অবস্থা তৈরি করে এটি অর্জন করা যায় যা একটি আদর্শ স্বাভাবিক বন্টন অনুসরণ করে <span class="math notranslate nohighlight">\(Z\)</span> কে প্রতিনিধিত্ব করে। এই অবস্থাটি তখন <span class="math notranslate nohighlight">\(K\)</span> qubits এর একটি দ্বিতীয় qubit রেজিস্টারে একক qubit Y- ঘূর্ণন নিয়ন্ত্রণ করতে ব্যবহৃত হয়, যেখানে <span class="math notranslate nohighlight">\(k\)</span> qubit এর <span class="math notranslate nohighlight">\(|1\rangle\)</span> অবস্থাটি asset <span class="math notranslate nohighlight">\(k\)</span> এর ডিফল্ট ঘটনাকে উপস্থাপন করে। ফলে কোয়ান্টাম অবস্থা হিসাবে লেখা যেতে পারে</p>
 <div class="math notranslate nohighlight">
 \[ |\Psi\rangle = \sum_{i=0}^{2^{n_z}-1} \sqrt{p_z^i} |z_i \rangle \bigotimes_{k=1}^K
 \left( \sqrt{1 - p_k(z_i)}|0\rangle + \sqrt{p_k(z_i)}|1\rangle\right),\]</div>
-<p>where we denote by <span class="math notranslate nohighlight">\(z_i\)</span> the <span class="math notranslate nohighlight">\(i\)</span>-th value of the discretized and truncated <span class="math notranslate nohighlight">\(Z\)</span> [Egger2019].</p>
+<p>যেখানে আমরা <span class="math notranslate nohighlight">\(z_i\)</span> দ্বারা <span class="math notranslate nohighlight">\(i\)</span>-তম মানটি বিচ্ছিন্ন এবং ছেঁটে দেওয়া <span class="math notranslate nohighlight">\(Z\)</span> [Egger2019] দ্বারা নির্দেশ করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -601,7 +600,7 @@ q_2: ─────────┤2        ├┤         ├
 q_3: ────────────────────┤2        ├
                          └─────────┘</pre></div>
 </div>
-<p>We now use the simulator to validate the circuit that constructs <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> and compute the corresponding exact values for - expected loss <span class="math notranslate nohighlight">\(\mathbb{E}[L]\)</span> - PDF and CDF of <span class="math notranslate nohighlight">\(L\)</span> - value at risk <span class="math notranslate nohighlight">\(VaR(L)\)</span> and corresponding probability - conditional value at risk <span class="math notranslate nohighlight">\(CVaR(L)\)</span></p>
+<p>আমরা এখন যে সার্কিটটি তৈরি করে তা যাচাই করতে সিমুলেটর ব্যবহার করি <span class="math notranslate nohighlight">\(|\Psi\rangle\)</span> এবং প্রত্যাশিত ক্ষতির জন্য সংশ্লিষ্ট সঠিক মান math:<cite>mathbb{E}[L]</cite> - এর PDF এবং <span class="math notranslate nohighlight">\(L\)</span> এর CDF ঝুঁকিতে মান <span class="math notranslate nohighlight">\(VaR(L)\)</span> এবং সংশ্লিষ্ট সম্ভাব্যতা - ঝুঁকিতে শর্তাধীন মান <span class="math notranslate nohighlight">\(CVaR(L)\)</span></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -755,19 +754,19 @@ Conditional Value at Risk CVaR[L]: 3.0000
 <img alt="../_images/tutorials_09_credit_risk_analysis_14_0.svg" src="../_images/tutorials_09_credit_risk_analysis_14_0.svg" /></div>
 </div>
 </div>
-<div class="section" id="Expected-Loss">
-<h2>Expected Loss<a class="headerlink" href="#Expected-Loss" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>To estimate the expected loss, we first apply a weighted sum operator to sum up individual losses to total loss:</p>
+<div class="section" id="গড়-লোকসান">
+<h2>গড় লোকসান<a class="headerlink" href="#গড়-লোকসান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>গড় লোকসান অনুমান করতে, আমরা প্রথমে ওজনযুক্ত সমষ্টি অপারেটরটি প্রয়োগ করে পৃথক লোকসান সমষ্টি করি।</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{S}: |x_1, ..., x_K \rangle_K |0\rangle_{n_S} \mapsto |x_1, ..., x_K \rangle_K |\lambda_1x_1 + ... + \lambda_K x_K\rangle_{n_S}.\]</div>
-<p>The required number of qubits to represent the result is given by</p>
+<p>ফলাফল বর্ণনা করার জন্য প্রয়োজনীয় কিউবিটগুলো হল</p>
 <div class="math notranslate nohighlight">
 \[n_s = \lfloor \log_2( \lambda_1 + ... + \lambda_K ) \rfloor + 1.\]</div>
-<p>Once we have the total loss distribution in a quantum register, we can use the techniques described in [Woerner2019] to map a total loss <span class="math notranslate nohighlight">\(L \in \{0, ..., 2^{n_s}-1\}\)</span> to the amplitude of an objective qubit by an operator</p>
+<p>একবার আমাদের একটি কোয়ান্টাম রেজিস্টারে মোট ক্ষতি বন্টন হয়ে গেলে, আমরা [Woerner2019] এ বর্ণিত কৌশলগুলি ব্যবহার করে মোট ক্ষতির চিত্রায়ন তৈরি করতে পারি <span class="math notranslate nohighlight">\(L \in \{0, ..., 2^{n_s}-1\}\)</span> একটি অপারেটর দ্বারা একটি অব্জেক্টিভ কিউবিট এর বিস্তার</p>
 <div class="math notranslate nohighlight">
 \[ | L \rangle_{n_s}|0\rangle \mapsto
 | L \rangle_{n_s} \left( \sqrt{1 - L/(2^{n_s}-1)}|0\rangle + \sqrt{L/(2^{n_s}-1)}|1\rangle \right),\]</div>
-<p>which allows to run amplitude estimation to evaluate the expected loss.</p>
+<p>যা গড় লোকসান মূল্যায়ন করতে বিস্তার অনুমান চালাতে দেয়।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -807,7 +806,7 @@ Conditional Value at Risk CVaR[L]: 3.0000
 </pre></div>
 </div>
 </div>
-<p>Create the state preparation circuit:</p>
+<p>মান বা অবস্থা প্রস্তুতিকরন বর্তনী তৈরি কর:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -862,7 +861,7 @@ objective_0: ─────────┤        ├┤2   ├┤           �
     carry_0: ─────────┤6       ├──────┤6          ├
                       └────────┘      └───────────┘</pre></div>
 </div>
-<p>Before we use QAE to estimate the expected loss, we validate the quantum circuit representing the objective function by just simulating it directly and analyzing the probability of the objective qubit being in the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state, i.e., the value QAE will eventually approximate.</p>
+<p>আমরা গড় ক্ষতির অনুমান করার জন্য QAE ব্যবহার করার আগে, আমরা কোয়ান্টাম সার্কিটকে অব্জেক্টিভ ফাংশনকে প্রতিনিধিত্ব করে কেবলমাত্র এটিকে সরাসরি অনুকরণ করে এবং <span class="math notranslate nohighlight">\(|1\rangle\)</span> অবস্থায় থাকা অব্জেক্টিভ qubit এর সম্ভাব্যতা বিশ্লেষণ করে, অর্থাৎ QAE শেষ পর্যন্ত আনুমানিক হবে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -901,7 +900,7 @@ Exact Operator Value:  0.3906
 Mapped Operator value: 0.6640
 </pre></div></div>
 </div>
-<p>Next we run QAE to estimate the expected loss with a quadratic speed-up over classical Monte Carlo simulation.</p>
+<p>পরবর্তীতে আমরা গড় ক্ষতি অনুমান করতে QAE চালাচ্ছি ক্লাসিকাল Monte Carlo সিমুলেশনের উপর দ্বিঘাত স্পীড-আপ দিয়ে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -938,22 +937,22 @@ Confidence interval:    [0.6587, 0.6878]
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Cumulative-Distribution-Function">
-<h2>Cumulative Distribution Function<a class="headerlink" href="#Cumulative-Distribution-Function" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Instead of the expected loss (which could also be estimated efficiently using classical techniques) we now estimate the cumulative distribution function (CDF) of the loss. Classically, this either involves evaluating all the possible combinations of defaulting assets, or many classical samples in a Monte Carlo simulation. Algorithms based on QAE have the potential to significantly speed up this analysis in the future.</p>
-<p>To estimate the CDF, i.e., the probability <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq x]\)</span>, we again apply <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> to compute the total loss, and then apply a comparator that for a given value <span class="math notranslate nohighlight">\(x\)</span> acts as</p>
+<div class="section" id="ক্রমবর্ধমান-বন্টন-ফাংশন">
+<h2>ক্রমবর্ধমান বন্টন ফাংশন<a class="headerlink" href="#ক্রমবর্ধমান-বন্টন-ফাংশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>গড় ক্ষতির পরিবর্তে (যা ক্লাসিকাল কৌশলগুলি ব্যবহার করেও দক্ষতার সাথে অনুমান করা যেতে পারে) আমরা এখন ক্ষতির ক্রম বিতরণ ফাংশন (cumulative distribution function বা সংক্ষেপে CDF) নিরূপন করি। প্রথাগতভাবে, হয় এটি সমস্ত খেলাপি সম্পদের সম্ভাব্য সমাবেশের মূল্যায়ন করা হয়, অথবা অনেকগুলো প্রথাগত (ক্লাসিক্যাল) স্যাম্পেলের মূল্যায়ন মন্টি কার্লো সিমুলেশনের মাধ্যমে করা হয়। ভবিষ্যতে QAE ভিত্তিক অ্যালগরিদমের (ধারাক্রমের) এইসকল বিশ্লেষণের গতি উল্লেখযোগ্যভাবে বৃদ্ধি পাওয়ার সম্ভাবনা রয়েছে।</p>
+<p>CDF, অর্থাৎ সম্ভাব্যতা <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq x]\)</span> অনুমান করার জন্য, আমরা আবার মোট ক্ষতি গণনা করার জন্য <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> প্রয়োগ করি, এবং তারপর একটি তুলনাকারী প্রয়োগ করি যা একটি প্রদত্ত মান <span class="math notranslate nohighlight">\(x\)</span> হিসাবে কাজ করে</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \mathcal{C}: |L\rangle_n|0&gt; \mapsto
 \begin{cases}
 |L\rangle_n|1&gt; &amp; \text{if}\quad L \leq x \\
 |L\rangle_n|0&gt; &amp; \text{if}\quad L &gt; x.
 \end{cases}\end{split}\]</div>
-<p>The resulting quantum state can be written as</p>
+<p>ফলে কোয়ান্টাম অবস্থাকে লেখা যায়</p>
 <div class="math notranslate nohighlight">
 \[ \sum_{L = 0}^{x} \sqrt{p_{L}}|L\rangle_{n_s}|1\rangle +
 \sum_{L = x+1}^{2^{n_s}-1} \sqrt{p_{L}}|L\rangle_{n_s}|1\rangle,\]</div>
-<p>where we directly assume the summed up loss values and corresponding probabilities instead of presenting the details of the uncertainty model.</p>
-<p>The CDF(<span class="math notranslate nohighlight">\(x\)</span>) equals the probability of measuring <span class="math notranslate nohighlight">\(|1\rangle\)</span> in the objective qubit and QAE can be directly used to estimate it.</p>
+<p>যেখানে আমরা অনিশ্চয়তার মডেলটির বিশদ উপস্থাপনের পরিবর্তে সরাসরি সমষ্টি করা লোকসানের মানগুলি এবং সম্পর্কিত সম্ভাব্যতাগুলি ধরে নিই।</p>
+<p>CDF (<span class="math notranslate nohighlight">\(x\)</span>) পরিমাপের সম্ভাবনার সাথে সমান: <span class="math notranslate nohighlight">\(|1\rangle\)</span> অব্জেক্টিভ কিউবিট এবং QAE তে সরাসরি এটি অনুমান করার জন্য ব্যবহার করা যায়।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1017,7 +1016,7 @@ compare_0: ──┼──┤ X ├┤ X ├──┼──
 </pre></div>
 </div>
 </div>
-<p>Again, we first use quantum simulation to validate the quantum circuit.</p>
+<p>আবার আমরা প্রথমে কোয়ান্টাম সিমুলেশন ব্যবহার করব কোয়ান্টাম বর্তনী যাচাইয়ের জন্য।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -1085,7 +1084,7 @@ Operator CDF(2) = 0.9591
 Exact    CDF(2) = 0.9591
 </pre></div></div>
 </div>
-<p>Next we run QAE to estimate the CDF for a given <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>এরপরে আমরা CDF অনুমানের জন্য QAE চালাই <span class="math notranslate nohighlight">\(x\)</span>।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -1121,9 +1120,9 @@ Confidence interval:    [0.9582, 0.9604]
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Value-at-Risk">
-<h2>Value at Risk<a class="headerlink" href="#Value-at-Risk" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>In the following we use a bisection search and QAE to efficiently evaluate the CDF to estimate the value at risk.</p>
+<div class="section" id="ঝুঁকিপূর্ণ-মান">
+<h2>ঝুঁকিপূর্ণ মান<a class="headerlink" href="#ঝুঁকিপূর্ণ-মান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>নিম্নলিখিতটিতে আমরা ঝুঁকির মূল্য নির্ধারণের জন্য CDF কে দক্ষতার সাথে মূল্যায়নের জন্য দ্বিখণ্ডিত অনুসন্ধান (bisection search) এবং QAE ব্যবহার করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -1264,15 +1263,15 @@ Exact Probability:        0.959
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Conditional-Value-at-Risk">
-<h2>Conditional Value at Risk<a class="headerlink" href="#Conditional-Value-at-Risk" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Last, we compute the CVaR, i.e. the expected value of the loss conditional to it being larger than or equal to the VaR. To do so, we evaluate a piecewise linear objective function <span class="math notranslate nohighlight">\(f(L)\)</span>, dependent on the total loss <span class="math notranslate nohighlight">\(L\)</span>, that is given by</p>
+<div class="section" id="শর্তাধীন-ঝুঁকিপূর্ণ-মান">
+<h2>শর্তাধীন ঝুঁকিপূর্ণ মান<a class="headerlink" href="#শর্তাধীন-ঝুঁকিপূর্ণ-মান" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>সর্বশেষে, আমরা CVaR হিসাব করি, যেমন এটির শর্তাধীন ক্ষতির গড় মান VaR এর চেয়ে বড় বা সমান। এটি করার জন্য, আমরা একটি টুকরো রৈখিক অব্জেক্টিভ ফাংশন <span class="math notranslate nohighlight">\(f(L)\)</span> মূল্যায়ন করি, যা মোট ক্ষতি <span class="math notranslate nohighlight">\(L\)</span> এর উপর নির্ভর করে, যা এভাবে প্রকাশিত</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}f(L) = \begin{cases}
 0 &amp; \text{if}\quad L \leq VaR \\
 L &amp; \text{if}\quad L &gt; VaR.
 \end{cases}\end{split}\]</div>
-<p>To normalize, we have to divide the resulting expected value by the VaR-probability, i.e. <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq VaR]\)</span>.</p>
+<p>Normalize করার জন্য, আমাদের গড় মানকে VaR-probability দ্বারা ভাগ করতে হবে, যেমন <span class="math notranslate nohighlight">\(\mathbb{P}[L \leq VaR]\)</span>।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
@@ -1355,7 +1354,7 @@ q155_0: ┤2        ├┤  cmp ├┤2        ├┤  cmp_dg ├
 &lt;qiskit.circuit.instructionset.InstructionSet at 0x14b747640&gt;
 </pre></div></div>
 </div>
-<p>Again, we first use quantum simulation to validate the quantum circuit.</p>
+<p>আবার আমরা প্রথমে কোয়ান্টাম সিমুলেশন ব্যবহার করব কোয়ান্টাম বর্তনী যাচাইয়ের জন্য।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
@@ -1397,7 +1396,7 @@ Estimated CVaR: 3.3021
 Exact CVaR:     3.0000
 </pre></div></div>
 </div>
-<p>Next we run QAE to estimate the CVaR.</p>
+<p>এরপর আমরা QAE চালিয়ে CVaR অনুমান করি।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
@@ -1483,10 +1482,10 @@ Estimated CVaR: 3.3836
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="Option Pricing with qGANs" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="10_qgan_option_pricing.html" class="btn btn-neutral float-right" title="qGANs দিয়ে বিকল্প মূল্য নির্ধারণ" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Pricing Fixed-Income Assets" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="08_fixed_income_pricing.html" class="btn btn-neutral" title="Pricing Fixed-Income Assets (নির্দিষ্ট আয় সম্পদ মূল্য নির্ধারণ)" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1518,14 +1517,14 @@ Estimated CVaR: 3.3836
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Credit Risk Analysis</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Problem-Definition">Problem Definition</a></li>
-<li><a class="reference internal" href="#Uncertainty-Model">Uncertainty Model</a></li>
-<li><a class="reference internal" href="#Expected-Loss">Expected Loss</a></li>
-<li><a class="reference internal" href="#Cumulative-Distribution-Function">Cumulative Distribution Function</a></li>
-<li><a class="reference internal" href="#Value-at-Risk">Value at Risk</a></li>
-<li><a class="reference internal" href="#Conditional-Value-at-Risk">Conditional Value at Risk</a></li>
+<li><a class="reference internal" href="#">ক্রেডিট ঝুঁকি বিশ্লেষণ</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a></li>
+<li><a class="reference internal" href="#সমস্যার-সংজ্ঞায়ণ">সমস্যার সংজ্ঞায়ণ</a></li>
+<li><a class="reference internal" href="#অনিশ্চয়তা-মডেল">অনিশ্চয়তা মডেল</a></li>
+<li><a class="reference internal" href="#গড়-লোকসান">গড় লোকসান</a></li>
+<li><a class="reference internal" href="#ক্রমবর্ধমান-বন্টন-ফাংশন">ক্রমবর্ধমান বন্টন ফাংশন</a></li>
+<li><a class="reference internal" href="#ঝুঁকিপূর্ণ-মান">ঝুঁকিপূর্ণ মান</a></li>
+<li><a class="reference internal" href="#শর্তাধীন-ঝুঁকিপূর্ণ-মান">শর্তাধীন ঝুঁকিপূর্ণ মান</a></li>
 </ul>
 </li>
 </ul>

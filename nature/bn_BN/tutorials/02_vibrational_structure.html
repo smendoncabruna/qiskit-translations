@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
-    <link rel="next" title="Ground state solvers" href="03_ground_state_solvers.html" />
+    <link rel="next" title="গ্রাউন্ড স্টেট সমাধানকারী" href="03_ground_state_solvers.html" />
     <link rel="prev" title="ইলেকট্রনিক গঠন" href="01_electronic_structure.html" /> 
 
   
@@ -159,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_nature.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_nature.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -509,25 +509,23 @@ div.rendered_html tbody tr:hover {
 <div class="math notranslate nohighlight">
 \[V(Q_1, \ldots, Q_L) = V_0 + \sum_{l=1}^L V^{[l]}(Q_l)
   + \sum_{l&lt;m}^L V^{[l,m]}(Q_l, Q_m) + \sum_{l&lt;m&lt;n}^L V^{[l,m,n]}(Q_l, Q_m, Q_n) + \ldots\]</div>
-<p>where <span class="math notranslate nohighlight">\(V_0\)</span> is the electronic energy of the reference geometry, the one-mode term <span class="math notranslate nohighlight">\(V^{[l]}(Q_l)\)</span> represents the variation of the PES upon change of the <span class="math notranslate nohighlight">\(l\)</span>-th normal coordinate from the equilibrium position. Similarly, the two-body potential <span class="math notranslate nohighlight">\(V^{[l,m]}(Q_l, Q_m)\)</span> represents the change in the exact PES upon a simultaneous displacement along the <span class="math notranslate nohighlight">\(l\)</span>-th and <span class="math notranslate nohighlight">\(m\)</span>-th coordinates. Often, including terms up to three-body in the <span class="math notranslate nohighlight">\(L\)</span>-body expansion is sufficient
-to obtain an accuracy of about 1~cm<span class="math notranslate nohighlight">\(^{-1}\)</span>. We highlight that the many-body expansion of the potential operator defining the Watson Hamiltonian contains arbitrarily high coupling terms. This is a crucial difference compared to the non-relativistic electronic-structure Hamiltonian that contains only pairwise interactions.</p>
-<p>A flexible second quantization form of the Watson Hamiltonian is obtained within the so-called n-mode representation. Let us assume that each mode <span class="math notranslate nohighlight">\(l\)</span> is described by a <span class="math notranslate nohighlight">\(N_l\)</span>-dimensional basis set <span class="math notranslate nohighlight">\(S_l\)</span> defined as follows:</p>
+<p>যেখানে <span class="math notranslate nohighlight">\(V_0\)</span> হল রেফারেন্স জ্যামিতির ইলেকট্রনিক শক্তি, এক-মোড শব্দ <span class="math notranslate nohighlight">\(V^{[l]}(Q_l)\)</span> ভারসাম্যপূর্ণ অবস্থান থেকে <span class="math notranslate nohighlight">\(l\)</span>-তম স্বাভাবিক স্থানাঙ্ক পরিবর্তনের পরে PES এর বৈচিত্র্যকে প্রতিনিধিত্ব করে। একইভাবে, দ্বি-শরীরের সম্ভাব্য <span class="math notranslate nohighlight">\(V^{[l,m]}(Q_l, Q_m)\)</span>, <span class="math notranslate nohighlight">\(l\)</span>-তম এবং <span class="math notranslate nohighlight">\(m\)</span>-তম স্থানাঙ্কগুলির সাথে একযোগে স্থানচ্যুতিতে সঠিক PES- এর পরিবর্তনের প্রতিনিধিত্ব করে। প্রায়শই, <span class="math notranslate nohighlight">\(L\)</span>-বডি সম্প্রসারণে থ্রি -বডি পর্যন্ত পদগুলি সহ প্রায় 1~cm<span class="math notranslate nohighlight">\(^{-1}\)</span> এর নির্ভুলতা পাওয়ার জন্য যথেষ্ট। আমরা হাইলাইট করি যে ওয়াটসন হ্যামিল্টোনিয়ান সংজ্ঞায়িত সম্ভাব্য অপারেটরের বহু-দেহের সম্প্রসারণে ইচ্ছাকৃতভাবে উচ্চ সংযোজন পদ রয়েছে। অ-আপেক্ষিক বৈদ্যুতিন-কাঠামো হ্যামিল্টোনিয়ানের তুলনায় এটি একটি গুরুত্বপূর্ণ পার্থক্য যা কেবল জোড়া যুক্ত মিথস্ক্রিয়া ধারণ করে।</p>
+<p>ওয়াটসন হ্যামিল্টোনিয়ানের একটি নমনীয় দ্বিতীয় কোয়ান্টাইজেশন ফর্ম তথাকথিত এন-মোড উপস্থাপনার মধ্যে পাওয়া যায়। আসুন আমরা ধরে নিই যে প্রতিটি মোড <span class="math notranslate nohighlight">\(l\)</span> একটি <span class="math notranslate nohighlight">\(N_l\)</span>- ডাইমেনশনাল ভিত্তিক সেট <span class="math notranslate nohighlight">\(S_l\)</span> দ্বারা বর্ণনা করা হয়েছে যা নিম্নরূপ সংজ্ঞায়িত করা হয়েছে:</p>
 <div class="math notranslate nohighlight">
 \[\mathcal{S}_l = \{ \phi_1^{(l)} (Q_l) , \ldots , \phi_{N_l}^{(l)} (Q_l) \} \,  ।\]</div>
-<p>The <span class="math notranslate nohighlight">\(n\)</span>-mode wave function can be expanded in the product basis <span class="math notranslate nohighlight">\(\mathcal{S} = \otimes_{i=1}^L \mathcal{S}_i\)</span> as the following CI-like expansion:</p>
+<p><span class="math notranslate nohighlight">\(n\)</span>- মোড ওয়েভ ফাংশনটি পণ্যের ভিত্তিতে <span class="math notranslate nohighlight">\(\mathcal{S} = \otimes_{i=1}^L \mathcal{S}_i\)</span> নিম্নোক্ত CI- এর মত সম্প্রসারণ করা যেতে পারে:</p>
 <div class="math notranslate nohighlight">
 \[|\Psi\rangle = \sum_{k_1=1}^{N_1} \cdots \sum_{k_L=1}^{N_L} C_{k_1,\ldots,k_L}
   \phi_{k_1}^{(1)}(Q_1) \cdots \phi_{k_L}^{(L)}(Q_L) \, ,\]</div>
-<p>The many-body basis function <span class="math notranslate nohighlight">\(\phi_{k_1}^{(1)}(Q_1) \cdots \phi_{k_L}^{(L)}(Q_L)\)</span> are encoded within the so-called <span class="math notranslate nohighlight">\(n\)</span>-mode second quantization as occupation-number vectors (ONVs) as follows:</p>
+<p>মনি-বডি বেস ফাংশন <span class="math notranslate nohighlight">\(\phi_{k_1}^{(1)}(Q_1) \cdots \phi_{k_L}^{(L)}(Q_L)\)</span> তথাকথিত <span class="math notranslate nohighlight">\(n\)</span>-মোড সেকেন্ড কোয়ান্টাইজেশনের মধ্যে পেশা-সংখ্যা ভেক্টর (ONVs) হিসাবে এনকোড করা হয়েছে:</p>
 <div class="math notranslate nohighlight">
 \[\phi_{k_1}(Q_1) \cdots \phi_{k_L}(Q_L)
                     \equiv  |0_1 \cdots 1_{k_1} \cdots 0_{N_1},
                                  0_1 \cdots 1_{k_2} \cdots 0_{N_2},
                                  \cdots ,
                                  0_1 \cdots 1_{k_L} \cdots 0_{N_L}\rangle \, .\]</div>
-<p>The ONV defined above is, therefore, the product of <span class="math notranslate nohighlight">\(L\)</span> mode-specific ONVs, each one describing an individual mode. Since each mode is described by one and only one basis function, the occupation of each mode-specific ONV is one. From a theoretical perspective, each mode can be interpreted as a distinguishable quasi-particle (defined as phonons in solid-state physics). Distinguishability arises from the fact that the PES is not invariant by permutation of two modes, also in this case
-unlike the Coulomb interaction between two equal particles. From this perspective, a molecule can be interpreted as a collection of <span class="math notranslate nohighlight">\(L\)</span> indistinguishable particles that interact through the PES operator.</p>
-<p>Based on this second-quantization representation we introduce a pair of creation and annihilation operators per mode <span class="math notranslate nohighlight">\(l\)</span> <span class="math">\textit{and}</span> per basis function <span class="math notranslate nohighlight">\(k_l\)</span> defined as:</p>
+<p>উপরে সংজ্ঞায়িত ONV, তাই, <span class="math notranslate nohighlight">\(L\)</span> মোড-নির্দিষ্ট ONV গুলির পণ্য, প্রত্যেকে একটি পৃথক মোড বর্ণনা করে। যেহেতু প্রতিটি মোড এক এবং শুধুমাত্র একটি ভিত্তি ফাংশন দ্বারা বর্ণনা করা হয়েছে, প্রতিটি মোড-নির্দিষ্ট ONV এর পেশা এক। তাত্ত্বিক দৃষ্টিকোণ থেকে, প্রতিটি মোডকে একটি পৃথক আধা-কণা হিসাবে ব্যাখ্যা করা যেতে পারে (কঠিন-রাষ্ট্র পদার্থবিজ্ঞানে ফোনন হিসাবে সংজ্ঞায়িত)। পৃথক পৃথকীকরণ এই সত্য থেকে উদ্ভূত হয় যে PES দুটি মোডের ক্রমবর্ধমান দ্বারা অপরিবর্তনীয় নয়, এই ক্ষেত্রে দুটি সমান কণার মধ্যে কুলম্ব মিথস্ক্রিয়া থেকে ভিন্ন। এই দৃষ্টিকোণ থেকে, একটি অণু কে <span class="math notranslate nohighlight">\(L\)</span> পৃথকযোগ্য কণার সংগ্রহ হিসাবে ব্যাখ্যা করা যেতে পারে যা PES অপারেটরের মাধ্যমে যোগাযোগ করে।</p>
+<p>এই দ্বিতীয় কোয়ান্টাইজেশন উপস্থাপনার উপর ভিত্তি করে আমরা এক জোড়া সৃষ্টি এবং ধ্বংসের অপারেটর প্রতি মোড <span class="math notranslate nohighlight">\(l\)</span> <span class="math">\textit{and}</span> প্রতি ভিত্তি ফাংশন <span class="math notranslate nohighlight">\(k_l\)</span> হিসাবে সংজ্ঞায়িত করি:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   a_{k_l}^\dagger |\cdots, 0_1 \cdots 0_{k_l} \cdots 0_{N_l}, \cdots\rangle
@@ -544,7 +542,7 @@ unlike the Coulomb interaction between two equal particles. From this perspectiv
   \left[ a_{k_l}, a_{h_m} \right] &amp;= 0 \\
   \left[ a_{k_l}^\dagger, a_{h_m} \right] &amp;= \delta_{l,m} \, , \delta_{k_l,h_m}
 \end{aligned}\end{split}\]</div>
-<p>The second quantization form is obtained by expressing the potential as</p>
+<p>সম্ভাব্যতা প্রকাশ করে দ্বিতীয় পরিমাপ গঠনটি পাওয়া যায়</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  \mathcal{H}_\text{vib}^{SQ} =&amp; \sum_{l=1}^L
@@ -553,16 +551,15 @@ unlike the Coulomb interaction between two equal particles. From this perspectiv
    \langle \phi_{k_l} \phi_{k_m} | V^{[l,m]}(Q_l, Q_m) | \phi_{h_l} \phi_{h_m} \rangle
    a_{k_l}^+ a_{k_m}^+ a_{h_l} a_{h_m} + \cdots
 \end{aligned}\end{split}\]</div>
-<p>We highlight here the difference between the operators defined here above and the electronic structure one. First, as we already mentioned, the potential contains (in principle) three- and higher-body coupling terms that lead to strings with six (or more) second-quantization operators. Moreover, the Hamiltonian conserves the number of particles for each mode, as can be seen from the fact that the number of creation and annihilation operators for a given mode is the same in each term.
-Nevertheless, different modes are coupled by two- (and higher) body terms containing SQ operators belonging to different modes <span class="math notranslate nohighlight">\(l\)</span> and <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>আমরা উপরে বর্ণিত অপারেটর এবং বৈদ্যুতিন কাঠামোর মধ্যে পার্থক্য এখানে তুলে ধরছি। প্রথমত, যেমনটি আমরা ইতিমধ্যেই উল্লেখ করেছি, সম্ভাব্য (নীতিগতভাবে) তিনটি এবং উচ্চতর শরীরের সংযোজন পদ রয়েছে যা ছয় (বা তার বেশি) দ্বিতীয়-পরিমান অপারেটরগুলির সাথে স্ট্রিংয়ের দিকে পরিচালিত করে। তদুপরি, হ্যামিল্টোনিয়ান প্রতিটি মোডের জন্য কণার সংখ্যা সংরক্ষণ করে, যেমনটি দেখা যায় যে প্রদত্ত মোডের জন্য সৃষ্টি এবং ধ্বংসের অপারেটরগুলির সংখ্যা প্রতিটি পদে একই। তা সত্ত্বেও, বিভিন্ন মোড দুটি (এবং উচ্চতর) বডি টার্ম দ্বারা সংযুক্ত করা হয় যার মধ্যে বিভিন্ন মোডের SQ অপারেটর রয়েছে <span class="math notranslate nohighlight">\(l\)</span> এবং <span class="math notranslate nohighlight">\(m\)</span>।</p>
 <p>তথ্যসূত্র (রেফারেন্স): Ollitrault, Pauline J., et al., arXiv:2003.12578 (2020)।</p>
 <p>ইলেকট্রনিক সম্ভাবনা গণনা করা</p>
-<p>Solving the ESE for different nuclear configurations to obtain the PES function <span class="math notranslate nohighlight">\(V(Q_1, \ldots, Q_L)\)</span>. So far Qiskit gives the possibility to approximate the PES with a quartic force field.</p>
+<p>PES ফাংশন পেতে বিভিন্ন পারমাণবিক কনফিগারেশনের জন্য ESE সমাধান করা <span class="math notranslate nohighlight">\(V(Q_1, \ldots, Q_L)\)</span>। এখন পর্যন্ত Qiskit একটি কোয়ার্টিক ফোর্স ক্ষেত্রের সাথে PES এর আনুমানিক সম্ভাবনা দেয়।</p>
 <div class="math notranslate nohighlight">
 \[V(Q_1, \ldots, Q_L) = \frac{1}{2}  \sum_{ij} k_{ij} Q_i Q_j
                   + \frac{1}{6}  \sum_{ijk} k_{ijk} Q_i Q_j Q_k
                   + \frac{1}{16} \sum_{ijkl} k_{ijkl} Q_i Q_j Q_k Q_l\]</div>
-<p>The advantage of such form for the PES is that the anharmonic force fields (<span class="math notranslate nohighlight">\(k_{ij}\)</span>, <span class="math notranslate nohighlight">\(k_{ijk}\)</span>, <span class="math notranslate nohighlight">\(k_{ijkl}\)</span>) can be calculated by finite-difference approaches. For methods for which the nuclear energy Hessian can be calculated analytically with response theory-based methods (such as HF and DFT), the quartic force field can be calculated by semi-numerical differentiation as:</p>
+<p>PES এর জন্য এই ধরনের ফর্মের সুবিধা হল যে anharmonic force ক্ষেত্রগুলি (<span class="math notranslate nohighlight">\(k_{ij}\)</span>, <span class="math notranslate nohighlight">\(k_{ijk}\)</span>, <span class="math notranslate nohighlight">\(k_{ijkl}\)</span>) সসীম দ্বারা গণনা করা যায় -পার্থক্য পদ্ধতি যেসব পদ্ধতির জন্য পারমাণবিক শক্তি হেসিয়ানকে প্রতিক্রিয়া তত্ত্ব-ভিত্তিক পদ্ধতি (যেমন এইচএফ এবং ডিএফটি) দিয়ে বিশ্লেষণাত্মকভাবে গণনা করা যায়, কোয়ার্টিক বল ক্ষেত্রটি আধা-সংখ্যাসূচক অন্তরীকরণ দ্বারা গণনা করা যেতে পারে:</p>
 <div class="math notranslate nohighlight">
 \[k_{ijk} = \frac{H_{ij}(+\delta Q_k) - H_{ij}(-\delta Q_k)}{2\delta Q_k}\]</div>
 <p>এবং</p>
@@ -1113,7 +1110,7 @@ Nevertheless, different modes are coupled by two- (and higher) body terms contai
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="03_ground_state_solvers.html" class="btn btn-neutral float-right" title="Ground state solvers" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="03_ground_state_solvers.html" class="btn btn-neutral float-right" title="গ্রাউন্ড স্টেট সমাধানকারী" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="01_electronic_structure.html" class="btn btn-neutral" title="ইলেকট্রনিক গঠন" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>

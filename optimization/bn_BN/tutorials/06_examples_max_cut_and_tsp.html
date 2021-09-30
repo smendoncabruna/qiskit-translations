@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Max-Cut and Traveling Salesman Problem &mdash; Qiskit Optimization 0.2.3 documentation</title>
+  <title>সর্বোচ্চ লাভ এবং ট্রাভেলিং সেলসম্যান সমস্যা &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
         
-      <li>Max-Cut and Traveling Salesman Problem</li>
+      <li>সর্বোচ্চ লাভ এবং ট্রাভেলিং সেলসম্যান সমস্যা</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,68 +482,63 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/06_examples_max_cut_and_tsp.ipynb">docs/tutorials/06_examples_max_cut_and_tsp.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/06_examples_max_cut_and_tsp.ipynb">docs/tutorials/06_examples_max_cut_and_tsp.ipynb</a> থেকে বানানো হয়েছে।</p>
 </div>
-<div class="section" id="Max-Cut-and-Traveling-Salesman-Problem">
-<h1>Max-Cut and Traveling Salesman Problem<a class="headerlink" href="#Max-Cut-and-Traveling-Salesman-Problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Many problems in quantitative fields such as finance and engineering are optimization problems. Optimization problems lie at the core of complex decision-making and definition of strategies.</p>
-<p>Optimization (or combinatorial optimization) means searching for an optimal solution in a finite or countably infinite set of potential solutions. Optimality is defined with respect to some criterion function, which is to be minimized or maximized. This is typically called cost function or objective function.</p>
-<p><strong>Typical optimization problems</strong></p>
-<p>Minimization: cost, distance, length of a traversal, weight, processing time, material, energy consumption, number of objects</p>
-<p>Maximization: profit, value, output, return, yield, utility, efficiency, capacity, number of objects</p>
-<p>We consider here max-cut problems of practical interest in many fields, and show how they can be mapped on quantum computers manually and how Qiskit’s optimization module supports this.</p>
+<div class="section" id="সর্বোচ্চ-লাভ-এবং-ট্রাভেলিং-সেলসম্যান-সমস্যা">
+<h1>সর্বোচ্চ লাভ এবং ট্রাভেলিং সেলসম্যান সমস্যা<a class="headerlink" href="#সর্বোচ্চ-লাভ-এবং-ট্রাভেলিং-সেলসম্যান-সমস্যা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>পরিমাণ ক্ষেত্রের অনেকগুলি সমস্যা যেমন ব্যবস্থাপনাবিদ্যা এবং ইঞ্জিনিয়ারিং হল অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাসমূহ। অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাগুলি জটিল সিদ্ধান্ত গ্রহণ এবং কৌশলগুলির সংজ্ঞার মূল ভিত্তিতে থাকে।</p>
+<p>অপ্টিমাইজেশন (বা সমাবেশীয় অনুকূলায়ন (অপ্টিমাইজেশন)) এর অর্থ সীমাবদ্ধ বা সম্ভাব্য সমাধানের অসীম সেটগুলিতে একটি অনুকূল সমাধান অনুসন্ধান করা। অনুকূলতাটি কিছু মানদণ্ডের ফাংশনের প্রতি সম্মানের সাথে সংজ্ঞায়িত করা হয়, যা ছোট বা সর্বাধিক করতে হবে। একে সাধারণত কস্ট ফাংশন বা নৈর্ব্যক্তিক অন্বয় (অব্জেক্টিভ ফাংশন) বলা হয়।</p>
+<p><strong>সাধারণ অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাসমূহ</strong></p>
+<p>হ্রাসকরণ: ব্যয়, দূরত্ব, একটি ট্র্যাভারসাল দৈর্ঘ্য, ওজন, প্রক্রিয়াকরণের সময়, উপাদান, শক্তি খরচ, বস্তুর (অবজেক্ট) সংখ্যা</p>
+<p>সর্বাধিকীকরণ: লাভ, মান, আউটপুট, রিটার্ন, ফলন, উপযোগ, দক্ষতা, ক্ষমতা, বস্তুর (অবজেক্ট) সংখ্যা</p>
+<p>আমরা এখানে অনেক ক্ষেত্রে ব্যবহারিক আগ্রহের সর্বোচ্চ লাভ সমস্যাগুলি বিবেচনা করি এবং দেখি কীভাবে সেগুলি ম্যানুয়ালি কোয়ান্টাম কম্পিউটারগুলিতে ম্যাপ করা যায় এবং কিস্কিটের অপ্টিমাইজেশন মডিউলটি এটি সমর্থন করে।</p>
 <div class="section" id="Weighted-Max-Cut">
 <h3>Weighted Max-Cut<a class="headerlink" href="#Weighted-Max-Cut" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>Max-Cut is an NP-complete problem, with applications in clustering, network science, and statistical physics. To grasp how practical applications are mapped into given Max-Cut instances, consider a system of many people that can interact and influence each other. Individuals can be represented by vertices of a graph, and their interactions seen as pairwise connections between vertices of the graph, or edges. With this representation in mind, it is easy to model typical marketing problems. For
-example, suppose that it is assumed that individuals will influence each other’s buying decisions, and knowledge is given about how strong they will influence each other. The influence can be modeled by weights assigned on each edge of the graph. It is possible then to predict the outcome of a marketing strategy in which products are offered for free to some individuals, and then ask which is the optimal subset of individuals that should get the free products, in order to maximize revenues.</p>
-<p>The formal definition of this problem is the following:</p>
-<p>Consider an <span class="math notranslate nohighlight">\(n\)</span>-node undirected graph <em>G = (V, E)</em> where <em>|V| = n</em> with edge weights <span class="math notranslate nohighlight">\(w_{ij}&gt;0\)</span>, <span class="math notranslate nohighlight">\(w_{ij}=w_{ji}\)</span>, for <span class="math notranslate nohighlight">\((i, j)\in E\)</span>. A cut is defined as a partition of the original set V into two subsets. The cost function to be optimized is in this case the sum of weights of edges connecting points in the two different subsets, <em>crossing</em> the cut. By assigning <span class="math notranslate nohighlight">\(x_i=0\)</span> or <span class="math notranslate nohighlight">\(x_i=1\)</span> to each node <span class="math notranslate nohighlight">\(i\)</span>, one tries to maximize the global profit function (here
-and in the following summations run over indices 0,1,…n-1)</p>
+<p>ক্লাস্টারিং, নেটওয়ার্ক সায়েন্স এবং স্ট্যাটিস্টিকাল ফিজিক্সে অ্যাপ্লিকেশন সহ ম্যাক্স-কাট একটি এনপি-কমপ্লিট সমস্যা। প্রদত্ত ম্যাক্স-কাট দৃষ্টান্তগুলিতে কীভাবে ব্যবহারিক অ্যাপ্লিকেশনগুলি ম্যাপ করা হয় তা বুঝতে, অনেক মানুষ যুক্ত এমন একটি ব্যবস্থা বিবেচনা করুন যারা একে অপরকে যোগাযোগ করতে এবং প্রভাবিত করতে পারে। কোনও গ্রাফের শীর্ষে (vertex) এবং তাদের ইন্টারঅ্যাকশনগুলি গ্রাফের শীর্ষে (vertex) বা প্রান্তগুলির (edge) মধ্যে জোড়াযুক্ত সংযোগ হিসাবে দেখা যায়। এই উপস্থাপনাটিকে মনে রেখে, সাধারণত বিপণনের সমস্যার মডেল করা সহজ। উদাহরণস্বরূপ, ধরুন, যে ব্যক্তিরা একে অপরের ক্রয়ের সিদ্ধান্তকে প্রভাবিত করবে এবং তারা একে অপরকে কতটা শক্তিশালী করবে সে সম্পর্কে জ্ঞান দেওয়া হয়। প্রতিটি প্রান্তে নির্ধারিত ওজন দ্বারা এই প্রভাব টি মডেল করা যেতে পারে। তারপরে এমন বিপণন কৌশলটির ফলাফল সম্পর্কে ভবিষ্যদ্বাণী করা সম্ভব হয় যেখানে কিছু ব্যক্তিকে বিনামূল্যে পণ্য সরবরাহ করা হয়, এবং তারপরে জিজ্ঞাসা করা হয় যে আয়গুলি সর্বাধিকতর করার জন্য নিখরচায় পণ্যগুলি পাওয়া উচিত এমন ব্যক্তিদের সর্বোত্তম সাবসেট টি কোনটি।</p>
+<p>এই সমস্যার আনুষ্ঠানিক সংজ্ঞাটি হল:</p>
+<p>একটি <span class="math notranslate nohighlight">\(n\)</span> নোড পুনর্নির্দেশিত গ্রাফ <em>G = (V, E)</em> বিবেচনা করুন যেখানে <em>|V| = n</em> জন্য প্রান্তের ওজন <span class="math notranslate nohighlight">\(w_{ij}&gt;0\)</span>, <span class="math notranslate nohighlight">\(w_{ij}=w_{ji}\)</span> , সহ <span class="math notranslate nohighlight">\((i, j)\in E\)</span>। একটি কাট দুটি সাব সেট এর মূল সেট V এর পার্টিশন হিসাবে সংজ্ঞায়িত করা হয়। অনুকূলিতকরণের জন্য কাট টি ক্রস করে ব্যয় ফাংশনটি এই ক্ষেত্রে দুটি পৃথক উপধারায় সংযোগকারী পয়েন্টের ওজনগুলির যোগফল। প্রতিটি নোডে <span class="math notranslate nohighlight">\(x_i=0\)</span> বা <span class="math notranslate nohighlight">\(x_i=1\)</span> নির্ধারণের মাধ্যমে <span class="math notranslate nohighlight">\(i\)</span>, একজন সামগ্রিক লাভের ফাংশন সর্বাধিক করার চেষ্টা করে (এখানে এবং নিচের সংক্ষেপে সূচকগুলির উপরে 0,1,… n -1 চালানো হয়)</p>
 <div class="math notranslate nohighlight">
-\[\tilde{C}(\textbf{x}) = \sum_{i,j} w_{ij} x_i (1-x_j).\]</div>
-<p>In our simple marketing model, <span class="math notranslate nohighlight">\(w_{ij}\)</span> represents the probability that the person <span class="math notranslate nohighlight">\(j\)</span> will buy a product after <span class="math notranslate nohighlight">\(i\)</span> gets a free one. Note that the weights <span class="math notranslate nohighlight">\(w_{ij}\)</span> can in principle be greater than <span class="math notranslate nohighlight">\(1\)</span> (or even negative), corresponding to the case where the individual <span class="math notranslate nohighlight">\(j\)</span> will buy more than one product. Maximizing the total buying probability corresponds to maximizing the total future revenues. In the case where the profit probability will be greater than the
-cost of the initial free samples, the strategy is a convenient one. An extension to this model has the nodes themselves carry weights, which can be regarded, in our marketing model, as the likelihood that a person granted with a free sample of the product will buy it again in the future. With this additional information in our model, the objective function to maximize becomes</p>
+\[\tilde{C}(\textbf{x}) = \sum_{i,j} w_{ij} x_i (1-x_j) ।\]</div>
+<p>আমাদের সাধারণ বিপণন মডেলটিতে, <span class="math notranslate nohighlight">\(w_{ij}\)</span> এই সম্ভাব্যতা উপস্থাপন করে যে <span class="math notranslate nohighlight">\(j\)</span> ব্যক্তি <span class="math notranslate nohighlight">\(i\)</span> ফ্রি পাওয়ার পরে কোনও পণ্য কিনবে। নোট করুন যে ওজন <span class="math notranslate nohighlight">\(w_{ij}\)</span> নীতিগতভাবে <span class="math notranslate nohighlight">\(1\)</span> (বা এমনকি নেতিবাচক) এর চেয়েও বেশি হতে পারে, সেই ক্ষেত্রে যেখানে পৃথক <span class="math notranslate nohighlight">\(j\)</span> একাধিক পণ্য কেনে। মোট কেনার সম্ভাব্যতা সর্বাধিকীকরণ মোট ভবিষ্যতের আয়কে সর্বাধিক করার সাথে মিলে যায়। এই মডেলটির একটি বর্ধনের সাথে নোডগুলি ওজন বহন করে, যা আমাদের বিপণনের মডেল হিসাবে বিবেচনা করা যেতে পারে, সম্ভাবনা হিসাবে পণ্যটির একটি নিখরচায় নমুনা দেওয়া কোনও ব্যক্তি ভবিষ্যতে আবার কিনবে। আমাদের মডেলটিতে এই অতিরিক্ত তথ্য সহ, সর্বাধিকীকরণের অব্জেক্টিভ ফাংশনটি হয়ে ওঠে।</p>
 <div class="math notranslate nohighlight">
-\[C(\textbf{x}) = \sum_{i,j} w_{ij} x_i (1-x_j)+\sum_i w_i x_i.\]</div>
-<p>In order to find a solution to this problem on a quantum computer, one needs first to map it to an Ising Hamiltonian. This can be done with the assignment <span class="math notranslate nohighlight">\(x_i\rightarrow (1-Z_i)/2\)</span>, where <span class="math notranslate nohighlight">\(Z_i\)</span> is the Pauli Z operator that has eigenvalues <span class="math notranslate nohighlight">\(\pm 1\)</span>. Doing this we find that</p>
+\[C(\textbf{x}) = \sum_{i,j} w_{ij} x_i (1-x_j)+\sum_i w_i x_i ।\]</div>
+<p>কোয়ান্টাম কম্পিউটারে এই সমস্যার সমাধানের জন্য, প্রথমে একটি আইসিং হ্যামিলটনিয়ানকে এটির ম্যাপিং করা উচিত। এটি অ্যাসাইনমেন্ট <span class="math notranslate nohighlight">\(x_i\rightarrow (1-Z_i)/2\)</span> সহ করা যেতে পারে, যেখানে <span class="math notranslate nohighlight">\(Z_i\)</span> i হ’ল পাওলি Z অপারেটর যার আইগেনভ্যালু <span class="math notranslate nohighlight">\(\pm 1\)</span>। এটি করে আমরা এটি খুঁজে পাই</p>
 <div class="math notranslate nohighlight">
 \[C(\textbf{Z}) = \sum_{i,j} \frac{w_{ij}}{4} (1-Z_i)(1+Z_j) + \sum_i \frac{w_i}{2} (1-Z_i) = -\frac{1}{2}\left( \sum_{i&lt;j} w_{ij} Z_i Z_j +\sum_i w_i Z_i\right)+\mathrm{const},\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathrm{const} = \sum_{i&lt;j}w_{ij}/2+\sum_i w_i/2\)</span>. In other terms, the weighted Max-Cut problem is equivalent to minimizing the Ising Hamiltonian</p>
+<p>যেখানে :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>mathrm{const} = sum_{i&lt;j}w_{ij}/2+sum_i w_i/2। অন্য কথায়, ওয়েটেড সর্বোচ্চ লাভ সমস্যাটি আইসিং হ্যামিলটনিয়ানকে হ্রাস করার সমতুল্য</p>
 <div class="math notranslate nohighlight">
 \[H = \sum_i w_i Z_i + \sum_{i&lt;j} w_{ij} Z_iZ_j.\]</div>
-<p>Qiskit’s optimization module can generate the Ising Hamiltonian for the first profit function <span class="math notranslate nohighlight">\(\tilde{C}\)</span>. To this extent, function <span class="math notranslate nohighlight">\(\tilde{C}\)</span> can be modeled as a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>, which provides the <code class="docutils literal notranslate"><span class="pre">to_ising()</span></code> method.</p>
+<p>Qiskit অপ্টিমাইজেশন মডিউলটি প্রথম লাভ ফাংশন <span class="math notranslate nohighlight">\(\tilde{C}\)</span>-র জন্য আইসিং হ্যামিলটোনিয়ান তৈরি করতে পারে। এই পরিমাণে, ফাংশন <span class="math notranslate nohighlight">\(\tilde{C}\)</span> একটি <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> হিসাবে মডেল করা হবে, যা <code class="docutils literal notranslate"><span class="pre">to_ising</span> <span class="pre">()</span></code> পদ্ধতি সরবরাহ করে।</p>
 </div>
-<div class="section" id="Approximate-Universal-Quantum-Computing-for-Optimization-Problems">
-<h3>Approximate Universal Quantum Computing for Optimization Problems<a class="headerlink" href="#Approximate-Universal-Quantum-Computing-for-Optimization-Problems" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>There has been a considerable amount of interest in recent times about the use of quantum computers to find a solution to combinatorial optimization problems. It is important to say that, given the classical nature of combinatorial problems, exponential speedup in using quantum computers compared to the best classical algorithms is not guaranteed. However, due to the nature and importance of the target problems, it is worth investigating heuristic approaches on a quantum computer that could
-indeed speed up some problem instances. Here we demonstrate an approach that is based on the <em>Quantum Approximate Optimization Algorithm</em> (QAOA) by Farhi, Goldstone, and Gutmann (2014). We frame the algorithm in the context of <em>approximate quantum computing</em>, given its heuristic nature.</p>
-<p>The algorithm works as follows:</p>
+<div class="section" id="অপ্টিমাইজেশন-সমস্যার-জন্য-আনুমানিক-ইউনিভার্সাল-কোয়ান্টাম-কম্পিউটিং">
+<h3>অপ্টিমাইজেশন সমস্যার জন্য আনুমানিক ইউনিভার্সাল কোয়ান্টাম কম্পিউটিং<a class="headerlink" href="#অপ্টিমাইজেশন-সমস্যার-জন্য-আনুমানিক-ইউনিভার্সাল-কোয়ান্টাম-কম্পিউটিং" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>সমাবেশীয় অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাসমূহর সমাধানের জন্য কোয়ান্টাম কম্পিউটার ব্যবহার সম্পর্কে সাম্প্রতিক সময়ে যথেষ্ট পরিমাণে আগ্রহ তৈরি হয়েছে। বলা বাহুল্য যে, সমাবেশ সমস্যাগুলির প্রথাগত (ক্লাসিক্যাল) প্রকৃতির পরিপ্রেক্ষিতে, সর্বোত্তম প্রথাগত (ক্লাসিক্যাল) অ্যালগরিদমের তুলনায় কোয়ান্টাম কম্পিউটার ব্যবহারে সূচকীয় গতির গ্যারান্টি নেই। যাইহোক, লক্ষ্য (টার্গেট) সমস্যার প্রকৃতি এবং গুরুত্বের কারণে, এটি কোয়ান্টাম কম্পিউটারে হিউরিস্টিক পন্থাগুলি তদন্তের জন্য মূল্যবান যা প্রকৃতপক্ষে কিছু সমস্যাগুলির উদাহরণগুলিকে গতিতে পারে। এখানে আমরা এমন একটি পদ্ধতির প্রদর্শন করি যা ফারহি, গোল্ডস্টোন এবং গুটম্যান (২০১৪) দ্বারা <em>কোয়ান্টাম আনুমানিক অপ্টিমাইজেশন অ্যালগরিদম</em> (কিউ.এ.ও.এ.) এর উপর ভিত্তি করে। আমরা আলগরিদমকে <em>আনুমানিক কোয়ান্টাম কম্পিউটিং</em> এর প্রাসঙ্গিক আকারে এর ফ্রেমযুক্ত প্রকৃতির উপর ভিত্তি করে ফ্রেম করি।</p>
+<p>অ্যালগরিদম টি নিম্নলিখিত উপায়ে কাজ করে :</p>
 <ol class="arabic">
-<li><p>Choose the <span class="math notranslate nohighlight">\(w_i\)</span> and <span class="math notranslate nohighlight">\(w_{ij}\)</span> in the target Ising problem. In principle, even higher powers of Z are allowed.</p></li>
-<li><p>Choose the depth of the quantum circuit <span class="math notranslate nohighlight">\(m\)</span>. Note that the depth can be modified adaptively.</p></li>
-<li><p>Choose a set of controls <span class="math notranslate nohighlight">\(\theta\)</span> and make a trial function <span class="math notranslate nohighlight">\(|\psi(\boldsymbol\theta)\rangle\)</span>, built using a quantum circuit made of C-Phase gates and single-qubit Y rotations, parameterized by the components of <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
-<li><p>Evaluate</p>
+<li><p>টার্গেট আইসিং সমস্যা: <span class="math notranslate nohighlight">\(w_i\)</span> এবং <span class="math notranslate nohighlight">\(w_{ij}\)</span> চয়ন করুন। নীতিগতভাবে, Z-র উচ্চতর ক্ষমতাগুলিও অনুমোদিত।</p></li>
+<li><p>কোয়ান্টাম সার্কিট :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>m -র গভীরতা চয়ন করুন। টীকা: গভীরতাটি অভিযোজিতভাবে সংশোধন করা যেতে পারে।.</p></li>
+<li><p>কনট্রোল <span class="math notranslate nohighlight">\(\theta\)</span> এর একটি সেট চয়ন করুন এবং সি-ফেজ ( C-Phase ) গেটস এবং একক কিউবিট ওয়াই (Y) রোটেশনগুলির তৈরি কোয়ান্টাম সার্কিট ব্যবহার করে তৈরি করে ট্রায়াল ফাংশন <span class="math notranslate nohighlight">\(|\psi(\boldsymbol\theta)\rangle\)</span> করুন, যা <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> এর উপাদানগুলি দ্বারা প্যারামিটারাইজড |</p></li>
+<li><p>মূল্যায়ন</p>
 <div class="math notranslate nohighlight">
 \[C(\boldsymbol\theta) = \langle\psi(\boldsymbol\theta)~|H|~\psi(\boldsymbol\theta)\rangle = \sum_i w_i \langle\psi(\boldsymbol\theta)~|Z_i|~\psi(\boldsymbol\theta)\rangle+ \sum_{i&lt;j} w_{ij} \langle\psi(\boldsymbol\theta)~|Z_iZ_j|~\psi(\boldsymbol\theta)\rangle\]</div>
-<p>by sampling the outcome of the circuit in the Z-basis and adding the expectation values of the individual Ising terms together. In general, different control points around <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> have to be estimated, depending on the classical optimizer chosen.</p>
+<p>জেড-বেসিস সার্কিটের ফলাফল নমুনা করে এবং পৃথক আইসিং পদগুলির প্রত্যাশা মানগুলি একসাথে যুক্ত করে। সাধারণভাবে, নির্বাচিত প্রথাগত (ক্লাসিক্যাল) অনুকূলায়ক এর উপর নির্ভর করে, :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>boldsymboltheta এর চারপাশের বিভিন্ন নিয়ন্ত্রণ পয়েন্টগুলি অনুমান করতে হবে।</p>
 </li>
-<li><p>Use a classical optimizer to choose a new set of controls.</p></li>
-<li><p>Continue until <span class="math notranslate nohighlight">\(C(\boldsymbol\theta)\)</span> reaches a minimum, close enough to the solution <span class="math notranslate nohighlight">\(\boldsymbol\theta^*\)</span>.</p></li>
-<li><p>Use the last <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> to generate a final set of samples from the distribution <span class="math notranslate nohighlight">\(|\langle z_i~|\psi(\boldsymbol\theta)\rangle|^2\;\forall i\)</span> to obtain the answer.</p></li>
+<li><p>নতুন সেট নিয়ন্ত্রণ চয়ন করতে একটি প্রথাগত (ক্লাসিক্যাল) অনুকূলায়ক বা অপ্টিমাইজার ব্যবহার করুন।.</p></li>
+<li><p>যতক্ষণ না <span class="math notranslate nohighlight">\(C(\boldsymbol\theta)\)</span> ন্যূনতমে পৌঁছে যায়, যা কিনা <span class="math notranslate nohighlight">\(\boldsymbol\theta^*\)</span> সমাধানের জন্য খুব কাছাকাছি, ততক্ষন চালিয়ে যান।</p></li>
+<li><p>শেষ <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> ব্যবহার করুন <span class="math notranslate nohighlight">\(\Big|\langle z_i\big|\psi(\boldsymbol\theta)\rangle\Big|^2\;\forall i\)</span> বণ্টন থেকে অন্তিম নমুনা (স্যাম্পল) সমূহ উৎপন্ন করে উত্তর পাওয়ার জন্যে।</p></li>
 </ol>
-<p>It is our belief the difficulty of finding good heuristic algorithms will come down to the choice of an appropriate trial wavefunction. For example, one could consider a trial function whose entanglement best aligns with the target problem, or simply make the amount of entanglement a variable. In this tutorial, we will consider a simple trial function of the form</p>
+<p>এটি আমাদের বিশ্বাস যে ভাল হিউরিস্টিক অ্যালগরিদমগুলি খুঁজে পেতে অসুবিধাটি একটি উপযুক্ত ট্রায়াল ওয়েভ ফাংশন পছন্দে একীভূত হবে। উদাহরণস্বরূপ, কেউ একটি ট্রায়াল ফাংশন বিবেচনা করতে পারে যার এনট্যাঙ্গেলমেন্ট, লক্ষ্য সমস্যাটির সাথে সর্বোত্তমভাবে প্রান্তিক হয় বা কেবল এনট্যাঙ্গেলমেন্ট হওয়ার পরিমাণকে পরিবর্তনশীল করে তোলে। এই টিউটোরিয়ালে, আমরা ফর্মটির একটি সাধারণ ট্রায়াল ফাংশন বিবেচনা করব</p>
 <div class="math notranslate nohighlight">
 \[|\psi(\theta)\rangle  = [U_\mathrm{single}(\boldsymbol\theta) U_\mathrm{entangler}]^m |+\rangle\]</div>
-<p>where <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> is a collection of C-Phase gates (fully entangling gates), and <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^n Y(\theta_{i})\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of qubits and <span class="math notranslate nohighlight">\(m\)</span> is the depth of the quantum circuit. The motivation for this choice is that for these classical problems this choice allows us to search over the space of quantum states that have only real coefficients, still exploiting the entanglement to potentially converge faster to the
-solution.</p>
-<p>One advantage of using this sampling method compared to adiabatic approaches is that the target Ising Hamiltonian does not have to be implemented directly on hardware, allowing this algorithm not to be limited to the connectivity of the device. Furthermore, higher-order terms in the cost function, such as <span class="math notranslate nohighlight">\(Z_iZ_jZ_k\)</span>, can also be sampled efficiently, whereas in adiabatic or annealing approaches they are generally impractical to deal with.</p>
-<p>References: - A. Lucas, Frontiers in Physics 2, 5 (2014) - E. Farhi, J. Goldstone, S. Gutmann e-print arXiv 1411.4028 (2014) - D. Wecker, M. B. Hastings, M. Troyer Phys. Rev. A 94, 022309 (2016) - E. Farhi, J. Goldstone, S. Gutmann, H. Neven e-print arXiv 1703.06199 (2017)</p>
+<p>যেখানে <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> হল সি-ফেজ গেটস (সম্পূর্ণরূপে এনট্যাঙ্গেল বা পরিসাংখ্যিক যোগাযোগ বা বিজড়িত দরজা) এবং <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^n Y(\theta_{i})\)</span>, যেখানে <span class="math notranslate nohighlight">\(n\)</span> কিউবিট সংখ্যা এবং <span class="math notranslate nohighlight">\(m\)</span> কোয়ান্টাম সার্কিটের গভীরতা। এই পছন্দটির অনুপ্রেরণা হ’ল, এই প্রথাগত (ক্লাসিক্যাল) সমস্যার জন্য এটি কোয়ান্টাম স্টেটের যে স্থানগুলিতে কেবল প্রকৃত সহগ রয়েছে তার সন্ধানের অনুমতি দেয়, তবুও সম্ভাব্যভাবে সমাধানে আরও দ্রুত রূপান্তরিত করতে এনট্যাঙ্গেলমেন্ট প্রবণতাটিকে কাজে লাগিয়ে।</p>
+<p>অ্যাডিয়াব্যাটিক পদ্ধতির তুলনায় এই স্যাম্পলিং পদ্ধতিটি ব্যবহার করার একটি সুবিধা হল টার্গেট আইসিং হ্যামিল্টনিয়ানকে সরাসরি হার্ডওয়্যারে প্রয়োগ করা উচিত নয়, এই অ্যালগরিদমটিকে ডিভাইসের সংযোগের মধ্যে সীমাবদ্ধ না। তদুপরি, ব্যয় কার্যক্রমে উচ্চতর অর্ডার শর্তাদি, যেমন :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>Z_iZ_jZ_k , এগুলিও দক্ষতার সাথে নমুনাযুক্ত করা যেতে পারে, যেখানে অ্যাডিয়াব্যাটিক বা অ্যানিলিং পদ্ধতির ক্ষেত্রে তারা সাধারণত মোকাবেলা করতে অযৌক্তিক হয়।</p>
+<p>তথ্যসূত্র: - A. Lucas, Frontiers in Physics 2, 5 (2014) - E. Farhi, J. Goldstone, S. Gutmann e-print arXiv 1411.4028 (2014) - D. Wecker, M. B. Hastings, M. Troyer Phys. Rev. A 94, 022309 (2016) - E. Farhi, J. Goldstone, S. Gutmann, H. Neven e-print arXiv 1703.06199 (2017)</p>
 </div>
-<div class="section" id="Application-classes">
-<h3>Application classes<a class="headerlink" href="#Application-classes" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>We use the application classes for the max-cut problem and the traveling salesman problem in this page. There are application classes for other optimization problems available as well. See <a class="reference internal" href="09_application_classes.html"><span class="doc">Application Classes for Optimization Problems</span></a> for details.</p>
+<div class="section" id="অ্যাপ্লিকেশন-ক্লাস">
+<h3>অ্যাপ্লিকেশন ক্লাস<a class="headerlink" href="#অ্যাপ্লিকেশন-ক্লাস" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>আমরা সর্বোচ্চ লাভ সমস্যা ও ভ্রাম্যমান বিক্রেতার সমস্যার জন্য অ্যাপ্লিকেশন ক্লাস ব্যবহার করতে পারি। অন্যান্য অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাসমূহর জন্য আরো অ্যাপ্লিকেশন ক্লাস আছে। বিস্তারিত জানতে <a class="reference internal" href="09_application_classes.html"><span class="doc">Application Classes for Optimization Problems</span></a> দেখ।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -569,8 +564,8 @@ solution.</p>
 </div>
 </div>
 </div>
-<div class="section" id="Max-Cut-problem">
-<h2>Max-Cut problem<a class="headerlink" href="#Max-Cut-problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<div class="section" id="সর্বোচ্চ-লাভ-সমস্যা-(Max-Cut-problem)">
+<h2>সর্বোচ্চ লাভ সমস্যা (Max-Cut problem)<a class="headerlink" href="#সর্বোচ্চ-লাভ-সমস্যা-(Max-Cut-problem)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -631,9 +626,9 @@ solution.</p>
  [1. 0. 1. 0.]]
 </pre></div></div>
 </div>
-<div class="section" id="Brute-force-approach">
-<h3>Brute force approach<a class="headerlink" href="#Brute-force-approach" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>Try all possible <span class="math notranslate nohighlight">\(2^n\)</span> combinations. For <span class="math notranslate nohighlight">\(n = 4\)</span>, as in this example, one deals with only 16 combinations, but for n = 1000, one has 1.071509e+30 combinations, which is impractical to deal with by using a brute force approach.</p>
+<div class="section" id="ব্রুট-ফোর্স-পদ্ধতি">
+<h3>ব্রুট ফোর্স পদ্ধতি<a class="headerlink" href="#ব্রুট-ফোর্স-পদ্ধতি" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>সমস্ত সম্ভাব্য <span class="math notranslate nohighlight">\(2^n সমন্বয় চেষ্টা করুন। যেমন :math:\)</span>, উদাহরণস্বরূপ, একজন কেবলমাত্র 16 টি সংমিশ্রণের সাথে ডিল করে তবে n = 1000 এর জন্য একটিতে 1.071509e + 30 সংমিশ্রণ রয়েছে, যা ব্রুট ফোর্স পদ্ধতির ব্যবহার করে মোকাবেলা করা অযৌক্তিক।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -689,9 +684,9 @@ Best solution = [1, 0, 1, 0] cost = 4.0
 <img alt="../_images/tutorials_06_examples_max_cut_and_tsp_8_1.svg" src="../_images/tutorials_06_examples_max_cut_and_tsp_8_1.svg" /></div>
 </div>
 </div>
-<div class="section" id="Mapping-to-the-Ising-problem">
-<h3>Mapping to the Ising problem<a class="headerlink" href="#Mapping-to-the-Ising-problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>Qiskit provides functionality to generate <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> from the problem specification as well as create the corresponding Ising Hamiltonian.</p>
+<div class="section" id="আইসিং-সমস্যার-ম্যাপিং-(চিত্রায়ন)">
+<h3>আইসিং সমস্যার ম্যাপিং (চিত্রায়ন)<a class="headerlink" href="#আইসিং-সমস্যার-ম্যাপিং-(চিত্রায়ন)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>Qiskit সমস্যা বিবরণ থেকে <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> তৈরি করতে এবং সম্পর্কিত আইসিং হ্যামিল্টোনিয়ান বানাতে প্রয়োজনীয় কার্যকারিতা সরবরাহ করে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -777,10 +772,10 @@ optimal value: [1. 0. 1. 0.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>Since the problem was cast to a minimization problem, the solution of <span class="math notranslate nohighlight">\(-4\)</span> corresponds to the optimum.</p>
+<p>যেহেতু সমস্যাটি একটি মিনিমাইজেশন সমস্যার জন্য ফেলে দেওয়া হয়েছিল, তাই <span class="math notranslate nohighlight">\(-4\)</span> সমাধানটি সর্বোত্তমের সাথে মিলে যায়।.</p>
 </div>
-<div class="section" id="Checking-that-the-full-Hamiltonian-gives-the-right-cost">
-<h3>Checking that the full Hamiltonian gives the right cost<a class="headerlink" href="#Checking-that-the-full-Hamiltonian-gives-the-right-cost" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<div class="section" id="সম্পূর্ণ-হ্যামিল্টোনিয়ান-সঠিক-ব্যয়-দেয়-তা-পরীক্ষা-করা-হচ্ছে">
+<h3>সম্পূর্ণ হ্যামিল্টোনিয়ান সঠিক ব্যয় দেয় তা পরীক্ষা করা হচ্ছে<a class="headerlink" href="#সম্পূর্ণ-হ্যামিল্টোনিয়ান-সঠিক-ব্যয়-দেয়-তা-পরীক্ষা-করা-হচ্ছে" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -819,9 +814,9 @@ solution objective: 4.0
 <img alt="../_images/tutorials_06_examples_max_cut_and_tsp_16_1.svg" src="../_images/tutorials_06_examples_max_cut_and_tsp_16_1.svg" /></div>
 </div>
 </div>
-<div class="section" id="Running-it-on-quantum-computer">
-<h3>Running it on quantum computer<a class="headerlink" href="#Running-it-on-quantum-computer" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>We run the optimization routine using a feedback loop with a quantum computer that uses trial functions built with Y single-qubit rotations, <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^n Y(\theta_{i})\)</span>, and entangler steps <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span>.</p>
+<div class="section" id="কোয়ান্টাম-কম্পিউটারে-চালানো">
+<h3>কোয়ান্টাম কম্পিউটারে চালানো<a class="headerlink" href="#কোয়ান্টাম-কম্পিউটারে-চালানো" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>আমরা কোয়ান্টাম কম্পিউটারের সাথে ফিডব্যাক লুপ ব্যবহার করে অপ্টিমাইজেশন রুটিন চালাই যা Y একক-কিউবিট ঘূর্ণন, <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^n Y(\theta_{i})\)</span>, এবং এন্ট্যাঙ্গলারের ধাপগুলি <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> এর সাহায্যে নির্মিত ট্রায়াল ফাংশন ব্যবহার করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -914,8 +909,8 @@ status: SUCCESS
 </div>
 </div>
 </div>
-<div class="section" id="Traveling-Salesman-Problem">
-<h2>Traveling Salesman Problem<a class="headerlink" href="#Traveling-Salesman-Problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<div class="section" id="ট্রাভেলিং-সেলসম্যান-সমস্যা">
+<h2>ট্রাভেলিং সেলসম্যান সমস্যা<a class="headerlink" href="#ট্রাভেলিং-সেলসম্যান-সমস্যা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>In addition to being a notorious NP-complete problem that has drawn the attention of computer scientists and mathematicians for over two centuries, the Traveling Salesman Problem (TSP) has important bearings on finance and marketing, as its name suggests. Colloquially speaking, the traveling salesman is a person that goes from city to city to sell merchandise. The objective in this case is to find the shortest path that would enable the salesman to visit all the cities and return to its
 hometown, i.e. the city where he started traveling. By doing this, the salesman gets to maximize potential sales in the least amount of time.</p>
 <p>The problem derives its importance from its “hardness” and ubiquitous equivalence to other relevant combinatorial optimization problems that arise in practice.</p>
@@ -974,7 +969,7 @@ distance
 <img alt="../_images/tutorials_06_examples_max_cut_and_tsp_22_1.svg" src="../_images/tutorials_06_examples_max_cut_and_tsp_22_1.svg" /></div>
 </div>
 <div class="section" id="id2">
-<h3>Brute force approach<a class="headerlink" href="#id2" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<h3>ব্রুট ফোর্স পদ্ধতি<a class="headerlink" href="#id2" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1035,7 +1030,7 @@ Best order from brute force = (0, 1, 2) with total distance = 202.0
 </div>
 </div>
 <div class="section" id="id3">
-<h3>Mapping to the Ising problem<a class="headerlink" href="#id3" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<h3>আইসিং সমস্যার ম্যাপিং (চিত্রায়ন)<a class="headerlink" href="#id3" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -1178,7 +1173,7 @@ status: SUCCESS
 </div>
 </div>
 <div class="section" id="id4">
-<h3>Checking that the full Hamiltonian gives the right cost<a class="headerlink" href="#id4" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<h3>সম্পূর্ণ হ্যামিল্টোনিয়ান সঠিক ব্যয় দেয় তা পরীক্ষা করা হচ্ছে<a class="headerlink" href="#id4" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1219,8 +1214,8 @@ solution objective: 202.0
 </div>
 </div>
 <div class="section" id="id5">
-<h3>Running it on quantum computer<a class="headerlink" href="#id5" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
-<p>We run the optimization routine using a feedback loop with a quantum computer that uses trial functions built with Y single-qubit rotations, <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^n Y(\theta_{i})\)</span>, and entangler steps <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span>.</p>
+<h3>কোয়ান্টাম কম্পিউটারে চালানো<a class="headerlink" href="#id5" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h3>
+<p>আমরা কোয়ান্টাম কম্পিউটারের সাথে ফিডব্যাক লুপ ব্যবহার করে অপ্টিমাইজেশন রুটিন চালাই যা Y একক-কিউবিট ঘূর্ণন, <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^n Y(\theta_{i})\)</span>, এবং এন্ট্যাঙ্গলারের ধাপগুলি <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> এর সাহায্যে নির্মিত ট্রায়াল ফাংশন ব্যবহার করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -1404,25 +1399,25 @@ solution objective: 202.0
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Max-Cut and Traveling Salesman Problem</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#">সর্বোচ্চ লাভ এবং ট্রাভেলিং সেলসম্যান সমস্যা</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a><ul>
 <li><a class="reference internal" href="#Weighted-Max-Cut">Weighted Max-Cut</a></li>
-<li><a class="reference internal" href="#Approximate-Universal-Quantum-Computing-for-Optimization-Problems">Approximate Universal Quantum Computing for Optimization Problems</a></li>
-<li><a class="reference internal" href="#Application-classes">Application classes</a></li>
+<li><a class="reference internal" href="#অপ্টিমাইজেশন-সমস্যার-জন্য-আনুমানিক-ইউনিভার্সাল-কোয়ান্টাম-কম্পিউটিং">অপ্টিমাইজেশন সমস্যার জন্য আনুমানিক ইউনিভার্সাল কোয়ান্টাম কম্পিউটিং</a></li>
+<li><a class="reference internal" href="#অ্যাপ্লিকেশন-ক্লাস">অ্যাপ্লিকেশন ক্লাস</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Max-Cut-problem">Max-Cut problem</a><ul>
-<li><a class="reference internal" href="#Brute-force-approach">Brute force approach</a></li>
-<li><a class="reference internal" href="#Mapping-to-the-Ising-problem">Mapping to the Ising problem</a></li>
-<li><a class="reference internal" href="#Checking-that-the-full-Hamiltonian-gives-the-right-cost">Checking that the full Hamiltonian gives the right cost</a></li>
-<li><a class="reference internal" href="#Running-it-on-quantum-computer">Running it on quantum computer</a></li>
+<li><a class="reference internal" href="#সর্বোচ্চ-লাভ-সমস্যা-(Max-Cut-problem)">সর্বোচ্চ লাভ সমস্যা (Max-Cut problem)</a><ul>
+<li><a class="reference internal" href="#ব্রুট-ফোর্স-পদ্ধতি">ব্রুট ফোর্স পদ্ধতি</a></li>
+<li><a class="reference internal" href="#আইসিং-সমস্যার-ম্যাপিং-(চিত্রায়ন)">আইসিং সমস্যার ম্যাপিং (চিত্রায়ন)</a></li>
+<li><a class="reference internal" href="#সম্পূর্ণ-হ্যামিল্টোনিয়ান-সঠিক-ব্যয়-দেয়-তা-পরীক্ষা-করা-হচ্ছে">সম্পূর্ণ হ্যামিল্টোনিয়ান সঠিক ব্যয় দেয় তা পরীক্ষা করা হচ্ছে</a></li>
+<li><a class="reference internal" href="#কোয়ান্টাম-কম্পিউটারে-চালানো">কোয়ান্টাম কম্পিউটারে চালানো</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Traveling-Salesman-Problem">Traveling Salesman Problem</a><ul>
-<li><a class="reference internal" href="#id2">Brute force approach</a></li>
-<li><a class="reference internal" href="#id3">Mapping to the Ising problem</a></li>
-<li><a class="reference internal" href="#id4">Checking that the full Hamiltonian gives the right cost</a></li>
-<li><a class="reference internal" href="#id5">Running it on quantum computer</a></li>
+<li><a class="reference internal" href="#ট্রাভেলিং-সেলসম্যান-সমস্যা">ট্রাভেলিং সেলসম্যান সমস্যা</a><ul>
+<li><a class="reference internal" href="#id2">ব্রুট ফোর্স পদ্ধতি</a></li>
+<li><a class="reference internal" href="#id3">আইসিং সমস্যার ম্যাপিং (চিত্রায়ন)</a></li>
+<li><a class="reference internal" href="#id4">সম্পূর্ণ হ্যামিল্টোনিয়ান সঠিক ব্যয় দেয় তা পরীক্ষা করা হচ্ছে</a></li>
+<li><a class="reference internal" href="#id5">কোয়ান্টাম কম্পিউটারে চালানো</a></li>
 </ul>
 </li>
 </ul>

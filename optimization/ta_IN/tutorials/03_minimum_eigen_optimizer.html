@@ -495,14 +495,14 @@ div.rendered_html tbody tr:hover {
 <p>In the following we first illustrate the conversion from a <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> to an <code class="docutils literal notranslate"><span class="pre">Operator</span></code> and then show how to use the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> with different <code class="docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code> to solve a given <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. The algorithms in Qiskit automatically try to convert a given problem to the supported problem class if possible, for instance, the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> will automatically translate integer variables to binary variables or add a linear equality constraints as a
 quadratic penalty term to the objective. It should be mentioned that Aqua will through a <code class="docutils literal notranslate"><span class="pre">QiskitOptimizationError</span></code> if conversion of a quadratic program with integer variable is attempted.</p>
 <p>The circuit depth of <code class="docutils literal notranslate"><span class="pre">QAOA</span></code> potentially has to be increased with the problem size, which might be prohibitive for near-term quantum devices. A possible workaround is Recursive QAOA, as introduced in [2]. Qiskit generalizes this concept to the <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code>, which is introduced at the end of this tutorial.</p>
-<div class="section" id="References">
-<h3>References<a class="headerlink" href="#References" title="Permalink to this headline">¶</a></h3>
-<p>[1] <a class="reference external" href="https://arxiv.org/abs/1302.5843">A. Lucas, Ising formulations of many NP problems, Front. Phys., 12 (2014).</a></p>
+<div class="section" id="குறிப்புகள்">
+<h3>குறிப்புகள்<a class="headerlink" href="#குறிப்புகள்" title="Permalink to this headline">¶</a></h3>
+<p>[1] ` A. Lucas, Ising formulations of many NP problems, Front. Phys., 12 (2014). &lt;<a class="reference external" href="https://arxiv.org/abs/1302.5843">https://arxiv.org/abs/1302.5843</a>&gt;` _</p>
 <p>[2] <a class="reference external" href="https://arxiv.org/abs/1910.08980">S. Bravyi, A. Kliesch, R. Koenig, E. Tang, Obstacles to State Preparation and Variational Optimization from Symmetry Protection, arXiv preprint arXiv:1910.08980 (2019).</a></p>
 </div>
 </div>
-<div class="section" id="Converting-a-QUBO-to-an-Operator">
-<h2>Converting a QUBO to an Operator<a class="headerlink" href="#Converting-a-QUBO-to-an-Operator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ஒரு-QUBO-ஐ-ஒரு-ஆபரேட்டராக-மாற்றுதல்">
+<h2>ஒரு QUBO ஐ ஒரு ஆபரேட்டராக மாற்றுதல்<a class="headerlink" href="#ஒரு-QUBO-ஐ-ஒரு-ஆபரேட்டராக-மாற்றுதல்" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
@@ -558,7 +558,7 @@ End
 
 </pre></div></div>
 </div>
-<p>Next we translate this QUBO into an Ising operator. This results not only in an <code class="docutils literal notranslate"><span class="pre">Operator</span></code> but also in a constant offset to be taking into account to shift the resulting value.</p>
+<p>அடுத்து இந்த QUBO ஐ ஒரு ஐசிங் ஆபரேட்டராக மொழிபெயர்க்கிறோம். இதன் விளைவாக ஒரு <code class="docutils literal notranslate"><span class="pre">Operator</span></code> மட்டுமல்ல, ஒரு நிலையான ஆஃப்செட்டிலும் விளைந்த மதிப்பை மாற்றுவதற்கு கணக்கில் எடுத்துக்கொள்ளப்படுகிறது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
@@ -694,8 +694,8 @@ optimal value: [0. 1. 0.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<div class="section" id="Analysis-of-Samples">
-<h3>Analysis of Samples<a class="headerlink" href="#Analysis-of-Samples" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="மாதிரிகளின்-பகுப்பாய்வு">
+<h3>மாதிரிகளின் பகுப்பாய்வு<a class="headerlink" href="#மாதிரிகளின்-பகுப்பாய்வு" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">OptimizationResult</span></code> provides a useful information source <code class="docutils literal notranslate"><span class="pre">SolutionSample</span></code> (here denoted as <em>samples</em>). They contain information about input values <code class="docutils literal notranslate"><span class="pre">x</span></code>, objective function values <code class="docutils literal notranslate"><span class="pre">fval</span></code>, probability of obtaining that result <code class="docutils literal notranslate"><span class="pre">probability</span></code> and the solution status <code class="docutils literal notranslate"><span class="pre">status</span></code> (<code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code>, <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>, <code class="docutils literal notranslate"><span class="pre">INFEASIBLE</span></code>).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
@@ -868,8 +868,8 @@ SolutionSample(x=array([1., 1., 1.]), fval=4.0, probability=0.12499999999999994,
 <div class="section" id="RecursiveMinimumEigenOptimizer">
 <h2>RecursiveMinimumEigenOptimizer<a class="headerlink" href="#RecursiveMinimumEigenOptimizer" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code> takes a <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> as input and applies the recursive optimization scheme to reduce the size of the problem one variable at a time. Once the size of the generated intermediate problem is below a given threshold (<code class="docutils literal notranslate"><span class="pre">min_num_vars</span></code>), the <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code> uses another solver (<code class="docutils literal notranslate"><span class="pre">min_num_vars_optimizer</span></code>), e.g., an exact classical solver such as CPLEX or the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> based on the <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigensolver</span></code>.</p>
-<p>In the following, we show how to use the <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code> using the two <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> introduced before.</p>
-<p>First, we construct the <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code> such that it reduces the problem size from 3 variables to 1 variable and then uses the exact solver for the last variable. Then we call <code class="docutils literal notranslate"><span class="pre">solve</span></code> to optimize the considered problem.</p>
+<p>பின்வருவனவற்றில், முன்னர் அறிமுகப்படுத்தப்பட்ட இரண்டு `` MinimumEigenOptimizer`` ஐப் பயன்படுத்தி <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code> ஐ எவ்வாறு பயன்படுத்துவது என்பதை நாங்கள் காட்டுகிறோம்.</p>
+<p>முதலில், நாம் <code class="docutils literal notranslate"><span class="pre">RecursiveMinimumEigenOptimizer</span></code> கட்டமைக்கவேண்டும், இது சிக்கல் அளவை 3 மாறிகளிலிருந்து 1 மாறிக்கு குறைக்கிறது, பின்னர் கடைசி மாறிக்கான சரியான தீர்வை பயன்படுத்துகிறது. பின்னர் நாம் கருத்தரிக்கப்பட்ட சிக்கலை மேம்படுத்த <a href="#id1"><span class="problematic" id="id2">``</span></a>solve``ஐ அழைக்கிறோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
@@ -1029,12 +1029,12 @@ status: SUCCESS
               <ul>
 <li><a class="reference internal" href="#">குறைந்தபட்ச ஈகன் ஆப்டிமைசர்</a><ul>
 <li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a><ul>
-<li><a class="reference internal" href="#References">References</a></li>
+<li><a class="reference internal" href="#குறிப்புகள்">குறிப்புகள்</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Converting-a-QUBO-to-an-Operator">Converting a QUBO to an Operator</a></li>
+<li><a class="reference internal" href="#ஒரு-QUBO-ஐ-ஒரு-ஆபரேட்டராக-மாற்றுதல்">ஒரு QUBO ஐ ஒரு ஆபரேட்டராக மாற்றுதல்</a></li>
 <li><a class="reference internal" href="#Solving-a-QUBO-with-the-MinimumEigenOptimizer">Solving a QUBO with the MinimumEigenOptimizer</a><ul>
-<li><a class="reference internal" href="#Analysis-of-Samples">Analysis of Samples</a></li>
+<li><a class="reference internal" href="#மாதிரிகளின்-பகுப்பாய்வு">மாதிரிகளின் பகுப்பாய்வு</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#RecursiveMinimumEigenOptimizer">RecursiveMinimumEigenOptimizer</a></li>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Protein Folding &mdash; Qiskit Nature 0.2.1 documentation</title>
+  <title>প্রোটিন ফোল্ডিং &mdash; Qiskit Nature 0.2.1 documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="সূচিপত্র" href="../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../search.html" />
     <link rel="next" title="Release Notes" href="../release_notes.html" />
-    <link rel="prev" title="The Property Framework" href="08_property_framework.html" /> 
+    <link rel="prev" title="Property (বৈশিষ্ট্য) ফ্রেমওয়ার্ক" href="08_property_framework.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -159,7 +159,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">শুরুর নির্দেশনা</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_nature.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apidocs/qiskit_nature.html">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">পাঠসমূহ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">অব্যাহতি পত্র</a></li>
 </ul>
@@ -204,7 +204,7 @@
         
           <li><a href="index.html">Qiskit নেচার পাঠসমূহ (টিউটোরিয়ালস)</a> &gt;</li>
         
-      <li>Protein Folding</li>
+      <li>প্রোটিন ফোল্ডিং</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,33 +484,33 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/09_Protein_Folding.ipynb">docs/tutorials/09_Protein_Folding.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-nature/blob/stable/0.2/docs/tutorials/09_Protein_Folding.ipynb">docs/tutorials/09_Protein_Folding.ipynb</a> থেকে বানানো হয়েছে।</p>
 </div>
-<div class="section" id="Protein-Folding">
-<h1>Protein Folding<a class="headerlink" href="#Protein-Folding" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The structure and function of many natural and human-engineered proteins is still only poorly understood. As a result, our understanding of processes connected with protein folding, such as those encountered in Alzheimer’s disease, vaccine development, and crop improvement research, has remained limited.</p>
-<p>Unfolded polypeptides have a very large number of degrees of freedom and thus an enormous number of potential conformations. For example, a chain with <span class="math notranslate nohighlight">\(100\)</span> aminoacids has on the order of <span class="math notranslate nohighlight">\(10^{47}\)</span> conformations. In reality, however, many proteins fold to their native structure within seconds. This is known as Levinthal’s paradox [1].</p>
-<p>The exponential growth of potential conformations with chain length makes the problem intractable for classical computers. In the quantum framework, our resource-efficient algorithm scales linearly with the number of aminoacids N.</p>
-<p>The goal of this work is to determine the minimum energy conformation of a protein. Starting from a random configuration, the protein’s structure is optimized to lower the energy. This can be achieved by encoding the protein folding problem into a qubit operator and ensuring that all physical constraints are satisfied.</p>
-<p>For the problem encoding we use:</p>
+<div class="section" id="প্রোটিন-ফোল্ডিং">
+<h1>প্রোটিন ফোল্ডিং<a class="headerlink" href="#প্রোটিন-ফোল্ডিং" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>অনেক প্রাকৃতিক এবং মানব-প্রকৌশলী প্রোটিনের গঠন এবং কার্যকারিতা এখনও দুর্বলভাবে বোঝা যায়। ফলস্বরূপ, প্রোটিন ভাঁজের সাথে সংযুক্ত প্রক্রিয়াগুলির সম্পর্কে আমাদের বোঝার, যেমন Alzheimer রোগ, ভ্যাকসিন উন্নয়ন এবং ফসলের উন্নতি নিয়ে গবেষণা সীমিত রয়ে গেছে।</p>
+<p>আনফোল্ড করা পলিপেপটাইডগুলির একটি খুব বড় সংখ্যক স্বাধীনতার ডিগ্রি রয়েছে এবং এইভাবে বিপুল সংখ্যক সম্ভাব্য গঠন। উদাহরণস্বরূপ, একটি শৃঙ্খল <span class="math notranslate nohighlight">\(100\)</span> অ্যামিনো অ্যাসিডের ক্রমে <span class="math notranslate nohighlight">\(10^{47}\)</span> কনফরমেশন রয়েছে। বাস্তবে, তবে, অনেক প্রোটিন সেকেন্ডের মধ্যে তাদের স্থানীয় গঠনে ভাঁজ করে। এটি লেভিন্থালের প্যারাডক্স [১] নামে পরিচিত।</p>
+<p>শৃঙ্খল দৈর্ঘ্যের সাথে সম্ভাব্য গঠনগুলির সূচকীয় বৃদ্ধি সমস্যাটি ক্লাসিক্যাল কম্পিউটারের জন্য জটিল করে তোলে। কোয়ান্টাম কাঠামোতে, আমাদের রিসোর্স-সাশ্রয়ী অ্যালগরিদম অ্যামিনো অ্যাসিড N এর সংখ্যার সাথে রৈখিকভাবে স্কেল করে।</p>
+<p>এই কাজের লক্ষ্য হল প্রোটিনের ন্যূনতম শক্তির গঠন নির্ধারণ করা। একটি এলোমেলো কনফিগারেশন থেকে শুরু করে, প্রোটিনের কাঠামো শক্তি হ্রাস করার জন্য অনুকূলিত হয়। এটি একটি কিউবিট অপারেটরে প্রোটিন ভাঁজ সমস্যা এনকোড করে এবং সমস্ত বাহ্যিক সীমাবদ্ধতা সন্তুষ্ট করা নিশ্চিত করে অর্জন করা যেতে পারে।</p>
+<p>সমস্যা এনকোডিং এর জন্য আমরা ব্যবহার করি:</p>
 <ul class="simple">
-<li><p>Configuration qubits: qubits that are used to describe the configurations and the relative position of the different beads</p></li>
-<li><p>Interaction qubits: qubits that encode interactions between the different aminoacids</p></li>
+<li><p>কনফিগারেশন কিউবিট: এমন কিউবিট যা কনফিগারেশন এবং বিভিন্ন পুঁতির আপেক্ষিক অবস্থান বর্ণনা করতে ব্যবহৃত হয়</p></li>
+<li><p>ইন্টারঅ্যাকশন কিউবিট: এমন কিউবিট যা বিভিন্ন অ্যামিনোএসিডের মধ্যে মিথস্ক্রিয়া এনকোড করে</p></li>
 </ul>
-<p>For our case we use a tetrahedral lattice (diamond shape lattice) where we encode the movement through the configuration qubits (see image below).</p>
-<p><img alt="8f0c440069ff462194ddfc3a27b3a206" class="no-scaled-link" src="../_images/lattice_protein.png" style="width: 300px;" /></p>
-<p>The Hamiltonian of the system for a set of qubits <span class="math notranslate nohighlight">\(\mathbf{q}=\{\mathbf{q}_{cf}, \mathbf{q}_{in}\}\)</span> is</p>
+<p>আমাদের ক্ষেত্রে আমরা একটি টেট্রাহেড্রাল ল্যাটিস (হীরার আকৃতির ল্যাটিস) ব্যবহার করি যেখানে আমরা যান্ত্রিক বিন্যাস (কনফিগারেশন) কিউবিটের মাধ্যমে আন্দোলনকে এনকোড করি (নিচের চিত্রটি দেখুন)।</p>
+<p><img alt="32b1074ac2574f7e97b633227d97f7d9" class="no-scaled-link" src="../_images/lattice_protein.png" style="width: 300px;" /></p>
+<p>Qubits <span class="math notranslate nohighlight">\(\mathbf{q}=\{\mathbf{q}_{cf}, \mathbf{q}_{in}\}\)</span> এর একটি সেটের জন্য সিস্টেমের হ্যামিল্টোনিয়ান</p>
 <div class="math notranslate nohighlight">
 \[H(\mathbf{q}) = H_{gc}(\mathbf{q}_{cf}) + H_{ch}(\mathbf{q}_{cf}) + H_{in}(\mathbf{q}_{cf}, \mathbf{q}_{in})\]</div>
-<p>where</p>
+<p>যেখানে</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(H_{gc}\)</span> is the geometrical constraint term (governing the growth of the primary sequence of aminoacids without bifurcations)</p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{ch}\)</span> is the chirality constraint (enforcing the right stereochemistry for the system)</p></li>
-<li><p><span class="math notranslate nohighlight">\(H_{in}\)</span> is the interaction energy terms of the system. In our case we consider only nearest neighbor interactions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{gc}\)</span> হল জ্যামিতিক সীমাবদ্ধ পদ (দ্বিবিভাজন ছাড়াই অ্যামিনো অ্যাসিডের প্রাথমিক ক্রমের বৃদ্ধি নিয়ন্ত্রণ করে)</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{ch}\)</span> হলো কাইরালিটি সীমাবদ্ধতা (সিস্টেমের জন্য সঠিক স্টেরিওকেমিস্ট্রি প্রয়োগ করে)</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{in}\)</span> হল সিস্টেমের মিথস্ক্রিয়া শক্তির পদ। আমাদের ক্ষেত্রে আমরা শুধুমাত্র নিকটতম প্রতিবেশীর মিথস্ক্রিয়া বিবেচনা করি।</p></li>
 </ul>
-<p>Further details about the used model and the encoding of the problem can be found in [2].</p>
+<p>ব্যবহৃত মডেল এবং সমস্যার এনকোডিং সম্পর্কে আরও বিশদ [২] পাওয়া যাবে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -530,10 +530,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Protein-Main-Chain">
-<h2>Protein Main Chain<a class="headerlink" href="#Protein-Main-Chain" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The Protein consists of a main chain that is a linear chain of aminoacids. For the naming of different residues we use the one-letter code as defined in Ref. [3]. Further details about the naming and the type of aminoacids can also be found in [4].</p>
-<p>For this particular case we demonstrate the generation of the qubit operator in a neuropeptide with the main chain consisting of 7 aminoacids with letter codes APRLRFY (see also [2]).</p>
+<div class="section" id="প্রোটিনের-প্রধান-শিকল">
+<h2>প্রোটিনের প্রধান শিকল<a class="headerlink" href="#প্রোটিনের-প্রধান-শিকল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>প্রোটিন একটি প্রধান চেইন নিয়ে গঠিত যা অ্যামিনো অ্যাসিডের একটি রৈখিক চেইন। বিভিন্ন অবশিষ্টাংশের নামকরণের জন্য আমরা রেফারে সংজ্ঞায়িত এক অক্ষরের কোড ব্যবহার করি [৩]। নামকরণ এবং অ্যামিনোঅ্যাসিডের ধরন সম্পর্কে আরও বিশদ বিবরণ পাওয়া যাবে [৪]।</p>
+<p>এই বিশেষ ক্ষেত্রে আমরা একটি নিউরোপেপটাইডে কিউবিট অপারেটরের প্রজন্ম প্রদর্শন করি যার প্রধান চেইনটি 7 টি অ্যামিনোঅ্যাসিড নিয়ে গঠিত যাদের লেটার কোড APRLRFY (এছাড়াও [২] দেখুন)।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -544,9 +544,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Side-Chains">
-<h2>Side Chains<a class="headerlink" href="#Side-Chains" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Beyond the main chain of the protein there may be aminoacids attached to the residues of the main chain. Our model allows for side chains of the maximum length of one. Elongated side chains would require the introduction of additional penalty terms which are still under development. In this example we do not consider any side chains to keep the real structure of the neuropeptide.</p>
+<div class="section" id="পার্শ্ব-শিকল">
+<h2>পার্শ্ব শিকল<a class="headerlink" href="#পার্শ্ব-শিকল" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>প্রোটিনের প্রধান শৃঙ্খল পেরিয়ে মূল শৃঙ্খলের অবশিষ্টাংশের সাথে সংযুক্ত অ্যামিনোঅ্যাসিড থাকতে পারে। আমাদের মডেলটি সর্বাধিক দৈর্ঘ্যের পার্শ্ব শিকলের অনুমতি দেয়। লম্বা পার্শ্ব শিকলের জন্য অতিরিক্ত penalty পদ প্রবর্তনের প্রয়োজন হবে যা এখনও বিকাশাধীন রয়েছে। এই উদাহরণে আমরা নিউরোপেপটাইডের আসল কাঠামো রাখার জন্য কোন পার্শ্ব শিকল বিবেচনা করি না।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -557,10 +557,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Interaction-between-Aminoacids">
-<h2>Interaction between Aminoacids<a class="headerlink" href="#Interaction-between-Aminoacids" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>For the description of inter-residue contacts for proteins we use knowledge-based (statistical) potentials derived using quasi-chemical approximation. The potentials used here are introduced by Miyazawa, S. and Jernigan, R. L. in [5].</p>
-<p>Beyond this model we also allow for random contact maps (interactions) that provide a random interaction map. One can also introduce a custom interaction map that enhances certain configurations of the protein (e.g. alpha helix, beta sheet etc).</p>
+<div class="section" id="অ্যামিনোঅ্যাসিডের-মধ্যে-মিথস্ক্রিয়া">
+<h2>অ্যামিনোঅ্যাসিডের মধ্যে মিথস্ক্রিয়া<a class="headerlink" href="#অ্যামিনোঅ্যাসিডের-মধ্যে-মিথস্ক্রিয়া" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>প্রোটিনের জন্য আন্ত-অবশিষ্টাংশের পরিচিতির বিবরণের জন্য আমরা অর্ধ-রাসায়নিক পরিমাপ ব্যবহার করে প্রাপ্ত জ্ঞান-ভিত্তিক (পরিসংখ্যানগত) সম্ভাবনা ব্যবহার করি। এখানে ব্যবহৃত সম্ভাবনাগুলি Miyazawa, S. এবং Jernigan, R. L. [৫] প্রবর্তন করেছেন।</p>
+<p>এই মডেলের বাইরে আমরা এলোমেলো যোগাযোগের মানচিত্রের (ইন্টারঅ্যাকশন) অনুমতি দিই যা একটি এলোমেলো মিথস্ক্রিয়া মানচিত্র প্রদান করে। কেউ একটি কাস্টম ইন্টারঅ্যাকশন ম্যাপও প্রবর্তন করতে পারে যা প্রোটিনের নির্দিষ্ট কনফিগারেশন বাড়ায় (যেমন আলফা হেলিক্স, বিটা শীট ইত্যাদি)।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -572,13 +572,13 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Physical-Constraints">
-<h2>Physical Constraints<a class="headerlink" href="#Physical-Constraints" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>To ensure that all physical constraints are respected we introduce penalty functions. The different penalty terms used are:</p>
+<div class="section" id="বাহ্যিক-সীমাবদ্ধতা">
+<h2>বাহ্যিক সীমাবদ্ধতা<a class="headerlink" href="#বাহ্যিক-সীমাবদ্ধতা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>সমস্ত বাহ্যিক সীমাবদ্ধতা সম্মান করা হয় তা নিশ্চিত করার জন্য আমরা পেনাল্টি ফাংশন চালু করি। ব্যবহৃত বিভিন্ন পেনাল্টি পদ হল:</p>
 <ul class="simple">
-<li><p>penalty_chiral: A penalty parameter used to impose the right chirality.</p></li>
-<li><p>penalty_back: A penalty parameter used to penalize turns along the same axis. This term is used to eliminate sequences where the same axis is chosen twice in a row. In this way we do not allow for a chain to fold back into itself.</p></li>
-<li><p>penalty_1: A penalty parameter used to penalize local overlap between beads within a nearest neighbor contact.</p></li>
+<li><p>penalty_chiral: একটি পেনাল্টি প্যারামিটার যা সঠিক কাইরালিটির জন্য ব্যবহৃত হয়।</p></li>
+<li><p>penalty_back: একটি পেনাল্টি প্যারামিটার একই অক্ষ বরাবর ঘুরিয়ে পেনাল্টি করতে ব্যবহৃত হয়। এই পদটি ক্রমগুলি দূর করতে ব্যবহৃত হয় যেখানে একই অক্ষ পরপর দুবার নির্বাচিত হয়। এইভাবে আমরা একটি চেইনকে নিজের মধ্যে ভাঁজ করতে দেয় না।</p></li>
+<li><p>penalty_1: নিকটতম প্রতিবেশী সংযোগের পুঁতির মধ্যে স্থানীয় ওভারল্যাপকে penalize করার জন্য ব্যবহৃত একটি পেনাল্টি প্যারামিটার।</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -594,9 +594,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Peptide-Definition">
-<h2>Peptide Definition<a class="headerlink" href="#Peptide-Definition" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Based on the main chain and possible side chains we define the peptide object that includes all the structural information of the modeled system.</p>
+<div class="section" id="পেপটাইড-সংজ্ঞা">
+<h2>পেপটাইড সংজ্ঞা<a class="headerlink" href="#পেপটাইড-সংজ্ঞা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>প্রধান চেইন এবং সম্ভাব্য পার্শ্ব চেইনের উপর ভিত্তি করে আমরা পেপটাইড অবজেক্টকে সংজ্ঞায়িত করি যা মডেলিং সিস্টেমের সমস্ত কাঠামোগত তথ্য অন্তর্ভুক্ত করে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -607,9 +607,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Protein-Folding-Problem">
-<h2>Protein Folding Problem<a class="headerlink" href="#Protein-Folding-Problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Based on the defined peptide, the interaction (contact map) and the penalty terms we defined for our model we define the protein folding problem that returns qubit operators.</p>
+<div class="section" id="প্রোটিন-ভাঁজ-সমস্যা">
+<h2>প্রোটিন ভাঁজ সমস্যা<a class="headerlink" href="#প্রোটিন-ভাঁজ-সমস্যা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>সংজ্ঞায়িত পেপটাইড, মিথস্ক্রিয়া (যোগাযোগ মানচিত্র) এবং পেনাল্টি শর্তাবলীর উপর ভিত্তি করে আমরা আমাদের মডেলের জন্য সংজ্ঞায়িত করেছি আমরা প্রোটিন ভাঁজ সমস্যা সংজ্ঞায়িত করি যা কিউবিট অপারেটরদের ফেরত দেয়।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -714,10 +714,9 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Using-VQE-with-CVaR-expectation-value-for-the-solution-of-the-problem">
-<h2>Using VQE with CVaR expectation value for the solution of the problem<a class="headerlink" href="#Using-VQE-with-CVaR-expectation-value-for-the-solution-of-the-problem" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The problem that we are tackling has now implemented all the physical constraints and has a diagonal Hamiltonian. For the particular case we are targeting the single bitstring that gives us the minimum energy (corresponding to the folded structure of the protein). Thus, we can use the Variational Quantum Eigensolver with Conditional Value at Risk (CVaR) expectation values for the solution of the problem and for finding the minimum configuration energy [6] . We follow the same approach as in Ref.
-[2] but here we use COBYLA for the classical optimization part. One can also use the standard VQE or QAOA algorithm for the solution of the problem, though as discussed in Ref. [2] CVaR is more suitable.</p>
+<div class="section" id="সমস্যা-সমাধানের-জন্য-CVaR-সম্ভাব্য-মান-সহ-VQE-ব্যবহার-করা">
+<h2>সমস্যা সমাধানের জন্য CVaR সম্ভাব্য মান সহ VQE ব্যবহার করা<a class="headerlink" href="#সমস্যা-সমাধানের-জন্য-CVaR-সম্ভাব্য-মান-সহ-VQE-ব্যবহার-করা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা যে সমস্যা মোকাবেলা করছি তা এখন সমস্ত বাহ্যিক সীমাবদ্ধতা বাস্তবায়ন করেছে এবং এর একটি কর্ণ হ্যামিল্টোনিয়ান রয়েছে। বিশেষ ক্ষেত্রে আমরা একক বিটস্ট্রিংকে লক্ষ্য করছি যা আমাদের সর্বনিম্ন শক্তি দেয় (প্রোটিনের ভাঁজ কাঠামোর সাথে সামঞ্জস্যপূর্ণ)। এইভাবে, আমরা সমস্যা সমাধানের জন্য এবং ন্যূনতম কনফিগারেশন শক্তি খুঁজে পেতে ঝুঁকির (সিভিএআর) প্রত্যাশার মান সহ শর্তাধীন মান সহ ভেরিয়েশনাল কোয়ান্টাম আইজেন্সলভার ব্যবহার করতে পারি [৬]। আমরা [2] এর মতো একই পদ্ধতি অনুসরণ করি কিন্তু এখানে আমরা ক্লাসিক্যাল অপটিমাইজেশন অংশের জন্য COBYLA ব্যবহার করি। সমস্যা সমাধানের জন্য কেউ স্ট্যান্ডার্ড VQE বা QAOA অ্যালগরিদম ব্যবহার করতে পারে, যদিও [2] তে আরো উপযুক্ত CVaR আলোচনা করা হয়েছে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -1056,14 +1055,14 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="References">
-<h2>References<a class="headerlink" href="#References" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>[1] <a class="reference external" href="https://en.wikipedia.org/wiki/Levinthal%27s_paradox">https://en.wikipedia.org/wiki/Levinthal%27s_paradox</a></p>
-<p>[2] A.Robert, P.Barkoutsos, S.Woerner and I.Tavernelli, Resource-efficient quantum algorithm for protein folding, NPJ Quantum Information, 2021, <a class="reference external" href="https://doi.org/10.1038/s41534-021-00368-4">https://doi.org/10.1038/s41534-021-00368-4</a></p>
-<p>[3] IUPAC–IUB Commission on Biochemical Nomenclature (1972). “A one-letter notation for aminoacid sequences”. Pure and Applied Chemistry. 31 (4): 641–645. doi:10.1351/pac197231040639. PMID 5080161.</p>
-<p>[4] <a class="reference external" href="https://en.wikipedia.org/wiki/Amino_acid">https://en.wikipedia.org/wiki/Amino_acid</a></p>
-<p>[5] S. Miyazawa and R. L.Jernigan, Residue – Residue Potentials with a Favorable Contact Pair Term and an Unfavorable High Packing Density Term for Simulation and Threading, J. Mol. Biol.256, 623–644, 1996, Table 3, <a class="reference external" href="https://doi.org/10.1006/jmbi.1996.0114">https://doi.org/10.1006/jmbi.1996.0114</a></p>
-<p>[6] P.Barkoutsos, G. Nannichini, A.Robert, I.Tavernelli, S.Woerner, Improving Variational Quantum Optimization using CVaR, Quantum 4, 256, 2020, <a class="reference external" href="https://doi.org/10.22331/q-2020-04-20-256">https://doi.org/10.22331/q-2020-04-20-256</a></p>
+<div class="section" id="তথ্যসূত্র">
+<h2>তথ্যসূত্র<a class="headerlink" href="#তথ্যসূত্র" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>[১] <a class="reference external" href="https://en.wikipedia.org/wiki/Levinthal%27s_paradox">https://en.wikipedia.org/wiki/Levinthal%27s_paradox</a></p>
+<p>[২] A.Robert, P.Barkoutsos, S.Woerner and I.Tavernelli, Resource-efficient quantum algorithm for protein folding, NPJ Quantum Information, 2021, <a class="reference external" href="https://doi.org/10.1038/s41534-021-00368-4">https://doi.org/10.1038/s41534-021-00368-4</a></p>
+<p>[৩] IUPAC–IUB Commission on Biochemical Nomenclature (1972). “A one-letter notation for aminoacid sequences”. Pure and Applied Chemistry. 31 (4): 641–645. doi:10.1351/pac197231040639. PMID 5080161.</p>
+<p>[৪] <a class="reference external" href="https://en.wikipedia.org/wiki/Amino_acid">https://en.wikipedia.org/wiki/Amino_acid</a></p>
+<p>[৫] S. Miyazawa and R. L.Jernigan, Residue – Residue Potentials with a Favorable Contact Pair Term and an Unfavorable High Packing Density Term for Simulation and Threading, J. Mol. Biol.256, 623–644, 1996, Table 3, <a class="reference external" href="https://doi.org/10.1006/jmbi.1996.0114">https://doi.org/10.1006/jmbi.1996.0114</a></p>
+<p>[৬] P.Barkoutsos, G. Nannichini, A.Robert, I.Tavernelli, S.Woerner, Improving Variational Quantum Optimization using CVaR, Quantum 4, 256, 2020, <a class="reference external" href="https://doi.org/10.22331/q-2020-04-20-256">https://doi.org/10.22331/q-2020-04-20-256</a></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -1102,7 +1101,7 @@ div.rendered_html tbody tr:hover {
         <a href="../release_notes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="08_property_framework.html" class="btn btn-neutral" title="The Property Framework" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="08_property_framework.html" class="btn btn-neutral" title="Property (বৈশিষ্ট্য) ফ্রেমওয়ার্ক" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1134,16 +1133,16 @@ div.rendered_html tbody tr:hover {
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Protein Folding</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Protein-Main-Chain">Protein Main Chain</a></li>
-<li><a class="reference internal" href="#Side-Chains">Side Chains</a></li>
-<li><a class="reference internal" href="#Interaction-between-Aminoacids">Interaction between Aminoacids</a></li>
-<li><a class="reference internal" href="#Physical-Constraints">Physical Constraints</a></li>
-<li><a class="reference internal" href="#Peptide-Definition">Peptide Definition</a></li>
-<li><a class="reference internal" href="#Protein-Folding-Problem">Protein Folding Problem</a></li>
-<li><a class="reference internal" href="#Using-VQE-with-CVaR-expectation-value-for-the-solution-of-the-problem">Using VQE with CVaR expectation value for the solution of the problem</a></li>
-<li><a class="reference internal" href="#References">References</a></li>
+<li><a class="reference internal" href="#">প্রোটিন ফোল্ডিং</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a></li>
+<li><a class="reference internal" href="#প্রোটিনের-প্রধান-শিকল">প্রোটিনের প্রধান শিকল</a></li>
+<li><a class="reference internal" href="#পার্শ্ব-শিকল">পার্শ্ব শিকল</a></li>
+<li><a class="reference internal" href="#অ্যামিনোঅ্যাসিডের-মধ্যে-মিথস্ক্রিয়া">অ্যামিনোঅ্যাসিডের মধ্যে মিথস্ক্রিয়া</a></li>
+<li><a class="reference internal" href="#বাহ্যিক-সীমাবদ্ধতা">বাহ্যিক সীমাবদ্ধতা</a></li>
+<li><a class="reference internal" href="#পেপটাইড-সংজ্ঞা">পেপটাইড সংজ্ঞা</a></li>
+<li><a class="reference internal" href="#প্রোটিন-ভাঁজ-সমস্যা">প্রোটিন ভাঁজ সমস্যা</a></li>
+<li><a class="reference internal" href="#সমস্যা-সমাধানের-জন্য-CVaR-সম্ভাব্য-মান-সহ-VQE-ব্যবহার-করা">সমস্যা সমাধানের জন্য CVaR সম্ভাব্য মান সহ VQE ব্যবহার করা</a></li>
+<li><a class="reference internal" href="#তথ্যসূত্র">তথ্যসূত্র</a></li>
 </ul>
 </li>
 </ul>
