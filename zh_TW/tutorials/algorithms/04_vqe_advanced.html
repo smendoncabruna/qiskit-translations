@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Advanced VQE usage &mdash; Qiskit 0.30.0 說明文件</title>
+  <title>Advanced VQE usage &mdash; Qiskit 0.30.1 說明文件</title>
   
 
   
@@ -711,7 +711,7 @@ supplied it will take priority though and be used - note though it must match in
 optimizer_evals is 9 with initial point versus 65 without it.
 </pre></div></div>
 </div>
-<p>在這裡，我們看到，當起始點未提供（預設值為 None）並從隨機值開始時，使用``optimizer_evals`` 會更快速得到結果。</p>
+<p>在這裡，我們看到，當起始點未提供(預設為 None) 並從隨機值開始時，使用``optimizer_evals``會更快速得到結果。</p>
 <p>Where this becomes useful for examples where we the solution to one problem can be used to for a guess for the solution to a very close similar problem. Chemistry is very good example where we change the inter-atomic distance(s) of molecule to plot a dissociation profile. When the distance changes are small we expect the solution to still be nearby the prior one. One technique is to simply use the optimal point from one solution as the starting point for the next step. Now more complex
 techniques are possible that do some extrapolation to compute an initial position based on prior solution(s) rather than directly use the prior solution.</p>
 </section>
@@ -815,7 +815,7 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
     &#39;optimizer_time&#39;: 0.07421207427978516}
 </pre></div></div>
 </div>
-<p>將優化器變更為 SPSA(設計為在雜訊多的環境中運作)，可讓我們獲得更好的結果。 因為雜訊影響到結果，所以並不是準確的。</p>
+<p>將優化器變更為 SPSA(設計為在雜訊多的環境中運作)，可讓我們獲得更好的結果。因為雜訊影響到結果，所以並不是準確的。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -902,7 +902,8 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
     &#39;optimizer_time&#39;: 0.20196986198425293}
 </pre></div></div>
 </div>
-<p>依預設， <code class="docutils literal notranslate"><span class="pre">PauliExpecation</span></code> 物件，如果 include_custom 為 False (或使用 Aer aer_simulator，或實際裝置)將 Paulis 群組轉換為通勤集時，就會選擇該物件。 這很有效率，因為它執行較少的電路來計算預期。不過，如果基於某個原因，您想為每個 Pauli 執行一個電路，則在建構 PauliExpecation 時，可以關閉分組。您需要明確地將這樣的預期實例傳遞給 VQE，讓它如此運作，如下所示。</p>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">PauliExpectation</span></code> object, that would have be chosen when include_custom is False (or when using Aer aer_simulator, or a real device) groups Paulis into commuting sets. This is efficient as it runs less circuits to compute the expectation. However, if for some reason you wanted to run a circuit for each Pauli then then grouping can be turned off when constructing the PauliExpectation. You need to explicitly pass in such an expectation instance to VQE to have it work this way
+though as shown below.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -1049,7 +1050,7 @@ The optimal value can be seen to be wrong too, i.e. -1.074 versus the correct -1
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/09/24。
+      最後更新於 2021/09/30。
 
     </p>
   </div>

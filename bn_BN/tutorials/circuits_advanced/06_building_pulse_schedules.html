@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>পালস সময়সূচী তৈরির পদ্ধতি &mdash; Qiskit 0.30.0 documentation</title>
+  <title>পালস সময়সূচী তৈরির পদ্ধতি &mdash; Qiskit 0.30.1 documentation</title>
   
 
   
@@ -229,14 +229,14 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">বিবরণীর (ডকুমেন্টেশন) কেন্দ্রস্থল</a></li>
 </ul>
 <p><span class="caption-text">ফ্রন্টম্যাটার</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../qc_intro.html">এক নজরে কোয়ান্টাম কম্পিউটিং</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro_tutorial1.html">Qiskit পরিচিতি</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../release_notes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Contributing to Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing_to_qiskit.html">Qiskit এ অবদান</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration.html">লোকাল কনফিগারেশন</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
@@ -246,15 +246,15 @@
 </ul>
 <p><span class="caption-text">এপিআই (এপ্লিকেশন প্রোগ্রামিং ইন্টারফেস) এর তথ্যসূত্র</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit টেরা (টেরা অর্থ পৃথিবী)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit এয়ার (এয়ার অর্থ বায়ু)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit ইগ্নিস (অপ্রচলিত)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit অ্যাকোয়া (অপ্রচলিত)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM কোয়ান্টাম পরিষেবা সরবরাহকারী (প্রোভাইডার)</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
+<p><span class="caption-text">Qiskit অ্যাকোয়ার পরিযান নির্দেশনা</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit অ্যাকোয়ার পরিযান নির্দেশনা</a></li>
 </ul>
 <p><span class="caption-text">সমস্যার সমাধান</span></p>
 <ul>
@@ -584,7 +584,7 @@ div.rendered_html tbody tr:hover {
 <section id="পালস-সময়সূচী-তৈরির-পদ্ধতি">
 <h1>পালস সময়সূচী তৈরির পদ্ধতি<a class="headerlink" href="#পালস-সময়সূচী-তৈরির-পদ্ধতি" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <p>তড়িৎস্পন্দন বা পালস একটি বর্তনী (সার্কিট) যুক্তিবর্তনী (গেইট) জন্য একটি মৌলিক স্তরের, সঠিক উপস্থাপনা সংজ্ঞায়িত করে | একটি একক ক্রিয়াকলাপ (অপারেশন) একটি তড়িৎস্পন্দন বা তড়িৎস্পন্দন বা পালস নির্দেশমালার সাথে বাস্তবায়ন করা যেতে পারে, যা একাধিক মৌলিক স্তরের নির্দেশাবলী নিয়ে গঠিত। তড়িৎস্পন্দন বা তড়িৎস্পন্দন বা পালস গেট সম্পর্কে আরও জানতে, প্রদর্শক (ডকুমেন্টেশন) ফিরে যান <cite>এখানে &lt;05_pulse_gates.ipynb&gt;</cite> __। এই পৃষ্ঠাটি কীভাবে তড়িৎস্পন্দন বা পালস নির্দেশমালা তৈরি করতে হয় তা বিশদ করে।</p>
-<p>টীকা: আই.বি.এম এর যন্ত্রের জন্য, তড়িৎস্পন্দন বা পালস নির্দেশমালা গেট বর্ণনা করার জন্য সাবরুটিন হিসাবে ব্যবহৃত হয়। পূর্বে, কিছু যন্ত্রের এই বিন্যাসে সম্পূর্ণ নির্দেশমালা গ্রহণ করাছিল, কিন্তু এটি 2021 সালের ডিসেম্বরে সূর্যাস্ত (বন্ধ) হচ্ছে। অন্যান্য প্রোভাইডার এখনও এই বিন্যাসে সম্পূর্ণ নির্দেশমালা গ্রহণ করতে পারে। নির্দেশমালাটি যেভাবেই ব্যবহার করা হোক না কেন, নির্দেশমালা তৈরির গঠন (সিনট্যাক্স) একই। কিভাবে জানতে পড়ুন!</p>
+<p>টীকা: আই. বি. এম এর যন্ত্রের জন্য, তড়িৎস্পন্দন বা পালস নির্দেশমালা গেট বর্ণনা করার জন্য সাবরুটিন হিসাবে ব্যবহৃত হয়। পূর্বে, কিছু যন্ত্রের এই বিন্যাসে সম্পূর্ণ প্রোগ্রামগুলো গ্রহণ করাছিল, কিন্তু এটি 2021 সালের ডিসেম্বরে বন্ধ হচ্ছে। অন্যান্য প্রোভাইডার এখনও এই বিন্যাসে সম্পূর্ণ প্রোগ্রাম গ্রহণ করতে পারে। প্রোগ্রামটি যেভাবেই ব্যবহার করা হোক না কেন, প্রোগ্রাম তৈরির গঠন (সিনট্যাক্স) একই। কিভাবে জানতে পড়ুন!</p>
 <p>তড়িৎস্পন্দন বা পালস নির্দেশমালা , যাকে <code class="docutils literal notranslate"><span class="pre">Schedule</span></code>s বলা হয়, নিয়ন্ত্রণ ইলেকট্রনিক্সের জন্য নির্দেশ ক্রম বর্ণনা করে। আমরা তড়িৎস্পন্দন বা পালস নির্মাতা ব্যবহার করে <code class="docutils literal notranslate"><span class="pre">Schedule</span></code>s তৈরি করি। একটি <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> শুরু করা সহজ:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -610,7 +610,7 @@ div.rendered_html tbody tr:hover {
 Schedule(, name=&#34;my_example&#34;)
 </pre></div></div>
 </div>
-<p>আপনি দেখতে পারেন যে এখনও কোন নির্দেশনা নেই। এই পৃষ্ঠার পরবর্তী অংশটি আপনি যে সময়সূচীতে যোগ করতে পারেন তার প্রতিটি নির্দেশাবলী ব্যাখ্যা করবে এবং শেষ অংশটি বিভিন্ন <a href="#id1"><span class="problematic" id="id2">*</span></a>প্রান্তিককরণ প্রেক্ষাপট (alignment contexts) * বর্ণনা করবে, যা নির্দেশ করে কিভাবে একে অপরের আপেক্ষিক সময়ে নির্দেশাবলী স্থাপন করা হয়।</p>
+<p>আপনি দেখতে পারেন যে এখনও কোন নির্দেশনা নেই। এই পৃষ্ঠার পরবর্তী অংশটি আপনি যে সময়সূচীতে যোগ করতে পারেন তার প্রতিটি নির্দেশাবলী ব্যাখ্যা করবে এবং শেষ অংশটি বিভিন্ন <em>alignment contexts</em> বর্ণনা করবে, যা নির্দেশ করে কিভাবে একে অপরের আপেক্ষিক সময়ে নির্দেশাবলী স্থাপন করা হয়।</p>
 </section>
 <section id="Schedule-নির্দেশনা">
 <h1><code class="docutils literal notranslate"><span class="pre">Schedule</span></code> নির্দেশনা<a class="headerlink" href="#Schedule-নির্দেশনা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
@@ -621,7 +621,7 @@ Schedule(, name=&#34;my_example&#34;)
 <li><p><a class="reference external" href="#shift_phase">shift_phase(phase, channel)</a></p></li>
 <li><p><a class="reference external" href="#acquire">acquire(duration, channel, mem_slot, reg_slot)</a></p></li>
 </ul>
-<p>প্রতিটি নির্দেশনা ধরনের নিজস্ব অপারেন্ড গুচ্ছ আছে। আপনি উপরে দেখতে পাচ্ছেন, নির্দেশাবলী কোথায় প্রয়োগ করা হবে তা নির্দিষ্ট করার জন্য তাদের প্রতিটিতে কমপক্ষে একটি &quot;চ্যানেল&quot; অন্তর্ভুক্ত রয়েছে।</p>
+<p>প্রতিটি নির্দেশনা ধরনের নিজস্ব অপারেন্ড গুচ্ছ আছে। আপনি উপরে দেখতে পাচ্ছেন, নির্দেশাবলী কোথায় প্রয়োগ করা হবে তা নির্দিষ্ট করার জন্য তাদের প্রতিটিতে কমপক্ষে একটি <code class="docutils literal notranslate"><span class="pre">Channel</span></code> অন্তর্ভুক্ত রয়েছে।</p>
 <p><strong>চ্যানেল</strong> হল নিয়ন্ত্রণ যন্ত্র থেকে কোয়ান্টাম চিপ পর্যন্ত সিগন্যাল লাইনের নাম (লেবেল)।</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DriveChannel</span></code>গুলি সাধারণত একক কিউবিট ঘূর্ণনের * ড্রাইভিং * এর জন্য ব্যবহৃত হয়,</p></li>
@@ -716,9 +716,9 @@ Schedule(, name=&#34;my_example&#34;)
 </div>
 <section id="পরামিতিক-তড়িৎস্পন্দন-বা-পালস">
 <h4>পরামিতিক তড়িৎস্পন্দন বা পালস<a class="headerlink" href="#পরামিতিক-তড়িৎস্পন্দন-বা-পালস" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h4>
-<p>Let’s build our Gaussian pulse using the <code class="docutils literal notranslate"><span class="pre">Gaussian</span></code> parametric pulse. A parametric pulse sends the name of the function and its parameters to the backend, rather than every individual sample. Using parametric pulses makes the jobs you send to the backend much smaller. IBM Quantum backends limit the maximum job size that they accept, so parametric pulses may allow you to run larger programs.</p>
+<p>আসুন <code class="docutils literal notranslate"><span class="pre">গাউসিয়ান</span></code> প্যারামেট্রিক তড়িৎস্পন্দন বা পালস ব্যবহার করে আমাদের গাউসিয়ান পালস তৈরি করি। একটি প্যারামেট্রিক পালস প্রতিটি স্বতন্ত্র নমুনার পরিবর্তে ব্যাকএন্ডে ফাংশনের নাম এবং এর প্যারামিটার পাঠায়। প্যারামেট্রিক তড়িৎস্পন্দন বা পালস ব্যবহার করে আপনি ব্যাকএন্ডে পাঠানো কাজগুলিকে অনেক ছোট করে দেয়। আইবিএম কোয়ান্টাম ব্যাকএন্ডগুলি তাদের কাজের সর্বোচ্চ আকার সীমিত করে, তাই প্যারামেট্রিক তড়িৎস্পন্দন বা পালসগুলি আপনাকে বড় প্রোগ্রাম চালানোর অনুমতি দিতে পারে।</p>
 <p><code class="docutils literal notranslate"><span class="pre">library</span></code> এর অন্যান্য প্যারামেট্রিক পালসগুলির মধ্যে রয়েছে <code class="docutils literal notranslate"><span class="pre">GaussianSquare</span></code>, <code class="docutils literal notranslate"><span class="pre">Drag</span></code> এবং <code class="docutils literal notranslate"><span class="pre">Constant</span></code>।</p>
-<p><strong>Note</strong>: The backend is responsible for deciding exactly how to sample the parametric pulses. It is possible to draw parametric pulses, but the samples displayed are not guaranteed to be the same as those executed on the backend.</p>
+<p>** দ্রষ্টব্য <a href="#id1"><span class="problematic" id="id2">**</span></a>: প্যারামেট্রিক তড়িৎস্পন্দন বা পালসের নমুনা ঠিক কিভাবে নিতে হবে তা নির্ধারণের জন্য ব্যাকএন্ড দায়ী। প্যারামেট্রিক তড়িৎস্পন্দন বা পালস আঁকা সম্ভব, কিন্তু প্রদর্শিত নমুনাগুলি ব্যাকএন্ডে কার্যকর হওয়াগুলির সমান হওয়ার নিশ্চয়তা দেয় না।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -741,7 +741,7 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="নমুনা-দ্বারা-বর্ণিত-পালস-ওভেফর্মস">
 <h4>নমুনা দ্বারা বর্ণিত পালস ওভেফর্মস<a class="headerlink" href="#নমুনা-দ্বারা-বর্ণিত-পালস-ওভেফর্মস" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h4>
-<p>A <code class="docutils literal notranslate"><span class="pre">Waveform</span></code> is a pulse signal specified as an array of time-ordered complex amplitudes, or <em>samples</em>. Each sample is played for one cycle, a timestep <code class="docutils literal notranslate"><span class="pre">dt</span></code>, determined by the backend. If we want to know the real-time dynamics of our program, we need to know the value of <code class="docutils literal notranslate"><span class="pre">dt</span></code>. The (zero-indexed) <span class="math notranslate nohighlight">\(i^{th}\)</span> sample will play from time <code class="docutils literal notranslate"><span class="pre">i*dt</span></code> up to <code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">+</span> <span class="pre">1)*dt</span></code>, modulated by the qubit frequency.</p>
+<p>একটি <code class="docutils literal notranslate"><span class="pre">ওয়েভফর্ম</span></code> হল একটি পালস সিগন্যাল যা সময়-নির্দেশিত জটিল পরিবর্ধন বা <a href="#id1"><span class="problematic" id="id2">*</span></a>নমুনা * এর একটি অ্যারে হিসাবে নির্দিষ্ট করা হয়। প্রতিটি নমুনা একটি চক্রের জন্য বাজানো হয়, একটি টাইমস্টেপ <code class="docutils literal notranslate"><span class="pre">dt</span></code>, ব্যাকএন্ড দ্বারা নির্ধারিত। যদি আমরা আমাদের প্রোগ্রামের রিয়েল-টাইম গতিবিদ্যা জানতে চাই, তাহলে আমাদের <code class="docutils literal notranslate"><span class="pre">dt</span></code> এর মান জানতে হবে। (শূন্য-সূচীকৃত) <span class="math notranslate nohighlight">\(i^{th}\)</span> নমুনাটি <code class="docutils literal notranslate"><span class="pre">i*dt</span></code> সময় থেকে <code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">+</span> <span class="pre">1)*dt</span></code> পর্যন্ত চলবে, যা কিউবিট ফ্রিকোয়েন্সি দ্বারা সংশোধন করা হবে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -827,16 +827,16 @@ Schedule(, name=&#34;my_example&#34;)
 <img alt="../../_images/tutorials_circuits_advanced_06_building_pulse_schedules_20_0.png" src="../../_images/tutorials_circuits_advanced_06_building_pulse_schedules_20_0.png" />
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">play</span></code> instruction gets its duration from its <code class="docutils literal notranslate"><span class="pre">Pulse</span></code>: the duration of a parametrized pulse is an explicit argument, and the duration of a <code class="docutils literal notranslate"><span class="pre">Waveform</span></code> is the number of input samples.</p>
+<p><code class="docutils literal notranslate"><span class="pre">প্লে</span></code> নির্দেশটি তার <code class="docutils literal notranslate"><span class="pre">পালস</span></code> থেকে এর সময়কাল পায়: একটি প্যারামেট্রাইজড পালসের সময়কাল একটি স্পষ্ট আর্গুমেন্ট, এবং একটি <code class="docutils literal notranslate"><span class="pre">ওয়েভফর্ম</span></code> এর সময়কাল ইনপুট নমুনার সংখ্যা।</p>
 </section>
 </section>
 </section>
 <section id="set_frequency">
 <h2><code class="docutils literal notranslate"><span class="pre">set_frequency</span></code><a class="headerlink" href="#set_frequency" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>As explained previously, the output pulse waveform envelope is also modulated by a frequency and phase. Each channel has a <a class="reference internal" href="08_gathering_system_information.html#Defaults"><span class="std std-ref">default frequency listed in the backend.defaults()</span></a>.</p>
-<p>The frequency of a channel can be updated at any time within a <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> by the <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> instruction. It takes a float <code class="docutils literal notranslate"><span class="pre">frequency</span></code> and a <code class="docutils literal notranslate"><span class="pre">PulseChannel</span></code> <code class="docutils literal notranslate"><span class="pre">channel</span></code> as input. All pulses on a channel following a <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> instruction will be modulated by the given frequency until another <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> instruction is encountered or until the program ends.</p>
+<p>পূর্বে ব্যাখ্যা করা হয়েছে, আউটপুট পালস তরঙ্গাকৃতি আচ্ছাদন এছাড়াও একটি ফ্রিকোয়েন্সি এবং ফেজ দ্বারা সংশোধন করা হয়। প্রতিটি চ্যানেলের একটি <a class="reference internal" href="08_gathering_system_information.html#Defaults"><span class="std std-ref">default frequency listed in the backend.defaults()</span></a> আছে।</p>
+<p>একটি চ্যানেলের ফ্রিকোয়েন্সি <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> নির্দেশ দ্বারা একটি <code class="docutils literal notranslate"><span class="pre">সময়সূচী</span></code> এর মধ্যে যে কোন সময় আপডেট করা যেতে পারে। এটি একটি float <code class="docutils literal notranslate"><span class="pre">ফ্রিকোয়েন্সি</span></code> এবং একটি <code class="docutils literal notranslate"><span class="pre">PulseChannel</span></code> <code class="docutils literal notranslate"><span class="pre">চ্যানেল</span></code> ইনপুট হিসাবে নেয়। একটি <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> নির্দেশ অনুসরণ করে একটি চ্যানেলে সমস্ত তড়িৎস্পন্দন বা পালস প্রদত্ত ফ্রিকোয়েন্সি দ্বারা মড্যুলেট করা হবে যতক্ষণ না অন্য একটি <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> নির্দেশনা আসে অথবা প্রোগ্রাম শেষ না হওয়া পর্যন্ত।</p>
 <p>নির্দেশটির <code class="docutils literal notranslate"><span class="pre">0</span></code> এর একটি অন্তর্নিহিত সময়কাল রয়েছে।</p>
-<p><strong>Note</strong>: The frequencies that can be requested are limited by the total bandwidth and the instantaneous bandwidth of each hardware channel. In the future, these will be reported by the <code class="docutils literal notranslate"><span class="pre">backend</span></code>.</p>
+<p><strong>দ্রষ্টব্য</strong>: যে ফ্রিকোয়েন্সিগুলি অনুরোধ করা যেতে পারে তা মোট ব্যান্ডউইথ এবং প্রতিটি হার্ডওয়্যার চ্যানেলের তাৎক্ষণিক ব্যান্ডউইথ দ্বারা সীমাবদ্ধ। ভবিষ্যতে, এগুলি <code class="docutils literal notranslate"><span class="pre">ব্যাকএন্ড</span></code> দ্বারা রিপোর্ট করা হবে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -850,8 +850,8 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="shift_phase">
 <h2><code class="docutils literal notranslate"><span class="pre">shift_phase</span></code><a class="headerlink" href="#shift_phase" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">shift_phase</span></code> instruction will increase the phase of the frequency modulation by <code class="docutils literal notranslate"><span class="pre">phase</span></code>. Like <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code>, this phase shift will affect all following instructions on the same channel until the program ends. To undo the affect of a <code class="docutils literal notranslate"><span class="pre">shift_phase</span></code>, the negative <code class="docutils literal notranslate"><span class="pre">phase</span></code> can be passed to a new instruction.</p>
-<p>Like <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code>, the instruction has an implicit duration of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Shift_phase</span></code> নির্দেশ ফ্রিকোয়েন্সি মড্যুলেশন এর ফেজ <code class="docutils literal notranslate"><span class="pre">phase</span></code> দ্বারা বৃদ্ধি করবে। <code class="docutils literal notranslate"><span class="pre">Set_frequency</span></code> এর মত, এই ফেজ শিফট প্রোগ্রাম শেষ না হওয়া পর্যন্ত একই চ্যানেলে নিম্নলিখিত সমস্ত নির্দেশাবলীকে প্রভাবিত করবে। একটি <code class="docutils literal notranslate"><span class="pre">shift_phase</span></code> এর প্রভাব পূর্বাবস্থায় ফেরানোর জন্য, negative <code class="docutils literal notranslate"><span class="pre">ফেজ</span></code> একটি নতুন নির্দেশে প্রেরণ করা যেতে পারে।</p>
+<p><code class="docutils literal notranslate"><span class="pre">Set_frequency</span></code> এর মত, নির্দেশের <code class="docutils literal notranslate"><span class="pre">0</span></code> এর অন্তর্নিহিত সময়কাল রয়েছে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -865,8 +865,8 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="acquire">
 <h2><code class="docutils literal notranslate"><span class="pre">acquire</span></code><a class="headerlink" href="#acquire" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">acquire</span></code> instruction triggers data acquisition for readout. It takes a duration, an <code class="docutils literal notranslate"><span class="pre">AcquireChannel</span></code> which maps to the qubit being measured, and a <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> or a <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code>. The <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> is classical memory where the readout result will be stored. The <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code> maps to a register in the control electronics which stores the readout result for fast feedback.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">acquire</span></code> instructions can also take custom <code class="docutils literal notranslate"><span class="pre">Discriminator</span></code>s and <code class="docutils literal notranslate"><span class="pre">Kernel</span></code>s as keyword arguments.</p>
+<p><code class="docutils literal notranslate"><span class="pre">acquire</span></code> নির্দেশনাটি রিডআউট এর জন্য ডেটা অধিগ্রহণকে ট্রিগার করে। এটি একটি সময় নেয়, একটি <code class="docutils literal notranslate"><span class="pre">AcquireChannel</span></code> যা পরিমাপকৃত কিউবিট, এবং একটি <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> বা <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code> কে ম্যাপ করে। <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> হল ক্লাসিক্যাল মেমরি যেখানে রিডআউট ফলাফল সংরক্ষণ করা হবে। <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code> কন্ট্রোল ইলেকট্রনিক্সের একটি রেজিস্টারে ম্যাপ করে যা দ্রুত প্রতিক্রিয়া জানার জন্য রিডআউট ফলাফল সংরক্ষণ করে।</p>
+<p><code class="docutils literal notranslate"><span class="pre">acquire</span></code> নির্দেশাবলী কাস্টম <code class="docutils literal notranslate"><span class="pre">Discriminator</span></code>s এবং <code class="docutils literal notranslate"><span class="pre">Kernel</span></code>s গুলিকে কীওয়ার্ড আর্গুমেন্ট হিসাবে গ্রহণ করতে পারে।</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -879,7 +879,7 @@ Schedule(, name=&#34;my_example&#34;)
 </pre></div>
 </div>
 </div>
-<p>Now that we know how to add <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> instructions, let’s learn how to control exactly when they’re played.</p>
+<p>এখন যেহেতু আমরা <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> নির্দেশাবলী কিভাবে যোগ করতে জানি, আসুন জেনে নিই কিভাবে সেগুলি চালালে ঠিকভাবে নিয়ন্ত্রণ করা যায়।</p>
 </section>
 </section>
 <section id="পালস-বিল্ডার">
@@ -921,7 +921,7 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="align_right">
 <h2><code class="docutils literal notranslate"><span class="pre">align_right</span></code><a class="headerlink" href="#align_right" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>Unsurprisingly, <code class="docutils literal notranslate"><span class="pre">align_right</span></code> does the opposite of <code class="docutils literal notranslate"><span class="pre">align_left</span></code>. It will choose <code class="docutils literal notranslate"><span class="pre">t=100</span></code> in the above example to begin the gaussian pulse on <code class="docutils literal notranslate"><span class="pre">D0</span></code>. Left and right are also sometimes called “as soon as possible” and “as late as possible” scheduling, respectively.</p>
+<p>এটি আশ্চর্যজনক নয় যে <code class="docutils literal notranslate"><span class="pre">align_right</span></code> <code class="docutils literal notranslate"><span class="pre">align_left</span></code> এর বিপরীত কাজ করে। এটি <code class="docutils literal notranslate"><span class="pre">D0</span></code> এ গাউসিয়ান পালস শুরু করতে উপরের উদাহরণে <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">100</span></code> নির্বাচন করবে। বাম এবং ডান কে কখনও কখনও যথাক্রমে &quot;as soon as possible&quot; এবং &quot;as late as possible&quot; সময়সূচী বলা হয়।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -949,7 +949,7 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="align_equispaced(duration)">
 <h2><code class="docutils literal notranslate"><span class="pre">align_equispaced(duration)</span></code><a class="headerlink" href="#align_equispaced(duration)" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>If the duration of a particular block is known, you can also use <code class="docutils literal notranslate"><span class="pre">align_equispaced</span></code> to insert equal duration delays between each instruction.</p>
+<p>যদি একটি নির্দিষ্ট ব্লকের সময়কাল জানা থাকে, আপনি প্রতিটি নির্দেশের মধ্যে একই সময়কাল বিলম্ব যুক্ত করতে <code class="docutils literal notranslate"><span class="pre">align_equispaced</span></code> ব্যবহার করতে পারেন।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -977,7 +977,7 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="align_sequential">
 <h2><code class="docutils literal notranslate"><span class="pre">align_sequential</span></code><a class="headerlink" href="#align_sequential" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>This alignment context does not schedule instructions in parallel. Each instruction will begin at the end of the previously added instruction.</p>
+<p>এই প্রান্তিককরণ প্রসঙ্গ সমান্তরাল নির্দেশাবলী নির্ধারণ করে না। প্রতিটি নির্দেশ পূর্বে যোগ করা নির্দেশের শেষে শুরু হবে।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1003,9 +1003,9 @@ Schedule(, name=&#34;my_example&#34;)
 </div>
 </div>
 </section>
-<section id="Phase-and-frequency-offsets">
-<h2>Phase and frequency offsets<a class="headerlink" href="#Phase-and-frequency-offsets" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>We can use the builder to help us temporarily offset the frequency or phase of our pulses on a channel.</p>
+<section id="ফেজ-এবং-ফ্রিকোয়েন্সি-অফসেট">
+<h2>ফেজ এবং ফ্রিকোয়েন্সি অফসেট<a class="headerlink" href="#ফেজ-এবং-ফ্রিকোয়েন্সি-অফসেট" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>আমরা একটি চ্যানেলে আমাদের ফ্রিকোয়েন্সি বা পালস এর পর্যায়কে অস্থায়ীভাবে অফসেট করতে বিল্ডার এর সহায়তা নিতে পারি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -1029,7 +1029,7 @@ Schedule(, name=&#34;my_example&#34;)
 <img alt="../../_images/tutorials_circuits_advanced_06_building_pulse_schedules_36_0.png" src="../../_images/tutorials_circuits_advanced_06_building_pulse_schedules_36_0.png" />
 </div>
 </div>
-<p>We encourage you to visit the <a class="reference external" href="https://qiskit.org/documentation/apidoc/pulse.html">Pulse API reference</a> to learn more.</p>
+<p>আরো জানার জন্য আমরা আপনাকে <a class="reference external" href="https://qiskit.org/documentation/apidoc/pulse.html">Pulse API reference</a> দেখার জন্য উৎসাহিত করছি।</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
@@ -1073,7 +1073,7 @@ Schedule(, name=&#34;my_example&#34;)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      2021/09/23 সর্বশেষ পরিবর্তন করা হয়েছে।
+      2021/09/30 সর্বশেষ পরিবর্তন করা হয়েছে।
 
     </p>
   </div>
@@ -1115,7 +1115,7 @@ Schedule(, name=&#34;my_example&#34;)
 <li><a class="reference internal" href="#align_right"><code class="docutils literal notranslate"><span class="pre">align_right</span></code></a></li>
 <li><a class="reference internal" href="#align_equispaced(duration)"><code class="docutils literal notranslate"><span class="pre">align_equispaced(duration)</span></code></a></li>
 <li><a class="reference internal" href="#align_sequential"><code class="docutils literal notranslate"><span class="pre">align_sequential</span></code></a></li>
-<li><a class="reference internal" href="#Phase-and-frequency-offsets">Phase and frequency offsets</a></li>
+<li><a class="reference internal" href="#ফেজ-এবং-ফ্রিকোয়েন্সি-অফসেট">ফেজ এবং ফ্রিকোয়েন্সি অফসেট</a></li>
 </ul>
 </li>
 </ul>

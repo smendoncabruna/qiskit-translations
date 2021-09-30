@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Obtaining information about your backend &mdash; Tài liệu Qiskit 0.30.0</title>
+  <title>Obtaining information about your backend &mdash; Tài liệu Qiskit 0.30.1</title>
   
 
   
@@ -229,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Trang chủ Trang tài liệu</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -248,13 +248,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Trình cung cấp Lượng tử IBM Qiskit</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
+<p><span class="caption-text">Hướng dẫn Qiskit Aqua Migration</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Hướng dẫn Qiskit Aqua Migration</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -579,7 +579,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Ghi chú</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits_advanced/08_gathering_system_information.ipynb">tutorials/circuits_advanced/08_gathering_system_information.ipynb</a>.</p>
+<p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits_advanced/08_gathering_system_information.ipynb">tutorials/circuits_advanced/08_gathering_system_information.ipynb</a>.</p>
 </div>
 <section id="Obtaining-information-about-your-backend">
 <h1>Obtaining information about your <code class="docutils literal notranslate"><span class="pre">backend</span></code><a class="headerlink" href="#Obtaining-information-about-your-backend" title="Permalink to this headline">¶</a></h1>
@@ -608,8 +608,8 @@ pulse would have little effect on another qubit, which has its own resonant freq
 </pre></div>
 </div>
 </div>
-<section id="Configuration">
-<h3>Configuration<a class="headerlink" href="#Configuration" title="Permalink to this headline">¶</a></h3>
+<section id="Cấu-hình">
+<h3>Cấu hình<a class="headerlink" href="#Cấu-hình" title="Permalink to this headline">¶</a></h3>
 <p>The configuration is where you’ll find data about the static setup of the device, such as its name, version, the number of qubits, and the types of features it supports.</p>
 <p>Let’s build a description of our backend using information from the <code class="docutils literal notranslate"><span class="pre">backend</span></code>’s config.</p>
 <div class="nbinput docutils container">
@@ -773,8 +773,8 @@ AcquireChannel(0)
 </div>
 <p>It is a matter of style and personal preference whether you use <code class="docutils literal notranslate"><span class="pre">config.drive(0)</span></code> or <code class="docutils literal notranslate"><span class="pre">DriveChannel(0)</span></code>.</p>
 </section>
-<section id="Properties">
-<h3>Properties<a class="headerlink" href="#Properties" title="Permalink to this headline">¶</a></h3>
+<section id="Thuộc-tính">
+<h3>Thuộc tính<a class="headerlink" href="#Thuộc-tính" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">backend</span></code> properties contain data that was measured and optionally reported by the provider. Let’s see what kind of information is reported for qubit 0.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -830,8 +830,8 @@ Qubit 0 has a
 </div>
 <p>Properties are not guaranteed to be reported, but backends without Pulse access typically also provide this data.</p>
 </section>
-<section id="Defaults">
-<h3>Defaults<a class="headerlink" href="#Defaults" title="Permalink to this headline">¶</a></h3>
+<section id="Mặc-định">
+<h3>Mặc định<a class="headerlink" href="#Mặc-định" title="Permalink to this headline">¶</a></h3>
 <p>Unlike the other two sections, <code class="docutils literal notranslate"><span class="pre">PulseDefaults</span></code> are only available for Pulse-enabled backends. It contains the default program settings run on the device.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -1065,7 +1065,7 @@ Schedule((0, ShiftPhase(-3.1415, DriveChannel(0))), (0, ShiftPhase(-3.1415, Cont
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/09/23.
+      Cập nhật mới nhất vào 2021/09/30.
 
     </p>
   </div>
@@ -1086,9 +1086,9 @@ Schedule((0, ShiftPhase(-3.1415, DriveChannel(0))), (0, ShiftPhase(-3.1415, Cont
               <ul>
 <li><a class="reference internal" href="#">Obtaining information about your <code class="docutils literal notranslate"><span class="pre">backend</span></code></a><ul>
 <li><a class="reference internal" href="#Note:-All-the-attributes-of-the-backend-are-described-in-detail-in-theQiskit-Backend-Specifications.-This-page-reviews-a-subset-of-the-spec."><em>Note: All the attributes of the backend are described in detail in the</em>Qiskit Backend Specifications<em>. This page reviews a subset of the spec.</em></a><ul>
-<li><a class="reference internal" href="#Configuration">Configuration</a></li>
-<li><a class="reference internal" href="#Properties">Properties</a></li>
-<li><a class="reference internal" href="#Defaults">Defaults</a><ul>
+<li><a class="reference internal" href="#Cấu-hình">Cấu hình</a></li>
+<li><a class="reference internal" href="#Thuộc-tính">Thuộc tính</a></li>
+<li><a class="reference internal" href="#Mặc-định">Mặc định</a><ul>
 <li><a class="reference internal" href="#Drive-frequencies">Drive frequencies</a></li>
 <li><a class="reference internal" href="#Pulse-Schedule-definitions-for-QuantumCircuit-instructions">Pulse Schedule definitions for QuantumCircuit instructions</a></li>
 </ul>

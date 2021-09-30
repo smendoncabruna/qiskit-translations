@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Repetition Codes &mdash; Tài liệu Qiskit 0.30.0</title>
+  <title>Mã lặp lại &mdash; Tài liệu Qiskit 0.30.1</title>
   
 
   
@@ -229,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Trang chủ Trang tài liệu</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -248,13 +248,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Trình cung cấp Lượng tử IBM Qiskit</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
+<p><span class="caption-text">Hướng dẫn Qiskit Aqua Migration</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Hướng dẫn Qiskit Aqua Migration</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -299,7 +299,7 @@
       </li>
 
         
-      <li>Repetition Codes</li>
+      <li>Mã lặp lại</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -579,12 +579,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Ghi chú</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/noise/6_repetition_code.ipynb">tutorials/noise/6_repetition_code.ipynb</a>.</p>
+<p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/noise/6_repetition_code.ipynb">tutorials/noise/1_hamiltonian_and_gate_characterization.ipynb</a>.</p>
 </div>
-<section id="Repetition-Codes">
-<h1>Repetition Codes<a class="headerlink" href="#Repetition-Codes" title="Permalink to this headline">¶</a></h1>
-<section id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<section id="Mã-lặp-lại">
+<h1>Mã lặp lại<a class="headerlink" href="#Mã-lặp-lại" title="Permalink to this headline">¶</a></h1>
+<section id="Giới-thiệu">
+<h2>Giới thiệu<a class="headerlink" href="#Giới-thiệu" title="Permalink to this headline">¶</a></h2>
 <p>In quantum error correction we take many noisy qubits (which we call <em>physical qubits</em>) and use them to store a smaller number of <em>logical qubits</em>. The error correction procedure is designed to detect and correct for the effects of noise. This makes the logical qubits much less noisy and more reliable than the physical ones from which they are built.</p>
 <p>The repetition code is a simple example of quantum error correction, in which a logical <em>bit</em> is stored rather than a logical <em>qubit</em>. A given instance of the repetition code is defined by two numbers, which we call <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>The <span class="math notranslate nohighlight">\(d\)</span> parameter determines how many physical qubits are used. The actual information about the logical bit is stored in <span class="math notranslate nohighlight">\(d\)</span> qubits (which we’ll call <em>code qubits</em>). The encoding is done in a very simple way: to encode a <code class="docutils literal notranslate"><span class="pre">0</span></code>, all these qubits are set in the state <span class="math notranslate nohighlight">\(|0\rangle\)</span>, to encode a <code class="docutils literal notranslate"><span class="pre">1</span></code> they are set to <span class="math notranslate nohighlight">\(|1\rangle\)</span>. To readout the value, you can just look at any qubit. To read it out in a way that protects against single qubit errors, you can read out all the
@@ -636,8 +636,8 @@ link_qubit_0: |0&gt;┤ X ├┤ X ├
 </div>
 </div>
 </section>
-<section id="Creating-a-repetition-code">
-<h2>Creating a repetition code<a class="headerlink" href="#Creating-a-repetition-code" title="Permalink to this headline">¶</a></h2>
+<section id="Tạo-mã-lặp-lại">
+<h2>Tạo mã lặp lại<a class="headerlink" href="#Tạo-mã-lặp-lại" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">repetition_code</span></code> class creates a code for given values of <span class="math notranslate nohighlight">\(d\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -814,8 +814,8 @@ round_1_link_bit_1: 0 ═══════════════════�
 </pre></div></div>
 </div>
 </section>
-<section id="Building-a-custom-repetition-code">
-<h2>Building a custom repetition code<a class="headerlink" href="#Building-a-custom-repetition-code" title="Permalink to this headline">¶</a></h2>
+<section id="Xây-dựng-mã-lặp-lại-tùy-chỉnh">
+<h2>Xây dựng mã lặp lại tùy chỉnh<a class="headerlink" href="#Xây-dựng-mã-lặp-lại-tùy-chỉnh" title="Permalink to this headline">¶</a></h2>
 <p>You can also implement measurement rounds and logical <code class="docutils literal notranslate"><span class="pre">X</span></code> gates yourself. For example, let’s set up a code with no syndrome measurement rounds.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -1073,8 +1073,8 @@ round_0_link_bit_1: 0 ═══════════════════�
 </pre></div></div>
 </div>
 </section>
-<section id="Running-a-repetition-code">
-<h2>Running a repetition code<a class="headerlink" href="#Running-a-repetition-code" title="Permalink to this headline">¶</a></h2>
+<section id="Chạy-mã-lặp-lại">
+<h2>Chạy mã lặp lại<a class="headerlink" href="#Chạy-mã-lặp-lại" title="Permalink to this headline">¶</a></h2>
 <p>The code object produces the circuits required for the code. The user can then run them using any method they prefer, allowing full control over compilation, backends, noise models and so on.</p>
 <p>For example, here we run them without noise on the <code class="docutils literal notranslate"><span class="pre">qasm_simulator</span></code>.</p>
 <div class="nbinput docutils container">
@@ -1315,8 +1315,8 @@ also do not detect anything, but this no longer represents a change and hence re
 </div>
 <p>Here the non-noisy results are the most likely. The rest of the samples are distributed among other possibilities with non-trivial syndromes.</p>
 </section>
-<section id="Decoding-a-repetition-code">
-<h2>Decoding a repetition code<a class="headerlink" href="#Decoding-a-repetition-code" title="Permalink to this headline">¶</a></h2>
+<section id="Giải-mã-đoạn-mã-lặp-lại">
+<h2>Giải mã đoạn mã lặp lại<a class="headerlink" href="#Giải-mã-đoạn-mã-lặp-lại" title="Permalink to this headline">¶</a></h2>
 <p>Noisy results can change the logical value at readout, and so affect our ability to read out the logical qubit. This can be mitigated by looking at the syndrome values. These can tell us whether or not the logical values are most likely to have changed, and so allow us to correct for the errors. The process of analyzing the syndrome to correct for the errors is called ‘decoding’. We do this by building a decoding object for our code.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
@@ -1490,7 +1490,7 @@ logical error probability for postselection = 0.0
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/09/23.
+      Cập nhật mới nhất vào 2021/09/30.
 
     </p>
   </div>
@@ -1509,12 +1509,12 @@ logical error probability for postselection = 0.0
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Repetition Codes</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#Creating-a-repetition-code">Creating a repetition code</a></li>
-<li><a class="reference internal" href="#Building-a-custom-repetition-code">Building a custom repetition code</a></li>
-<li><a class="reference internal" href="#Running-a-repetition-code">Running a repetition code</a></li>
-<li><a class="reference internal" href="#Decoding-a-repetition-code">Decoding a repetition code</a></li>
+<li><a class="reference internal" href="#">Mã lặp lại</a><ul>
+<li><a class="reference internal" href="#Giới-thiệu">Giới thiệu</a></li>
+<li><a class="reference internal" href="#Tạo-mã-lặp-lại">Tạo mã lặp lại</a></li>
+<li><a class="reference internal" href="#Xây-dựng-mã-lặp-lại-tùy-chỉnh">Xây dựng mã lặp lại tùy chỉnh</a></li>
+<li><a class="reference internal" href="#Chạy-mã-lặp-lại">Chạy mã lặp lại</a></li>
+<li><a class="reference internal" href="#Giải-mã-đoạn-mã-lặp-lại">Giải mã đoạn mã lặp lại</a></li>
 </ul>
 </li>
 </ul>

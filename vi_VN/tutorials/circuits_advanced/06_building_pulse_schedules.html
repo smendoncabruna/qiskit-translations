@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building Pulse Schedules &mdash; Tài liệu Qiskit 0.30.0</title>
+  <title>Building Pulse Schedules &mdash; Tài liệu Qiskit 0.30.1</title>
   
 
   
@@ -229,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Trang chủ Trang tài liệu</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -248,13 +248,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Trình cung cấp Lượng tử IBM Qiskit</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
+<p><span class="caption-text">Hướng dẫn Qiskit Aqua Migration</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Hướng dẫn Qiskit Aqua Migration</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -579,7 +579,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Ghi chú</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits_advanced/06_building_pulse_schedules.ipynb">tutorials/circuits_advanced/06_building_pulse_schedules.ipynb</a>.</p>
+<p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/circuits_advanced/06_building_pulse_schedules.ipynb">tutorials/circuits_advanced/06_building_pulse_schedules.ipynb</a>.</p>
 </div>
 <section id="Building-Pulse-Schedules">
 <h1>Building Pulse Schedules<a class="headerlink" href="#Building-Pulse-Schedules" title="Permalink to this headline">¶</a></h1>
@@ -701,7 +701,7 @@ the signal sent to the qubit is demonstrated by the right side of the image belo
 <p><strong>Note</strong>: The hardware may be implemented in other ways, but if we keep the instructions separate, we avoid losing explicit information, such as the value of the modulation frequency.</p>
 <p><img alt="alt text" src="../../_images/pulse_modulation.png" /></p>
 <p>There are many methods available to us for building up pulses. Our <code class="docutils literal notranslate"><span class="pre">library</span></code> within Qiskit Pulse contains helpful methods for building <code class="docutils literal notranslate"><span class="pre">Pulse</span></code>s. Let’s take for example a simple Gaussian pulse – a pulse with its envelope described by a sampled Gaussian function. We arbitrarily choose an amplitude of 1, standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> of 10, and 128 sample points.</p>
-<p><strong>Note</strong>: The amplitude norm is arbitrarily limited to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>. Each backend system may also impose further constraints – for instance, a minimum pulse size of 64. These additional constraints, if available, would be provided through the <code class="docutils literal notranslate"><span class="pre">BackendConfiguration</span></code> which is described <a class="reference internal" href="08_gathering_system_information.html#Configuration"><span class="std std-ref">here</span></a>.</p>
+<p><strong>Note</strong>: The amplitude norm is arbitrarily limited to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>. Each backend system may also impose further constraints – for instance, a minimum pulse size of 64. These additional constraints, if available, would be provided through the <code class="docutils literal notranslate"><span class="pre">BackendConfiguration</span></code> which is described here.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -834,7 +834,7 @@ the signal sent to the qubit is demonstrated by the right side of the image belo
 </section>
 <section id="set_frequency">
 <h2><code class="docutils literal notranslate"><span class="pre">set_frequency</span></code><a class="headerlink" href="#set_frequency" title="Permalink to this headline">¶</a></h2>
-<p>As explained previously, the output pulse waveform envelope is also modulated by a frequency and phase. Each channel has a <a class="reference internal" href="08_gathering_system_information.html#Defaults"><span class="std std-ref">default frequency listed in the backend.defaults()</span></a>.</p>
+<p>As explained previously, the output pulse waveform envelope is also modulated by a frequency and phase. Each channel has a default frequency listed in the backend.defaults().</p>
 <p>The frequency of a channel can be updated at any time within a <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> by the <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> instruction. It takes a float <code class="docutils literal notranslate"><span class="pre">frequency</span></code> and a <code class="docutils literal notranslate"><span class="pre">PulseChannel</span></code> <code class="docutils literal notranslate"><span class="pre">channel</span></code> as input. All pulses on a channel following a <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> instruction will be modulated by the given frequency until another <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> instruction is encountered or until the program ends.</p>
 <p>The instruction has an implicit duration of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p><strong>Note</strong>: The frequencies that can be requested are limited by the total bandwidth and the instantaneous bandwidth of each hardware channel. In the future, these will be reported by the <code class="docutils literal notranslate"><span class="pre">backend</span></code>.</p>
@@ -1074,7 +1074,7 @@ the signal sent to the qubit is demonstrated by the right side of the image belo
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/09/23.
+      Cập nhật mới nhất vào 2021/09/30.
 
     </p>
   </div>

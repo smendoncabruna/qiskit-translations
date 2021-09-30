@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Iterative Quantum Phase Estimation Algorithm &mdash; Tài liệu Qiskit 0.30.0</title>
+  <title>Iterative Quantum Phase Estimation Algorithm &mdash; Tài liệu Qiskit 0.30.1</title>
   
 
   
@@ -229,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Trang chủ Trang tài liệu</a></li>
 </ul>
 <p><span class="caption-text">Trang tiêu đề</span></p>
 <ul>
@@ -248,13 +248,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (không khuyên dùng)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Trình cung cấp Lượng tử IBM Qiskit</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
+<p><span class="caption-text">Hướng dẫn Qiskit Aqua Migration</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Hướng dẫn Qiskit Aqua Migration</a></li>
 </ul>
 <p><span class="caption-text">Xử lý sự cố</span></p>
 <ul>
@@ -579,12 +579,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Ghi chú</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/09_IQPE.ipynb">tutorials/algorithms/09_IQPE.ipynb</a>.</p>
+<p>Trang này được tạo từ <a class="reference external" href="https://github.com/Qiskit/qiskit-tutorials/blob/master/tutorials/algorithms/09_IQPE.ipynb">tutorials/algorithms/09_IQPE.ipynb</a>.</p>
 </div>
 <section id="Iterative-Quantum-Phase-Estimation-Algorithm">
 <h1>Iterative Quantum Phase Estimation Algorithm<a class="headerlink" href="#Iterative-Quantum-Phase-Estimation-Algorithm" title="Permalink to this headline">¶</a></h1>
 <p>The goal of this tutorial is to understand how the Iterative Phase Estimation (IPE) algorithm works, why would we use the IPE algorithm instead of the QPE (Quantum Phase Estimation) algorithm and how to build it with Qiskit using the same circuit exploiting reset gate and the <code class="docutils literal notranslate"><span class="pre">c_if</span></code> method that allows to apply gates conditioned by the values stored in a classical register, resulting from previous measurements.</p>
-<p><strong>References</strong></p>
+<p><strong>Tài liệu tham khảo:</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-labs/Lab04_IterativePhaseEstimation.html#2-iterative-phase-estimation-ipe-algorithm">Section 2 of Lab 4: Iterative Phase Estimation (IPE) Algorithm</a></p></li>
 <li><p><a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/quantum-phase-estimation.html">Ch.3.6 Quantum Phase Estimation</a></p></li>
@@ -660,7 +660,7 @@ div.rendered_html tbody tr:hover {
 <p>We want to apply the <span class="math notranslate nohighlight">\(X\)</span> gate, only if both the results of the measurement of <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(q_2\)</span> are <span class="math notranslate nohighlight">\(1\)</span>. We can do this using the c_if method, conditioning the application of <span class="math notranslate nohighlight">\(X\)</span> depending on the value passed as argument to c_if.</p>
 <p>We will have to encode the value to pass to the c_if method such that it will check the values 011 and 111 (in binary representation), since it does not matter what is in the rightmost position.</p>
 <p>The 2 integer values in decimal representation:</p>
-<p><img alt="d3d05e0ddc3e4798bac44a0d5485262c" class="no-scaled-link" src="tutorials/algorithms/../../images/binary.png" style="width: 50%;" /></p>
+<p><img alt="f88f31ed765b4919a6205c18656abce8" class="no-scaled-link" src="tutorials/algorithms/../../images/binary.png" style="width: 50%;" /></p>
 <p>We can check the solutions using the bin() method in python (the prefix <code class="docutils literal notranslate"><span class="pre">0b</span></code> indicates the binary format).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
@@ -747,11 +747,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="First-step">
-<h3>First step<a class="headerlink" href="#First-step" title="Permalink to this headline">¶</a></h3>
+<section id="Bước-đầu">
+<h3>Bước đầu<a class="headerlink" href="#Bước-đầu" title="Permalink to this headline">¶</a></h3>
 <p>Now we build the quantum circuit for the first step, that is, the first iteration of the algorithm, to estimate the least significant phase bit <span class="math notranslate nohighlight">\(\varphi_m\)</span>, in this case <span class="math notranslate nohighlight">\(\varphi_2\)</span>. For the first step we have 3 sub-steps: - initialization - application of the Controlled-<span class="math notranslate nohighlight">\(U\)</span> gates - measure of the auxiliary qubit in x-basis</p>
-<section id="Initialization">
-<h4>Initialization<a class="headerlink" href="#Initialization" title="Permalink to this headline">¶</a></h4>
+<section id="Khởi-tạo">
+<h4>Khởi tạo<a class="headerlink" href="#Khởi-tạo" title="Permalink to this headline">¶</a></h4>
 <p>The initialization consists of application the Hadamard gate to the auxiliary qubit and the preparation of the eigenstate <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
@@ -997,10 +997,10 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <section id="id2">
-<h3>First step<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Bước đầu<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Now we build the quantum circuit for the first step, to estimate the least significant phase bit <span class="math notranslate nohighlight">\(\varphi_m=\varphi_3\)</span>.</p>
 <section id="id3">
-<h4>Initialization<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Khởi tạo<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>We initialize the auxiliary qubit and the other qubits with the eigenstate <span class="math notranslate nohighlight">\(|11\rangle\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
@@ -1273,7 +1273,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Cập nhật mới nhất vào 2021/09/23.
+      Cập nhật mới nhất vào 2021/09/30.
 
     </p>
   </div>
@@ -1296,8 +1296,8 @@ div.rendered_html tbody tr:hover {
 <li><a class="reference internal" href="#Conditioned-gates:-the-c_if-method">Conditioned gates: the c_if method</a></li>
 <li><a class="reference internal" href="#IPE">IPE</a><ul>
 <li><a class="reference internal" href="#IPE-example-with-a-1-qubit-gate-for-U">IPE example with a 1-qubit gate for <span class="math notranslate nohighlight">\(U\)</span></a><ul>
-<li><a class="reference internal" href="#First-step">First step</a><ul>
-<li><a class="reference internal" href="#Initialization">Initialization</a></li>
+<li><a class="reference internal" href="#Bước-đầu">Bước đầu</a><ul>
+<li><a class="reference internal" href="#Khởi-tạo">Khởi tạo</a></li>
 <li><a class="reference internal" href="#Application-of-the-Controlled-U-gates">Application of the Controlled-<span class="math notranslate nohighlight">\(U\)</span> gates</a></li>
 <li><a class="reference internal" href="#Measure-in-x-basis">Measure in x-basis</a></li>
 </ul>
@@ -1311,8 +1311,8 @@ div.rendered_html tbody tr:hover {
 </ul>
 </li>
 <li><a class="reference internal" href="#IPE-example-with-a-2-qubit-gate">IPE example with a 2-qubit gate</a><ul>
-<li><a class="reference internal" href="#id2">First step</a><ul>
-<li><a class="reference internal" href="#id3">Initialization</a></li>
+<li><a class="reference internal" href="#id2">Bước đầu</a><ul>
+<li><a class="reference internal" href="#id3">Khởi tạo</a></li>
 <li><a class="reference internal" href="#id4">Application of the Controlled-<span class="math notranslate nohighlight">\(U\)</span> gates</a></li>
 <li><a class="reference internal" href="#id5">Measure in x-basis</a></li>
 </ul>

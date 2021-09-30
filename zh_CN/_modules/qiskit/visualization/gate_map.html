@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.visualization.gate_map &mdash; Qiskit 0.30.0 文档</title>
+  <title>qiskit.visualization.gate_map &mdash; Qiskit 0.30.1 文档</title>
   
 
   
@@ -921,6 +921,7 @@
 
 <span class="sd">    Raises:</span>
 <span class="sd">        VisualizationError: Input is not IBMQ backend.</span>
+<span class="sd">        VisualizationError: The backend does not provide gate errors for the &#39;sx&#39; gate.</span>
 <span class="sd">        MissingOptionalLibraryError: If seaborn is not installed</span>
 
 <span class="sd">    Example:</span>
@@ -968,12 +969,19 @@
 
     <span class="n">num_qubits</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;n_qubits&quot;</span><span class="p">]</span>
 
-    <span class="c1"># U2 error rates</span>
+    <span class="c1"># sx error rates</span>
     <span class="n">single_gate_errors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_qubits</span>
     <span class="k">for</span> <span class="n">gate</span> <span class="ow">in</span> <span class="n">props</span><span class="p">[</span><span class="s2">&quot;gates&quot;</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">gate</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;u2&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">gate</span><span class="p">[</span><span class="s2">&quot;gate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;sx&quot;</span><span class="p">:</span>
             <span class="n">_qubit</span> <span class="o">=</span> <span class="n">gate</span><span class="p">[</span><span class="s2">&quot;qubits&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">single_gate_errors</span><span class="p">[</span><span class="n">_qubit</span><span class="p">]</span> <span class="o">=</span> <span class="n">gate</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">gate</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">param</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;gate_error&quot;</span><span class="p">:</span>
+                    <span class="n">single_gate_errors</span><span class="p">[</span><span class="n">_qubit</span><span class="p">]</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">VisualizationError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Backend &#39;</span><span class="si">{</span><span class="n">backend</span><span class="si">}</span><span class="s2">&#39; did not supply an error for the &#39;sx&#39; gate.&quot;</span>
+                <span class="p">)</span>
 
     <span class="c1"># Convert to percent</span>
     <span class="n">single_gate_errors</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">single_gate_errors</span><span class="p">)</span>
@@ -1134,7 +1142,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最后更新于 2021/09/23.
+      最后更新于 2021/09/30.
 
     </p>
   </div>

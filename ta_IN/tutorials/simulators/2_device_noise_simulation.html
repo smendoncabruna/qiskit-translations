@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>சாதன பின்தளத்தில் இரைச்சல் மாதிரி உருவகப்படுத்துதல்கள் &mdash; Qiskit 0.30.0 documentation</title>
+  <title>சாதன பின்தளத்தில் இரைச்சல் மாதிரி உருவகப்படுத்துதல்கள் &mdash; Qiskit 0.30.1 documentation</title>
   
 
   
@@ -229,7 +229,7 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">ஆவணங்கள் முகப்பு</a></li>
 </ul>
 <p><span class="caption-text">முன்னணி</span></p>
 <ul>
@@ -248,13 +248,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/terra.html">Qiskit Terra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../apidoc/aer.html">Qiskit Aer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (deprecated)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM Quantum Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ignis.html">Qiskit Ignis (நீக்கப்படும்)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/aqua.html">Qiskit Aqua (நீக்கப்படும்)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apidoc/ibmq-provider.html">Qiskit IBM குவாண்டம் வழங்குநர்</a></li>
 </ul>
-<p><span class="caption-text">Qiskit Aqua Migration Guide</span></p>
+<p><span class="caption-text">Qiskit Aqua மைக்ரேசன் வழிகாட்டி</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua Migration Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aqua_migration.html">Qiskit Aqua மைக்ரேசன் வழிகாட்டி</a></li>
 </ul>
 <p><span class="caption-text">பழுது கண்டறிதல்</span></p>
 <ul>
@@ -611,7 +611,7 @@ div.rendered_html tbody tr:hover {
 </ul>
 <section id="டெர்ரா-மோக்-பின்தளத்தில்">
 <h3>டெர்ரா மோக் பின்தளத்தில்<a class="headerlink" href="#டெர்ரா-மோக்-பின்தளத்தில்" title="Permalink to this headline">¶</a></h3>
-<p>We will use real noise data for an IBM Quantum device using the data stored in Qiskit Terra. Specifically, in this tutorial, the device is <code class="docutils literal notranslate"><span class="pre">ibmq_vigo</span></code>.</p>
+<p>Qiskit Terra வில் சேமிக்கப்பட்ட தரவைப் பயன்படுத்தி ஒரு IBM குவாண்டம் சாதனத்திற்கு உண்மையான இரைச்சல் தரவைப் பயன்படுத்துவோம். குறிப்பாக, இந்த பயிற்சிகளில், சாதனம் <code class="docutils literal notranslate"><span class="pre">ibmq_vigo</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -625,7 +625,7 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="சாதனம்-மற்றும்-உருவகப்படுத்துதல்-ஒப்பீட்டுக்கான-சோதனை-சுற்று">
 <h3>சாதனம் மற்றும் உருவகப்படுத்துதல் ஒப்பீட்டுக்கான சோதனை சுற்று<a class="headerlink" href="#சாதனம்-மற்றும்-உருவகப்படுத்துதல்-ஒப்பீட்டுக்கான-சோதனை-சுற்று" title="Permalink to this headline">¶</a></h3>
-<p>Now we construct a test circuit to compare the output of the real device with the noisy output simulated on the Qiskit Aer <code class="docutils literal notranslate"><span class="pre">AerSimulator</span></code>. We will prepare a 3-qubit GHZ state <span class="math notranslate nohighlight">\(\frac{1}{\sqrt2}(|0,0,0\rangle + |1,1,1\rangle)\)</span> on qubits 0, 1 and 2. Before running with noise or on the device we show the ideal expected output with no noise.</p>
+<p>இப்போது நாம் ஒரு சோதனை சுற்று உருவாக்க உண்மையான சாதனத்தின் வெளியீட்டை Qiskit Aer உருவகப்படுத்தப்பட்ட இரைச்சல் வெளியீடுடன் ஒப்பிடுகிறோம் <code class="docutils literal notranslate"><span class="pre">AerSimulator</span></code> .நாம் ஒரு 3-க்யூபிட் GHZ நிலை <span class="math notranslate nohighlight">\(\frac{1}{\sqrt2}(|0,0,0\rangle + |1,1,1\rangle)\)</span> க்யூபிட்கள் 0, 1 மற்றும் 2.இரைச்சலுடன் இயங்கும் முன் அல்லது சாதனத்தில் எந்த சத்தமும் இல்லாமல் சிறந்த எதிர்பார்க்கப்படும் வெளியீட்டை நாங்கள் காண்பிக்கிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -759,7 +759,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/09/23.
+      Last updated on 2021/09/30.
 
     </p>
   </div>

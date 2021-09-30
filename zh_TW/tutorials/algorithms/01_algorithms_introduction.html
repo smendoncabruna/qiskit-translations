@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit 中的演算法簡介 &mdash; Qiskit 0.30.0 說明文件</title>
+  <title>Qiskit 中的演算法簡介 &mdash; Qiskit 0.30.1 說明文件</title>
   
 
   
@@ -587,8 +587,8 @@ div.rendered_html tbody tr:hover {
 <section id="演算法程式庫的結構方式為何？">
 <h2>演算法程式庫的結構方式為何？<a class="headerlink" href="#演算法程式庫的結構方式為何？" title="本標題的永久連結">¶</a></h2>
 <p>Qiskit 提供了許多 <a href="#id2"><span class="problematic" id="id4">`Algorithms&lt;https://qiskit.org/documentation/apidoc/algorithms.html&gt;`__</span></a> ，它們依種類分組，根據它們可以執行的作業來分類。例如，<code class="docutils literal notranslate"><span class="pre">Minimum</span> <span class="pre">Eigensolvers</span></code> 可以找出一個算子的最小特徵值，例如，化學 Hamiltonian 的基態能量或對最佳化問題的解當問題可以用 Ising Hamiltonian 表示時。另外有 <code class="docutils literal notranslate"><span class="pre">Linear</span> <span class="pre">Solvers</span></code> 可以解線性系統的方程問題，以``Amplitude Estimators`` 可以用在像是金融相關應用的數值估計。您可以在上面的演算法文件鏈結中看到完整的種類集。</p>
-<p>演算法是可配置的，且通常部分配置會以較小的建置區塊形式存在，而對於每個小建置區塊，有相對應的不同實例可以選擇。例如，<code class="docutils literal notranslate"><span class="pre">VQE</span></code>，Variational Quantum Eigensover，它有一個 <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> 形式的試驗波函數和一個古典優化器等等。</p>
-<p>讓我們來看看一個範例來建構 VQE 實例。這裡 <code class="docutils literal notranslate"><span class="pre">TwoLocal</span></code> 是變數形式(試驗波函數)，可改變的參數化電路，以及 <code class="docutils literal notranslate"><span class="pre">SLSQP</span></code> 古典優化器。這些會建立為個別實例，並在建構時傳遞至 VQE。例如，嘗試不同的古典優化器，或變異形式，只是建立一個您想要的實例，並將其傳遞至 VQE 的案例。</p>
+<p>演算法是可配置的，且通常部分配置會以較小的建置區塊形式存在，而對於每個小建置區塊，有相對應的不同實例可以選擇。例如，<code class="docutils literal notranslate"><span class="pre">VQE</span></code>，變分量子特徵值求解器，它有一個 <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> 形式的試驗波函數和一個古典優化器等等。</p>
+<p>讓我們來看看一個範例來建構 VQE 實例。這裡 <code class="docutils literal notranslate"><span class="pre">TwoLocal</span></code> 是變數形式(試驗波函數)，可改變的參數化電路，以及 <code class="docutils literal notranslate"><span class="pre">SLSQP</span></code> 古典優化器。這些會建立為個別實例，並在建構時傳遞至 VQE。例如，嘗試不同的古典優化器，或變分形式，只是建立一個您想要的實例，並將其傳遞至 VQE 的案例。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -824,7 +824,7 @@ q_1: ┤ RY(θ[1]) ├─■─┤ RY(θ[3]) ├─■─┤ RY(θ[5]) ├─■
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      最後更新於 2021/09/24。
+      最後更新於 2021/09/30。
 
     </p>
   </div>
