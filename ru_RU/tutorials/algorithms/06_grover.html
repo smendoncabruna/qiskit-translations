@@ -593,11 +593,11 @@ div.rendered_html tbody tr:hover {
 <h2>Алгоритм Гровера<a class="headerlink" href="#Алгоритм-Гровера" title="Ссылка на этот заголовок">¶</a></h2>
 <p>Алгоритм Гровера использует оператор <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> для усиления амплитуды «хороших» состояний:</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{Q} = \mathcal{A}\mathcal{S_0}\mathcal{A}^\dagger \mathcal{S_f}\]</div>
-<p>Here, * <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> is the initial search state for the algorithm, which is just Hadamards, <span class="math notranslate nohighlight">\(H^{\otimes n}\)</span> for the textbook Grover search, but can be more elaborate for Amplitude Amplification * <span class="math notranslate nohighlight">\(\mathcal{S_0}\)</span> is the reflection about the all 0 state</p>
+\[\mathcal{Q} = \mathcal{A}\mathcal{S_0}\mathcal{A}^ \dagger \mathcal{S_f}\]</div>
+<p>Здесь, * <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> - это начальное состояние для поиска в алгоритме, которое просто создается применением оператора Хадамара <span class="math notranslate nohighlight">\(H^{\otimes n}\)</span> на все кубиты (учебный пример для поиска Гровера), но также может быть задано более подробно для Усиления Амплитуды * <span class="math notranslate nohighlight">\(\mathcal{S_0}\)</span> - это отображение для всех состояниях 0</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}|x\rangle \mapsto \begin{cases} -|x\rangle, &amp;x \neq 0 \\ |x\rangle, &amp;x = 0\end{cases}\end{split}\]</div>
-<p>* <span class="math notranslate nohighlight">\(\mathcal{S_f}\)</span> is the oracle that applies</p>
+<p>* <span class="math notranslate nohighlight">\(\mathcal{S_f}\)</span> это оракул, который реализует</p>
 <div class="math notranslate nohighlight">
 \[|x\rangle \mapsto (-1)^{f(x)}|x\rangle\]</div>
 <p>    　where <span class="math notranslate nohighlight">\(f(x)\)</span> is 1 if <span class="math notranslate nohighlight">\(x\)</span> is a good state and otherwise 0.</p>
@@ -1143,7 +1143,7 @@ True
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/09/30.
+      Обновлено: 2021/10/02.
 
     </p>
   </div>
