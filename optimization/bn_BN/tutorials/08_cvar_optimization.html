@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Improving Variational Quantum Optimization using CVaR &mdash; Qiskit Optimization 0.2.3 documentation</title>
+  <title>CVaR দিয়ে পরিবর্তনশীল (ভ্যারিয়েশনাল) কোয়ান্টাম অপটিমাইজেশন উন্নতি করা &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Optimization Tutorials</a> &gt;</li>
         
-      <li>Improving Variational Quantum Optimization using CVaR</li>
+      <li>CVaR দিয়ে পরিবর্তনশীল (ভ্যারিয়েশনাল) কোয়ান্টাম অপটিমাইজেশন উন্নতি করা</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,17 +482,16 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">নোট</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/08_cvar_optimization.ipynb">docs/tutorials/08_cvar_optimization.ipynb</a>.</p>
+<p>এই পৃষ্ঠাটি <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/08_cvar_optimization.ipynb">docs/tutorials/08_cvar_optimization.ipynb</a> থেকে বানানো হয়েছে।</p>
 </div>
-<div class="section" id="Improving-Variational-Quantum-Optimization-using-CVaR">
-<h1>Improving Variational Quantum Optimization using CVaR<a class="headerlink" href="#Improving-Variational-Quantum-Optimization-using-CVaR" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>This notebook shows how to use the Conditional Value at Risk (CVaR) objective function introduced in [1] within the variational quantum optimization algorithms provided by Qiskit. Particularly, it is shown how to setup the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> using <code class="docutils literal notranslate"><span class="pre">VQE</span></code> accordingly. For a given set of shots with corresponding objective values of the considered optimization problem, the CVaR with confidence level <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span> is defined as the average of the <span class="math notranslate nohighlight">\(\alpha\)</span> best shots. Thus,
-<span class="math notranslate nohighlight">\(\alpha = 1\)</span> corresponds to the standard expected value, while <span class="math notranslate nohighlight">\(\alpha=0\)</span> corresponds to the minimum of the given shots, and <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span> is a tradeoff between focusing on better shots, but still applying some averaging to smoothen the optimization landscape.</p>
+<div class="section" id="CVaR-দিয়ে-পরিবর্তনশীল-(ভ্যারিয়েশনাল)-কোয়ান্টাম-অপটিমাইজেশন-উন্নতি-করা">
+<h1>CVaR দিয়ে পরিবর্তনশীল (ভ্যারিয়েশনাল) কোয়ান্টাম অপটিমাইজেশন উন্নতি করা<a class="headerlink" href="#CVaR-দিয়ে-পরিবর্তনশীল-(ভ্যারিয়েশনাল)-কোয়ান্টাম-অপটিমাইজেশন-উন্নতি-করা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
+<div class="section" id="ভূমিকা">
+<h2>ভূমিকা<a class="headerlink" href="#ভূমিকা" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>এই নোটবুক দেখায় কি ভাবে শর্তসাপেক্ষ বা কন্ডিশনাল মান বা ভ্যালু ব্যাবহার করতে হয় ঝুঁকি বা রিস্ক (CVaR) অব্জেক্টিভ ফাংশনে যেটা [1] এ প্রবর্তিত হয়েছে Qiskit দ্বারা প্রদত্ত পরিবর্তনশীল (ভ্যারিয়েশনাল) কোয়ান্টাম অপটিমাইজেশন এর মধ্যে।নির্দিষ্ট ভাবে দেখানো হয়েছে কিভাবে তদনুসারে <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> সংস্থাপন করতে হয় <code class="docutils literal notranslate"><span class="pre">VQE</span></code> ব্যাবহার করে।বিবেচিত অনুকূলায়ন (অপ্টিমাইজেশন) সমস্যাসমূহটির ক্ষেত্রে একটি প্রদত্ত শটসমূহ সেটের জন্য সংলিস্ট অবজেক্টিভ মান গুলির সহিত, CVaR টি কনফিডেন্স লেভেল <span class="math notranslate nohighlight">\(\alpha \in [0, 1]\)</span> সঙ্গে বলা হয় <span class="math notranslate nohighlight">\(\alpha\)</span> সেরা শটসমূহ গড়। এইভাবে <span class="math notranslate nohighlight">\(\alpha = 1\)</span> স্ট্যান্ডার্ড এক্সপেকটেড মান বা স্ট্যান্ডার্ড প্রত্যাশিত মানের অনুরূপ হয়, <span class="math notranslate nohighlight">\(\alpha=0\)</span> অনুরূপ হয় প্রদত্ত শটসমূহের লঘিষ্ঠর সঙ্গে এবং <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span> একটি তুল্যমূল্য (ট্রেডঅফ) হয় উত্তম শটসমূহের কেন্দ্রস্ত করার (ফোকাসিংএর )মধ্যে কিন্তু তাও কিছু গড় করা হয়ে চলেছে অপটিমাইজেশন ভূদৃশ্য (ল্যান্ডস্কেপ) স্বচ্ছন্দ করা (স্মুথেন) করার জন্য।.</p>
 </div>
-<div class="section" id="References">
-<h2>References<a class="headerlink" href="#References" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<div class="section" id="তথ্যসূত্র">
+<h2>তথ্যসূত্র<a class="headerlink" href="#তথ্যসূত্র" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <p>[1] <a class="reference external" href="https://quantum-journal.org/papers/q-2020-04-20-256/">P. Barkoutsos et al., Improving Variational Quantum Optimization using CVaR, Quantum 4, 256 (2020).</a></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -526,9 +525,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="Portfolio-Optimization">
-<h2>Portfolio Optimization<a class="headerlink" href="#Portfolio-Optimization" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>In the following we define a problem instance for portfolio optimization as introduced in [1].</p>
+<div class="section" id="পোর্টফোলিও-অপটিমাইজেশন">
+<h2>পোর্টফোলিও অপটিমাইজেশন<a class="headerlink" href="#পোর্টফোলিও-অপটিমাইজেশন" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<p>[1] এ যেমন প্রবর্তিত হয়েছে আমরা তেমন নিম্নলিখিত একটি সমস্যা(প্রবলেম) দৃষ্টান্ত (ইনস্ট্যান্স) সংজ্ঞায়িত করছি পোর্টফোলিও অপটিমাইজেশনের জন্য।.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -618,8 +617,8 @@ status: SUCCESS
 </div>
 </div>
 </div>
-<div class="section" id="Minimum-Eigen-Optimizer-using-VQE">
-<h2>Minimum Eigen Optimizer using VQE<a class="headerlink" href="#Minimum-Eigen-Optimizer-using-VQE" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
+<div class="section" id="লঘিষ্ঠ-স্বকীয়-অনুকূলায়ক-(অপ্টিমাইজার)-ভি-কিউ-ই-ব্যাবহার-করে">
+<h2>লঘিষ্ঠ স্বকীয় অনুকূলায়ক (অপ্টিমাইজার) ভি কিউ ই ব্যাবহার করে<a class="headerlink" href="#লঘিষ্ঠ-স্বকীয়-অনুকূলায়ক-(অপ্টিমাইজার)-ভি-কিউ-ই-ব্যাবহার-করে" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -848,11 +847,11 @@ optimal probabilitiy (alpha = 0.25):  0.1416
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Improving Variational Quantum Optimization using CVaR</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a></li>
-<li><a class="reference internal" href="#References">References</a></li>
-<li><a class="reference internal" href="#Portfolio-Optimization">Portfolio Optimization</a></li>
-<li><a class="reference internal" href="#Minimum-Eigen-Optimizer-using-VQE">Minimum Eigen Optimizer using VQE</a></li>
+<li><a class="reference internal" href="#">CVaR দিয়ে পরিবর্তনশীল (ভ্যারিয়েশনাল) কোয়ান্টাম অপটিমাইজেশন উন্নতি করা</a><ul>
+<li><a class="reference internal" href="#ভূমিকা">ভূমিকা</a></li>
+<li><a class="reference internal" href="#তথ্যসূত্র">তথ্যসূত্র</a></li>
+<li><a class="reference internal" href="#পোর্টফোলিও-অপটিমাইজেশন">পোর্টফোলিও অপটিমাইজেশন</a></li>
+<li><a class="reference internal" href="#লঘিষ্ঠ-স্বকীয়-অনুকূলায়ক-(অপ্টিমাইজার)-ভি-কিউ-ই-ব্যাবহার-করে">লঘিষ্ঠ স্বকীয় অনুকূলায়ক (অপ্টিমাইজার) ভি কিউ ই ব্যাবহার করে</a></li>
 </ul>
 </li>
 </ul>

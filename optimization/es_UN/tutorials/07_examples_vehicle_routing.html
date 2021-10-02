@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Vehicle Routing &mdash; documentación de Qiskit Optimization - 0.2.3</title>
+  <title>Rutas de Vehículos &mdash; documentación de Qiskit Optimization - 0.2.3</title>
   
 
   
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">Tutoriales de Optimización</a> &gt;</li>
         
-      <li>Vehicle Routing</li>
+      <li>Rutas de Vehículos</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -484,27 +484,26 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Nota</p>
 <p>Esta página fue generada a partir de <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/07_examples_vehicle_routing.ipynb">docs/tutorials/07_examples_vehicle_routing.ipynb</a>.</p>
 </div>
-<div class="section" id="Vehicle-Routing">
-<h1>Vehicle Routing<a class="headerlink" href="#Vehicle-Routing" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="Rutas-de-Vehículos">
+<h1>Rutas de Vehículos<a class="headerlink" href="#Rutas-de-Vehículos" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="Introducción">
 <h2>Introducción<a class="headerlink" href="#Introducción" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Logistics is a major industry, with some estimates valuing it at USD 8183 billion globally in 2015. Most service providers operate a number of vehicles (e.g., trucks and container ships), a number of depots, where the vehicles are based overnight, and serve a number of client locations with each vehicle during each day. There are many optimization and control problems that consider these parameters. Computationally, the key challenge is how to design routes from depots to a number of client
-locations and back to the depot, so as to minimize vehicle-miles traveled, time spent, or similar objective functions. In this notebook we formalize an idealized version of the problem and showcase its solution using the quantum approximate optimization approach of Farhi, Goldstone, and Gutmann (2014).</p>
+<p>La logística es una industria importante, y algunas estimaciones la valoran en USD 8.183 billones a nivel mundial en 2015. La mayoría de los proveedores de servicios operan varios vehículos (por ejemplo, camiones y portacontenedores), varios depósitos, donde los vehículos pasan la noche y sirven una serie de ubicaciones de clientes con cada vehículo durante cada día. Hay muchos problemas de optimización y control que consideran estos parámetros. Computacionalmente, el desafío clave es cómo diseñar rutas desde los depósitos a una serie de ubicaciones de clientes y de regreso al depósito, a fin de minimizar las millas recorridas por vehículos, el tiempo empleado o funciones objetivas similares. En este cuaderno formalizamos una versión idealizada del problema y mostramos su solución utilizando el enfoque de optimización aproximada cuántica de Farhi, Goldstone y Gutmann (2014).</p>
 <p>El flujo de trabajo en general que demostramos comprende:</p>
 <ol class="arabic simple">
 <li><p>establecer las ubicaciones de los clientes. Normalmente, estos estarían disponibles antes del día de las entregas desde una base de datos. En nuestro caso de uso, los generamos aleatoriamente.</p></li>
-<li><p>compute the pair-wise distances, travel times, or similar. In our case, we consider the Euclidean distance, “as the crow flies”, which is perhaps the simplest possible.</p></li>
+<li><p>calcula las distancias entre pares, tiempos de viaje o similares. En nuestro caso, consideramos la distancia euclideana, “a vuelo de pájaro”, que es quizás la más simple posible.</p></li>
 <li><p>calcula las rutas reales. Este paso se ejecuta dos veces, en realidad. Primero, obtenemos un valor de referencia por una ejecución de un solver clásico (IBM CPLEX) en el ordenador clásico. En segundo lugar, ejecutamos un algoritmo híbrido alternativo parcialmente en la computadora cuántica.</p></li>
 <li><p>visualización de los resultados. En nuestro caso esto, de nuevo, es una simple gráfica.</p></li>
 </ol>
-<p>In the following, we first explain the model, before we proceed with the installation of the pre-requisites and the data loading.</p>
+<p>A continuación, explicamos primero el modelo, antes de proceder con la instalación de los requerimientos previos y la carga de datos.</p>
 </div>
 <div class="section" id="El-Modelo">
 <h2>El Modelo<a class="headerlink" href="#El-Modelo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Matemáticamente hablando, el problema de generación de rutas para vehículos (vehicle routing problem, VRP) es un problema combinatorio, en el que se buscan las mejores rutas desde un depósito a varios clientes y de regreso al depósito, dado el número de vehículos disponibles. Hay varias formulaciones posibles, que amplían una serie de formulaciones del problema del vendedor viajero [Applegate et al, 2006]. A continuación, presentamos una formulación conocida como MTZ [Miller, Tucker, Zemlin, 1960].</p>
 <p>Sea <span class="math notranslate nohighlight">\(n\)</span> el número de clientes (indexado como <span class="math notranslate nohighlight">\(1,\dots,n\)</span>) y <span class="math notranslate nohighlight">\(K\)</span> el número de vehículos disponibles. Sea <span class="math notranslate nohighlight">\(x_{ij} = \{0,1\}\)</span> la variable de decisión binaria que, si es <span class="math notranslate nohighlight">\(1\)</span>, activa el segmento desde el nodo <span class="math notranslate nohighlight">\(i\)</span> al nodo <span class="math notranslate nohighlight">\(j\)</span>. El índice de nodo va desde <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(n\)</span>, donde <span class="math notranslate nohighlight">\(0\)</span> es (por convención) el depósito. Hay el doble de variables de decisión distintas que de aristas. Por ejemplo, en un grafo completamente conectado, hay <span class="math notranslate nohighlight">\(n(n+1)\)</span> variables de decisión binarias.</p>
 <p>Si dos nodos <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span> tienen un enlace desde <span class="math notranslate nohighlight">\(i\)</span> a <span class="math notranslate nohighlight">\(j\)</span>, escribimos <span class="math notranslate nohighlight">\(i \sim j\)</span>. También denotamos con <span class="math notranslate nohighlight">\(\delta(i)^+\)</span> el conjunto de nodos a los que <span class="math notranslate nohighlight">\(i\)</span> tiene un enlace, es decir, <span class="math notranslate nohighlight">\(j \in \delta(i)^+\)</span> si y solo si <span class="math notranslate nohighlight">\(i \sim j\)</span>. De manera similar, denotamos con <span class="math notranslate nohighlight">\(\delta(i)^-\)</span> el conjunto de nodos que están conectados a <span class="math notranslate nohighlight">\(i\)</span>, en el sentido de que <span class="math notranslate nohighlight">\(j \in \delta(i)^-\)</span> si y solo si <span class="math notranslate nohighlight">\(j \sim i\)</span>.</p>
-<p>In addition, we consider continuous variables, for all nodes <span class="math notranslate nohighlight">\(i = 1,\dots, n\)</span>, denoted <span class="math notranslate nohighlight">\(u_i\)</span>. These variables are needed in the MTZ formulation of the problem to eliminate sub-tours between clients.</p>
+<p>Además, consideramos variables continuas, para todos los nodos <span class="math notranslate nohighlight">\(i = 1,\dots, n\)</span>, denotadas <span class="math notranslate nohighlight">\(u_i\)</span>. Estas variables son necesarias en la formulación MTZ del problema para eliminar sub-recorridos entre clientes.</p>
 <p>El VRP puede formularse como:</p>
 <div class="math notranslate nohighlight">
 \[(VRP) \quad  f = \min_{\{x_{ij}\}_{i\sim j}\in \{0,1\}, \{u_i\}_{i=1,\dots,n}\in \mathbb{R}} \quad \sum_{i \sim j} w_{ij} x_{ij}\]</div>
@@ -528,31 +527,30 @@ locations and back to the depot, so as to minimize vehicle-miles traveled, time 
 </div>
 <div class="section" id="Solución-cuántica">
 <h2>Solución cuántica<a class="headerlink" href="#Solución-cuántica" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Here, we demonstrate an approach that combines classical and quantum computing steps, following the quantum approximate optimization approach of Farhi, Goldstone, and Gutmann (2014). In particular, we use the variational quantum eigensolver (VQE). We stress that given the use of limited depth of the quantum circuits employed (variational forms), it is hard to discuss the speed-up of the algorithm, as the solution obtained is heuristic in nature. At the same time, due to the nature and importance
-of the target problems, it is worth investigating heuristic approaches, which may be worthwhile for some problem classes.</p>
-<p>Following [5], the algorithm can be summarized as follows:</p>
+<p>Aquí, demostramos un enfoque que combina los pasos de la computación clásica y cuántica, siguiendo el enfoque de optimización cuántica aproximada de Farhi, Goldstone y Gutmann (2014). En particular, utilizamos el solucionador propio cuántico variacional (variational quantum eigensolver, VQE). Destacamos que dado el uso de profundidad limitada de los circuitos cuánticos empleados (formas variacionales), es difícil discutir la aceleración del algoritmo, ya que la solución obtenida es de naturaleza heurística. Al mismo tiempo, debido a la naturaleza e importancia de los problemas de destino, vale la pena investigar enfoques heurísticos, que pueden ser útiles para algunas clases de problemas.</p>
+<p>Siguiendo a [5], el algoritmo puede resumirse de la siguiente manera:</p>
 <ul class="simple">
 <li><p>Pasos de preparación:</p>
 <ul>
-<li><p>Transform the combinatorial problem into a binary polynomial optimization problem with equality constraints only;</p></li>
-<li><p>Map the resulting problem into an Ising Hamiltonian (<span class="math notranslate nohighlight">\(H\)</span>) for variables <span class="math notranslate nohighlight">\({\bf z}\)</span> and basis <span class="math notranslate nohighlight">\(Z\)</span>, via penalty methods if necessary;</p></li>
+<li><p>Transformar el problema combinatorio en un problema de optimización de polinomios binarios con restricciones de igualdad solamente;</p></li>
+<li><p>Mapear el problema resultante en un Hamiltoniano Ising (<span class="math notranslate nohighlight">\(H\)</span>) para las variables <span class="math notranslate nohighlight">\({\bf z}\)</span> y la base <span class="math notranslate nohighlight">\(Z\)</span>, mediante métodos de penalización si es necesario;</p></li>
 <li><p>Elegir la profundidad del circuito cuántico <span class="math notranslate nohighlight">\(m\)</span>. Se debe tener en cuenta que la profundidad se puede modificar de forma adaptativa.</p></li>
-<li><p>Choose a set of controls <span class="math notranslate nohighlight">\(\theta\)</span> and make a trial function <span class="math notranslate nohighlight">\(\big|\psi(\boldsymbol\theta)\rangle\)</span>, built using a quantum circuit made of C-Phase gates and single-qubit Y rotations, parameterized by the components of <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
+<li><p>Elegir un conjunto de controles <span class="math notranslate nohighlight">\(\theta\)</span> y crear una función de prueba <span class="math notranslate nohighlight">\(\big|\psi(\boldsymbol\theta)\rangle\)</span>, construido usando un circuito cuántico hecho de compuertas C-Phase y rotaciones Y de un solo qubit, parametrizadas por los componentes de <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
 </ul>
 </li>
 <li><p>Pasos del algoritmo:</p>
 <ul>
-<li><p>Evaluate <span class="math notranslate nohighlight">\(C(\boldsymbol\theta) = \langle\psi(\boldsymbol\theta)\big|H\big|\psi(\boldsymbol\theta)\rangle\)</span> by sampling the outcome of the circuit in the Z-basis and adding the expectation values of the individual Ising terms together. In general, different control points around <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> have to be estimated, depending on the classical optimizer chosen.</p></li>
+<li><p>Evaluar <span class="math notranslate nohighlight">\(C(\boldsymbol\theta) = \langle\psi(\boldsymbol\theta)\big|H\big|\psi(\boldsymbol\theta)\rangle\)</span> muestreando el resultado del circuito en la base Z y sumando los valores esperados de los términos Ising individuales. En general, se deben estimar diferentes puntos de control alrededor de: <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>, dependiendo del optimizador clásico elegido.</p></li>
 <li><p>Utilice un optimizador clásico para elegir un nuevo conjunto de controles.</p></li>
 <li><p>Continúa hasta que <span class="math notranslate nohighlight">\(C(\boldsymbol\theta)\)</span> alcance un mínimo, lo suficientemente cercano a la solución <span class="math notranslate nohighlight">\(\boldsymbol\theta^*\)</span>.</p></li>
-<li><p>Use the last <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> to generate a final set of samples from the distribution <span class="math notranslate nohighlight">\(\Big|\langle z_i\big|\psi(\boldsymbol\theta)\rangle\Big|^2\;\forall i\)</span> to obtain the answer.</p></li>
+<li><p>Utilizar el último <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> para generar un conjunto final de muestras de la distribución <span class="math notranslate nohighlight">\(\Big|\langle z_i\big|\psi(\boldsymbol\theta)\rangle\Big|^2\;\forall i\)</span> para obtener la respuesta.</p></li>
 </ul>
 </li>
 </ul>
 <p>Hay muchos parámetros en todo momento, en particular la elección de la función de onda de prueba. A continuación, consideramos:</p>
 <div class="math notranslate nohighlight">
 \[\big|\psi(\theta)\rangle = [U_\mathrm{single}(\boldsymbol\theta) U_\mathrm{entangler}]^m \big|+\rangle\]</div>
-<p>where <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> is a collection of C-Phase gates (fully-entangling gates), and <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^N Y(\theta_{i})\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the number of qubits and <span class="math notranslate nohighlight">\(m\)</span> is the depth of the quantum circuit.</p>
+<p>donde <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> es una colección de compuertas C-Phase (compuertas totalmente entrelazadas), y <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^N Y(\theta_{i})\)</span>, donde <span class="math notranslate nohighlight">\(N\)</span> es el número de qubits y <span class="math notranslate nohighlight">\(m\)</span> es la profundidad del circuito cuántico.</p>
 <div class="section" id="Construir-el-Hamiltoniano-de-Ising">
 <h3>Construir el Hamiltoniano de Ising<a class="headerlink" href="#Construir-el-Hamiltoniano-de-Ising" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>De <span class="math notranslate nohighlight">\(VRP\)</span> se puede construir una optimización polinomial binaria con restricciones de igualdad solo considerando los casos en los que <span class="math notranslate nohighlight">\(K=n-1\)</span>. En estos casos, las restricciones de eliminación del sub-recorrido no son necesarias y el problema está solo en la variable <span class="math notranslate nohighlight">\({\bf z}\)</span>. En particular, podemos escribir un Lagrangiano aumentado como</p>
@@ -1029,7 +1027,7 @@ Binary cost: 0
 </div>
 <div class="section" id="Paso-4">
 <h3>Paso 4<a class="headerlink" href="#Paso-4" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Solve the problem via <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> from the optimization stack. N.B. Depending on the number of qubits, the state-vector simulation can take a while; for example with 12 qubits, it takes more than 12 hours. Logging is useful to see what the program is doing.</p>
+<p>Resolver el problema a través de <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> de la pila de optimización. Nótese bien que dependiendo del número de qubits, la simulación de vector de estado puede tardar un poco; por ejemplo, con 12 qubits, se necesitan más de 12 horas. El registro (log) es útil para ver qué está haciendo el programa.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1084,8 +1082,7 @@ Binary cost: 0
 </div>
 </div>
 <p>Las gráficas presentan el depósito con una estrella y las rutas seleccionadas para los vehículos con flechas. Ten en cuenta que en este caso particular, podemos encontrar la solución óptima de la formulación QP, que coincide con la solución óptima del ILP.</p>
-<p>Keep in mind that VQE is an heuristic working on the QP formulation of the Ising Hamiltonian, though. For suitable choices of A, local optima of the QP formulation will be feasible solutions to the ILP. While for some small instances, as above, we can find optimal solutions of the QP formulation which coincide with optima of the ILP, finding optimal solutions of the ILP is harder than finding local optima of the QP formulation, in general, which in turn is harder than finding feasible solutions
-of the ILP. Even within the VQE, one may provide stronger guarantees, for specific variational forms (trial wave functions).</p>
+<p>Ten en cuenta que VQE es una heurística que trabaja en la formulación QP del Hamiltoniano de Ising. Para elecciones adecuadas de A, los óptimos locales de la formulación de QP serán soluciones factibles para el ILP. Mientras que para algunos casos pequeños, como el anterior, podemos encontrar soluciones óptimas de la formulación QP que coincidan con los óptimos del ILP, encontrar soluciones óptimas del ILP es más difícil que encontrar los óptimos locales de la formulación QP, en general, que a su vez es más difícil que encontrar soluciones viables del ILP. Incluso dentro del VQE, se pueden proporcionar garantías más sólidas, para formas variacionales específicas (funciones de onda de prueba).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
@@ -1166,7 +1163,7 @@ of the ILP. Even within the VQE, one may provide stronger guarantees, for specif
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Vehicle Routing</a><ul>
+<li><a class="reference internal" href="#">Rutas de Vehículos</a><ul>
 <li><a class="reference internal" href="#Introducción">Introducción</a></li>
 <li><a class="reference internal" href="#El-Modelo">El Modelo</a></li>
 <li><a class="reference internal" href="#Solución-clásica">Solución clásica</a></li>

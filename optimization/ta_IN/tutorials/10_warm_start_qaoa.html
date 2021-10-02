@@ -492,7 +492,7 @@ div.rendered_html tbody tr:hover {
 <p><span class="math">\begin{align}
 \min_{x\in\{0,1\}^n}x^T\Sigma x + \mu^Tx,
 \end{align}</span></p>
-<p>is NP-Hard. Here, <span class="math notranslate nohighlight">\(\Sigma\)</span> is an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix and <span class="math notranslate nohighlight">\(x\)</span> is a vector of <span class="math notranslate nohighlight">\(n\)</span> binary variables. Note that we could have added the linear term <span class="math notranslate nohighlight">\(\mu\)</span> to the diagonal as <span class="math notranslate nohighlight">\(x_i^2=x_i\)</span> for <span class="math notranslate nohighlight">\(x_i\in\{0, 1\}\)</span>. While QUBOs are hard to solve there exists many ways to relax them to problems that are easier to solve. For example, if <span class="math notranslate nohighlight">\(\Sigma\)</span> is semi-definite positive the QUBO can be relaxed and results in a convex Quadratic Program</p>
+<p>nP- கடினமானது.இங்கே, <span class="math notranslate nohighlight">\(\Sigma\)</span> என்பது ஒரு :<span class="math notranslate nohighlight">\(n\times n\)</span> மேட்ரிக்ஸ் மற்றும் <span class="math notranslate nohighlight">\(x\)</span> என்பது <span class="math notranslate nohighlight">\(n\)</span> பைனரி மாறிகளின் ஒரு திசையன்.நேரியல் சொல்லை <span class="math notranslate nohighlight">\(\mu\)</span> என மூலைவிட்டத்தில் சேர்த்திருக்கலாம் என்பதை நினைவில் கொள்க <span class="math notranslate nohighlight">\(x_i^2=x_i\)</span> என்பதற்கு <span class="math notranslate nohighlight">\(x_i\in\{0, 1\}\)</span>.தீர்க்க கடினமாக இருக்கும் போது தீர்க்க எளிதான துகள்களுக்கு அவற்றை தளர்த்த பல வழிகள் உள்ளன.உதாரணமாக, என்றால் <span class="math notranslate nohighlight">\(\Sigma\)</span> அரை-உறுதியான நேர்மறையானது QUBO தளர்த்தப்பட்டு ஒரு குவிந்த இருபடி திட்டத்தில் விளைகிறது</p>
 <p><span class="math">\begin{align}
 \min_{x\in[0,1]^n}x^T\Sigma x,
 \end{align}</span></p>
@@ -643,7 +643,7 @@ optimal value: [0. 0. 1. 1. 1. 0.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>We can create a relaxation of this problem in which the variables are no longer binary. Note that we use the <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToQubo</span></code> converter to convert the constraint into a quadratic penalty term. We do this to remain consistent with the steps that the Qiskit optimization module applies internally.</p>
+<p>மாறிகள் இனி பைனரி இல்லாத இந்தப் பிரச்சினையின் தளர்வை நாம் உருவாக்கலாம். நாங்கள் பயன்படுத்துகிறோம் என்பதை நினைவில் கொள்க <code class="docutils literal notranslate"><span class="pre">QuadraticProgramToQubo</span></code> தடையை இருபடி தண்டனையாக மாற்ற மாற்றி. கிஸ்கிட் ஆப்டிமைசேஷன் தொகுதி உள்நாட்டில் பொருந்தும் படிகளுடன் தொடர்ந்து இருக்க நாங்கள் இதைச் செய்கிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -687,7 +687,7 @@ Bounds
 End
 </pre></div></div>
 </div>
-<p>The solution of this continuous relaxation is different from the solution to the binary problem but can be used to warm-start a solver when dealing with the binary problem.</p>
+<p>இந்த தொடர்ச்சியான தளர்வுக்கான தீர்வு பைனரி பிரச்சனைக்கான தீர்விலிருந்து வேறுபட்டது, ஆனால் பைனரி பிரச்சனையை கையாளும் போது ஒரு தீர்வை சூடாக தொடங்க பயன்படுத்தலாம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -737,10 +737,10 @@ status: SUCCESS
 </div>
 <div class="section" id="QAOA">
 <h2>QAOA<a class="headerlink" href="#QAOA" title="Permalink to this headline">¶</a></h2>
-<p>Here, we illustrate how to warm-start the quantum approximate optimization algorithm (QAOA) by leveraging the relaxed problem shown above.</p>
+<p>மேலே காட்டப்பட்டுள்ள தளர்வான சிக்கலை மேம்படுத்துவதன் மூலம் குவாண்டம் தோராயமான ஆப்டிமைசேஷன் வழிமுறை (QAOA) எப்படி சூடாகத் தொடங்குவது என்பதை இங்கு விளக்குகிறோம்.</p>
 <div class="section" id="நிலையான-QAOA">
 <h3>நிலையான QAOA<a class="headerlink" href="#நிலையான-QAOA" title="Permalink to this headline">¶</a></h3>
-<p>First, we use standard QAOA to solve the QUBO. To do this, we convert the QUBO to Qiskit’s QuadraticProgram class (note that the resulting problem is still a binary problem).</p>
+<p>முதலில், QUBO ஐத் தீர்க்க நாங்கள் நிலையான QAOA ஐப் பயன்படுத்துகிறோம். இதைச் செய்ய, நாங்கள் QUBO ஐ Qiskit டின் இருபடி நிரல் வகுப்பிற்கு மாற்றுகிறோம் (இதன் விளைவாக வரும் பிரச்சினை இன்னும் பைனரி பிரச்சனை என்பதை நினைவில் கொள்க).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -791,7 +791,7 @@ status: SUCCESS
 <p><span class="math">\begin{align}
 |\phi^*\rangle=\bigotimes_{i=0}^{n-1}R_y(\theta_i)|0\rangle_n .
 \end{align}</span></p>
-<p>which is given by applying <span class="math notranslate nohighlight">\(R_y\)</span> rotations with an angle <span class="math notranslate nohighlight">\(\theta=2\arcsin(\sqrt{c^*_i})\)</span> that depends on the solution to the relaxed problem. Here, <span class="math notranslate nohighlight">\(c^*_i\)</span> the value of variable <span class="math notranslate nohighlight">\(i\)</span> of the relaxed problem.</p>
+<p>இது விண்ணப்பிப்பதன் மூலம் வழங்கப்படுகிறது <span class="math notranslate nohighlight">\(R_y\)</span> ஒரு கோணத்துடன் சுழற்சி:math:<cite>theta=2arcsin(sqrt{c^*_i})</cite> அது தளர்வான பிரச்சனைக்கான தீர்வைப் பொறுத்தது. இங்கே, <span class="math notranslate nohighlight">\(c^*_i\)</span> the value of variable <span class="math notranslate nohighlight">\(i\)</span> தளர்வான பிரச்சனை.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -817,7 +817,7 @@ status: SUCCESS
 <img alt="../_images/tutorials_10_warm_start_qaoa_20_0.png" src="../_images/tutorials_10_warm_start_qaoa_20_0.png" />
 </div>
 </div>
-<p>Next, we create the mixer operator for QAOA. When warm-starting QAOA we must ensure that the mixer operator has the initial state as ground state. We therefore chose the Hamiltonian</p>
+<p>அடுத்து, நாங்கள் QAOA க்கான கலவை ஆபரேட்டரை உருவாக்குகிறோம். QAOA- வை சூடு-தொடங்கும் போது, ​​மிக்சர் ஆபரேட்டருக்கு ஆரம்ப நிலை நில நிலமாக இருப்பதை உறுதி செய்ய வேண்டும். எனவே நாங்கள் ஹாமில்டோனியனைத் தேர்ந்தெடுத்தோம்</p>
 <p><span class="math">\begin{align}
 H_{M,i}^{(ws)}=
 \begin{pmatrix}

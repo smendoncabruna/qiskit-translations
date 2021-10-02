@@ -489,14 +489,14 @@ div.rendered_html tbody tr:hover {
 <p>Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் கரைப்பான்களை (CPLEX மற்றும் குரோபி) நாம் பயன்படுத்தலாம். டாக்பலெக்ஸ் மற்றும் குரோபிபை ஆகியவை முறையே CPLEX மற்றும் குரோபிக்கான பைதான் API கள். டாக்லெக்ஸ் மற்றும் குரோபிபி மூலம் ஒரு தேர்வுமுறை மாதிரியை நாம் ஏற்றலாம் மற்றும் சேமிக்கலாம் மற்றும் CPLEX மற்றும் குரோபி ஆகியவற்றைப் பயன்படுத்தலாம் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>.</p>
 <p>நீங்கள் CPLEX தீர்வைப் பயன்படுத்த விரும்பினால், நீங்கள் <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[cplex]'</span></code> நிறுவ வேண்டும். நீங்கள் Qiskit தேர்வுமுறை நிறுவும் போது, ​​டாக்ப்ளெக்ஸ் தானாகவே, ஒரு சார்பாக நிறுவப்படும்.</p>
 <p>நீங்கள் குரோபி மற்றும் குரோபிபையைப் பயன்படுத்த விரும்பினால், நீங்கள் <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'qiskit-optimization[gurobi]'</span></code> நிறுவ வேண்டும்.</p>
-<p>Note that these solvers installed via pip are free versions, which have some limitations such as number of variables. Also note that the latest version 20.1 of CPLEX is available only for Python 3.7 and 3.8 as of July 2021. See the following pages for details.</p>
+<p>பிப் வழியாக நிறுவப்பட்ட இந்த தீர்வுகள் இலவச பதிப்புகள் என்பதை நினைவில் கொள்க, இது மாறிகளின் எண்ணிக்கை போன்ற சில வரம்புகளைக் கொண்டுள்ளது. CPLEX இன் சமீபத்திய பதிப்பு 20.1 ஜூலை 2021 வரை பைதான் 3.7 மற்றும் 3.8 க்கு மட்டுமே கிடைக்கும் என்பதையும் கவனத்தில் கொள்ளவும். விவரங்களுக்கு பின்வரும் பக்கங்களைப் பார்க்கவும்.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pypi.org/project/cplex/">https://pypi.org/project/cplex/</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/gurobipy/">https://pypi.org/project/gurobipy/</a></p></li>
 </ul>
-<div class="section" id="CplexSolver-and-GurobiSolver">
-<h2>CplexSolver and GurobiSolver<a class="headerlink" href="#CplexSolver-and-GurobiSolver" title="Permalink to this headline">¶</a></h2>
-<p>Qiskit Optimization supports the classical solvers of CPLEX and Gurobi as <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> and <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code>, respectively. We can solve <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> with <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> and <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code> as follows.</p>
+<div class="section" id="Cplexசால்வர்-மற்றும்-குரோபிசால்வர்">
+<h2>Cplexசால்வர் மற்றும் குரோபிசால்வர்<a class="headerlink" href="#Cplexசால்வர்-மற்றும்-குரோபிசால்வர்" title="Permalink to this headline">¶</a></h2>
+<p>Qiskit ஆப்டிமைசேஷன் CPLEX மற்றும் குரோபியின் கிளாசிக்கல் சால்வர்களை முறையே <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code> என ஆதரிக்கிறது. <code class="docutils literal notranslate"><span class="pre">CplexSolver</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">GurobiSolver</span></code> உடன் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> ஐ நாம் பின்வருமாறு தீர்க்கலாம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -572,7 +572,7 @@ optimal value: [1. 4.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>We can set the solver parameter of CPLEX as follows. We can display the solver message of CPLEX by setting <code class="docutils literal notranslate"><span class="pre">disp=True</span></code>. See <a class="reference external" href="https://www.ibm.com/docs/en/icos/20.1.0?topic=cplex-parameters">Parameters of CPLEX</a> for details of CPLEX parameters.</p>
+<p>CPLEX இன் கரைப்பான் அளவுருவை நாம் பின்வருமாறு அமைக்கலாம். அமைப்பதன் மூலம் CPLEX இன் தீர்க்கும் செய்தியை நாம் காட்ட முடியும் <code class="docutils literal notranslate"><span class="pre">disp=True</span></code>.பார்க்கவும் <a class="reference external" href="https://www.ibm.com/docs/en/icos/20.1.0?topic=cplex-parameters">CPLEX இன் அளவுருக்கள்</a> CPLEX அளவுருக்களின் விவரங்களுக்கு.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -613,7 +613,7 @@ optimal value: [1. 4.]
 status: SUCCESS
 </pre></div></div>
 </div>
-<p>We get the same optimal solution by QAOA as follows.</p>
+<p>QAOA இன் அதே உகந்த தீர்வை நாங்கள் பின்வருமாறு பெறுகிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -654,10 +654,10 @@ SolutionSample(x=array([0., 0.]), fval=0.0, probability=0.07999999999999999, sta
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Translators-between-QuadraticProgram-and-Docplex/Gurobipy">
-<h2>Translators between <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> and Docplex/Gurobipy<a class="headerlink" href="#Translators-between-QuadraticProgram-and-Docplex/Gurobipy" title="Permalink to this headline">¶</a></h2>
-<p>Qiskit Optimization can load <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> from a Docplex model and a Gurobipy model.</p>
-<p>First, we define an optimization problem by Docplex and Gurobipy.</p>
+<div class="section" id="QuadraticProgram-மற்றும்-டாக்பலெக்ஸ்/குரோபிபை-இடையே-மொழிபெயர்ப்பாளர்கள்">
+<h2><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> மற்றும் டாக்பலெக்ஸ்/குரோபிபை இடையே மொழிபெயர்ப்பாளர்கள்<a class="headerlink" href="#QuadraticProgram-மற்றும்-டாக்பலெக்ஸ்/குரோபிபை-இடையே-மொழிபெயர்ப்பாளர்கள்" title="Permalink to this headline">¶</a></h2>
+<p>Qiskit உகப்பாக்கம் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> ஒரு டாக்பலெக்ஸ் மாதிரி மற்றும் ஒரு குரோபிபை மாதிரியில் இருந்து ஏற்ற முடியும்.</p>
+<p>முதலில், டாக்பலெக்ஸ் மற்றும் குரோபிபை மூலம் ஒரு தேர்வுமுறை சிக்கலை நாங்கள் வரையறுக்கிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -728,7 +728,7 @@ General Integers
    [&#39;y&#39;]
 </pre></div></div>
 </div>
-<p>We can generate <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> object from both Docplex and Gurobipy models. We see that the two <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> objects generated from Docplex and Gurobipy are identical.</p>
+<p>டாக்பலெக்ஸ் மற்றும் குரோபிபை மாதிரிகள் இரண்டிலிருந்தும் நாம் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> பொருளை உருவாக்கலாம். டாக்பலெக்ஸ் மற்றும் குரோபிபை இலிருந்து உருவாக்கப்பட்ட இரண்டு <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> பொருள்கள் ஒரே மாதிரியாக இருப்பதைக் காண்கிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -795,7 +795,7 @@ End
 
 </pre></div></div>
 </div>
-<p>We can generate a Docplex model and a Gurobipy model from <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> too.</p>
+<p>நாம் ஒரு டாக்பலெக்ஸ் மாதிரி மற்றும் ஒரு குரோபிபை மாதிரியை உருவாக்கலாம் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> too.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -846,9 +846,9 @@ subject to {
 }
 </pre></div></div>
 </div>
-<div class="section" id="Indicator-constraints-of-Docplex">
-<h3>Indicator constraints of Docplex<a class="headerlink" href="#Indicator-constraints-of-Docplex" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code> supports indicator constraints, e.g., <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">=&gt;</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">&lt;=</span> <span class="pre">z</span></code> (u: binary variable) when we convert a Docplex model into <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. It converts indicator constraints into linear constraints using the big-M formulation.</p>
+<div class="section" id="டாக்பலெக்ஸ்-இன்-காட்டி-கட்டுப்பாடுகள்">
+<h3>டாக்பலெக்ஸ் இன் காட்டி கட்டுப்பாடுகள்<a class="headerlink" href="#டாக்பலெக்ஸ்-இன்-காட்டி-கட்டுப்பாடுகள்" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code> காட்டி கட்டுப்பாடுகளை ஆதரிக்கிறது, e.g., <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">=&gt;</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">&lt;=</span> <span class="pre">z</span></code> (u: பைனரி மாறி) நாம் ஒரு டாக்பலெக்ஸ் மாதிரியாக மாற்றும் போது <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>.இது big-M சூத்திரத்தைப் பயன்படுத்தி காட்டி தடைகளை நேரியல் தடைகளாக மாற்றுகிறது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -892,7 +892,7 @@ End
 
 </pre></div></div>
 </div>
-<p>Let’s compare the solutions of the model with an indicator constraint by</p>
+<p>ஒரு காட்டி கட்டுப்பாட்டுடன் மாதிரியின் தீர்வுகளை ஒப்பிடுவோம்</p>
 <ol class="arabic simple">
 <li><p>cPLEX ஐ நேரடியாக Docplex மாடலுக்குப் பயன்படுத்துதல் (இதை மொழிபெயர்க்காமல் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code>. CPLEX கரைப்பான் சொந்தமாக காட்டி கட்டுப்பாடுகளை ஆதரிக்கிறது),</p></li>
 <li><p>qAOA ஐப் பயன்படுத்துதல் <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> மூலம் பெறப்பட்டது <code class="docutils literal notranslate"><span class="pre">from_docplex_mp</span></code>.</p></li>
@@ -1003,9 +1003,9 @@ z=-1
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Qiskit ஆப்டிமைசேஷனுடன் கிளாசிக்கல் ஆப்டிமைசேஷன் தீர்வுகள் மற்றும் மாடல்களைப் பயன்படுத்துதல்</a><ul>
-<li><a class="reference internal" href="#CplexSolver-and-GurobiSolver">CplexSolver and GurobiSolver</a></li>
-<li><a class="reference internal" href="#Translators-between-QuadraticProgram-and-Docplex/Gurobipy">Translators between <code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> and Docplex/Gurobipy</a><ul>
-<li><a class="reference internal" href="#Indicator-constraints-of-Docplex">Indicator constraints of Docplex</a></li>
+<li><a class="reference internal" href="#Cplexசால்வர்-மற்றும்-குரோபிசால்வர்">Cplexசால்வர் மற்றும் குரோபிசால்வர்</a></li>
+<li><a class="reference internal" href="#QuadraticProgram-மற்றும்-டாக்பலெக்ஸ்/குரோபிபை-இடையே-மொழிபெயர்ப்பாளர்கள்"><code class="docutils literal notranslate"><span class="pre">QuadraticProgram</span></code> மற்றும் டாக்பலெக்ஸ்/குரோபிபை இடையே மொழிபெயர்ப்பாளர்கள்</a><ul>
+<li><a class="reference internal" href="#டாக்பலெக்ஸ்-இன்-காட்டி-கட்டுப்பாடுகள்">டாக்பலெக்ஸ் இன் காட்டி கட்டுப்பாடுகள்</a></li>
 </ul>
 </li>
 </ul>

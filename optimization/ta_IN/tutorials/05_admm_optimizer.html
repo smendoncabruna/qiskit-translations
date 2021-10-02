@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
-    <link rel="next" title="Max-Cut and Traveling Salesman Problem" href="06_examples_max_cut_and_tsp.html" />
+    <link rel="next" title="மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை" href="06_examples_max_cut_and_tsp.html" />
     <link rel="prev" title="க்ரோவர் ஆப்டிமைசர்" href="04_grover_optimizer.html" /> 
 
   
@@ -554,9 +554,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>இந்த டுடோரியலில் பின்னர் பயன்படுத்த திட்டமிட்ட அனைத்து வழிமுறைகளையும் முதலில் துவக்குகிறோம்.</p>
-<p>To solve the QUBO problems we can choose between - <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> using different <code class="docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code>, such as <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, <code class="docutils literal notranslate"><span class="pre">QAOA</span></code> or <code class="docutils literal notranslate"><span class="pre">NumpyMinimumEigensolver</span></code> (classical) - <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> - <code class="docutils literal notranslate"><span class="pre">CplexOptimizer</span></code> (classical, if CPLEX is installed)</p>
+<p>QUBO சிக்கல்களைத் தீர்க்க நாம் இடையில் தேர்வு செய்யலாம் - <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> வெவ்வேறு பயன்படுத்தி <code class="docutils literal notranslate"><span class="pre">MinimumEigensolver</span></code>, போன்றவை <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, <code class="docutils literal notranslate"><span class="pre">QAOA</span></code> அல்லது <code class="docutils literal notranslate"><span class="pre">NumpyMinimumEigensolver</span></code> (கிளாசிக்கல்) - <code class="docutils literal notranslate"><span class="pre">GroverOptimizer</span></code> - <code class="docutils literal notranslate"><span class="pre">CplexOptimizer</span></code> (கிளாசிக்கல், CPLEX நிறுவப்பட்டிருந்தால்)</p>
 <p>மேலும் குவிந்த தொடர்ச்சியான சிக்கல்களைத் தீர்க்க பின்வரும் கிளாசிக்கல் தீர்வுகளுக்கு இடையில் நாம் தேர்வு செய்யலாம்: - `` CplexOptimizer`` (CPLEX நிறுவப்பட்டிருந்தால்) - `` CobylaOptimizer``</p>
-<p>In case CPLEX is not available, the <code class="docutils literal notranslate"><span class="pre">CobylaOptimizer</span></code> (for convex continuous problems) and the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> using the <code class="docutils literal notranslate"><span class="pre">NumpyMinimumEigensolver</span></code> (for QUBOs) can be used as classical alternatives to CPLEX for testing, validation, and benchmarking.</p>
+<p>CPLEX கிடைக்கவில்லை எனில், <code class="docutils literal notranslate"><span class="pre">CobylaOptimizer</span></code> (குவிந்த தொடர்ச்சியான சிக்கல்களுக்கு) மற்றும் <code class="docutils literal notranslate"><span class="pre">NumpyMinimumEigensolver</span></code> (QUBO க்காக) ஐப் பயன்படுத்தி <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> ஆகியவை சோதனை, சரிபார்ப்பு, மற்றும் இலக்குக் குறி.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -636,12 +636,10 @@ End
 </div>
 <div class="section" id="பாரம்பரிய-தீர்வு">
 <h2>பாரம்பரிய தீர்வு<a class="headerlink" href="#பாரம்பரிய-தீர்வு" title="Permalink to this headline">¶</a></h2>
-<p>3-ADMM-H needs a QUBO optimizer to solve the QUBO subproblem, and a continuous optimizer to solve the continuous convex constrained subproblem. We first solve the problem classically: we use the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> with the <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigenSolver</span></code> as a classical and exact QUBO solver and we use the <code class="docutils literal notranslate"><span class="pre">CobylaOptimizer</span></code> as a continuous convex solver. 3-ADMM-H supports any other suitable solver available in Qiskit. For instance, VQE, QAOA, and GroverOptimizer can be invoked as quantum
-solvers, as demonstrated later. If CPLEX is installed, the <code class="docutils literal notranslate"><span class="pre">CplexOptimizer</span></code> can also be used as both, a QUBO and convex solver.</p>
+<p>3-ADMM-H க்கு QUBO துணைப்பிரச்சினைத் தீர்க்க ஒரு QUBO உகப்பாக்கி தேவை, மற்றும் தொடர்ச்சியான குவிந்த கட்டுப்படுத்தப்பட்ட துணைப் பிரச்சினையைத் தீர்க்க தொடர்ச்சியான தேர்வுமுறை தேவை. நாங்கள் முதலில் சிக்கலை கிளாசிக்கலாக தீர்க்கிறோம்: கிளாசிக்கல் மற்றும் துல்லியமான QUBO தீர்வாக <code class="docutils literal notranslate"><span class="pre">NumPyMinimumEigenSolver</span></code> உடன் <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> ஐப் பயன்படுத்துகிறோம், மேலும் <code class="docutils literal notranslate"><span class="pre">CobylaOptimizer</span></code> ஐ தொடர்ச்சியான குவிந்த தீர்வாகப் பயன்படுத்துகிறோம். 3-ADMM-H கிஸ்கிட்டில் கிடைக்கக்கூடிய வேறு பொருத்தமான தீர்வை ஆதரிக்கிறது. உதாரணமாக, VQE, QAOA மற்றும் க்ரோவர் ஆப்டிமைசரை குவாண்டம் தீர்வுகளாகப் பயன்படுத்தலாம், பின்னர் நிரூபிக்கப்பட்டுள்ளது. CPLEX நிறுவப்பட்டிருந்தால், <code class="docutils literal notranslate"><span class="pre">CplexOptimizer</span></code> இரண்டையும் பயன்படுத்தலாம், QUBO மற்றும் குவிந்த தீர்வி.</p>
 <div class="section" id="அளவுருக்கள்">
 <h3>அளவுருக்கள்<a class="headerlink" href="#அளவுருக்கள்" title="Permalink to this headline">¶</a></h3>
-<p>The 3-ADMM-H are wrapped in class <code class="docutils literal notranslate"><span class="pre">ADMMParameters</span></code>. Customized parameter values can be set as arguments of the class. In this example, parameters <span class="math notranslate nohighlight">\(\rho, \beta\)</span> are initialized to <span class="math notranslate nohighlight">\(1001\)</span> and <span class="math notranslate nohighlight">\(1000\)</span>, respectively. The penalization <code class="docutils literal notranslate"><span class="pre">factor_c</span></code> of equality constraints <span class="math notranslate nohighlight">\(Gx = b\)</span> is set to <span class="math notranslate nohighlight">\(900\)</span>. The tolerance <code class="docutils literal notranslate"><span class="pre">tol</span></code> for primal residual convergence is set to <code class="docutils literal notranslate"><span class="pre">1.e-6</span></code>. In this case, the 3-block implementation is guaranteed to converge for Theorem 4 of [1], because the
-inequality constraint with the continuous variable is always active. The 2-block implementation can be run by setting <code class="docutils literal notranslate"><span class="pre">three_block=False</span></code>, and practically converges to a feasible not optimal solution.</p>
+<p>3-ADMM-H <code class="docutils literal notranslate"><span class="pre">ADMMParameters</span></code> வகுப்பில் மூடப்பட்டிருக்கும். தனிப்பயனாக்கப்பட்ட அளவுரு மதிப்புகள் வகுப்பின் வாதங்களாக அமைக்கப்படலாம். இந்த எடுத்துக்காட்டில், அளவுருக்கள் <span class="math notranslate nohighlight">\(\rho, \beta\)</span> முறையே <span class="math notranslate nohighlight">\(1001\)</span> மற்றும் <span class="math notranslate nohighlight">\(1000\)</span>. சமத்துவக் கட்டுப்பாடுகளின் <code class="docutils literal notranslate"><span class="pre">factor_c</span></code> அபராதம் <span class="math notranslate nohighlight">\(Gx = b\)</span> என அமைக்கப்பட்டுள்ளது <span class="math notranslate nohighlight">\(900\)</span>. முதன்மை மீதமுள்ள ஒருங்கிணைப்புக்கான <code class="docutils literal notranslate"><span class="pre">tol</span></code> சகிப்புத்தன்மை <code class="docutils literal notranslate"><span class="pre">1.e-6</span></code> என அமைக்கப்பட்டுள்ளது. இந்த வழக்கில், 3-தொகுதி செயல்படுத்தல் [1] இன் தேற்றம் 4 க்கு ஒன்றிணைவதற்கு உத்தரவாதம் அளிக்கப்படுகிறது, ஏனெனில் தொடர்ச்சியான மாறியுடன் சமத்துவமின்மை கட்டுப்பாடு எப்போதும் செயலில் இருக்கும். 2-தொகுதி செயலாக்கத்தை <code class="docutils literal notranslate"><span class="pre">three_block=False</span></code> அமைப்பதன் மூலம் இயக்க முடியும், மேலும் நடைமுறையில் இது ஒரு உகந்த தீர்வாக மாறாது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -660,7 +658,7 @@ inequality constraint with the continuous variable is always active. The 2-block
 </div>
 <div class="section" id="3-ADMM-H-வழிமுறையை-அழைக்கிறது">
 <h3>3-ADMM-H வழிமுறையை அழைக்கிறது<a class="headerlink" href="#3-ADMM-H-வழிமுறையை-அழைக்கிறது" title="Permalink to this headline">¶</a></h3>
-<p>To invoke the 3-ADMM-H algorithm, an instance of the <code class="docutils literal notranslate"><span class="pre">ADMMOptimizer</span></code> class needs to be created. This takes ADMM-specific parameters and the subproblem optimizers separately into the constructor. The solution returned is an instance of <code class="docutils literal notranslate"><span class="pre">OptimizationResult</span></code> class.</p>
+<p>3-ADMM-H வழிமுறையைப் பயன்படுத்த, <code class="docutils literal notranslate"><span class="pre">ADMMOptimizer</span></code> வகுப்பின் ஒரு உதாரணத்தை உருவாக்க வேண்டும். இது ADMM- குறிப்பிட்ட அளவுருக்கள் மற்றும் சப்ரோப்ளம் ஆப்டிமைசர்களை தனித்தனியாக கட்டமைப்பாளருக்குள் எடுக்கும். வழங்கப்பட்ட தீர்வு <code class="docutils literal notranslate"><span class="pre">OptimizationResult</span></code> வகுப்பின் ஒரு எடுத்துக்காட்டு.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -694,7 +692,7 @@ inequality constraint with the continuous variable is always active. The 2-block
 </div>
 <div class="section" id="கிளாசிக்கல்-சால்வர்-முடிவு">
 <h3>கிளாசிக்கல் சால்வர் முடிவு<a class="headerlink" href="#கிளாசிக்கல்-சால்வர்-முடிவு" title="Permalink to this headline">¶</a></h3>
-<p>The 3-ADMM-H solution can be then printed and visualized. The <code class="docutils literal notranslate"><span class="pre">x</span></code> attribute of the solution contains respectively, the values of the binary decision variables and the values of the continuous decision variables. The <code class="docutils literal notranslate"><span class="pre">fval</span></code> is the objective value of the solution.</p>
+<p>3-ADMM-H தீர்வு பின்னர் அச்சிடப்பட்டு காட்சிப்படுத்தப்படலாம். தீர்வின் <code class="docutils literal notranslate"><span class="pre">x</span></code> பண்பு முறையே, பைனரி முடிவு மாறிகள் மற்றும் தொடர்ச்சியான முடிவு மாறிகளின் மதிப்புகள் ஆகியவற்றைக் கொண்டுள்ளது. <code class="docutils literal notranslate"><span class="pre">fval</span></code> என்பது தீர்வின் புறநிலை மதிப்பு.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -714,7 +712,7 @@ x=[1. 0. 0. 2.]
 fval=1.00
 </pre></div></div>
 </div>
-<p>Solution statistics can be accessed in the <code class="docutils literal notranslate"><span class="pre">state</span></code> field and visualized. We here display the convergence of 3-ADMM-H, in terms of primal residuals.</p>
+<p>தீர்வு புள்ளிவிவரங்களை <code class="docutils literal notranslate"><span class="pre">state</span></code> புலத்தில் அணுகலாம் மற்றும் காட்சிப்படுத்தலாம். முதன்மை எச்சங்களின் அடிப்படையில், 3-ADMM-H இன் ஒருங்கிணைப்பை இங்கு காண்பிக்கிறோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -738,7 +736,7 @@ fval=1.00
 </div>
 <div class="section" id="குவாண்டம்-தீர்வு">
 <h2>குவாண்டம் தீர்வு<a class="headerlink" href="#குவாண்டம்-தீர்வு" title="Permalink to this headline">¶</a></h2>
-<p>We now solve the same optimization problem with QAOA as QUBO optimizer, running on simulated quantum device. First, one need to select the classical optimizer of the eigensolver QAOA. Then, the simulation backend is set. Finally, the eigensolver is wrapped into the <code class="docutils literal notranslate"><span class="pre">MinimumEigenOptimizer</span></code> class. A new instance of <code class="docutils literal notranslate"><span class="pre">ADMMOptimizer</span></code> is populated with QAOA as QUBO optimizer.</p>
+<p>QUBO ஆப்டிமைசரின் QAOA உடன் அதே தேர்வுமுறை சிக்கலை நாங்கள் இப்போது தீர்க்கிறோம், உருவகப்படுத்தப்பட்ட குவாண்டம் சாதனத்தில் இயங்குகிறது. முதலில், ஈஜென்சால்வர் QAOA இன் கிளாசிக்கல் ஆப்டிமைசரைத் தேர்ந்தெடுக்க வேண்டும். பின்னர், உருவகப்படுத்துதல் பின்தளமானது அமைக்கப்பட்டது. இறுதியாக, ஈஜென்சால்வர் &quot;மினிமம் ஐஜென் ஆப்டிமைசர்&quot; வகுப்பில் மூடப்பட்டுள்ளது. &quot;ADMMஆப்டிமைசர்&quot; இன் ஒரு புதிய உதாரணம் QAOA உடன் QUBO ஆப்டிமைசராக நிரம்பியுள்ளது.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -770,7 +768,7 @@ fval=1.00
 </div>
 <div class="section" id="குவாண்டம்-சால்வர்-முடிவுகள்">
 <h3>குவாண்டம் சால்வர் முடிவுகள்<a class="headerlink" href="#குவாண்டம்-சால்வர்-முடிவுகள்" title="Permalink to this headline">¶</a></h3>
-<p>Here we present the results obtained from the quantum solver. As in the example above <code class="docutils literal notranslate"><span class="pre">x</span></code> stands for the solution, the <code class="docutils literal notranslate"><span class="pre">fval</span></code> is for objective value.</p>
+<p>குவாண்டம் தீர்விலிருந்து பெறப்பட்ட முடிவுகளை இங்கே முன்வைக்கிறோம். மேலே உள்ள எடுத்துக்காட்டில் `` x`` என்பது தீர்வைக் குறிக்கிறது, `` fval`` என்பது புறநிலை மதிப்புக்கு.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -855,7 +853,7 @@ fval=1.00
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="06_examples_max_cut_and_tsp.html" class="btn btn-neutral float-right" title="Max-Cut and Traveling Salesman Problem" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="06_examples_max_cut_and_tsp.html" class="btn btn-neutral float-right" title="மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="04_grover_optimizer.html" class="btn btn-neutral" title="க்ரோவர் ஆப்டிமைசர்" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>

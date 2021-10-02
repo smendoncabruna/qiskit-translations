@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Max-Cut and Traveling Salesman Problem &mdash; Qiskit Optimization 0.2.3 documentation</title>
+  <title>மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை &mdash; Qiskit Optimization 0.2.3 documentation</title>
   
 
   
@@ -202,7 +202,7 @@
         
           <li><a href="index.html">மேம்படுத்தல் பயிற்சிகள்</a> &gt;</li>
         
-      <li>Max-Cut and Traveling Salesman Problem</li>
+      <li>மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -482,25 +482,23 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page was generated from <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/06_examples_max_cut_and_tsp.ipynb">docs/tutorials/06_examples_max_cut_and_tsp.ipynb</a>.</p>
+<p>இந்தப் பக்கம் இதிலிருந்து உருவாக்கப்பட்டது <a class="reference external" href="https://github.com/Qiskit/qiskit-optimization/blob/stable/0.2/docs/tutorials/06_examples_max_cut_and_tsp.ipynb">docs/tutorials/06_examples_max_cut_and_tsp.ipynb</a>.</p>
 </div>
-<div class="section" id="Max-Cut-and-Traveling-Salesman-Problem">
-<h1>Max-Cut and Traveling Salesman Problem<a class="headerlink" href="#Max-Cut-and-Traveling-Salesman-Problem" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
-<p>Many problems in quantitative fields such as finance and engineering are optimization problems. Optimization problems lie at the core of complex decision-making and definition of strategies.</p>
+<div class="section" id="மேக்ஸ்-கட்-மற்றும்-பயண-விற்பனையாளர்-பிரச்சனை">
+<h1>மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை<a class="headerlink" href="#மேக்ஸ்-கட்-மற்றும்-பயண-விற்பனையாளர்-பிரச்சனை" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="முன்னுரை">
+<h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
+<p>பொருளாதார மற்றும் பொறியியல் போன்றவற்றில் பல பிரச்சினைகள் பெரும்பாலான பிரச்சினைகளாகும். ஒப்பீட்டளவு சிக்கல்கள் சிக்கலான முடிவெடுப்பது மற்றும் உத்திகளின் வரையறையின் மையத்தில் உள்ளன.</p>
 <p>Optimization (or combinatorial optimization) means searching for an optimal solution in a finite or countably infinite set of potential solutions. Optimality is defined with respect to some criterion function, which is to be minimized or maximized. This is typically called cost function or objective function.</p>
-<p><strong>Typical optimization problems</strong></p>
-<p>Minimization: cost, distance, length of a traversal, weight, processing time, material, energy consumption, number of objects</p>
-<p>Maximization: profit, value, output, return, yield, utility, efficiency, capacity, number of objects</p>
-<p>We consider here max-cut problems of practical interest in many fields, and show how they can be mapped on quantum computers manually and how Qiskit’s optimization module supports this.</p>
-<div class="section" id="Weighted-Max-Cut">
-<h3>Weighted Max-Cut<a class="headerlink" href="#Weighted-Max-Cut" title="Permalink to this headline">¶</a></h3>
-<p>Max-Cut is an NP-complete problem, with applications in clustering, network science, and statistical physics. To grasp how practical applications are mapped into given Max-Cut instances, consider a system of many people that can interact and influence each other. Individuals can be represented by vertices of a graph, and their interactions seen as pairwise connections between vertices of the graph, or edges. With this representation in mind, it is easy to model typical marketing problems. For
-example, suppose that it is assumed that individuals will influence each other’s buying decisions, and knowledge is given about how strong they will influence each other. The influence can be modeled by weights assigned on each edge of the graph. It is possible then to predict the outcome of a marketing strategy in which products are offered for free to some individuals, and then ask which is the optimal subset of individuals that should get the free products, in order to maximize revenues.</p>
-<p>The formal definition of this problem is the following:</p>
-<p>Consider an <span class="math notranslate nohighlight">\(n\)</span>-node undirected graph <em>G = (V, E)</em> where <em>|V| = n</em> with edge weights <span class="math notranslate nohighlight">\(w_{ij}&gt;0\)</span>, <span class="math notranslate nohighlight">\(w_{ij}=w_{ji}\)</span>, for <span class="math notranslate nohighlight">\((i, j)\in E\)</span>. A cut is defined as a partition of the original set V into two subsets. The cost function to be optimized is in this case the sum of weights of edges connecting points in the two different subsets, <em>crossing</em> the cut. By assigning <span class="math notranslate nohighlight">\(x_i=0\)</span> or <span class="math notranslate nohighlight">\(x_i=1\)</span> to each node <span class="math notranslate nohighlight">\(i\)</span>, one tries to maximize the global profit function (here
-and in the following summations run over indices 0,1,…n-1)</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Typical optimization problems * *</p>
+<p>குறைத்தல்: செலவு, தூரம், ஒரு பயணத்தின் நீளம், எடை, செயலாக்க நேரம், பொருள், ஆற்றல் நுகர்வு, பொருட்களின் எண்ணிக்கை</p>
+<p>அதிகரிப்பு: லாபம், மதிப்பு, வெளியீடு, வருமானம், மகசூல், பயன்பாடு, செயல்திறன், திறன், பொருட்களின் எண்ணிக்கை</p>
+<p>பல துறைகளில் நடைமுறை ஆர்வத்தின் அதிகபட்ச சிக்கல்களை நாங்கள் இங்கு கருதுகிறோம், மேலும் அவை குவாண்டம் கணினிகளில் கைமுறையாக எவ்வாறு வரைபடமாக்கப்படலாம் என்பதையும், Qiskit’டின் தேர்வுமுறை தொகுதி இதை எவ்வாறு ஆதரிக்கிறது என்பதையும் காண்பிப்போம்.</p>
+<div class="section" id="வெயிட்டட்-மேக்ஸ்-கட்">
+<h3>வெயிட்டட் மேக்ஸ்-கட்<a class="headerlink" href="#வெயிட்டட்-மேக்ஸ்-கட்" title="Permalink to this headline">¶</a></h3>
+<p>மேக்ஸ்-கட் என்பது NP- முழுமையான சிக்கலாகும், இதில் க்ளஸ்டரிங், நெட்வொர்க் சயின்ஸ் மற்றும் புள்ளிவிவர இயற்பியல் ஆகியவற்றில் பயன்பாடுகள் உள்ளன. கொடுக்கப்பட்ட மேக்ஸ்-கட் நிகழ்வுகளில் நடைமுறை பயன்பாடுகள் எவ்வாறு மாற்றப்படுகின்றன என்பதைப் புரிந்துகொள்ள, ஒருவருக்கொருவர் தொடர்புகொண்டு செல்வாக்கு செலுத்தக்கூடிய பல நபர்களின் அமைப்பைக் கவனியுங்கள். தனிநபர்களை ஒரு வரைபடத்தின் செங்குத்துகளால் குறிக்க முடியும், மேலும் அவற்றின் தொடர்புகள் வரைபடத்தின் செங்குத்துகள் அல்லது விளிம்புகளுக்கு இடையில் ஜோடிவரிசை இணைப்புகளாகக் காணப்படுகின்றன. இந்த பிரதிநிதித்துவத்தை மனதில் கொண்டு, வழக்கமான சந்தைப்படுத்தல் சிக்கல்களை மாதிரியாக்குவது எளிது. எடுத்துக்காட்டாக, தனிநபர்கள் ஒருவருக்கொருவர் வாங்கும் முடிவுகளை பாதிக்கும் என்று கருதப்படுகிறது என்று வைத்துக்கொள்வோம், மேலும் அவர்கள் ஒருவருக்கொருவர் எவ்வளவு வலுவாக செல்வாக்கு செலுத்துவார்கள் என்பது பற்றிய அறிவு வழங்கப்படுகிறது. வரைபடத்தின் ஒவ்வொரு விளிம்பிலும் ஒதுக்கப்பட்டுள்ள எடைகளால் செல்வாக்கை வடிவமைக்க முடியும். சில தனிநபர்களுக்கு இலவசமாக தயாரிப்புகள் வழங்கப்படும் சந்தைப்படுத்தல் மூலோபாயத்தின் விளைவுகளை கணிக்க முடியும், பின்னர் வருவாயை அதிகரிக்க, இலவச தயாரிப்புகளைப் பெற வேண்டிய தனிநபர்களின் உகந்த துணைக்குழு எது என்று கேளுங்கள்.</p>
+<p>இந்த சிக்கலின் முறையான வரையறை பின்வருமாறு:</p>
+<p>இதைக் கவனியுங்கள் <span class="math notranslate nohighlight">\(n\)</span>- முனை திருப்பிவிடப்படாத வரைபடம் <em>G = (V, E)</em> எங்கே <em>|V| = n</em> விளிம்பு எடையுடன் <span class="math notranslate nohighlight">\(w_{ij}&gt;0\)</span>, <span class="math notranslate nohighlight">\(w_{ij}=w_{ji}\)</span>, இதற்கு <span class="math notranslate nohighlight">\((i, j)\in E\)</span> இல். ஒரு வெட்டு அசல் தொகுப்பு V இன் பகிர்வாக இரண்டு துணைக்குழுக்களாக வரையறுக்கப்படுகிறது.உகந்ததாக்கப்பட வேண்டிய செலவுச் செயல்பாடு, இந்த வழக்கில் இரண்டு வெவ்வேறு துணைக்குழுக்களில் உள்ள புள்ளிகளை இணைக்கும் விளிம்புகளின் எடைகளின் கூட்டுத்தொகையாகும், <em>குறுக்கு</em> வெட்டு. ஒதுக்குவதன் மூலம் <span class="math notranslate nohighlight">\(x_i=0\)</span> அல்லது <span class="math notranslate nohighlight">\(x_i=1\)</span> ஒவ்வொரு முனைக்கும் <span class="math notranslate nohighlight">\(i\)</span>, ஒருவர் உலகளாவிய இலாப செயல்பாட்டை அதிகரிக்க முயற்சிக்கிறார் (இங்கே மற்றும் பின்வரும் சுருக்கங்களில் குறியீடுகள் 0,1 ,… N-1)</p>
 <div class="math notranslate nohighlight">
 \[\tilde{C}(\textbf{x}) = \sum_{i,j} w_{ij} x_i (1-x_j).\]</div>
 <p>In our simple marketing model, <span class="math notranslate nohighlight">\(w_{ij}\)</span> represents the probability that the person <span class="math notranslate nohighlight">\(j\)</span> will buy a product after <span class="math notranslate nohighlight">\(i\)</span> gets a free one. Note that the weights <span class="math notranslate nohighlight">\(w_{ij}\)</span> can in principle be greater than <span class="math notranslate nohighlight">\(1\)</span> (or even negative), corresponding to the case where the individual <span class="math notranslate nohighlight">\(j\)</span> will buy more than one product. Maximizing the total buying probability corresponds to maximizing the total future revenues. In the case where the profit probability will be greater than the
@@ -1404,9 +1402,9 @@ solution objective: 202.0
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Max-Cut and Traveling Salesman Problem</a><ul>
-<li><a class="reference internal" href="#Introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#Weighted-Max-Cut">Weighted Max-Cut</a></li>
+<li><a class="reference internal" href="#">மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை</a><ul>
+<li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a><ul>
+<li><a class="reference internal" href="#வெயிட்டட்-மேக்ஸ்-கட்">வெயிட்டட் மேக்ஸ்-கட்</a></li>
 <li><a class="reference internal" href="#Approximate-Universal-Quantum-Computing-for-Optimization-Problems">Approximate Universal Quantum Computing for Optimization Problems</a></li>
 <li><a class="reference internal" href="#Application-classes">Application classes</a></li>
 </ul>

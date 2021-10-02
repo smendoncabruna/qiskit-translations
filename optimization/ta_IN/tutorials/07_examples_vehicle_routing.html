@@ -38,7 +38,7 @@
     <link rel="index" title="அட்டவணை" href="../genindex.html" />
     <link rel="search" title="தேடு" href="../search.html" />
     <link rel="next" title="CVaR ஐப் பயன்படுத்தி மாறுபட்ட குவாண்டம் உகப்பாக்கலை மேம்படுத்துதல்" href="08_cvar_optimization.html" />
-    <link rel="prev" title="Max-Cut and Traveling Salesman Problem" href="06_examples_max_cut_and_tsp.html" /> 
+    <link rel="prev" title="மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை" href="06_examples_max_cut_and_tsp.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -488,86 +488,82 @@ div.rendered_html tbody tr:hover {
 <h1>வாகன வழித்தடம்<a class="headerlink" href="#வாகன-வழித்தடம்" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="முன்னுரை">
 <h2>முன்னுரை<a class="headerlink" href="#முன்னுரை" title="Permalink to this headline">¶</a></h2>
-<p>Logistics is a major industry, with some estimates valuing it at USD 8183 billion globally in 2015. Most service providers operate a number of vehicles (e.g., trucks and container ships), a number of depots, where the vehicles are based overnight, and serve a number of client locations with each vehicle during each day. There are many optimization and control problems that consider these parameters. Computationally, the key challenge is how to design routes from depots to a number of client
-locations and back to the depot, so as to minimize vehicle-miles traveled, time spent, or similar objective functions. In this notebook we formalize an idealized version of the problem and showcase its solution using the quantum approximate optimization approach of Farhi, Goldstone, and Gutmann (2014).</p>
+<p>தளவாடங்கள் ஒரு முக்கிய தொழிலாகும், சில மதிப்பீடுகள் 2015 ஆம் ஆண்டில் உலகளவில் 8183 பில்லியன் அமெரிக்க டாலராக மதிப்பிடப்பட்டுள்ளன. பெரும்பாலான சேவை வழங்குநர்கள் பல வாகனங்களை (எ.கா., லாரிகள் மற்றும் கொள்கலன் கப்பல்கள்), பல டிப்போக்களை இயக்குகின்றனர், அங்கு வாகனங்கள் ஒரே இரவில் அமைந்திருக்கின்றன, மேலும் சேவை செய்கின்றன ஒவ்வொரு நாளும் ஒவ்வொரு வாகனத்துடனும் பல வாடிக்கையாளர் இருப்பிடங்கள். இந்த அளவுருக்களைக் கருத்தில் கொள்ளும் பல தேர்வுமுறை மற்றும் கட்டுப்பாட்டு சிக்கல்கள் உள்ளன. கணக்கீட்டு ரீதியாக, முக்கிய சவால் என்னவென்றால், டிப்போக்களிலிருந்து பல கிளையன்ட் இருப்பிடங்களுக்கான பாதைகளை எவ்வாறு வடிவமைப்பது மற்றும் மீண்டும் டிப்போவுக்குச் செல்வது, இதனால் வாகன மைல்கள் பயணிப்பது, செலவழித்த நேரம் அல்லது இதே போன்ற புறநிலை செயல்பாடுகளை குறைத்தல். இந்த நோட்புக்கில், சிக்கலின் இலட்சியப்படுத்தப்பட்ட பதிப்பை நாங்கள் முறைப்படுத்துகிறோம் மற்றும் ஃபர்ஹி, கோல்ட்ஸ்டோன் மற்றும் குட்மேன் (2014) ஆகியவற்றின் குவாண்டம் தோராயமான தேர்வுமுறை அணுகுமுறையைப் பயன்படுத்தி அதன் தீர்வை வெளிப்படுத்துகிறோம்.</p>
 <p>நாங்கள் நிரூபிக்கும் ஒட்டுமொத்த பணிப்பாய்வு பின்வருமாறு:</p>
 <ol class="arabic simple">
-<li><p>establish the client locations. Normally, these would be available ahead of the day of deliveries from a database. In our use case, we generate these randomly.</p></li>
-<li><p>compute the pair-wise distances, travel times, or similar. In our case, we consider the Euclidean distance, “as the crow flies”, which is perhaps the simplest possible.</p></li>
-<li><p>compute the actual routes. This step is run twice, actually. First, we obtain a reference value by a run of a classical solver (IBM CPLEX) on the classical computer. Second, we run an alternative, hybrid algorithm partly on the quantum computer.</p></li>
+<li><p>வாடிக்கையாளர் இடங்களை நிறுவவும். பொதுவாக, இவை தரவுத்தளத்தில் இருந்து டெலிவரி செய்யப்படும் நாளுக்கு முன்னதாகவே கிடைக்கும். எங்கள் பயன்பாட்டு வழக்கில், நாங்கள் இதை தோராயமாக உருவாக்குகிறோம்.</p></li>
+<li><p>ஜோடி வாரியாக தூரங்கள், பயண நேரங்கள் அல்லது ஒத்த கணக்கிட. எங்கள் விஷயத்தில், நாம் யூக்ளிடியன் தூரத்தை, &quot;காகம் பறப்பது போல்&quot; கருதுகிறோம், இது ஒருவேளை மிகவும் எளிதானது.</p></li>
+<li><p>உண்மையான வழிகளைக் கணக்கிடுங்கள். இந்த படி உண்மையில் இரண்டு முறை இயக்கப்படுகிறது. முதலில், கிளாசிக்கல் கணினியில் கிளாசிக்கல் சொல்வர் (IBM CPLEX) மூலம் ஒரு குறிப்பு மதிப்பைப் பெறுகிறோம். இரண்டாவதாக, குவாண்டம் கணினியில் ஒரு மாற்று, கலப்பின வழிமுறையை இயக்குகிறோம்.</p></li>
 <li><p>visualization of the results. In our case, this is again a simplistic plot.</p></li>
 </ol>
-<p>In the following, we first explain the model, before we proceed with the installation of the pre-requisites and the data loading.</p>
+<p>பின்வருவனவற்றில், முன்-தேவைகளை நிறுவுதல் மற்றும் தரவை ஏற்றுவதற்கு முன் மாதிரியை முதலில் விளக்குகிறோம்.</p>
 </div>
 <div class="section" id="மாதிரி">
 <h2>மாதிரி<a class="headerlink" href="#மாதிரி" title="Permalink to this headline">¶</a></h2>
-<p>Mathematically speaking, the vehicle routing problem (VRP) is a combinatorial problem, wherein the best routes from a depot to a number of clients and back to the depot are sought, given a number of available vehicles. There are a number of formulations possible, extending a number of formulations of the traveling salesman problem [Applegate et al, 2006]. Here, we present a formulation known as MTZ [Miller, Tucker, Zemlin, 1960].</p>
-<p>Let <span class="math notranslate nohighlight">\(n\)</span> be the number of clients (indexed as <span class="math notranslate nohighlight">\(1,\dots,n\)</span>), and <span class="math notranslate nohighlight">\(K\)</span> be the number of available vehicles. Let <span class="math notranslate nohighlight">\(x_{ij} = \{0,1\}\)</span> be the binary decision variable which, if it is <span class="math notranslate nohighlight">\(1\)</span>, activates the segment from node <span class="math notranslate nohighlight">\(i\)</span> to node <span class="math notranslate nohighlight">\(j\)</span>. The node index runs from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, where <span class="math notranslate nohighlight">\(0\)</span> is (by convention) the depot. There are twice as many distinct decision variables as edges. For example, in a fully connected graph, there are <span class="math notranslate nohighlight">\(n(n+1)\)</span> binary
-decision variables.</p>
-<p>If two nodes <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> have a link from <span class="math notranslate nohighlight">\(i\)</span> to <span class="math notranslate nohighlight">\(j\)</span>, we write <span class="math notranslate nohighlight">\(i \sim j\)</span>. We also denote with <span class="math notranslate nohighlight">\(\delta(i)^+\)</span> the set of nodes to which <span class="math notranslate nohighlight">\(i\)</span> has a link, i.e., <span class="math notranslate nohighlight">\(j \in \delta(i)^+\)</span> if and only if <span class="math notranslate nohighlight">\(i \sim j\)</span>. Similarly, we denote with <span class="math notranslate nohighlight">\(\delta(i)^-\)</span> the set of nodes which are connected to <span class="math notranslate nohighlight">\(i\)</span>, in the sense that <span class="math notranslate nohighlight">\(j \in \delta(i)^-\)</span> if and only if <span class="math notranslate nohighlight">\(j \sim i\)</span>.</p>
-<p>In addition, we consider continuous variables, for all nodes <span class="math notranslate nohighlight">\(i = 1,\dots, n\)</span>, denoted <span class="math notranslate nohighlight">\(u_i\)</span>. These variables are needed in the MTZ formulation of the problem to eliminate sub-tours between clients.</p>
-<p>The VRP can be formulated as:</p>
+<p>கணித ரீதியாகப் பார்த்தால், வாகன ரூட்டிங் சிக்கல் (VRP) ஒரு கூட்டுப் பிரச்சினையாகும், இதில் ஒரு டெப்போவிலிருந்து பல வாடிக்கையாளர்களுக்கும், மீண்டும் டிப்போவிற்கும் சிறந்த வழிகள் தேடப்படுகின்றன, கிடைக்கக்கூடிய பல வாகனங்கள் கொடுக்கப்பட்டுள்ளன. பயண விற்பனையாளர் பிரச்சினையின் பல சூத்திரங்களை விரிவுபடுத்தும் பல சூத்திரங்கள் உள்ளன [ஆப்பிள்கேட் மற்றும் பலர், 2006]. இங்கே, MTZ [மில்லர், டக்கர், ஜெம்லின், 1960]. எனப்படும் ஒரு சூத்திரத்தை நாங்கள் முன்வைக்கிறோம்.</p>
+<p><span class="math notranslate nohighlight">\(n\)</span> வாடிக்கையாளர்களின் எண்ணிக்கையாக இருக்க வேண்டும் (indexed as <span class="math notranslate nohighlight">\(1,\dots,n\)</span>), மற்றும் <span class="math notranslate nohighlight">\(K\)</span> கிடைக்கக்கூடிய வாகனங்களின் எண்ணிக்கை. <span class="math notranslate nohighlight">\(x_{ij} = \{0,1\}\)</span> பைனரி முடிவு மாறியாக இருக்க வேண்டும், அது இருந்தால்: <span class="math notranslate nohighlight">\(1\)</span> , பிரிவை முனை: கணிதத்திலிருந்து செயல்படுத்துகிறது <span class="math notranslate nohighlight">\(i\)</span>. முனை குறியீடு <span class="math notranslate nohighlight">\(0\)</span> முதல் <span class="math notranslate nohighlight">\(n\)</span>, எங்கே <span class="math notranslate nohighlight">\(0\)</span> என்பது (மாநாட்டின் படி) டிப்போ ஆகும். விளிம்புகளை விட இரண்டு மடங்கு தனித்துவமான முடிவு மாறிகள் உள்ளன. எடுத்துக்காட்டாக, முழுமையாக இணைக்கப்பட்ட வரைபடத்தில், <span class="math notranslate nohighlight">\(n(n+1)\)</span> பைனரி முடிவு மாறிகள்.</p>
+<p>இரண்டு முனைகள் இருந்தால் <span class="math notranslate nohighlight">\(i\)</span> மற்றும் <span class="math notranslate nohighlight">\(j\)</span> முதல் <span class="math notranslate nohighlight">\(j\)</span>, நாங்கள் எழுதுகிறோம் <span class="math notranslate nohighlight">\(i \sim j\)</span>. <span class="math notranslate nohighlight">\(\delta(i)^+\)</span> எந்த முனைகளின் தொகுப்பு <span class="math notranslate nohighlight">\(i\)</span> ஒரு இணைப்பு உள்ளது, அதாவது, <span class="math notranslate nohighlight">\(j \in \delta(i)^+\)</span> என்றால் மற்றும் இருந்தால் மட்டுமே <span class="math notranslate nohighlight">\(i \sim j\)</span>. இதேபோல், <span class="math notranslate nohighlight">\(\delta(i)^-\)</span> உடன் இணைக்கப்பட்டுள்ள முனைகளின் தொகுப்பு <span class="math notranslate nohighlight">\(i\)</span>, அதாவது <span class="math notranslate nohighlight">\(j \in \delta(i)^-\)</span> என்றால் மற்றும் மட்டும் என்றால் <span class="math notranslate nohighlight">\(j \sim i\)</span>.</p>
+<p>கூடுதலாக, எல்லா முனைகளுக்கும் தொடர்ச்சியான மாறிகளைக் கருதுகிறோம் <span class="math notranslate nohighlight">\(i = 1,\dots, n\)</span>, குறிக்கப்படுகிறது <span class="math notranslate nohighlight">\(u_i\)</span> வாடிக்கையாளர்களிடையே துணை சுற்றுப்பயணங்களை அகற்ற சிக்கலின் MTZ வடிவமைப்பில் இந்த மாறிகள் தேவைப்படுகின்றன.</p>
+<p>VRP இவ்வாறு வடிவமைக்கப்படலாம்:</p>
 <div class="math notranslate nohighlight">
 \[(VRP) \quad  f = \min_{\{x_{ij}\}_{i\sim j}\in \{0,1\}, \{u_i\}_{i=1,\dots,n}\in \mathbb{R}} \quad \sum_{i \sim j} w_{ij} x_{ij}\]</div>
-<p>subject to the node-visiting constraint:</p>
+<p>முனை-வருகை தடைக்கு உட்பட்டது:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{j \in \delta(i)^+} x_{ij} = 1, \,\sum_{j \in \delta(i)^-} x_{ji} = 1,\, \forall i \in \{1,\dots,n\},\]</div>
-<p>the depot-visiting constraints:</p>
+<p>டிப்போ-வருகை கட்டுப்பாடுகள்:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{i \in \delta(0)^+} x_{0i} = K, \, \sum_{j \in \delta(0)^+} x_{j0} = K,\]</div>
-<p>and the sub-tour elimination constraints:</p>
+<p>மற்றும் சுற்றுப்பயணம் நீக்குவதற்கான தடைகள்:</p>
 <div class="math notranslate nohighlight">
 \[u_i - u_j + Q x_{ij} \leq Q-q_j, \, \forall i \sim j, \,i ,j \neq 0, \quad q_i \leq u_i \leq Q,\, \forall i, i \neq 0.\]</div>
-<p>In particular, - The cost function is linear in the cost functions and weighs the different arches based on a positive weight <span class="math notranslate nohighlight">\(w_{ij}&gt;0\)</span> (typically the distance between node <span class="math notranslate nohighlight">\(i\)</span> and node <span class="math notranslate nohighlight">\(j\)</span>); - The first set of constraints enforce that from and to every client, only one link is allowed; - The second set of constraints enforce that from and to the depot, exactly <span class="math notranslate nohighlight">\(K\)</span> links are allowed; - The third set of constraints enforce the sub-tour elimination constraints and are
-bounds on <span class="math notranslate nohighlight">\(u_i\)</span>, with <span class="math notranslate nohighlight">\(Q&gt;q_j&gt;0\)</span>, and <span class="math notranslate nohighlight">\(Q,q_i \in \mathbb{R}\)</span>.</p>
+<p>குறிப்பாக, - செலவுச் செயல்பாடு செலவுச் செயல்பாடுகளில் நேர்கோட்டு மற்றும் நேர்மறையான எடையின் அடிப்படையில் வெவ்வேறு வளைவுகளை எடைபோடுகிறது <span class="math notranslate nohighlight">\(w_{ij}&gt;0\)</span> (பொதுவாக முனை <span class="math notranslate nohighlight">\(i\)</span> மற்றும் முனை <span class="math notranslate nohighlight">\(j\)</span> இடையிலான தூரம்); - முதல் கிளையண்டுகள் ஒவ்வொரு வாடிக்கையாளரிடமிருந்தும், ஒரு இணைப்பு மட்டுமே அனுமதிக்கப்படுவதை அமல்படுத்துகின்றன; - இரண்டாவது கட்டுப்பாடுகள் டிப்போவிலிருந்து மற்றும் அதைச் சரியாகச் செயல்படுத்துகின்றன <span class="math notranslate nohighlight">\(K\)</span> இணைப்புகள் அனுமதிக்கப்படுகின்றன; - மூன்றாவது தொகுப்பு கட்டுப்பாடுகள் துணை-சுற்றுப்பயண நீக்குதல் தடைகளைச் செயல்படுத்துகின்றன, மேலும் அவை <span class="math notranslate nohighlight">\(u_i\)</span>, உடன் <span class="math notranslate nohighlight">\(Q&gt;q_j&gt;0\)</span>, மற்றும் <span class="math notranslate nohighlight">\(Q,q_i \in \mathbb{R}\)</span>.</p>
 </div>
-<div class="section" id="Classical-solution">
-<h2>Classical solution<a class="headerlink" href="#Classical-solution" title="Permalink to this headline">¶</a></h2>
-<p>We can solve the VRP classically, e.g., by using CPLEX. CPLEX uses a branch-and-bound-and-cut method to find an approximate solution of the VRP, which, in this formulation, is a mixed-integer linear program (MILP). For the sake of notation, we pack the decision variables in one vector as</p>
+<div class="section" id="கிளாசிக்கல்-தீர்வு">
+<h2>கிளாசிக்கல் தீர்வு<a class="headerlink" href="#கிளாசிக்கல்-தீர்வு" title="Permalink to this headline">¶</a></h2>
+<p>CPLEX பயன்படுத்துவதன் மூலம் VRP யை கிளாசிக்கலாக தீர்க்க முடியும், எ.கா. CPLEX VRP யின் தோராயமான தீர்வைக் கண்டுபிடிக்க ஒரு கிளை மற்றும் பிணைப்பு மற்றும் வெட்டு முறையைப் பயன்படுத்துகிறது, இது இந்த சூத்திரத்தில், ஒரு கலப்பு-முழு எண் நேரியல் நிரல் (MILP) ஆகும். குறியீட்டின் பொருட்டு, ஒரு திசையனில் முடிவு மாறிகள் பேக் செய்கிறோம்</p>
 <div class="math notranslate nohighlight">
 \[{\bf z} = [x_{01},x_{02},\ldots,x_{10}, x_{12},\ldots,x_{n(n-1)}]^T,\]</div>
-<p>wherein <span class="math notranslate nohighlight">\({\bf z} \in \{0,1\}^N\)</span>, with <span class="math notranslate nohighlight">\(N = n (n+1)\)</span>. So the dimension of the problem scales quadratically with the number of nodes. Let us denote the optimal solution by <span class="math notranslate nohighlight">\({\bf z}^*\)</span>, and the associated optimal cost <span class="math notranslate nohighlight">\(f^*\)</span>.</p>
+<p>இதில் <span class="math notranslate nohighlight">\({\bf z} \in \{0,1\}^N\)</span> , உடன் <span class="math notranslate nohighlight">\(N = n (n+1)\)</span>. எனவே சிக்கலின் பரிமாணம் முனைகளின் எண்ணிக்கையுடன் இருபடி அளவிடுகிறது. இதன் மூலம் உகந்த தீர்வைக் குறிப்பிடுவோம் <span class="math notranslate nohighlight">\({\bf z}^*\)</span>, மற்றும் அதனுடன் தொடர்புடைய உகந்த செலவு: <span class="math notranslate nohighlight">\(f^*\)</span>.</p>
 </div>
-<div class="section" id="Quantum-solution">
-<h2>Quantum solution<a class="headerlink" href="#Quantum-solution" title="Permalink to this headline">¶</a></h2>
-<p>Here, we demonstrate an approach that combines classical and quantum computing steps, following the quantum approximate optimization approach of Farhi, Goldstone, and Gutmann (2014). In particular, we use the variational quantum eigensolver (VQE). We stress that given the use of limited depth of the quantum circuits employed (variational forms), it is hard to discuss the speed-up of the algorithm, as the solution obtained is heuristic in nature. At the same time, due to the nature and importance
-of the target problems, it is worth investigating heuristic approaches, which may be worthwhile for some problem classes.</p>
-<p>Following [5], the algorithm can be summarized as follows:</p>
+<div class="section" id="குவாண்டம்-தீர்வு">
+<h2>குவாண்டம் தீர்வு<a class="headerlink" href="#குவாண்டம்-தீர்வு" title="Permalink to this headline">¶</a></h2>
+<p>இங்கே, ஃபார்ஹி, கோல்ட்ஸ்டோன் மற்றும் குட்மேன் (2014) ஆகியவற்றின் குவாண்டம் தோராயமான தேர்வுமுறை அணுகுமுறையைப் பின்பற்றி, கிளாசிக்கல் மற்றும் குவாண்டம் கம்ப்யூட்டிங் படிகளை ஒருங்கிணைக்கும் ஒரு அணுகுமுறையை நாங்கள் நிரூபிக்கிறோம். குறிப்பாக, நாம் மாறுபாடு குவாண்டம் ஐஜென்சால்வர் (VQE). பயன்படுத்தப்படும் குவாண்டம் சுற்றுகளின் வரையறுக்கப்பட்ட ஆழத்தைப் பயன்படுத்துவதால் (மாறுபாடு வடிவங்கள்), அல்காரிதத்தின் வேகத்தைப் பற்றி விவாதிப்பது கடினம், ஏனெனில் பெறப்பட்ட தீர்வு இயற்கையில் ஹியூரிஸ்டிக் ஆகும். அதே நேரத்தில், இலக்கு பிரச்சினைகளின் தன்மை மற்றும் முக்கியத்துவம் காரணமாக, சில சிக்கல் வகுப்புகளுக்கு பயனுள்ள துரபூர்வ அணுகுமுறைகளை ஆராய்வது மதிப்புக்குரியது.</p>
+<p>[5] ஐத் தொடர்ந்து, வழிமுறையை பின்வருமாறு சுருக்கலாம்:</p>
 <ul class="simple">
-<li><p>Preparation steps:</p>
+<li><p>தயாரிப்பு படிகள்:</p>
 <ul>
-<li><p>Transform the combinatorial problem into a binary polynomial optimization problem with equality constraints only;</p></li>
-<li><p>Map the resulting problem into an Ising Hamiltonian (<span class="math notranslate nohighlight">\(H\)</span>) for variables <span class="math notranslate nohighlight">\({\bf z}\)</span> and basis <span class="math notranslate nohighlight">\(Z\)</span>, via penalty methods if necessary;</p></li>
-<li><p>Choose the depth of the quantum circuit <span class="math notranslate nohighlight">\(m\)</span>. Note that the depth can be modified adaptively.</p></li>
-<li><p>Choose a set of controls <span class="math notranslate nohighlight">\(\theta\)</span> and make a trial function <span class="math notranslate nohighlight">\(\big|\psi(\boldsymbol\theta)\rangle\)</span>, built using a quantum circuit made of C-Phase gates and single-qubit Y rotations, parameterized by the components of <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
+<li><p>ஒருங்கிணைந்த பிரச்சனையை சமநிலை கட்டுப்பாடுகளுடன் மட்டுமே பைனரி பல்லுறுப்பு தேர்வுமுறை பிரச்சனையாக மாற்றவும்;</p></li>
+<li><p>இதன் விளைவாக வரும் சிக்கலை ஐசிங் ஹாமில்டோனியனாக வரைபடமாக்குங்கள் (<span class="math notranslate nohighlight">\(H\)</span>) மாறிகளுக்கு <span class="math notranslate nohighlight">\({\bf z}\)</span> மற்றும் அடிப்படை <span class="math notranslate nohighlight">\(Z\)</span>, தேவைப்பட்டால் அபராதம் முறைகள் மூலம்;</p></li>
+<li><p>குவாண்டம் சுற்றுகளின் ஆழத்தைத் தேர்வுசெய்க <span class="math notranslate nohighlight">\(m\)</span>. ஆழத்தை தகவமைப்புக்கு மாற்றியமைக்க முடியும் என்பதை நினைவில் கொள்க.</p></li>
+<li><p>கட்டுப்பாடுகளின் தொகுப்பைத் தேர்ந்தெடுக்கவும் <span class="math notranslate nohighlight">\(\theta\)</span> மற்றும் ஒரு சோதனை செயல்பாடு <span class="math notranslate nohighlight">\(\big|\psi(\boldsymbol\theta)\rangle\)</span>,சி-கட்ட கேட்ஸ் மற்றும் ஒற்றை-க்யூபிட் Y சுழற்சிகளால் செய்யப்பட்ட குவாண்டம் சர்க்யூட்டைப் பயன்படுத்தி கட்டப்பட்டது <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span>.</p></li>
 </ul>
 </li>
-<li><p>Algorithm steps:</p>
+<li><p>வழிமுறை படிகள்:</p>
 <ul>
-<li><p>Evaluate <span class="math notranslate nohighlight">\(C(\boldsymbol\theta) = \langle\psi(\boldsymbol\theta)\big|H\big|\psi(\boldsymbol\theta)\rangle\)</span> by sampling the outcome of the circuit in the Z-basis and adding the expectation values of the individual Ising terms together. In general, different control points around <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> have to be estimated, depending on the classical optimizer chosen.</p></li>
-<li><p>Use a classical optimizer to choose a new set of controls.</p></li>
-<li><p>Continue until <span class="math notranslate nohighlight">\(C(\boldsymbol\theta)\)</span> reaches a minimum, close enough to the solution <span class="math notranslate nohighlight">\(\boldsymbol\theta^*\)</span>.</p></li>
-<li><p>Use the last <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> to generate a final set of samples from the distribution <span class="math notranslate nohighlight">\(\Big|\langle z_i\big|\psi(\boldsymbol\theta)\rangle\Big|^2\;\forall i\)</span> to obtain the answer.</p></li>
+<li><p>மதிப்பீடு <span class="math notranslate nohighlight">\(C(\boldsymbol\theta) = \langle\psi(\boldsymbol\theta)\big|H\big|\psi(\boldsymbol\theta)\rangle\)</span> சுற்றுவட்டத்தின் மாதிரியை மாதிரியாகக் கொண்டு Z- அடிப்படை மற்றும் தனிப்பட்ட ஐசிங் சொற்களின் எதிர்பார்ப்பு மதிப்புகளை ஒன்றாகச் சேர்ப்பது. பொதுவாக, வெவ்வேறு கட்டுப்பாட்டு புள்ளிகள் <span class="math notranslate nohighlight">\(\boldsymbol\theta\)</span> மதிப்பிடப்பட வேண்டும், இது தேர்ந்தெடுக்கப்பட்ட கிளாசிக்கல் ஆப்டிமைசரைப் பொறுத்து.</p></li>
+<li><p>புதிய கட்டுப்பாடுகளின் தொகுப்பைத் தேர்வுசெய்ய கிளாசிக்கல் ஆப்டிமைசரைப் பயன்படுத்தவும்.</p></li>
+<li><p><span class="math notranslate nohighlight">\(C(\boldsymbol\theta)\)</span> குறைந்தபட்சத்தை அடையும் வரை தொடரவும், தீர்வுக்கு போதுமானதாக இருக்கிறது <span class="math notranslate nohighlight">\(\boldsymbol\theta^*\)</span>.</p></li>
+<li><p>விநியோகத்திலிருந்து இறுதி மாதிரிகளை உருவாக்க கடைசி <span class="math notranslate nohighlight">\(\boldsymbol \theta\)</span> ஐப் பயன்படுத்தவும் <span class="math notranslate nohighlight">\(\Big|\langle z_i\big|\psi(\boldsymbol\theta)\rangle\Big|^2\;\forall i\)</span> பதிலைப் பெற.</p></li>
 </ul>
 </li>
 </ul>
-<p>There are many parameters throughout, notably the choice of the trial wavefunction. Below, we consider:</p>
+<p>முழுவதும் பல அளவுருக்கள் உள்ளன, குறிப்பாக சோதனை அலை செயல்பாட்டின் தேர்வு. கீழே, நாங்கள் கருதுகிறோம்:</p>
 <div class="math notranslate nohighlight">
 \[\big|\psi(\theta)\rangle = [U_\mathrm{single}(\boldsymbol\theta) U_\mathrm{entangler}]^m \big|+\rangle\]</div>
-<p>where <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> is a collection of C-Phase gates (fully-entangling gates), and <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^N Y(\theta_{i})\)</span>, where <span class="math notranslate nohighlight">\(N\)</span> is the number of qubits and <span class="math notranslate nohighlight">\(m\)</span> is the depth of the quantum circuit.</p>
-<div class="section" id="Construct-the-Ising-Hamiltonian">
-<h3>Construct the Ising Hamiltonian<a class="headerlink" href="#Construct-the-Ising-Hamiltonian" title="Permalink to this headline">¶</a></h3>
-<p>From <span class="math notranslate nohighlight">\(VRP\)</span> one can construct a binary polynomial optimization with equality constraints only by considering cases in which <span class="math notranslate nohighlight">\(K=n-1\)</span>. In these cases the sub-tour elimination constraints are not necessary and the problem is only on the variable <span class="math notranslate nohighlight">\({\bf z}\)</span>. In particular, we can write an augmented Lagrangian as</p>
+<p>எங்கே <span class="math notranslate nohighlight">\(U_\mathrm{entangler}\)</span> என்பது சி-கட்ட வாயில்களின் தொகுப்பு (முழுமையாக சிக்க வைக்கும் வாயில்கள்), மற்றும் <span class="math notranslate nohighlight">\(U_\mathrm{single}(\theta) = \prod_{i=1}^N Y(\theta_{i})\)</span>, எங்கே <span class="math notranslate nohighlight">\(N\)</span> என்பது குவிட்களின் எண்ணிக்கை மற்றும் <span class="math notranslate nohighlight">\(m\)</span> என்பது குவாண்டம் சுற்றுகளின் ஆழம்.</p>
+<div class="section" id="ஐசிங்-ஹாமில்டோனியன்-உருவாக்கு">
+<h3>ஐசிங் ஹாமில்டோனியன் உருவாக்கு<a class="headerlink" href="#ஐசிங்-ஹாமில்டோனியன்-உருவாக்கு" title="Permalink to this headline">¶</a></h3>
+<p>இருந்து <span class="math notranslate nohighlight">\(VRP\)</span> ஒருவர் பைனரி பல்லுறுப்புறுப்பு தேர்வுமுறையை சமத்துவக் கட்டுப்பாடுகளுடன் உருவாக்க முடியும்: இதில் கணிதத்தை கருத்தில் கொண்டு மட்டுமே <span class="math notranslate nohighlight">\(K=n-1\)</span>. இந்த சந்தர்ப்பங்களில் துணை-சுற்று நீக்குதல் கட்டுப்பாடுகள் தேவையில்லை மற்றும் சிக்கல் மாறியில் மட்டுமே உள்ளது <span class="math notranslate nohighlight">\({\bf z}\)</span>. குறிப்பாக, நாம் ஒரு வளர்ந்த லக்ராங்கியன் என எழுதலாம்</p>
 <div class="math notranslate nohighlight">
 \[(IH) \quad H = \sum_{i \sim j} w_{ij} x_{ij}  + A \sum_{i \in \{1,\dots,n\}} \Big(\sum_{j \in \delta(i)^+} x_{ij} - 1\Big)^2 + A \sum_{i \in \{1,\dots,n\}}\Big(\sum_{j \in \delta(i)^-} x_{ji} - 1\Big)^2 +A \Big(\sum_{i \in \delta(0)^+} x_{0i} - K\Big)^2 + A\Big(\sum_{j \in \delta(0)^+} x_{j0} - K\Big)^2\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> is a big enough parameter.</p>
+<p>எங்கே <span class="math notranslate nohighlight">\(A\)</span> என்பது ஒரு பெரிய அளவுரு.</p>
 </div>
-<div class="section" id="From-Hamiltonian-to-QP-formulation">
-<h3>From Hamiltonian to QP formulation<a class="headerlink" href="#From-Hamiltonian-to-QP-formulation" title="Permalink to this headline">¶</a></h3>
-<p>In the vector <span class="math notranslate nohighlight">\({\bf z}\)</span>, and for a complete graph (<span class="math notranslate nohighlight">\(\delta(i)^+ = \delta(i)^- = \{0,1,\dots,i-1,i+1,\dots,n\}\)</span>), <span class="math notranslate nohighlight">\(H\)</span> can be written as follows.</p>
+<div class="section" id="ஹாமில்டோனியன்-இருந்து-QP-வடிவமைப்பில்-இருந்து">
+<h3>ஹாமில்டோனியன் இருந்து QP வடிவமைப்பில் இருந்து<a class="headerlink" href="#ஹாமில்டோனியன்-இருந்து-QP-வடிவமைப்பில்-இருந்து" title="Permalink to this headline">¶</a></h3>
+<p>திசையனில் <span class="math notranslate nohighlight">\({\bf z}\)</span>, மற்றும் ஒரு முழுமையான வரைபடத்திற்காக (<span class="math notranslate nohighlight">\(\delta(i)^+ = \delta(i)^- = \{0,1,\dots,i-1,i+1,\dots,n\}\)</span>) , <span class="math notranslate nohighlight">\(H\)</span> ஐ பின்வருமாறு எழுதலாம்.</p>
 <div class="math notranslate nohighlight">
 \[\min_{{\bf z}\in \{0,1\}^{n(n+1)}} {\bf w}^T {\bf z}  + A \sum_{i \in \{1,\dots,n\}} \Big({\bf e}_i \otimes {\bf 1}_n^T {\bf z} - 1\Big)^2 + A \sum_{i \in \{1,\dots,n\}}\Big({\bf v}_i^T {\bf z} - 1\Big)^2 + A \Big(({\bf e}_0 \otimes {\bf 1}_n)^T{\bf z} - K\Big)^2 + A\Big({\bf v}_0^T{\bf z} - K\Big)^2.\]</div>
-<p>That is:</p>
+<p>அதாவது:</p>
 <div class="math notranslate nohighlight">
 \[\min_{\bf z\in \{0,1\}^{n(n+1)}} \bf z^T {\bf Q} \bf z + {\bf g}^T \bf z + c,\]</div>
 <p>Where: first term:</p>
@@ -582,15 +578,15 @@ of the target problems, it is worth investigating heuristic approaches, which ma
 <p>The QP formulation of the Ising Hamiltonian is ready for the use of VQE. We will solve the QP using optimization stack available in Qiskit.</p>
 </div>
 </div>
-<div class="section" id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="குறிப்புகள்">
+<h2>குறிப்புகள்<a class="headerlink" href="#குறிப்புகள்" title="Permalink to this headline">¶</a></h2>
 <p>[1] E. Farhi, J. Goldstone, S. Gutmann e-print arXiv 1411.4028, 2014</p>
 <p>[2] <a class="reference internal" href="06_examples_max_cut_and_tsp.html"><span class="doc">Max-Cut and Traveling Salesman Problem</span></a></p>
 <p>[3] C. E. Miller, E. W. Tucker, and R. A. Zemlin (1960). “Integer Programming Formulations and Travelling Salesman Problems”. J. ACM. 7: 326–329. doi:10.1145/321043.321046.</p>
 <p>[4] D. L. Applegate, R. M. Bixby, V. Chvátal, and W. J. Cook (2006). The Traveling Salesman Problem. Princeton University Press, ISBN 978-0-691-12993-8.</p>
 </div>
-<div class="section" id="Initialization">
-<h2>Initialization<a class="headerlink" href="#Initialization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="துவக்கம்">
+<h2>துவக்கம்<a class="headerlink" href="#துவக்கம்" title="Permalink to this headline">¶</a></h2>
 <p>First of all we load all the packages that we need: - Python 3.6 or greater is required; - CPLEX 12.8 or greater is required for the classical computations; - Latest Qiskit is required for the quantum computations.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -1137,7 +1133,7 @@ of the ILP. Even within the VQE, one may provide stronger guarantees, for specif
         <a href="08_cvar_optimization.html" class="btn btn-neutral float-right" title="CVaR ஐப் பயன்படுத்தி மாறுபட்ட குவாண்டம் உகப்பாக்கலை மேம்படுத்துதல்" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="06_examples_max_cut_and_tsp.html" class="btn btn-neutral" title="Max-Cut and Traveling Salesman Problem" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="06_examples_max_cut_and_tsp.html" class="btn btn-neutral" title="மேக்ஸ்-கட் மற்றும் பயண விற்பனையாளர் பிரச்சனை" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -1172,14 +1168,14 @@ of the ILP. Even within the VQE, one may provide stronger guarantees, for specif
 <li><a class="reference internal" href="#">வாகன வழித்தடம்</a><ul>
 <li><a class="reference internal" href="#முன்னுரை">முன்னுரை</a></li>
 <li><a class="reference internal" href="#மாதிரி">மாதிரி</a></li>
-<li><a class="reference internal" href="#Classical-solution">Classical solution</a></li>
-<li><a class="reference internal" href="#Quantum-solution">Quantum solution</a><ul>
-<li><a class="reference internal" href="#Construct-the-Ising-Hamiltonian">Construct the Ising Hamiltonian</a></li>
-<li><a class="reference internal" href="#From-Hamiltonian-to-QP-formulation">From Hamiltonian to QP formulation</a></li>
+<li><a class="reference internal" href="#கிளாசிக்கல்-தீர்வு">கிளாசிக்கல் தீர்வு</a></li>
+<li><a class="reference internal" href="#குவாண்டம்-தீர்வு">குவாண்டம் தீர்வு</a><ul>
+<li><a class="reference internal" href="#ஐசிங்-ஹாமில்டோனியன்-உருவாக்கு">ஐசிங் ஹாமில்டோனியன் உருவாக்கு</a></li>
+<li><a class="reference internal" href="#ஹாமில்டோனியன்-இருந்து-QP-வடிவமைப்பில்-இருந்து">ஹாமில்டோனியன் இருந்து QP வடிவமைப்பில் இருந்து</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#References">References</a></li>
-<li><a class="reference internal" href="#Initialization">Initialization</a></li>
+<li><a class="reference internal" href="#குறிப்புகள்">குறிப்புகள்</a></li>
+<li><a class="reference internal" href="#துவக்கம்">துவக்கம்</a></li>
 <li><a class="reference internal" href="#Classical-solution-using-IBM-ILOG-CPLEX">Classical solution using IBM ILOG CPLEX</a></li>
 <li><a class="reference internal" href="#Quantum-solution-from-the-ground-up">Quantum solution from the ground up</a><ul>
 <li><a class="reference internal" href="#Step-1">Step 1</a></li>
