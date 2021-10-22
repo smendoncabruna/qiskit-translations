@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>பல்ஸ் அட்டவணை உருவாக்குதல் &mdash; Qiskit 0.30.1 documentation</title>
+  <title>பல்ஸ் அட்டவணை உருவாக்குதல் &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../../genindex.html" />
     <link rel="search" title="தேடல்" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -624,8 +626,8 @@ Schedule(, name=&#34;my_example&#34;)
 <p>ஒவ்வொரு வழிமுறை வகை அதன் தனிப்பட்ட அமைப்புகளைக் கொண்டது. நீங்கள் மேலே பார்க்க முடியும், அவர்கள் ஒவ்வொன்றும் குறைந்தபட்சம் ஒரு <code class="docutils literal notranslate"><span class="pre">Channel</span></code> குறிப்பிடுவது எங்கே பயன்பாடு செய்யப்படும்.</p>
 <p><strong>Channels</strong> என்பது கட்டுப்பாட்டு வன்பொருளிலிருந்து குவாண்டம் சில்லுக்கான சமிக்ஞை வரிகளுக்கான லேபிள்கள்.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">DriveChannel</span></code>கள் பொதுவாக <em>driving</em> ஒற்றை qubit சுழற்சிகளுக்குப் பயன்படுத்தப்படுகின்றன,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code>கள் பொதுவாக multi-qubit கேட்கள் அல்லது ட்யூனபிள் க்யூபிட்களுக்கான கூடுதல் டிரைவ் கோடுகள்,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DriveChannel</span></code>கள் பொதுவாக <em>driving</em> ஒற்றை க்யூபிட் சுழற்சிகளுக்குப் பயன்படுத்தப்படுகின்றன,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ControlChannel</span></code>கள் பொதுவாக மல்டி-க்யூபிட் கேட்கள் அல்லது ட்யூனபிள் க்யூபிட்களுக்கான கூடுதல் டிரைவ் கோடுகள்,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MeasureChannel</span></code>கள் வாசிப்பைத் தூண்டும் பல்ஸ்களைக் கடத்துவதற்கு குறிப்பிட்டவை, மற்றும்</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AcquireChannel</span></code>கள் ரீட்அவுட் சிக்னல்களை சேகரிக்கும் டிஜிட்டலைசர்களைத் தூண்டுவதற்குப் பயன்படுத்தப்படுகின்றன.</p></li>
 </ul>
@@ -696,7 +698,7 @@ Schedule(, name=&#34;my_example&#34;)
 <section id="பல்ஸ்கள்">
 <h3>பல்ஸ்கள்<a class="headerlink" href="#பல்ஸ்கள்" title="Permalink to this headline">¶</a></h3>
 <p>ஒரு <code class="docutils literal notranslate"><span class="pre">Pulse</span></code> ஒரு தன்னிச்சையான பல்ஸ் <em>envelope</em> ஐக் குறிக்கிறது. வெளியீட்டு அலைவடிவத்தின் பண்பேற்றம் அதிர்வெண் மற்றும் கட்டம் <code class="docutils literal notranslate"><span class="pre">set_frequency</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">shift_phase</span></code> அறிவுறுத்தல்களால் கட்டுப்படுத்தப்படுகின்றன, அவை அடுத்ததாக நாம் காண்போம்.</p>
-<p>கீழேயுள்ள படம் அவை ஏன் தனித்தனியாக குறிப்பிடப்படுகின்றன என்பதற்கான சில உள்ளுணர்வை வழங்கக்கூடும். ஒரு பொதுவான ஆய்வக கருவியான தன்னிச்சையான அலைவடிவ ஜெனரேட்டருக்கு (AWG) உள்ளீடாக அவற்றின் உறைகளை விவரிக்கும் பருப்புகளைப் பற்றி சிந்தியுங்கள் - இது இடது படத்தில் சித்தரிக்கப்பட்டுள்ளது. வரையறுக்கப்பட்ட மாதிரி விகிதம் சமிக்ஞையை வேறுபடுத்துகிறது என்பதைக் கவனியுங்கள். AWG ஆல் உருவாக்கப்படும் சமிக்ஞை தொடர்ச்சியான சைன் அலை ஜெனரேட்டருடன் கலக்கப்படலாம். அதன் வெளியீட்டின் அதிர்வெண் சைன் அலை ஜெனரேட்டருக்கான வழிமுறைகளால் கட்டுப்படுத்தப்படுகிறது; நடுத்தர படத்தைப் பார்க்கவும். இறுதியாக, குவிட்டிற்கு அனுப்பப்படும் சமிக்ஞை கீழே உள்ள படத்தின் வலது பக்கத்தால் நிரூபிக்கப்படுகிறது.</p>
+<p>கீழேயுள்ள படம் அவை ஏன் தனித்தனியாக குறிப்பிடப்படுகின்றன என்பதற்கான சில உள்ளுணர்வை வழங்கக்கூடும். ஒரு பொதுவான ஆய்வக கருவியான தன்னிச்சையான அலைவடிவ ஜெனரேட்டருக்கு (AWG) உள்ளீடாக அவற்றின் உறைகளை விவரிக்கும் பருப்புகளைப் பற்றி சிந்தியுங்கள் - இது இடது படத்தில் சித்தரிக்கப்பட்டுள்ளது. வரையறுக்கப்பட்ட மாதிரி விகிதம் சமிக்ஞையை வேறுபடுத்துகிறது என்பதைக் கவனியுங்கள். AWG ஆல் உருவாக்கப்படும் சமிக்ஞை தொடர்ச்சியான சைன் அலை ஜெனரேட்டருடன் கலக்கப்படலாம். அதன் வெளியீட்டின் அதிர்வெண் சைன் அலை ஜெனரேட்டருக்கான வழிமுறைகளால் கட்டுப்படுத்தப்படுகிறது; நடுத்தர படத்தைப் பார்க்கவும். இறுதியாக, க்யூபிட்டிற்கு அனுப்பப்படும் சமிக்ஞை கீழே உள்ள படத்தின் வலது பக்கத்தால் நிரூபிக்கப்படுகிறது.</p>
 <p><strong>குறிப்பு</strong>: வன்பொருள் பிற வழிகளில் செயல்படுத்தப்படலாம், ஆனால் நாம் வழிமுறைகளை தனித்தனியாக வைத்திருந்தால், பண்பேற்றம் அதிர்வெண்ணின் மதிப்பு போன்ற வெளிப்படையான தகவல்களை இழப்பதைத் தவிர்க்கிறோம்.</p>
 <p><img alt="alt text" src="../../_images/pulse_modulation.png" /></p>
 <p>பல்ஸ் வகைகளை உருவாக்குவதற்கு நமக்குப் பல முறைகள் உள்ளன. Qiskit Pulse -க்குள் உள்ள எங்கள் <code class="docutils literal notranslate"><span class="pre">library</span></code>, <code class="docutils literal notranslate"><span class="pre">Pulse</span></code>களை உருவாக்குவதற்கான பயனுள்ள முறைகளைக் கொண்டுள்ளது. உதாரணமாக ஒரு எளிய காஸியன் பல்ஸ் - ஒரு மாதிரி காஸியன் செயல்பாட்டால் விவரிக்கப்பட்டுள்ள உறை கொண்ட ஒரு பல்ஸ். வீச்சு 1, நிலையான விலகல் <span class="math notranslate nohighlight">\(\sigma\)</span> of 10 மற்றும் 128 மாதிரி புள்ளிகளை நாம் தன்னிச்சையாகத் தேர்வு செய்கிறோம்.</p>
@@ -741,7 +743,7 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="மாதிரிகளால்-விவரித்த-பல்ஸ்-அலைவடிவங்கள்">
 <h4>மாதிரிகளால் விவரித்த பல்ஸ் அலைவடிவங்கள்<a class="headerlink" href="#மாதிரிகளால்-விவரித்த-பல்ஸ்-அலைவடிவங்கள்" title="Permalink to this headline">¶</a></h4>
-<p>ஒரு <code class="docutils literal notranslate"><span class="pre">Waveform</span></code> என்பது நேர-வரிசைப்படுத்தப்பட்ட சிக்கலான பெருக்கங்கள் அல்லது <em>மாதிரிகள்</em> என குறிப்பிடப்படும் பல்ஸ் சிக்னலாகும். ஒவ்வொரு மாதிரியும் ஒரு சுழற்சிக்காக இயக்கப்படுகிறது, இது ஒரு பின்தளத்தில் தீர்மானிக்கப்படும் <code class="docutils literal notranslate"><span class="pre">dt</span></code>. எங்கள் திட்டத்தின் நிகழ்நேர இயக்கவியல் பற்றி அறிய விரும்பினால், <code class="docutils literal notranslate"><span class="pre">dt</span></code> இன் மதிப்பை நாம் அறிந்து கொள்ள வேண்டும். ஒரு (பூஜ்ஜிய-குறியீட்டு) <span class="math notranslate nohighlight">\(i^{th}\)</span> மாதிரியானது, நேரம் <code class="docutils literal notranslate"><span class="pre">i*dt</span></code> முதல் <code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">+</span> <span class="pre">1)*dt</span></code> வரை, qubit அதிர்வெண்ணால் மாற்றியமைக்கப்படும்.</p>
+<p>ஒரு <code class="docutils literal notranslate"><span class="pre">Waveform</span></code> என்பது நேர-வரிசைப்படுத்தப்பட்ட சிக்கலான பெருக்கங்கள் அல்லது <em>மாதிரிகள்</em> என குறிப்பிடப்படும் பல்ஸ் சிக்னலாகும். ஒவ்வொரு மாதிரியும் ஒரு சுழற்சிக்காக இயக்கப்படுகிறது, இது ஒரு பின்தளத்தில் தீர்மானிக்கப்படும் <code class="docutils literal notranslate"><span class="pre">dt</span></code>. எங்கள் திட்டத்தின் நிகழ்நேர இயக்கவியல் பற்றி அறிய விரும்பினால், <code class="docutils literal notranslate"><span class="pre">dt</span></code> இன் மதிப்பை நாம் அறிந்து கொள்ள வேண்டும். ஒரு (பூஜ்ஜிய-குறியீட்டு) <span class="math notranslate nohighlight">\(i^{th}\)</span> மாதிரியானது, நேரம் <code class="docutils literal notranslate"><span class="pre">i*dt</span></code> முதல் <code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">+</span> <span class="pre">1)*dt</span></code> வரை, க்யூபிட் அதிர்வெண்ணால் மாற்றியமைக்கப்படும்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -865,7 +867,7 @@ Schedule(, name=&#34;my_example&#34;)
 </section>
 <section id="acquire">
 <h2><code class="docutils literal notranslate"><span class="pre">acquire</span></code><a class="headerlink" href="#acquire" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">acquire</span></code> அறிவுறுத்தல் வாசிப்புக்கான தரவு கையகப்படுத்துதலைத் தூண்டுகிறது. சில கால அவகாசம் எடுத்துக்கொண்டு <code class="docutils literal notranslate"><span class="pre">AcquireChannel</span></code> அளவிடப்படும் qubit -ஐ வரையறுக்கப்படுகிறது, மற்றும் ஒரு <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> அல்லது <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code>. <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> என்பது கிளாசிக்கல் நினைவகம், அங்கு ரீட்அவுட் முடிவு சேமிக்கப்படும். கட்டுப்பாட்டு மின்னணுவியலில் ஒரு பதிவேட்டில் <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code> வரையறுக்கப்படும், இது விரைவான பின்னூட்டத்திற்கான ரீட்அவுட் முடிவை சேமிக்கிறது.</p>
+<p><code class="docutils literal notranslate"><span class="pre">acquire</span></code> அறிவுறுத்தல் வாசிப்புக்கான தரவு கையகப்படுத்துதலைத் தூண்டுகிறது. சில கால அவகாசம் எடுத்துக்கொண்டு <code class="docutils literal notranslate"><span class="pre">AcquireChannel</span></code> அளவிடப்படும் க்யூபிட்டை வரையறுக்கப்படுகிறது, மற்றும் ஒரு <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> அல்லது <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code>. <code class="docutils literal notranslate"><span class="pre">MemorySlot</span></code> என்பது கிளாசிக்கல் நினைவகம், அங்கு ரீட்அவுட் முடிவு சேமிக்கப்படும். கட்டுப்பாட்டு மின்னணுவியலில் ஒரு பதிவேட்டில் <code class="docutils literal notranslate"><span class="pre">RegisterSlot</span></code> வரையறுக்கப்படும், இது விரைவான பின்னூட்டத்திற்கான ரீட்அவுட் முடிவை சேமிக்கிறது.</p>
 <p><code class="docutils literal notranslate"><span class="pre">acquire</span></code> வழிமுறைகள் தனிப்பயன் <cite>Discriminator`</cite>கள் மற்றும் <code class="docutils literal notranslate"><span class="pre">Kernel</span></code>கள் முக்கிய ஆர்க்யுமென்ட்களாக எடுத்துக் கொள்ளலாம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1073,7 +1075,7 @@ Schedule(, name=&#34;my_example&#34;)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

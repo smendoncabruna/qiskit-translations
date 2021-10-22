@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>திட்டமிடுபவரைப் பயன்படுத்துதல் &mdash; Qiskit 0.30.1 documentation</title>
+  <title>திட்டமிடுபவரைப் பயன்படுத்துதல் &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../../genindex.html" />
     <link rel="search" title="தேடல்" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -583,7 +585,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="திட்டமிடுபவரைப்-பயன்படுத்துதல்">
 <h1>திட்டமிடுபவரைப் பயன்படுத்துதல்<a class="headerlink" href="#திட்டமிடுபவரைப்-பயன்படுத்துதல்" title="Permalink to this headline">¶</a></h1>
-<p>கேட் மற்றும் அளவீட்டு <em>calibrations</em> களைப் பயன்படுத்தி, <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> ஐ ஒரு பல்ஸுக்கு <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> என்று திட்டமிடுபவர் மொழிபெயர்ப்பார்: குறிப்பிட்ட குவிட்களில் ஒரு செயல்பாட்டின் உகந்த பல்ஸ்-நிலை விளக்கம்.</p>
+<p>கேட் மற்றும் அளவீட்டு <em>calibrations</em> களைப் பயன்படுத்தி, <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> ஐ ஒரு பல்ஸுக்கு <code class="docutils literal notranslate"><span class="pre">Schedule</span></code> என்று திட்டமிடுபவர் மொழிபெயர்ப்பார்: குறிப்பிட்ட க்யூபிட்களில் ஒரு செயல்பாட்டின் உகந்த பல்ஸ்-நிலை விளக்கம்.</p>
 <p>ஓப்பன் பல்ஸ் இயக்கப்பட்ட பின்தளத்தில் பொதுவாக அளவீடுகள் மற்றும் அதன் ஒவ்வொரு அடிப்படை வாயில்களுக்கும் வரையறுக்கப்பட்ட அளவுத்திருத்தங்கள் இருக்கும். அளவுத்திருத்தங்களை பயனரால் வரையறுக்கலாம் அல்லது புதுப்பிக்கலாம்.</p>
 <section id="அடிப்படை-பயன்பாடு">
 <h2>அடிப்படை பயன்பாடு<a class="headerlink" href="#அடிப்படை-பயன்பாடு" title="Permalink to this headline">¶</a></h2>
@@ -705,8 +707,8 @@ div.rendered_html tbody tr:hover {
 &lt;qiskit.circuit.instructionset.InstructionSet at 0x12cba98e0&gt;
 </pre></div></div>
 </div>
-<p>எங்கள் கேலி செய்யப்பட்ட பின்தளத்தில், இவை <span class="math notranslate nohighlight">\(X\)</span> கேட் செயல்பாடுகள் ஒவ்வொன்றும் ஒரே கால அளவு (<code class="docutils literal notranslate"><span class="pre">duration</span> <span class="pre">=</span> <span class="pre">160</span> <span class="pre">dt</span></code>). அட்டவணை மிகக் குறைவாக இருக்க, இரண்டு <span class="math notranslate nohighlight">\(X\)</span> குவிட் 0 இல் <cite>X</cite> செயல்பாடுகள் பின்-பின்-திட்டமிடப்படும், மற்றும் அளவீட்டு துடிப்பு உடனடியாக அந்த பருப்புகளில் இரண்டைப் பின்தொடரும்.</p>
-<p>குறைவான கட்டுப்பாட்டு செயல்பாடுகளை திட்டமிட சமீபத்திய சரியான நேரத்தை ALAP தேர்வு செய்யும், எனவே குவிட் 1 இல் <span class="math notranslate nohighlight">\(X\)</span> கேட் கூபிட் 0 இல் இரண்டாவது <span class="math notranslate nohighlight">\(X\)</span> கேட்டுடன் ஒத்திசைவாக செயல்படும்.</p>
+<p>எங்கள் கேலி செய்யப்பட்ட பின்தளத்தில், இவை <span class="math notranslate nohighlight">\(X\)</span> கேட் செயல்பாடுகள் ஒவ்வொன்றும் ஒரே கால அளவு (<code class="docutils literal notranslate"><span class="pre">duration</span> <span class="pre">=</span> <span class="pre">160</span> <span class="pre">dt</span></code>). அட்டவணை மிகக் குறைவாக இருக்க, இரண்டு <span class="math notranslate nohighlight">\(X\)</span> க்யூபிட் 0 இல் <cite>X</cite> செயல்பாடுகள் பின்-பின்-திட்டமிடப்படும், மற்றும் அளவீட்டு துடிப்பு உடனடியாக அந்த பருப்புகளில் இரண்டைப் பின்தொடரும்.</p>
+<p>குறைவான கட்டுப்பாட்டு செயல்பாடுகளை திட்டமிட சமீபத்திய சரியான நேரத்தை ALAP தேர்வு செய்யும், எனவே க்யூபிட் 1 இல் <span class="math notranslate nohighlight">\(X\)</span> கேட் கூபிட் 0 இல் இரண்டாவது <span class="math notranslate nohighlight">\(X\)</span> கேட்டுடன் ஒத்திசைவாக செயல்படும்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -726,7 +728,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/tutorials_circuits_advanced_07_pulse_scheduler_11_0.png" src="../../_images/tutorials_circuits_advanced_07_pulse_scheduler_11_0.png" />
 </div>
 </div>
-<p>மறுபுறம், பெயர் குறிப்பிடுவது போல, ASAP அதன் வளங்கள் இலவசமானவுடன் செயல்பாடுகளை திட்டமிடும். எனவே, கூபிட் 1 இல் <span class="math notranslate nohighlight">\(X\)</span> கேட் <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">=</span> <span class="pre">0</span></code> என திட்டமிடப்படும், இது கூபிட் 0 இல் முதல் <span class="math notranslate nohighlight">\(X\)</span> கேட் உடன் ஒத்திருக்கும்.</p>
+<p>மறுபுறம், பெயர் குறிப்பிடுவது போல, ASAP அதன் வளங்கள் இலவசமானவுடன் செயல்பாடுகளை திட்டமிடும். எனவே, க்யூபிட் 1 இல் <span class="math notranslate nohighlight">\(X\)</span> கேட் <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">=</span> <span class="pre">0</span></code> என திட்டமிடப்படும், இது க்யூபிட் 0 இல் முதல் <span class="math notranslate nohighlight">\(X\)</span> கேட் உடன் ஒத்திருக்கும்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -746,7 +748,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/tutorials_circuits_advanced_07_pulse_scheduler_13_0.png" src="../../_images/tutorials_circuits_advanced_07_pulse_scheduler_13_0.png" />
 </div>
 </div>
-<p>ALAP இயல்புநிலையாகும், ஏனெனில் இது குவிட்களை முடிந்தவரை சும்மா இருக்க அனுமதிக்கிறது. இந்த வழக்கில், ALAP க்கும் ASAP க்கும் இடையிலான வேறுபாடு மிகக் குறைவாக இருக்கலாம், ஆனால் ALAP இல், அளவீட்டுக்கு முன் உற்சாகமான நிலையிலிருந்து சிதைவதற்கு கூபிட் 0 க்கு நேரம் <em>இல்லை</em>.</p>
+<p>ALAP இயல்புநிலையாகும், ஏனெனில் இது க்யூபிட்களை முடிந்தவரை சும்மா இருக்க அனுமதிக்கிறது. இந்த வழக்கில், ALAP க்கும் ASAP க்கும் இடையிலான வேறுபாடு மிகக் குறைவாக இருக்கலாம், ஆனால் ALAP இல், அளவீட்டுக்கு முன் உற்சாகமான நிலையிலிருந்து சிதைவதற்கு க்யூபிட் 0 க்கு நேரம் <em>இல்லை</em>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -799,7 +801,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

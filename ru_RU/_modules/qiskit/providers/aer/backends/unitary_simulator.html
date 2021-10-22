@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.backends.unitary_simulator &mdash; документация Qiskit 0.30.1</title>
+  <title>qiskit.providers.aer.backends.unitary_simulator &mdash; документация Qiskit 0.31.0</title>
   
 
   
@@ -34,8 +34,8 @@
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Алфавитный указатель" href="../../../../../genindex.html" />
     <link rel="search" title="Поиск" href="../../../../../search.html" /> 
@@ -92,7 +92,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -175,6 +175,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -535,8 +537,6 @@
             <span class="n">max_parallel_experiments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">max_parallel_shots</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">max_memory_mb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">optimize_ideal_threshold</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-            <span class="n">optimize_noise_threshold</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
             <span class="n">fusion_enable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">fusion_verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">fusion_max_qubit</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
@@ -546,24 +546,21 @@
             <span class="c1"># statevector options</span>
             <span class="n">statevector_parallel_threshold</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 
-<div class="viewcode-block" id="UnitarySimulator.set_options"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.UnitarySimulator.set_options.html#qiskit.providers.aer.UnitarySimulator.set_options">[документация]</a>    <span class="k">def</span> <span class="nf">set_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">fields</span><span class="p">):</span>
-        <span class="k">if</span> <span class="s2">&quot;method&quot;</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+<div class="viewcode-block" id="UnitarySimulator.set_option"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.UnitarySimulator.set_option.html#qiskit.providers.aer.UnitarySimulator.set_option">[документация]</a>    <span class="k">def</span> <span class="nf">set_option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;method&quot;</span><span class="p">:</span>
             <span class="c1"># Handle deprecation of method option for device option</span>
             <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;The method option of the `UnitarySimulator` has been&quot;</span>
                  <span class="s2">&quot; deprecated as of qiskit-aer 0.9.0. To run a GPU statevector&quot;</span>
                  <span class="s2">&quot; simulation use the option `device=&#39;GPU&#39;` instead&quot;</span><span class="p">,</span>
                  <span class="ne">DeprecationWarning</span><span class="p">)</span>
-            <span class="n">fields</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
-            <span class="n">method</span> <span class="o">=</span> <span class="n">fields</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">LEGACY_METHOD_MAP</span><span class="p">:</span>
-                <span class="n">new_method</span><span class="p">,</span> <span class="n">device</span> <span class="o">=</span> <span class="n">LEGACY_METHOD_MAP</span><span class="p">[</span><span class="n">method</span><span class="p">]</span>
-                <span class="n">fields</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_method</span>
-                <span class="n">fields</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">device</span>
-            <span class="k">if</span> <span class="n">fields</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;unitary&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">LEGACY_METHOD_MAP</span><span class="p">:</span>
+                <span class="n">value</span><span class="p">,</span> <span class="n">device</span> <span class="o">=</span> <span class="n">LEGACY_METHOD_MAP</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="s2">&quot;unitary&quot;</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">AerError</span><span class="p">(</span>
                     <span class="s2">&quot;only the &#39;unitary&#39; method is supported for the UnitarySimulator&quot;</span><span class="p">)</span>
-            <span class="n">fields</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;method&quot;</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="o">**</span><span class="n">fields</span><span class="p">)</span></div>
+            <span class="k">return</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="UnitarySimulator.available_methods"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.aer.UnitarySimulator.available_methods.html#qiskit.providers.aer.UnitarySimulator.available_methods">[документация]</a>    <span class="k">def</span> <span class="nf">available_methods</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the available simulation methods.&quot;&quot;&quot;</span>
@@ -643,7 +640,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Обновлено: 2021/10/02.
+      Обновлено: 2021/10/22.
 
     </p>
   </div>

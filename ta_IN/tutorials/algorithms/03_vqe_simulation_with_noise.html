@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>சத்தத்துடன் ஏர் சிமுலேட்டரில் VQE &mdash; Qiskit 0.30.1 documentation</title>
+  <title>சத்தத்துடன் ஏர் சிமுலேட்டரில் VQE &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../../genindex.html" />
     <link rel="search" title="தேடல்" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -607,7 +609,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>ஒரு ஹாமில்டோனியனின் குறைந்தபட்ச (தரை நிலை) ஆற்றலைக் கண்டுபிடிக்கும் VQE உடன் சத்தம் உருவகப்படுத்துதல் இங்கே நிரூபிக்கப்படும்,
 ஆனால் கிஸ்கிட்டிலிருந்து எந்த குவாண்டம் அல்காரிதத்திற்கும் இந்த நுட்பம் பொருந்தும்.</p>
-<p>மூலக்கூறுஎனவே VQE க்கு உள்ளீடாக ஒரு குயுபிட் ஆபரேட்டர் தேவை. இங்கே, மீண்டும், H2 மூலக்கூறுக்காக, Qiskit வேதியியலால் முதலில் கணக்கிடப்பட்ட பாலிஸின் தொகுப்பை எடுப்போம், எனவே விரைவாக ஒரு ஆபரேட்டரை உருவாக்க முடியும்.</p>
+<p>மூலக்கூறுஎனவே VQE க்கு உள்ளீடாக ஒரு க்யூபிட் ஆபரேட்டர் தேவை. இங்கே, மீண்டும், H2 மூலக்கூறுக்காக, Qiskit வேதியியலால் முதலில் கணக்கிடப்பட்ட பாலிஸின் தொகுப்பை எடுப்போம், எனவே விரைவாக ஒரு ஆபரேட்டரை உருவாக்க முடியும்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -870,7 +872,7 @@ Delta from reference energy value is 0.02298
 </div>
 <p>முடிவுகளை இங்கே சுருக்கமாகக் கொண்டு வரலாம்.</p>
 <p>நாங்கள் ஒரு கிளாசிக்கல் வழிமுறையைப் பயன்படுத்தி ஒரு குறிப்பு மதிப்பை உருவாக்கி, பின்னர் ஒரு Qasm சிமுலேட்டரில் VQE ஐ இயக்கத் தொடங்கினோம். உருவகப்படுத்துதல் சிறந்தது என்றாலும் (சத்தம் இல்லை) மாதிரி காரணமாக ஷாட்-இரைச்சல் என்று அழைக்கப்படுகிறது - காட்சிகளின் எண்ணிக்கையை அதிகரிப்பது மேலும் மேலும் மாதிரிகள் எடுக்கப்படுவதால் இதைக் குறைக்கிறது, ஆனால் காட்சிகள் 1024 இன் இயல்புநிலையில் விடப்பட்டன, மேலும் ஒரு சிறிய விளைவைக் காண்கிறோம் முடிவில்.</p>
-<p>உண்மையான சாதனத்திலிருந்து எடுக்கப்பட்ட மாதிரியைப் பயன்படுத்தி சத்தத்தைச் சேர்த்துள்ளோம், இதன் விளைவாக பாதிக்கப்படுவதைக் காணலாம். இறுதியாக அளவீட்டு இரைச்சலைக் குறைப்பதைச் சேர்த்துள்ளோம், இது கிளாசிட்களை அளவிடும் கிளாசிக்கல் கருவிகளில் சத்தத்தின் தாக்கத்தைத் தணிக்கும் முயற்சியில் முடிவுகளை சரிசெய்கிறது.</p>
+<p>உண்மையான சாதனத்திலிருந்து எடுக்கப்பட்ட மாதிரியைப் பயன்படுத்தி சத்தத்தைச் சேர்த்துள்ளோம், இதன் விளைவாக பாதிக்கப்படுவதைக் காணலாம். இறுதியாக அளவீட்டு இரைச்சலைக் குறைப்பதைச் சேர்த்துள்ளோம், இது க்யூபிட்களை அளவிடும் கிளாசிக்கல் கருவிகளில் சத்தத்தின் தாக்கத்தைத் தணிக்கும் முயற்சியில் முடிவுகளை சரிசெய்கிறது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -946,7 +948,7 @@ VQE on Aer qasm simulator (with noise and measurement error mitigation): -1.8343
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

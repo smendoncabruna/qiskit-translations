@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Qiskit-ட்டில் பங்களிப்பு &mdash; Qiskit 0.30.1 documentation</title>
+  <title>Qiskit-ட்டில் பங்களிப்பு &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="genindex.html" />
     <link rel="search" title="தேடல்" href="search.html" />
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -696,22 +698,62 @@ a deprecation warning may only occur in one release prior to removal.</p>
 </div>
 <section id="set-up-the-virtual-development-environment">
 <h3>மெய்நிகர் மேம்பாட்டு சூழலை அமைக்கவும்<a class="headerlink" href="#set-up-the-virtual-development-environment" title="Permalink to this headline">¶</a></h3>
+<p>Virtual environments are used for Qiskit development to isolate the development environment
+from system-wide packages. This way, we avoid inadvertently becoming dependent on a
+particular system configuration. For developers, this also makes it easy to maintain multiple
+environments (e.g. one per supported Python version, for older versions of Qiskit, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>M1 Mac users:</strong> Some Qiskit dependencies may not yet be available in PyPI. Until they are,
+Conda is recommended.</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="de0d5d76-ee66-4bf3-9d1b-4c863e31118a" name="fb9a11d6-3cc9-438f-9b77-f668e4abef73" type="radio">
+</input><label class="tabbed-label" for="de0d5d76-ee66-4bf3-9d1b-4c863e31118a">
+Python venv</label><div class="tabbed-content docutils">
+<p>All Python versions supported by Qiskit include built-in virtual environment module
+<a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">venv</a>.</p>
+<p>Start by creating a new virtual environment with <code class="docutils literal notranslate"><span class="pre">venv</span></code>. The resulting
+environment will use the same version of Python that created it and will not inherit installed
+system-wide packages by default. The specified folder will be created and is used to hold the environment's
+installation. It can be placed anywhere. For more detail, see the official Python documentation,
+<a class="reference external" href="https://docs.python.org/3/library/venv.html">Creation of virtual environments</a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m venv ~/.venvs/qiskit-dev
+</pre></div>
+</div>
+<p>Activate the environment by invoking the appropriate activation script for your system, which can
+be found within the environment folder. For example, for bash/zsh:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.venvs/qiskit-dev/bin/activate
+</pre></div>
+</div>
+<p>Upgrade pip within the environment to ensure Qiskit dependencies installed in the subsequent sections
+can be located for your system.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -U pip
+</pre></div>
+</div>
+</div>
+<input id="09eb0ae9-0e98-48c3-8704-3db13fc2a22f" name="fb9a11d6-3cc9-438f-9b77-f668e4abef73" type="radio">
+</input><label class="tabbed-label" for="09eb0ae9-0e98-48c3-8704-3db13fc2a22f">
+Conda</label><div class="tabbed-content docutils">
+<p>For Conda users, a new environment can be created as follows.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda create -y -n QiskitDevenv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 conda activate QiskitDevenv
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="installing-terra-from-source">
 <span id="install-qiskit-terra"></span><h3>மூலத்திலிருந்து Terra நிறுவப்படுகிறது<a class="headerlink" href="#installing-terra-from-source" title="Permalink to this headline">¶</a></h3>
 <p>மூலத்திலிருந்து நிறுவப்படுகிறது நீங்கள் C + + 11 ஆதரிக்கிறது உங்கள் கணினியில் C + + compiler வேண்டும்.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="357ae80c-2e51-4608-be4a-9d639bde131a" name="e26224b2-3f68-416f-a1d2-f74e8f30e91c" type="radio">
-</input><label class="tabbed-label" for="357ae80c-2e51-4608-be4a-9d639bde131a">
+<input checked="checked" id="864a8215-22b4-418f-8adb-b9d28c758c9b" name="dd1c1747-bcab-4fdb-9f58-1538caa8c5f9" type="radio">
+</input><label class="tabbed-label" for="864a8215-22b4-418f-8adb-b9d28c758c9b">
 Linux க்கான மொழிமாற்றி</label><div class="tabbed-content docutils">
 <p>பெரும்பாலான லினக்ஸ் இயங்குதளங்களில், தேவையான GCC தொகு ஏற்கனவே நிறுவப்பட்டுள்ளது.</p>
 </div>
-<input id="4c5be245-0cbd-46aa-a09f-b0a7d6b4b559" name="e26224b2-3f68-416f-a1d2-f74e8f30e91c" type="radio">
-</input><label class="tabbed-label" for="4c5be245-0cbd-46aa-a09f-b0a7d6b4b559">
+<input id="fd36e0f3-e1a6-4b27-8671-b16ea5a4bf03" name="dd1c1747-bcab-4fdb-9f58-1538caa8c5f9" type="radio">
+</input><label class="tabbed-label" for="fd36e0f3-e1a6-4b27-8671-b16ea5a4bf03">
 MacOS க்கான மொழிமாற்றி</label><div class="tabbed-content docutils">
 <p>நீங்கள் MacOS யை பயன்படுத்தினால், நீங்கள் XCode நிறுவி க்ளாங் (Clang compiler) நிறுவலாம். ஒரு முனைய சாளரத்தை திறந்து மற்றும் கீழே நுழைக்க நீங்கள் XCode மற்றும் Clang நிறுவப்பட்டுள்ளதா என்று சரிபார்க்கவும்.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -722,8 +764,8 @@ MacOS க்கான மொழிமாற்றி</label><div class="tabbed-c
 </pre></div>
 </div>
 </div>
-<input id="4e4e8d37-aa7b-47d5-9aee-dd1ee7205199" name="e26224b2-3f68-416f-a1d2-f74e8f30e91c" type="radio">
-</input><label class="tabbed-label" for="4e4e8d37-aa7b-47d5-9aee-dd1ee7205199">
+<input id="70bf3d42-f4ea-4f7b-a410-09ebe584849e" name="dd1c1747-bcab-4fdb-9f58-1538caa8c5f9" type="radio">
+</input><label class="tabbed-label" for="70bf3d42-f4ea-4f7b-a410-09ebe584849e">
 Windows மொழிமாற்றி</label><div class="tabbed-content docutils">
 <p>Windows, இது <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>. நீங்கள் Visual Studio பதிப்பு 2015 அல்லது 2017 வை நிறுவலாம், C++ compiler ஐ நிறுவுவதற்கு விருப்பத்தேர்வுகள் தேர்வு செய்யவும்.</p>
 </div>
@@ -791,8 +833,8 @@ Windows மொழிமாற்றி</label><div class="tabbed-content docutil
 </ol>
 <p>இதற்குப் பிறகு, Aer நிறுவும் படிகள் நீங்கள் எந்த இயக்க முறைமையைப் பயன்படுத்துகிறீர்கள் என்பதைப் பொறுத்தது. Aer என்பது பைதான் இடைமுகத்துடன் தொகுக்கப்பட்ட C++ நிரல் என்பதால், Aer பைனரியை உருவாக்குவதற்கு பைதான் அல்லாத சார்புகள் உள்ளன, அவை இயக்க முறைமையைப் பொறுத்து உலகளவில் நிறுவ முடியாது.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b1bc2287-1d8b-492b-8343-7b0f8531a7ef" name="7c8d886d-93ba-4384-9cb4-02c4584f9f53" type="radio">
-</input><label class="tabbed-label" for="b1bc2287-1d8b-492b-8343-7b0f8531a7ef">
+<input checked="checked" id="aea72a7f-3139-4460-8198-f5dd0b1bc348" name="49f8aed7-4818-4767-8733-cd27d40e2424" type="radio">
+</input><label class="tabbed-label" for="aea72a7f-3139-4460-8198-f5dd0b1bc348">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>தொகு தேவைகளை நிறுவவும்.</p>
@@ -818,9 +860,15 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="fa6a498a-5c21-41dc-b7e0-6abf91ac7ed0" name="7c8d886d-93ba-4384-9cb4-02c4584f9f53" type="radio">
-</input><label class="tabbed-label" for="fa6a498a-5c21-41dc-b7e0-6abf91ac7ed0">
+<input id="ee30ec83-fb2c-4bf0-aa32-222129c5e582" name="49f8aed7-4818-4767-8733-cd27d40e2424" type="radio">
+</input><label class="tabbed-label" for="ee30ec83-fb2c-4bf0-aa32-222129c5e582">
 macOS</label><div class="tabbed-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Mac M1 Users:</strong> There are ongoing issues with building Aer for AArch64 macOS.
+See <a class="reference external" href="https://github.com/Qiskit/qiskit-aer/issues/1286">#1286</a> for discussion and
+workarounds before continuing.</p>
+</div>
 <ol class="arabic" start="3">
 <li><p>சார்புகளை நிறுவவும்.</p>
 <p>MacOS இல் <a class="reference external" href="https://clang.llvm.org/">Clang</a> தொகு பயன்படுத்த, <a class="reference external" href="https://www.openmp.org/">OpenMP</a> ஐ ஆதரிக்க நீங்கள் ஒரு கூடுதல் நூலகத்தை நிறுவ வேண்டும்.  இதையும் மற்ற சார்புகளையும் நிறுவ நீங்கள் <a class="reference external" href="https://brew.sh/">brew</a> ஐ பயன்படுத்தலாம்.</p>
@@ -839,8 +887,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="76eb3df4-a462-47b0-abfb-f2a4a167ffc7" name="7c8d886d-93ba-4384-9cb4-02c4584f9f53" type="radio">
-</input><label class="tabbed-label" for="76eb3df4-a462-47b0-abfb-f2a4a167ffc7">
+<input id="682920d7-e4ad-4c7e-84ab-d23de148eb9d" name="49f8aed7-4818-4767-8733-cd27d40e2424" type="radio">
+</input><label class="tabbed-label" for="682920d7-e4ad-4c7e-84ab-d23de148eb9d">
 Windows</label><div class="tabbed-content docutils">
 <p>Windows இல் நீங்கள் பயன்படுத்த வேண்டும் <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> அல்லது <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> அனைத்து சார்புகளையும் நிறுவ.</p>
 <ol class="arabic" start="3">
@@ -1106,7 +1154,7 @@ pip install qiskit_aer-*.whl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

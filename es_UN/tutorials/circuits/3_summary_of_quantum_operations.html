@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Resumen de Operaciones Cuánticas &mdash; documentación de Qiskit - 0.30.1</title>
+  <title>Resumen de Operaciones Cuánticas &mdash; documentación de Qiskit - 0.31.0</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -644,7 +646,7 @@ div.rendered_html tbody tr:hover {
 <p>Las compuertas u operaciones cuánticas son usualmente representadas como matrices. Una compuerta que actúa sobre un qubit se representa como una <span class="math notranslate nohighlight">\(2\times 2\)</span> matriz unitaria <span class="math notranslate nohighlight">\(U\)</span>. La acción de la compuerta cuántica se halla multiplicando la matriz que representa la compuesta con el vector que representa el estado cuántico.</p>
 <div class="math notranslate nohighlight">
 \[\left|\psi'\right\rangle = U\left|\psi\right\rangle\]</div>
-<p>Un unitario general debe ser capaz de tomar el :math:` left | 0rightrangle ` al estado anterior. Esto es</p>
+<p>Un unitario general debe ser capaz de tomar el <span class="math notranslate nohighlight">\(\left|0\right\rangle\)</span> al estado anterior. Esto es</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}U = \begin{pmatrix}
 \cos(\theta/2) &amp; a \\
@@ -1444,7 +1446,7 @@ array([[0.707-0.707j, 0.   +0.j   ],
                         \end{pmatrix}
     \end{pmatrix},
 \end{equation}\end{split}\]</div>
-<p>donde :math:` A_{jk}` y :math:` B_{lm}` son los elementos de la matriz de :math:` A ` y :math:` B <a href="#id1"><span class="problematic" id="id2">`</span></a>, respectivamente.</p>
+<p>donde <span class="math notranslate nohighlight">\(A_{jk}\)</span> y <span class="math notranslate nohighlight">\(B_{lm}\)</span> son los elementos de la matriz de <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, respectivamente.</p>
 <p>Análogamente, los vectores base para el sistema de 2 qubits son formados utilizando el producto tensorial de vectores base para un solo qubit:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation}\begin{split}
@@ -1499,7 +1501,7 @@ array([[0.707-0.707j, 0.   +0.j   ],
 <section id="Operaciones-controladas-en-qubits">
 <h3>Operaciones controladas en qubits<a class="headerlink" href="#Operaciones-controladas-en-qubits" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Una compuerta común de múltiples qubits implica la aplicación de una compuerta a un qubit condicionado al estado de otro qubit. Por ejemplo, podríamos querer cambiar el estado del segundo qubit cuando el primer qubit está en <span class="math notranslate nohighlight">\(\left|0\right\rangle\)</span>. Estas compuertas son conocidas como <em>compuertas controladas</em>. Las compuertas estándar de múltiples qubits consisten en compuertas de dos qubits y de tres qubits. Las compuertas de dos qubits son: - compuertas de Pauli controladas - compuerta Hadamard controlada - compuertas de rotación controladas - compuerta de fase controlada - compuerta u3 controlada - compuerta de intercambio</p>
-<p>Las puertas de tres qubits son:- Compuerta de Toffoli - Compuerta de Fredkin</p>
+<p>Las compuertas de tres qubits son: - Compuerta de Toffoli - Compuerta de Fredkin</p>
 </section>
 </section>
 <section id="Compuertas-de-dos-qubits">
@@ -1507,7 +1509,7 @@ array([[0.707-0.707j, 0.   +0.j   ],
 <p>La mayoría de las compuertas de dos qubits son del tipo controlado (la compuerta SWAP es la excepción). En general una compuerta controlada de dos qubits <span class="math notranslate nohighlight">\(C_{U}\)</span> actúa para aplicar una transformación unitaria <span class="math notranslate nohighlight">\(U\)</span> de un qubit al segundo qubit cuando el estado del primer qubit está en <span class="math notranslate nohighlight">\(\left|1\rángulo\rde luz\)</span>. Supongamos que <span class="math notranslate nohighlight">\(U\)</span> tiene una representación matricial</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}U = \begin{pmatrix} u_{00} &amp; u_{01} \\ u_{10} &amp; u_{11}\end{pmatrix}.\end{split}\]</div>
-<p>Podemos determinar la acción de <span class="math notranslate nohighlight">\(C_{U}\)</span> de la siguiente manera. Recuerda que los vectores base de un sistema de dos qubits son ordenados como <span class="math notranslate nohighlight">\(\left|00\right\rangle, \left|01\right\rangle, \left|10\right\rangle, \left|11\right\rangle\)</span>. Supón que el <strong>qubit control</strong> es <strong>qubit 0</strong> (que de acuerdo con las convenciones de Qiskit, es el que está del lado <em>derecho</em> del producto tensorial). Si el qubit control esta en <span class="math notranslate nohighlight">\(\left|1\right\rangle\)</span>, se debe aplicar <span class="math notranslate nohighlight">\(U\)</span> al <a href="#id1"><span class="problematic" id="id2">**</span></a>objetivo**(el qubit 1, del lado <em>izquierdo</em> del producto tensorial). Por lo tanto, bajo la acción de <span class="math notranslate nohighlight">\(C_{U}\)</span>, los vectores base son transformados acorde a</p>
+<p>Podemos determinar la acción de <span class="math notranslate nohighlight">\(C_{U}\)</span> de la siguiente manera. Recuerda que los vectores base de un sistema de dos qubits son ordenados como <span class="math notranslate nohighlight">\(\left|00\right\rangle, \left|01\right\rangle, \left|10\right\rangle, \left|11\right\rangle\)</span>. Supón que el <strong>qubit control</strong> es <strong>qubit 0</strong> (que de acuerdo con las convenciones de Qiskit, es el que está del lado <em>derecho</em> del producto tensorial). Si el qubit control está en <span class="math notranslate nohighlight">\(\left|1\right\rangle\)</span>, se debe aplicar <span class="math notranslate nohighlight">\(U\)</span> al <a href="#id1"><span class="problematic" id="id2">**</span></a>objetivo**(el qubit 1, del lado <em>izquierdo</em> del producto tensorial). Por lo tanto, bajo la acción de <span class="math notranslate nohighlight">\(C_{U}\)</span>, los vectores base son transformados acorde a</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 C_{U}: \underset{\text{qubit}~1}{\left|0\right\rangle}\otimes \underset{\text{qubit}~0}{\left|0\right\rangle} &amp;\rightarrow \underset{\text{qubit}~1}{\left|0\right\rangle}\otimes \underset{\text{qubit}~0}{\left|0\right\rangle}\\
@@ -1515,7 +1517,7 @@ C_{U}: \underset{\text{qubit}~1}{\left|0\right\rangle}\otimes \underset{\text{qu
 C_{U}: \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{\left|0\right\rangle} &amp;\rightarrow \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{\left|0\right\rangle}\\
 C_{U}: \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{\left|1\right\rangle} &amp;\rightarrow \underset{\text{qubit}~1}{U\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{\left|1\right\rangle}\\
 \end{align*}.\end{split}\]</div>
-<p>En forma de matriz, la acción de :math:` C_{U}` es</p>
+<p>En forma de matriz, la acción de <span class="math notranslate nohighlight">\(C_{U}\)</span> es</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation}
     C_U = \begin{pmatrix}
@@ -1528,7 +1530,7 @@ C_{U}: \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qu
 <p>Para elaborar estos elementos de la matriz, digamos que</p>
 <div class="math notranslate nohighlight">
 \[C_{(jk), (lm)} = \left(\underset{\text{qubit}~1}{\left\langle j \right|} \otimes \underset{\text{qubit}~0}{\left\langle k \right|}\right) C_{U} \left(\underset{\text{qubit}~1}{\left| l \right\rangle} \otimes \underset{\text{qubit}~0}{\left| k \right\rangle}\right),\]</div>
-<p>calcula la acción de :math:` C_{U}` (dada anteriormente), y calcular los productos internos.</p>
+<p>calcula la acción de <span class="math notranslate nohighlight">\(C_{U}\)</span> (dada anteriormente), y calcular los productos internos.</p>
 <p>Como se muestra en los ejemplos siguientes, esta operación es implementada en Qiskit como <code class="docutils literal notranslate"><span class="pre">cU</span> <span class="pre">(q[0],</span> <span class="pre">q[1])</span></code>.</p>
 <p>Si <strong>qubit 1 es el de control y qubit 0 es el objetivo</strong>, entonces los vectores base se transforman de acuerdo con</p>
 <div class="math notranslate nohighlight">
@@ -1538,7 +1540,7 @@ C_{U}: \underset{\text{qubit}~1}{\left|0\right\rangle}\otimes \underset{\text{qu
 C_{U}: \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{\left|0\right\rangle} &amp;\rightarrow \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{U\left|0\right\rangle}\\
 C_{U}: \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{\left|1\right\rangle} &amp;\rightarrow \underset{\text{qubit}~1}{\left|1\right\rangle}\otimes \underset{\text{qubit}~0}{U\left|1\right\rangle}\\
 \end{align*},\end{split}\]</div>
-<p>que implica la forma de la matriz de :math:` C_{U}` es</p>
+<p>que implica la forma de la matriz de <span class="math notranslate nohighlight">\(C_{U}\)</span> es</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation}
     C_U = \begin{pmatrix}
@@ -1748,7 +1750,7 @@ array([[ 1.-0.j,  0.+0.j,  0.+0.j,  0.+0.j],
 </section>
 <section id="Compuerta-de-Hadamard-controlada">
 <h3>Compuerta de Hadamard controlada<a class="headerlink" href="#Compuerta-de-Hadamard-controlada" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Aplique la compuerta <span class="math notranslate nohighlight">\(H\)</span> al qubit de objetivo si el qubit de control es <span class="math notranslate nohighlight">\(\left | 1\right\rangle\)</span>. A continuación se muestra el caso en el que el control es el qubit LSB.</p>
+<p>Aplique la compuerta <span class="math notranslate nohighlight">\(H\)</span> al qubit de objetivo si el qubit de control es <span class="math notranslate nohighlight">\(\left | 1\right\rangle\)</span>. A continuación, se muestra el caso en el que el control es el qubit LSB.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_H =
 \begin{pmatrix}
@@ -2204,7 +2206,7 @@ array([[1.-0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j, 0.+0.j],
 </div>
 <section id="Mediciones">
 <h3>Mediciones<a class="headerlink" href="#Mediciones" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>No tenemos acceso a toda la información cuando hacemos una medición en una computadora cuántica. El estado cuántico es proyectado a una de las bases estándar. A continuación hay dos ejemplos que muestran un circuito preparado en un estado base y la computadora cuántica preparada en un estado de superposición.</p>
+<p>No tenemos acceso a toda la información cuando hacemos una medición en una computadora cuántica. El estado cuántico es proyectado a una de las bases estándar. A continuación, hay dos ejemplos que muestran un circuito preparado en un estado base y la computadora cuántica preparada en un estado de superposición.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
 </pre></div>
@@ -2546,7 +2548,7 @@ array([6.93889390e-17+2.50000000e-01j, 3.53553391e-01+4.16333634e-17j,
        2.50000000e-01-6.93889390e-18j, 0.00000000e+00+0.00000000e+00j])
 </pre></div></div>
 </div>
-<p><cite>Fidelidad &lt;https://en.wikipedia.org/wiki/Fidelity_of_quantum_states&gt;</cite> __ es útil para comprobar si dos estados son iguales o no. Para estados cuánticos (puros) :math:` left | psi_1rightrangle ` y :math:` left | psi_2rightrangle <a href="#id1"><span class="problematic" id="id2">`</span></a>, la fidelidad es</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Fidelity_of_quantum_states">Fidelidad</a> es útil para comprobar si dos estados son iguales o no. Para estados cuánticos (puros) <span class="math notranslate nohighlight">\(\left|\psi_1\right\rangle\)</span> y <span class="math notranslate nohighlight">\(\left|\psi_2\right\rangle\)</span>, la fidelidad es</p>
 <div class="math notranslate nohighlight">
 \[F\left(\left|\psi_1\right\rangle,\left|\psi_2\right\rangle\right) = \left|\left\langle\psi_1\middle|\psi_2\right\rangle\right|^2.\]</div>
 <p>La fidelidad es igual a <span class="math notranslate nohighlight">\(1\)</span> si y sólo si dos estados son iguales.</p>
@@ -2647,7 +2649,7 @@ R_{y}(-\theta_0)R_{z}(-\phi_0) &amp; &amp; &amp; &amp;\\
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/10/02.
+      Actualizado por última vez en 2021/10/22.
 
     </p>
   </div>

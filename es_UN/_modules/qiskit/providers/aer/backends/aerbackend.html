@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.aer.backends.aerbackend &mdash; documentación de Qiskit - 0.30.1</title>
+  <title>qiskit.providers.aer.backends.aerbackend &mdash; documentación de Qiskit - 0.31.0</title>
   
 
   
@@ -34,8 +34,8 @@
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="../../../../../genindex.html" />
     <link rel="search" title="Buscar" href="../../../../../search.html" /> 
@@ -92,7 +92,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -175,6 +175,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -441,6 +443,10 @@
                     <span class="k">if</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">binds</span><span class="p">:</span>
                         <span class="n">parameterizations</span><span class="o">.</span><span class="n">append</span><span class="p">([[</span><span class="n">index</span><span class="p">,</span> <span class="n">bind_pos</span><span class="p">],</span> <span class="n">binds</span><span class="p">[</span><span class="n">param</span><span class="p">]])</span>
                     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">ParameterExpression</span><span class="p">):</span>
+                        <span class="c1"># If parameter expression has no unbound parameters</span>
+                        <span class="c1"># it&#39;s already bound and should be skipped</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">param</span><span class="o">.</span><span class="n">parameters</span><span class="p">:</span>
+                            <span class="k">continue</span>
                         <span class="n">local_binds</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">binds</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">param</span><span class="o">.</span><span class="n">parameters</span><span class="p">}</span>
                         <span class="n">bind_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">local_binds</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">local_binds</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
                         <span class="n">bound_values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bind_list</span><span class="p">]</span>
@@ -536,11 +542,19 @@
         <span class="k">if</span> <span class="n">validate</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">(</span><span class="n">qobj</span><span class="p">)</span>
 
+        <span class="c1"># Get executor from qobj config and delete attribute so qobj can still be serialized</span>
+        <span class="n">executor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">):</span>
+            <span class="nb">delattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">)</span>
+
         <span class="c1"># Optionally split the job</span>
         <span class="n">experiments</span> <span class="o">=</span> <span class="n">split_qobj</span><span class="p">(</span><span class="n">qobj</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;max_job_size&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
 
-        <span class="c1"># Get the executor</span>
-        <span class="n">executor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_executor</span><span class="p">(</span><span class="o">**</span><span class="n">run_options</span><span class="p">)</span>
+        <span class="c1"># Temporarily remove any executor from options so that job submission</span>
+        <span class="c1"># can work with Dask client executors which can&#39;t be pickled</span>
+        <span class="n">opts_executor</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">executor</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="c1"># Submit job</span>
         <span class="n">job_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
@@ -549,6 +563,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">aer_job</span> <span class="o">=</span> <span class="n">AerJob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run</span><span class="p">,</span> <span class="n">experiments</span><span class="p">,</span> <span class="n">executor</span><span class="p">)</span>
         <span class="n">aer_job</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
+
+        <span class="c1"># Restore removed executor after submission</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">executor</span> <span class="o">=</span> <span class="n">opts_executor</span>
+
         <span class="k">return</span> <span class="n">aer_job</span>
 
     <span class="k">def</span> <span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -674,19 +693,7 @@
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">run_options</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
 
-        <span class="c1"># We need to remove the executor from the qobj config</span>
-        <span class="c1"># since it can&#39;t be serialized though JSON/Pybind.</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">):</span>
-            <span class="nb">delattr</span><span class="p">(</span><span class="n">qobj</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">)</span>
-
         <span class="k">return</span> <span class="n">qobj</span>
-
-    <span class="k">def</span> <span class="nf">_get_executor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">run_options</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the executor&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="s1">&#39;executor&#39;</span> <span class="ow">in</span> <span class="n">run_options</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">run_options</span><span class="p">[</span><span class="s1">&#39;executor&#39;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">,</span> <span class="s1">&#39;executor&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">_execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qobj</span><span class="p">):</span>
@@ -787,7 +794,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/10/02.
+      Actualizado por última vez en 2021/10/22.
 
     </p>
   </div>

@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment &mdash; Documentação Qiskit 0.30.1</title>
+  <title>qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment &mdash; Documentação Qiskit 0.31.0</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Pesquisar" href="../search.html" />
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -341,7 +343,7 @@
 <h1>qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment<a class="headerlink" href="#qiskit-providers-ibmq-experiment-ibmexperimentservice-create-experiment" title="Link permanente para este título">¶</a></h1>
 <dl class="py method">
 <dt id="qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment">
-<code class="sig-prename descclassname">IBMExperimentService.</code><code class="sig-name descname">create_experiment</code><span class="sig-paren">(</span><em class="sig-param">experiment_type</em>, <em class="sig-param">backend_name</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">experiment_id=None</em>, <em class="sig-param">job_ids=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">notes=None</em>, <em class="sig-param">share_level=None</em>, <em class="sig-param">start_datetime=None</em>, <em class="sig-param">json_encoder=&lt;class 'json.encoder.JSONEncoder'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.create_experiment"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment" title="Link permanente para esta definição">¶</a></dt>
+<code class="sig-prename descclassname">IBMExperimentService.</code><code class="sig-name descname">create_experiment</code><span class="sig-paren">(</span><em class="sig-param">experiment_type</em>, <em class="sig-param">backend_name</em>, <em class="sig-param">metadata=None</em>, <em class="sig-param">experiment_id=None</em>, <em class="sig-param">parent_id=None</em>, <em class="sig-param">job_ids=None</em>, <em class="sig-param">tags=None</em>, <em class="sig-param">notes=None</em>, <em class="sig-param">share_level=None</em>, <em class="sig-param">start_datetime=None</em>, <em class="sig-param">json_encoder=&lt;class 'json.encoder.JSONEncoder'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/experiment/ibm_experiment_service.html#IBMExperimentService.create_experiment"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.experiment.IBMExperimentService.create_experiment" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Create a new experiment in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parâmetros</dt>
@@ -351,6 +353,9 @@
 <li><p><strong>metadata</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>]) – Experiment metadata.</p></li>
 <li><p><strong>experiment_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Experiment ID. It must be in the <code class="docutils literal notranslate"><span class="pre">uuid4</span></code> format.
 One will be generated if not supplied.</p></li>
+<li><p><strong>parent_id</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The experiment ID of the parent experiment.
+The parent experiment must exist, must be on the same backend as the child,
+and an experiment cannot be its own parent.</p></li>
 <li><p><strong>job_ids</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – IDs of experiment jobs.</p></li>
 <li><p><strong>tags</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – Tags to be associated with the experiment.</p></li>
 <li><p><strong>notes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Freeform notes about the experiment.</p></li>
@@ -412,7 +417,7 @@ for new experiments. Possible values include:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Última actualização em 2021/10/02.
+      Última actualização em 2021/10/22.
 
     </p>
   </div>

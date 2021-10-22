@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contribuindo para o Qiskit &mdash; Documentação Qiskit 0.30.1</title>
+  <title>Contribuindo para o Qiskit &mdash; Documentação Qiskit 0.31.0</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Pesquisar" href="search.html" />
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -696,22 +698,62 @@ a deprecation warning may only occur in one release prior to removal.</p>
 </div>
 <section id="set-up-the-virtual-development-environment">
 <h3>Configurar o Ambiente de Desenvolvimento Virtual<a class="headerlink" href="#set-up-the-virtual-development-environment" title="Link permanente para este título">¶</a></h3>
+<p>Virtual environments are used for Qiskit development to isolate the development environment
+from system-wide packages. This way, we avoid inadvertently becoming dependent on a
+particular system configuration. For developers, this also makes it easy to maintain multiple
+environments (e.g. one per supported Python version, for older versions of Qiskit, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><strong>M1 Mac users:</strong> Some Qiskit dependencies may not yet be available in PyPI. Until they are,
+Conda is recommended.</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="845afd27-5fef-4992-be97-1275e9e100e9" name="0a644254-50f6-4e8c-9a60-c01f7460cb75" type="radio">
+</input><label class="tabbed-label" for="845afd27-5fef-4992-be97-1275e9e100e9">
+Python venv</label><div class="tabbed-content docutils">
+<p>All Python versions supported by Qiskit include built-in virtual environment module
+<a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">venv</a>.</p>
+<p>Start by creating a new virtual environment with <code class="docutils literal notranslate"><span class="pre">venv</span></code>. The resulting
+environment will use the same version of Python that created it and will not inherit installed
+system-wide packages by default. The specified folder will be created and is used to hold the environment’s
+installation. It can be placed anywhere. For more detail, see the official Python documentation,
+<a class="reference external" href="https://docs.python.org/3/library/venv.html">Creation of virtual environments</a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m venv ~/.venvs/qiskit-dev
+</pre></div>
+</div>
+<p>Activate the environment by invoking the appropriate activation script for your system, which can
+be found within the environment folder. For example, for bash/zsh:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.venvs/qiskit-dev/bin/activate
+</pre></div>
+</div>
+<p>Upgrade pip within the environment to ensure Qiskit dependencies installed in the subsequent sections
+can be located for your system.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -U pip
+</pre></div>
+</div>
+</div>
+<input id="2d8cfaef-9ac2-4111-9d7d-8c97d3dab189" name="0a644254-50f6-4e8c-9a60-c01f7460cb75" type="radio">
+</input><label class="tabbed-label" for="2d8cfaef-9ac2-4111-9d7d-8c97d3dab189">
+Conda</label><div class="tabbed-content docutils">
+<p>For Conda users, a new environment can be created as follows.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda create -y -n QiskitDevenv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 conda activate QiskitDevenv
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="installing-terra-from-source">
 <span id="install-qiskit-terra"></span><h3>Instalando Terra a partir do Código Fonte<a class="headerlink" href="#installing-terra-from-source" title="Link permanente para este título">¶</a></h3>
 <p>Instalar a partir do código fonte requer que você tenha um compilador C++ em seu sistema que suporte C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="9258bbb8-7772-4258-8c98-e72e8a4819be" name="5c983043-b98d-4fe8-a1f2-20d828a5283c" type="radio">
-</input><label class="tabbed-label" for="9258bbb8-7772-4258-8c98-e72e8a4819be">
+<input checked="checked" id="6eab9f8b-7c8d-457d-8190-9a92e1cd094f" name="cdaeeaca-8d0b-435f-9d5c-474b9d76afd3" type="radio">
+</input><label class="tabbed-label" for="6eab9f8b-7c8d-457d-8190-9a92e1cd094f">
 Compilador para Linux</label><div class="tabbed-content docutils">
 <p>Na maioria das plataformas Linux, o compilador GCC necessário já está instalado.</p>
 </div>
-<input id="6c3209fd-4135-4440-9a5b-297eb3f92fe2" name="5c983043-b98d-4fe8-a1f2-20d828a5283c" type="radio">
-</input><label class="tabbed-label" for="6c3209fd-4135-4440-9a5b-297eb3f92fe2">
+<input id="5b68bab1-4184-48e6-9689-04e19423d03d" name="cdaeeaca-8d0b-435f-9d5c-474b9d76afd3" type="radio">
+</input><label class="tabbed-label" for="5b68bab1-4184-48e6-9689-04e19423d03d">
 Compilador para macOS</label><div class="tabbed-content docutils">
 <p>Se você usa macOS, você pode instalar o compilador Clang através do XCode. Verifique se você tem XCode e Clang instalados abrindo uma janela do terminal e entrando o seguinte comando:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -722,8 +764,8 @@ Compilador para macOS</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="31b1f793-99b8-4832-90fc-9b69e0b611e8" name="5c983043-b98d-4fe8-a1f2-20d828a5283c" type="radio">
-</input><label class="tabbed-label" for="31b1f793-99b8-4832-90fc-9b69e0b611e8">
+<input id="ba550019-a78f-46ef-a95f-98885cee9ab6" name="cdaeeaca-8d0b-435f-9d5c-474b9d76afd3" type="radio">
+</input><label class="tabbed-label" for="ba550019-a78f-46ef-a95f-98885cee9ab6">
 Compilador para Windows</label><div class="tabbed-content docutils">
 <p>No Windows, é mais fácil instalar o compilador Visual C ++ a partir do <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019">Build Tools for Visual Studio 2019</a>. Você pode instalar também o Visual Studio versão 2015 ou 2017, certificando-se de selecionar as opções para instalar o compilador C++.</p>
 </div>
@@ -791,8 +833,8 @@ Compilador para Windows</label><div class="tabbed-content docutils">
 </ol>
 <p>Depois disso, os passos para instalar Aer dependem de qual sistema operacional você está usando. Uma vez que Aer é um programa compilado em C++ com uma interface em Python, existem dependências não-Python para construir o binário Aer, que não podem ser instaladas universalmente, dependendo do sistema operacional.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="641a2751-ef5b-4639-a41a-81102e162c7d" name="d9caa0bc-9a2b-466c-93c6-159d55d4af41" type="radio">
-</input><label class="tabbed-label" for="641a2751-ef5b-4639-a41a-81102e162c7d">
+<input checked="checked" id="236e8a9c-51a1-4610-bf3b-d2e4e084cc21" name="dea60d4b-3007-4b47-850c-9846f5427a57" type="radio">
+</input><label class="tabbed-label" for="236e8a9c-51a1-4610-bf3b-d2e4e084cc21">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Instalar requisitos do compilador.</p>
@@ -818,9 +860,15 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="7c71470d-9d2c-4386-a911-ecea564c8c67" name="d9caa0bc-9a2b-466c-93c6-159d55d4af41" type="radio">
-</input><label class="tabbed-label" for="7c71470d-9d2c-4386-a911-ecea564c8c67">
+<input id="96f580ef-8530-49a1-b685-3d6ff74f5374" name="dea60d4b-3007-4b47-850c-9846f5427a57" type="radio">
+</input><label class="tabbed-label" for="96f580ef-8530-49a1-b685-3d6ff74f5374">
 macOS</label><div class="tabbed-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><strong>Mac M1 Users:</strong> There are ongoing issues with building Aer for AArch64 macOS.
+See <a class="reference external" href="https://github.com/Qiskit/qiskit-aer/issues/1286">#1286</a> for discussion and
+workarounds before continuing.</p>
+</div>
 <ol class="arabic" start="3">
 <li><p>Instalar dependências.</p>
 <p>Para usar o compilador <a class="reference external" href="https://clang.llvm.org/">Clang</a> no macOS, você precisa instalar uma biblioteca extra para ter suporte a <a class="reference external" href="https://www.openmp.org/">OpenMP</a>. Você pode usar o <a class="reference external" href="https://brew.sh/">brew</a> para instalar esta e outras dependências.</p>
@@ -839,8 +887,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="3774b86f-d304-4db9-8ce9-7e0ab20fd5c9" name="d9caa0bc-9a2b-466c-93c6-159d55d4af41" type="radio">
-</input><label class="tabbed-label" for="3774b86f-d304-4db9-8ce9-7e0ab20fd5c9">
+<input id="705759e8-8ebf-4b5d-983f-e2f165233f4c" name="dea60d4b-3007-4b47-850c-9846f5427a57" type="radio">
+</input><label class="tabbed-label" for="705759e8-8ebf-4b5d-983f-e2f165233f4c">
 Windows</label><div class="tabbed-content docutils">
 <p>No Windows você precisa usar o <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> ou o <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> para instalar todas as dependências.</p>
 <ol class="arabic" start="3">
@@ -1107,7 +1155,7 @@ ao construí-la com a interface Python. Ele atua como uma interface de <a class=
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Última actualização em 2021/10/02.
+      Última actualização em 2021/10/22.
 
     </p>
   </div>

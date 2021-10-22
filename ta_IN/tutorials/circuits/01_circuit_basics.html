@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>மின்சுற்று அடிப்படை &mdash; Qiskit 0.30.1 documentation</title>
+  <title>மின்சுற்று அடிப்படை &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../../genindex.html" />
     <link rel="search" title="தேடல்" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -598,7 +600,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="சுற்றுப்பாதை-கட்டிடம்">
 <h2>சுற்றுப்பாதை கட்டிடம்<a class="headerlink" href="#சுற்றுப்பாதை-கட்டிடம்" title="Permalink to this headline">¶</a></h2>
-<p>உங்கள் முதல் திட்டத்திற்கு தேவையான அடிப்படை உறுப்பு குவாண்டம் சிர்குட் ஆகும். மூன்று குவிட்களைக் கொண்ட <code class="docutils literal notranslate"><span class="pre">குவாண்டம்</span> <span class="pre">சர்க்யூட்</span></code> ஐ உருவாக்குவதன் மூலம் தொடங்குவோம்.</p>
+<p>உங்கள் முதல் திட்டத்திற்கு தேவையான அடிப்படை உறுப்பு குவாண்டம் சிர்குட் ஆகும். மூன்று க்யூபிட்களைக் கொண்ட <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code> ஐ உருவாக்குவதன் மூலம் தொடங்குவோம்.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -609,10 +611,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>நீங்கள் அதன் பதிவேடுகளுடன் சுற்று உருவாக்கிய பிறகு, பதிவேடுகளை கையாள வாயில்களை (“செயல்பாடுகள்”) சேர்க்கலாம். நீங்கள் பயிற்சிகள் வழியாக செல்லும்போது அதிக வாயில்கள் மற்றும் சுற்றுகள் இருப்பதைக் காண்பீர்கள்; மூன்று குவிட் GHZ நிலையை உருவாக்கும் குவாண்டம் சுற்றுக்கு ஒரு எடுத்துக்காட்டு கீழே</p>
+<p>நீங்கள் அதன் பதிவேடுகளுடன் சுற்று உருவாக்கிய பிறகு, பதிவேடுகளை கையாள கேட்களை (“செயல்பாடுகள்”) சேர்க்கலாம். நீங்கள் பயிற்சிகள் வழியாக செல்லும்போது அதிக கேட்கள் மற்றும் சுற்றுகள் இருப்பதைக் காண்பீர்கள்; மூன்று க்யூபிட் GHZ நிலையை உருவாக்கும் குவாண்டம் சுற்றுக்கு ஒரு எடுத்துக்காட்டு கீழே</p>
 <div class="math notranslate nohighlight">
 \[|\psi\rகோணம் = (|000\rகோணம்+|111\rகோணம்)/\sqrt{2}.\]</div>
-<p>அத்தகைய நிலையை உருவாக்க, நாங்கள் மூன்று-குவிட் குவாண்டம் பதிவேட்டில் தொடங்குகிறோம். இயல்பாக, பதிவேட்டில் உள்ள ஒவ்வொரு குவிட் <span class="math notranslate nohighlight">\(|0\rangle\)</span>. GHZ நிலையை உருவாக்க, நாங்கள் பின்வரும் வாயில்களைப் பயன்படுத்துகிறோம்: - ஒரு ஹடமார்ட் கேட் :math:க்விட் 0 இல் <cite>H</cite>, இது சூப்பர் பொசிஷன் நிலைக்கு வைக்கிறது  <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>. - குவிட் 0 மற்றும் குவிட் 1 க்கு இடையில் ஒரு கட்டுப்படுத்தப்பட்ட-அல்லாத செயல்பாடு (<span class="math notranslate nohighlight">\(C_{X}\)</span>) - குவிட் 0 மற்றும் குவிட் 2 க்கு இடையில் கட்டுப்படுத்தப்பட்ட-அல்லாத செயல்பாடு.</p>
+<p>அத்தகைய நிலையை உருவாக்க, நாங்கள் மூன்று-க்யூபிட் குவாண்டம் பதிவேட்டில் தொடங்குகிறோம். இயல்பாக, பதிவேட்டில் உள்ள ஒவ்வொரு க்யூபிட் <span class="math notranslate nohighlight">\(|0\rangle\)</span>. GHZ நிலையை உருவாக்க, நாங்கள் பின்வரும் வாயில்களைப் பயன்படுத்துகிறோம்: - ஒரு ஹடமார்ட் கேட் :math: க்யூபிட் 0 இல் <cite>H</cite>, இது சூப்பர் பொசிஷன் நிலைக்கு வைக்கிறது <span class="math notranslate nohighlight">\(\left(|0\rangle+|1\rangle\right)/\sqrt{2}\)</span>. - க்யூபிட் 0 மற்றும் க்யூபிட் 1 க்கு இடையில் ஒரு கட்டுப்படுத்தப்பட்ட-அல்லாத செயல்பாடு (<span class="math notranslate nohighlight">\(C_{X}\)</span>) - க்யூபிட் 0 மற்றும் க்யூபிட் 2 க்கு இடையில் கட்டுப்படுத்தப்பட்ட-அல்லாத செயல்பாடு.</p>
 <p>ஒரு சாதாரண வானிலை கணினியில், இந்த சுற்றுப்பாதை இயங்கும் மாநிலம் மேலே GHZ மாநிலமாக இருப்பது.</p>
 <p>Qiskit இல், செயல்பாடுகள் ஒன்றை ஒன்று, கீழே காட்டப்பட்ட ஒன்று சேகரிக்கு சேர்க்கலாம்.</p>
 <div class="nbinput docutils container">
@@ -660,16 +662,16 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <img alt="../../_images/tutorials_circuits_01_circuit_basics_7_0.svg" src="../../_images/tutorials_circuits_01_circuit_basics_7_0.svg" /></div>
 </div>
-<p>இந்த சுற்றுப்பாதையில், க்யூட்டுகள் வரிசையில் வைக்கப்பட்டு, மேலே குறும்படத்துடன், கீழே இரண்டு மேல் விட்டு. சுற்றுச்சூழல் வலது இடமாக வாசிக்கப்பட்டுள்ளது (அதாவது முந்தைய சுற்றுப்பாதையில் பயன்படுத்தப்பட்டிருக்கும் கோடுகள் மேலும் இடது வரை காட்டுகின்றன).</p>
-<div class="alert alert-block alert-info"><p>மல்டி-க்விட் அமைப்பின் நிலையைக் குறிக்கும் போது, ​​கிஸ்கிட்டில் பயன்படுத்தப்படும் டென்சர் வரிசை பெரும்பாலான இயற்பியல் பாடப்புத்தகங்களில் பயன்படுத்தப்படுவதை விட வித்தியாசமானது. <span class="math notranslate nohighlight">\(n\)</span> குவிட்ஸ், மற்றும் க்விட் <span class="math notranslate nohighlight">\(j\)</span> என பெயரிடப்பட்டுள்ளது <span class="math notranslate nohighlight">\(Q_{j}\)</span>. கிஸ்கிட் ஒரு வரிசையைப் பயன்படுத்துகிறது: இதில் <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> குவிட் டென்சர் தயாரிப்பின் இடது பக்கத்தில் உள்ளது, இதனால் அடிப்படை திசையன்கள் பின்வருமாறு பெயரிடப்பட்டுள்ளன <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
-<p>எடுத்துக்காட்டாக, குவிட் பூஜ்ஜியம் 0 மாநிலத்திலும், குவிட் 1 நிலை 0 ஆகவும், க்விட் 2 நிலை 1 ஆகவும் இருந்தால், கிஸ்கிட் இந்த நிலையை பின்வருமாறு குறிக்கும் <span class="math notranslate nohighlight">\(|100\rangle\)</span>, அதே நேரத்தில் பல இயற்பியல் பாடப்புத்தகங்கள் இதைக் குறிக்கும் <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
-<p>இந்த வேறுபாட்டில் வேறுபாடு பாதிக்கப்படாமல் பல விரிவான செயல்பாடுகள் மடங்குகளாக பிரதிபலிக்கும். எடுத்துக்காட்டாக, Qiskit ஒரு கட்டுப்பாட்டை-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) செயல்பாடு 0 ஆக இருப்பது கட்டுப்பாட்டை மற்றும் கிட் 1 என்று இலக்கு என்று</p>
+<p>இந்த சுற்றுப்பாதையில், க்யூபிட்கள் வரிசையில் வைக்கப்பட்டு, மேலே குறும்படத்துடன், கீழே இரண்டு மேல் விட்டு. சுற்றுச்சூழல் வலது இடமாக வாசிக்கப்பட்டுள்ளது (அதாவது முந்தைய சுற்றுப்பாதையில் பயன்படுத்தப்பட்டிருக்கும் கோடுகள் மேலும் இடது வரை காட்டுகின்றன).</p>
+<div class="alert alert-block alert-info"><p>பல-க்யூபிட் அமைப்பின் நிலையைக் குறிக்கும் போது, ​​Qiskit டில் பயன்படுத்தப்படும் டென்சர் வரிசை பெரும்பாலான இயற்பியல் பாடப்புத்தகங்களில் பயன்படுத்தப்படுவதை விட வித்தியாசமானது. <span class="math notranslate nohighlight">\(n\)</span> க்யூபிட், மற்றும் க்யூபிட் <span class="math notranslate nohighlight">\(j\)</span> என பெயரிடப்பட்டுள்ளது <span class="math notranslate nohighlight">\(Q_{j}\)</span>. Qiskit ஒரு வரிசையைப் பயன்படுத்துகிறது: இதில் <span class="math notranslate nohighlight">\(n^{\mathrm{th}}\)</span> க்யூபிட் டென்சர் தயாரிப்பின் இடது பக்கத்தில் உள்ளது, இதனால் அடிப்படை திசையன்கள் பின்வருமாறு பெயரிடப்பட்டுள்ளன <span class="math notranslate nohighlight">\(Q_{n-1}\otimes \cdots \otimes Q_1\otimes Q_0\)</span>.</p>
+<p>எடுத்துக்காட்டாக, க்யூபிட் பூஜ்ஜியம் 0 நிலையிலும், குவிட் 1 நிலை 0 ஆகவும், க்யூபிட் 2 நிலை 1 ஆகவும் இருந்தால், Qiskit இந்த நிலையை பின்வருமாறு குறிக்கும் <span class="math notranslate nohighlight">\(|100\rangle\)</span>, அதே நேரத்தில் பல இயற்பியல் பாடப்புத்தகங்கள் இதைக் குறிக்கும் <span class="math notranslate nohighlight">\(|001\rangle\)</span>.</p>
+<p>இந்த வேறுபாட்டில் வேறுபாடு பாதிக்கப்படாமல் பல விரிவான செயல்பாடுகள் மடங்குகளாக பிரதிபலிக்கும். எடுத்துக்காட்டாக, Qiskit ஒரு கட்டுப்பாட்டை-X (<span class="math notranslate nohighlight">\(C_{X}\)</span>) செயல்பாடு 0 ஆக இருப்பது கட்டுப்பாட்டை மற்றும் க்யூபிட் 1 என்று இலக்கு என்று</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_X = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ \end{pmatrix}.\end{split}\]</div>
 </div></section>
 <section id="சிம்லேட்டிங்-குறும்படங்கள்">
 <h2>சிம்லேட்டிங் குறும்படங்கள்<a class="headerlink" href="#சிம்லேட்டிங்-குறும்படங்கள்" title="Permalink to this headline">¶</a></h2>
-<p>ஒரு சர்க்யூட்டை உருவகப்படுத்த நாம் Qiskit இல் குவாண்ட்_இன்ஃபோ தொகுதியைப் பயன்படுத்துகிறோம். இந்த சிமுலேட்டர் குவாண்டம் நிலையை அளிக்கிறது, இது பரிமாணங்களின் சிக்கலான திசையன் <span class="math notranslate nohighlight">\(2^n\)</span>, எங்கே <span class="math notranslate nohighlight">\(n\)</span> என்பது க்விட்களின் எண்ணிக்கை (எனவே இதைப் பயன்படுத்துவதில் கவனமாக இருங்கள், ஏனெனில் அது விரைவாக இயங்க பெரிதாகிவிடும் உங்கள் கணினியில்).</p>
+<p>ஒரு சர்க்யூட்டை உருவகப்படுத்த நாம் Qiskit இல் குவாண்ட்_இன்ஃபோ தொகுதியைப் பயன்படுத்துகிறோம். இந்த சிமுலேட்டர் குவாண்டம் நிலையை அளிக்கிறது, இது பரிமாணங்களின் சிக்கலான திசையன் <span class="math notranslate nohighlight">\(2^n\)</span>, எங்கே <span class="math notranslate nohighlight">\(n\)</span> என்பது க்யூபிட்களின் எண்ணிக்கை (எனவே இதைப் பயன்படுத்துவதில் கவனமாக இருங்கள், ஏனெனில் அது விரைவாக இயங்க பெரிதாகிவிடும் உங்கள் கணினியில்).</p>
 <p>சிமுலேட்டருக்கு இரண்டு நிலைகள் உள்ளன. முதலாவது உள்ளீட்டு நிலையை அமைப்பது மற்றும் இரண்டாவது குவாண்டம் சுற்று மூலம் நிலையை உருவாக்குவது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -814,12 +816,12 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
 </section>
 <section id="OpenQASM-பின்னணி">
 <h2>OpenQASM பின்னணி<a class="headerlink" href="#OpenQASM-பின்னணி" title="Permalink to this headline">¶</a></h2>
-<p>மேலேயுள்ள சிமுலேட்டர்கள் பயனுள்ளதாக இருக்கும், ஏனெனில் அவை மாநில சுற்று பற்றிய தகவல்களை இலட்சிய சுற்று மற்றும் சுற்றுகளின் மேட்ரிக்ஸ் பிரதிநிதித்துவத்தால் வழங்குகின்றன. இருப்பினும், ஒரு உண்மையான சோதனை ஒவ்வொரு குவிட்டையும் * அளவிடுவதன் மூலம் முடிவடைகிறது (வழக்கமாக கணக்கீட்டில் <span class="math notranslate nohighlight">\(|0\rangle, |1 \rangle\)</span> அடிப்படையில்).அளவீடு இல்லாமல், நாங்கள் மாநிலத்தைப் பற்றிய தகவல்களைப் பெற முடியாது. அளவீடுகள் குவாண்டம் அமைப்பு கிளாசிக்கல் பிட்களில் சரிவதற்கு காரணமாகின்றன.</p>
+<p>மேலேயுள்ள சிமுலேட்டர்கள் பயனுள்ளதாக இருக்கும், ஏனெனில் அவை நிலை சுற்று பற்றிய தகவல்களை இலட்சிய சுற்று மற்றும் சுற்றுகளின் மேட்ரிக்ஸ் பிரதிநிதித்துவத்தால் வழங்குகின்றன. இருப்பினும், ஒரு உண்மையான சோதனை ஒவ்வொரு க்யூபிட்டையும் <em>measuring</em> மூலம் முடிவடைகிறது (வழக்கமாக கணக்கீட்டில் <span class="math notranslate nohighlight">\(|0\rangle, |1 \rangle\)</span> அடிப்படையில்).அளவீடு இல்லாமல், நாங்கள் நிலையைப் பற்றிய தகவல்களைப் பெற முடியாது. அளவீடுகள் குவாண்டம் அமைப்பு கிளாசிக்கல் பிட்களில் சரிவதற்கு காரணமாகின்றன.</p>
 <p>எடுத்துக்காட்டாக, நாம் மூன்று-கிட் GHZ மாநிலத்தின் ஒவ்வொரு விகிதத்தில் சுதந்திரமான அளவீடுகள் செய்யும்</p>
 <div class="math notranslate nohighlight">
 \[| \psi\rகோணம் = (| 000\rகோணம் + | 111\rகோணம்)/\sqrt{2},\]</div>
-<p>மற்றும் விடுங்கள் <span class="math notranslate nohighlight">\(xyz\)</span> விளைவிக்கும் பிட்ஸ்ட்ரிங்கைக் குறிக்கிறது. கிஸ்கிட் பயன்படுத்திய குவிட் லேபிளிங்கின் கீழ் , <span class="math notranslate nohighlight">\(x\)</span> என்பது குவிட் 2 இன் முடிவுக்கு ஒத்திருக்கும், <span class="math notranslate nohighlight">\(y\)</span> குவிட் 1 இன் முடிவுக்கு, மற்றும் <span class="math notranslate nohighlight">\(z\)</span> qubit 0.</p>
-<div class="alert alert-block alert-info"><p>குறிப்பு: பிட்ரசின் இந்த பிரதிநிதிப்பு இடது மிகவும் குறிப்பிடத்தக்க பிட் (MSB), மற்றும் குறைந்தது குறிப்பிடத்தக்க பிட் (LSB) வலது. இது இரும bitstrings-யின் நிலையான ஒழுங்குபடுத்தும். நாம் ஒரே வழியில் qubits வரிசையில் வரிசைப்படுத்துகிறது (MSB குறித்த குறும்படம் சுட்டி 0), அதனால் Qiskit ஒரு நிலையான tensor தயாரிப்பு வரிசை பயன்படுத்துகிறது.</p>
+<p>மற்றும் விடுங்கள் <span class="math notranslate nohighlight">\(xyz\)</span> விளைவிக்கும் பிட்ஸ்ட்ரிங்கைக் குறிக்கிறது. Qiskit பயன்படுத்திய க்யூபிட் லேபிளிங்கின் கீழ் , <span class="math notranslate nohighlight">\(x\)</span> என்பது க்யூபிட் 2 இன் முடிவுக்கு ஒத்திருக்கும், <span class="math notranslate nohighlight">\(y\)</span> க்யூபிட் 1 இன் முடிவுக்கு, மற்றும் <span class="math notranslate nohighlight">\(z\)</span> க்யூபிட் 0.</p>
+<div class="alert alert-block alert-info"><p>குறிப்பு: பிட்ரசின் இந்த பிரதிநிதிப்பு இடது மிகவும் குறிப்பிடத்தக்க பிட் (MSB), மற்றும் குறைந்தது குறிப்பிடத்தக்க பிட் (LSB) வலது. இது இரும bitstrings-யின் நிலையான ஒழுங்குபடுத்தும். நாம் ஒரே வழியில் க்யூபிட் வரிசையில் வரிசைப்படுத்துகிறது (MSB குறித்த குறும்படம் சுட்டி 0), அதனால் Qiskit ஒரு நிலையான டென்ஸர் தயாரிப்பு வரிசை பயன்படுத்துகிறது.</p>
 </div><p>முடிவைப் பெறுவதற்கான நிகழ்தகவை நினைவுகூருங்கள் <span class="math notranslate nohighlight">\(xyz\)</span> வழங்கியது</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{Pr}(xyz) = |\langle xyz |\psi \rangle|^{2}\]</div>
@@ -966,7 +968,7 @@ array([[ 0.70710678+0.j,  0.70710678+0.j,  0.        +0.j,
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

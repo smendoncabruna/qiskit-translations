@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>க்ரோவரின் அல்காரிதம் மற்றும் அலைவீச்சு பெருக்கம் &mdash; Qiskit 0.30.1 documentation</title>
+  <title>க்ரோவரின் அல்காரிதம் மற்றும் அலைவீச்சு பெருக்கம் &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../../genindex.html" />
     <link rel="search" title="தேடல்" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -750,8 +752,8 @@ Top measurement: 11
 <img alt="../../_images/tutorials_algorithms_06_grover_11_0.png" src="../../_images/tutorials_algorithms_06_grover_11_0.png" />
 </div>
 </div>
-<p>இந்த ஆரக்கிள் உண்மையில் இரண்டுக்கு பதிலாக மூன்று குயூபிட்களுடன் செயல்படுத்தப்படுகிறது என்பதை நீங்கள் அவதானிக்கலாம்!</p>
-<p>ஏனென்றால், <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code> என்பது ஒரு phase-flip ஆரக்கிள் அல்ல (இது நல்ல நிலை கட்டத்தை புரட்டுகிறது). இதன் பொருள் மற்ற குவிட்கள் நிபந்தனையை பூர்த்தி செய்தால் அது ஒரு துணை குயூபிட்டின் நிலையை புரட்டுகிறது. க்ரோவரின் வழிமுறைக்கு, எங்களுக்கு ஒரு phase-flip ஆரக்கிள் தேவைப்படுகிறது. bit-flip ஆரக்கிளை ஒரு phase-flip ஆரக்கிளாக மாற்ற, கட்டுப்படுத்தப்பட்ட- NOT: சாண்ட்விச் <span class="math notranslate nohighlight">\(X\)</span> மற்றும் <span class="math notranslate nohighlight">\(H\)</span> வாயில்கள், மேலே உள்ள சுற்றுகளில் நீங்கள் காணக்கூடியது.</p>
+<p>இந்த ஆரக்கிள் உண்மையில் இரண்டுக்கு பதிலாக மூன்று க்யூபிட்களுடன் செயல்படுத்தப்படுகிறது என்பதை நீங்கள் அவதானிக்கலாம்!</p>
+<p>ஏனென்றால், <code class="docutils literal notranslate"><span class="pre">PhaseOracle</span></code> என்பது ஒரு phase-flip ஆரக்கிள் அல்ல (இது நல்ல நிலை கட்டத்தை புரட்டுகிறது). இதன் பொருள் மற்ற க்யூபிட்கள் நிபந்தனையை பூர்த்தி செய்தால் அது ஒரு துணை க்யூபிட்டின் நிலையை புரட்டுகிறது. க்ரோவரின் வழிமுறைக்கு, எங்களுக்கு ஒரு phase-flip ஆரக்கிள் தேவைப்படுகிறது. bit-flip ஆரக்கிளை ஒரு phase-flip ஆரக்கிளாக மாற்ற, கட்டுப்படுத்தப்பட்ட- NOT: சாண்ட்விச் <span class="math notranslate nohighlight">\(X\)</span> மற்றும் <span class="math notranslate nohighlight">\(H\)</span> கேட்ஸ், மேலே உள்ள சுற்றுகளில் நீங்கள் காணக்கூடியது.</p>
 <p><strong>Note:</strong> ஒரு bit-flip லிருந்து ஒரு phase-flip மாற்றம் ஆரக்கிள் பொதுவாக வைத்திருக்கிறது, மேலும் உங்கள் ஆரக்கிளை சரியான பிரதிநிதித்துவத்திற்கு மாற்ற இதைப் பயன்படுத்தலாம்.</p>
 </section>
 </section>
@@ -834,7 +836,7 @@ Top measurement: 111
 <h3>முழு நெகிழ்வுத்தன்மை<a class="headerlink" href="#முழு-நெகிழ்வுத்தன்மை" title="Permalink to this headline">¶</a></h3>
 <p>மேலும் மேம்பட்ட பயன்பாட்டிற்கு, <code class="docutils literal notranslate"><span class="pre">grover_operator</span></code> வாதத்தை அமைப்பதன் மூலம் முழு க்ரோவர் ஆபரேட்டரையும் குறிப்பிடலாம். பூஜ்ஜிய பிரதிபலிப்பு, ஆரக்கிள் மற்றும் மாநில தயாரிப்பு வழியாக இயல்புநிலை கட்டுமானத்தை விட <span class="math notranslate nohighlight">\(\mathcal{Q}\)</span> இதற்கான திறமையான செயல்படுத்தல் உங்களுக்குத் தெரிந்தால் இது பயனுள்ளதாக இருக்கும்.</p>
 <p><code class="docutils literal notranslate"><span class="pre">qiskit.circuit.library.GroverOperator</span></code> ஒரு நல்ல தொடக்க புள்ளியாக இருக்கக்கூடும், மேலும் க்ரோவர் ஆபரேட்டரின் தானியங்கி கட்டுமானத்திற்கான கூடுதல் விருப்பங்களை வழங்குகிறது. உதாரணமாக * <code class="docutils literal notranslate"><span class="pre">reflection_qubits</span></code> அமைப்பதன் மூலம் பூஜ்ஜிய பிரதிபலிப்பில் உள்ள புறக்கணிப்புகளை புறக்கணிக்க <code class="docutils literal notranslate"><span class="pre">mcx_mode</span></code> * பயன்படுத்தி <code class="docutils literal notranslate"><span class="pre">oracle</span></code>, <code class="docutils literal notranslate"><span class="pre">zero_reflection</span></code> மற்றும் <code class="docutils literal notranslate"><span class="pre">state_preparation</span></code> வாதங்களைப் பயன்படுத்தி <span class="math notranslate nohighlight">\(\mathcal{S_f}, \mathcal{S_0}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> வெளிப்படையாக பரிமாறிக்கொள்ளலாம்</p>
-<p>உதாரணமாக, நல்ல நிலை மூன்று குயூபிட் நிலை என்று கற்பனை செய்து பாருங்கள் <span class="math notranslate nohighlight">\(|111\rangle\)</span> ஆனால் நாம் 2 கூடுதல் குயூபிட்களை துணை குயூபிட்களாகப் பயன்படுத்தினோம்.</p>
+<p>உதாரணமாக, நல்ல நிலை மூன்று க்யூபிட் நிலை என்று கற்பனை செய்து பாருங்கள் <span class="math notranslate nohighlight">\(|111\rangle\)</span> ஆனால் நாம் 2 கூடுதல் க்யூபிட்களை துணை க்யூபிட்ட்களாகப் பயன்படுத்தினோம்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -856,7 +858,7 @@ Top measurement: 111
 <img alt="../../_images/tutorials_algorithms_06_grover_18_0.png" src="../../_images/tutorials_algorithms_06_grover_18_0.png" />
 </div>
 </div>
-<p>பின்னர், இயல்புநிலையாக, க்ரோவர் ஆபரேட்டர் அனைத்து ஐந்து குயூபிட்ளிலும் பூஜ்ஜிய பிரதிபலிப்பை செயல்படுத்துகிறது.</p>
+<p>பின்னர், இயல்புநிலையாக, க்ரோவர் ஆபரேட்டர் அனைத்து ஐந்து க்யூபிட்ளிலும் பூஜ்ஜிய பிரதிபலிப்பை செயல்படுத்துகிறது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -1043,7 +1045,7 @@ True
 </pre></div>
 </div>
 </div>
-<p>தீர்வுகளின் எண்ணிக்கை அறியப்படும்போது, மறு செய்கைகளின் உகந்த எண்ணிக்கையைக் கண்டறிய நிலையான முறையான <code class="docutils literal notranslate"><span class="pre">optimal_num_iterations</span></code> ஐப் பயன்படுத்தலாம். வெளியீட்டு மறு செய்கைகள் தோராயமான மதிப்பு என்பதை நினைவில் கொள்க. குயூபிட்டுகளின் எண்ணிக்கை சிறியதாக இருக்கும்போது, வெளியீட்டு மறு செய்கைகள் உகந்ததாக இருக்காது.</p>
+<p>தீர்வுகளின் எண்ணிக்கை அறியப்படும்போது, மறு செய்கைகளின் உகந்த எண்ணிக்கையைக் கண்டறிய நிலையான முறையான <code class="docutils literal notranslate"><span class="pre">optimal_num_iterations</span></code> ஐப் பயன்படுத்தலாம். வெளியீட்டு மறு செய்கைகள் தோராயமான மதிப்பு என்பதை நினைவில் கொள்க. க்யூபிட்டுகளின் எண்ணிக்கை சிறியதாக இருக்கும்போது, வெளியீட்டு மறு செய்கைகள் உகந்ததாக இருக்காது.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -1144,7 +1146,7 @@ True
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.runtime.ibm_runtime_service &mdash; Qiskit 0.30.1 documentation</title>
+  <title>qiskit.providers.ibmq.runtime.ibm_runtime_service &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -34,8 +34,8 @@
   <link rel="stylesheet" href="../../../../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="ইনডেক্স" href="../../../../../genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="../../../../../search.html" /> 
@@ -92,7 +92,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -175,6 +175,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -347,6 +349,7 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Type</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
 <span class="kn">from</span> <span class="nn">qiskit.providers.exceptions</span> <span class="kn">import</span> <span class="n">QiskitBackendNotFoundError</span>
 <span class="kn">from</span> <span class="nn">qiskit.providers.ibmq</span> <span class="kn">import</span> <span class="n">accountprovider</span>  <span class="c1"># pylint: disable=unused-import</span>
@@ -530,7 +533,8 @@
             <span class="n">options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
             <span class="n">inputs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="n">ParameterNamespace</span><span class="p">],</span>
             <span class="n">callback</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">result_decoder</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">ResultDecoder</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">result_decoder</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">ResultDecoder</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">image</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RuntimeJob</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Execute the runtime program.</span>
 
@@ -548,6 +552,8 @@
 
 <span class="sd">            result_decoder: A :class:`ResultDecoder` subclass used to decode job results.</span>
 <span class="sd">                ``ResultDecoder`` is used if not specified.</span>
+<span class="sd">            image: The runtime image used to execute the program, specified in the form</span>
+<span class="sd">                of image_name:tag. Not all accounts are authorized to select a different image.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A ``RuntimeJob`` instance representing the execution.</span>
@@ -562,13 +568,19 @@
             <span class="n">inputs</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
             <span class="n">inputs</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
 
+        <span class="k">if</span> <span class="n">image</span> <span class="ow">and</span> <span class="ow">not</span> \
+            <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[a-zA-Z0-9]+([/.</span><span class="se">\\</span><span class="s2">-_][a-zA-Z0-9]+)*:[a-zA-Z0-9]+([.</span><span class="se">\\</span><span class="s2">-_][a-zA-Z0-9]+)*$&quot;</span><span class="p">,</span>
+                     <span class="n">image</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">IBMQInputValueError</span><span class="p">(</span><span class="s1">&#39;&quot;image&quot; needs to be in form of image_name:tag&#39;</span><span class="p">)</span>
+
         <span class="n">backend_name</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;backend_name&#39;</span><span class="p">]</span>
         <span class="n">params_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">RuntimeEncoder</span><span class="p">)</span>
         <span class="n">result_decoder</span> <span class="o">=</span> <span class="n">result_decoder</span> <span class="ow">or</span> <span class="n">ResultDecoder</span>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api_client</span><span class="o">.</span><span class="n">program_run</span><span class="p">(</span><span class="n">program_id</span><span class="o">=</span><span class="n">program_id</span><span class="p">,</span>
                                                 <span class="n">credentials</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_provider</span><span class="o">.</span><span class="n">credentials</span><span class="p">,</span>
                                                 <span class="n">backend_name</span><span class="o">=</span><span class="n">backend_name</span><span class="p">,</span>
-                                                <span class="n">params</span><span class="o">=</span><span class="n">params_str</span><span class="p">)</span>
+                                                <span class="n">params</span><span class="o">=</span><span class="n">params_str</span><span class="p">,</span>
+                                                <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
 
         <span class="n">backend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_provider</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="n">backend_name</span><span class="p">)</span>
         <span class="n">job</span> <span class="o">=</span> <span class="n">RuntimeJob</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
@@ -576,7 +588,8 @@
                          <span class="n">credentials</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_provider</span><span class="o">.</span><span class="n">credentials</span><span class="p">,</span>
                          <span class="n">job_id</span><span class="o">=</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">program_id</span><span class="o">=</span><span class="n">program_id</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span>
                          <span class="n">user_callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
-                         <span class="n">result_decoder</span><span class="o">=</span><span class="n">result_decoder</span><span class="p">)</span>
+                         <span class="n">result_decoder</span><span class="o">=</span><span class="n">result_decoder</span><span class="p">,</span>
+                         <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">job</span></div>
 
 <div class="viewcode-block" id="IBMRuntimeService.upload_program"><a class="viewcode-back" href="../../../../../stubs/qiskit.providers.ibmq.runtime.IBMRuntimeService.upload_program.html#qiskit.providers.ibmq.runtime.IBMRuntimeService.upload_program">[docs]</a>    <span class="k">def</span> <span class="nf">upload_program</span><span class="p">(</span>
@@ -584,6 +597,7 @@
             <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bytes</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
             <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">is_public</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
             <span class="n">max_execution_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -618,6 +632,7 @@
 <span class="sd">            name: Name of the program. Required if not specified via `metadata`.</span>
 <span class="sd">            max_execution_time: Maximum execution time in seconds. Required if</span>
 <span class="sd">                not specified via `metadata`.</span>
+<span class="sd">            is_public: Whether the runtime program should be visible to the public.</span>
 <span class="sd">            description: Program description. Required if not specified via `metadata`.</span>
 <span class="sd">            version: Program version. The default is 1.0 if not specified.</span>
 <span class="sd">            backend_requirements: Backend requirements.</span>
@@ -637,7 +652,8 @@
         <span class="n">program_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_merge_metadata</span><span class="p">(</span>
             <span class="n">initial</span><span class="o">=</span><span class="p">{},</span>
             <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
-            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">max_execution_time</span><span class="o">=</span><span class="n">max_execution_time</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">max_execution_time</span><span class="o">=</span><span class="n">max_execution_time</span><span class="p">,</span>
+            <span class="n">is_public</span><span class="o">=</span><span class="n">is_public</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
             <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span> <span class="n">backend_requirements</span><span class="o">=</span><span class="n">backend_requirements</span><span class="p">,</span>
             <span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span>
             <span class="n">return_values</span><span class="o">=</span><span class="n">return_values</span><span class="p">,</span> <span class="n">interim_results</span><span class="o">=</span><span class="n">interim_results</span><span class="p">)</span>
@@ -693,7 +709,7 @@
         <span class="c1"># TODO validate metadata format</span>
         <span class="n">metadata_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;max_execution_time&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">,</span>
                          <span class="s1">&#39;backend_requirements&#39;</span><span class="p">,</span> <span class="s1">&#39;parameters&#39;</span><span class="p">,</span> <span class="s1">&#39;return_values&#39;</span><span class="p">,</span>
-                         <span class="s1">&#39;interim_results&#39;</span><span class="p">]</span>
+                         <span class="s1">&#39;interim_results&#39;</span><span class="p">,</span> <span class="s1">&#39;is_public&#39;</span><span class="p">]</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">val</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">initial</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">metadata_keys</span><span class="p">}</span>
 
     <span class="k">def</span> <span class="nf">_tuple_to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -901,7 +917,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      2021/10/02 সর্বশেষ পরিবর্তন করা হয়েছে।
+      2021/10/22 সর্বশেষ পরিবর্তন করা হয়েছে।
 
     </p>
   </div>

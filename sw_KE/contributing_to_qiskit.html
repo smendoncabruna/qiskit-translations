@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Kuchangia katika Qiskit &mdash; Qiskit 0.30.1 documentation</title>
+  <title>Kuchangia katika Qiskit &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -698,22 +700,62 @@ a deprecation warning may only occur in one release prior to removal.</p>
 </div>
 <section id="set-up-the-virtual-development-environment">
 <h3>Kuanzisha mazingira ya virtual ya ustawishaji<a class="headerlink" href="#set-up-the-virtual-development-environment" title="Permalink to this headline">¶</a></h3>
+<p>Virtual environments are used for Qiskit development to isolate the development environment
+from system-wide packages. This way, we avoid inadvertently becoming dependent on a
+particular system configuration. For developers, this also makes it easy to maintain multiple
+environments (e.g. one per supported Python version, for older versions of Qiskit, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>M1 Mac users:</strong> Some Qiskit dependencies may not yet be available in PyPI. Until they are,
+Conda is recommended.</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="a20ed690-e2c3-4c6d-9b75-31a0155ae757" name="a69451fe-f918-4b3a-ba18-d0d3e3a81ca3" type="radio">
+</input><label class="tabbed-label" for="a20ed690-e2c3-4c6d-9b75-31a0155ae757">
+Python venv</label><div class="tabbed-content docutils">
+<p>All Python versions supported by Qiskit include built-in virtual environment module
+<a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">venv</a>.</p>
+<p>Start by creating a new virtual environment with <code class="docutils literal notranslate"><span class="pre">venv</span></code>. The resulting
+environment will use the same version of Python that created it and will not inherit installed
+system-wide packages by default. The specified folder will be created and is used to hold the environment's
+installation. It can be placed anywhere. For more detail, see the official Python documentation,
+<a class="reference external" href="https://docs.python.org/3/library/venv.html">Creation of virtual environments</a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m venv ~/.venvs/qiskit-dev
+</pre></div>
+</div>
+<p>Activate the environment by invoking the appropriate activation script for your system, which can
+be found within the environment folder. For example, for bash/zsh:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.venvs/qiskit-dev/bin/activate
+</pre></div>
+</div>
+<p>Upgrade pip within the environment to ensure Qiskit dependencies installed in the subsequent sections
+can be located for your system.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -U pip
+</pre></div>
+</div>
+</div>
+<input id="dbc294b9-d526-48ee-af4b-fa6369736dc9" name="a69451fe-f918-4b3a-ba18-d0d3e3a81ca3" type="radio">
+</input><label class="tabbed-label" for="dbc294b9-d526-48ee-af4b-fa6369736dc9">
+Conda</label><div class="tabbed-content docutils">
+<p>For Conda users, a new environment can be created as follows.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda create -y -n QiskitDevenv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 conda activate QiskitDevenv
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="installing-terra-from-source">
 <span id="install-qiskit-terra"></span><h3>Kusakinisha Terra Kutoka Chanzo<a class="headerlink" href="#installing-terra-from-source" title="Permalink to this headline">¶</a></h3>
 <p>Kusakinisha kutoka chanzo kunahitaji uwe na compiler ya C++ inayounga mkono C++11 kwenye tarakilishi yako.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0c5b664e-d2f0-434d-9287-9e2d4b3d906b" name="f9f1e763-ba2a-4cea-999c-941a99b5a2c6" type="radio">
-</input><label class="tabbed-label" for="0c5b664e-d2f0-434d-9287-9e2d4b3d906b">
+<input checked="checked" id="13c3da8c-3a44-41fc-997d-7d16cc4ebfc8" name="42d723f6-8259-452d-985f-433ddab36a85" type="radio">
+</input><label class="tabbed-label" for="13c3da8c-3a44-41fc-997d-7d16cc4ebfc8">
 Compiler kwa Linux</label><div class="tabbed-content docutils">
 <p>Kwenye majukwaa mengi ya Linux, compiler inayohitajika ya GCC tayari imewekwa.</p>
 </div>
-<input id="45955c26-9290-4492-bce3-25e5577fc579" name="f9f1e763-ba2a-4cea-999c-941a99b5a2c6" type="radio">
-</input><label class="tabbed-label" for="45955c26-9290-4492-bce3-25e5577fc579">
+<input id="24279677-876a-49a7-8ffe-8692ca21d935" name="42d723f6-8259-452d-985f-433ddab36a85" type="radio">
+</input><label class="tabbed-label" for="24279677-876a-49a7-8ffe-8692ca21d935">
 Compiler kwa macOS</label><div class="tabbed-content docutils">
 <p>Ikiwa unatumia macOS, unaweza kusakinisha compiler ya Clang kwa kusakinisha XCode. Angalia iwapo umesakinisha XCode na Clang kwa kufungua taminali na kutia yafuatayo.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -724,8 +766,8 @@ Compiler kwa macOS</label><div class="tabbed-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6bd8cda9-5602-4be7-beaa-b559032cfb0c" name="f9f1e763-ba2a-4cea-999c-941a99b5a2c6" type="radio">
-</input><label class="tabbed-label" for="6bd8cda9-5602-4be7-beaa-b559032cfb0c">
+<input id="01c3e197-7017-42d9-80cc-8cc1faeef74e" name="42d723f6-8259-452d-985f-433ddab36a85" type="radio">
+</input><label class="tabbed-label" for="01c3e197-7017-42d9-80cc-8cc1faeef74e">
 Compiler kwa Windows</label><div class="tabbed-content docutils">
 <p>Katika Windows, ni rahisi kusakinisha compiler ya Visual C++ kutoka <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Build Tools for Visual Studio 2017</a>. Badala yake unaweza kusakinisha Visual Studio toleo la 2015 au 2017, ukihakikisha kuchagua chaguo la kusakinisha compiler ya C++.</p>
 </div>
@@ -793,8 +835,8 @@ Compiler kwa Windows</label><div class="tabbed-content docutils">
 </ol>
 <p>Baada ya haya, hatua za kusakinisha Aer hutegemea mfumo endeshi wa tarakilishi unayotumia. Kwa kuwa Aer ni programu iliyokusanywa ya C++ yenye kiolesura cha Python, kuna utegemezi usio wa Python wa kujenga jozi ya Aer ambayo haiwezi kusakinishwa ulimwenguni kulingana na mfumo endeshi wa tarakilishi.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="7e4c0b48-f0bc-4466-aede-cf3b775004a7" name="6fed13fe-123e-4126-8d65-350028069eb5" type="radio">
-</input><label class="tabbed-label" for="7e4c0b48-f0bc-4466-aede-cf3b775004a7">
+<input checked="checked" id="de6ce78e-c7b1-4da8-92cf-7f0b6162ced6" name="d39a1e49-64ba-46a5-aa29-6b87dd941fbd" type="radio">
+</input><label class="tabbed-label" for="de6ce78e-c7b1-4da8-92cf-7f0b6162ced6">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Sakinisha mahitaji ya compiler.</p>
@@ -820,9 +862,15 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="30240a8a-980d-4ee8-89fa-25f884f7e8b9" name="6fed13fe-123e-4126-8d65-350028069eb5" type="radio">
-</input><label class="tabbed-label" for="30240a8a-980d-4ee8-89fa-25f884f7e8b9">
+<input id="68a7f893-0514-4c2c-8a9b-499264ea7ebd" name="d39a1e49-64ba-46a5-aa29-6b87dd941fbd" type="radio">
+</input><label class="tabbed-label" for="68a7f893-0514-4c2c-8a9b-499264ea7ebd">
 macOS</label><div class="tabbed-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Mac M1 Users:</strong> There are ongoing issues with building Aer for AArch64 macOS.
+See <a class="reference external" href="https://github.com/Qiskit/qiskit-aer/issues/1286">#1286</a> for discussion and
+workarounds before continuing.</p>
+</div>
 <ol class="arabic" start="3">
 <li><p>Sakinisha vitegemezi.</p>
 <p>Ili kutumia copmiler ya <a class="reference external" href="https://clang.llvm.org/">Clang</a> katika macOS, unahitaji kusakinisha faili ya maktaba ya kuunga mkono <a class="reference external" href="https://www.openmp.org/">OpenMP</a>. Unaweza tumia <a class="reference external" href="https://brew.sh/">brew</a> kusakinisha vitegemezi vingine.</p>
@@ -841,8 +889,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="e3c9daab-1414-4003-86a8-f402d2a6402f" name="6fed13fe-123e-4126-8d65-350028069eb5" type="radio">
-</input><label class="tabbed-label" for="e3c9daab-1414-4003-86a8-f402d2a6402f">
+<input id="23f72195-4092-48aa-99e4-188a66ea033c" name="d39a1e49-64ba-46a5-aa29-6b87dd941fbd" type="radio">
+</input><label class="tabbed-label" for="23f72195-4092-48aa-99e4-188a66ea033c">
 Windows</label><div class="tabbed-content docutils">
 <p>Katika Windows utahitaji kutumia <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> au <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> ili kusakinisha vitegemezi vyote.</p>
 <ol class="arabic" start="3">
@@ -1168,7 +1216,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>

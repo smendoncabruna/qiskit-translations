@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>qiskit.providers.ibmq.runtime.IBMRuntimeService.run &mdash; documentación de Qiskit - 0.30.1</title>
+  <title>qiskit.providers.ibmq.runtime.IBMRuntimeService.run &mdash; documentación de Qiskit - 0.31.0</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -341,7 +343,7 @@
 <h1>qiskit.providers.ibmq.runtime.IBMRuntimeService.run<a class="headerlink" href="#qiskit-providers-ibmq-runtime-ibmruntimeservice-run" title="Enlazar permanentemente con este título">¶</a></h1>
 <dl class="py method">
 <dt id="qiskit.providers.ibmq.runtime.IBMRuntimeService.run">
-<code class="sig-prename descclassname">IBMRuntimeService.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program_id</span></em>, <em class="sig-param"><span class="n">options</span></em>, <em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_decoder</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/runtime/ibm_runtime_service.html#IBMRuntimeService.run"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.runtime.IBMRuntimeService.run" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<code class="sig-prename descclassname">IBMRuntimeService.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">program_id</span></em>, <em class="sig-param"><span class="n">options</span></em>, <em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">result_decoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/qiskit/providers/ibmq/runtime/ibm_runtime_service.html#IBMRuntimeService.run"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#qiskit.providers.ibmq.runtime.IBMRuntimeService.run" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Execute the runtime program.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros</dt>
@@ -362,6 +364,8 @@ The callback function will receive 2 positional parameters:</p>
 </p></li>
 <li><p><strong>result_decoder</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ResultDecoder</span></code>]]) – A <a class="reference internal" href="qiskit.providers.ibmq.runtime.ResultDecoder.html#qiskit.providers.ibmq.runtime.ResultDecoder" title="qiskit.providers.ibmq.runtime.ResultDecoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResultDecoder</span></code></a> subclass used to decode job results.
 <code class="docutils literal notranslate"><span class="pre">ResultDecoder</span></code> is used if not specified.</p></li>
+<li><p><strong>image</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – The runtime image used to execute the program, specified in the form
+of image_name:tag. Not all accounts are authorized to select a different image.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Tipo del valor devuelto</dt>
@@ -403,7 +407,7 @@ The callback function will receive 2 positional parameters:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Actualizado por última vez en 2021/10/02.
+      Actualizado por última vez en 2021/10/22.
 
     </p>
   </div>

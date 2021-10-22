@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Συνεισφορά στο Qiskit &mdash; Τεκμηρίωση του Qiskit - 0.30.1</title>
+  <title>Συνεισφορά στο Qiskit &mdash; Τεκμηρίωση του Qiskit - 0.31.0</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="Δείκτης" href="genindex.html" />
     <link rel="search" title="Αναζήτηση" href="search.html" />
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -797,22 +799,62 @@ the original material, such as moving sentences around, even across files.</p>
 </div>
 <section id="set-up-the-virtual-development-environment">
 <h3>Ρύθμιση του περιβάλλοντος εικονικής ανάπτυξης<a class="headerlink" href="#set-up-the-virtual-development-environment" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
+<p>Virtual environments are used for Qiskit development to isolate the development environment
+from system-wide packages. This way, we avoid inadvertently becoming dependent on a
+particular system configuration. For developers, this also makes it easy to maintain multiple
+environments (e.g. one per supported Python version, for older versions of Qiskit, etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Σημείωση</p>
+<p><strong>M1 Mac users:</strong> Some Qiskit dependencies may not yet be available in PyPI. Until they are,
+Conda is recommended.</p>
+</div>
+<div class="tabbed-set docutils">
+<input checked="checked" id="e8fc7c35-ff88-4080-a4eb-e8f68afe11ca" name="d234cf94-169e-49b7-bb41-59b020e97810" type="radio">
+</input><label class="tabbed-label" for="e8fc7c35-ff88-4080-a4eb-e8f68afe11ca">
+Python venv</label><div class="tabbed-content docutils">
+<p>All Python versions supported by Qiskit include built-in virtual environment module
+<a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">venv</a>.</p>
+<p>Start by creating a new virtual environment with <code class="docutils literal notranslate"><span class="pre">venv</span></code>. The resulting
+environment will use the same version of Python that created it and will not inherit installed
+system-wide packages by default. The specified folder will be created and is used to hold the environment’s
+installation. It can be placed anywhere. For more detail, see the official Python documentation,
+<a class="reference external" href="https://docs.python.org/3/library/venv.html">Creation of virtual environments</a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m venv ~/.venvs/qiskit-dev
+</pre></div>
+</div>
+<p>Activate the environment by invoking the appropriate activation script for your system, which can
+be found within the environment folder. For example, for bash/zsh:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.venvs/qiskit-dev/bin/activate
+</pre></div>
+</div>
+<p>Upgrade pip within the environment to ensure Qiskit dependencies installed in the subsequent sections
+can be located for your system.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -U pip
+</pre></div>
+</div>
+</div>
+<input id="2aeebf5b-8a6e-4282-bfec-b142f20ea25d" name="d234cf94-169e-49b7-bb41-59b020e97810" type="radio">
+</input><label class="tabbed-label" for="2aeebf5b-8a6e-4282-bfec-b142f20ea25d">
+Conda</label><div class="tabbed-content docutils">
+<p>For Conda users, a new environment can be created as follows.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda create -y -n QiskitDevenv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 conda activate QiskitDevenv
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="installing-terra-from-source">
 <span id="install-qiskit-terra"></span><h3>Εγκατάσταση του Aqua από την πηγή<a class="headerlink" href="#installing-terra-from-source" title="Μόνιμος σύνδεσμος σε αυτήν την κεφαλίδα">¶</a></h3>
 <p>Η εγκατάσταση από την πηγή απαιτεί να έχετε ένα μεταγλωττιστή C++ στο σύστημά σας που υποστηρίζει C++11.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="0a949e88-2b27-4972-b909-8215927cf7f9" name="007903b7-9b73-490f-97f1-9b06f73eeb2e" type="radio">
-</input><label class="tabbed-label" for="0a949e88-2b27-4972-b909-8215927cf7f9">
+<input checked="checked" id="66cf0b6c-885c-4698-badd-7665efcca766" name="f0409d18-3ecc-4773-b642-53d918044e2c" type="radio">
+</input><label class="tabbed-label" for="66cf0b6c-885c-4698-badd-7665efcca766">
 Μεταγλωττιστής για Linux</label><div class="tabbed-content docutils">
 <p>Στις περισσότερες πλατφόρμες Linux, ο απαραίτητος μεταγλωττιστής GCC έχει ήδη εγκατασταθεί.</p>
 </div>
-<input id="108fe08d-523d-4ab5-aed7-3e80417d2675" name="007903b7-9b73-490f-97f1-9b06f73eeb2e" type="radio">
-</input><label class="tabbed-label" for="108fe08d-523d-4ab5-aed7-3e80417d2675">
+<input id="54b7512f-0ccb-4394-b9fd-458302c2fddc" name="f0409d18-3ecc-4773-b642-53d918044e2c" type="radio">
+</input><label class="tabbed-label" for="54b7512f-0ccb-4394-b9fd-458302c2fddc">
 Μεταγλωττιστής για macOS</label><div class="tabbed-content docutils">
 <p>Αν χρησιμοποιείτε macOS, μπορείτε να εγκαταστήσετε τον μεταγλωττιστή Clang εγκαθιστώντας το XCode. Ελέγξτε αν έχετε εγκαταστήσει το XCode και το Clang, ανοίγοντας το τερματικό παράθυρο και εισάγοντας τα ακόλουθα.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>clang --version
@@ -823,8 +865,8 @@ conda activate QiskitDevenv
 </pre></div>
 </div>
 </div>
-<input id="41462157-fe24-4df8-8cef-14e80e59f5d2" name="007903b7-9b73-490f-97f1-9b06f73eeb2e" type="radio">
-</input><label class="tabbed-label" for="41462157-fe24-4df8-8cef-14e80e59f5d2">
+<input id="3a342a07-df90-49ae-9938-24b93b2035f9" name="f0409d18-3ecc-4773-b642-53d918044e2c" type="radio">
+</input><label class="tabbed-label" for="3a342a07-df90-49ae-9938-24b93b2035f9">
 Μεταγλωττιστής για Windows</label><div class="tabbed-content docutils">
 <p>Στα Windows, είναι ευκολότερο να εγκαταστήσετε τον μεταγλωττιστή Visual C++ από τα <a class="reference external" href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017">Εργαλεία Κατασκευής για το Visual Studio 2017</a>. Αντ “αυτού μπορείτε να εγκαταστήσετε το Visual Studio έκδοση 2015 ή 2017, φροντίζοντας να επιλέξετε τις επιλογές για την εγκατάσταση του μεταγλωττιστή C++.</p>
 </div>
@@ -892,8 +934,8 @@ conda activate QiskitDevenv
 </ol>
 <p>Στη συνέχεια, τα βήματα για την εγκατάσταση Aer εξαρτώνται από το λειτουργικό σύστημα που χρησιμοποιείτε. Δεδομένου ότι Aer είναι ένα μεταγλωττισμένο πρόγραμμα C++ με διεπαφή Python, υπάρχουν μη-Python εξαρτήσεις για την κατασκευή του Aer binary, το οποίο δεν μπορεί να εγκατασταθεί καθολικά ανάλογα με το λειτουργικό σύστημα.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="db60ed62-56c8-43e1-932b-7c26203cc4ba" name="7b71e2dd-7366-4008-900d-1bc3be41c575" type="radio">
-</input><label class="tabbed-label" for="db60ed62-56c8-43e1-932b-7c26203cc4ba">
+<input checked="checked" id="232c33e4-da1d-40b7-aa4d-a7c7bedc6682" name="7f18f907-8912-4ff2-9441-27482da04f48" type="radio">
+</input><label class="tabbed-label" for="232c33e4-da1d-40b7-aa4d-a7c7bedc6682">
 Linux</label><div class="tabbed-content docutils">
 <ol class="arabic" start="3">
 <li><p>Εγκατάσταση απαιτήσεων μεταγλωττιστή.</p>
@@ -919,9 +961,15 @@ Linux</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="8da3968f-442a-4ff3-bf83-9e32e7a78d03" name="7b71e2dd-7366-4008-900d-1bc3be41c575" type="radio">
-</input><label class="tabbed-label" for="8da3968f-442a-4ff3-bf83-9e32e7a78d03">
+<input id="4086afba-7164-4dbe-85a5-277661d75b94" name="7f18f907-8912-4ff2-9441-27482da04f48" type="radio">
+</input><label class="tabbed-label" for="4086afba-7164-4dbe-85a5-277661d75b94">
 macOS</label><div class="tabbed-content docutils">
+<div class="admonition note">
+<p class="admonition-title">Σημείωση</p>
+<p><strong>Mac M1 Users:</strong> There are ongoing issues with building Aer for AArch64 macOS.
+See <a class="reference external" href="https://github.com/Qiskit/qiskit-aer/issues/1286">#1286</a> for discussion and
+workarounds before continuing.</p>
+</div>
 <ol class="arabic" start="3">
 <li><p>Εγκαταστήστε τις εξαρτήσεις.</p>
 <p>Για να χρησιμοποιήσετε τον μεταγλωττιστή “Clang &lt;<a class="reference external" href="https://clang.llvm.org/">https://clang.llvm.org/</a>&gt;” σε macOS, θα πρέπει να εγκαταστήσετε μία επιπρόσθετη βιβλιοθήκη για την υποστήριξη του “OpenMP &lt;<a class="reference external" href="https://www.openmp.org/">https://www.openmp.org/</a>&gt;”. Μπορείτε να χρησιμοποιήσετε το “brew&lt;<a class="reference external" href="https://brew.sh/">https://brew.sh/</a>&gt;” για να εγκαταστήσετε αυτό και άλλες εξαρτήσεις.</p>
@@ -940,8 +988,8 @@ macOS</label><div class="tabbed-content docutils">
 </li>
 </ol>
 </div>
-<input id="80083e73-6fec-4833-b122-7e2931a8a0a7" name="7b71e2dd-7366-4008-900d-1bc3be41c575" type="radio">
-</input><label class="tabbed-label" for="80083e73-6fec-4833-b122-7e2931a8a0a7">
+<input id="7013df2b-c67f-4796-b042-dea70ca362d7" name="7f18f907-8912-4ff2-9441-27482da04f48" type="radio">
+</input><label class="tabbed-label" for="7013df2b-c67f-4796-b042-dea70ca362d7">
 Windows</label><div class="tabbed-content docutils">
 <p>Στα Windows θα πρέπει να χρησιμοποιήσετε <a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda3</a> ή <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a> για να εγκαταστήσετε όλες τις εξαρτήσεις.</p>
 <ol class="arabic" start="3">
@@ -1267,7 +1315,7 @@ multiple elements more transparent.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Τελευταία ενημέρωση στις 2021/10/02.
+      Τελευταία ενημέρωση στις 2021/10/22.
 
     </p>
   </div>

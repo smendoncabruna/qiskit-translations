@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>এক নজরে কোয়ান্টাম কম্পিউটিং &mdash; Qiskit 0.30.1 documentation</title>
+  <title>এক নজরে কোয়ান্টাম কম্পিউটিং &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,13 +35,13 @@
   <link rel="stylesheet" href="_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="ইনডেক্স" href="genindex.html" />
     <link rel="search" title="অনুসন্ধান" href="search.html" />
     <link rel="next" title="Qiskit পরিচিতি" href="intro_tutorial1.html" />
-    <link rel="prev" title="Qiskit 0.30.1 বিবরণী" href="index.html" /> 
+    <link rel="prev" title="Qiskit 0.31.0 বিবরণী" href="index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -95,7 +95,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -178,6 +178,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -337,10 +339,10 @@
 <section id="quantum-computing-in-a-nutshell">
 <span id="qc-intro"></span><h1>এক নজরে কোয়ান্টাম কম্পিউটিং<a class="headerlink" href="#quantum-computing-in-a-nutshell" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h1>
 <p>কোয়ান্টাম কম্পিউটিং আধুনিক প্রযুক্তিতে নতুন দৃষ্টান্ত উপস্থাপন করেছে যা কোয়ান্টাম বলবিদ্যার মৌলিক নীতিগুলি ব্যবহার করে।  আপনি যেহেতু এই রচনাটি পড়ছেন, আপনি অবশ্যই শুনেছেন কোয়ান্টাম কম্পিউটেশনের কিছু প্রতিশ্রুতিময় কাজ সম্পর্কে যেমন মৌলিক উৎপাদক গণনা, কোয়ান্টাম সিমুলেশন, অনুসন্ধান, অপ্টিমাইজেশন এবং বীজগাণিতিক প্রোগ্রাম যেমন মেশিন লার্নিং ইত্যাদি বিশাল কম্পিউটেশন, যা এমনকি বৃহত্তম ক্লাসিক্যাল কম্পিউটারের ক্ষমতার বাইরে।</p>
-<p>কোয়ান্টাম কম্পিউটিংয়ের শক্তি কোয়ান্টাম বলবিদ্যার দুটি মূল নীতির উপর দণ্ডায়মান, যথা <span class="xref std std-ref">interference</span> যা যথাক্রমে কোয়ান্টাম কম্পিউটেশনের তরঙ্গ- এবং কণার দিককে উল্লেখ করে। Qiskit কোয়ান্টাম কম্পিউটেশন সম্পাদনের জন্য একটি SDK যা  <a class="reference internal" href="#qc-intro-circuits"><span class="std std-ref">quantum circuits</span></a> ল্যাঙ্গুয়েজ -এর মাধ্যমে কোয়ান্টাম বলবিদ্যার এই নীতিগুলি ব্যবহার করে। কোয়ান্টাম যুক্তিবর্তনী, নির্দেশনা, প্রথাগত (ক্লাসিক্যাল) কন্ট্রোল লজিক নিয়ে গঠিত কোয়ান্টাম বর্তনী (সার্কিট) জটিল অ্যালগরিদম এবং অ্যাপ্লিকেশনকে নির্দিষ্ট পদ্ধতিতে  কোয়ান্টাম কম্পিউটারে কার্যকর করে। মূলত, Qiskit হ'ল একটি কোয়ান্টাম বর্তনী (সার্কিট) নির্মাণ, অনুকূলকরণ (অপটিমাইজেশন) এবং এক্সিকিউশন ইঞ্জিন। অতিরিক্ত অ্যালগরিদম এবং অ্যাপ্লিকেশনের মাধ্যমে এবং কখনো ক্লাসিক্যাল কম্পিউটিংয়ের এর সাহায্য নিয়ে এটি অনুকূলকরণ (অপটিমাইজেশন), কোয়ান্টাম রসায়ন, পদার্থবিজ্ঞান, মেশিন লার্নিং এবং ব্যবস্থাপনাবিদ্যার জটিল সমস্যার সমাধান করে। এরপরে আমরা কোয়ান্টাম কম্পিউটিংয়ের এবং Qiskit কীভাবে ব্যবহৃত হয় তার প্রতিটি ধাপের সংক্ষিপ্ত বিবরণ দিব। আগ্রহী পাঠকদের আরও বেশি জানার জন্য বাড়তি পাঠ্য উপকরণ দেয়া হলো।</p>
+<p>কোয়ান্টাম কম্পিউটিংয়ের শক্তি কোয়ান্টাম বলবিদ্যার দুটি মূল নীতির উপর দণ্ডায়মান, যথা <span class="xref std std-ref">interference</span> যা যথাক্রমে কোয়ান্টাম কম্পিউটেশনের তরঙ্গ- এবং কণার দিককে উল্লেখ করে। Qiskit কোয়ান্টাম কম্পিউটেশন সম্পাদনের জন্য একটি SDK যা  <a class="reference internal" href="#qc-intro-circuits"><span class="std std-ref">quantum circuits</span></a> ল্যাঙ্গুয়েজ -এর মাধ্যমে কোয়ান্টাম বলবিদ্যার এই নীতিগুলি ব্যবহার করে। কোয়ান্টাম যুক্তিবর্তনী, নির্দেশনা, প্রথাগত (ক্লাসিক্যাল) কন্ট্রোল লজিক  নিয়ে গঠিত কোয়ান্টাম বর্তনী (সার্কিট) জটিল অ্যালগরিদম এবং অ্যাপ্লিকেশনকে নির্দিষ্ট পদ্ধতিতে  কোয়ান্টাম কম্পিউটারে কার্যকর করে। মূলত, Qiskit হ'ল একটি কোয়ান্টাম বর্তনী (সার্কিট) নির্মাণ, অনুকূলকরণ (অপটিমাইজেশন) এবং এক্সিকিউশন ইঞ্জিন। অতিরিক্ত অ্যালগরিদম এবং অ্যাপ্লিকেশনের মাধ্যমে এবং কখনো ধ্রুপদী (ক্লাসিক্যাল) কম্পিউটিংয়ের এর সাহায্য নিয়ে  এটি অনুকূলকরণ (অপটিমাইজেশন), কোয়ান্টাম রসায়ন, পদার্থবিজ্ঞান, মেশিন লার্নিং এবং ব্যবস্থাপনাবিদ্যার জটিল সমস্যার সমাধান করে। এরপরে আমরা কোয়ান্টাম কম্পিউটিংয়ের  এবং Qiskit কীভাবে ব্যবহৃত হয় তার প্রতিটি ধাপের সংক্ষিপ্ত বিবরণ দিব। আগ্রহী পাঠকদের আরও বেশি জানার জন্য বাড়তি পাঠ্য উপকরণ দেয়া হলো।</p>
 <section id="interference">
 <span id="qc-intro-interference"></span><h2>ব্যতিচার (ইন্টারফিয়ারেন্স)<a class="headerlink" href="#interference" title="এই শিরোনামের পার্মালিঙ্ক">¶</a></h2>
-<p>প্রথাগত (ক্লাসিক্যাল) কম্পিউটারের মতো একটি কোয়ান্টাম কম্পিউটার বিট (bit) এর ওপর কাজ করে। তবে, যদিও প্রথাগত (ক্লাসিক্যাল) বিট কেবল ০ এবং ১ এই দুটি অবস্থায় পাওয়া যায়, একটি কোয়ান্টাম বিট, বা কিউবিট ০ এবং ১ অথবা উভয়ের যোগাশ্রয়ী সমযোজন অবস্থায় থাকতে পারে। এই যোগাশ্রয়ী সমযোজন সুপারপজিশন বা উপরিপাতন (অথবা উপরিপাতন মান বা অবস্থা) নামে পরিচিত।</p>
+<p>ধ্রুপদী (ক্লাসিক্যাল) কম্পিউটারের মতো একটি কোয়ান্টাম কম্পিউটার বিট (bit) এর ওপর কাজ করে। তবে, যদিও ধ্রুপদী (ক্লাসিক্যাল) বিট কেবল ০ এবং ১ এই দুটি অবস্থায় পাওয়া যায়, একটি কোয়ান্টাম বিট, বা কিউবিট ০ এবং ১ অথবা উভয়ের যোগাশ্রয়ী সমযোজন অবস্থায় থাকতে পারে। এই যোগাশ্রয়ী সমযোজন সুপারপজিশন বা উপরিপাতন (অথবা উপরিপাতন মান বা অবস্থা) নামে পরিচিত।</p>
 <p>কোয়ান্টাম কম্পিউটেশনে এই সংস্থানটি কীভাবে ব্যবহৃত হয় তার জন্য আমরা প্রথমে দেখব অনুরূপ একটি  প্রথাগত (ক্লাসিক্যাল) উদাহরণঃ দূষণ বা ত্রুটি দূরীকরন। উদাহরণস্বরূপ  ত্রুটিমুক্ত  হেডফোনগুলিতে ত্রুটি দূর করতে উপরিপাতন এবং <strong>ব্যতিচার (ইন্টারফিয়ারেন্স)</strong> নীতির প্রয়োগে অপ্রয়োজনীয় শব্দের বিস্তার কম করা হয় প্রায় একই কম্পাঙ্ক এবং বিস্তারযুক্ত  কিন্তু  <span class="math notranslate nohighlight">\(\pi\)</span> (অথবা  <span class="math notranslate nohighlight">\(\pi\)</span> এর যেকোনো পূর্ণ বিজোড় গুণিতক ) কোণে দশাচ্যুত একটি সুর বা শব্দ তৈরি করে।</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/noise_cancel.png"><img alt="_images/noise_cancel.png" src="_images/noise_cancel.png" style="width: 437.20000000000005px; height: 208.4px;" /></a>
@@ -374,7 +376,7 @@
 <p>একটি আদর্শ কোয়ান্টাম ধারাক্রম (অ্যালোগরিদম) কর্মধারা যা নিয়ে গঠিত হয় তা হলঃ</p>
 <ul class="simple">
 <li><p>আমরা যে সমস্যা সমাধান করতে চাইছি,</p></li>
-<li><p>একটি প্রথাগত (ক্লাসিক্যাল) ধারাক্রম​ যা কোয়ান্টাম বর্তনীর (সার্কিট) বিবরণ প্রস্তুত করে,</p></li>
+<li><p>একটি ধ্রুপদী (ক্লাসিক্যাল) ধারাক্রম​ যা কোয়ান্টাম বর্তনীর (সার্কিট) বিবরণ প্রস্তুত করে,</p></li>
 <li><p>কোয়ান্টাম বর্তনী (সার্কিট) যা কোয়ান্টাম হার্ডওয়্যারে রান করা প্রয়োজন,</p></li>
 <li><p>এবং এটি যে ফলাফল উৎপাদন করে তা হল সমস্যার ধ্রুপদী (ক্লাসিক্যাল) সমাধান।</p></li>
 </ul>
@@ -447,7 +449,7 @@
         <a href="intro_tutorial1.html" class="btn btn-neutral float-right" title="Qiskit পরিচিতি" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Qiskit 0.30.1 বিবরণী" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Qiskit 0.31.0 বিবরণী" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -461,7 +463,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      2021/10/02 সর্বশেষ পরিবর্তন করা হয়েছে।
+      2021/10/22 সর্বশেষ পরিবর্তন করা হয়েছে।
 
     </p>
   </div>

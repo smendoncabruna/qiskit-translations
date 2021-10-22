@@ -10,7 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>மறுபயன்பாட்டு குவாண்டம் கட்ட மதிப்பீடு அல்காரிதம் &mdash; Qiskit 0.30.1 documentation</title>
+  <title>மறுபயன்பாட்டு குவாண்டம் கட்ட மதிப்பீடு அல்காரிதம் &mdash; Qiskit 0.31.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/css/theme-override.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.ade9f9d55df9d2893fc676ecd59723a1.css" type="text/css" />
     <link rel="index" title="அட்டவணை" href="../../genindex.html" />
     <link rel="search" title="தேடல்" href="../../search.html" /> 
@@ -93,7 +93,7 @@
               </div>
           </li>
           <li>
-              <a href=="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
           </li>
           <li>
             <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
@@ -176,6 +176,8 @@
         <dd><a class="version" href="/documentation/stable/0.28/index.html">0.28</a></dd>
       
         <dd><a class="version" href="/documentation/stable/0.29/index.html">0.29</a></dd>
+      
+        <dd><a class="version" href="/documentation/stable/0.30/index.html">0.30</a></dd>
       
     </dl>
   </div>
@@ -632,7 +634,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>C_if முறை முதல் கிளாசிக்கல் பதிவேடு, ஒரு கிளாசிக்கல் பிட் (அல்லது கிளாசிக்கல் பிட்களின் பட்டியல்) அல்ல, இரண்டாவது வாதமாக தசம பிரதிநிதித்துவத்தில் ஒரு மதிப்பு (எதிர்மறை அல்லாத முழு எண்) எதிர்பார்க்கிறது என்பதை நாங்கள் முன்னிலைப்படுத்துகிறோம். ஒற்றை பிட், 0, அல்லது 1 (அல்லது பைனரி இலக்கங்களின் பட்டியல் / சரம்) மதிப்பு.</p>
-<p>மற்றொரு உதாரணத்தை உருவாக்குவோம், பின்வரும் <span class="math notranslate nohighlight">\(q_0\)</span> மற்றும் <span class="math notranslate nohighlight">\(q_1\)</span> இரண்டும் <span class="math notranslate nohighlight">\(1\)</span> என சுற்றுவட்டத்தின் அளவீடுகளுக்குப் பிறகு, மூன்றாவது குவிட்டில் ஒரு பிட் புரட்டலைச் செய்ய விரும்புகிறோம் என்பதைக் கவனியுங்கள்.</p>
+<p>மற்றொரு உதாரணத்தை உருவாக்குவோம், பின்வரும் <span class="math notranslate nohighlight">\(q_0\)</span> மற்றும் <span class="math notranslate nohighlight">\(q_1\)</span> இரண்டும் <span class="math notranslate nohighlight">\(1\)</span> என சுற்றுவட்டத்தின் அளவீடுகளுக்குப் பிறகு, மூன்றாவது க்யூபிட்ல் ஒரு பிட் புரட்டலைச் செய்ய விரும்புகிறோம் என்பதைக் கவனியுங்கள்.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
 </pre></div>
@@ -661,7 +663,7 @@ div.rendered_html tbody tr:hover {
 <p><span class="math notranslate nohighlight">\(q_1\)</span> மற்றும் <span class="math notranslate nohighlight">\(q_2\)</span> <span class="math notranslate nohighlight">\(1\)</span> என்ற அளவீட்டின் முடிவுகள் இரண்டுமே இருந்தால் மட்டுமே <span class="math notranslate nohighlight">\(X\)</span> வாயிலைப் பயன்படுத்த விரும்புகிறோம். c_if முறையைப் பயன்படுத்தி இதை நாம் செய்யலாம்: கணிதத்தின் பயன்பாட்டை சீராக்குகிறது c_if க்கு வாதமாக அனுப்பப்பட்ட மதிப்பைப் பொறுத்து <span class="math notranslate nohighlight">\(X\)</span>.</p>
 <p>C_if முறைக்கு அனுப்ப மதிப்பை நாம் குறியாக்கம் செய்ய வேண்டும், இது 011 மற்றும் 111 மதிப்புகளை (பைனரி பிரதிநிதித்துவத்தில்) சரிபார்க்கும், ஏனெனில் இது சரியான நிலையில் இருப்பதைப் பொருட்படுத்தாது.</p>
 <p>தசம பிரதிநிதித்துவத்தில் 2 முழு எண் மதிப்புகள்:</p>
-<p><img alt="441933f162e445508cffdcd88c2d0c71" class="no-scaled-link" src="tutorials/algorithms/../../images/binary.png" style="width: 50%;" /></p>
+<p><img alt="1bf2349489634973b0d2682b1b9d3a94" class="no-scaled-link" src="tutorials/algorithms/../../images/binary.png" style="width: 50%;" /></p>
 <p>Python bin() முறையைப் பயன்படுத்தி தீர்வுகளை நாம் சரிபார்க்கலாம் (<code class="docutils literal notranslate"><span class="pre">0b</span></code> முன்னொட்டு பைனரி வடிவமைப்பைக் குறிக்கிறது).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
@@ -717,8 +719,8 @@ div.rendered_html tbody tr:hover {
 <h1>IPE<a class="headerlink" href="#IPE" title="Permalink to this headline">¶</a></h1>
 <p>IPE வழிமுறையைப் பயன்படுத்துவதற்கான உந்துதல் என்னவென்றால், குறுகிய ஆழம் சுற்றுகளுக்கு QPE வழிமுறை நன்றாக வேலை செய்கிறது, ஆனால் சுற்று வளரத் தொடங்கும் போது, கேட் சத்தம் மற்றும் டிகோஹரன்ஸ் நேரங்கள் காரணமாக அது சரியாக வேலை செய்யாது.</p>
 <p>வழிமுறை எவ்வாறு செயல்படுகிறது என்பதற்கான விரிவான விளக்கத்தை <a class="reference external" href="https://qiskit.org/textbook/ch-labs/Lab04_IterativePhaseEstimation.html#2-iterative-phase-estimation-ipe-algorithm">Iterative Phase Estimation (IPE) Algorithm</a>. QPE ஐ ஆழமாக புரிந்து கொள்ள, நீங்கள் <a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/quantum-phase-estimation.html">Ch.3.6 Quantum Phase Estimation</a> ஐயும் காணலாம்.</p>
-<section id="IPE-உதாரணம்-:math:`-U-`-க்கு-1-qubit-வாய்ப்பாடு">
-<h2>IPE உதாரணம் :math:` U ` க்கு 1-qubit வாய்ப்பாடு<a class="headerlink" href="#IPE-உதாரணம்-:math:`-U-`-க்கு-1-qubit-வாய்ப்பாடு" title="Permalink to this headline">¶</a></h2>
+<section id="IPE-உதாரணம்-:math:`-U-`-க்கு-1-க்யூபிட்-வாய்ப்பாடு">
+<h2>IPE உதாரணம் :math:` U ` க்கு 1-க்யூபிட் வாய்ப்பாடு<a class="headerlink" href="#IPE-உதாரணம்-:math:`-U-`-க்கு-1-க்யூபிட்-வாய்ப்பாடு" title="Permalink to this headline">¶</a></h2>
 <p>1-குவிட் ஆபரேட்டருக்கான கட்டத்தை மதிப்பிடுவதற்கு IPE வழிமுறையைப் பயன்படுத்த விரும்புகிறோம் <span class="math notranslate nohighlight">\(U\)</span> எடுத்துக்காட்டாக, இங்கே நாம் <span class="math notranslate nohighlight">\(S\)</span>-கேட் பயன்படுத்துகிறோம்.</p>
 <p>இதற்கான கட்டத்தை மதிப்பிடுவதற்கு IPE வழிமுறையைப் பயன்படுத்துவோம் <span class="math notranslate nohighlight">\(S\)</span>-கேட். அதன் அணி</p>
 <div class="math notranslate nohighlight">
@@ -1273,7 +1275,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
         &copy; Copyright 2021, Qiskit Development Team.
-      Last updated on 2021/10/02.
+      Last updated on 2021/10/22.
 
     </p>
   </div>
@@ -1295,7 +1297,7 @@ div.rendered_html tbody tr:hover {
 <li><a class="reference internal" href="#">மறுபயன்பாட்டு குவாண்டம் கட்ட மதிப்பீடு அல்காரிதம்</a></li>
 <li><a class="reference internal" href="#நிபந்தனைக்குட்பட்ட-கேட்:-c_if-முறை">நிபந்தனைக்குட்பட்ட கேட்: c_if முறை</a></li>
 <li><a class="reference internal" href="#IPE">IPE</a><ul>
-<li><a class="reference internal" href="#IPE-உதாரணம்-:math:`-U-`-க்கு-1-qubit-வாய்ப்பாடு">IPE உதாரணம் :math:` U ` க்கு 1-qubit வாய்ப்பாடு</a><ul>
+<li><a class="reference internal" href="#IPE-உதாரணம்-:math:`-U-`-க்கு-1-க்யூபிட்-வாய்ப்பாடு">IPE உதாரணம் :math:` U ` க்கு 1-க்யூபிட் வாய்ப்பாடு</a><ul>
 <li><a class="reference internal" href="#முதல்-படி">முதல் படி</a><ul>
 <li><a class="reference internal" href="#துவக்கம்">துவக்கம்</a></li>
 <li><a class="reference internal" href="#கட்டுப்படுத்தப்பட்ட-பயன்பாடு--U-வாயில்கள்">கட்டுப்படுத்தப்பட்ட பயன்பாடு- <span class="math notranslate nohighlight">\(U\)</span> வாயில்கள்</a></li>
