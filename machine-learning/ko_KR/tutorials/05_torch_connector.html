@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/jupyter-sphinx.css" type="text/css" />
   <link rel="stylesheet" href="../_static/thebelab.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -55,21 +55,67 @@
       <div class="main-menu">
         <ul>
           <li>
-            <a href="https://qiskit.org/documentation/">Qiskit Documentation</a>
-          </li>
-
-          <li>
-            <a href="https://qiskit.org/learn" target="_blank">Learning Resources</a>
-          </li>
-
-          <li>
-            <a href="https://qiskit.slack.com" target="_blank">Slack Support</a>
+            <a href="../getting_started.html">Getting started</a>
           </li>
 
           <li>
             <a href="https://qiskit.org/documentation/machine-learning/tutorials/index.html" target="_blank">Tutorials</a>
           </li>
 
+          <li>
+            <a href="https://qiskit.org/documentation/partners/" target="_blank">Partners</a>
+          </li>
+
+          <li>
+            <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
+              <a class="resource-option with-down-orange-arrow">
+                Applications
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://qiskit.org/documentation/machine-learning/">
+                  <span class="dropdown-title">Machine learning</span>
+                  <p>QSVM, VQC (Variational Quantum Classifier), and QGAN (Quantum Generative
+                    Adversarial Network) algorithms.</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://qiskit.org/documentation/nature/">
+                  <span class="dropdown-title">Nature</span>
+                  <p>Quantum applications in chemistry, physics, and biology.</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://qiskit.org/documentation/finance/">
+                  <span class="dropdown-title">Finance</span>
+                  <p>Uncertainty components for stock/securities problems, Ising translators for
+                    portfolio optimizations and data providers to source real or random data.</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://qiskit.org/documentation/optimization/">
+                  <span class="dropdown-title">Optimization</span>
+                  <p>High-level optimization problems that are ready to
+                    run on simulators and real quantum devices</p>
+                </a>
+              </div>
+          </li>
+          <li>
+              <a href="https://qiskit.org/documentation/experiments/" target="_blank">Experiments</a>
+          </li>
+          <li>
+            <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
+              <a class="resource-option with-down-orange-arrow">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://qiskit.slack.com">
+                  <span class="dropdown-title">Slack support</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://qiskit.org/textbook">
+                  <span class="dropdown-title">Qiskit Textbook</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://qiskit.org/events">
+                  <span class="dropdown-title">Qiskit events</span>
+                  <p></p>
+                </a>
+            </div>
+          </li>
           <li>
             <a href="https://github.com/Qiskit/qiskit-machine-learning" target="_blank">Github</a>
           </li>
@@ -678,7 +724,7 @@ tensor([-0.0547], grad_fn=&lt;_TorchNNFunctionBackward&gt;)
 </div>
 <div class="section" id="손실-함수">
 <h5>손실 함수<a class="headerlink" href="#손실-함수" title="이 표제에 대한 퍼머링크">¶</a></h5>
-<p>손실 함수에 대해서는 <cite>크로스 엔트로피&lt;https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html&gt;</cite> 또는 <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">평균 제곱 오차</a> 손실과 같은 PyTorch <code class="docutils literal notranslate"><span class="pre">torch.nn</span></code> 의 사전 정의된 모듈을 이용할 수도 있다.</p>
+<p>손실 함수에 대해서는 <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">크로스 엔트로피</a> 또는 <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html">평균 제곱 오차</a> 손실과 같은 PyTorch <code class="docutils literal notranslate"><span class="pre">torch.nn</span></code> 의 사전 정의된 모듈을 이용할 수도 있다.</p>
 <p><a href="#id1"><span class="problematic" id="id2">**</span></a>💡 설명: ** 고전적인 머신러닝에서 일반적으로는 분류 작업에 교차 엔트로피 손실을 적용하고 MSE 손실을 회귀 작업에 적용한다. 그러나, 이것은 분류 네트워크의 출력이 [0, 1] 범위 내의 클래스 확률 값이라는 가정 하에 추천하는 사항이다 (보통 이것은 Softmax 층을 통해 달성된다). <code class="docutils literal notranslate"><span class="pre">TwoLayerQNN</span></code> 에 대한 다음 예제는 이러한 레이어를 포함하지 않고, 출력에 어떠한 매핑도 적용하지 않기 때문에 (다음 섹션에서는 <code class="docutils literal notranslate"><span class="pre">CircuitQNNs</span></code> 를 사용한 패리티 매핑을 적용한 예를 보여준다), QNN의 출력은 [-1, 1] 범위의 값을 취할 수 있다. 여러분이 궁금해할 경우를 대비해, 이것이 노름(norm) 이 아닌데도 불구하고 MSELoss를 사용하는 이유라는 것을 밝혀둔다 (하지만 우리는 당신이 다른 손실 함수를 사용하여 실험하고 훈련 결과에 어떤 영향을 미칠 수 있는지 알아보는 것을 권장한다).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -837,7 +883,7 @@ Accuracy: 0.55
 Initial weights:  [-0.09792517  0.00037492 -0.00084534 -0.07323409]
 </pre></div></div>
 </div>
-<p>옵티마이저 및 손실 함수 선택사항에 대해서는 <a href="#id1"><span class="problematic" id="id2">`</span></a>이 섹션 &lt;#Optimizer&gt;`__으로 돌아갈 수 있음을 기억해라.</p>
+<p>최적화 함수 및 손실 함수에 대한 자세한 사항은 <a class="reference external" href="https://qiskit.org/documentation/machine-learning/tutorials/05_torch_connector.html#Optimizer">최적화 함수</a> 를 통해 확인할 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -1014,7 +1060,7 @@ ComposedOp([
 ])
 </pre></div></div>
 </div>
-<p>옵티마이저 및 손실 함수 선택사항에 대해서는 <a href="#id1"><span class="problematic" id="id2">`</span></a>이 섹션 &lt;#Optimizer&gt;`__으로 돌아갈 수 있음을 기억해라.</p>
+<p>최적화 함수 및 손실 함수에 대한 자세한 사항은 <a class="reference external" href="https://qiskit.org/documentation/machine-learning/tutorials/05_torch_connector.html#Optimizer">최적화 함수</a> 를 통해 확인할 수 있다.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
@@ -1607,20 +1653,50 @@ Performance on test data:
       <div class="main-menu">
         <ul>
           <li>
-            <a href="https://qiskit.org/documentation/">Qiskit Documentation</a>
+            <a href="../getting_started.html">Getting Started</a>
+          </li>
+          <li>
+            <a href="https://qiskit.org/documentation/machine-learning/tutorials/index.html" target="_blank">Tutorials</a>
+          </li>
+          <li>
+            <a href="https://qiskit.org/documentation/partners/">Partners</a>
+          </li>
+          <br>
+          <li class="resources-mobile-menu-title">
+            Applications
+          </li>
+          <ul class="resources-mobile-menu-items">
+            <li>
+              <a href="https://qiskit.org/documentation/machine-learning/">Machine learning</a>
+            </li>
+
+            <li>
+              <a href="https://qiskit.org/documentation/nature/">Nature</a>
+            </li>
+
+            <li>
+              <a href="https://qiskit.org/documentation/finance/">Finance</a>
+            </li>
+
+            <li>
+              <a href="https://qiskit.org/documentation/optimization/">Optimization</a>
+            </li>
+          </ul>
+          <br>
+          <li>
+            <a href="https://qiskit.org/documentation/experiments/">Experiments</a>
+          </li>
+          <br>
+          <li class="resources-mobile-menu-title">
+            Resources
           </li>
 
-          <li>
-            <a href="https://qiskit.org/learn" target="_blank">Learning Resources</a>
-          </li>
-
-          <li>
-            <a href="https://qiskit.slack.com" target="_blank">Slack Support</a>
-          </li>
-
-          <li>
-            <a href="https://github.com/Qiskit/qiskit-machine-learning" target="_blank">Github</a>
-          </li>
+          <ul class="resources-mobile-menu-items">
+            <li>
+              <a href="https://qiskit.slack.com">Slack support</a>
+            </li>
+          </ul>
+          <br>
         </ul>
       </div>
     </div>
